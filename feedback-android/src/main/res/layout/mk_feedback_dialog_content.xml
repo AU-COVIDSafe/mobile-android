@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include layout="@layout/mk_feedback_dialog_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/MobileKit.Text.Dialog"
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/title"
+        android:paddingBottom="@dimen/mk_content_bottom_padding"
+        android:paddingEnd="@dimen/mk_title_horizontal_padding"
+        android:paddingLeft="@dimen/mk_title_horizontal_padding"
+        android:paddingRight="@dimen/mk_title_horizontal_padding"
+        android:paddingStart="@dimen/mk_title_horizontal_padding"
+        android:text="" />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.atlassian.mobilekit.module.feedback.FeedbackActivity">
+    <item
+        android:id="@+id/action_send"
+        android:icon="@drawable/send_selector"
+        android:title="@string/mk_fb_send"
+        app:showAsAction="always"/>
+</menu>

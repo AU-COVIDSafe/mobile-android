@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="MobileKit.FeedbackTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MobileKit.TitleStyle" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@string/font_fontFamily_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="MobileKit.DialogButton" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@drawable/feedback_button_text_state</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MobileKit.Text" parent="TextAppearance.AppCompat">
+        <!-- Roboto Regular -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MobileKit.Text.Dialog" parent="MobileKit.Text">
+        <!-- Roboto Regular -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/dialog_content_text</item>
+    </style>
+
+</resources>

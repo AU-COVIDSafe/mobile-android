@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Configurations -->
+    <string name="mk_fb_no_config_property">\'%s\' configuration property value is empty.</string>
+    <string name="mk_fb_config_err_help">Cannot create feedback. Please check mp_feedback_config.xml in your application resources.</string>
+    <string name="mk_fb_invalid_config_property">\'%s\' configuration property value is invalid.</string>
+
+    <!-- Internal strings -->
+    <string name="report_issue">Report an issue</string>
+    <string name="mk_fb_send">Send</string>
+    <string name="mk_fb_feedback_empty">Tell us something before sending.</string>
+
+    <string name="mk_fb_feedback_sent">Feedback sent</string>
+    <string name="mk_fb_feedback_failed">Sending feedback failed</string>
+    <string name="mk_fb_retry">Retry</string>
+
+    <string name="mk_fb_device_offline">Your device is offline.</string>
+    <string name="mk_fb_invalid_email_address">Invalid email address</string>
+    <string name="mk_fb_sending">Sending…</string>
+    <string name="feedback_found_an_issue_in_the_covidsafe_app">Found an issue in the COVIDSafe app?</string>
+    <string name="feedback_please_describe_an_issue">Please describe an issue</string>
+    <string name="feedback_email_address_required">Email address (Required)</string>
+    <string name="feedback_we_may_reach_out_to_you_for_further_details_about_your_feedback">We may reach out to you for further details about your feedback.\nYour email address won`t be used for any other purpose.</string>
+
+</resources>

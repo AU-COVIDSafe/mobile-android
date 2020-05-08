@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.atlassian.mobilekit.module.feedback.FeedbackActivity"
+    tools:showIn="@layout/activity_feedback">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/feedback_content_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        tools:minHeight="200dp">
+
+        <TextView
+            android:id="@+id/feedback_content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/feedback_found_an_issue_in_the_covidsafe_app"
+            android:textColor="#141515"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/feedbackIssueDescriptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feedback_content_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/feedbackIssueDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/feedback_please_describe_an_issue"
+                android:inputType="textMultiLine|textAutoComplete|textAutoCorrect|textCapSentences"
+                android:textSize="16sp"
+                tools:text="This applications is so awesome, just wanted to express my gratitude" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/feedbackIssueEmailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:layout_marginTop="16dp"
+            android:paddingEnd="16dp"
+            app:hintEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feedbackIssueDescriptionLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/feedbackIssueEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/feedback_email_address_required"
+                android:imeOptions="actionSend"
+                android:inputType="textWebEmailAddress"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:autofillHints="emailAddress"
+                tools:text="ylaguta@atlassian.com" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="32dp"
+            android:text="@string/feedback_we_may_reach_out_to_you_for_further_details_about_your_feedback"
+            android:textColor="#788586"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feedbackIssueEmailLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

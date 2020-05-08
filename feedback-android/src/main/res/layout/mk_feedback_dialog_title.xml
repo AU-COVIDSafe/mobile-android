@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/title"
+        android:layout_alignLeft="@id/title"
+        android:layout_alignRight="@id/title"
+        android:layout_alignTop="@id/title"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/MobileKit.TitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="@dimen/mk_title_bottom_padding"
+        android:paddingEnd="@dimen/mk_title_horizontal_padding"
+        android:paddingLeft="@dimen/mk_title_horizontal_padding"
+        android:paddingRight="@dimen/mk_title_horizontal_padding"
+        android:paddingStart="@dimen/mk_title_horizontal_padding"
+        android:paddingTop="@dimen/mk_title_top_padding"
+        android:text=""
+        android:textColor="@android:color/black" />
+</merge>

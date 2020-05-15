@@ -1,16 +1,14 @@
 package au.gov.health.covidsafe.ui.onboarding.fragment.personal
 
-import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
+import android.view.accessibility.AccessibilityEvent
 import android.widget.NumberPicker
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
@@ -69,6 +67,8 @@ class PersonalDetailsFragment : PagerChildFragment() {
         }
         personal_details_age.text = ageSelected?.second
 
+        // set accessibility focus to the title "Enter your details"
+        personal_details_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     override fun onPause() {

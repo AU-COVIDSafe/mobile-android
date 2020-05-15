@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: mailto:support@covidsafe.gov.au
+Canonical: https://www.covidsafe.gov.au/.well-known/security.txt
+Encryption: https://www.covidsafe.gov.au/.well-known/pgp-key.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQFNBAEBCAA3FiEEbUgetBuPAas8w7zHDyQUNNekxBkFAl6xF6AZHHN1cHBvcnRA
+Y292aWRzYWZlLmdvdi5hdQAKCRAPJBQ016TEGd+bCACLrYjCbKRsTsQQyZVVtGxj
+wYKW2AWclnKZWX/sxnTexg6D1tlGbZbB0OJpw0gJ0NpMoOLFd0kRZXOzv8RocIdx
+xd90Nwwl3NQ2ygGCDXR0Y7uRKX/P/Y1xO7XkyiYXAqVq3YWvI9M04pY/TCRvRZ/1
+qBs/WDHv/6eRh2qNy/WGXD66CmTLHBcXilTeihcTZ/27Mny5SPthdfy8odQnhUja
+NfFxDm+8gQuFKUUQmr9rd8FEMPSl6BWf/kQtn0YmTeZRzD01uT1ydeHkyPSgn+nq
+k9us35AlkI7aZNfNkFVWJ2v5ZVAdTHDh3pgBRZETwVg1of5DEXhc5XJV6mLsu9bM
+=tik2
+-----END PGP SIGNATURE-----

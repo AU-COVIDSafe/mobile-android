@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/resistrationConsentFragment"
-        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.registrationcontent.RegistrationContentFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.registrationconsent.RegistrationConsentFragment"
         android:label="RegistrationContentFragment"
         tools:layout="@layout/fragment_registration_consent">
         <action

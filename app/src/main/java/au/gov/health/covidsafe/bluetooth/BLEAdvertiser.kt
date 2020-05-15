@@ -89,14 +89,12 @@ class BLEAdvertiser constructor(serviceUUID: String) {
         CentralLog.d(TAG, "Unique string: $finalString")
         val serviceDataByteArray = finalString.toByteArray()
 
-        if (data == null) {
-            data = AdvertiseData.Builder()
-                    .setIncludeDeviceName(false)
-                    .setIncludeTxPowerLevel(true)
-                    .addServiceUuid(pUuid)
-                    .addManufacturerData(1023, serviceDataByteArray)
-                    .build()
-        }
+        data = AdvertiseData.Builder()
+                .setIncludeDeviceName(false)
+                .setIncludeTxPowerLevel(true)
+                .addServiceUuid(pUuid)
+                .addManufacturerData(1023, serviceDataByteArray)
+                .build()
 
         try {
             CentralLog.d(TAG, "Start advertising")

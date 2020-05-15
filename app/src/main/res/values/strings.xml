@@ -20,19 +20,21 @@
     <string name="service_ok_title">COVIDSafe is active</string>
     <string name="service_ok_body"> Keep COVIDSafe active when you leave home or are in public places.</string>
 
-    <string name="service_not_ok_title">Make sure COVIDSafe is active</string>
-    <string name="service_not_ok_body">COVIDSafe is currently inactive. Make sure it’s active before you leave home and when in public places.</string>
+    <string name="service_not_ok_title">COVIDSafe is not active</string>
+    <string name="service_not_ok_body">Make sure COVIDSafe is active before you leave home or when in public places.</string>
     <string name="service_not_ok_action">Check app now</string>
 
     <!-- OnBoarding Intro -->
     <string name="intro_headline">Together we can stop the spread of COVID-19</string>
+    <string name="intro_headline_content_description">Heading, Together we can stop the spread of COVID-19</string>
     <string name="intro_content">COVIDSafe has been developed by the Australian Government to help keep the community safe from the spread of coronavirus.\n\nCOVIDSafe will securely note contact that you have with other users of the app. This will allow state and territory health officials to contact you, if you have been in close contact with someone who has tested positive to the virus.\n\nTogether we can help stop the spread and stay healthy.</string>
     <string name="intro_disclaimer_data">Please head to <a href="https://www.australia.gov.au/">aus.gov.au</a> for the latest Coronavirus news</string>
     <string name="intro_button">I want to help</string>
 
     <!-- OnBoarding How it works -->
     <string name="how_it_works_headline">How COVIDSafe works</string>
-    <string name="how_it_works_content">Bluetooth® signals are used to determine when you\'re near another COVIDSafe user.\n\nEvery instance of close contact between you and other COVIDSafe users is noted to create close contact information. The information is encrypted and only stored in your phone.\n\nIf you test positive to COVID-19 as a COVIDSafe user, a state ot territory health official will contact you. They will assist with voluntary upload of your close contact information to a highly secure information storage system\n\nState or territory health officials can also contact you if you came in close contact with another COVIDSafe user who tested positive.\n\nFor more information please refer to the <a href="https://www.covidsafe.gov.au/help-topics.html">Help Topics</a> page</string>
+    <string name="how_it_works_headline_content_description">Heading, How COVIDSafe works</string>
+    <string name="how_it_works_content">Bluetooth® signals are used to determine when you\'re near another COVIDSafe user.\n\nEvery instance of close contact between you and other COVIDSafe users is noted to create close contact information. The information is encrypted and only stored in your phone.\n\nIf you test positive to COVID-19 as a COVIDSafe user, a state or territory health official will contact you. They will assist with voluntary upload of your close contact information to a highly secure information storage system\n\nState or territory health officials can also contact you if you came in close contact with another COVIDSafe user who tested positive.\n\nFor more information please refer to the <a href="https://www.covidsafe.gov.au/help-topics.html">Help Topics</a> page</string>
     <string name="how_it_works_consent">Your consent will always be requested if health tracing is required.</string>
     <string name="how_it_works_privacy">Read our <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">Privacy Notice</a></string>
     <string name="how_it_works_terms_conditions">Read our <a href="https://www.covidsafe.gov.au/terms-and-conditions">Terms and conditions</a></string>
@@ -40,6 +42,7 @@
 
     <!-- OnBoarding Data Privcay -->
     <string name="data_privacy_headline">Registration and privacy</string>
+    <string name="data_privacy_headline_content_description">Heading, Registration and privacy</string>
     <string name="data_privacy_content">It is important that you read the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> before you register for COVIDSafe.\n\nIf you are under 16 years of age, your parent/guardian must also read the <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a>.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, <a href="https://www.covidsafe.gov.au/help-topics.html">you may also ask for your information</a> to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name, mobile number, age range and postcode.\n\nInformation you submit when you register, and information about your use of COVIDSafe will be collected and stored on a highly secure server.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the time of contact and an anonymous ID code of other COVIDSafe users you come into contact with.\n\nOther COVIDSafe users you come into contact with will record an anonymous ID code and the time of contact with your device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the <a href="https://www.health.gov.au/">Australian Government Department of Health website</a>.\n\nSee the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> for further details about your rights about your information and how it will be handled and shared.</string>
     <string name="data_privacy_button">Next</string>
 
@@ -49,16 +52,20 @@
     <string name="registration_consent_first_paragraph">My registration information to allow contact tracing by state and territory health officials.</string>
     <string name="registration_consent_second_paragraph">My contact information from other COVIDSafe users after they test positive for COVID-19.</string>
     <string name="registration_consent_checkbox">I consent.</string>
-    <string name="registration_consent_button">I agree</string>
+    <string name="registration_consent_button">Continue</string>
 
     <!-- OnBoarding Personal details -->
     <string name="personal_details_headline">Enter your details</string>
-    <string name="personal_details_name_title">Full name</string>
+    <string name="personal_details_headline_content_description">Heading, Enter your details</string>
+    <string name="personal_details_name_title">Full name (First, Last)</string>
     <string name="personal_details_name_hint">Firstname Lastname</string>
-    <string name="personal_details_age_title">Age</string>
+    <string name="personal_details_name_content_description">Enter full name (First, Last)</string>
+    <string name="personal_details_age_title">Age (select)</string>
     <string name="personal_details_age_hint">Age range</string>
+    <string name="personal_details_age_content_description">Select age range</string>
     <string name="personal_details_post_code">Postcode</string>
     <string name="personal_details_post_code_hint">e.g. 2000</string>
+    <string name="personal_details_post_code_content_description">Enter postcode</string>
     <string name="personal_details_disclaimer"><a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a></string>
     <string name="personal_details_post_code_dialog_title">Postcode</string>
     <string name="invalid_post_code">Invalid postcode</string>
@@ -67,6 +74,7 @@
     <string name="personal_details_age_dialog_title">Select your age</string>
     <string name="personal_details_dialog_ok">Select</string>
 
+    <string name="navigation_back_button_content_description">Previous page</string>
     <string name="personal_details_button">Continue</string>
     <string-array name="personal_details_age_array">
         <item>8:0–15</item>
@@ -83,6 +91,7 @@
 
     <!-- OnBoarding Under Sixteen -->
     <string name="under_sixteen_headline">You need the consent of your parent/guardian to proceed</string>
+    <string name="under_sixteen_headline_content_description">Heading, You need the consent of your parent/guardian to proceed</string>
     <string name="under_sixteen_content">I confirm my parent or guardian consents to the Australian Department of Health collecting:</string>
     <string name="under_sixteen_first_paragraph">My registration information to allow contact tracing by state and territory health officials.</string>
     <string name="under_sixteen_second_paragraph">My contact information from other COVIDSafe users after they test positive for COVID-19.</string>
@@ -156,6 +165,10 @@
     <string name="home_set_complete_external_link_been_contacted_title">Has a health official contacted you?</string>
     <string name="home_set_complete_external_link_been_contacted_content">You can only upload your information if you have tested positive.</string>
     <string name="home_set_complete_external_link_app_url">https://www.health.gov.au/resources/apps-and-tools/coronavirus-australia-app</string>
+    <string name="home_set_complete_external_link_help_topics_title">Help topics</string>
+    <string name="home_set_complete_external_link_help_topics_content">If you have issues or questions about the app.</string>
+
+
     <string name="home_version_number">Version Number:%s</string>
     <string name="action_report_an_issue">Report an issue</string>
 

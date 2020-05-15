@@ -1,5 +1,7 @@
 # COVIDSafe app
 
+# Please report any security vulnerabilities using the details from [https://covidsafe.gov.au/.well-known/security.txt](https://covidsafe.gov.au/.well-known/security.txt) 
+
 # [Terms and Conditions for access to COVIDSafe App code](https://github.com/AU-COVIDSafe/mobile-android/blob/master/LICENSE.md)
 By accessing the App Code I accept and agree to the following terms:
 

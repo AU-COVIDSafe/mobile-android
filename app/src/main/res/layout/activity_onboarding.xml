@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_up" />
+        app:navigationIcon="@drawable/ic_up"
+        app:navigationContentDescription="@string/navigation_back_button_content_description"/>
 
     <fragment
         android:id="@+id/fragment_nav_host"

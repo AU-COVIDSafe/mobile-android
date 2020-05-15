@@ -14,8 +14,7 @@
         android:id="@+id/external_links_top_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/keyline_4"
-        android:layout_marginRight="@dimen/keyline_4"
+        android:layout_margin="@dimen/keyline_4"
         app:layout_constraintTop_toBottomOf="@+id/cards_top_barrier"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="6dp"
@@ -32,7 +31,6 @@
                 android:id="@+id/home_setup_complete_share"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/keyline_4"
                 android:background="@color/white"
                 android:minHeight="@dimen/external_link_height"
                 app:external_linkCard_content="@string/home_set_complete_external_link_share_content"
@@ -66,9 +64,7 @@
         android:id="@+id/external_links_bottom_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/keyline_4"
-        android:layout_marginTop="@dimen/keyline_5"
-        android:layout_marginRight="@dimen/keyline_4"
+        android:layout_margin="@dimen/keyline_4"
         app:layout_constraintTop_toBottomOf="@+id/external_links_top_card"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="6dp"
@@ -106,6 +102,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:minHeight="@dimen/external_link_height"
+                android:paddingTop="@dimen/keyline_0"
+                android:paddingBottom="@dimen/keyline_0"
                 app:external_linkCard_content="@string/home_set_complete_external_link_news_content"
                 app:external_linkCard_icon="@drawable/ic_home_news"
                 app:external_linkCard_icon_background="@drawable/background_circular_dark_cerulean_1"
@@ -114,5 +112,27 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/help_topics_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/external_links_bottom_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/help_topics_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            app:external_linkCard_title="@string/home_set_complete_external_link_help_topics_title"
+            app:external_linkCard_content="@string/home_set_complete_external_link_help_topics_content"
+            app:external_linkCard_icon="@drawable/ic_question_circle" />
+    </androidx.cardview.widget.CardView>
 </merge>
 

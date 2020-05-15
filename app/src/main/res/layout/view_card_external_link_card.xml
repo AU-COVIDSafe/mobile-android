@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/external_link_round_image"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="@dimen/keyline_5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/keyline_4"
         android:background="@drawable/background_circular_dark_cerulean_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/external_link_headline" />
@@ -22,20 +22,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/keyline_4"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/external_link_space"
+        app:layout_constraintBottom_toTopOf="@+id/external_link_content"
         app:layout_constraintEnd_toStartOf="@+id/next"
         app:layout_constraintStart_toEndOf="@+id/external_link_round_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="@string/home_set_complete_external_link_app_title" />
-
-    <Space
-        android:id="@+id/external_link_space"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/keyline_1"
-        app:layout_constraintBottom_toTopOf="@+id/external_link_content"
-        app:layout_constraintTop_toBottomOf="@+id/external_link_headline"
-        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/external_link_content"
@@ -47,7 +39,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/next"
         app:layout_constraintStart_toEndOf="@+id/external_link_round_image"
-        app:layout_constraintTop_toBottomOf="@+id/external_link_space"
+        app:layout_constraintTop_toBottomOf="@+id/external_link_headline"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="@string/home_set_complete_external_link_app_content" />
 

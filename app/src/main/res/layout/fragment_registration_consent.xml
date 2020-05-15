@@ -63,7 +63,11 @@
             android:id="@+id/registration_consent_checkbox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/keyline_8"
             android:text="@string/registration_consent_checkbox"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/keyline_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registration_consent_second_paragraph" />

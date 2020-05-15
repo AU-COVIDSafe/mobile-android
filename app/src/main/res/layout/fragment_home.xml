@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/lighter_green"
+            android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="@+id/header_background_overlap"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,6 +35,8 @@
             android:layout_marginTop="@dimen/keyline_7"
             android:layout_marginRight="@dimen/keyline_4"
             android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/title_help"
+            android:accessibilityTraversalAfter="@id/home_header_setup_complete_header"
             android:src="@drawable/ic_help_outline_black"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="push_card_view,external_links_bottom_card" />
+            app:constraint_referenced_ids="push_card_view, help_topics_card" />
 
         <TextView
             android:id="@+id/home_version_number"

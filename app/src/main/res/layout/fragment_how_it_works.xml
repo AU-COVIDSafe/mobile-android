@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_6"
             android:text="@string/how_it_works_headline"
+            android:contentDescription="@string/how_it_works_headline_content_description"
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_6"
             android:text="@string/under_sixteen_headline"
+            android:contentDescription="@string/under_sixteen_headline_content_description"
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,10 @@
             android:id="@+id/under_sixteen_checkbox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/keyline_8"
+            android:textSize="18sp"
             android:text="@string/under_sixteen_further_checkbox"
+            android:layout_marginTop="@dimen/keyline_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/under_sixteen_second_paragraph" />

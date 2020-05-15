@@ -7,7 +7,12 @@ import android.bluetooth.le.ScanFilter
 import android.bluetooth.le.ScanSettings
 import android.content.Context
 import android.os.ParcelUuid
+import android.util.Base64
+import android.util.Base64.decode
+import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.bluetooth.BLEScanner.FilterConstant.APPLE_MANUFACTURER_ID
+import au.gov.health.covidsafe.bluetooth.BLEScanner.FilterConstant.BACKGROUND_IOS_SERVICE_UUID
 import au.gov.health.covidsafe.logging.CentralLog
 import java.util.*
 import kotlin.collections.ArrayList
@@ -15,13 +20,18 @@ import kotlin.properties.Delegates
 
 class BLEScanner constructor(context: Context, uuid: String, reportDelay: Long) {
 
+    object FilterConstant {
+        const val APPLE_MANUFACTURER_ID = 76
+        val BACKGROUND_IOS_SERVICE_UUID: ByteArray = decode(BuildConfig.IOS_BACKGROUND_UUID, Base64.DEFAULT)
+    }
+
     private var serviceUUID: String by Delegates.notNull()
     private var context: Context by Delegates.notNull()
     private var scanCallback: ScanCallback? = null
     private var reportDelay: Long by Delegates.notNull()
 
     private var scanner: BluetoothLeScanner? =
-        BluetoothAdapter.getDefaultAdapter().bluetoothLeScanner
+            BluetoothAdapter.getDefaultAdapter().bluetoothLeScanner
 
     private val TAG = "BLEScanner"
 
@@ -32,17 +42,26 @@ class BLEScanner constructor(context: Context, uuid: String, reportDelay: Long) 
     }
 
     fun startScan(scanCallback: ScanCallback) {
-        val filter = ScanFilter.Builder()
-            .setServiceUuid(ParcelUuid(UUID.fromString(serviceUUID)))
-            .build()
+        val serviceUUIDFilter = ScanFilter.Builder()
+                .setServiceUuid(ParcelUuid(UUID.fromString(serviceUUID)))
+                .build()
+
+        val backgroundedIPhoneFilter = ScanFilter.Builder()
+                .setServiceUuid(null)
+                .setManufacturerData(
+                        APPLE_MANUFACTURER_ID,
+                        BACKGROUND_IOS_SERVICE_UUID
+                )
+                .build()
 
         val filters: ArrayList<ScanFilter> = ArrayList()
-        filters.add(filter)
+        filters.add(serviceUUIDFilter)
+        filters.add(backgroundedIPhoneFilter)
 
         val settings = ScanSettings.Builder()
-            .setReportDelay(reportDelay)
-            .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
-            .build()
+                .setReportDelay(reportDelay)
+                .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                .build()
 
         this.scanCallback = scanCallback
         scanner = scanner ?: BluetoothAdapter.getDefaultAdapter().bluetoothLeScanner
@@ -58,8 +77,8 @@ class BLEScanner constructor(context: Context, uuid: String, reportDelay: Long) 
             }
         } catch (e: Throwable) {
             CentralLog.e(
-                TAG,
-                "unable to stop scanning - callback null or bluetooth off? : ${e.localizedMessage}"
+                    TAG,
+                    "unable to stop scanning - callback null or bluetooth off? : ${e.localizedMessage}"
             )
         }
     }

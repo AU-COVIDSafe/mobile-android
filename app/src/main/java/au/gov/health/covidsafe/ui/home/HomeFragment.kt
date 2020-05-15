@@ -99,6 +99,9 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         home_setup_complete_app.setOnClickListener {
             goToCovidApp()
         }
+        help_topics_link.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
+        }
 
         if (!mIsBroadcastListenerRegistered) {
             registerBroadcast()
@@ -115,6 +118,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         home_setup_complete_share.setOnClickListener(null)
         home_setup_complete_news.setOnClickListener(null)
         home_setup_complete_app.setOnClickListener(null)
+        help_topics_link.setOnClickListener(null)
         activity?.let { activity ->
             if (mIsBroadcastListenerRegistered) {
                 activity.unregisterReceiver(mBroadcastListener)

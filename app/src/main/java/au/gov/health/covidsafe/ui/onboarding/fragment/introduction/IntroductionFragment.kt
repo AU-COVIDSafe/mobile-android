@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
@@ -19,6 +20,13 @@ class IntroductionFragment : PagerChildFragment() {
 
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.intro_button) {
         navigateTo(R.id.action_introFragment_to_howItWorksFragment)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // set accessibility focus to the title "Together we can stop ..."
+        intro_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     override fun updateButtonState() {

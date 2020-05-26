@@ -27,16 +27,6 @@
         android:theme="@style/MyTheme.DayNight"
         android:networkSecurityConfig="@xml/network_security_config">
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
-
         <activity
             android:name="au.gov.health.covidsafe.SplashActivity"
             android:configChanges="keyboardHidden"
@@ -58,9 +48,6 @@
             android:name="au.gov.health.covidsafe.HomeActivity"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="au.gov.health.covidsafe.SelfIsolationDoneActivity"
-            android:screenOrientation="portrait" />
 
         <receiver android:name="au.gov.health.covidsafe.boot.StartOnBootReceiver">
             <intent-filter>
@@ -74,16 +61,6 @@
             android:foregroundServiceType="location" />
 
         <service android:name="au.gov.health.covidsafe.services.SensorMonitoringService" />
-
-        <activity
-            android:name="au.gov.health.covidsafe.PeekActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyTheme.DayNightDebug"/>
-
-        <activity
-            android:name="au.gov.health.covidsafe.PlotActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/MyTheme.DayNightDebug" />
 
         <receiver android:name="au.gov.health.covidsafe.receivers.UpgradeReceiver">
             <intent-filter>

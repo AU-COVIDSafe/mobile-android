@@ -23,16 +23,16 @@ data class CentralDevice(
 
 @Parcelize
 data class ConnectionRecord(
-    val version: Int,
+        val version: Int,
 
-    val msg: String,
-    val org: String,
+        val msg: String,
+        val org: String,
 
-    val peripheral: PeripheralDevice,
-    val central: CentralDevice,
+        val peripheral: PeripheralDevice,
+        val central: CentralDevice,
 
-    var rssi: Int,
-    var txPower: Int?
+        var rssi: Int,
+        var txPower: Int?
 ) : Parcelable {
     override fun toString(): String {
         return "Central ${central.modelC} - ${central.address} ---> Peripheral ${peripheral.modelP} - ${peripheral.address}"

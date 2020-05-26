@@ -9,6 +9,9 @@ import au.gov.health.covidsafe.Utils
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.streetpass.CentralDevice
 import au.gov.health.covidsafe.streetpass.ConnectionRecord
+import au.gov.health.covidsafe.streetpass.persistence.Encryption
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import java.util.*
 import kotlin.properties.Delegates
 
@@ -19,6 +22,9 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
 
     private var serviceUUID: UUID by Delegates.notNull()
     var bluetoothGattServer: BluetoothGattServer? = null
+
+    val gson: Gson = GsonBuilder().disableHtmlEscaping().create()
+
 
     init {
         bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
@@ -69,12 +75,18 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                 if (serviceUUID == characteristic?.uuid) {
 
                     if (Utils.bmValid(context)) {
+                        val peripheral = TracerApp.asPeripheralDevice()
+                        val readRequest = ReadRequestEncryptedPayload(peripheral.modelP,
+                                TracerApp.thisDeviceMsg())
+                        val plainRecord = gson.toJson(readRequest)
+                        val plainRecordByteArray = plainRecord.toByteArray(Charsets.UTF_8)
+                        val remoteBlob = Encryption.encryptPayload(plainRecordByteArray)
                         val base = readPayloadMap.getOrPut(device.address, {
                             ReadRequestPayload(
-                                v = TracerApp.protocolVersion,
-                                msg = TracerApp.thisDeviceMsg(),
-                                org = TracerApp.ORG,
-                                peripheral = TracerApp.asPeripheralDevice()
+                                    v = TracerApp.protocolVersion,
+                                    msg = remoteBlob,
+                                    org = TracerApp.ORG,
+                                    modelP = null //This is going to be stored as empty in the db as DUMMY value
                             ).getPayload()
                         })
 
@@ -113,6 +125,8 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
             }
 
         }
+
+        inner class ReadRequestEncryptedPayload (val modelP : String, val msg: String)
 
 
         override fun onCharacteristicWriteRequest(

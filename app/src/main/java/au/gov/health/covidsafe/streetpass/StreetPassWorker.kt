@@ -16,8 +16,16 @@ import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.services.BluetoothMonitoringService
 import au.gov.health.covidsafe.services.BluetoothMonitoringService.Companion.blacklistDuration
 import au.gov.health.covidsafe.services.BluetoothMonitoringService.Companion.maxQueueTime
+import au.gov.health.covidsafe.streetpass.persistence.Encryption
+
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_DEVICE
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_RSSI
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_TXPOWER
+
+import com.google.gson.GsonBuilder
 import java.util.*
 import java.util.concurrent.PriorityBlockingQueue
+
 @Keep
 class StreetPassWorker(val context: Context) {
 
@@ -38,6 +46,9 @@ class StreetPassWorker(val context: Context) {
 
     private var currentPendingConnection: Work? = null
     private var localBroadcastManager: LocalBroadcastManager = LocalBroadcastManager.getInstance(context)
+
+    private val gson = GsonBuilder().disableHtmlEscaping().create()
+
 
     val onWorkTimeoutListener = object : Work.OnWorkTimeoutListener {
         override fun onWorkTimeout(work: Work) {
@@ -485,6 +496,10 @@ class StreetPassWorker(val context: Context) {
                     service?.let {
                         val characteristic = service.getCharacteristic(serviceUUID)
                         if (characteristic != null) {
+                            // Attempt to prevent bonding should the StreetPass characteristic
+                            // require authentication or encryption
+                            StreetPassPairingFix.bypassAuthenticationRetry(gatt)
+
                             val readSuccess = gatt.readCharacteristic(characteristic)
                             CentralLog.i(
                                     TAG,
@@ -587,18 +602,30 @@ class StreetPassWorker(val context: Context) {
             if (Utils.bmValid(context)) {
                 //may have failed to read, can try to write
                 //we are writing as the central device
+
                 val thisCentralDevice = TracerApp.asCentralDevice()
+                val plainRecord = gson.toJson(EncryptedWriteRequestPayload(
+                        thisCentralDevice.modelC,
+                        work.connectable.rssi,
+                        work.connectable.transmissionPower,
+                        TracerApp.thisDeviceMsg())).toByteArray(Charsets.UTF_8)
+                val remoteBlob = Encryption.encryptPayload(plainRecord)
 
                 val writedata = WriteRequestPayload(
                         v = TracerApp.protocolVersion,
-                        msg = TracerApp.thisDeviceMsg(),
+                        msg = remoteBlob,
                         org = TracerApp.ORG,
-                        modelC = thisCentralDevice.modelC,
-                        rssi = work.connectable.rssi,
-                        txPower = work.connectable.transmissionPower
+                        modelC = DUMMY_DEVICE,
+                        rssi = DUMMY_RSSI,
+                        txPower = DUMMY_TXPOWER
                 )
 
                 characteristic.value = writedata.getPayload()
+
+                // Attempt to prevent bonding should the StreetPass characteristic
+                // require authentication or encryption
+                StreetPassPairingFix.bypassAuthenticationRetry(gatt)
+
                 val writeSuccess = gatt.writeCharacteristic(characteristic)
                 CentralLog.i(
                         TAG,
@@ -613,6 +640,8 @@ class StreetPassWorker(val context: Context) {
                 endWorkConnection(gatt)
             }
         }
+
+        inner class EncryptedWriteRequestPayload(val modelC: String, val rssi: Int, val txPower: Int?, val msg : String)
 
         override fun onCharacteristicWrite(
                 gatt: BluetoothGatt,

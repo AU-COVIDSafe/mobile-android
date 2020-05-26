@@ -1,10 +1,13 @@
 package au.gov.health.covidsafe.ui.home
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.content.*
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -25,6 +28,10 @@ import kotlinx.android.synthetic.main.fragment_home_setup_complete_header.*
 import kotlinx.android.synthetic.main.fragment_home_setup_incomplete_content.*
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
+import java.text.SimpleDateFormat
+import java.util.*
+
+private const val FOURTEEN_DAYS_IN_MILLIS = 14 * 24 * 60 * 60 * 1000L
 
 class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
@@ -107,6 +114,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
             registerBroadcast()
         }
         refreshSetupCompleteOrIncompleteUi()
+
+        home_header_no_bluetooth_pairing.movementMethod = LinkMovementMethod.getInstance()
     }
 
     override fun onPause() {
@@ -132,71 +141,82 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         home_root.removeAllViews()
     }
 
-    private fun refreshSetupCompleteOrIncompleteUi() {
-        val isUploaded = context?.let {
-            Preference.isDataUploaded(it)
-        } ?: run {
-            false
-        }
-        home_been_tested_button.visibility = if (isUploaded) GONE else VISIBLE
-        when {
-            !allPermissionsEnabled() -> {
-                home_header_setup_complete_header_uploaded.visibility = GONE
-                home_header_setup_complete_header_divider.visibility = GONE
-                home_header_setup_complete_header.setText(R.string.home_header_inactive_title)
-                home_header_picture_setup_complete.setImageResource(R.drawable.ic_logo_home_inactive)
-                home_header_help.setImageResource(R.drawable.ic_help_outline_black)
-                context?.let { context ->
-                    val backGroundColor = ContextCompat.getColor(context, R.color.grey)
-                    header_background.setBackgroundColor(backGroundColor)
-                    header_background_overlap.setBackgroundColor(backGroundColor)
+    private fun isDataUploadedInPast14Days(context: Context): Boolean {
+        val isUploaded = Preference.isDataUploaded(context)
 
-                    val textColor = ContextCompat.getColor(context, R.color.slack_black)
-                    home_header_setup_complete_header_uploaded.setTextColor(textColor)
-                    home_header_setup_complete_header.setTextColor(textColor)
+        if (!isUploaded) {
+            return false
+        }
+
+        val millisSinceDataUploaded = System.currentTimeMillis() - Preference.getDataUploadedDateMs(context)
+        return (millisSinceDataUploaded < FOURTEEN_DAYS_IN_MILLIS)
+    }
+
+    private fun getDataUploadDateHtmlString(context: Context): String {
+        val dataUploadedDateMillis = Preference.getDataUploadedDateMs(context)
+        val format = SimpleDateFormat("d MMM yyyy", Locale.ENGLISH)
+        val dateString = format.format(Date(dataUploadedDateMillis))
+        return "<b>$dateString</b>"
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun refreshSetupCompleteOrIncompleteUi() {
+        context?.let {
+            val isAllPermissionsEnabled = allPermissionsEnabled()
+            val isDataUploadedInPast14Days = isDataUploadedInPast14Days(it)
+
+            val line1 = it.getString(
+                    if (isAllPermissionsEnabled) {
+                        R.string.home_header_active_title
+                    } else {
+                        R.string.home_header_inactive_title
+                    }
+            )
+
+            val line2 = if (isDataUploadedInPast14Days) {
+                "<br/><br/>" + it.getString(R.string.home_header_uploaded_on_date, getDataUploadDateHtmlString(it))
+            } else {
+                ""
+            }
+
+            val line3 = "<br/>" + it.getString(
+                    if (isAllPermissionsEnabled) {
+                        R.string.home_header_active_no_action_required
+                    } else {
+                        R.string.home_header_inactive_check_your_permissions
+                    }
+            )
+
+            val headerHtmlText = "$line1$line2$line3"
+
+            home_header_setup_complete_header.text =
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                        Html.fromHtml(headerHtmlText, Html.FROM_HTML_MODE_COMPACT)
+                    } else {
+                        Html.fromHtml(headerHtmlText)
+                    }
+
+            if (isAllPermissionsEnabled) {
+                home_header_picture_setup_complete.setAnimation("spinner_home.json")
+                content_setup_incomplete_group.visibility = GONE
+                ContextCompat.getColor(it, R.color.lighter_green).let { bgColor ->
+                    header_background.setBackgroundColor(bgColor)
+                    header_background_overlap.setBackgroundColor(bgColor)
                 }
+            } else {
+                home_header_picture_setup_complete.setImageResource(R.drawable.ic_logo_home_inactive)
                 content_setup_incomplete_group.visibility = VISIBLE
                 updateBlueToothStatus()
                 updatePushNotificationStatus()
                 updateBatteryOptimizationStatus()
                 updateLocationStatus()
-            }
-            isUploaded -> {
-                home_header_setup_complete_header_uploaded.visibility = VISIBLE
-                home_header_setup_complete_header_divider.visibility = VISIBLE
-                home_header_setup_complete_header.setText(R.string.home_header_active_title)
-                home_header_picture_setup_complete.setImageResource(R.drawable.ic_logo_home_uploaded)
-                home_header_picture_setup_complete.setAnimation("spinner_home_upload_complete.json")
-                home_header_help.setImageResource(R.drawable.ic_help_outline_white)
-                content_setup_incomplete_group.visibility = GONE
-                context?.let { context ->
-                    val backGroundColor = ContextCompat.getColor(context, R.color.dark_green)
-                    header_background.setBackgroundColor(backGroundColor)
-                    header_background_overlap.setBackgroundColor(backGroundColor)
-
-                    val textColor = ContextCompat.getColor(context, R.color.white)
-                    home_header_setup_complete_header_uploaded.setTextColor(textColor)
-                    home_header_setup_complete_header.setTextColor(textColor)
+                ContextCompat.getColor(it, R.color.grey).let { bgColor ->
+                    header_background.setBackgroundColor(bgColor)
+                    header_background_overlap.setBackgroundColor(bgColor)
                 }
             }
 
-            else -> {
-                home_header_setup_complete_header_uploaded.visibility = GONE
-                home_header_setup_complete_header_divider.visibility = GONE
-                home_header_setup_complete_header.setText(R.string.home_header_active_title)
-                home_header_help.setImageResource(R.drawable.ic_help_outline_black)
-                home_header_picture_setup_complete.setAnimation("spinner_home.json")
-                content_setup_incomplete_group.visibility = GONE
-                context?.let { context ->
-                    val backGroundColor = ContextCompat.getColor(context, R.color.lighter_green)
-                    header_background.setBackgroundColor(backGroundColor)
-                    header_background_overlap.setBackgroundColor(backGroundColor)
-
-                    val textColor = ContextCompat.getColor(context, R.color.slack_black)
-                    home_header_setup_complete_header_uploaded.setTextColor(textColor)
-                    home_header_setup_complete_header.setTextColor(textColor)
-                }
-            }
+            home_been_tested_button.visibility = if (isDataUploadedInPast14Days) GONE else VISIBLE
         }
     }
 

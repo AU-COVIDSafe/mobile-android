@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import androidx.core.os.bundleOf
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.ui.PagerChildFragment
@@ -46,6 +47,9 @@ class VerifyUploadPinFragment : PagerChildFragment() {
             updateButtonState()
             hideInvalidOtp()
         }
+
+        // set accessibility focus to the title
+        header.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     override fun onPause() {

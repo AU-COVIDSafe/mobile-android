@@ -16,12 +16,6 @@ class RecordListAdapter internal constructor(context: Context) :
     private var records = emptyList<StreetPassRecordViewModel>() // Cached copy of records
     private var sourceData = emptyList<StreetPassRecord>()
 
-    enum class MODE {
-        ALL, COLLAPSE, MODEL_P, MODEL_C
-    }
-
-    private var mode = MODE.ALL
-
     inner class RecordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val modelCView: TextView = itemView.findViewById(R.id.modelc)
         val modelPView: TextView = itemView.findViewById(R.id.modelp)
@@ -59,78 +53,16 @@ class RecordListAdapter internal constructor(context: Context) :
 
         holder.txpowerView.text = "Tx Power: ${current.transmissionPower}"
 
-        holder.filterModelP.setOnClickListener {
-            val model = it.tag as StreetPassRecordViewModel
-            setMode(MODE.MODEL_P, model)
-        }
-
-        holder.filterModelC.setOnClickListener {
-            val model = it.tag as StreetPassRecordViewModel
-            setMode(MODE.MODEL_C, model)
-        }
     }
 
-    private fun filter(sample: StreetPassRecordViewModel?): List<StreetPassRecordViewModel> {
-        return when (mode) {
-            MODE.COLLAPSE -> prepareCollapsedData(sourceData)
-
-            MODE.ALL -> prepareViewData(sourceData)
-
-            MODE.MODEL_P -> filterByModelP(sample, sourceData)
-
-            MODE.MODEL_C -> filterByModelC(sample, sourceData)
-
-            else -> {
-                prepareViewData(sourceData)
-            }
-        }
+    private fun setRecords(records: List<StreetPassRecordViewModel>) {
+        this.records = records
+        notifyDataSetChanged()
     }
 
-    private fun filterByModelC(
-            model: StreetPassRecordViewModel?,
-            words: List<StreetPassRecord>
-    ): List<StreetPassRecordViewModel> {
-        if (model != null) {
-            return prepareViewData(words.filter { it.modelC == model.modelC })
-        }
-        return prepareViewData(words)
-    }
-
-    private fun filterByModelP(
-            model: StreetPassRecordViewModel?,
-            words: List<StreetPassRecord>
-    ): List<StreetPassRecordViewModel> {
-
-        if (model != null) {
-            return prepareViewData(words.filter { it.modelP == model.modelP })
-        }
-        return prepareViewData(words)
-    }
-
-
-    private fun prepareCollapsedData(words: List<StreetPassRecord>): List<StreetPassRecordViewModel> {
-        //we'll need to count the number of unique device IDs
-        val countMap = words.groupBy {
-            it.modelC
-        }
-
-        val distinctAddresses = words.distinctBy { it.modelC }
-
-        return distinctAddresses.map { record ->
-            val count = countMap[record.modelC]?.size
-
-            count?.let { count ->
-                val mostRecentRecord = countMap[record.modelC]?.maxBy { it.timestamp }
-
-                if (mostRecentRecord != null) {
-                    return@map StreetPassRecordViewModel(mostRecentRecord, count)
-                }
-
-                return@map StreetPassRecordViewModel(record, count)
-            }
-            //fallback - unintended
-            return@map StreetPassRecordViewModel(record)
-        }
+    internal fun setSourceData(records: List<StreetPassRecord>) {
+        this.sourceData = records
+        setRecords(prepareViewData(this.sourceData))
     }
 
     private fun prepareViewData(words: List<StreetPassRecord>): List<StreetPassRecordViewModel> {
@@ -142,27 +74,6 @@ class RecordListAdapter internal constructor(context: Context) :
                 return@map StreetPassRecordViewModel(streetPassRecord)
             }
         }
-    }
-
-    fun setMode(mode: MODE) {
-        setMode(mode, null)
-    }
-
-    private fun setMode(mode: MODE, model: StreetPassRecordViewModel?) {
-        this.mode = mode
-
-        val list = filter(model)
-        setRecords(list)
-    }
-
-    private fun setRecords(records: List<StreetPassRecordViewModel>) {
-        this.records = records
-        notifyDataSetChanged()
-    }
-
-    internal fun setSourceData(records: List<StreetPassRecord>) {
-        this.sourceData = records
-        setMode(mode)
     }
 
     override fun getItemCount() = records.size

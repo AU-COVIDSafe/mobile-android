@@ -20,6 +20,7 @@
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/upload_step_verify_pin_header"
+            android:contentDescription="@string/upload_step_verify_pin_header_content_description"
             app:layout_constraintBottom_toTopOf="@+id/subHeader"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

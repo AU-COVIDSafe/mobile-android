@@ -58,6 +58,14 @@ abstract class PagerChildFragment : BaseFragment() {
 
 sealed class UploadButtonLayout {
     class ContinueLayout(@StringRes val buttonText: Int, val buttonListener: (() -> Unit)?) : UploadButtonLayout()
+
+    class TwoChoiceContinueLayout(
+            @StringRes val primaryButtonText: Int,
+            val primaryButtonListener: (() -> Unit)?,
+            @StringRes val secondaryButtonText: Int,
+            val secondaryButtonListener: (() -> Unit)?
+            ) : UploadButtonLayout()
+
     class QuestionLayout(val buttonYesListener: () -> Unit, val buttonNoListener: () -> Unit) : UploadButtonLayout()
 }
 

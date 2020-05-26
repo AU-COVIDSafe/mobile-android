@@ -21,7 +21,26 @@
         app:layout_constraintHeight_percent="0.33"
         />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatTextView
+        style="?textAppearanceBody2"
+        android:id="@+id/splash_migration_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_2"
+        android:layout_marginLeft="@dimen/keyline_2"
+        android:layout_marginRight="@dimen/keyline_2"
+        android:text="@string/migration_in_progress"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_screen_crest"
+        app:layout_constraintBottom_toTopOf="@+id/splash_screen_logo"
+        tools:text="@string/migration_in_progress"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/splash_screen_logo"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -32,8 +51,11 @@
         app:layout_constraintBottom_toTopOf="@+id/help_stop_covid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splash_screen_crest"
-        app:layout_constraintVertical_chainStyle="spread" />
+        app:layout_constraintTop_toBottomOf="@+id/splash_migration_text"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="true"
+        app:lottie_speed="1"/>
 
     <ImageView
         android:id="@+id/help_stop_covid"

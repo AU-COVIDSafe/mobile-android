@@ -1,23 +1,28 @@
 package au.gov.health.covidsafe
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import au.gov.health.covidsafe.ui.onboarding.OnboardingActivity
+import au.gov.health.covidsafe.ui.splash.SplashNavigationEvent
+import au.gov.health.covidsafe.ui.splash.SplashViewModel
+import au.gov.health.covidsafe.ui.splash.SplashViewModelFactory
+import kotlinx.android.synthetic.main.activity_splash.*
 import java.util.*
 
 class SplashActivity : AppCompatActivity() {
 
-    private val SPLASH_TIME: Long = 2000
+    private lateinit var viewModel: SplashViewModel
 
     private var retryProviderInstall: Boolean = false
     private val ERROR_DIALOG_REQUEST_CODE = 1
-
-    private var updateFlag = false
 
     private lateinit var mHandler: Handler
 
@@ -26,10 +31,21 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         hideSystemUI()
         mHandler = Handler()
+        viewModel = ViewModelProvider(this, SplashViewModelFactory(this)).get(SplashViewModel::class.java)
 
-        Preference.putDeviceID(this, Settings.Secure.getString(this.contentResolver,
-                Settings.Secure.ANDROID_ID))
+        Preference.putDeviceID(this, Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID))
 
+        viewModel.splashNavigationLiveData.observe(this, Observer {
+            when (it) {
+                is SplashNavigationEvent.GoToNextScreen -> goToNextScreen()
+                is SplashNavigationEvent.ShowMigrationScreen -> migrationScreen()
+            }
+        })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.setupUI()
     }
 
     override fun onPause() {
@@ -37,30 +53,23 @@ class SplashActivity : AppCompatActivity() {
         mHandler.removeCallbacksAndMessages(null)
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (!updateFlag) {
-            mHandler.postDelayed({
-                goToNextScreen()
-                finish()
-            }, SPLASH_TIME)
-        }
+    private fun migrationScreen() {
+        splash_screen_logo.setImageResource(R.drawable.ic_logo_home_inactive)
+        splash_screen_logo.setAnimation("spinner_migrating_db.json")
+        splash_screen_logo.playAnimation()
+        splash_migration_text.visibility = VISIBLE
+        help_stop_covid.visibility = GONE
     }
 
     private fun goToNextScreen() {
-        val dateUploaded = Calendar.getInstance().also {
-            it.timeInMillis = Preference.getDataUploadedDateMs(this)
-        }
-        val fourteenDaysAgo = Calendar.getInstance().also {
-            it.add(Calendar.DATE, -14)
-        }
         startActivity(Intent(this, if (!Preference.isOnBoarded(this)) {
             OnboardingActivity::class.java
-        } else if (dateUploaded.before(fourteenDaysAgo)) {
-            SelfIsolationDoneActivity::class.java
         } else {
             HomeActivity::class.java
         }))
+        viewModel.splashNavigationLiveData.removeObservers(this)
+        viewModel.release()
+        finish()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -79,4 +88,6 @@ class SplashActivity : AppCompatActivity() {
                         or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         or View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
+
 }
+

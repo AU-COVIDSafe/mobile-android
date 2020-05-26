@@ -11,23 +11,14 @@ class StreetPassRecord(
         @ColumnInfo(name = "v")
         var v: Int,
 
-        @ColumnInfo(name = "msg")
-        var msg: String,
-
         @ColumnInfo(name = "org")
         var org: String,
 
-        @ColumnInfo(name = "modelP")
-        val modelP: String,
+        @ColumnInfo(name = "localBlob")
+        val localBlob: String,
 
-        @ColumnInfo(name = "modelC")
-        val modelC: String,
-
-        @ColumnInfo(name = "rssi")
-        val rssi: Int,
-
-        @ColumnInfo(name = "txPower")
-        val txPower: Int?
+        @ColumnInfo(name = "remoteBlob")
+        val remoteBlob: String
 
 ) {
 
@@ -39,7 +30,7 @@ class StreetPassRecord(
     var timestamp: Long = System.currentTimeMillis()
 
     override fun toString(): String {
-        return "StreetPassRecord(v=$v, msg='$msg', org='$org', modelP='$modelP', modelC='$modelC', rssi=$rssi, txPower=$txPower, id=$id, timestamp=$timestamp)"
+        return "StreetPassRecord(v=$v, , org='$org', id=$id, timestamp=$timestamp,localBlob=$localBlob, remoteBlob=$remoteBlob)"
     }
 
 }

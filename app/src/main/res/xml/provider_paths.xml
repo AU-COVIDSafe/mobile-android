@@ -1,3 +1,4 @@
 <paths>
     <files-path name="root" path="."/>
+    <files-path name="databases" path="../databases/"/>
 </paths>

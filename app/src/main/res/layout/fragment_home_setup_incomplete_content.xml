@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/keyline_4"
         android:layout_marginRight="@dimen/keyline_4"
+        android:layout_marginTop="@dimen/keyline_7"
         app:layout_constraintTop_toBottomOf="@+id/header_barrier"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="6dp"
@@ -28,7 +29,6 @@
             android:id="@+id/home_setup_incomplete_permissions_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_4"
             android:orientation="vertical">
 
             <TextView

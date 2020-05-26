@@ -104,7 +104,21 @@
         android:label="PermissionFragment"
         tools:layout="@layout/fragment_permission">
         <action
-            android:id="@+id/action_permissionFragment_to_permissionSuccessFragment"
+            android:id="@+id/action_permissionFragment_to_permissionDeviceNameFragment"
+            app:destination="@id/permissionDeviceNameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionDeviceNameFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.permission.PermissionDeviceNameFragment"
+        android:label="PermissionDeviceNameFragment"
+        tools:layout="@layout/fragment_permission_device_name">
+        <action
+            android:id="@+id/action_permissionDeviceNameFragment_to_permissionSuccessFragment"
             app:destination="@id/permissionSuccessFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"

@@ -33,7 +33,7 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
     }
 
     override val navigationIcon: Int? = R.drawable.ic_up
-    override var stepProgress: Int? = 5
+    override var stepProgress: Int? = 4
 
     private var navigationStarted = false
 
@@ -58,7 +58,7 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
     private fun navigateToNextPage() {
         navigationStarted = false
         if (hasAllPermissionsAndBluetoothOn()) {
-            navigateTo(R.id.action_permissionFragment_to_permissionSuccessFragment)
+            navigateTo(R.id.action_permissionFragment_to_permissionDeviceNameFragment )
         } else {
             navigateToMainActivity()
         }

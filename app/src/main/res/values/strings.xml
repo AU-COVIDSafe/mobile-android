@@ -17,12 +17,12 @@
     <string name="share_this_app_content">Join me in stopping the spread of COVID-19! Download COVIDSafe, an app from the Australian Government. #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
     <string name="share_this_app_content_html">Join me in stopping the spread of COVID-19! Download <a href="https://covidsafe.gov.au">COVIDSafe</a>>, an app from the Australian Government. #COVID19 #coronavirusaustralia #stayhomesavelives <a href="https://covidsafe.gov.au">covidsafe.gov.au</a></string>
 
-    <string name="service_ok_title">COVIDSafe is active</string>
-    <string name="service_ok_body"> Keep COVIDSafe active when you leave home or are in public places.</string>
-
     <string name="service_not_ok_title">COVIDSafe is not active</string>
     <string name="service_not_ok_body">Make sure COVIDSafe is active before you leave home or when in public places.</string>
     <string name="service_not_ok_action">Check app now</string>
+
+    <!-- Splash Screen -->
+    <string name="migration_in_progress"> COVIDSafe update in progress. \n\n Please make sure you phone is not switched off until the update is complete.</string>
 
     <!-- OnBoarding Intro -->
     <string name="intro_headline">Together we can stop the spread of COVID-19</string>
@@ -40,7 +40,7 @@
     <string name="how_it_works_terms_conditions">Read our <a href="https://www.covidsafe.gov.au/terms-and-conditions">Terms and conditions</a></string>
     <string name="how_it_works_button">Next</string>
 
-    <!-- OnBoarding Data Privcay -->
+    <!-- OnBoarding Data Privacy -->
     <string name="data_privacy_headline">Registration and privacy</string>
     <string name="data_privacy_headline_content_description">Heading, Registration and privacy</string>
     <string name="data_privacy_content">It is important that you read the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> before you register for COVIDSafe.\n\nIf you are under 16 years of age, your parent/guardian must also read the <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a>.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, <a href="https://www.covidsafe.gov.au/help-topics.html">you may also ask for your information</a> to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name, mobile number, age range and postcode.\n\nInformation you submit when you register, and information about your use of COVIDSafe will be collected and stored on a highly secure server.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the time of contact and an anonymous ID code of other COVIDSafe users you come into contact with.\n\nOther COVIDSafe users you come into contact with will record an anonymous ID code and the time of contact with your device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the <a href="https://www.health.gov.au/">Australian Government Department of Health website</a>.\n\nSee the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> for further details about your rights about your information and how it will be handled and shared.</string>
@@ -57,11 +57,9 @@
     <!-- OnBoarding Personal details -->
     <string name="personal_details_headline">Enter your details</string>
     <string name="personal_details_headline_content_description">Heading, Enter your details</string>
-    <string name="personal_details_name_title">Full name (First, Last)</string>
-    <string name="personal_details_name_hint">Firstname Lastname</string>
-    <string name="personal_details_name_content_description">Enter full name (First, Last)</string>
-    <string name="personal_details_age_title">Age (select)</string>
-    <string name="personal_details_age_hint">Age range</string>
+    <string name="personal_details_name_title">Full name</string>
+    <string name="personal_details_name_content_description">Enter full name</string>
+    <string name="personal_details_age_title">Age range (select)</string>
     <string name="personal_details_age_content_description">Select age range</string>
     <string name="personal_details_post_code">Postcode</string>
     <string name="personal_details_post_code_hint">e.g. 2000</string>
@@ -119,20 +117,40 @@
 
     <!-- OnBoarding Permission -->
     <string name="permission_headline">App permissions</string>
-    <string name="permission_content">COVIDSafe needs Bluetooth® and notifications enabled to work.\n\nSelect ‘Proceed’ to enable:\n\n1. Bluetooth®\n\n2. Location Permissions\n\n3. Battery Optimiser\n\n\nAndroid needs Location Permissions for Bluetooth® to work.</string>
+    <string name="permission_content">COVIDSafe needs Bluetooth® and notifications enabled to work.\n\nSelect ‘Proceed’ to:\n\n1. Enable Bluetooth®\n\n2. Allow Location permissions\n\n3. Disable Battery optimisation\n\n\nAndroid needs Location Permissions for Bluetooth® to work.\n\nCOVIDSafe does not send pairing requests.</string>
     <string name="permission_button">Proceed</string>
     <string name="permission_location_rationale">Android requires location access to enable Bluetooth® functions for COVIDSafe. COVIDSafe cannot work properly without it</string>
 
+    <!-- Onboarding Change Device Name -->
+    <string name="change_device_name_headline">Your device name</string>
+    <string name="change_device_name_headline_content_description">Heading, Your device name</string>
+    <string name="change_device_name_content_line_1">The current name of your device is %s.</string>
+    <string name="change_device_name_content_line_2">Other Bluetooth® devices around you will be able to see this name. You may like to consider making the device name anonymous.</string>
+    <string name="change_device_name_new_device_name">New device name</string>
+    <string name="change_device_name_default_device_name">Android phone</string>
+    <string name="change_device_name_primary_action">Change and continue</string>
+    <string name="change_device_name_secondary_action">Skip and keep as it is</string>
+
     <!-- OnBoarding Permission Success-->
     <string name="permission_success_headline">You\'ve successfully registered</string>
-    <string name="permission_success_content">1. Keep your phone with you when you leave home.\n\n2. Keep the app running.\n\n3. Keep Bluetooth® on.</string>
+    <string name="permission_success_content">
+        1. When you leave home, keep your phone with you and make sure COVIDSafe is active.\n\n
+        2. Bluetooth® should be kept ON.\n\n
+        3. Battery optimisation should be OFF.\n\n
+        4. COVIDSafe does not send pairing requests. <a href="https://www.covidsafe.gov.au/help-topics.html#bluetooth-pairing-request">Learn more</a>.
+    </string>
+
     <string name="permission_success_warning">Keep push notifications on for COVIDSafe so we can notify you quickly if the app isn\'t working properly.</string>
     <string name="permission_success_button">Continue</string>
 
     <!-- Home -->
-    <string name="home_header_active_title">COVIDSafe is active.\nNo further action is required.</string>
-    <string name="home_header_inactive_title">COVIDSafe is not active.\nCheck your permissions.</string>
-    <string name="home_header_uploaded_title">Thank you for helping stop the spread of COVID-19. Your information has been uploaded.</string>
+    <string name="home_header_active_title">COVIDSafe is active.</string>
+    <string name="home_header_active_no_action_required">No further action required.</string>
+    <string name="home_header_inactive_title">COVIDSafe is not active.</string>
+    <string name="home_header_inactive_check_your_permissions">Check your permissions.</string>
+    <string name="home_header_uploaded_on_date">Your information was uploaded on %s.</string>
+    <string name="home_header_no_pairing">COVIDSafe does not send <a href="https://www.covidsafe.gov.au/help-topics.html#bluetooth-pairing-request">pairing requests</a>.</string>
+
     <string name="home_bluetooth_permission">Bluetooth®: %s</string>
     <string name="home_non_battery_optimization_permission">Battery optimization: %s</string>
     <string name="home_location_permission">Location: %s</string>
@@ -168,7 +186,6 @@
     <string name="home_set_complete_external_link_help_topics_title">Help topics</string>
     <string name="home_set_complete_external_link_help_topics_content">If you have issues or questions about the app.</string>
 
-
     <string name="home_version_number">Version Number:%s</string>
     <string name="action_report_an_issue">Report an issue</string>
 
@@ -177,22 +194,24 @@
     <string name="upload_answer_no">No</string>
 
     <string name="upload_step_1_header">Is a health official asking you to upload your information?</string>
+    <string name="upload_step_1_header_content_description">Heading, Is a health official asking you to upload your information?</string>
     <string name="upload_step_1_body">Only if you test positive to COVID-19 will a state or territory health official contact you to assist with voluntary upload of your information.\n\nOnce you press ‘Yes’ you’ll need to provide consent to upload your information. </string>
 
     <string name="upload_step_4_header">Upload consent</string>
+    <string name="upload_step_4_header_content_description">Heading, Upload consent</string>
     <string name="upload_step_4_sub_header">Unless you consent, your close contact information will not be uploaded.\n\nIf you consent, your close contact information will be uploaded and shared with state or territory health officials for contact tracing purposes.\n\nRead the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> for further details.</string>
     <string name='upload_consent'>I consent to upload my information</string>
     <string name="upload_step_verify_pin_header">Upload your information</string>
+    <string name="upload_step_verify_pin_header_content_description">Heading, Upload your information</string>
     <string name="upload_step_verify_pin_sub_header">A state or territory health official will send a PIN to your device via text message. Enter it below to upload your information.</string>
     <string name="action_verify_upload_pin">Upload my information</string>
     <string name="action_verify_invalid_pin">Invalid PIN, please ask the health official to send you another PIN.</string>
 
     <string name="upload_finished_header">Thank you for helping to stop the spread of COVID-19!</string>
+    <string name="upload_finished_header_content_description">Heading, Thank you for helping to stop the spread of COVID-19!</string>
     <string name="upload_finished_sub_header">You have successfully uploaded your information to the COVIDSafe highly secure storage system.\n\nState or territory health officials will notify other COVIDSafe users that have recorded instances of close contact with you. Your identity will remain anonymous to other users.</string>
 
     <string name="action_continue">Continue</string>
-    <string name="action_agree">I agree</string>
-    <string name="action_got_it">Got it</string>
 
     <string name="action_upload_your_data">Upload your data</string>
     <string name="action_upload_done">Continue</string>

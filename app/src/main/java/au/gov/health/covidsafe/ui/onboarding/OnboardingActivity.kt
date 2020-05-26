@@ -65,10 +65,28 @@ class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer 
     }
 
     override fun refreshButton(updateButtonLayout: UploadButtonLayout) {
-        if (updateButtonLayout is UploadButtonLayout.ContinueLayout) {
-            onboarding_next.setText(updateButtonLayout.buttonText)
-            onboarding_next.setOnClickListener {
-                updateButtonLayout.buttonListener?.invoke()
+        when (updateButtonLayout) {
+            is UploadButtonLayout.ContinueLayout -> {
+                onboarding_next.setText(updateButtonLayout.buttonText)
+                onboarding_next.setOnClickListener {
+                    updateButtonLayout.buttonListener?.invoke()
+                }
+
+                onboarding_next_secondary.visibility = GONE
+            }
+
+            is UploadButtonLayout.TwoChoiceContinueLayout -> {
+                onboarding_next.setText(updateButtonLayout.primaryButtonText)
+                onboarding_next.setOnClickListener {
+                    updateButtonLayout.primaryButtonListener?.invoke()
+                }
+
+                onboarding_next_secondary.setText(updateButtonLayout.secondaryButtonText)
+                onboarding_next_secondary.setOnClickListener {
+                    updateButtonLayout.secondaryButtonListener?.invoke()
+                }
+
+                onboarding_next_secondary.visibility = VISIBLE
             }
         }
     }

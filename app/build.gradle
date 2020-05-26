@@ -35,16 +35,25 @@ android {
         applicationId "au.gov.health.covidsafe"
         resValue "string", "build_config_package", "au.gov.health.covidsafe"
         minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 17
-        versionName "1.0.17"
+         /*
+        TargetSdk is currently set to 28 because we are using a greylisted api in SDK 29
+        Before you increase the targetSdkVersion make sure that all its usage are still working
+         */
+        targetSdkVersion 28
+        versionCode 18
+        versionName "1.0.18"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = ["room.schemaLocation":
-                                     "$projectDir/schemas".toString()]
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+        sourceSets {
+            androidTest {
+                androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
             }
         }
 
@@ -91,6 +100,7 @@ android {
             buildConfigField "String", "END_POINT_PREFIX", TEST_END_POINT_PREFIX
             buildConfigField "String", "BASE_URL", TEST_BASE_URL
             buildConfigField "String", "IOS_BACKGROUND_UUID", DEBUG_BACKGROUND_IOS_SERVICE_UUID
+            buildConfigField "String", "ENCRYPTION_PUBLIC_KEY", DEBUG_ENCRYPTION_PUBLIC_KEY
 
 
             String ssid = STAGING_SERVICE_UUID
@@ -106,6 +116,8 @@ android {
             buildConfigField "String", "END_POINT_PREFIX", STAGING_END_POINT_PREFIX
             buildConfigField "String", "BASE_URL", STAGING_BASE_URL
             buildConfigField "String", "IOS_BACKGROUND_UUID", STAGING_BACKGROUND_IOS_SERVICE_UUID
+            buildConfigField "String", "ENCRYPTION_PUBLIC_KEY", STAGING_ENCRYPTION_PUBLIC_KEY
+
 
 
 
@@ -130,6 +142,8 @@ android {
             buildConfigField "String", "END_POINT_PREFIX", PRODUCTION_END_POINT_PREFIX
             buildConfigField "String", "BASE_URL", PROD_BASE_URL
             buildConfigField "String", "IOS_BACKGROUND_UUID", PRODUCTION_BACKGROUND_IOS_SERVICE_UUID
+            buildConfigField "String", "ENCRYPTION_PUBLIC_KEY", PRODUCTION_ENCRYPTION_PUBLIC_KEY
+
 
 
             debuggable false
@@ -147,6 +161,14 @@ android {
             }
             signingConfig signingConfigs.release
 
+        }
+    }
+
+    sourceSets {
+        staging {
+            java.srcDirs = ['src/debug/java']
+            res.srcDirs = ['src/debug/res']
+            manifest.srcFile 'src/debug/AndroidManifest.xml'
         }
     }
 
@@ -219,4 +241,7 @@ dependencies {
     implementation "androidx.security:security-crypto:1.0.0-beta01"
     implementation "androidx.lifecycle:lifecycle-service:2.2.0"
     implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
+
+    androidTestImplementation "androidx.room:room-testing:2.2.5"
+
 }

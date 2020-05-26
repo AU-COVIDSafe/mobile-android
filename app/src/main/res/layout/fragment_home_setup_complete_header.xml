@@ -27,39 +27,6 @@
         app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete" />
 
     <TextView
-        android:id="@+id/home_header_setup_complete_header_uploaded"
-        style="?textAppearanceBody1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingLeft="@dimen/keyline_5"
-        android:paddingRight="@dimen/keyline_5"
-        android:text="@string/home_header_uploaded_title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete_space" />
-
-    <View
-        android:id="@+id/home_header_setup_complete_header_divider"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/keyline_4"
-        android:layout_marginBottom="@dimen/keyline_4"
-        android:background="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header_uploaded"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/home_header_setup_complete_header_uploaded_2"
-        style="?textAppearanceBody1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="home_header_setup_complete_header_divider,home_header_picture_setup_complete_space" />
-
-    <TextView
         android:id="@+id/home_header_setup_complete_header"
         style="?textAppearanceBody1"
         android:layout_width="wrap_content"
@@ -72,13 +39,26 @@
         android:text="@string/home_header_active_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header_uploaded_2" />
+        app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete_space" />
+
+    <TextView
+        android:id="@+id/home_header_no_bluetooth_pairing"
+        style="?textAppearanceBody1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_4"
+        android:paddingLeft="@dimen/keyline_5"
+        android:paddingRight="@dimen/keyline_5"
+        android:gravity="center_horizontal"
+        android:text="@string/home_header_no_pairing"
+        android:textColorLink="@color/slack_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header" />
 
     <Space
         android:id="@+id/home_header_label_setup_complete_subtitle_bottom_space"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/keyline_7"
-        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header" />
-
-
+        android:layout_height="@dimen/keyline_0"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_no_bluetooth_pairing" />
 </merge>

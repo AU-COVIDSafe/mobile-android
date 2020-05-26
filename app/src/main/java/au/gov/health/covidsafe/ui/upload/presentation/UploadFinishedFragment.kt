@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
@@ -16,6 +17,13 @@ class UploadFinishedFragment : PagerChildFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_upload_finished, container, false)
+
+    override fun onResume() {
+        super.onResume()
+
+        // set accessibility focus to the title
+        header.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+    }
 
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.action_upload_done) {
         activity?.onBackPressed()

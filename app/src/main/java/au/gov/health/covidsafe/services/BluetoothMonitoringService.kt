@@ -11,9 +11,7 @@ import android.os.PowerManager
 import androidx.annotation.Keep
 import androidx.lifecycle.LifecycleService
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.Preference
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.*
 import au.gov.health.covidsafe.bluetooth.BLEAdvertiser
 import au.gov.health.covidsafe.bluetooth.gatt.ACTION_RECEIVED_STATUS
 import au.gov.health.covidsafe.bluetooth.gatt.ACTION_RECEIVED_STREETPASS
@@ -31,8 +29,17 @@ import au.gov.health.covidsafe.streetpass.ConnectionRecord
 import au.gov.health.covidsafe.streetpass.StreetPassScanner
 import au.gov.health.covidsafe.streetpass.StreetPassServer
 import au.gov.health.covidsafe.streetpass.StreetPassWorker
+import au.gov.health.covidsafe.streetpass.persistence.Encryption
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecord
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_DEVICE
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_RSSI
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_TXPOWER
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.ENCRYPTED_EMPTY_DICT
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.VERSION_ONE
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordStorage
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -40,6 +47,7 @@ import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.EasyPermissions
 import java.lang.ref.WeakReference
 import kotlin.coroutines.CoroutineContext
+
 @Keep
 class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
@@ -74,6 +82,9 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
     private lateinit var localBroadcastManager: LocalBroadcastManager
 
     private val awsClient = NetworkFactory.awsClient
+
+    private val gson: Gson = GsonBuilder().disableHtmlEscaping().create()
+
 
     /** Defines callbacks for service binding, passed to bindService()  */
     private val connection = object : ServiceConnection {
@@ -550,13 +561,13 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         override fun onReceive(context: Context, intent: Intent) {
 
             if (ACTION_RECEIVED_STREETPASS == intent.action) {
-                val connRecord: ConnectionRecord = intent.getParcelableExtra(STREET_PASS)
+                val connRecord: ConnectionRecord? = intent.getParcelableExtra(STREET_PASS)
                 CentralLog.d(
                         TAG,
                         "StreetPass received: $connRecord"
                 )
 
-                if (connRecord.msg.isNotEmpty()) {
+                if (connRecord != null && connRecord.msg.isNotEmpty()) {
 
                     if (mBound) {
                         val proximity = mService.proximity
@@ -567,23 +578,44 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
                         )
                     }
 
+                    val remoteBlob: String = if (connRecord.version == VERSION_ONE) {
+                        with(receiver = connRecord) {
+                        val plainRecordByteArray = gson.toJson(StreetPassRecordDatabase.Companion.EncryptedRecord(
+                                peripheral.modelP, central.modelC, rssi, txPower, msg = msg))
+                                .toByteArray(Charsets.UTF_8)
+                                Encryption.encryptPayload(plainRecordByteArray)
+                        }
+                    } else {
+                        //For version after version 1, the message is already encrypted in msg and we can store it as remote BLOB
+                        connRecord.msg
+                    }
+                    val localBlob : String = if (connRecord.version == VERSION_ONE) {
+                        ENCRYPTED_EMPTY_DICT
+                    } else {
+                        with (receiver = connRecord) {
+                            val modelP = if (DUMMY_DEVICE == peripheral.modelP) null else peripheral.modelP
+                            val modelC = if (DUMMY_DEVICE == central.modelC) null else central.modelC
+                            val rssi = if (rssi == DUMMY_RSSI) null else rssi
+                            val txPower = if (txPower == DUMMY_TXPOWER) null else txPower
+                            val plainLocalBlob = gson.toJson(LocalBlobV2(modelP, modelC, rssi, txPower))
+                                    .toByteArray(Charsets.UTF_8)
+                            Encryption.encryptPayload(plainLocalBlob)
+                        }
+                    }
+
                     val record = StreetPassRecord(
-                            v = connRecord.version,
-                            msg = connRecord.msg,
+                            v = if (connRecord.version == 1) TracerApp.protocolVersion else (connRecord.version),
                             org = connRecord.org,
-                            modelP = connRecord.peripheral.modelP,
-                            modelC = connRecord.central.modelC,
-                            rssi = connRecord.rssi,
-                            txPower = connRecord.txPower
+                            localBlob = localBlob,
+                            remoteBlob = remoteBlob
                     )
 
+                    launch {
+                        CentralLog.d(
+                                TAG,
+                                "Coroutine - Saving StreetPassRecord: ${Utils.getDate(record.timestamp)} $record")
 
-                  launch{
-                            CentralLog.d(
-                            TAG,
-                            "Coroutine - Saving StreetPassRecord: ${Utils.getDate(record.timestamp)} $record")
-
-                            streetPassRecordStorage.saveRecord(record)
+                        streetPassRecordStorage.saveRecord(record)
                     }
                 }
             }

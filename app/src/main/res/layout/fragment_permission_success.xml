@@ -40,6 +40,7 @@
             android:paddingStart="@dimen/keyline_5"
             android:paddingEnd="@dimen/keyline_5"
             android:text="@string/permission_success_content"
+            android:textColorLink="?attr/colorPrimary"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

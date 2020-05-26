@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/keyline_7"
     tools:context=".ui.onboarding.OnboardingActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -69,7 +70,18 @@
         android:layout_marginStart="@dimen/keyline_5"
         android:layout_marginTop="@dimen/keyline_5"
         android:layout_marginEnd="@dimen/keyline_5"
-        android:layout_marginBottom="@dimen/keyline_7"
         android:text="@string/intro_button" />
+
+    <TextView
+        android:id="@+id/onboarding_next_secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/keyline_5"
+        android:layout_marginTop="@dimen/keyline_5"
+        android:layout_marginEnd="@dimen/keyline_5"
+        android:gravity="center_horizontal"
+        android:text="@string/change_device_name_new_device_name"
+        android:textAppearance="?textAppearanceBody1"
+        android:textColor="@color/dark_green"/>
 
 </LinearLayout>

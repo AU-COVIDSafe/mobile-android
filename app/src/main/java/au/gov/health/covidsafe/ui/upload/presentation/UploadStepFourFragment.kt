@@ -6,6 +6,7 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
@@ -30,7 +31,11 @@ class UploadStepFourFragment : PagerChildFragment() {
         upload_consent_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
             updateButtonState()
         }
+
+        // set accessibility focus to the title
+        header.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
+
     override fun updateButtonState() {
         if (upload_consent_checkbox.isChecked) {
             enableContinueButton()
@@ -42,7 +47,7 @@ class UploadStepFourFragment : PagerChildFragment() {
     override val navigationIcon: Int? = R.drawable.ic_up
 
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(
-            R.string.action_agree) {
+            R.string.action_continue) {
         navigateToVerifyUploadPin()
     }
 

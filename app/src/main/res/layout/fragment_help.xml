@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topInset"
         app:layout_constraintWidth_default="wrap"
+        app:navigationContentDescription="@string/navigation_back_button_content_description"
         app:navigationIcon="@drawable/ic_up"
         app:title="@string/title_help">
 

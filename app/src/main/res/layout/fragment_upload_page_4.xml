@@ -18,7 +18,9 @@
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
             android:textAppearance="?textAppearanceHeadline2"
-            android:text="@string/upload_step_4_header"/>
+            android:text="@string/upload_step_4_header"
+            android:contentDescription="@string/upload_step_4_header_content_description"
+            />
 
         <TextView
             android:id="@+id/subHeader"

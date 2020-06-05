@@ -32,6 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:paddingTop="@dimen/keyline_0"
+                android:paddingBottom="@dimen/keyline_0"
                 android:minHeight="@dimen/external_link_height"
                 app:external_linkCard_content="@string/home_set_complete_external_link_share_content"
                 app:external_linkCard_icon="@drawable/ic_home_share"
@@ -52,6 +54,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:minHeight="@dimen/external_link_height"
+                android:paddingTop="@dimen/keyline_0"
+                android:paddingBottom="@dimen/keyline_0"
                 app:external_linkCard_content="@string/home_set_complete_external_link_been_contacted_content"
                 app:external_linkCard_icon="@drawable/ic_upload_icon"
                 app:external_linkCard_icon_background="@drawable/background_circular_green"
@@ -83,6 +87,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:minHeight="@dimen/external_link_height"
+                android:paddingTop="@dimen/keyline_0"
+                android:paddingBottom="@dimen/keyline_0"
                 app:external_linkCard_content="@string/home_set_complete_external_link_app_content"
                 app:external_linkCard_icon="@drawable/ic_home_news"
                 app:external_linkCard_icon_background="@drawable/background_circular_black"
@@ -130,9 +136,11 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:minHeight="@dimen/external_link_height"
-            app:external_linkCard_title="@string/home_set_complete_external_link_help_topics_title"
+            android:paddingTop="@dimen/keyline_0"
+            android:paddingBottom="@dimen/keyline_0"
             app:external_linkCard_content="@string/home_set_complete_external_link_help_topics_content"
-            app:external_linkCard_icon="@drawable/ic_question_circle" />
+            app:external_linkCard_icon="@drawable/ic_question_circle"
+            app:external_linkCard_title="@string/home_set_complete_external_link_help_topics_title" />
     </androidx.cardview.widget.CardView>
 </merge>
 

@@ -28,26 +28,20 @@ class UploadStepFourFragment : PagerChildFragment() {
 
     override fun onResume() {
         super.onResume()
-        upload_consent_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateButtonState()
-        }
+        updateButtonState()
 
         // set accessibility focus to the title
         header.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     override fun updateButtonState() {
-        if (upload_consent_checkbox.isChecked) {
-            enableContinueButton()
-        } else {
-            disableContinueButton()
-        }
+        enableContinueButton()
     }
 
     override val navigationIcon: Int? = R.drawable.ic_up
 
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(
-            R.string.action_continue) {
+            R.string.consent_button) {
         navigateToVerifyUploadPin()
     }
 

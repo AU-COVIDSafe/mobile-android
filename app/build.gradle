@@ -34,14 +34,14 @@ android {
     defaultConfig {
         applicationId "au.gov.health.covidsafe"
         resValue "string", "build_config_package", "au.gov.health.covidsafe"
-        minSdkVersion 23
-         /*
-        TargetSdk is currently set to 28 because we are using a greylisted api in SDK 29
+        minSdkVersion 21
+        /*
+        TargetSdk is currently set to 28 because we are using a greylisted api in SDK 29, in order to fix a BLE vulnerability
         Before you increase the targetSdkVersion make sure that all its usage are still working
          */
         targetSdkVersion 28
-        versionCode 18
-        versionName "1.0.18"
+        versionCode 21
+        versionName "1.0.21"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -238,7 +238,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.4.0'
 
     implementation 'com.google.guava:guava:28.2-android'
-    implementation "androidx.security:security-crypto:1.0.0-beta01"
+    implementation "androidx.collection:collection:1.1.0"
+    implementation "com.google.crypto.tink:tink-android:1.4.0-rc2"
     implementation "androidx.lifecycle:lifecycle-service:2.2.0"
     implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
 

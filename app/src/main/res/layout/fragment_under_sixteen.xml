@@ -60,14 +60,13 @@
             app:layout_constraintTop_toBottomOf="@+id/under_sixteen_first_paragraph"
             app:ul_view_text="@string/under_sixteen_second_paragraph" />
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/under_sixteen_checkbox"
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/keyline_8"
-            android:textSize="18sp"
-            android:text="@string/under_sixteen_further_checkbox"
-            android:layout_marginTop="@dimen/keyline_2"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:text="@string/consent_call_for_action"
+            android:textAppearance="?textAppearanceBody1"
+            android:textColorLink="@color/hyperlink_enabled"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/under_sixteen_second_paragraph" />

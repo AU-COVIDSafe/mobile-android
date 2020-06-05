@@ -32,16 +32,14 @@
             android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/upload_step_4_sub_header"/>
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/upload_consent_checkbox"
-            style="?attr/textAppearanceBody1"
-            android:layout_marginStart="@dimen/keyline_4"
+        <TextView
+            style="?attr/textAppearanceBody2"
+            android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_4"
-            android:layout_marginEnd="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/keyline_8"
-            android:text="@string/upload_consent" />
+            android:text="@string/consent_call_for_action" />
     </LinearLayout>
 
 

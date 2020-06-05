@@ -221,7 +221,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun allPermissionsEnabled(): Boolean {
-        val bluetoothEnabled = isBlueToothEnabled() ?: true
+        val bluetoothEnabled = isBlueToothEnabled() ?: false
         val pushNotificationEnabled = isPushNotificationEnabled() ?: true
         val nonBatteryOptimizationAllowed = isNonBatteryOptimizationAllowed() ?: true
         val locationStatusAllowed = isFineLocationEnabled() ?: true

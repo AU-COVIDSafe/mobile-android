@@ -43,16 +43,18 @@
     <!-- OnBoarding Data Privacy -->
     <string name="data_privacy_headline">Registration and privacy</string>
     <string name="data_privacy_headline_content_description">Heading, Registration and privacy</string>
-    <string name="data_privacy_content">It is important that you read the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> before you register for COVIDSafe.\n\nIf you are under 16 years of age, your parent/guardian must also read the <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a>.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, <a href="https://www.covidsafe.gov.au/help-topics.html">you may also ask for your information</a> to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name, mobile number, age range and postcode.\n\nInformation you submit when you register, and information about your use of COVIDSafe will be collected and stored on a highly secure server.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the time of contact and an anonymous ID code of other COVIDSafe users you come into contact with.\n\nOther COVIDSafe users you come into contact with will record an anonymous ID code and the time of contact with your device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the <a href="https://www.health.gov.au/">Australian Government Department of Health website</a>.\n\nSee the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> for further details about your rights about your information and how it will be handled and shared.</string>
+    <string name="data_privacy_content">It is important that you read the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> before you register for COVIDSafe.\n\nIf you are under 16 years of age, your parent/guardian must also read the <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a>.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, <a href="https://www.covidsafe.gov.au/help-topics.html">you may also ask for your information</a> to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name, mobile number, age range and postcode.\n\nInformation you submit when you register, and information about your use of COVIDSafe will be collected and stored on a highly secure server.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the time of contact and an anonymous ID code of other COVIDSafe users you come into contact with.\n\nOther COVIDSafe users you come into contact with will record an anonymous ID code and the time of contact with you on their device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the <a href="https://www.health.gov.au/">Australian Government Department of Health website</a>.\n\nSee the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> for further details about your rights about your information and how it will be handled and shared.</string>
     <string name="data_privacy_button">Next</string>
+
+    <!-- Shared Consent Actions-->
+    <string name="consent_call_for_action">Select \'I agree\' to confirm consent.</string>
+    <string name="consent_button">I agree</string>
 
     <!-- Onboarding Registration Consent -->
     <string name="registration_consent_headline">Registration consent</string>
     <string name="registration_consent_content">I consent to the Australian Department of Health collecting:</string>
-    <string name="registration_consent_first_paragraph">My registration information to allow contact tracing by state and territory health officials.</string>
+    <string name="registration_consent_first_paragraph">My registration information to allow contact tracing by state or territory health officials.</string>
     <string name="registration_consent_second_paragraph">My contact information from other COVIDSafe users after they test positive for COVID-19.</string>
-    <string name="registration_consent_checkbox">I consent.</string>
-    <string name="registration_consent_button">Continue</string>
 
     <!-- OnBoarding Personal details -->
     <string name="personal_details_headline">Enter your details</string>
@@ -93,8 +95,6 @@
     <string name="under_sixteen_content">I confirm my parent or guardian consents to the Australian Department of Health collecting:</string>
     <string name="under_sixteen_first_paragraph">My registration information to allow contact tracing by state and territory health officials.</string>
     <string name="under_sixteen_second_paragraph">My contact information from other COVIDSafe users after they test positive for COVID-19.</string>
-    <string name="under_sixteen_further_checkbox">I confirm.</string>
-    <string name="under_sixteen_button">Continue</string>
 
 
     <!-- OnBoarding Enter Number -->
@@ -125,7 +125,7 @@
     <string name="change_device_name_headline">Your device name</string>
     <string name="change_device_name_headline_content_description">Heading, Your device name</string>
     <string name="change_device_name_content_line_1">The current name of your device is %s.</string>
-    <string name="change_device_name_content_line_2">Other Bluetooth® devices around you will be able to see this name. You may like to consider making the device name anonymous.</string>
+    <string name="change_device_name_content_line_2">Other Bluetooth® devices around you will be able to see this name. We recommend to use a device name that does not include your personal details.</string>
     <string name="change_device_name_new_device_name">New device name</string>
     <string name="change_device_name_default_device_name">Android phone</string>
     <string name="change_device_name_primary_action">Change and continue</string>
@@ -200,7 +200,6 @@
     <string name="upload_step_4_header">Upload consent</string>
     <string name="upload_step_4_header_content_description">Heading, Upload consent</string>
     <string name="upload_step_4_sub_header">Unless you consent, your close contact information will not be uploaded.\n\nIf you consent, your close contact information will be uploaded and shared with state or territory health officials for contact tracing purposes.\n\nRead the COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a> for further details.</string>
-    <string name='upload_consent'>I consent to upload my information</string>
     <string name="upload_step_verify_pin_header">Upload your information</string>
     <string name="upload_step_verify_pin_header_content_description">Heading, Upload your information</string>
     <string name="upload_step_verify_pin_sub_header">A state or territory health official will send a PIN to your device via text message. Enter it below to upload your information.</string>

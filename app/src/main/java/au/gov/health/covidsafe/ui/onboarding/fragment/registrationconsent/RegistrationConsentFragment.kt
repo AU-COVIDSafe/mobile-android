@@ -21,20 +21,15 @@ class RegistrationConsentFragment : PagerChildFragment() {
 
     override fun onResume() {
         super.onResume()
-        registration_consent_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateButtonState()
-        }
 
         // set accessibility focus to the title "I consent to the Australian ..."
         registration_consent_text.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+
+        updateButtonState()
     }
 
     override fun updateButtonState() {
-        if (registration_consent_checkbox.isChecked) {
-            (activity as? PagerContainer)?.enableNextButton()
-        } else {
-            (activity as? PagerContainer)?.disableNextButton()
-        }
+        (activity as? PagerContainer)?.enableNextButton()
     }
 
     override fun onDestroyView() {
@@ -42,7 +37,7 @@ class RegistrationConsentFragment : PagerChildFragment() {
         root.removeAllViews()
     }
 
-    override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.registration_consent_button) {
+    override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.consent_button) {
         navigateTo(RegistrationConsentFragmentDirections.actionRegistrationConsentFragmentToPersonalDetailsFragment().actionId)
     }
 }

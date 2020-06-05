@@ -24,17 +24,10 @@ class UnderSixteenFragment : PagerChildFragment() {
 
     override fun onResume() {
         super.onResume()
-        under_sixteen_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateButtonState()
-        }
+        updateButtonState()
     }
 
-    override fun onPause() {
-        super.onPause()
-        under_sixteen_checkbox.setOnCheckedChangeListener(null)
-    }
-
-    override fun getUploadButtonLayout(): UploadButtonLayout = UploadButtonLayout.ContinueLayout(R.string.under_sixteen_button) {
+    override fun getUploadButtonLayout(): UploadButtonLayout = UploadButtonLayout.ContinueLayout(R.string.consent_button) {
         val bundle = bundleOf(
                 EnterNumberFragment.ENTER_NUMBER_DESTINATION_ID to R.id.action_otpFragment_to_permissionFragment,
                 EnterNumberFragment.ENTER_NUMBER_PROGRESS to 2)
@@ -42,10 +35,6 @@ class UnderSixteenFragment : PagerChildFragment() {
     }
 
     override fun updateButtonState() {
-        if (under_sixteen_checkbox.isChecked) {
-            enableContinueButton()
-        } else {
-            disableContinueButton()
-        }
+        enableContinueButton()
     }
 }

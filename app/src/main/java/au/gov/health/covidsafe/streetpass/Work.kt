@@ -3,20 +3,21 @@ package au.gov.health.covidsafe.streetpass
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothGatt
 import android.content.Context
-import com.google.gson.Gson
+import android.os.Build
 import au.gov.health.covidsafe.logging.CentralLog
+import com.google.gson.Gson
 import kotlin.properties.Delegates
 
 class Work constructor(
-    var device: BluetoothDevice,
-    var connectable: ConnectablePeripheral,
-    private val onWorkTimeoutListener: OnWorkTimeoutListener
+        var device: BluetoothDevice,
+        var connectable: ConnectablePeripheral,
+        private val onWorkTimeoutListener: OnWorkTimeoutListener
 ) : Comparable<Work> {
     var timeStamp: Long by Delegates.notNull()
     var checklist = WorkCheckList()
     var gatt: BluetoothGatt? = null
     var finished = false
-    var timeout : Long = 0
+    var timeout: Long = 0
 
     private val TAG = "Work"
 
@@ -33,10 +34,15 @@ class Work constructor(
     }
 
     fun startWork(
-        context: Context,
-        gattCallback: StreetPassWorker.StreetPassGattCallback
+            context: Context,
+            gattCallback: StreetPassWorker.StreetPassGattCallback
     ) {
-        gatt = device.connectGatt(context, false, gattCallback)
+        gatt = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            device.connectGatt(context, false, gattCallback, BluetoothDevice.TRANSPORT_LE)
+        } else {
+            device.connectGatt(context, false, gattCallback)
+        }
+
         if (gatt == null) {
             CentralLog.e(TAG, "Unable to connect to ${device.address}")
         }

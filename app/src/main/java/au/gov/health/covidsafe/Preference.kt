@@ -9,6 +9,12 @@ import au.gov.health.covidsafe.security.crypto.AESEncryptionForPreAndroidM
 object Preference {
     private const val PREF_ID = "Tracer_pref"
     private const val IS_ONBOARDED = "IS_ONBOARDED"
+    private const val CALLING_CODE = "CALLING_CODE"
+    private const val AUSTRALIA_CALLING_CODE = 61
+    private const val COUNTRY_NAME_RES_ID = "COUNTRY_NAME"
+    private const val AUSTRALIA_COUNTRY_NAME_RES_ID = R.string.country_au
+    private const val NATIONAL_FLAG_RES_ID = "NATIONAL_FLAG_RES_ID"
+    private const val AUSTRALIA_NATIONAL_FLAG_RES_ID = R.drawable.ic_list_country_au
     private const val PHONE_NUMBER = "PHONE_NUMBER"
     private const val HANDSHAKE_PIN = "HANDSHAKE_PIN"
     private const val DEVICE_ID = "DEVICE_ID"
@@ -41,7 +47,7 @@ object Preference {
                 .edit().putString(AES_IV, value)?.apply()
     }
 
-    fun getEncodedAESInitialisationVector(context: Context) : String? {
+    fun getEncodedAESInitialisationVector(context: Context): String? {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .getString(AES_IV, null)
     }
@@ -117,6 +123,43 @@ object Preference {
     fun putPhoneNumber(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .edit().putString(PHONE_NUMBER, value).apply()
+    }
+
+    fun getPhoneNumber(context: Context): String {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                ?.getString(PHONE_NUMBER, "") ?: ""
+    }
+
+    fun putCallingCode(context: Context, value: Int) {
+        context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putInt(CALLING_CODE, value).apply()
+    }
+
+    fun getCallingCode(context: Context): Int {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                ?.getInt(CALLING_CODE, AUSTRALIA_CALLING_CODE) ?: AUSTRALIA_CALLING_CODE
+    }
+
+    fun putCountryNameResID(context: Context, value: Int) {
+        context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putInt(COUNTRY_NAME_RES_ID, value).apply()
+    }
+
+    fun getCountryNameResID(context: Context): Int {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                ?.getInt(COUNTRY_NAME_RES_ID, AUSTRALIA_COUNTRY_NAME_RES_ID)
+                ?: AUSTRALIA_COUNTRY_NAME_RES_ID
+    }
+
+    fun putNationalFlagResID(context: Context, value: Int) {
+        context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putInt(NATIONAL_FLAG_RES_ID, value).apply()
+    }
+
+    fun getNationalFlagResID(context: Context): Int {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                ?.getInt(NATIONAL_FLAG_RES_ID, AUSTRALIA_NATIONAL_FLAG_RES_ID)
+                ?: AUSTRALIA_NATIONAL_FLAG_RES_ID
     }
 
     fun putNextFetchTimeInMillis(context: Context, time: Long) {

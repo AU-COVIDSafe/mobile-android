@@ -1,28 +1,35 @@
 package au.gov.health.covidsafe.ui.onboarding.fragment.enternumber
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.InputFilter
-import android.text.TextWatcher
-import android.text.method.LinkMovementMethod
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
+import android.widget.TextView.OnEditorActionListener
 import androidx.annotation.NavigationRes
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
+import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.TracerApp
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.onboarding.CountryCodeSelectionActivity
+import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_CALLING_CODE
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_CHALLENGE_NAME
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_DESTINATION_ID
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_PHONE_NUMBER
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_PROGRESS
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_SESSION
 import kotlinx.android.synthetic.main.fragment_enter_number.*
-import kotlinx.android.synthetic.main.fragment_enter_number.view.*
 
 class EnterNumberFragment : PagerChildFragment() {
 
@@ -36,30 +43,21 @@ class EnterNumberFragment : PagerChildFragment() {
 
     private val enterNumberPresenter = EnterNumberPresenter(this)
     private var alertDialog: AlertDialog? = null
+
     @NavigationRes
     private var destinationId: Int? = null
 
-    private val phoneNumberTextWatcher: TextWatcher = object : TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-            // change LengthFilter if user making a mistake of entering phone number starting with 0
-            val phoneNumberLength = TracerApp.AppContext.resources.getInteger(R.integer.australian_phone_number_length)
-            val filters = enter_number_phone_number.filters
-            val newFilterLength = if (s?.toString()?.startsWith("0") == true) {
-                phoneNumberLength + 1
-            } else {
-                phoneNumberLength
-            }
-            enter_number_phone_number.filters = filters.filterNot { it is InputFilter.LengthFilter }.toTypedArray() +
-                    InputFilter.LengthFilter(newFilterLength)
+    private lateinit var countryName: String
+    private var callingCode: Int = 0
+    private var nationalFlagResID: Int = 0
 
-            updateButtonState()
-        }
+    private val errorTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.error)
+    private val normalTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.slack_black)
 
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        }
+    private fun updateSelectedCountry() {
+        countryName = getString(Preference.getCountryNameResID(this.requireContext()))
+        callingCode = Preference.getCallingCode(this.requireContext())
+        nationalFlagResID = Preference.getNationalFlagResID(this.requireContext())
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
@@ -67,7 +65,7 @@ class EnterNumberFragment : PagerChildFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.use_oz_phone_number.movementMethod = LinkMovementMethod.getInstance()
+
         arguments?.let {
             destinationId = it.getInt(ENTER_NUMBER_DESTINATION_ID)
             stepProgress = if (it.containsKey(ENTER_NUMBER_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
@@ -76,26 +74,74 @@ class EnterNumberFragment : PagerChildFragment() {
 
     override fun onResume() {
         super.onResume()
-        enter_number_phone_number.selectAll()
-        enter_number_phone_number.addTextChangedListener(phoneNumberTextWatcher)
+
+        updateSelectedCountry()
+
+        enter_number_phone_number.addTextChangedListener {
+            enter_number_phone_number.setTextColor(normalTextColor)
+        }
+
+        enter_number_phone_number.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                    actionId == EditorInfo.IME_ACTION_DONE ||
+                    event != null &&
+                    event.action == KeyEvent.ACTION_DOWN &&
+                    event.keyCode == KeyEvent.KEYCODE_ENTER) {
+
+                if (event == null || !event.isShiftPressed) {
+                    // user has done typing.
+                    updateButtonState()
+                }
+            }
+
+            false // pass on to other listeners.
+        }
+
         updateButtonState()
+        displaySelectedCountryOrRegion()
     }
 
-    override fun onPause() {
-        super.onPause()
-        enter_number_phone_number.removeTextChangedListener(phoneNumberTextWatcher)
+    @SuppressLint("SetTextI18n")
+    private fun displaySelectedCountryOrRegion() {
+        country_name_code.text = "$countryName(+$callingCode)"
+        national_flag.setImageResource(nationalFlagResID)
+
+        country_selection_box.setOnClickListener {
+            startActivity(Intent(this.requireContext(), CountryCodeSelectionActivity::class.java))
+        }
     }
 
-    fun showInvalidPhoneNumber() {
-        invalid_phone_number.visibility = VISIBLE
+    private fun hideInvalidPhoneNumberPrompt() {
+        enter_number_headline.setTextColor(normalTextColor)
+        enter_number_phone_number.background = context?.getDrawable(R.drawable.edittext_modified_states)
+        enter_number_phone_number.setTextColor(normalTextColor)
+        invalid_phone_number.visibility = GONE
+    }
+
+    fun showInvalidPhoneNumberPrompt(errorMessageResID: Int) {
+        enter_number_headline.setTextColor(errorTextColor)
         enter_number_phone_number.background = context?.getDrawable(R.drawable.phone_number_invalid_background)
+        enter_number_phone_number.setTextColor(errorTextColor)
+        invalid_phone_number.visibility = VISIBLE
+        invalid_phone_number.setText(errorMessageResID)
     }
 
     override fun updateButtonState() {
-        if (enterNumberPresenter.validateAuNumber(enter_number_phone_number?.text?.toString())) {
+        val phoneNumberValidity = enterNumberPresenter.validatePhoneNumber(
+                callingCode,
+                enter_number_phone_number.text.toString().trim()
+        )
+
+        if (phoneNumberValidity.first) {
             enableContinueButton()
+
+            hideInvalidPhoneNumberPrompt()
         } else {
             disableContinueButton()
+
+            if (enter_number_phone_number.text.toString().isNotEmpty()) {
+                showInvalidPhoneNumberPrompt(phoneNumberValidity.second)
+            }
         }
     }
 
@@ -110,10 +156,12 @@ class EnterNumberFragment : PagerChildFragment() {
     fun navigateToOTPPage(
             session: String?,
             challengeName: String?,
+            callingCode: Int,
             phoneNumber: String) {
         val bundle = bundleOf(
                 ENTER_PIN_SESSION to session,
                 ENTER_PIN_CHALLENGE_NAME to challengeName,
+                ENTER_PIN_CALLING_CODE to callingCode,
                 ENTER_PIN_PHONE_NUMBER to phoneNumber,
                 ENTER_PIN_DESTINATION_ID to destinationId).also { bundle ->
             stepProgress?.let {
@@ -130,7 +178,7 @@ class EnterNumberFragment : PagerChildFragment() {
     }
 
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.enter_number_button) {
-        enterNumberPresenter.requestOTP(enter_number_phone_number.text.toString().trim())
+        enterNumberPresenter.requestOTP(callingCode, enter_number_phone_number.text.toString().trim())
     }
 
     fun showCheckInternetError() {

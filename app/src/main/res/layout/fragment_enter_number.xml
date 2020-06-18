@@ -12,41 +12,97 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/enter_number_headline"
+            android:id="@+id/enter_number_page_headline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginEnd="@dimen/keyline_5"
             android:gravity="center_vertical"
             android:text="@string/enter_number_headline"
             android:textAppearance="?textAppearanceHeadline2"
-            android:layout_marginStart="@dimen/keyline_5"
-            android:layout_marginEnd="@dimen/keyline_5"
+            android:textSize="28sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/enter_number_prefix"
-            android:layout_width="wrap_content"
+            android:id="@+id/select_country_or_region"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/enter_number_prefix"
-            android:textColor="@color/slack_black"
-            android:textSize="@dimen/text_phone_number"
             android:layout_marginStart="@dimen/keyline_5"
-            app:layout_constraintBottom_toBottomOf="@+id/enter_number_phone_number"
+            android:layout_marginTop="@dimen/keyline_5"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:gravity="center_vertical"
+            android:text="@string/select_country_or_region"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/enter_number_phone_number" />
+            app:layout_constraintTop_toBottomOf="@+id/enter_number_page_headline" />
+
+        <FrameLayout
+            android:id="@+id/country_selection_box"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:background="@drawable/edit_text_black_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_country_or_region">
+
+            <TextView
+                android:id="@+id/country_name_code"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/keyline_2"
+                android:gravity="start|center_vertical"
+                android:textAppearance="?textAppearanceBody1" />
+
+            <ImageView
+                android:id="@+id/national_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/keyline_6"
+                android:src="@drawable/ic_list_country_au" />
+
+            <ImageView
+                android:layout_width="6dp"
+                android:layout_height="12dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/keyline_4"
+                android:src="@drawable/ic_right" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/enter_number_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_5"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:gravity="center_vertical"
+            android:text="@string/enter_number_headline"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/country_selection_box" />
 
         <EditText
             android:id="@+id/enter_number_phone_number"
             android:layout_width="0dp"
             android:layout_height="@dimen/text_field_height"
-            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_5"
             android:autofillHints="phoneNational"
             android:background="@drawable/edittext_modified_states"
-            android:layout_marginEnd="@dimen/keyline_5"
+            android:digits="0123456789"
             android:inputType="number|phone"
-            android:maxLength="10"
+            android:maxLength="20"
             android:maxLines="1"
             android:paddingStart="@dimen/keyline_1"
             android:paddingEnd="@dimen/keyline_1"
@@ -55,63 +111,40 @@
             android:textColorHighlight="@color/dark_cerulean_3"
             android:textCursorDrawable="@null"
             android:textSize="@dimen/text_phone_number"
-            android:digits="0123456789"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/enter_number_prefix"
-            app:layout_constraintTop_toBottomOf="@+id/enter_number_headline"
-            tools:text="412382192" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/enter_number_barrier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="enter_number_prefix,enter_number_phone_number,invalid_phone_number" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_number_headline" />
 
         <TextView
             android:id="@+id/invalid_phone_number"
             android:layout_width="0dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="@dimen/keyline_1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/invalid_phone_number"
             android:textColor="@color/error"
+            android:textSize="16sp"
             android:visibility="gone"
-            android:layout_marginStart="@dimen/keyline_5"
-            android:layout_marginEnd="@dimen/keyline_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/enter_number_phone_number"
             app:layout_constraintTop_toBottomOf="@+id/enter_number_phone_number"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:text="@string/invalid_phone_number"
-            tools:visibility="visible"
-            />
-
-        <TextView
-            android:id="@+id/use_oz_phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_4"
-            android:layout_marginStart="@dimen/keyline_5"
-            android:layout_marginEnd="@dimen/keyline_5"
-            android:text="@string/oz_phone_number"
-            android:textAppearance="?textAppearanceBody1"
-            android:textColorLink="?attr/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/invalid_phone_number" />
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/enter_number_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/enter_number_content"
-            tools:text="@string/enter_number_content"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/use_oz_phone_number" />
+            app:layout_constraintTop_toBottomOf="@+id/invalid_phone_number"
+            tools:text="@string/enter_number_content" />
 
         <FrameLayout
             android:id="@+id/enter_number_relativebackground"
@@ -143,11 +176,11 @@
             android:id="@+id/enter_number_relative"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_1"
+            android:layout_marginEnd="@dimen/keyline_4"
             android:text="@string/enter_number_relative"
             android:textAppearance="?textAppearanceBody2"
             android:textColor="@color/slack_black"
-            android:layout_marginStart="@dimen/keyline_1"
-            android:layout_marginEnd="@dimen/keyline_4"
             app:layout_constraintEnd_toEndOf="@+id/enter_number_relativebackground"
             app:layout_constraintStart_toEndOf="@+id/enter_number_relative_icon"
             app:layout_constraintTop_toBottomOf="@+id/enter_number_top_margin" />

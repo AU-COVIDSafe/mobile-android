@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.TracerApp
 import kotlinx.android.synthetic.main.view_card_permission_card.view.*
 
 class PermissionStatusCard @JvmOverloads constructor(
@@ -28,10 +31,20 @@ class PermissionStatusCard @JvmOverloads constructor(
         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height)
     }
 
-    fun render(text: String, correct: Boolean) {
+    fun render(title: String, correct: Boolean, body: String? = null) {
+        val errorTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.error)
+        val normalTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.slack_black)
+
         permission_icon.isSelected = correct
-        permission_title.text = text
+        permission_title.text = title
+        permission_title.setTextColor(if (correct) normalTextColor else errorTextColor)
+
+        if (correct || body == null) {
+            permission_body.visibility = View.GONE
+        } else {
+            permission_body.visibility = View.VISIBLE
+            permission_body.text = body
+            permission_body.setTextColor(if (correct) normalTextColor else errorTextColor)
+        }
     }
-
-
 }

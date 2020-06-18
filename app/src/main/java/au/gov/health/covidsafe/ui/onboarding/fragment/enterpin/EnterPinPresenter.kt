@@ -19,6 +19,7 @@ import retrofit2.Response
 class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
                         private var session: String?,
                         private var challengeName: String?,
+                        private val callingCode: Int,
                         private val phoneNumber: String?) : LifecycleObserver {
 
     private val TAG = this.javaClass.simpleName
@@ -45,11 +46,17 @@ class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
                     enterPinFragment.showGenericError()
                 }
                 else -> {
-                    getOtp.invoke(GetOtpParams(phoneNumber,
-                            Preference.getDeviceID(enterPinFragment.requireContext()),
-                            Preference.getPostCode(enterPinFragment.requireContext()),
-                            Preference.getAge(enterPinFragment.requireContext()),
-                            Preference.getName(enterPinFragment.requireContext())),
+                    val context = enterPinFragment.requireContext()
+
+                    getOtp.invoke(
+                            GetOtpParams(
+                                    countryCode = "+$callingCode",
+                                    phoneNumber = phoneNumber,
+                                    deviceId = Preference.getDeviceID(context),
+                                    postCode = Preference.getPostCode(context),
+                                    age = Preference.getAge(context),
+                                    name = Preference.getName(context)
+                            ),
                             onSuccess = {
                                 session = it.session
                                 challengeName = it.challengeName

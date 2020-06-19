@@ -98,7 +98,6 @@ object Encryption {
 
     private val NONCE_PADDING = ByteArray(14) { 0x0E.toByte() }
     private val serverPubKey: PublicKey = readKey()
-    private val symCipher: Cipher = makeSymCipher()
 
     private var cachedEphPubKey: ByteArray? = null
     private var cachedAesKey: SecretKey? = null
@@ -131,6 +130,7 @@ object Encryption {
         // IV = AES(ctr, iv=null), AES(plaintext, iv=IV) === AES(ctr_with_padding || plaintext, iv=null)
         // Using the latter construction to reduce key expansions
         val ivParams = IvParameterSpec(ByteArray(16))  // null IV
+        val symCipher: Cipher = makeSymCipher()
         symCipher.init(Cipher.ENCRYPT_MODE, keys.aesKey, ivParams)
         val ciphertextWithIV: ByteArray = symCipher.doFinal(keys.nonce.plus(NONCE_PADDING).plus(data))
 

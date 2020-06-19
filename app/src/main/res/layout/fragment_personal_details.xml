@@ -11,13 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/keyline_5"
-        android:paddingEnd="@dimen/keyline_5">
+        android:paddingEnd="@dimen/keyline_5"
+        android:paddingBottom="@dimen/keyline_9">
 
         <TextView
             android:id="@+id/personal_details_headline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_6"
+            android:layout_marginTop="@dimen/keyline_0"
             android:text="@string/personal_details_headline"
             android:contentDescription="@string/personal_details_headline_content_description"
             android:textAppearance="?textAppearanceHeadline2"
@@ -61,9 +62,9 @@
         <TextView
             android:id="@+id/personal_details_name_error"
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_1"
-            android:text="@string/invalid_name"
+            android:text="@string/personal_details_name_error_prompt"
             android:textColor="@color/error"
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="parent"
@@ -90,7 +91,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/personal_details_name_barrier" />
 
-        <TextView
+        <EditText
             android:id="@+id/personal_details_age"
             android:layout_width="0dp"
             android:layout_height="@dimen/text_field_height"
@@ -114,9 +115,9 @@
         <TextView
             android:id="@+id/personal_details_age_error"
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_1"
-            android:text="@string/invalid_age"
+            android:text="@string/personal_details_age_error_prompt"
             android:textColor="@color/error"
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="parent"
@@ -169,15 +170,14 @@
         <TextView
             android:id="@+id/personal_details_post_code_error"
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_1"
-            android:text="@string/invalid_post_code"
+            android:text="@string/personal_details_post_code_error_prompt"
             android:textColor="@color/error"
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/personal_details_post_code"
-            tools:text="@string/invalid_post_code"
             tools:visibility="visible" />
 
         <androidx.constraintlayout.widget.Barrier

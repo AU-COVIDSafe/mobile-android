@@ -94,6 +94,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         bluetooth_card_view.setOnClickListener { requestBlueToothPermissionThenNextPermission() }
         location_card_view.setOnClickListener { askForLocationPermission() }
         battery_card_view.setOnClickListener { excludeFromBatteryOptimization() }
+        push_card_view.setOnClickListener { gotoPushNotificationSettings() }
+
         home_been_tested_button.setOnClickListener {
             navigateTo(R.id.action_home_to_selfIsolate)
         }
@@ -264,7 +266,11 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     private fun updatePushNotificationStatus() {
         isPushNotificationEnabled()?.let {
             push_card_view.visibility = VISIBLE
-            push_card_view.render(formatPushNotificationTitle(it), it)
+            push_card_view.render(
+                    formatPushNotificationTitle(it),
+                    it,
+                    getString(R.string.home_app_permission_push_notification_prompt)
+            )
         } ?: run {
             push_card_view.visibility = GONE
         }

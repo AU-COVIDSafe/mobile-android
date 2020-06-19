@@ -1,17 +1,20 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-Contact: mailto:support@covidsafe.gov.au
+Contact: mailto:security@covidsafe.gov.au
 Canonical: https://www.covidsafe.gov.au/.well-known/security.txt
 Encryption: https://www.covidsafe.gov.au/.well-known/pgp-key.txt
 -----BEGIN PGP SIGNATURE-----
 
-iQFNBAEBCAA3FiEEbUgetBuPAas8w7zHDyQUNNekxBkFAl6xF6AZHHN1cHBvcnRA
-Y292aWRzYWZlLmdvdi5hdQAKCRAPJBQ016TEGd+bCACLrYjCbKRsTsQQyZVVtGxj
-wYKW2AWclnKZWX/sxnTexg6D1tlGbZbB0OJpw0gJ0NpMoOLFd0kRZXOzv8RocIdx
-xd90Nwwl3NQ2ygGCDXR0Y7uRKX/P/Y1xO7XkyiYXAqVq3YWvI9M04pY/TCRvRZ/1
-qBs/WDHv/6eRh2qNy/WGXD66CmTLHBcXilTeihcTZ/27Mny5SPthdfy8odQnhUja
-NfFxDm+8gQuFKUUQmr9rd8FEMPSl6BWf/kQtn0YmTeZRzD01uT1ydeHkyPSgn+nq
-k9us35AlkI7aZNfNkFVWJ2v5ZVAdTHDh3pgBRZETwVg1of5DEXhc5XJV6mLsu9bM
-=tik2
+iQHOBAEBCAA4FiEEUWgkqhSOHRHwGue2IZjqt5flXH4FAl7Hkw0aHHNlY3VyaXR5
+QGNvdmlkc2FmZS5nb3YuYXUACgkQIZjqt5flXH4KfQv/ZagXzgn9HspSTupO7zQQ
+t7lpZsNWKJsXddUD3+JQQ8b1uB9kmHhiydIXervEc1yGti6YYZxKybehLdvv7HjV
+Cps9kn3cns9ex3s+KEMMFrU7MykvZ2x+fvCoGfgzWm1UJElxn/cSbOnt38VxmSjC
+wkmh+DGa1z9OB6ZMuivO2XBx+Y0GV5tsoxWKRtXMruQ41bTHZvIJ9lJctYTv2xEK
+hYlHmrzkZjLM/sTwGKWj+ARCn1IA0Zp8uxkoBi3/++NonKAlQpSZ4Rk6B780H8GM
+5lCZVLIRfH1VJzPr7+eSSBF8p0coEapyO7bk/ioBIQB5v4xfvpJRBEc+eI7IZeDa
+TcO/TVZw7Vut89flR+34g9PCSFDCJgv5zR8vE5mB5m/vlfJ7XI99XMwvFNWgpcyL
+72tFv74uH6tUPZOlbHGZTnBsQLkuj4fwUYaUPcR9TzeMlBHoe21bQ6OeDO02rIy4
+09bWSTMGe33LvTz2UMuEkZcsNT8vc7J+597GSxgDWoR6
+=6MOG
 -----END PGP SIGNATURE-----

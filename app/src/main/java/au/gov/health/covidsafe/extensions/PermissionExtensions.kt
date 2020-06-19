@@ -7,14 +7,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.PowerManager
+import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
+import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.Utils
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import pub.devrel.easypermissions.PermissionRequest
-import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.Utils
 
 const val REQUEST_ENABLE_BT = 123
 const val LOCATION = 345
@@ -83,6 +84,22 @@ fun Fragment.excludeFromBatteryOptimization(onEndCallback: (() -> Unit)? = null)
         }
     }
 
+}
+
+fun Fragment.gotoPushNotificationSettings() {
+    val context = requireContext()
+    val intent = Intent()
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+        intent.putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
+        intent.putExtra("app_package", context.packageName)
+        intent.putExtra("app_uid", context.applicationInfo.uid)
+    }
+
+    context.startActivity(intent)
 }
 
 fun Fragment.isBlueToothEnabled(): Boolean? {

@@ -32,4 +32,12 @@
         <item name="android:fontFamily">@font/font_roboto_regular</item>
     </style>
 
+    <style name="countryListIndex">
+        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_width">@dimen/keyline_8</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">18dp</item>
+    </style>
+
 </resources>

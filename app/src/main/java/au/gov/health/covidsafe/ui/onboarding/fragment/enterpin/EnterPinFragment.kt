@@ -24,6 +24,7 @@ class EnterPinFragment : PagerChildFragment() {
     companion object {
         const val ENTER_PIN_SESSION = "session"
         const val ENTER_PIN_CHALLENGE_NAME = "challenge_name"
+        const val ENTER_PIN_CALLING_CODE = "calling_code"
         const val ENTER_PIN_PHONE_NUMBER = "phone_number"
         const val ENTER_PIN_DESTINATION_ID = "destination_id"
         const val ENTER_PIN_PROGRESS = "progress"
@@ -48,13 +49,18 @@ class EnterPinFragment : PagerChildFragment() {
         arguments?.let {
             val session = it.getString(ENTER_PIN_SESSION)
             val challengeName = it.getString(ENTER_PIN_CHALLENGE_NAME)
+            val callingCode = it.getInt(ENTER_PIN_CALLING_CODE)
             val phoneNumber = it.getString(ENTER_PIN_PHONE_NUMBER)
             destinationId = it.getInt(ENTER_PIN_DESTINATION_ID)
+
             stepProgress = if (it.containsKey(ENTER_PIN_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
-            enter_pin_headline.text = resources.getString(R.string.enter_pin_headline, resources.getString(R.string.enter_number_prefix), phoneNumber)
+
+            enter_pin_headline.text = resources.getString(R.string.enter_pin_headline, "+$callingCode", phoneNumber)
+
             presenter = EnterPinPresenter(this@EnterPinFragment,
                     session,
                     challengeName,
+                    callingCode,
                     phoneNumber)
         }
 

@@ -6,19 +6,21 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
 import au.gov.health.covidsafe.extensions.isInternetAvailable
 import au.gov.health.covidsafe.factory.NetworkFactory
 import au.gov.health.covidsafe.interactor.usecase.GetOnboardingOtp
 import au.gov.health.covidsafe.interactor.usecase.GetOnboardingOtpException
 import au.gov.health.covidsafe.interactor.usecase.GetOtpParams
 
+const val AUSTRALIA_CALLING_CODE = 61
+const val AUSTRALIA_MOBILE_NUMBER_LENGTH = 9
+const val AUSTRALIA_MOBILE_NUMBER_PREFIX_DIGIT = "0"
+const val NORFOLK_ISLAND_CALLING_CODE = 672
+const val NORFOLK_ISLAND_MOBILE_NUMBER_LENGTH = 5
+const val NORFOLK_ISLAND_MOBILE_PREFIX_DIGIT = "3"
 
 class EnterNumberPresenter(private val enterNumberFragment: EnterNumberFragment) : LifecycleObserver {
 
-    private val TAG = this.javaClass.simpleName
-
-    private lateinit var phoneNumber: String
     private lateinit var getOnboardingOtp: GetOnboardingOtp
 
     init {
@@ -30,47 +32,49 @@ class EnterNumberPresenter(private val enterNumberFragment: EnterNumberFragment)
         getOnboardingOtp = GetOnboardingOtp(NetworkFactory.awsClient, enterNumberFragment.lifecycle)
     }
 
-    internal fun requestOTP(phoneNumber: String) {
+    fun requestOTP(callingCode: Int, phoneNumber: String) {
+        val prefixZeroRemovedPhoneNumber =
+                adjustPrefixForAustralianAndNorfolkPhoneNumber(callingCode, phoneNumber)
+
         when {
             enterNumberFragment.activity?.isInternetAvailable() == false -> {
                 enterNumberFragment.showCheckInternetError()
             }
-            validateAuNumber(phoneNumber) -> {
-                val cleansedNumber = if (phoneNumber.startsWith("0")) {
-                    phoneNumber.takeLast(TracerApp.AppContext.resources.getInteger(R.integer.australian_phone_number_length))
-                } else phoneNumber
-                val fullNumber = "${enterNumberFragment.resources.getString(R.string.enter_number_prefix)}$cleansedNumber"
-                Preference.putPhoneNumber(TracerApp.AppContext, fullNumber)
-                this.phoneNumber = cleansedNumber
-                makeOTPCall(cleansedNumber)
-            }
-            else -> {
-                enterNumberFragment.showInvalidPhoneNumber()
-            }
+            else -> makeOTPCall(callingCode, prefixZeroRemovedPhoneNumber)
         }
     }
 
     /**
-     * @param phoneNumber cleansed phone number, 9 digits, doesn't start with 0
+     * if [callingCode] is 61 for Australia, then [phoneNumber] should be a prefix removed
+     * Australian phone number: 9 digits, doesn't start with 0.
+     * Otherwise [phoneNumber] can be any number and the validation should be done in the backend
      */
-    private fun makeOTPCall(phoneNumber: String) {
+    private fun makeOTPCall(callingCode: Int, phoneNumber: String) {
         enterNumberFragment.activity?.let {
             enterNumberFragment.disableContinueButton()
             enterNumberFragment.showLoading()
-            getOnboardingOtp.invoke(GetOtpParams(phoneNumber,
-                    Preference.getDeviceID(enterNumberFragment.requireContext()),
-                    Preference.getPostCode(enterNumberFragment.requireContext()),
-                    Preference.getAge(enterNumberFragment.requireContext()),
-                    Preference.getName(enterNumberFragment.requireContext())),
+
+            val context = enterNumberFragment.requireContext()
+
+            getOnboardingOtp.invoke(
+                    GetOtpParams(
+                            countryCode = "+$callingCode",
+                            phoneNumber = phoneNumber,
+                            deviceId = Preference.getDeviceID(context),
+                            postCode = Preference.getPostCode(context),
+                            age = Preference.getAge(context),
+                            name = Preference.getName(context)
+                    ),
                     onSuccess = {
                         enterNumberFragment.navigateToOTPPage(
                                 it.session,
                                 it.challengeName,
+                                callingCode,
                                 phoneNumber)
                     },
                     onFailure = {
                         if (it is GetOnboardingOtpException.GetOtpInvalidNumberException) {
-                            enterNumberFragment.showInvalidPhoneNumber()
+                            enterNumberFragment.showInvalidPhoneNumberPrompt(R.string.invalid_phone_number)
                         } else {
                             enterNumberFragment.showGenericError()
                         }
@@ -80,12 +84,46 @@ class EnterNumberPresenter(private val enterNumberFragment: EnterNumberFragment)
         }
     }
 
-    internal fun validateAuNumber(phoneNumber: String?): Boolean {
-        var australianPhoneNumberLength = enterNumberFragment.resources.getInteger(R.integer.australian_phone_number_length)
-        if (phoneNumber?.startsWith("0") == true) {
-            australianPhoneNumberLength++
+    fun validatePhoneNumber(callingCode: Int, phoneNumber: String): Pair<Boolean, Int> {
+        val isNumberValid = when (callingCode) {
+            AUSTRALIA_CALLING_CODE -> {
+                if (phoneNumber.startsWith(AUSTRALIA_MOBILE_NUMBER_PREFIX_DIGIT)) {
+                    phoneNumber.length == AUSTRALIA_MOBILE_NUMBER_LENGTH + 1
+                } else {
+                    phoneNumber.length == AUSTRALIA_MOBILE_NUMBER_LENGTH
+                }
+            }
+            NORFOLK_ISLAND_CALLING_CODE -> {
+                if (phoneNumber.startsWith(NORFOLK_ISLAND_MOBILE_PREFIX_DIGIT)) {
+                    phoneNumber.length == NORFOLK_ISLAND_MOBILE_NUMBER_LENGTH + 1
+                } else {
+                    phoneNumber.length == NORFOLK_ISLAND_MOBILE_NUMBER_LENGTH
+                }
+            }
+            else -> true
         }
-        return (phoneNumber?.length ?: 0) == australianPhoneNumberLength
+
+        val errorMessageResID = when (callingCode) {
+            AUSTRALIA_CALLING_CODE -> R.string.invalid_australian_phone_number_error_prompt
+            NORFOLK_ISLAND_CALLING_CODE -> R.string.invalid_norfolk_island_phone_number_error_prompt
+            else -> 0
+        }
+
+        return Pair(isNumberValid, errorMessageResID)
+    }
+
+    private fun adjustPrefixForAustralianAndNorfolkPhoneNumber(callingCode: Int, phoneNumber: String): String {
+        return when (callingCode) {
+            AUSTRALIA_CALLING_CODE -> phoneNumber.removePrefix(AUSTRALIA_MOBILE_NUMBER_PREFIX_DIGIT)
+            NORFOLK_ISLAND_CALLING_CODE -> {
+                if (phoneNumber.length == NORFOLK_ISLAND_MOBILE_NUMBER_LENGTH) {
+                    "$NORFOLK_ISLAND_MOBILE_PREFIX_DIGIT$phoneNumber"
+                } else {
+                    phoneNumber
+                }
+            }
+            else -> phoneNumber
+        }
     }
 
 }

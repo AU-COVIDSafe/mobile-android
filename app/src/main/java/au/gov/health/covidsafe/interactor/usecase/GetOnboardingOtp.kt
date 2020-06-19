@@ -17,7 +17,9 @@ class GetOnboardingOtp(private val awsClient: AwsClient, lifecycle: Lifecycle) :
     override suspend fun run(params: GetOtpParams): Either<Exception, OTPChallengeResponse> {
         return try {
             val response = awsClient.initiateAuth(
-                    OTPChallengeRequest(params.phoneNumber,
+                    OTPChallengeRequest(
+                            params.countryCode,
+                            params.phoneNumber,
                             params.deviceId,
                             params.postCode,
                             params.age,
@@ -48,11 +50,14 @@ class GetOnboardingOtp(private val awsClient: AwsClient, lifecycle: Lifecycle) :
     }
 }
 
-data class GetOtpParams(internal val phoneNumber: String,
-                        internal val deviceId: String,
-                        internal val postCode: String?,
-                        internal val age: String?,
-                        internal val name: String?)
+data class GetOtpParams(
+        internal val countryCode: String,
+        internal val phoneNumber: String,
+        internal val deviceId: String,
+        internal val postCode: String?,
+        internal val age: String?,
+        internal val name: String?
+)
 
 sealed class GetOnboardingOtpException : Exception() {
     class GetOtpServiceException(val code: Int? = null) : GetOnboardingOtpException()

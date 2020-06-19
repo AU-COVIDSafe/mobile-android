@@ -40,8 +40,8 @@ android {
         Before you increase the targetSdkVersion make sure that all its usage are still working
          */
         targetSdkVersion 28
-        versionCode 21
-        versionName "1.0.21"
+        versionCode 28
+        versionName "1.0.28"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -243,6 +243,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-service:2.2.0"
     implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
 
+    // flags
+    implementation 'com.michaelfotiadis:android-country-flags:1.0.3'
+
     androidTestImplementation "androidx.room:room-testing:2.2.5"
+
 
 }

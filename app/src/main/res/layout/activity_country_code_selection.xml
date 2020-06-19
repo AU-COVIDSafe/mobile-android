@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/countrySelectionToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_up"
+        app:navigationContentDescription="@string/navigation_back_button_content_description"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyline_6"
+        android:layout_marginStart="@dimen/keyline_1"
+        android:text="@string/search" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyline_8"
+        android:layout_marginStart="@dimen/keyline_1"
+        android:layout_marginEnd="@dimen/keyline_1"
+        android:paddingTop="@dimen/keyline_0"
+        android:paddingBottom="@dimen/keyline_0"
+        android:paddingStart="@dimen/keyline_1"
+        android:paddingEnd="@dimen/keyline_0"
+        android:background="@drawable/edit_text_black_background">
+        
+        <ImageView
+            android:id="@+id/countrySearchImageView"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_search"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
+            android:layout_gravity="center|start" />
+
+        <EditText
+            android:id="@+id/countryRegionNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/microphoneImageView"
+            android:layout_width="@dimen/keyline_6"
+            android:paddingStart="@dimen/keyline_1"
+            android:paddingEnd="@dimen/keyline_1"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_microphone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/keyline_4"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countryListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countryInitialLetterRecyclerView"
+            android:layout_width="@dimen/keyline_8"
+            android:layout_height="match_parent"
+            android:layout_gravity="right" />
+    </FrameLayout>
+</LinearLayout>

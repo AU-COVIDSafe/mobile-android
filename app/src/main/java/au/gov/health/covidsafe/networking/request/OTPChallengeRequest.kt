@@ -3,8 +3,11 @@ package au.gov.health.covidsafe.networking.request
 import androidx.annotation.Keep
 
 @Keep
-data class OTPChallengeRequest(val phone_number: String,
-                               val device_id: String,
-                               val postcode: String?,
-                               val age: String?,
-                               val name: String?)
+data class OTPChallengeRequest(
+        val country_code: String,
+        val phone_number: String,
+        val device_id: String,
+        val postcode: String?,
+        val age: String?,
+        val name: String?
+)

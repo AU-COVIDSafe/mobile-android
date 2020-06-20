@@ -200,6 +200,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
             if (isAllPermissionsEnabled) {
                 home_header_picture_setup_complete.setAnimation("spinner_home.json")
+                home_header_picture_setup_complete.resumeAnimation()
                 content_setup_incomplete_group.visibility = GONE
                 ContextCompat.getColor(it, R.color.lighter_green).let { bgColor ->
                     header_background.setBackgroundColor(bgColor)

@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.fragment_registration_consent.*
 
 class RegistrationConsentFragment : PagerChildFragment() {
 
-    override val navigationIcon: Int? = R.drawable.ic_up
     override var stepProgress: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)

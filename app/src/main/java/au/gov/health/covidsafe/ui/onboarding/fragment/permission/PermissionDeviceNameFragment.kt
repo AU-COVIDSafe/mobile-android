@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.fragment_permission_device_name.*
 
 class PermissionDeviceNameFragment : PagerChildFragment() {
 
-    override val navigationIcon: Int? = R.drawable.ic_up
     override var stepProgress: Int? = 5
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)

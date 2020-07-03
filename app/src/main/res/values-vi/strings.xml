@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="share_this_app_content_html">Hãy cùng tôi ngăn chặn sự lây lan của COVID-19! Tải <a href="https://covidsafe.gov.au"> COVIDSafe </a> &gt;, ứng dụng của Chính phủ Úc. # COVID19 #coronavirusaustralia #stayhomesavelives <a href="https://covidsafe.gov.au"> covidsafe.gov.au </a></string>
+    <string name="under_sixteen_headline_content_description">Tiêu đề, Bạn cần có sự đồng ý của cha mẹ/người giám hộ để kích hoạt</string>
+    <string name="under_sixteen_headline">Bạn cần có sự đồng ý của cha mẹ/người giám hộ để kích hoạt</string>
+    <string name="permission_success_content">1. Khi bạn rời khỏi nhà, hãy mang theo điện thoại bên mình và chắc rằng COVIDSafe đang hoạt động.
+\n\n
+ 2. Nên BẬT Bluetooth®. 
+\n\n
+ 3. Nên TẮT tối ưu hóa pin. 
+\n\n
+ 4. COVIDSafe không gửi yêu cầu kết nối. <a href="https://www.covidsafe.gov.au/help-topics/vi.html#bluetooth-pairing-request"> Tìm hiểu thêm </a> .</string>
+
+    <string name="generic_error">Vui lòng thử lại sau</string>
+    <string name="generic_internet_error">Xin vui lòng kiểm tra kết nối Internet của bạn</string>
+    <string name="dialog_uploading_message">Thông tin COVIDSafe của bạn hiện đang được đăng tải.
+\n\n
+ Vui lòng không đóng ứng dụng.</string>
+    <string name="dialog_error_uploading_message">Bị lỗi trong khi đăng tải thông tin của bạn, vui lòng thử lại.</string>
+    <string name="dialog_error_uploading_positive">Thử lại</string>
+    <string name="dialog_error_uploading_negative">Hủy bỏ</string>
+    <string name="title_help">Trợ giúp</string>
+    <string name="share_this_app_content">Hãy cùng tôi ngăn chặn sự lây lan của COVID-19! Tải COVIDSafe, ứng dụng của Chính phủ Úc. # COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+    <string name="service_not_ok_title">COVIDSafe không hoạt động</string>
+    <string name="service_not_ok_body">Đảm bảo COVIDSafe hoạt động trước khi bạn rời khỏi nhà hoặc khi ở những nơi công cộng.</string>
+    <string name="service_not_ok_action">Kiểm tra ứng dụng ngay</string>
+    <string name="migration_in_progress">COVIDSafe trong tiến trình cập nhật.
+\n\n
+Vui lòng đảm bảo điện thoại của bạn không bị tắt cho đến khi cập nhật hoàn tất.</string>
+    <string name="intro_headline">Cùng nhau, chúng ta có thể ngăn chặn sự lây lan của COVID-19</string>
+    <string name="intro_headline_content_description">Tiêu đề, Cùng nhau, chúng ta có thể ngăn chặn sự lây lan của COVID-19</string>
+    <string name="intro_content">Chính phủ Úc đã phát triển COVIDSafe để giúp giữ an toàn cho cộng đồng tránh khỏi sự lây lan của coronavirus.
+\n\n
+COVIDSafe sẽ ghi lại một cách bảo mật các tiếp xúc của bạn với với những người dùng ứng dụng khác. Điều này sẽ cho phép các nhân viên y tế của tiểu bang và lãnh thổ liên lạc với bạn, nếu bạn đã tiếp xúc gần với người đã xét nghiệm dương tính với vi-rút. 
+\n\n
+Cùng nhau chúng ta có thể giúp ngăn chặn sự lây lan và giữ sức khỏe.</string>
+    <string name="intro_button">Tôi muốn giúp đỡ</string>
+    <string name="how_it_works_headline">COVIDSafe hoạt động như thế nào</string>
+    <string name="how_it_works_headline_content_description">Tiêu đề, COVIDSafe hoạt động như thế nào</string>
+    <string name="how_it_works_content">Tín hiệu Bluetooth® được sử dụng để xác định khi bạn ở gần người dùng COVIDSafe khác.
+\n\n
+Mọi trường hợp tiếp xúc gần giữa bạn và những người dùng COVIDSafe khác đều được ghi nhận để tạo thông tin về tiếp xúc gần. Thông tin được mã hóa và chỉ được lưu trữ trong điện thoại của bạn. 
+\n\n
+Nếu bạn xét nghiệm dương tính với COVID-19 với tư cách là người dùng COVIDSafe, nhân viên y tế của tiểu bang hoặc lãnh thổ sẽ liên hệ với bạn. Họ sẽ hỗ trợ tải lên thông tin về tiếp xúc gần của bạn một cách tự nguyện vào hệ thống lưu trữ thông tin có độ an toàn cao 
+\n\n
+Các nhân viên y tế của tiểu bang hoặc lãnh thổ cũng có thể liên hệ với bạn nếu bạn tiếp xúc gần với một người dùng COVIDSafe khác có kết quả xét nghiệm dương tính. 
+\n\n
+Để biết thêm thông tin, vui lòng tham khảo trang <a href="https://www.covidsafe.gov.au/help-topics/vi.html"> Chủ đề Trợ giúp </a></string>
+    <string name="how_it_works_consent">Nếu cần theo dõi sức khỏe chúng tôi sẽ yêu cầu sự đồng ý của bạn.</string>
+    <string name="how_it_works_button">Tiếp theo</string>
+    <string name="data_privacy_headline">Đăng ký và bảo mật</string>
+    <string name="data_privacy_headline_content_description">Tiêu đề, Đăng ký và bảo mật</string>
+    <string name="data_privacy_content">Điều quan trọng là bạn phải đọc <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">chính sách bảo mật</a> của COVIDSafe trước khi đăng ký COVIDSafe. \n\nNếu bạn dưới 16 tuổi, cha mẹ/người giám hộ của bạn cũng phải đọc <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">chính sách bảo mật</a>. \n\nSử dụng COVIDSafe là hoàn toàn tự nguyện. Bạn có thể cài đặt hoặc xóa ứng dụng bất cứ lúc nào. Nếu bạn xóa COVIDSafe,  <a href="https://www.covidsafe.gov.au/help-topics/vi.html">bạn cũng có thể yêu cầu xóa thông tin của mình</a> khỏi máy chủ bảo mật. \n\nĐể đăng ký COVIDSafe, bạn cần nhập tên, số điện thoại di động, độ tuổi và mã bưu điện. \n\nThông tin bạn gửi khi đăng ký, và thông tin về việc sử dụng COVIDSafe của bạn sẽ được thu thập và lưu trữ trên một máy chủ có độ an toàn cao. \n\nCOVIDSafe sẽ không thu thập thông tin về vị trí của bạn. \n\nCOVIDSafe sẽ lưu ý thời gian tiếp xúc và mã ID ẩn danh của những người dùng COVIDSafe khác mà bạn tiếp xúc. \n\nNhững người dùng COVIDSafe khác mà bạn tiếp xúc sẽ ghi lại mã ID ẩn danh và thời gian tiếp xúc với bạn trên thiết bị của họ. \n\nNếu người dùng khác xét nghiệm dương tính với COVID-19, họ có thể đăng tải thông tin tiếp xúc của họ và nhân viên y tế của tiểu bang hoặc lãnh thổ có thể liên hệ với bạn nhằm mục đích truy tìm việc tiếp xúc. \n\nChi tiết đăng ký của bạn sẽ chỉ được sử dụng hoặc tiết lộ để theo dõi việc tiếp xúc và cho hoạt động đúng đắn và hợp pháp của COVIDSafe. \n\nThông tin thêm có sẵn tại trang mạng của <a href="https://www.health.gov.au/">Bộ Y tế Chính phủ Úc</a>. \n\nXem <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">chính sách bảo mật</a> của COVIDSafe để biết thêm chi tiết về các quyền về thông tin của bạn và cách xử lý và chia sẻ thông tin đó.</string>
+    <string name="data_privacy_button">Tiếp theo</string>
+    <string name="consent_call_for_action">Chọn \'Tôi đồng ý\' để xác nhận đồng ý.</string>
+    <string name="consent_button">Tôi đồng ý</string>
+    <string name="registration_consent_headline">Đồng ý đăng ký</string>
+    <string name="registration_consent_content">Tôi đồng ý để Bộ Y tế Úc thu thập:</string>
+    <string name="registration_consent_first_paragraph">Thông tin đăng ký của tôi giúp các nhân viên y tế tiểu bang và lãnh thổ theo dõi sự tiếp xúc.</string>
+    <string name="registration_consent_second_paragraph">Thông tin tiếp xúc của tôi từ những người sử dụng COVIDSafe khác sau khi họ xét nghiệm dương tính với COVID-19.</string>
+    <string name="personal_details_headline">Nhập thông tin cá nhân của bạn</string>
+    <string name="personal_details_headline_content_description">Tiêu đề, Nhập thông tin cá nhân của bạn</string>
+    <string name="personal_details_name_title">Tên đầy đủ</string>
+    <string name="personal_details_name_content_description">Nhập tên đầy đủ</string>
+    <string name="personal_details_name_error_prompt">Vui lòng nhập tên đầy đủ của bạn.</string>
+    <string name="personal_details_age_title">Độ tuổi (chọn)</string>
+    <string name="personal_details_age_content_description">Chọn độ tuổi</string>
+    <string name="personal_details_age_error_prompt">Vui lòng chọn độ tuổi của bạn.</string>
+    <string name="personal_details_post_code">Mã bưu điện ở Úc</string>
+    <string name="personal_details_post_code_content_description">Nhập mã bưu điện</string>
+    <string name="personal_details_post_code_error_prompt">Số mã bưu điện Úc phải gồm 4 chữ số.</string>
+    <string name="personal_details_post_code_dialog_title">Mã bưu điện</string>
+    <string name="wrong_pin_number">Nhập sai mã PIN</string>
+    <string name="personal_details_age_dialog_title">Chọn tuổi của bạn</string>
+    <string name="personal_details_dialog_ok">Chọn</string>
+    <string name="navigation_back_button_content_description">Trang trước</string>
+    <string name="personal_details_button">Tiếp tục</string>
+    <string name="under_sixteen_content">Tôi xác nhận cha mẹ hoặc người giám hộ của tôi đồng ý cho Bộ Y tế Úc thu thập:</string>
+    <string name="under_sixteen_first_paragraph">Thông tin đăng ký của tôi giúp các nhân viên y tế tiểu bang và lãnh thổ theo dõi sự tiếp xúc.</string>
+    <string name="under_sixteen_second_paragraph">Thông tin tiếp xúc của tôi từ những người sử dụng COVIDSafe khác sau khi họ xét nghiệm dương tính với COVID-19.</string>
+    <string name="select_country_or_region">Chọn quốc gia hoặc khu vực</string>
+    <string name="enter_number_headline">Nhập sô điện thoại di động của bạn</string>
+    <string name="enter_number_for_example">Ví dụ:</string>
+    <string name="invalid_phone_number">Số điện thoại không hợp lệ.</string>
+    <string name="invalid_norfolk_island_phone_number_error_prompt">Số điện thoại di động ở Đảo Norfolk chứa từ 5 đến 6 chữ số.</string>
+    <string name="invalid_australian_phone_number_error_prompt">Số điện thoại di động ở Úc chứa tối đa 10 chữ số.</string>
+    <string name="invalid_phone_number_digits_error_prompt" formatted="false">Số điện thoại di động ở %1s chứa %2s chữ số.</string>
+    <string name="enter_number_content">Chúng tôi sẽ gửi cho bạn mã PIN gồm 6 chữ số để xác minh số điện thoại của bạn.</string>
+    <string name="enter_number_relative">Đăng ký dùm bạn bè hoặc người thân?
+\n\n
+Họ cần phải đăng ký bằng máy điện thoại và số điện thoại của riêng họ để COVIDSafe có thể hoạt động cho họ.</string>
+    <string name="enter_number_button">Nhận mã PIN</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="options_for_australia">Tùy chọn cho Úc</string>
+    <string name="country_af">Afghanistan</string>
+    <string name="country_al">Albania</string>
+    <string name="country_dz">Algeria</string>
+    <string name="country_ad">Andorra</string>
+    <string name="country_ao">Angola</string>
+    <string name="country_ag">Antigua và Barbuda</string>
+    <string name="country_ai">Anguilla</string>
+    <string name="country_ar">Argentina</string>
+    <string name="country_am">Armenia</string>
+    <string name="country_aw">Aruba</string>
+    <string name="country_au">Úc</string>
+    <string name="country_at">Áo</string>
+    <string name="country_az">Azerbaijan</string>
+    <string name="country_bs">Bahamas</string>
+    <string name="country_bh">Bahrain</string>
+    <string name="country_bd">Bangladesh</string>
+    <string name="country_bb">Barbados</string>
+    <string name="country_by">Belarus</string>
+    <string name="country_be">Bỉ</string>
+    <string name="country_bz">Belize</string>
+    <string name="country_bj">Benin</string>
+    <string name="country_bm">Bermuda</string>
+    <string name="country_bt">Bhutan</string>
+    <string name="country_bo">Bolivia</string>
+    <string name="country_ba">Bosnia và Herzegovina</string>
+    <string name="country_bw">Botswana</string>
+    <string name="country_br">Brazil</string>
+    <string name="country_bn">Brunei</string>
+    <string name="country_bg">Bulgaria</string>
+    <string name="country_bf">Burkina Faso</string>
+    <string name="country_bi">Burundi</string>
+    <string name="country_kh">Campuchia</string>
+    <string name="country_cm">Cameroon</string>
+    <string name="country_ca">Canada</string>
+    <string name="country_cv">Cape Verde</string>
+    <string name="country_ky">Quần đảo Cayman</string>
+    <string name="country_cf">Cộng hòa Trung Phi</string>
+    <string name="country_td">Chad</string>
+    <string name="country_cl">Chi Lê</string>
+    <string name="country_cn">Trung Quốc</string>
+    <string name="country_co">Colombia</string>
+    <string name="country_km">Comoros</string>
+    <string name="country_ck">Quần đảo Cook</string>
+    <string name="country_cr">Costa Rica</string>
+    <string name="country_hr">Croatia</string>
+    <string name="country_cy">Síp</string>
+    <string name="country_cz">Cộng hòa Séc</string>
+    <string name="country_cd">Cộng hòa dân chủ Congo</string>
+    <string name="country_dk">Đan mạch</string>
+    <string name="country_dj">Djibouti</string>
+    <string name="country_dm">Dominica</string>
+    <string name="country_do">Cộng hòa Dominica</string>
+    <string name="country_ec">Ecuador</string>
+    <string name="country_eg">Ai Cập</string>
+    <string name="country_gq">Guinea Xích đạo</string>
+    <string name="country_sv">El Salvador</string>
+    <string name="country_ee">Estonia</string>
+    <string name="country_et">Ethiopia</string>
+    <string name="country_fo">Quần đảo Faroe</string>
+    <string name="country_fj">Fiji</string>
+    <string name="country_fi">Phần Lan</string>
+    <string name="country_fr">Pháp</string>
+    <string name="country_gf">Guiana thuộc Pháp</string>
+    <string name="country_ga">Gabon</string>
+    <string name="country_gm">Gambia</string>
+    <string name="country_ge">Georgia</string>
+    <string name="country_de">Đức</string>
+    <string name="country_gh">Ghana</string>
+    <string name="country_gi">Gibraltar</string>
+    <string name="country_gr">Hy Lạp</string>
+    <string name="country_gl">Greenland</string>
+    <string name="country_gd">Grenada</string>
+    <string name="country_gp">Guadeloupe</string>
+    <string name="country_gu">Guam</string>
+    <string name="country_gt">Guatemala</string>
+    <string name="country_gn">Guinea</string>
+    <string name="country_gw">Guinea-Bissau</string>
+    <string name="country_gy">Guyana</string>
+    <string name="country_ht">Haiti</string>
+    <string name="country_hn">Honduras</string>
+    <string name="country_hk">Hồng Kông</string>
+    <string name="country_hu">Hungary</string>
+    <string name="country_is">Iceland</string>
+    <string name="country_in">Ấn Độ</string>
+    <string name="country_id">Indonesia</string>
+    <string name="country_iq">Iraq</string>
+    <string name="country_ie">Ái Nhĩ Lan</string>
+    <string name="country_il">Israel</string>
+    <string name="country_it">Ý</string>
+    <string name="country_ci">Bờ biển Ngà</string>
+    <string name="country_jm">Jamaica</string>
+    <string name="country_jp">Nhật Bản</string>
+    <string name="country_jo">Jordan</string>
+    <string name="country_kz">Kazakhstan</string>
+    <string name="country_ke">Kenya</string>
+    <string name="country_ki">Kiribati</string>
+    <string name="country_kw">Kuwait</string>
+    <string name="country_kg">Kyrgyzstan</string>
+    <string name="country_la">Lào</string>
+    <string name="country_lv">Latvia</string>
+    <string name="country_lb">Lebanon</string>
+    <string name="country_ls">Lesotho</string>
+    <string name="country_lr">Liberia</string>
+    <string name="country_ly">Libya</string>
+    <string name="country_li">Liechtenstein</string>
+    <string name="country_lt">Lithuania</string>
+    <string name="country_lu">Luxembourg</string>
+    <string name="country_mo">Ma Cao</string>
+    <string name="country_mk">Cộng hoà Macedonia trực thuộc Nam Tư cũ </string>
+    <string name="country_mg">Madagascar</string>
+    <string name="country_mw">Malawi</string>
+    <string name="country_my">Mã Lai</string>
+    <string name="country_mv">Maldives</string>
+    <string name="country_ml">Mali</string>
+    <string name="country_mt">Malta</string>
+    <string name="country_mq">Martinique</string>
+    <string name="country_mr">Mauritania</string>
+    <string name="country_mu">Mauritius</string>
+    <string name="country_mx">Mexico</string>
+    <string name="country_md">Moldova</string>
+    <string name="country_mc">Monaco</string>
+    <string name="country_mn">Mông Cổ</string>
+    <string name="country_me">Montenegro</string>
+    <string name="country_ms">Montserrat</string>
+    <string name="country_ma">Ma-rốc</string>
+    <string name="country_mz">Mozambique</string>
+    <string name="country_mm">Myanmar</string>
+    <string name="country_na">Namibia</string>
+    <string name="country_np">Nepal</string>
+    <string name="country_nl">Hà lan</string>
+    <string name="country_an">Antilles Hà Lan</string>
+    <string name="country_nc">New Caledonia</string>
+    <string name="country_nz">New Zealand</string>
+    <string name="country_ni">Nicaragua</string>
+    <string name="country_ne">Niger</string>
+    <string name="country_ng">Nigeria</string>
+    <string name="country_no">Na Uy</string>
+    <string name="country_om">Oman</string>
+    <string name="country_pk">Pakistan</string>
+    <string name="country_pw">Palau</string>
+    <string name="country_ps">Lãnh thổ Palestine</string>
+    <string name="country_pa">Panama</string>
+    <string name="country_pg">Papua New Guinea</string>
+    <string name="country_py">Paraguay</string>
+    <string name="country_pe">Peru</string>
+    <string name="country_ph">Philippine</string>
+    <string name="country_pl">Ba Lan</string>
+    <string name="country_pt">Bồ Đào Nha</string>
+    <string name="country_pr">Puerto Rico</string>
+    <string name="country_qa">Qatar</string>
+    <string name="country_cg">Cộng hòa Congo</string>
+    <string name="country_re">Đảo Reunion</string>
+    <string name="country_ro">Rumani</string>
+    <string name="country_ru">Nga</string>
+    <string name="country_rw">Rwanda</string>
+    <string name="country_kn">Saint Kitts và Nevis</string>
+    <string name="country_lc">Saint Lucia</string>
+    <string name="country_vc">Saint Vincent và Grenadines</string>
+    <string name="country_ws">Samoa</string>
+    <string name="country_st">Sao Tome và Principe</string>
+    <string name="country_sa">Ả Rập Saudi</string>
+    <string name="country_sn">Senegal</string>
+    <string name="country_rs">Serbia</string>
+    <string name="country_sc">Seychelles</string>
+    <string name="country_sl">Sierra Leone</string>
+    <string name="country_sg">Singapore</string>
+    <string name="country_sk">Slovakia</string>
+    <string name="country_si">Slovenia</string>
+    <string name="country_sb">Quần đảo Solomon</string>
+    <string name="country_so">Somalia</string>
+    <string name="country_za">Nam Phi</string>
+    <string name="country_kr">Hàn quốc</string>
+    <string name="country_ss">Nam Sudan</string>
+    <string name="country_es">Tây Ban Nha</string>
+    <string name="country_lk">Sri Lanka</string>
+    <string name="country_sr">Suriname</string>
+    <string name="country_sz">Swaziland</string>
+    <string name="country_se">Thụy Điển</string>
+    <string name="country_ch">Thụy sĩ</string>
+    <string name="country_tw">Đài Loan</string>
+    <string name="country_tj">Tajikistan</string>
+    <string name="country_tz">Tanzania</string>
+    <string name="country_th">Thái lan</string>
+    <string name="country_tg">Togo</string>
+    <string name="country_tl">Đông Timor</string>
+    <string name="country_to">Tonga</string>
+    <string name="country_tt">Trinidad và Tobago</string>
+    <string name="country_tn">Tunisia</string>
+    <string name="country_tr">Thổ nhĩ kỳ</string>
+    <string name="country_tm">Turkmenistan</string>
+    <string name="country_tc">Quần đảo Turks và Caicos</string>
+    <string name="country_ug">Uganda</string>
+    <string name="country_ua">Ukraine</string>
+    <string name="country_ae">Các Tiểu Vương Quốc Ả Rập Thống Nhất</string>
+    <string name="country_gb">Vương quốc Anh</string>
+    <string name="country_us">Hoa Kỳ</string>
+    <string name="country_uy">Uruguay</string>
+    <string name="country_uz">Uzbekistan</string>
+    <string name="country_vu">Vanuatu</string>
+    <string name="country_ve">Venezuela</string>
+    <string name="country_vn">Việt Nam</string>
+    <string name="country_vg">Quần đảo Virgin, Anh</string>
+    <string name="country_vi">Quần đảo Virgin, Hoa Kỳ</string>
+    <string name="country_ye">Yemen</string>
+    <string name="country_zm">Zambia</string>
+    <string name="country_zw">Zimbabwe</string>
+    <string name="enter_pin_headline" formatted="false">Nhập mã PIN được gửi tới %s %s</string>
+    <string name="enter_pin_wrong_number">Số điện thoại này có sai không?</string>
+    <string name="enter_pin_timer_expire">MÃ PIN của bạn sẽ hết hạn trong </string>
+    <string name="enter_pin_resend_pin">Gửi lại mã PIN</string>
+    <string name="pin_issue">
+    <a href="https://www.covidsafe.gov.au/help-topics/vi.html#verify-mobile-number-pin"> Có vấn đề với việc nhận mã PIN của bạn? </a>
+  </string>
+    <string name="enter_pin_button">Xác minh</string>
+    <string name="permission_headline">Cài đặt ứng dụng</string>
+    <string name="permission_content">COVIDSafe cần Bluetooth® và thông báo được kích hoạt để hoạt động.
+\n\n
+ Chọn \'Kích hoạt\' để: 
+\n\n
+ 1. Kích hoạt Bluetooth® 
+\n
+ 2. Cho phép quyền truy cập vị trí 
+\n
+ 3. Tắt tối ưu hóa pin 
+\n\n
+Android cần quyền truy cập Vị trí để Bluetooth® hoạt động. 
+\n\n
+COVIDSafe không gửi yêu cầu ghép nối.</string>
+    <string name="permission_button">Kích hoạt</string>
+    <string name="permission_location_rationale">Android yêu cầu quyền truy cập vị trí để kích hoạt các chức năng Bluetooth® cho COVIDSafe. Nếu không, COVIDSafe sẽ không thể hoạt động đúng cách</string>
+    <string name="change_device_name_headline">Tên thiết bị của bạn</string>
+    <string name="change_device_name_headline_content_description">Tiêu đề, Tên thiết bị của bạn</string>
+    <string name="change_device_name_content_line_1">Tên hiện tại của thiết bị của bạn là %s .</string>
+    <string name="change_device_name_content_line_2">Các thiết bị sử dụng Bluetooth® khác ở xung quanh bạn sẽ có thể thấy tên này. Chúng tôi khuyên bạn nên sử dụng tên thiết bị không bao gồm thông tin cá nhân của bạn.</string>
+    <string name="change_device_name_new_device_name">Tên thiết bị mới</string>
+    <string name="change_device_name_default_device_name">Điện thoại Android</string>
+    <string name="change_device_name_primary_action">Thay đổi và tiếp tục</string>
+    <string name="change_device_name_secondary_action">Bỏ qua và giữ nguyên</string>
+    <string name="permission_success_headline">Bạn đã đăng ký thành công</string>
+    <string name="permission_success_warning">Bật gửi thông báo của COVIDSafe để chúng tôi có thể nhanh chóng thông báo cho bạn nếu ứng dụng không hoạt động đúng cách.</string>
+    <string name="permission_success_button">Tiếp tục</string>
+    <string name="notification_active_title">COVIDSafe đang hoạt động</string>
+    <string name="notification_not_active_title">COVIDSafe không hoạt động</string>
+    <string name="notification_active_body">Giữ COVIDSafe hoạt động khi bạn rời khỏi nhà hoặc ở những nơi công cộng.</string>
+    <string name="notification_not_active_body">Đảm bảo COVIDSafe hoạt động trước khi bạn rời khỏi nhà hoặc khi ở những nơi công cộng.</string>
+    <string name="home_header_active_title">COVIDSafe đang hoạt động.</string>
+    <string name="home_header_active_no_action_required">Không cần làm gì thêm.</string>
+    <string name="home_header_inactive_title">COVIDSafe không hoạt động.</string>
+    <string name="home_header_inactive_check_your_permissions">Kiểm tra cài đặt của bạn.</string>
+    <string name="home_header_uploaded_on_date">Thông tin của bạn đã được đăng tải lên %s .</string>
+    <string name="home_header_no_pairing">COVIDSafe không gửi <a href="https://www.covidsafe.gov.au/help-topics/vi.html#bluetooth-pairing-request"> yêu cầu kết nối </a>.</string>
+    <string name="home_bluetooth_permission">Bluetooth®: %s</string>
+    <string name="home_non_battery_optimization_permission">Tối ưu hóa pin: %s</string>
+    <string name="home_location_permission">Vị trí: %s</string>
+    <string name="home_push_notification_permission">Gửi thông báo: %s</string>
+    <string name="home_permission_on">Mở</string>
+    <string name="home_permission_off">Tắt</string>
+    <string name="home_setup_incomplete_title">Kiểm tra
+        \n\n
+sự cho phép</string>
+    <string name="home_setup_incomplete_subtitle">COVIDSafe cần được cho phép để truy cập các tính năng này.</string>
+    <string name="home_app_permission_status_title">Kiểm tra cài đặt của bạn</string>
+    <string name="home_app_permission_status_subtitle">COVIDSafe sẽ không hoạt động nếu không có cài đặt phù hợp.</string>
+    <string name="home_app_permission_push_notification_prompt">Cho phép COVIDSafe gửi thông báo.</string>
+    <string name="home_been_tested_title">Nhân viên y tế có yêu cầu bạn đăng tải dữ liệu của bạn chưa?</string>
+    <string name="home_data_uploaded">Đăng ký tự cách ly</string>
+    <string name="home_data_uploaded_message">Giúp ngăn chặn sự lây lan của COVID-19 và theo dõi các triệu chứng của bạn.</string>
+    <string name="home_data_uploaded_button">Đăng ký</string>
+    <string name="home_data_has_been_uploaded">Dữ liệu của bạn đã được đăng tải</string>
+    <string name="home_data_has_been_uploaded_message">Bạn đang giúp ngăn chặn sự lây lan của COVID-19 bằng cách đăng tải dữ liệu của bạn hàng ngày trong khi tự cách ly.</string>
+    <string name="home_set_complete_disclaimer_title">Hãy ngăn chặn sự lây lan của COVID-19.</string>
+    <string name="home_set_complete_external_link_share_title">Chia sẻ COVIDSafe</string>
+    <string name="home_set_complete_external_link_share_content">Mời những người khác giúp. Cùng nhau, chúng ta mạnh mẽ hơn.</string>
+    <string name="home_set_complete_external_link_news_title">Tin tức và cập nhật mới nhất</string>
+    <string name="home_set_complete_external_link_news_url">https://www.australia.gov.au</string>
+    <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
+    <string name="home_set_complete_external_link_news_content">Vào aus.gov.au để biết tin tức mới nhất về Coronavirus.</string>
+    <string name="home_set_complete_external_link_app_title">Tải ứng dụng Coronavirus</string>
+    <string name="home_set_complete_external_link_app_content">Tải xuống ứng dụng của chính phủ để biết những tin tức và lời khuyên mới nhất.</string>
+    <string name="home_set_complete_external_link_been_contacted_title">Nhân viên y tế có liên lạc với bạn không?</string>
+    <string name="home_set_complete_external_link_been_contacted_content">Bạn chỉ có thể đăng tải thông tin của mình nếu bạn được xét nghiệm có kết quả dương tính.</string>
+    <string name="home_set_complete_external_link_help_topics_title">Các chủ đề trợ giúp</string>
+    <string name="home_set_complete_external_link_help_topics_content">Nếu bạn có sự cố hoặc thắc mắc về ứng dụng.</string>
+    <string name="action_report_an_issue">Báo cáo sự cố</string>
+    <string name="upload_answer_yes">Có</string>
+    <string name="upload_answer_no">Không</string>
+    <string name="upload_step_1_header">Nhân viên y tế có yêu cầu bạn đăng tải thông tin của bạn không?</string>
+    <string name="upload_step_1_header_content_description">Tiêu đề, Nhân viên y tế có yêu cầu bạn đăng tải thông tin của bạn không?</string>
+    <string name="upload_step_1_body">Chỉ khi bạn xét nghiệm dương tính với COVID-19, nhân viên y tế của tiểu bang hoặc lãnh thổ sẽ liên lạc với bạn để hỗ trợ đăng tải thông tin của bạn một cách tự nguyện.
+\n\n
+Khi nhấn \'Có\', bạn cần phải đồng ý đăng tải thông tin của mình.</string>
+    <string name="upload_step_4_header">Đăng tải sự đồng ý</string>
+    <string name="upload_step_4_header_content_description">Tiêu đề,  Đăng tải sự đồng ý</string>
+    <string name="upload_step_4_sub_header">Nếu bạn không đồng ý, thông tin về việc tiếp xúc gần của bạn sẽ không được đăng tải.
+\n\n
+Nếu bạn đồng ý, thông tin về việc tiếp xúc gần của bạn sẽ được đăng tải và chia sẻ với các nhân viên y tế của tiểu bang hoặc lãnh thổ cho các mục đích truy tìm tiếp xúc. 
+\n\n
+Đọc <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app"> chính sách bảo mật </a> của COVIDSafe để biết thêm chi tiết.</string>
+    <string name="upload_step_verify_pin_header">Đăng tải thông tin của bạn</string>
+    <string name="upload_step_verify_pin_header_content_description">Tiêu đề, Đăng tải thông tin của bạn</string>
+    <string name="upload_step_verify_pin_sub_header">Nhân viên y tế của tiểu bang hoặc lãnh thổ sẽ gửi mã PIN qua tin nhắn đến thiết bị di động của bạn. Nhập mã PIN vào đây để đăng tải thông tin của bạn.</string>
+    <string name="action_verify_upload_pin">Đăng tải thông tin của tôi</string>
+    <string name="action_verify_invalid_pin">MÃ PIN không hợp lệ, vui lòng yêu cầu nhân viên y tế gửi cho bạn một mã PIN khác.</string>
+    <string name="upload_finished_header">Cảm ơn bạn đã giúp ngăn chặn sự lây lan của COVID-19!</string>
+    <string name="upload_finished_header_content_description">Tiêu đề, Cảm ơn bạn đã giúp ngăn chặn sự lây lan của COVID-19!</string>
+    <string name="upload_finished_sub_header">Bạn đã đăng tải thành công thông tin của mình vào hệ thống lưu trữ bảo mật cao của COVIDSafe.
+\n\n
+Các nhân viên y tế của tiểu bang hoặc lãnh thổ sẽ thông báo cho những người sử dụng COVIDSafe khác khi tiếp xúc gần với bạn. Danh tính của bạn sẽ được ẩn danh đối với người sử dụng khác.</string>
+    <string name="action_continue">Tiếp tục</string>
+    <string name="action_upload_your_data">Đăng tải dữ liệu của bạn</string>
+    <string name="action_upload_done">Tiếp tục</string>
+    <string name="upload_failed">Đăng tải thất bại</string>
+    <string name="upload_your_data_title">Đăng tải dữ liệu của bạn</string>
+    <string name="upload_your_data_description">Vui lòng đăng tải dữ liệu của bạn ngay hôm nay để giúp ngăn chặn sự lây lan của COVID-19</string>
+    <string name="upload_data_action">Hiện đang đăng tải dữ liệu</string>
+    <string name="activity_self_isolation_headline">Cảm ơn! Bạn đã giúp ngăn chặn sự lây lan của COVID-19!</string>
+    <string name="activity_self_isolation_content">Bạn đã giữ an toàn cho người khác khi giúp ngăn chặn sự lây lan của COVID-19 trong giai đoạn tự cách ly.</string>
+    <string name="activity_self_isolation_button">Tiếp tục</string>
+    <string name="home_version_number">Phiên bản số: %s</string>
+    <string name="country_nf">Đảo Norfolk</string>
+    <string name="country_cu">Cuba</string>
+    <string name="country_cw">Curaçao</string>
+    <string name="country_ir">Iran</string>
+    <string name="country_sd">Sudan</string>
+
+    <string name="disabled">Đã tắt</string>
+    <string name="enabled">Đã bật</string>
+    <string name="battery_optimisation_prompt">Bạn phải tắt tính năng tối ưu hóa pin.</string>
+    <string name="service_ok_title">COVIDSafe đang hoạt động</string>
+    <string name="service_ok_body">Giữ COVIDSafe hoạt động khi bạn rời khỏi nhà hoặc ở những nơi công cộng.</string>
+
+    <!--  <string name="under_sixteen_registration_consent_first_paragraph">Thông tin đăng ký của tôi để cho phép nhân viên y tế của tiểu bang và lãnh thổ theo dõi việc tiếp xúc.</string>-->
+    <!--  <string name="under_sixteen_consent_call_for_action">Chọn \'Tôi đồng ý\' để xác nhận sự đồng ý.</string>-->
+    <!--  <string name="Select_country_or_region_headline">Chọn quốc gia hoặc khu vực</string>-->
+    <!--  <string name="Enter_your_mobile_number_label">Nhập sô điện thoại di động của bạn</string>-->
+    <!--  <string name="norfolk_hint">Ví dụ: 51234</string>-->
+    <!--  <string name="invalid_norfolk_phone_number_error_prompt">Số điện thoại di động ở Đảo Norfolk chứa từ 5 đến 6 chữ số.</string>-->
+    <!--  <string name="permission_content_iOS_2">1. Bluetooth® -->
+    <!--2. Thông báo -->
+
+    <!-- COVIDSafe không gửi yêu cầu kết nối.</string>-->
+    <!--  <string name="home_set_complete_external_link_notifications_content_iOS">Bạn sẽ nhận được thông báo nếu COVIDSafe không hoạt động.</string>-->
+    <!--  <string name="home_set_complete_external_link_notifications_calltoaction_iOS">Thay đổi cài đặt thông báo</string>-->
+    <!--  <string name="PN_BluetoothStatusTitle">COVIDSafe không hoạt động</string>-->
+    <!--  <string name="PN_BluetoothStatusBody">Bật Bluetooth® để đảm bảo COVIDsafe hoạt động trước khi bạn rời khỏi nhà và khi ở những nơi công cộng.</string>-->
+    <!--  <string name="PN_ReminderTitle">Không phát hiện có tiếp xúc trong 48 giờ</string>-->
+    <!--  <string name="PN_ReminderBody">Mở COVIDSafe để đảm bảo ứng dụng đang hoạt động</string>-->
+    <!--  <string name="AllowBluetoothON">Truy cập Bluetooth®: BẬT</string>-->
+    <!--  <string name="AllowBluetoothOFF">Truy cập Bluetooth®: TẮT</string>-->
+    <!--  <string name="allow_bluetooth_call">Cho phép COVIDSafe truy cập vào Bluetooth®</string>-->
+    <!--  <string name="home_set_complete_external_link_notifications_title_iOS_off">Thông báo bị tắt</string>-->
+    <!--  <string name="home_set_complete_external_link_notifications_content_iOS_off">Bạn sẽ không nhận được bất kỳ thông báo nào nếu COVIDSafe không được kích hoạt.</string>-->
+    <!--  <string name="BluetoothOFF">Bluetooth®: TẮT</string>-->
+    <!--  <string name="BluetoothON">Bluetooth®: BẬT</string>-->
+    <!--  <string name="BluetoothOFF_content">Bật Bluetooth® trên điện thoại của bạn</string>-->
+    <!--  <string name="home_set_complete_external_link_app_url"></string>-->
+    <!--  <string name="permission_content_iOS">Bật Bluetooth® để COVIDSafe hoạt động. Khi bật Thông báo, bạn nhận được các cập nhật để nhắc nhở khi COVIDSafe không hoạt động. -->
+
+    <!-- Chọn \'Kích hoạt\' để bật:</string>-->
+    <!--  <string name="permission_success_content_iOS">Khi bạn rời khỏi nhà, hãy mang theo điện thoại bên mình và chắc chắn rằng COVIDSafe đang hoạt động. -->
+
+    <!--Bluetooth® cần luôn ở trạng thái BẬT -->
+
+    <!--COVIDSafe không gửi yêu cầu kết nối. Tìm hiểu thêm.</string>-->
+    <!--  <string name="home_set_complete_external_link_notifications_title_iOS">Thông báo đã được bật</string>-->
+    <!--  <string name="enter_number_prefix"></string>-->
+    <!--  <string name="invalid_age"></string>-->
+    <!--  <string name="personal_details_post_code_hint"></string>-->
+    <!--  <string name="home_setup_help">Trợ giúp</string>-->
+    <!--  <string name="invalid_post_code">Mã bưu điện không hợp lệ</string>-->
+    <!--  <string name="invalid_name">Tên không hợp lệ</string>-->
+
+
+</resources>

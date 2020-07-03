@@ -14,11 +14,9 @@
         style="@style/MobileKit.DialogButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/mk_button_right_margin"
         android:layout_marginEnd="@dimen/mk_button_right_margin"
         android:layout_below="@id/dialog_container"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:text="" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -26,10 +24,8 @@
         style="@style/MobileKit.DialogButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/mk_button_right_margin"
         android:layout_marginEnd="@dimen/mk_button_right_margin"
         android:layout_below="@id/dialog_container"
-        android:layout_toLeftOf="@id/positive_btn"
         android:layout_toStartOf="@id/positive_btn"
         android:layout_alignWithParentIfMissing="true"
         android:text=""

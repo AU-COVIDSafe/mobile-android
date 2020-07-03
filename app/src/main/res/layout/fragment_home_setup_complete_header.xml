@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_header_help"
         app:lottie_autoPlay="true"
         app:lottie_fileName="spinner_home.json"
@@ -22,8 +22,8 @@
         android:id="@+id/home_header_picture_setup_complete_space"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete" />
 
     <TextView
@@ -37,8 +37,8 @@
         android:gravity="center_horizontal"
         android:accessibilityTraversalBefore="@id/home_header_help"
         android:text="@string/home_header_active_title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete_space" />
 
     <TextView
@@ -52,8 +52,8 @@
         android:gravity="center_horizontal"
         android:text="@string/home_header_no_pairing"
         android:textColorLink="@color/slack_black"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header" />
 
     <Space

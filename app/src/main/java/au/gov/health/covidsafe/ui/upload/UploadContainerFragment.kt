@@ -13,7 +13,9 @@ import au.gov.health.covidsafe.ui.PagerContainer
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
+import kotlinx.android.synthetic.main.fragment_help.*
 import kotlinx.android.synthetic.main.fragment_upload_master.*
+import kotlinx.android.synthetic.main.fragment_upload_master.toolbar
 
 class UploadContainerFragment : Fragment(), PagerContainer {
 
@@ -23,6 +25,11 @@ class UploadContainerFragment : Fragment(), PagerContainer {
         super.onResume()
         toolbar.setNavigationOnClickListener {
             activity?.onBackPressed()
+        }
+
+        if (resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL) {
+            toolbar.navigationIcon =
+                    requireContext().getDrawable(R.drawable.ic_up_rtl)
         }
     }
 

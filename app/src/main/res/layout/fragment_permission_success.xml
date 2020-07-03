@@ -15,8 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_permission_success"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -27,6 +27,7 @@
             android:paddingStart="@dimen/keyline_5"
             android:paddingEnd="@dimen/keyline_5"
             android:text="@string/permission_success_headline"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +41,9 @@
             android:paddingStart="@dimen/keyline_5"
             android:paddingEnd="@dimen/keyline_5"
             android:text="@string/permission_success_content"
-            android:textColorLink="?attr/colorPrimary"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody1"
+            android:textColorLink="?attr/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/permission_success_headline" />

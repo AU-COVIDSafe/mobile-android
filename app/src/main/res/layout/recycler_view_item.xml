@@ -46,8 +46,8 @@
             android:layout_height="wrap_content"
             android:text="Central"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="@id/modelc"
-            app:layout_constraintRight_toRightOf="@id/modelc"
+            app:layout_constraintStart_toStartOf="@id/modelc"
+            app:layout_constraintEnd_toEndOf="@id/modelc"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/text_central"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:text="MODEL_C"
             android:textSize="16sp"
             android:textColor="@color/off_white" />
@@ -68,8 +68,8 @@
             android:tint="@color/off_white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/modelc"
-            app:layout_constraintRight_toLeftOf="@id/modelp"
+            app:layout_constraintStart_toEndOf="@id/modelc"
+            app:layout_constraintEnd_toStartOf="@id/modelp"
             />
 
 
@@ -79,8 +79,8 @@
             android:layout_height="wrap_content"
             android:text="Peripheral"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="@id/modelp"
-            app:layout_constraintRight_toRightOf="@id/modelp"
+            app:layout_constraintStart_toStartOf="@id/modelp"
+            app:layout_constraintEnd_toEndOf="@id/modelp"
             />
 
 
@@ -91,7 +91,7 @@
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_peri"
             android:textColor="@color/off_white" />
 
@@ -150,8 +150,8 @@
             android:layout_height="wrap_content"
             android:text="ModelC"
             android:textSize="16sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/filter_by_modelp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/filter_by_modelp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -160,8 +160,8 @@
             android:layout_height="wrap_content"
             android:text="ModelP"
             android:textSize="16sp"
-            app:layout_constraintLeft_toRightOf="@id/filter_by_modelc"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/filter_by_modelc"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 

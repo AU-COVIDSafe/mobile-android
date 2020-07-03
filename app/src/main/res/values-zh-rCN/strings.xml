@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <string name="generic_error">请稍后再试</string>
+  <string name="generic_internet_error">请检查您的互联网连接</string>
+  <string name="dialog_uploading_message">您的COVIDSafe信息正在上传中。 
+\n\n
+请不要关闭该应用程序。</string>
+  <string name="dialog_error_uploading_message">个人信息上传时发生错误，请重试。</string>
+  <string name="dialog_error_uploading_positive">重试</string>
+  <string name="share_this_app_content_html">让我们一起阻止COVID-19的传播！下载<a href="https://covidsafe.gov.au"> COVIDSafe </a> — 澳大利亚政府开发的一款应用程序。 ＃COVID19 #coronavirusaustralia #stayhomesavelives <a href="https://covidsafe.gov.au"> covidsafe.gov.au </a></string>
+  <string name="share_this_app_content">让我们一起阻止COVID-19的传播！下载 COVIDSafe—澳大利亚政府开发的一款应用程序。 #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+  <string name="dialog_error_uploading_negative">取消</string>
+  <string name="title_help">帮助</string>
+  <string name="service_not_ok_title">COVIDSafe未激活</string>
+  <string name="service_not_ok_body">离家前和在公共场所时，确保COVIDSafe处于激活状态。</string>
+  <string name="service_not_ok_action">立即查看应用程序</string>
+  <string name="migration_in_progress">COVIDSafe正在更新。 
+\n\n
+请保持开机状态直至更新完成。</string>
+  <string name="intro_headline">齐心协力，阻止COVID-19的传播</string>
+  <string name="intro_headline_content_description">Heading，齐心协力，阻止COVID-19的传播</string>
+  <string name="intro_content">为了避免冠状病毒的传播，澳大利亚政府开发了COVIDSafe。 
+\n\n
+ COVIDSafe会以保密的方式记录您与其他用户发生的接触。如果您与病毒测试呈阳性的人发生密切接触，州和领地的卫生官员将与您联系。
+\n\n
+让我们齐心协力，阻止病毒传播，保护大众健康。</string>
+  <string name="intro_button">我想贡献一己之力</string>
+  <string name="how_it_works_headline">COVIDSafe 的工作原理</string>
+  <string name="how_it_works_headline_content_description">Heading，COVIDSafe 的工作原理</string>
+  <string name="how_it_works_content">蓝牙®信号用于确定您靠近另一个COVIDSafe用户的时间。 
+\n\n
+您与其他COVIDSafe用户之间的每一次密切接触都被记录下来，以创建密切接触信息。该信息经过加密，且仅存储在您的手机中。
+\n\n
+如果您使用COVIDSafe并对COVID-19测试呈阳性，则州或领地卫生官员将与您联系。他们将协助您上传密切接触者信息至高度安全的信息存储系统
+\n\n
+如果您与测试结果呈阳性的其他COVIDSafe用户发生密切接触，则州或领地卫生官员可能会与您联系。 
+\n\n
+如需更多信息，请参阅<a href="https://www.covidsafe.gov.au/help-topics/zh-hans.html">帮助主题</a>页</string>
+  <string name="how_it_works_consent">如需健康追踪，将事先征求您的同意。</string>
+  <string name="how_it_works_button">下一步</string>
+  <string name="data_privacy_content">在注册COVIDSafe之前，请务必阅读COVIDSafe<a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">隐私政策</a>。
+\n\n
+如果您未满16岁，您的父母/监护人也必须阅读<a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">隐私政策</a>。
+\n\n
+使用COVIDSafe属自愿行为。您可以随时安装或删除该应用程序。如果删除COVIDSafe，<a href="https://www.covidsafe.gov.au/help-topics/zh-hans.html">您也可以要求从安全服务器中删除您的个人信息</a>。
+\n\n
+要注册使用COVIDSafe，您需要输入姓名，手机号码，年龄段和邮政编码。 
+\n\n
+注册时提交的信息以及有关COVIDSafe使用的信息将被收集并存储在高度安全的服务器上。 
+\n\n
+ COVIDSafe不会收集您的位置信息。 
+\n\n
+ COVIDSafe将记录发生接触的时间以及与您接触的其他COVIDSafe用户的匿名ID代码。 
+\n\n
+与您接触的其他COVIDSafe用户将在其手机上看到一个匿名ID代码以及与您发生接触的时间。 
+\n\n
+如果其他用户对COVID-19的测试结果呈阳性，他们可以上传自己的联系信息。为了追踪接触者，州或领地的卫生官员有可能会与您联系。 
+\n\n
+您的详细注册信息仅在追踪接触者以及维持COVIDSafe的合法正常运行时候使用或披露。 
+\n\n
+如需更多信息，请访问<a href="https://www.health.gov.au/">澳大利亚政府卫生部网站</a>。
+\n\n
+如需进一步了解您对个人信息的权利，以及个人信息的处理和共享方式，请参阅COVIDSafe<a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">隐私策略</a>。</string>
+  <string name="data_privacy_headline">注册及隐私</string>
+  <string name="data_privacy_headline_content_description">Heading，注册及隐私</string>
+  <string name="data_privacy_button">下一步</string>
+  <string name="consent_call_for_action">选择“我同意”以确认同意。</string>
+  <string name="consent_button">我同意</string>
+  <string name="registration_consent_headline">注册同意书</string>
+  <string name="registration_consent_content">我同意澳大利亚卫生部收集以下信息：</string>
+  <string name="registration_consent_first_paragraph">我的注册资料，以便州和领地卫生官员追踪接触者。</string>
+  <string name="registration_consent_second_paragraph">在其他COVIDSafe用户的COVID-19测试呈阳性时，从该用户处获取我的联系信息</string>
+  <string name="under_sixteen_second_paragraph">在其他COVIDSafe用户的COVID-19测试呈阳性时，从该用户处获取我的联系信息</string>
+  <string name="personal_details_headline">输入您的个人信息</string>
+  <string name="personal_details_headline_content_description">Heading，输入您的个人信息</string>
+  <string name="personal_details_name_title">全名</string>
+  <string name="personal_details_name_content_description">输入全名</string>
+  <string name="personal_details_name_error_prompt">请输入您的全名。</string>
+  <string name="personal_details_age_title">年龄范围（请选择）</string>
+  <string name="personal_details_age_content_description">选择年龄范围</string>
+  <string name="personal_details_age_error_prompt">请选择您的年龄范围。</string>
+  <string name="personal_details_post_code">澳大利亚邮政编码</string>
+  <string name="personal_details_post_code_content_description">输入邮政编码</string>
+  <string name="personal_details_post_code_error_prompt">您的澳大利亚邮政编码必须包含4位数字。</string>
+  <string name="personal_details_post_code_dialog_title">邮政编码</string>
+  <string name="personal_details_age_dialog_title">选择您的年龄</string>
+  <string name="personal_details_dialog_ok">选择</string>
+  <string name="navigation_back_button_content_description">上一页</string>
+  <string name="personal_details_button">继续</string>
+  <string name="under_sixteen_headline">您需要得到父母/监护人的同意才能继续</string>
+  <string name="under_sixteen_headline_content_description">Heading，您需要得到父母/监护人的同意才能继续</string>
+  <string name="under_sixteen_content">我确认我的父母或监护人同意澳大利亚卫生部收集以下信息：</string>
+  <string name="under_sixteen_first_paragraph">我的注册信息，以便州和领地卫生官员追踪接触者。</string>
+  <string name="select_country_or_region">选择国家或地区</string>
+  <string name="enter_number_headline">请输入您的手机号码</string>
+  <string name="enter_number_for_example">例如：</string>
+  <string name="invalid_phone_number">无效电话号码。</string>
+  <string name="invalid_australian_phone_number_error_prompt">澳大利亚手机号码最多包含10位数。</string>
+  <string name="invalid_norfolk_island_phone_number_error_prompt">诺福克岛的手机号码包含5到6位数。</string>
+  <string name="invalid_phone_number_digits_error_prompt" formatted="false">%1s中的手机号码包含 %2s 位数。</string>
+  <string name="enter_number_content">我们将向您发送一个6位数的PIN码以验证您的手机号码。</string>
+  <string name="enter_number_relative">您是否代表朋友或亲戚注册？
+他们需要用自己的手机和电话号码进行注册才能使用COVIDSafe。</string>
+  <string name="enter_number_button">获得PIN码</string>
+  <string name="search">搜索</string>
+  <string name="options_for_australia">澳大利亚选项</string>
+  <string name="country_af">阿富汗</string>
+  <string name="country_al">阿尔巴尼亚</string>
+  <string name="country_dz">阿尔及利亚</string>
+  <string name="country_ad">安道尔</string>
+  <string name="country_ag">安提瓜和巴布达</string>
+  <string name="country_ao">安哥拉</string>
+  <string name="country_ai">安圭拉</string>
+  <string name="country_am">亚美尼亚</string>
+  <string name="country_ar">阿根廷</string>
+  <string name="country_aw">阿鲁巴</string>
+  <string name="country_az">阿塞拜疆</string>
+  <string name="country_at">奥地利</string>
+  <string name="country_au">澳大利亚</string>
+  <string name="country_bs">巴哈马</string>
+  <string name="country_bh">巴林</string>
+  <string name="country_bd">孟加拉国</string>
+  <string name="country_bb">巴巴多斯</string>
+  <string name="country_by">白俄罗斯</string>
+  <string name="country_be">比利时</string>
+  <string name="country_bz">伯利兹</string>
+  <string name="country_bj">贝宁</string>
+  <string name="country_bm">百慕大</string>
+  <string name="country_bt">不丹</string>
+  <string name="country_bo">玻利维亚</string>
+  <string name="country_ba">波斯尼亚和黑塞哥维那</string>
+  <string name="country_bw">博茨瓦纳</string>
+  <string name="country_br">巴西</string>
+  <string name="country_bn">文莱</string>
+  <string name="country_bg">保加利亚</string>
+  <string name="country_bf">布基纳法索</string>
+  <string name="country_bi">布隆迪</string>
+  <string name="country_kh">柬埔寨</string>
+  <string name="country_cv">佛得角</string>
+  <string name="country_cm">喀麦隆</string>
+  <string name="country_ca">加拿大</string>
+  <string name="country_cf">中非共和国</string>
+  <string name="country_ky">开曼群岛</string>
+  <string name="country_td">乍得</string>
+  <string name="country_cl">智利</string>
+  <string name="country_cn">中国</string>
+  <string name="country_co">哥伦比亚</string>
+  <string name="country_km">科摩罗</string>
+  <string name="country_ck">库克群岛</string>
+  <string name="country_cr">哥斯达黎加</string>
+  <string name="country_hr">克罗地亚</string>
+  <string name="country_cy">塞浦路斯</string>
+  <string name="country_cz">捷克共和国</string>
+  <string name="country_cd">刚果民主共和国</string>
+  <string name="country_dj">吉布提</string>
+  <string name="country_dk">丹麦</string>
+  <string name="country_dm">多米尼加</string>
+  <string name="country_do">多米尼加共和国</string>
+  <string name="country_ec">厄瓜多尔</string>
+  <string name="country_eg">埃及</string>
+  <string name="country_sv">萨尔瓦多</string>
+  <string name="country_gq">赤道几内亚</string>
+  <string name="country_ee">爱沙尼亚</string>
+  <string name="country_et">埃塞俄比亚</string>
+  <string name="country_fo">法罗群岛</string>
+  <string name="country_fj">斐济</string>
+  <string name="country_fi">芬兰</string>
+  <string name="country_fr">法国</string>
+  <string name="country_gf">法属圭亚那</string>
+  <string name="country_ga">加蓬</string>
+  <string name="country_gm">冈比亚</string>
+  <string name="country_ge">格鲁吉亚</string>
+  <string name="country_de">德国</string>
+  <string name="country_gi">直布罗陀</string>
+  <string name="country_gh">加纳</string>
+  <string name="country_gl">格陵兰</string>
+  <string name="country_gd">格林纳达</string>
+  <string name="country_gp">瓜德罗普</string>
+  <string name="country_gr">希腊</string>
+  <string name="country_gu">关岛</string>
+  <string name="country_gt">危地马拉</string>
+  <string name="country_gn">几内亚</string>
+  <string name="country_gw">几内亚比绍</string>
+  <string name="country_gy">圭亚那</string>
+  <string name="country_ht">海地</string>
+  <string name="country_hn">洪都拉斯</string>
+  <string name="country_hk">香港</string>
+  <string name="country_hu">匈牙利</string>
+  <string name="country_is">冰岛</string>
+  <string name="country_in">印度</string>
+  <string name="country_id">印度尼西亚</string>
+  <string name="country_iq">伊拉克</string>
+  <string name="country_ie">爱尔兰</string>
+  <string name="country_il">以色列</string>
+  <string name="country_ci">科特迪瓦</string>
+  <string name="country_it">意大利</string>
+  <string name="country_jm">牙买加</string>
+  <string name="country_jp">日本</string>
+  <string name="country_jo">约旦</string>
+  <string name="country_kz">哈萨克斯坦</string>
+  <string name="country_ki">基里巴斯</string>
+  <string name="country_ke">肯尼亚</string>
+  <string name="country_kw">科威特</string>
+  <string name="country_kg">吉尔吉斯斯坦</string>
+  <string name="country_la">老挝</string>
+  <string name="country_lv">拉脱维亚</string>
+  <string name="country_lb">黎巴嫩</string>
+  <string name="country_ls">莱索托</string>
+  <string name="country_lr">利比里亚</string>
+  <string name="country_li">列支敦士登</string>
+  <string name="country_ly">利比亚</string>
+  <string name="country_lt">立陶宛</string>
+  <string name="country_lu">卢森堡</string>
+  <string name="country_mo">澳门</string>
+  <string name="country_mk">前南斯拉夫马其顿共和国</string>
+  <string name="country_mg">马达加斯加</string>
+  <string name="country_mw">马拉维</string>
+  <string name="country_my">马来西亚</string>
+  <string name="country_mv">马尔代夫</string>
+  <string name="country_ml">马里</string>
+  <string name="country_mt">马耳他</string>
+  <string name="country_mq">马提尼克</string>
+  <string name="country_mr">毛里塔尼亚</string>
+  <string name="country_mu">毛里求斯</string>
+  <string name="country_mx">墨西哥</string>
+  <string name="country_md">摩尔多瓦</string>
+  <string name="country_mc">摩纳哥</string>
+  <string name="country_mn">蒙古</string>
+  <string name="country_me">黑山</string>
+  <string name="country_ms">蒙特塞拉特</string>
+  <string name="country_ma">摩洛哥</string>
+  <string name="country_mz">莫桑比克</string>
+  <string name="country_mm">缅甸</string>
+  <string name="country_na">纳米比亚</string>
+  <string name="country_np">尼泊尔</string>
+  <string name="country_nl">荷兰</string>
+  <string name="country_an">荷属安的列斯</string>
+  <string name="country_nc">新喀里多尼亚</string>
+  <string name="country_nz">新西兰</string>
+  <string name="country_ni">尼加拉瓜</string>
+  <string name="country_ne">尼日尔</string>
+  <string name="country_ng">尼日利亚</string>
+  <string name="country_no">挪威</string>
+  <string name="country_om">阿曼</string>
+  <string name="country_pk">巴基斯坦</string>
+  <string name="country_pw">帕劳</string>
+  <string name="country_ps">巴勒斯坦领土</string>
+  <string name="country_pa">巴拿马</string>
+  <string name="country_pg">巴布亚新几内亚</string>
+  <string name="country_py">巴拉圭</string>
+  <string name="country_pe">秘鲁</string>
+  <string name="country_ph">菲律宾</string>
+  <string name="country_pl">波兰</string>
+  <string name="country_pt">葡萄牙</string>
+  <string name="country_pr">波多黎各</string>
+  <string name="country_qa">卡塔尔</string>
+  <string name="country_cg">刚果共和国</string>
+  <string name="country_re">留尼汪岛</string>
+  <string name="country_ro">罗马尼亚</string>
+  <string name="country_ru">俄罗斯</string>
+  <string name="country_rw">卢旺达</string>
+  <string name="country_kn">圣基茨和尼维斯</string>
+  <string name="country_lc">圣卢西亚</string>
+  <string name="country_vc">圣文森特和格林纳丁斯</string>
+  <string name="country_ws">萨摩亚</string>
+  <string name="country_st">圣多美和普林西比</string>
+  <string name="country_sa">沙特阿拉伯</string>
+  <string name="country_sn">塞内加尔</string>
+  <string name="country_rs">塞尔维亚</string>
+  <string name="country_sc">塞舌尔</string>
+  <string name="country_sl">塞拉利昂</string>
+  <string name="country_sg">新加坡</string>
+  <string name="country_sk">斯洛伐克</string>
+  <string name="country_si">斯洛文尼亚</string>
+  <string name="country_sb">所罗门群岛</string>
+  <string name="country_so">索马里</string>
+  <string name="country_za">南非</string>
+  <string name="country_kr">韩国</string>
+  <string name="country_ss">南苏丹</string>
+  <string name="country_es">西班牙</string>
+  <string name="country_lk">斯里兰卡</string>
+  <string name="country_sr">苏里南</string>
+  <string name="country_sz">斯威士兰</string>
+  <string name="country_se">瑞典</string>
+  <string name="country_ch">瑞士</string>
+  <string name="country_tw">台湾</string>
+  <string name="country_tj">塔吉克斯坦</string>
+  <string name="country_tz">坦桑尼亚</string>
+  <string name="country_th">泰国</string>
+  <string name="country_tl">东帝汶</string>
+  <string name="country_tg">多哥</string>
+  <string name="country_to">汤加</string>
+  <string name="country_tt">特立尼达和多巴哥</string>
+  <string name="country_tn">突尼斯</string>
+  <string name="country_tr">土耳其</string>
+  <string name="country_tm">土库曼斯坦</string>
+  <string name="country_tc">特克斯和凯科斯群岛</string>
+  <string name="country_ug">乌干达</string>
+  <string name="country_ua">乌克兰</string>
+  <string name="country_ae">阿拉伯联合酋长国</string>
+  <string name="country_gb">英国</string>
+  <string name="country_us">美国</string>
+  <string name="country_uy">乌拉圭</string>
+  <string name="country_uz">乌兹别克斯坦</string>
+  <string name="country_vu">瓦努阿图</string>
+  <string name="country_ve">委内瑞拉</string>
+  <string name="country_vn">越南</string>
+  <string name="country_vg">英属维尔京群岛</string>
+  <string name="country_vi">美属维尔京群岛</string>
+  <string name="country_ye">也门</string>
+  <string name="country_zm">赞比亚</string>
+  <string name="country_zw">津巴布韦</string>
+  <string name="country_nf">诺福克岛</string>
+  <string name="country_cu">古巴</string>
+  <string name="country_cw">库拉索</string>
+  <string name="country_ir">伊朗</string>
+  <string name="country_sd">苏丹</string>
+
+
+  <string name="enter_pin_headline" formatted="false">输入发送到%s%s的PIN码</string>
+  <string name="enter_pin_wrong_number">请确认手机号码是否正确</string>
+  <string name="enter_pin_timer_expire">您的PIN码将在此时间后失效：</string>
+  <string name="wrong_pin_number">错误的PIN码</string>
+  <string name="enter_pin_resend_pin">重新发送PIN码</string>
+  <string name="pin_issue">
+    <a href="https://www.covidsafe.gov.au/help-topics/zh-hans.html#verify-mobile-number-pin">接收PIN码时遇到问题？ </a>
+  </string>
+  <string name="enter_pin_button">验证</string>
+  <string name="permission_headline">应用设置</string>
+  <string name="permission_location_rationale">安卓需要获取您的位置信息才能启用蓝牙功能，运行COVIDSafe，否则COVIDSafe无法正常运行</string>
+  <string name="permission_content">COVIDSafe需要启用蓝牙®和通知功能才能运行。 
+\n\n
+选择“继续”以： 
+\n\n
+ 1.启用蓝牙® 
+\n
+ 2.允许获得位置权限
+\n
+ 3.禁用电池优化功能
+\n\n
+ Android需要位置权限才能使蓝牙®正常运行。 
+\n\n
+ COVIDSafe不发送配对请求。</string>
+  <string name="permission_button">继续</string>
+  <string name="change_device_name_headline">您的设备名称</string>
+  <string name="change_device_name_headline_content_description">Heading，您的设备名称</string>
+  <string name="change_device_name_content_line_1">您的设备当前名称为%s 。</string>
+  <string name="change_device_name_content_line_2">您周围的其他蓝牙®设备将能够看到此名称。我们建议使用不包含个人信息的设备名称。</string>
+  <string name="change_device_name_new_device_name">新设备名称</string>
+  <string name="change_device_name_default_device_name">安卓手机</string>
+  <string name="change_device_name_primary_action">更改并继续</string>
+  <string name="change_device_name_secondary_action">跳过并保留原设备名称</string>
+  <string name="permission_success_headline">您已成功注册</string>
+  <string name="permission_success_content">1.离家时，请随身携带手机，并确保COVIDSafe处于激活状态。 
+\n\n
+2.蓝牙®应保持开启状态。 
+\n\n
+3.电池优化应关闭。 
+\n\n
+4. COVIDSafe不发送配对请求。 <a href="https://www.covidsafe.gov.au/help-topics/zh-hans.html#bluetooth-pairing-request">了解更多</a> 。</string>
+  <string name="notification_not_active_body">离家前和在公共场所时，确保COVIDSafe处于激活状态。</string>
+  <string name="notification_active_body">离家和在公共场所时，确保COVIDSafe处于激活状态。</string>
+  <string name="permission_success_warning">开启COVIDSafe的推送通知功能，以便在应用程序无法正常运行时及时通知您。</string>
+  <string name="permission_success_button">继续</string>
+  <string name="notification_active_title">COVIDSafe已激活。</string>
+  <string name="notification_not_active_title">COVIDSafe未激活</string>
+  <string name="home_header_active_title">COVIDSafe已激活。</string>
+  <string name="home_header_active_no_action_required">无须进一步操作。</string>
+  <string name="home_header_inactive_title">COVIDSafe未激活</string>
+  <string name="home_header_inactive_check_your_permissions">检查您的设置</string>
+  <string name="home_header_uploaded_on_date">个人信息已在%s 上传。</string>
+  <string name="home_header_no_pairing">COVIDSafe不发送<a href="https://www.covidsafe.gov.au/help-topics/zh-hans.html#bluetooth-pairing-request">配对请求</a> 。</string>
+  <string name="home_bluetooth_permission">蓝牙®： %s</string>
+  <string name="home_non_battery_optimization_permission">电池优化： %s</string>
+  <string name="home_location_permission">位置： %s</string>
+  <string name="home_push_notification_permission">推送通知： %s</string>
+  <string name="home_permission_on">开</string>
+  <string name="home_permission_off">关</string>
+  <string name="home_setup_incomplete_title">检查
+    \n\n
+权限</string>
+  <string name="home_setup_incomplete_subtitle">COVIDSafe需要访问这些功能的权限。</string>
+  <string name="home_app_permission_status_title">检查您的设置</string>
+  <string name="home_app_permission_status_subtitle">若设置不正确，COVIDSafe将无法运行。</string>
+  <string name="home_app_permission_push_notification_prompt">允许COVIDSafe推送通知。</string>
+  <string name="home_been_tested_title">是否有卫生官员要求您上传数据？</string>
+  <string name="home_data_uploaded">自我隔离注册</string>
+  <string name="home_data_uploaded_message">协助阻止COVID-19的传播，追踪您的症状。</string>
+  <string name="home_data_has_been_uploaded_message">自我隔离期间，请您每天上传数据，以协助阻止COVID-19的传播。</string>
+  <string name="home_data_uploaded_button">注册</string>
+  <string name="home_data_has_been_uploaded">您的数据已上传</string>
+  <string name="home_set_complete_disclaimer_title">让我们齐心协力，阻止COVID-19的传播！</string>
+  <string name="home_set_complete_external_link_share_content">邀请他人助力。万众一心，其利断金。</string>
+  <string name="home_set_complete_external_link_share_title">分享COVIDSafe</string>
+  <string name="home_set_complete_external_link_news_title">最新消息和情况更新</string>
+  <string name="home_set_complete_external_link_news_url">https://www.australia.gov.au</string>
+  <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
+  <string name="home_set_complete_external_link_news_content">前往aus.gov.au了解冠状病毒最新消息。</string>
+  <string name="home_set_complete_external_link_app_title">获取冠状病毒应用程序</string>
+  <string name="home_set_complete_external_link_app_content">下载政府应用程序，了解最新消息和建议。</string>
+  <string name="home_set_complete_external_link_been_contacted_title">是否有卫生官员联系过您？</string>
+  <string name="home_set_complete_external_link_been_contacted_content">只有在您检测呈阳性后，才能上传个人信息。</string>
+  <string name="home_set_complete_external_link_help_topics_title">帮助主题</string>
+  <string name="home_set_complete_external_link_help_topics_content">如果应用程序在使用时出现问题或者您对其有疑问。</string>
+  <string name="action_report_an_issue">报告问题</string>
+  <string name="home_version_number">版本号： %s</string>
+  <string name="upload_answer_yes">是</string>
+  <string name="upload_answer_no">否</string>
+  <string name="upload_step_1_header">是否有卫生官员要求您上传个人信息？</string>
+  <string name="upload_step_1_header_content_description">Heading，是否有卫生官员要求您上传个人信息？</string>
+  <string name="upload_step_1_body">只有在您的COVID-19测试呈阳性时，州或领地卫生官员才会联系您，以协助您上传个人信息。 
+\n\n
+按“是”后，请同意上传您的个人信息。</string>
+  <string name="upload_step_4_header">上传同意书</string>
+  <string name="upload_step_4_header_content_description">Heading，上传同意书</string>
+  <string name="upload_step_4_sub_header">未经您的同意，您的密切接触者信息不会被上传。 
+\n\n
+如果您同意，您的密切接触者信息将被上传并与州或领地卫生官员共享，以便追踪密切接触者。 
+\n\n
+阅读COVIDSafe <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">隐私政策</a>以获得更多详细信息。</string>
+  <string name="upload_step_verify_pin_header">上传个人信息</string>
+  <string name="upload_step_verify_pin_header_content_description">Heading，上传个人信息</string>
+  <string name="upload_step_verify_pin_sub_header">州或领地卫生官员将通过短信向您的手机发送 PIN码。请在下面输入PIN码以上传个人信息。</string>
+  <string name="action_verify_upload_pin">上传个人信息</string>
+  <string name="action_verify_invalid_pin">PIN码无效，请要求卫生官员向您再发送一个PIN码。</string>
+  <string name="upload_finished_header">感谢您协助阻止COVID-19的传播！</string>
+  <string name="upload_finished_header_content_description">Heading，感谢您协助阻止COVID-19的传播！</string>
+  <string name="upload_finished_sub_header">您已成功将个人资料上传到COVIDSafe高度安全的存储系统。 
+\n\n
+根据记录，其他COVIDSafe用户与您如有密切接触，州或领地卫生官员将通知他们。您的身份对其他用户将保持匿名状态。</string>
+  <string name="action_continue">继续</string>
+  <string name="action_upload_your_data">上传数据</string>
+  <string name="action_upload_done">继续</string>
+  <string name="upload_failed">上传失败</string>
+  <string name="upload_your_data_title">上传数据</string>
+  <string name="upload_your_data_description">请立即上传您的数据，以阻止 COVID-19 的传播</string>
+  <string name="upload_data_action">立即上传数据</string>
+  <string name="activity_self_isolation_headline">谢谢！您为阻止COVID-19的传播贡献了一己之力！</string>
+  <string name="activity_self_isolation_content">自我隔离期间，您阻止了COVID-19的扩散，确保了他人的安全。</string>
+  <string name="activity_self_isolation_button">继续</string>
+
+  <string name="enabled">已启用</string>
+  <string name="disabled">已停用</string>
+  <string name="battery_optimisation_prompt">您不能使用电池优化功能。</string>
+  <string name="service_ok_title">COVIDSafe已激活。</string>
+  <string name="service_ok_body">离开家和在公共场所时，请确保COVIDSafe处于激活状态。</string>
+
+<!--  <string name="under_sixteen_registration_consent_first_paragraph">我的注册信息以便州或领地卫生官员追踪接触者。</string>-->
+<!--  <string name="under_sixteen_consent_call_for_action">选择“我同意”以确认同意。</string>-->
+<!--  <string name="Select_country_or_region_headline">选择国家或地区</string>-->
+<!--  <string name="Enter_your_mobile_number_label">请输入您的手机号码</string>-->
+<!--  <string name="norfolk_hint">例如：51234</string>-->
+<!--  <string name="invalid_norfolk_phone_number_error_prompt">诺福克岛的手机号码包含5到6位数字。</string>-->
+<!--  <string name="permission_content_iOS">COVIDSafe需要启用蓝牙®才能运行。通过启用通知，您将在COVIDSafe未激活时收到提醒。 -->
+
+<!--选择“继续”以启用：</string>-->
+<!--  <string name="permission_content_iOS_2">1. 蓝牙®-->
+<!--2. 通知-->
+
+<!--COVIDSafe 不发送配对请求。</string>-->
+<!--  <string name="permission_success_content_iOS">离家时请随身携带手机，并确保COVIDSafe处于激活状态。 -->
+
+<!--蓝牙®应保持开启状态。 -->
+
+<!-- COVIDSafe不发送配对请求。了解更多。</string>-->
+<!--  <string name="home_set_complete_external_link_notifications_content_iOS">如果COVIDSafe未激活，您将收到提醒。</string>-->
+<!--  <string name="home_set_complete_external_link_notifications_title_iOS">通知已启用</string>-->
+<!--  <string name="home_set_complete_external_link_notifications_calltoaction_iOS">更改通知设置</string>-->
+<!--  <string name="PN_BluetoothStatusTitle">COVIDSafe未激活</string>-->
+<!--  <string name="PN_BluetoothStatusBody">离家之前和在公共场所时，务必开启蓝牙®，使COVIDSafe处于激活状态。</string>-->
+<!--  <string name="PN_ReminderTitle">48 小时内未检测到任何接触</string>-->
+<!--  <string name="PN_ReminderBody">开启 COVIDSafe，确保其处于运行状态。</string>-->
+<!--  <string name="AllowBluetoothON">访问蓝牙®：开</string>-->
+<!--  <string name="AllowBluetoothOFF">访问蓝牙®：关</string>-->
+<!--  <string name="allow_bluetooth_call">允许 COVIDSafe 访问蓝牙®</string>-->
+<!--  <string name="home_set_complete_external_link_notifications_title_iOS_off">通知已禁用</string>-->
+<!--  <string name="home_set_complete_external_link_notifications_content_iOS_off">如果COVIDSafe未激活，您将不会收到任何通知。</string>-->
+<!--  <string name="BluetoothOFF">蓝牙®：关</string>-->
+<!--  <string name="BluetoothON">蓝牙®：开</string>-->
+<!--  <string name="BluetoothOFF_content">打开手机蓝牙®</string>-->
+</resources>

@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
 import androidx.annotation.Keep
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleService
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import au.gov.health.covidsafe.*
@@ -45,6 +46,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.EasyPermissions
+import java.lang.Exception
 import java.lang.ref.WeakReference
 import kotlin.coroutines.CoroutineContext
 
@@ -182,6 +184,22 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         return btOn
     }
 
+    private fun isBatteryOptimizationDisabled(): Boolean {
+        return try {
+            val powerManager = TracerApp.AppContext.getSystemService(AppCompatActivity.POWER_SERVICE) as PowerManager?
+            val packageName = TracerApp.AppContext.packageName
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                powerManager?.isIgnoringBatteryOptimizations(packageName) ?: true
+            } else {
+                true
+            }
+        } catch (e: Exception) {
+            CentralLog.e(TAG, "isBatteryOptimizationDisabled() throws exception", e)
+            true
+        }
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
         CentralLog.i(TAG, "Service onStartCommand")
@@ -192,7 +210,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         }
 
         //check for permissions
-        if (!hasLocationPermissions() || !isBluetoothEnabled()) {
+        if (!hasLocationPermissions() || !isBluetoothEnabled() || !isBatteryOptimizationDisabled()) {
             CentralLog.i(
                     TAG,
                     "location permission: ${hasLocationPermissions()} bluetooth: ${isBluetoothEnabled()}"
@@ -430,7 +448,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         CentralLog.i(TAG, "Performing self diagnosis")
 
-        if (!hasLocationPermissions() || !isBluetoothEnabled()) {
+        if (!hasLocationPermissions() || !isBluetoothEnabled() || !isBatteryOptimizationDisabled()) {
             CentralLog.i(TAG, "no location permission")
             val notif =
                     NotificationTemplates.lackingThingsNotification(this.applicationContext, CHANNEL_ID)
@@ -580,19 +598,19 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
                     val remoteBlob: String = if (connRecord.version == VERSION_ONE) {
                         with(receiver = connRecord) {
-                        val plainRecordByteArray = gson.toJson(StreetPassRecordDatabase.Companion.EncryptedRecord(
-                                peripheral.modelP, central.modelC, rssi, txPower, msg = msg))
-                                .toByteArray(Charsets.UTF_8)
-                                Encryption.encryptPayload(plainRecordByteArray)
+                            val plainRecordByteArray = gson.toJson(StreetPassRecordDatabase.Companion.EncryptedRecord(
+                                    peripheral.modelP, central.modelC, rssi, txPower, msg = msg))
+                                    .toByteArray(Charsets.UTF_8)
+                            Encryption.encryptPayload(plainRecordByteArray)
                         }
                     } else {
                         //For version after version 1, the message is already encrypted in msg and we can store it as remote BLOB
                         connRecord.msg
                     }
-                    val localBlob : String = if (connRecord.version == VERSION_ONE) {
+                    val localBlob: String = if (connRecord.version == VERSION_ONE) {
                         ENCRYPTED_EMPTY_DICT
                     } else {
-                        with (receiver = connRecord) {
+                        with(receiver = connRecord) {
                             val modelP = if (DUMMY_DEVICE == peripheral.modelP) null else peripheral.modelP
                             val modelC = if (DUMMY_DEVICE == central.modelC) null else central.modelC
                             val rssi = if (rssi == DUMMY_RSSI) null else rssi

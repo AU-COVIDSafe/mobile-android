@@ -13,35 +13,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_up"
-        app:navigationContentDescription="@string/navigation_back_button_content_description"/>
+        app:navigationContentDescription="@string/navigation_back_button_content_description"
+        app:navigationIcon="@drawable/ic_up" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/keyline_6"
         android:layout_marginStart="@dimen/keyline_1"
-        android:text="@string/search" />
+        android:text="@string/search"
+        android:textAlignment="viewStart" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/keyline_8"
         android:layout_marginStart="@dimen/keyline_1"
         android:layout_marginEnd="@dimen/keyline_1"
-        android:paddingTop="@dimen/keyline_0"
-        android:paddingBottom="@dimen/keyline_0"
+        android:background="@drawable/edit_text_black_background"
         android:paddingStart="@dimen/keyline_1"
+        android:paddingTop="@dimen/keyline_0"
         android:paddingEnd="@dimen/keyline_0"
-        android:background="@drawable/edit_text_black_background">
-        
+        android:paddingBottom="@dimen/keyline_0">
+
         <ImageView
             android:id="@+id/countrySearchImageView"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:src="@drawable/ic_search"
+            android:layout_gravity="center|start"
+            android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:clickable="false"
-            android:layout_gravity="center|start" />
+            android:src="@drawable/ic_search" />
 
         <EditText
             android:id="@+id/countryRegionNameEditText"
@@ -52,17 +53,17 @@
         <ImageView
             android:id="@+id/microphoneImageView"
             android:layout_width="@dimen/keyline_6"
-            android:paddingStart="@dimen/keyline_1"
-            android:paddingEnd="@dimen/keyline_1"
             android:layout_height="match_parent"
             android:layout_gravity="end"
+            android:paddingStart="@dimen/keyline_1"
+            android:paddingEnd="@dimen/keyline_1"
             android:src="@drawable/ic_microphone" />
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/keyline_4"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/keyline_4">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/countryListRecyclerView"
@@ -70,9 +71,9 @@
             android:layout_height="match_parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/countryInitialLetterRecyclerView"
+            android:id="@+id/countryGroupNameRecyclerView"
             android:layout_width="@dimen/keyline_8"
-            android:layout_height="match_parent"
-            android:layout_gravity="right" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end" />
     </FrameLayout>
 </LinearLayout>

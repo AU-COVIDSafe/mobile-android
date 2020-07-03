@@ -36,12 +36,7 @@ class EnterNumberPresenter(private val enterNumberFragment: EnterNumberFragment)
         val prefixZeroRemovedPhoneNumber =
                 adjustPrefixForAustralianAndNorfolkPhoneNumber(callingCode, phoneNumber)
 
-        when {
-            enterNumberFragment.activity?.isInternetAvailable() == false -> {
-                enterNumberFragment.showCheckInternetError()
-            }
-            else -> makeOTPCall(callingCode, prefixZeroRemovedPhoneNumber)
-        }
+        makeOTPCall(callingCode, prefixZeroRemovedPhoneNumber)
     }
 
     /**
@@ -73,11 +68,18 @@ class EnterNumberPresenter(private val enterNumberFragment: EnterNumberFragment)
                                 phoneNumber)
                     },
                     onFailure = {
-                        if (it is GetOnboardingOtpException.GetOtpInvalidNumberException) {
-                            enterNumberFragment.showInvalidPhoneNumberPrompt(R.string.invalid_phone_number)
-                        } else {
-                            enterNumberFragment.showGenericError()
+                        when {
+                            it is GetOnboardingOtpException.GetOtpInvalidNumberException -> {
+                                enterNumberFragment.showInvalidPhoneNumberPrompt(R.string.invalid_phone_number)
+                            }
+                            context.isInternetAvailable() -> {
+                                enterNumberFragment.showGenericError()
+                            }
+                            else -> {
+                                enterNumberFragment.showCheckInternetError()
+                            }
                         }
+
                         enterNumberFragment.hideLoading()
                         enterNumberFragment.enableContinueButton()
                     })

@@ -200,6 +200,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
             if (isAllPermissionsEnabled) {
                 home_header_picture_setup_complete.setAnimation("spinner_home.json")
+                home_header_picture_setup_complete.resumeAnimation()
                 content_setup_incomplete_group.visibility = GONE
                 ContextCompat.getColor(it, R.color.lighter_green).let { bgColor ->
                     header_background.setBackgroundColor(bgColor)
@@ -225,7 +226,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     private fun allPermissionsEnabled(): Boolean {
         val bluetoothEnabled = isBlueToothEnabled() ?: false
         val pushNotificationEnabled = isPushNotificationEnabled() ?: true
-        val nonBatteryOptimizationAllowed = isNonBatteryOptimizationAllowed() ?: true
+        val nonBatteryOptimizationAllowed = isBatteryOptimizationDisabled() ?: true
         val locationStatusAllowed = isFineLocationEnabled() ?: true
 
         return bluetoothEnabled &&
@@ -277,9 +278,13 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun updateBatteryOptimizationStatus() {
-        isNonBatteryOptimizationAllowed()?.let {
+        isBatteryOptimizationDisabled()?.let {
             battery_card_view.visibility = VISIBLE
-            battery_card_view.render(formatNonBatteryOptimizationTitle(!it), it)
+            battery_card_view.render(
+                    formatNonBatteryOptimizationTitle(!it),
+                    it,
+                    getString(R.string.battery_optimisation_prompt)
+            )
         } ?: run {
             battery_card_view.visibility = GONE
         }
@@ -303,7 +308,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun formatNonBatteryOptimizationTitle(on: Boolean): String {
-        return resources.getString(R.string.home_non_battery_optimization_permission, getPermissionEnabledTitle(on))
+        return resources.getString(R.string.home_non_battery_optimization_permission, getEnabledOrDisabledString(on))
     }
 
     private fun formatPushNotificationTitle(on: Boolean): String {
@@ -312,6 +317,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
     private fun getPermissionEnabledTitle(on: Boolean): String {
         return resources.getString(if (on) R.string.home_permission_on else R.string.home_permission_off)
+    }
+
+    private fun getEnabledOrDisabledString(isEnabled: Boolean): String {
+        return resources.getString(if (isEnabled) R.string.enabled else R.string.disabled)
     }
 
     private fun goToNewsWebsite() {

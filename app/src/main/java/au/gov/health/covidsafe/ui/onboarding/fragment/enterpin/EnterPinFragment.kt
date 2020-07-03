@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.annotation.NavigationRes
 import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.Utils.announceForAccessibility
 import au.gov.health.covidsafe.extensions.toHyperlink
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
@@ -30,7 +31,6 @@ class EnterPinFragment : PagerChildFragment() {
         const val ENTER_PIN_PROGRESS = "progress"
     }
 
-    override val navigationIcon = R.drawable.ic_up
     override var stepProgress: Int? = 3
 
     private val COUNTDOWN_DURATION = 5 * 60L  // OTP Code expiry
@@ -38,6 +38,7 @@ class EnterPinFragment : PagerChildFragment() {
     private var alertDialog: AlertDialog? = null
     private var stopWatch: CountDownTimer? = null
     private lateinit var presenter: EnterPinPresenter
+
     @NavigationRes
     private var destinationId: Int? = null
 
@@ -47,10 +48,10 @@ class EnterPinFragment : PagerChildFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         arguments?.let {
-            val session = it.getString(ENTER_PIN_SESSION)
-            val challengeName = it.getString(ENTER_PIN_CHALLENGE_NAME)
+            val session = it.getString(ENTER_PIN_SESSION)!!
+            val challengeName = it.getString(ENTER_PIN_CHALLENGE_NAME)!!
             val callingCode = it.getInt(ENTER_PIN_CALLING_CODE)
-            val phoneNumber = it.getString(ENTER_PIN_PHONE_NUMBER)
+            val phoneNumber = it.getString(ENTER_PIN_PHONE_NUMBER)!!
             destinationId = it.getInt(ENTER_PIN_DESTINATION_ID)
 
             stepProgress = if (it.containsKey(ENTER_PIN_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
@@ -144,6 +145,8 @@ class EnterPinFragment : PagerChildFragment() {
 
     fun showInvalidOtp() {
         enter_pin_error_label.visibility = View.VISIBLE
+        // make the announcement in voice if talkback is turned on
+        announceForAccessibility(requireContext().getString(R.string.wrong_pin_number))
     }
 
     private fun hideInvalidOtp() {

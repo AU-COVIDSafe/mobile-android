@@ -119,7 +119,7 @@ fun Fragment.isFineLocationEnabled(): Boolean? {
     }
 }
 
-fun Fragment.isNonBatteryOptimizationAllowed(): Boolean? {
+fun Fragment.isBatteryOptimizationDisabled(): Boolean? {
     return activity?.let { activity ->
         val powerManager = activity.getSystemService(AppCompatActivity.POWER_SERVICE) as PowerManager?
         val packageName = activity.packageName

@@ -8,6 +8,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.Settings
+import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityManager
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import au.gov.health.covidsafe.bluetooth.gatt.*
 import au.gov.health.covidsafe.logging.CentralLog
@@ -243,5 +245,31 @@ object Utils {
         CentralLog.i(TAG, "Is BM Valid? $expiryTime vs $currentTime: $update")
 
         return true
+    }
+
+    fun announceForAccessibility(announcement: String) {
+        try {
+            TracerApp.AppContext.let { context ->
+                context.getSystemService(Context.ACCESSIBILITY_SERVICE)
+                        .let { it as AccessibilityManager }
+                        .let { accessibilityManager ->
+                            if (accessibilityManager.isEnabled) {
+                                AccessibilityEvent
+                                        .obtain()
+                                        .apply {
+                                            eventType = AccessibilityEvent.TYPE_ANNOUNCEMENT
+                                            className = context.javaClass.name
+                                            packageName = context.packageName
+                                            text.add(announcement)
+                                        }
+                                        .let {
+                                            accessibilityManager.sendAccessibilityEvent(it)
+                                        }
+                            }
+                        }
+            }
+        } catch (e: Exception) {
+            CentralLog.e(TAG, "announceForAccessibility throws exception.", e)
+        }
     }
 }

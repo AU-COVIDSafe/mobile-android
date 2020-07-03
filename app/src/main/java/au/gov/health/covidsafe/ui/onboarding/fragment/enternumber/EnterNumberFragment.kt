@@ -38,7 +38,6 @@ class EnterNumberFragment : PagerChildFragment() {
         const val ENTER_NUMBER_PROGRESS = "progress"
     }
 
-    override val navigationIcon: Int? = R.drawable.ic_up
     override var stepProgress: Int? = 2
 
     private val enterNumberPresenter = EnterNumberPresenter(this)
@@ -154,8 +153,8 @@ class EnterNumberFragment : PagerChildFragment() {
     }
 
     fun navigateToOTPPage(
-            session: String?,
-            challengeName: String?,
+            session: String,
+            challengeName: String,
             callingCode: Int,
             phoneNumber: String) {
         val bundle = bundleOf(

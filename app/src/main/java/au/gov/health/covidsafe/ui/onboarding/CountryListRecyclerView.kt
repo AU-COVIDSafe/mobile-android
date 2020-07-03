@@ -23,8 +23,19 @@ class CountryListItem(
 ) : CountryListItemInterface
 
 class CountryGroupTitle(
-        val titleResId: Int
-) : CountryListItemInterface
+        private val titleResId: Int?,
+        private val title: String? = null
+) : CountryListItemInterface {
+    fun getTitle(context: Context): String {
+        return when (title) {
+            null -> titleResId?.let {
+                context.getString(it)
+            } ?: ""
+            else -> title
+        }
+    }
+}
+
 
 class CountryGroupTitleHolder(
         itemView: View
@@ -107,8 +118,8 @@ class CountryListRecyclerViewAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is CountryGroupTitleHolder -> {
-                val title = context.getString((countryListItem[position] as CountryGroupTitle).titleResId)
-                holder.setCountryGroupTitle(title)
+                val countryGroupTitle = countryListItem[position] as CountryGroupTitle
+                holder.setCountryGroupTitle(countryGroupTitle.getTitle(context))
             }
 
             is CountryListItemHolder -> {

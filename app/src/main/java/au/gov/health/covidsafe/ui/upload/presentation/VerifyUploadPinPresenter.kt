@@ -36,39 +36,39 @@ class VerifyUploadPinPresenter(private val fragment: VerifyUploadPinFragment) : 
     }
 
     internal fun uploadData(otp: String) {
-        if (fragment.activity?.isInternetAvailable() == false) {
-            fragment.showCheckInternetError()
-        } else {
-            fragment.disableContinueButton()
-            fragment.showDialogLoading()
-            uploadData.invoke(otp,
-                    onSuccess = {
-                        if (!BuildConfig.DEBUG) {
-                            GlobalScope.launch { recordStorage.nukeDbAsync() }
-                        }
-                        fragment.context?.let { context ->
-                            Preference.setDataIsUploaded(context, true)
-                        }
-                        fragment.navigateToNextPage()
-                    },
-                    onFailure = {
-                        when (it) {
-                            is UploadDataException.UploadDataIncorrectPinException -> {
-                                fragment.showInvalidOtp()
-                            }
-                            is UploadDataException.UploadDataJwtExpiredException -> {
-                                fragment.navigateToRegister()
-                            }
-                            else -> {
-                                fragment.showGenericError()
-                            }
-                        }
-                        fragment.enableContinueButton()
-                        fragment.hideKeyboard()
-                        fragment.hideLoading()
+        fragment.disableContinueButton()
+        fragment.showDialogLoading()
+        uploadData.invoke(otp,
+                onSuccess = {
+                    if (!BuildConfig.DEBUG) {
+                        GlobalScope.launch { recordStorage.nukeDbAsync() }
                     }
-            )
-        }
+                    fragment.context?.let { context ->
+                        Preference.setDataIsUploaded(context, true)
+                    }
+                    fragment.navigateToNextPage()
+                },
+                onFailure = {
+                    when {
+                        it is UploadDataException.UploadDataIncorrectPinException -> {
+                            fragment.showInvalidOtp()
+                        }
+                        it is UploadDataException.UploadDataJwtExpiredException -> {
+                            fragment.navigateToRegister()
+                        }
+                        fragment.activity?.isInternetAvailable() == true -> {
+                            fragment.showGenericError()
+                        }
+                        else -> {
+                            fragment.showCheckInternetError()
+                        }
+                    }
+
+                    fragment.enableContinueButton()
+                    fragment.hideKeyboard()
+                    fragment.hideLoading()
+                }
+        )
     }
 }
 

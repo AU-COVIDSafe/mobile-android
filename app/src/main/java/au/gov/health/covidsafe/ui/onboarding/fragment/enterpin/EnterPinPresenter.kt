@@ -17,10 +17,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
-                        private var session: String?,
-                        private var challengeName: String?,
+                        private var session: String,
+                        private var challengeName: String,
                         private val callingCode: Int,
-                        private val phoneNumber: String?) : LifecycleObserver {
+                        private val phoneNumber: String) : LifecycleObserver {
 
     private val TAG = this.javaClass.simpleName
 
@@ -38,35 +38,29 @@ class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
 
     internal fun resendCode() {
         enterPinFragment.activity?.let {
-            when {
-                !it.isInternetAvailable() -> {
-                    enterPinFragment.showCheckInternetError()
-                }
-                phoneNumber == null -> {
-                    enterPinFragment.showGenericError()
-                }
-                else -> {
-                    val context = enterPinFragment.requireContext()
+            val context = enterPinFragment.requireContext()
 
-                    getOtp.invoke(
-                            GetOtpParams(
-                                    countryCode = "+$callingCode",
-                                    phoneNumber = phoneNumber,
-                                    deviceId = Preference.getDeviceID(context),
-                                    postCode = Preference.getPostCode(context),
-                                    age = Preference.getAge(context),
-                                    name = Preference.getName(context)
-                            ),
-                            onSuccess = {
-                                session = it.session
-                                challengeName = it.challengeName
-                                enterPinFragment.resetTimer()
-                            },
-                            onFailure = {
-                                enterPinFragment.showGenericError()
-                            })
-                }
-            }
+            getOtp.invoke(
+                    GetOtpParams(
+                            countryCode = "+$callingCode",
+                            phoneNumber = phoneNumber,
+                            deviceId = Preference.getDeviceID(context),
+                            postCode = Preference.getPostCode(context),
+                            age = Preference.getAge(context),
+                            name = Preference.getName(context)
+                    ),
+                    onSuccess = {
+                        session = it.session
+                        challengeName = it.challengeName
+                        enterPinFragment.resetTimer()
+                    },
+                    onFailure = {
+                        if (context.isInternetAvailable()) {
+                            enterPinFragment.showGenericError()
+                        } else {
+                            enterPinFragment.showCheckInternetError()
+                        }
+                    })
         }
     }
 
@@ -75,10 +69,7 @@ class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
             enterPinFragment.showErrorOtpMustBeSixDigits()
             return
         }
-        if (enterPinFragment.activity?.isInternetAvailable() == false) {
-            enterPinFragment.showCheckInternetError()
-            return
-        }
+
         enterPinFragment.disableContinueButton()
         enterPinFragment.showLoading()
         val authChallengeCall: Call<AuthChallengeResponse> = awsClient.respondToAuthChallenge(AuthChallengeRequest(session, otp))

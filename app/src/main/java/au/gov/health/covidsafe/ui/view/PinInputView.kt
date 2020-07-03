@@ -10,7 +10,11 @@ import androidx.core.widget.doAfterTextChanged
 import kotlinx.android.synthetic.main.view_pin.view.*
 import au.gov.health.covidsafe.R
 
-class PinInputView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = -1) : ConstraintLayout(context, attrs, defStyle) {
+class PinInputView @JvmOverloads constructor(
+        context: Context,
+        attrs: AttributeSet? = null,
+        defStyle: Int = -1) :
+        ConstraintLayout(context, attrs, defStyle) {
 
     private val pinOne: EditText? by lazy { pin_1 }
     private val pinTwo: EditText? by lazy { pin_2 }

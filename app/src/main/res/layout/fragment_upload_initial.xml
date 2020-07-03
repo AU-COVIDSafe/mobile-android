@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_illustration_upload_inital_state"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_6"
             android:text="@string/upload_step_1_header"
+            android:textAlignment="viewStart"
             android:contentDescription="@string/upload_step_1_header_content_description"
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_4"
+            android:textAlignment="viewStart"
             android:text="@string/upload_step_1_body"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"

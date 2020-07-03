@@ -28,19 +28,21 @@
             android:background="@color/lighter_green"
             app:layout_constraintTop_toBottomOf="@+id/header_barrier" />
 
-        <ImageView
+        <Button
             android:id="@+id/home_header_help"
-            android:layout_width="31dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/keyline_9"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_7"
-            android:layout_marginRight="@dimen/keyline_4"
-            android:background="?attr/selectableItemBackground"
-            android:contentDescription="@string/title_help"
             android:accessibilityTraversalAfter="@id/home_header_setup_complete_header"
-            android:src="@drawable/ic_help_outline_black"
-            app:layout_constraintRight_toRightOf="parent"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_help_outline_black"
+            android:drawablePadding="-4dp"
+            android:gravity="center"
+            android:text="@string/title_help"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <include layout="@layout/fragment_home_setup_complete_header" />
 

@@ -24,6 +24,7 @@ import java.util.regex.Pattern
 
 
 private val POST_CODE_REGEX = Pattern.compile("^(?:(?:[2-8]\\d|9[0-7]|0?[28]|0?9(?=09))(?:\\d{2}))$")
+private val NAME_REGEX = Pattern.compile("^[A-Za-z0-9][A-Za-z'0-9\\\\-\\\\u00C0-\\\\u017F ]{0,80}\$")
 
 class PersonalDetailsFragment : PagerChildFragment() {
 
@@ -31,7 +32,6 @@ class PersonalDetailsFragment : PagerChildFragment() {
 
     private var alertDialog: AlertDialog? = null
     override var stepProgress: Int? = 1
-    override val navigationIcon: Int = R.drawable.ic_up
 
     private var ageSelected: Pair<Int, String> = Pair(-1, "")
 
@@ -45,7 +45,8 @@ class PersonalDetailsFragment : PagerChildFragment() {
         age = ageSelected.first
     }
 
-    private fun isFullName() = name.trim().length > 1
+    private fun isValidName() = NAME_REGEX.matcher(name).matches()
+
     private fun isValidAge() = age >= 0
     private fun isValidPostcode() = postcode.length == 4 && POST_CODE_REGEX.matcher(postcode).matches()
 
@@ -107,7 +108,7 @@ class PersonalDetailsFragment : PagerChildFragment() {
             updatePersonalDetailsDataField()
             updateButtonState()
 
-            personal_details_name_error.visibility = if (hasFocus || isFullName()) {
+            personal_details_name_error.visibility = if (hasFocus || isValidName()) {
                 View.GONE
             } else {
                 View.VISIBLE
@@ -189,7 +190,7 @@ class PersonalDetailsFragment : PagerChildFragment() {
     override fun updateButtonState() {
         updatePersonalDetailsDataField()
 
-        if (isFullName() && isValidAge() && isValidPostcode()) {
+        if (isValidName() && isValidAge() && isValidPostcode()) {
             enableContinueButton()
         } else {
             disableContinueButton()

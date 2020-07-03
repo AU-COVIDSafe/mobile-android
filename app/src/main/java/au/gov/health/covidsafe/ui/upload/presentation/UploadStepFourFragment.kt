@@ -38,8 +38,6 @@ class UploadStepFourFragment : PagerChildFragment() {
         enableContinueButton()
     }
 
-    override val navigationIcon: Int? = R.drawable.ic_up
-
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(
             R.string.consent_button) {
         navigateToVerifyUploadPin()

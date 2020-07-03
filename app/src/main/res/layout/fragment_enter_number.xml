@@ -17,8 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginEnd="@dimen/keyline_5"
-            android:gravity="center_vertical"
+            android:gravity="center_vertical|start"
             android:text="@string/enter_number_headline"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceHeadline2"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -33,8 +34,9 @@
             android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_5"
             android:layout_marginEnd="@dimen/keyline_5"
-            android:gravity="center_vertical"
+            android:gravity="center_vertical|start"
             android:text="@string/select_country_or_region"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +60,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/keyline_2"
                 android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
                 android:textAppearance="?textAppearanceBody1" />
 
             <ImageView
@@ -73,7 +76,8 @@
                 android:layout_height="12dp"
                 android:layout_gravity="end|center_vertical"
                 android:layout_marginEnd="@dimen/keyline_4"
-                android:src="@drawable/ic_right" />
+                android:src="@drawable/ic_right"
+                android:textAlignment="viewEnd" />
 
         </FrameLayout>
 
@@ -84,8 +88,10 @@
             android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_5"
             android:layout_marginEnd="@dimen/keyline_5"
-            android:gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:importantForAccessibility="no"
             android:text="@string/enter_number_headline"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +106,7 @@
             android:layout_marginEnd="@dimen/keyline_5"
             android:autofillHints="phoneNational"
             android:background="@drawable/edittext_modified_states"
+            android:contentDescription="@string/enter_number_headline"
             android:digits="0123456789"
             android:inputType="number|phone"
             android:maxLength="20"
@@ -107,6 +114,7 @@
             android:paddingStart="@dimen/keyline_1"
             android:paddingEnd="@dimen/keyline_1"
             android:singleLine="true"
+            android:textAlignment="viewStart"
             android:textColor="@color/slack_black"
             android:textColorHighlight="@color/dark_cerulean_3"
             android:textCursorDrawable="@null"
@@ -122,6 +130,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/invalid_phone_number"
+            android:textAlignment="viewStart"
             android:textColor="@color/error"
             android:textSize="16sp"
             android:visibility="gone"
@@ -140,6 +149,7 @@
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/enter_number_content"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -179,6 +189,7 @@
             android:layout_marginStart="@dimen/keyline_1"
             android:layout_marginEnd="@dimen/keyline_4"
             android:text="@string/enter_number_relative"
+            android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody2"
             android:textColor="@color/slack_black"
             app:layout_constraintEnd_toEndOf="@+id/enter_number_relativebackground"

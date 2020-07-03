@@ -11,14 +11,21 @@
     <string name="dialog_error_uploading_positive">Try again</string>
     <string name="dialog_error_uploading_negative">Cancel</string>
 
-
     <string name="title_help">Help</string>
 
     <string name="share_this_app_content">Join me in stopping the spread of COVID-19! Download COVIDSafe, an app from the Australian Government. #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
-    <string name="share_this_app_content_html">Join me in stopping the spread of COVID-19! Download <a href="https://covidsafe.gov.au">COVIDSafe</a>>, an app from the Australian Government. #COVID19 #coronavirusaustralia #stayhomesavelives <a href="https://covidsafe.gov.au">covidsafe.gov.au</a></string>
+    <string name="share_this_app_content_html">Join me in stopping the spread of COVID-19! Download <a href="https://covidsafe.gov.au">COVIDSafe</a>, an app from the Australian Government. #COVID19 #coronavirusaustralia #stayhomesavelives <a href="https://covidsafe.gov.au">covidsafe.gov.au</a></string>
+
+    <string name="service_ok_title">COVIDSafe is active</string>
+    <string name="service_ok_body">Keep COVIDSafe active when you leave home or are in public places.</string>
+    <string name="pin_number">pin number</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="battery_optimisation_prompt">You must disable battery optimisation.</string>
 
     <string name="service_not_ok_title">COVIDSafe is not active</string>
     <string name="service_not_ok_body">Make sure COVIDSafe is active before you leave home or when in public places.</string>
+
     <string name="service_not_ok_action">Check app now</string>
 
     <!-- Splash Screen -->
@@ -28,7 +35,6 @@
     <string name="intro_headline">Together we can stop the spread of COVID-19</string>
     <string name="intro_headline_content_description">Heading, Together we can stop the spread of COVID-19</string>
     <string name="intro_content">COVIDSafe has been developed by the Australian Government to help keep the community safe from the spread of coronavirus.\n\nCOVIDSafe will securely note contact that you have with other users of the app. This will allow state and territory health officials to contact you, if you have been in close contact with someone who has tested positive to the virus.\n\nTogether we can help stop the spread and stay healthy.</string>
-    <string name="intro_disclaimer_data">Please head to <a href="https://www.australia.gov.au/">aus.gov.au</a> for the latest Coronavirus news</string>
     <string name="intro_button">I want to help</string>
 
     <!-- OnBoarding How it works -->
@@ -36,8 +42,6 @@
     <string name="how_it_works_headline_content_description">Heading, How COVIDSafe works</string>
     <string name="how_it_works_content">Bluetooth® signals are used to determine when you\'re near another COVIDSafe user.\n\nEvery instance of close contact between you and other COVIDSafe users is noted to create close contact information. The information is encrypted and only stored in your phone.\n\nIf you test positive to COVID-19 as a COVIDSafe user, a state or territory health official will contact you. They will assist with voluntary upload of your close contact information to a highly secure information storage system\n\nState or territory health officials can also contact you if you came in close contact with another COVIDSafe user who tested positive.\n\nFor more information please refer to the <a href="https://www.covidsafe.gov.au/help-topics.html">Help Topics</a> page</string>
     <string name="how_it_works_consent">Your consent will always be requested if health tracing is required.</string>
-    <string name="how_it_works_privacy">Read our <a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">Privacy Notice</a></string>
-    <string name="how_it_works_terms_conditions">Read our <a href="https://www.covidsafe.gov.au/terms-and-conditions">Terms and conditions</a></string>
     <string name="how_it_works_button">Next</string>
 
     <!-- OnBoarding Data Privacy -->
@@ -66,10 +70,8 @@
     <string name="personal_details_age_content_description">Select age range</string>
     <string name="personal_details_age_error_prompt">Please select your age range.</string>
     <string name="personal_details_post_code">Postcode in Australia</string>
-    <string name="personal_details_post_code_hint">e.g. 2000</string>
     <string name="personal_details_post_code_content_description">Enter postcode</string>
     <string name="personal_details_post_code_error_prompt">Your Australian postcode number must contain 4 digits. </string>
-    <string name="personal_details_disclaimer"><a href="https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app">privacy policy</a></string>
     <string name="personal_details_post_code_dialog_title">Postcode</string>
     <string name="personal_details_age_dialog_title">Select your age</string>
     <string name="personal_details_dialog_ok">Select</string>
@@ -105,38 +107,11 @@
     <string name="invalid_australian_phone_number_error_prompt">Australian mobile numbers contain a maximum of 10 digits.</string>
     <string name="invalid_norfolk_island_phone_number_error_prompt">Mobile numbers in Norfolk Island contain 5 to 6 digits.</string>
     <string name="invalid_phone_number_digits_error_prompt">Mobile numbers in %1s contain %2s digits.</string>
-    <string name="oz_phone_number"><a href="https://www.covidsafe.gov.au/help-topics.html#verify-mobile-number-pin">Use an Australian phone number.</a></string>
     <string name="enter_number_content">We’ll send you a six-digit PIN to verify your mobile number.</string>
     <string name="enter_number_relative">Trying to register on behalf of a friend or relative?\n\nThey will need to register using their own device and phone number so that COVIDSafe can work for them. </string>
     <string name="enter_number_button">Get PIN</string>
     <string name="search">Search</string>
     <string name="options_for_australia">Options for Australia</string>
-    <string name="group_title_a">A</string>
-    <string name="group_title_b">B</string>
-    <string name="group_title_c">C</string>
-    <string name="group_title_d">D</string>
-    <string name="group_title_e">E</string>
-    <string name="group_title_f">F</string>
-    <string name="group_title_g">G</string>
-    <string name="group_title_h">H</string>
-    <string name="group_title_i">I</string>
-    <string name="group_title_j">J</string>
-    <string name="group_title_k">K</string>
-    <string name="group_title_l">L</string>
-    <string name="group_title_m">M</string>
-    <string name="group_title_n">N</string>
-    <string name="group_title_o">O</string>
-    <string name="group_title_p">P</string>
-    <string name="group_title_q">Q</string>
-    <string name="group_title_r">R</string>
-    <string name="group_title_s">S</string>
-    <string name="group_title_t">T</string>
-    <string name="group_title_u">U</string>
-    <string name="group_title_v">V</string>
-    <string name="group_title_w">W</string>
-    <string name="group_title_x">X</string>
-    <string name="group_title_y">Y</string>
-    <string name="group_title_z">Z</string>
 
     <!-- Countries -->
     <string name="country_af">Afghanistan</string>
@@ -355,7 +330,7 @@
     <string name="enter_pin_headline">Enter the PIN sent to %s %s</string>
     <string name="enter_pin_wrong_number">Is this mobile number wrong?</string>
     <string name="enter_pin_timer_expire">Your PIN will expire in &#160;</string>
-    <string name="wrong_ping_number"> Wrong PIN entered</string>
+    <string name="wrong_pin_number"> Wrong PIN entered</string>
     <string name="enter_pin_resend_pin">Resend PIN</string>
     <string name="pin_issue"><a href="https://www.covidsafe.gov.au/help-topics.html#verify-mobile-number-pin">Issues receiving your PIN?</a></string>
     <string name="enter_pin_button">Verify</string>
@@ -403,14 +378,13 @@
     <string name="home_header_no_pairing">COVIDSafe does not send <a href="https://www.covidsafe.gov.au/help-topics.html#bluetooth-pairing-request">pairing requests</a>.</string>
 
     <string name="home_bluetooth_permission">Bluetooth®: %s</string>
-    <string name="home_non_battery_optimization_permission">Battery optimization: %s</string>
+    <string name="home_non_battery_optimization_permission">Battery optimisation: %s</string>
     <string name="home_location_permission">Location: %s</string>
     <string name="home_push_notification_permission">Push notification: %s</string>
     <string name="home_permission_on">On</string>
     <string name="home_permission_off">Off</string>
     <string name="home_setup_incomplete_title">Check\npermissions</string>
     <string name="home_setup_incomplete_subtitle">COVIDSafe needs permission to access these features.</string>
-    <string name="home_setup_help">Help</string>
     <string name="home_app_permission_status_title">Check your settings</string>
     <string name="home_app_permission_status_subtitle">COVIDSafe won\'t work without the right settings. </string>
     <string name="home_app_permission_push_notification_prompt">Allow COVIDSafe to push notifications.</string>
@@ -422,19 +396,18 @@
     <string name="home_data_has_been_uploaded_message">You\’re helping stop the spread of COVID-19 by uploading your data daily while in self-isolation.</string>
 
     <string name="home_set_complete_disclaimer_title">Let\'s stop the spread of COVID-19.</string>
-    <string name="home_set_complete_disclaimer_content">For more help, see our <a href="https://www.covidsafe.gov.au/help-topics.html">FAQ</a>.</string>
     <string name="home_set_complete_external_link_share_title">Share COVIDSafe</string>
 
     <string name="home_set_complete_external_link_share_content">Invite others to join. Together, we’re stronger.</string>
     <string name="home_set_complete_external_link_news_title">Latest news and updates</string>
     <string name="home_set_complete_external_link_news_url">https://www.australia.gov.au</string>
-    <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
+    <string name="home_set_complete_external_link_self_isolation_register_url" translatable="false">https://covid-form.service.gov.au</string>
     <string name="home_set_complete_external_link_news_content">Head to aus.gov.au for the latest Coronavirus news.</string>
     <string name="home_set_complete_external_link_app_title">Get the Coronavirus app</string>
     <string name="home_set_complete_external_link_app_content">Download the government app for the latest news and advice.</string>
     <string name="home_set_complete_external_link_been_contacted_title">Has a health official contacted you?</string>
     <string name="home_set_complete_external_link_been_contacted_content">You can only upload your information if you have tested positive.</string>
-    <string name="home_set_complete_external_link_app_url">https://www.health.gov.au/resources/apps-and-tools/coronavirus-australia-app</string>
+    <string name="home_set_complete_external_link_app_url" translatable="false">https://www.health.gov.au/resources/apps-and-tools/coronavirus-australia-app</string>
     <string name="home_set_complete_external_link_help_topics_title">Help topics</string>
     <string name="home_set_complete_external_link_help_topics_content">If you have issues or questions about the app.</string>
 
@@ -464,17 +437,19 @@
 
     <string name="action_continue">Continue</string>
 
-    <string name="action_upload_your_data">Upload your data</string>
     <string name="action_upload_done">Continue</string>
-
     <string name="upload_failed">Upload failed</string>
+
+    <string name="activity_self_isolation_button">Continue</string>
+
+    <string name="action_upload_your_data">Upload your data</string>
     <string name="upload_your_data_title">Upload your data</string>
     <string name="upload_your_data_description">Please upload your data today to help stop the spread of COVID-19</string>
     <string name="upload_data_action">Upload data now</string>
-
-    <!-- Self isolation activity -->
     <string name="activity_self_isolation_headline">Thank you! You have helped to stop the spread of COVID-19!</string>
     <string name="activity_self_isolation_content">You’ve kept others safe while helping to stop the spread of COVID-19 during self-isolation.</string>
-    <string name="activity_self_isolation_button">Continue</string>
+
+    <string name="personal_details_name_characters_prompt">Please use English characters for your full name. Do not use other languages or symbols like \',\' or \'?\'.</string>
+
 
 </resources>

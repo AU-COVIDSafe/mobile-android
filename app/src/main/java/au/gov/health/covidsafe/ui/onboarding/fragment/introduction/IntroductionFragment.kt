@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_intro.*
 
 class IntroductionFragment : PagerChildFragment() {
 
-    override val navigationIcon: Int? = null
+    override var navigationIconResId: Int? = null
     override var stepProgress: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)

@@ -31,9 +31,14 @@ fun RecyclerView.smoothSnapToPosition(
 const val VOICE_TO_TEXT_REQUEST_CODE = 2020
 
 class CountryCodeSelectionActivity : Activity() {
-    val countryListItem = CountryList.getCountryList()
+    private lateinit var countryListItem: List<CountryListItemInterface>
 
     private fun setupToolbar() {
+        if (resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL) {
+            countrySelectionToolbar.navigationIcon =
+                    getDrawable(R.drawable.ic_up_rtl)
+        }
+
         countrySelectionToolbar.setNavigationOnClickListener {
             super.onBackPressed()
         }
@@ -81,8 +86,9 @@ class CountryCodeSelectionActivity : Activity() {
                 fun getPositionOfCountryName(searchText: String): Int {
                     countryListItem.forEachIndexed { index, countryListItemInterface ->
                         if (countryListItemInterface is CountryGroupTitle) {
-                            val groupTitle = getString(countryListItemInterface.titleResId)
-                            if (groupTitle.startsWith(searchText, ignoreCase = true)
+                            if (countryListItemInterface.getTitle(
+                                            this@CountryCodeSelectionActivity
+                                    ).startsWith(searchText, ignoreCase = true)
                             ) {
                                 return index
                             }
@@ -131,26 +137,23 @@ class CountryCodeSelectionActivity : Activity() {
         }
     }
 
-    private fun setupInitialLetterRecyclerView() {
-        val alphabet = ArrayList<String>()
-        var letter = 'A'
-        while (letter <= 'Z') {
-            if (letter != 'W' && letter != 'X') {
-                alphabet.add(letter.toString())
-            }
-            ++letter
+    private fun setupGroupNameRecyclerView() {
+        val alphabet = countryListItem.filterIsInstance<CountryGroupTitle>().map {
+            it.getTitle(this)
+        }.filter {
+            it != this.getString(R.string.options_for_australia)
         }
 
-        countryInitialLetterRecyclerView.layoutManager = LinearLayoutManager(this)
-        countryInitialLetterRecyclerView.adapter = CountryInitialLetterRecyclerViewAdapter(
+        countryGroupNameRecyclerView.layoutManager = LinearLayoutManager(this)
+        countryGroupNameRecyclerView.adapter = CountryGroupNameRecyclerViewAdapter(
                 this,
                 alphabet
-        ) { letterClicked ->
-            fun getPositionOfLetter(letter: String): Int {
+        ) { groupNameClicked ->
+            fun getPositionOfGroupName(letter: String): Int {
                 countryListItem.forEachIndexed { index, countryListItemInterface ->
                     if (countryListItemInterface is CountryGroupTitle) {
-                        val groupTitle = getString(countryListItemInterface.titleResId)
-                        if (groupTitle.startsWith(letter, ignoreCase = true)) {
+                        if (countryListItemInterface.getTitle(this)
+                                        .startsWith(letter, ignoreCase = true)) {
                             return index
                         }
                     }
@@ -159,7 +162,7 @@ class CountryCodeSelectionActivity : Activity() {
                 return 0
             }
 
-            val positionOfLetter = getPositionOfLetter(letterClicked)
+            val positionOfLetter = getPositionOfGroupName(groupNameClicked)
 
             countryListScrollToPosition(positionOfLetter)
         }
@@ -180,8 +183,11 @@ class CountryCodeSelectionActivity : Activity() {
         setContentView(R.layout.activity_country_code_selection)
 
         setupToolbar()
+
+        countryListItem = CountryList.getCountryList(this)
+
         setupCountryListRecyclerView()
-        setupInitialLetterRecyclerView()
+        setupGroupNameRecyclerView()
 
         // set up the search functions
         setupSearchFunctions()

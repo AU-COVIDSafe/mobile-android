@@ -1,10 +1,12 @@
 package au.gov.health.covidsafe.ui.home.view
 
 import android.content.Context
+import android.content.res.Resources
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.R
 import kotlinx.android.synthetic.main.view_card_external_link_card.view.*
 
@@ -30,5 +32,11 @@ class ExternalLinkCard @JvmOverloads constructor(
         external_link_headline.text = title
         external_link_content.text = content
         a.recycle()
+
+        next_arrow.setImageDrawable(
+                ContextCompat.getDrawable(context, R.drawable.ic_chevron_right).also {
+                    it?.isAutoMirrored = true
+                }
+        )
     }
 }

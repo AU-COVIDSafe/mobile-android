@@ -1,5 +1,6 @@
 package au.gov.health.covidsafe.ui
 
+import android.view.View
 import androidx.annotation.StringRes
 
 abstract class PagerChildFragment : BaseFragment() {
@@ -17,8 +18,14 @@ abstract class PagerChildFragment : BaseFragment() {
     }
 
     private fun updateToolBar() {
-        (parentFragment?.parentFragment as? PagerContainer)?.setNavigationIcon(navigationIcon)
-        (activity as? PagerContainer)?.setNavigationIcon(navigationIcon)
+        if (navigationIconResId == au.gov.health.covidsafe.R.drawable.ic_up) {
+            if (resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL){
+                navigationIconResId = au.gov.health.covidsafe.R.drawable.ic_up_rtl
+            }
+        }
+
+        (parentFragment?.parentFragment as? PagerContainer)?.setNavigationIcon(navigationIconResId)
+        (activity as? PagerContainer)?.setNavigationIcon(navigationIconResId)
     }
 
     private fun updateButton() {
@@ -50,7 +57,8 @@ abstract class PagerChildFragment : BaseFragment() {
         (activity as? PagerContainer)?.hideLoading((getUploadButtonLayout() as? UploadButtonLayout.ContinueLayout)?.buttonText)
     }
 
-    abstract val navigationIcon: Int?
+    protected open var navigationIconResId: Int? = au.gov.health.covidsafe.R.drawable.ic_up
+
     abstract var stepProgress: Int?
     abstract fun getUploadButtonLayout(): UploadButtonLayout
     abstract fun updateButtonState()
@@ -64,7 +72,7 @@ sealed class UploadButtonLayout {
             val primaryButtonListener: (() -> Unit)?,
             @StringRes val secondaryButtonText: Int,
             val secondaryButtonListener: (() -> Unit)?
-            ) : UploadButtonLayout()
+    ) : UploadButtonLayout()
 
     class QuestionLayout(val buttonYesListener: () -> Unit, val buttonNoListener: () -> Unit) : UploadButtonLayout()
 }

@@ -33,7 +33,6 @@ class VerifyUploadPinFragment : PagerChildFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_verify_upload_pin, container, false)
 
-    override val navigationIcon: Int? = R.drawable.ic_up
     override var stepProgress: Int? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

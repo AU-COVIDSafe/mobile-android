@@ -32,7 +32,6 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
         )
     }
 
-    override val navigationIcon: Int? = R.drawable.ic_up
     override var stepProgress: Int? = 4
 
     private var navigationStarted = false

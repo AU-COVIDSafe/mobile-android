@@ -7,18 +7,21 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import androidx.annotation.NavigationRes
 import androidx.core.content.ContextCompat
+import androidx.core.widget.doOnTextChanged
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.Utils.announceForAccessibility
 import au.gov.health.covidsafe.extensions.toHyperlink
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import com.atlassian.mobilekit.module.core.utils.SystemUtils
 import kotlinx.android.synthetic.main.fragment_enter_pin.*
 import kotlinx.android.synthetic.main.fragment_enter_pin.view.*
 import kotlin.math.floor
-
 
 class EnterPinFragment : PagerChildFragment() {
 
@@ -58,6 +61,9 @@ class EnterPinFragment : PagerChildFragment() {
 
             enter_pin_headline.text = resources.getString(R.string.enter_pin_headline, "+$callingCode", phoneNumber)
 
+            enter_pin_headline.setHeading(shouldConvertNumberToDigits = true)
+            enter_pin_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+
             presenter = EnterPinPresenter(this@EnterPinFragment,
                     session,
                     challengeName,
@@ -73,6 +79,7 @@ class EnterPinFragment : PagerChildFragment() {
             presenter.resendCode()
         }
 
+        view.pin_issue.text = LinkBuilder.getIssuesReceivingPINContent()
         view.pin_issue.movementMethod = LinkMovementMethod.getInstance()
 
         startTimer()
@@ -81,15 +88,11 @@ class EnterPinFragment : PagerChildFragment() {
     override fun onResume() {
         super.onResume()
         updateButtonState()
-        pin.onPinChanged = {
+
+        pin.doOnTextChanged { _, _, _, _ ->
             updateButtonState()
             hideInvalidOtp()
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        pin.onPinChanged = null
     }
 
     private fun startTimer() {
@@ -146,7 +149,7 @@ class EnterPinFragment : PagerChildFragment() {
     fun showInvalidOtp() {
         enter_pin_error_label.visibility = View.VISIBLE
         // make the announcement in voice if talkback is turned on
-        announceForAccessibility(requireContext().getString(R.string.wrong_pin_number))
+        announceForAccessibility(requireContext().getString(R.string.wrong_ping_number))
     }
 
     private fun hideInvalidOtp() {
@@ -162,7 +165,7 @@ class EnterPinFragment : PagerChildFragment() {
     }
 
     private fun isIncorrectPinFormat(): Boolean {
-        return requireView().pin.isIncomplete
+        return requireView().pin.text.toString().length != 6
     }
 
     override fun updateButtonState() {
@@ -174,7 +177,7 @@ class EnterPinFragment : PagerChildFragment() {
     }
 
     private fun validateOtp() {
-        presenter.validateOTP(requireView().pin.value)
+        presenter.validateOTP(requireView().pin.text.toString())
     }
 
     fun showErrorOtpMustBeSixDigits() {

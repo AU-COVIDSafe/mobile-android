@@ -1,21 +1,23 @@
 package au.gov.health.covidsafe.extensions
 
-import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.Intent
+import android.location.LocationManager
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.Utils
-import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import pub.devrel.easypermissions.PermissionRequest
+
 
 const val REQUEST_ENABLE_BT = 123
 const val LOCATION = 345
@@ -46,13 +48,13 @@ private fun Fragment.requestFineLocationAndCheckBleSupportThenNextPermission(onE
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         activity?.let {
             when {
-                EasyPermissions.hasPermissions(it, ACCESS_FINE_LOCATION) -> {
+                EasyPermissions.hasPermissions(it, ACCESS_COARSE_LOCATION) -> {
                     checkBLESupport()
                     excludeFromBatteryOptimization(onEndCallback)
                 }
                 else -> {
                     EasyPermissions.requestPermissions(
-                            PermissionRequest.Builder(this, LOCATION, ACCESS_FINE_LOCATION)
+                            PermissionRequest.Builder(this, LOCATION, ACCESS_COARSE_LOCATION)
                                     .setRationale(R.string.permission_location_rationale)
                                     .build())
                 }
@@ -113,10 +115,18 @@ fun Fragment.isPushNotificationEnabled(): Boolean? {
     }
 }
 
-fun Fragment.isFineLocationEnabled(): Boolean? {
+fun Fragment.isLocationPermissionAllowed(): Boolean? {
     return activity?.let { activity ->
-        EasyPermissions.hasPermissions(activity, ACCESS_FINE_LOCATION)
+        EasyPermissions.hasPermissions(activity, ACCESS_COARSE_LOCATION)
     }
+}
+
+fun Fragment.isLocationEnabledOnDevice(): Boolean {
+    val locationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+    return locationManager?.let {
+        it.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                it.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+    } ?: false
 }
 
 fun Fragment.isBatteryOptimizationDisabled(): Boolean? {
@@ -137,18 +147,24 @@ fun Fragment.isBatteryOptimizationDisabled(): Boolean? {
 fun Fragment.askForLocationPermission() {
     activity?.let {
         when {
-            EasyPermissions.hasPermissions(it, ACCESS_FINE_LOCATION) -> {
-
-            }
-            EasyPermissions.somePermissionPermanentlyDenied(this, listOf(ACCESS_FINE_LOCATION)) -> {
-                AppSettingsDialog.Builder(this).build().show()
-            }
-            else -> {
+            !EasyPermissions.hasPermissions(it, ACCESS_COARSE_LOCATION) -> {
                 EasyPermissions.requestPermissions(
-                        PermissionRequest.Builder(this, LOCATION, ACCESS_FINE_LOCATION)
+                        PermissionRequest.Builder(this, LOCATION, ACCESS_COARSE_LOCATION)
                                 .setRationale(R.string.permission_location_rationale)
                                 .build())
             }
+
+            !isLocationEnabledOnDevice() -> {
+                AlertDialog.Builder(it).apply {
+                    setMessage(R.string.need_location_service)
+                    setPositiveButton(android.R.string.ok) { _, _ ->
+                        it.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                    }
+                }.create().show()
+            }
+
+            else -> {
+            }// do nothing
         }
     }
 }

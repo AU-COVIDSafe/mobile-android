@@ -6,8 +6,11 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.HomeActivity
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_permission_success.*
@@ -22,6 +25,10 @@ class PermissionSuccessFragment : PagerChildFragment() {
     override fun onResume() {
         super.onResume()
 
+        permission_success_headline.setHeading()
+        permission_success_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+
+        permission_success_content.text = LinkBuilder.getHowPermissionSuccessContent(requireContext())
         permission_success_content.movementMethod = LinkMovementMethod.getInstance()
     }
 

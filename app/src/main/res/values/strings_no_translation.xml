@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="age_range_array">
+        <item>@string/personal_details_age_content_description</item>
+        <item>0-15</item>
+        <item>16-29</item>
+        <item>30-39</item>
+        <item>40-49</item>
+        <item>50-59</item>
+        <item>60-69</item>
+        <item>69-79</item>
+        <item>80-89</item>
+        <item>90+</item>
+    </string-array>
+</resources>

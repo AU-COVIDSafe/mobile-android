@@ -10,12 +10,14 @@ import android.os.PowerManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.HomeActivity
 import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.TracerApp
 import au.gov.health.covidsafe.extensions.*
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_permission.*
@@ -28,7 +30,7 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
         val requiredPermissions = arrayOf(
                 Manifest.permission.BLUETOOTH,
                 Manifest.permission.BLUETOOTH_ADMIN,
-                Manifest.permission.ACCESS_FINE_LOCATION
+                Manifest.permission.ACCESS_COARSE_LOCATION
         )
     }
 
@@ -38,6 +40,15 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
             : View? = inflater.inflate(R.layout.fragment_permission, container, false)
+
+    override fun onResume() {
+        super.onResume()
+
+        removeViewInLandscapeMode(permission_picture)
+
+        permission_headline.setHeading()
+        permission_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_ENABLE_BT) {

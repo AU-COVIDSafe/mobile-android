@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_intro.*
@@ -25,7 +26,9 @@ class IntroductionFragment : PagerChildFragment() {
     override fun onResume() {
         super.onResume()
 
-        // set accessibility focus to the title "Together we can stop ..."
+        removeViewInLandscapeMode(intro_picture)
+
+        intro_headline.setHeading()
         intro_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 

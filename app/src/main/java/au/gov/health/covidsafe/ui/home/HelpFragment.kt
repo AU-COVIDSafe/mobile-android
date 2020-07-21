@@ -16,18 +16,11 @@ import com.atlassian.mobilekit.module.feedback.FeedbackModule
 import kotlinx.android.synthetic.main.fragment_help.*
 import kotlinx.android.synthetic.main.fragment_help.view.*
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.links.LinkBuilder
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.ui.BaseFragment
 import kotlinx.android.synthetic.main.activity_country_code_selection.*
 import java.util.*
-
-private const val HELP_URL_BASE = "https://www.covidsafe.gov.au/help-topics"
-private const val HELP_URL_ENGLISH_PAGE = ".html"
-private const val HELP_URL_ARABIC_PAGE = "/ar.html"
-private const val HELP_URL_VIETNAMESE_PAGE = "/vi.html"
-private const val HELP_URL_KOREAN_PAGE = "/ko.html"
-private const val HELP_URL_SIMPLIFIED_CHINESE_PAGE = "/zh-hans.html"
-private const val HELP_URL_TRADITIONAL_CHINESE_PAGE = "/zh-hant.html"
 
 private const val TAG = "HelpFragment"
 
@@ -44,7 +37,7 @@ class HelpFragment : BaseFragment() {
         val webView = view.helpWebView
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = createWebVieClient(view)
-        webView.loadUrl(getHelpUrlBasedOnLocaleLanguage())
+        webView.loadUrl(LinkBuilder.getHelpTopicsUrl())
         reportAnIssue.setOnClickListener {
             FeedbackModule.showFeedbackScreen()
         }
@@ -65,7 +58,7 @@ class HelpFragment : BaseFragment() {
                     if (!loadFinished) isRedirecting = true
                     loadFinished = false
                     val urlString = request.url.toString()
-                    if (urlString.startsWith(HELP_URL_BASE)) {
+                    if (urlString.startsWith(LinkBuilder.getHelpTopicsUrl())) {
                         webView.loadUrl(request.url.toString())
                     } else {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlString))
@@ -94,25 +87,7 @@ class HelpFragment : BaseFragment() {
             }
 
 
-    private fun getHelpUrlBasedOnLocaleLanguage(): String {
-        val localeLanguageTag = Locale.getDefault().toLanguageTag()
 
-        val url = HELP_URL_BASE + when {
-            localeLanguageTag.startsWith("zh-Hans") -> HELP_URL_SIMPLIFIED_CHINESE_PAGE
-            localeLanguageTag.startsWith("zh-Hant") -> HELP_URL_TRADITIONAL_CHINESE_PAGE
-            localeLanguageTag.startsWith("ar") -> HELP_URL_ARABIC_PAGE
-            localeLanguageTag.startsWith("vi") -> HELP_URL_VIETNAMESE_PAGE
-            localeLanguageTag.startsWith("ko") -> HELP_URL_KOREAN_PAGE
-            else -> HELP_URL_ENGLISH_PAGE
-        }
-
-
-        CentralLog.d(TAG, "getHelpUrlBasedOnLocaleLanguage() " +
-                "localeLanguageTag = $localeLanguageTag " +
-                "url = $url")
-
-        return url
-    }
 }
 
 

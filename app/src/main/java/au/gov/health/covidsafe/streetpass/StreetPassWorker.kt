@@ -604,12 +604,17 @@ class StreetPassWorker(val context: Context) {
                 //we are writing as the central device
 
                 val thisCentralDevice = TracerApp.asCentralDevice()
+
                 val plainRecord = gson.toJson(EncryptedWriteRequestPayload(
+                        System.currentTimeMillis() / 1000L,
                         thisCentralDevice.modelC,
                         work.connectable.rssi,
                         work.connectable.transmissionPower,
-                        TracerApp.thisDeviceMsg())).toByteArray(Charsets.UTF_8)
-                val remoteBlob = Encryption.encryptPayload(plainRecord)
+                        TracerApp.thisDeviceMsg()))
+
+                CentralLog.d(TAG, "onCharacteristicRead plainRecord = $plainRecord")
+
+                val remoteBlob = Encryption.encryptPayload(plainRecord.toByteArray(Charsets.UTF_8))
 
                 val writedata = WriteRequestPayload(
                         v = TracerApp.protocolVersion,
@@ -641,7 +646,7 @@ class StreetPassWorker(val context: Context) {
             }
         }
 
-        inner class EncryptedWriteRequestPayload(val modelC: String, val rssi: Int, val txPower: Int?, val msg : String)
+        inner class EncryptedWriteRequestPayload(val timestamp: Long, val modelC: String, val rssi: Int, val txPower: Int?, val msg: String)
 
         override fun onCharacteristicWrite(
                 gatt: BluetoothGatt,

@@ -27,7 +27,6 @@
             android:layout_marginTop="@dimen/keyline_6"
             android:text="@string/upload_step_1_header"
             android:textAlignment="viewStart"
-            android:contentDescription="@string/upload_step_1_header_content_description"
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

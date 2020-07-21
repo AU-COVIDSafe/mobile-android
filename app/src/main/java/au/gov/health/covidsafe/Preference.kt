@@ -12,7 +12,7 @@ object Preference {
     private const val CALLING_CODE = "CALLING_CODE"
     private const val AUSTRALIA_CALLING_CODE = 61
     private const val COUNTRY_NAME_RES_ID = "COUNTRY_NAME"
-    private const val AUSTRALIA_COUNTRY_NAME_RES_ID = R.string.country_au
+    private const val AUSTRALIA_COUNTRY_NAME_RES_ID = R.string.country_region_name_au
     private const val NATIONAL_FLAG_RES_ID = "NATIONAL_FLAG_RES_ID"
     private const val AUSTRALIA_NATIONAL_FLAG_RES_ID = R.drawable.ic_list_country_au
     private const val PHONE_NUMBER = "PHONE_NUMBER"
@@ -24,13 +24,15 @@ object Preference {
     private const val IS_DATA_UPLOADED = "IS_DATA_UPLOADED"
     private const val DATA_UPLOADED_DATE_MS = "DATA_UPLOADED_DATE_MS"
     private const val UPLOADED_MORE_THAN_24_HRS = "UPLOADED_MORE_THAN_24_HRS"
-
+    private const val FIREBASE_INSTANCE_ID = "FIREBASE_INSTANCE_ID"
     private const val NEXT_FETCH_TIME = "NEXT_FETCH_TIME"
     private const val EXPIRY_TIME = "EXPIRY_TIME"
     private const val NAME = "NAME"
     private const val IS_MINOR = "IS_MINOR"
     private const val POST_CODE = "POST_CODE"
     private const val AGE = "AGE"
+
+    private const val APP_UPDATE_REMINDER_DISMISSED_TIME = "APP_UPDATE_REMINDER_DISMISSED_TIME"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -128,6 +130,16 @@ object Preference {
     fun getPhoneNumber(context: Context): String {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 ?.getString(PHONE_NUMBER, "") ?: ""
+    }
+
+    fun putFirebaseInstanceID(context: Context, value: String) {
+        context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putString(FIREBASE_INSTANCE_ID, value).apply()
+    }
+
+    fun getFirebaseInstanceID(context: Context): String {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                ?.getString(FIREBASE_INSTANCE_ID, "") ?: ""
     }
 
     fun putCallingCode(context: Context, value: Int) {
@@ -241,6 +253,16 @@ object Preference {
     fun getAge(context: Context): String? {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .getString(AGE, null)
+    }
+
+    fun putAppUpdateReminderDismissedTime(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putLong(APP_UPDATE_REMINDER_DISMISSED_TIME, System.currentTimeMillis()).commit()
+    }
+
+    fun getAppUpdateReminderDismissedTime(context: Context): Long {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .getLong(APP_UPDATE_REMINDER_DISMISSED_TIME, 0L)
     }
 
 }

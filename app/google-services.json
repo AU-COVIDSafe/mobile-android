@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "382814507764",
+    "firebase_url": "https://covidsafe-prod.firebaseio.com",
+    "project_id": "covidsafe-prod",
+    "storage_bucket": "covidsafe-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382814507764:android:d3eaa52d82fc647f8dc4a1",
+        "android_client_info": {
+          "package_name": "au.gov.health.covidsafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382814507764-bsndgpff7lano9u44sqgftu6q5besbg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo_cVd_eNYyx_ckLnC7dYgS_Po9-DsTXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382814507764-bsndgpff7lano9u44sqgftu6q5besbg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

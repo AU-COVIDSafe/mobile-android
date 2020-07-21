@@ -5,7 +5,8 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:padding="@dimen/keyline_5">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,15 +14,10 @@
 
         <TextView
             android:id="@+id/header"
-            android:textAppearance="?textAppearanceHeadline2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/keyline_5"
-            android:layout_marginTop="@dimen/keyline_4"
-            android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/upload_step_verify_pin_header"
-            android:contentDescription="@string/upload_step_verify_pin_header_content_description"
-            app:layout_constraintBottom_toTopOf="@+id/subHeader"
+            android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,41 +28,33 @@
             style="?attr/textAppearanceBody2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_4"
-            android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/upload_step_verify_pin_sub_header"
-            app:layout_constraintBottom_toTopOf="@id/pin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <au.gov.health.covidsafe.ui.view.PinInputView
+        <EditText
             android:id="@+id/pin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/keyline_5"
-            android:layout_marginTop="@dimen/keyline_4"
-            android:layout_marginEnd="@dimen/keyline_5"
-            android:layout_marginBottom="@dimen/keyline_4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subHeader" />
+            style="@style/otpStyle"
+            android:contentDescription="@string/pin_number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subHeader"
+            tools:ignore="TextFields" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/enter_pin_error_label"
             style="?textAppearanceBody2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/keyline_5"
-            android:layout_marginEnd="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_1"
             android:text="@string/action_verify_invalid_pin"
             android:textColor="@color/error"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pin"
             tools:text="@string/action_verify_invalid_pin"
             tools:visibility="visible" />

@@ -12,14 +12,13 @@
 
         <TextView
             android:id="@+id/header"
-            android:layout_marginStart="@dimen/keyline_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
-            android:textAppearance="?textAppearanceHeadline2"
             android:text="@string/upload_step_4_header"
-            android:contentDescription="@string/upload_step_4_header_content_description" />
+            android:textAppearance="?textAppearanceHeadline2" />
 
         <TextView
             android:id="@+id/subHeader"
@@ -29,18 +28,17 @@
             android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
-            android:text="@string/upload_step_4_sub_header"/>
+            android:text="@string/upload_step_4_sub_header" />
 
         <TextView
             style="?attr/textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/keyline_5"
             android:layout_marginTop="@dimen/keyline_4"
             android:layout_marginEnd="@dimen/keyline_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/consent_call_for_action" />
     </LinearLayout>
-
 
 
 </ScrollView>

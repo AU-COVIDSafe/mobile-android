@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.PagerContainer
 import au.gov.health.covidsafe.ui.UploadButtonLayout
@@ -21,8 +22,8 @@ class RegistrationConsentFragment : PagerChildFragment() {
     override fun onResume() {
         super.onResume()
 
-        // set accessibility focus to the title "I consent to the Australian ..."
-        registration_consent_text.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+        registration_consent_headline.setHeading()
+        registration_consent_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
 
         updateButtonState()
     }

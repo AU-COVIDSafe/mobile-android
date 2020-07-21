@@ -11,7 +11,8 @@
     <dimen name="keyline_8">48dp</dimen>
     <dimen name="keyline_9">60dp</dimen>
 
-    <dimen name="text_otp">48sp</dimen>
+    <dimen name="covidsafe_lottie_size">160dp</dimen>
+
     <dimen name="text_head1">32sp</dimen>
     <dimen name="text_head2">24sp</dimen>
     <dimen name="text_head3">20sp</dimen>
@@ -25,8 +26,6 @@
 
     <dimen name="icon_size">24dp</dimen>
 
-    <dimen name="card_radius">4dp</dimen>
-    <dimen name="card_elevation">2dp</dimen>
     <dimen name="permission_height">56dp</dimen>
     <dimen name="external_link_height">104dp</dimen>
     <dimen name="report_an_issue_Text">16sp</dimen>

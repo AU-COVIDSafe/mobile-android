@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "768227664885",
+    "firebase_url": "https://covidsafe-beta.firebaseio.com",
+    "project_id": "covidsafe-beta",
+    "storage_bucket": "covidsafe-beta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768227664885:android:842074835553a7613136bc",
+        "android_client_info": {
+          "package_name": "au.gov.health.covidsafe.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768227664885-86vucs5sakhvks1umnfk8lv3l8b14hs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlTaBwuswUzG_Cr2gA_AwgjVEmjwk05Zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768227664885-86vucs5sakhvks1umnfk8lv3l8b14hs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768227664885:android:c9dbe1353d465e543136bc",
+        "android_client_info": {
+          "package_name": "au.gov.health.covidsafe.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768227664885-86vucs5sakhvks1umnfk8lv3l8b14hs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlTaBwuswUzG_Cr2gA_AwgjVEmjwk05Zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768227664885-86vucs5sakhvks1umnfk8lv3l8b14hs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

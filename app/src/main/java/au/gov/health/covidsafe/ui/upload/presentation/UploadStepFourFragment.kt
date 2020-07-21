@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_upload_page_4.*
@@ -22,6 +24,8 @@ class UploadStepFourFragment : PagerChildFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        subHeader.text = LinkBuilder.getUploadConsentContent(requireContext())
         subHeader.movementMethod = LinkMovementMethod.getInstance()
     }
 
@@ -30,7 +34,7 @@ class UploadStepFourFragment : PagerChildFragment() {
         super.onResume()
         updateButtonState()
 
-        // set accessibility focus to the title
+        header.setHeading()
         header.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 

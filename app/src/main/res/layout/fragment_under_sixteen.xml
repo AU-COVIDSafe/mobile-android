@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_6"
-            android:contentDescription="@string/under_sixteen_headline_content_description"
             android:text="@string/under_sixteen_headline"
             android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceHeadline2"

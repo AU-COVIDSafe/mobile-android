@@ -6,6 +6,7 @@ import android.os.Build
 import com.atlassian.mobilekit.module.feedback.FeedbackModule
 
 import au.gov.health.covidsafe.logging.CentralLog
+import au.gov.health.covidsafe.scheduler.GetMessagesScheduler
 import au.gov.health.covidsafe.services.BluetoothMonitoringService
 import au.gov.health.covidsafe.streetpass.CentralDevice
 import au.gov.health.covidsafe.streetpass.PeripheralDevice
@@ -16,6 +17,8 @@ class TracerApp : Application() {
         super.onCreate()
         AppContext = applicationContext
         FeedbackModule.init(this)
+
+//        GetMessagesScheduler.scheduleGetMessagesJob()
     }
 
     companion object {

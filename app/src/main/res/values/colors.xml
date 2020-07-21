@@ -2,14 +2,12 @@
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="dark_cerulean_1">#024B7E</color>
-    <color name="dark_cerulean_2">#356F98</color>
     <color name="dark_cerulean_3">#6793B2</color>
     <color name="dark_cerulean_4">#E7EDF5</color>
     <color name="slack_black">#141515</color>
     <color name="slack_black_2">#505151</color>
     <color name="slack_black_3">#DBDDDD</color>
     <color name="cadet_grey">#788586</color>
-    <color name="navy_blue">#0C3155</color>
     <color name="dark_green">#00661B</color>
     <color name="light_green">#F6FCF4</color>
     <color name="grey">#E2E2E2</color>
@@ -18,9 +16,6 @@
     <!-- Splash Screen -->
     <color name="splash_background">#E5E5E5</color>
     <color name="splash_frame_background">#C8FFB9</color>
-
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#024B7E</color>
 
     <color name="notification_tint">#2A3756</color>
 
@@ -36,6 +31,5 @@
     <color name="hyperlink_enabled">@color/dark_green</color>
     <color name="hyperlink_disabled">@color/slack_black_2</color>
 
-    <color name="segment_selected">@color/colorPrimary</color>
     <color name="segment">#DBDDDD</color>
 </resources>

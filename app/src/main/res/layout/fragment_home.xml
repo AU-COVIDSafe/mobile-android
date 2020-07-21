@@ -1,85 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_root"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#f6f6f6"
-    android:fillViewport="true">
+    android:layout_height="match_parent"
+    android:background="#f6f6f6">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/header_background"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/lighter_green"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@+id/header_background_overlap"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/header_background_overlap"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/lighter_green"
+                app:layout_constraintTop_toBottomOf="@+id/header_barrier" />
+
+            <ImageView
+                android:id="@+id/home_header_top_left_icon"
+                android:layout_width="@dimen/keyline_8"
+                android:layout_height="@dimen/keyline_8"
+                android:layout_marginLeft="@dimen/keyline_4"
+                android:layout_marginTop="@dimen/keyline_7"
+                android:src="@drawable/ic_splash_screen_logo"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/home_header_help"
+                android:layout_width="@dimen/keyline_9"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_7"
+                android:accessibilityTraversalAfter="@id/home_header_setup_complete_header_line_2"
+                android:background="?attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_help_outline_black"
+                android:drawablePadding="-4dp"
+                android:gravity="center"
+                android:text="@string/title_help"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include layout="@layout/fragment_home_setup_complete_header" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/header_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="home_header_no_bluetooth_pairing" />
+
+            <include layout="@layout/fragment_home_setup_incomplete_content" />
+
+            <include layout="@layout/fragment_home_external_links" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/content_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="push_card_view, help_topics_card" />
+
+            <TextView
+                android:id="@+id/home_version_number"
+                style="?textAppearanceBody2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:layout_marginBottom="@dimen/keyline_5"
+                android:gravity="center"
+                android:textColor="@color/cadet_grey"
+                app:layout_constraintTop_toBottomOf="@+id/content_barrier" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/keyline_2"
+                app:layout_constraintTop_toBottomOf="@+id/home_version_number" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/app_update_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        tools:visibility="visible">
 
         <View
-            android:id="@+id/header_background"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/lighter_green"
-            android:importantForAccessibility="no"
-            app:layout_constraintBottom_toBottomOf="@+id/header_background_overlap"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/header_background_overlap"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/lighter_green"
-            app:layout_constraintTop_toBottomOf="@+id/header_barrier" />
-
-        <Button
-            android:id="@+id/home_header_help"
-            android:layout_width="@dimen/keyline_9"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_7"
-            android:accessibilityTraversalAfter="@id/home_header_setup_complete_header"
-            android:background="?attr/selectableItemBackground"
-            android:drawableTop="@drawable/ic_help_outline_black"
-            android:drawablePadding="-4dp"
-            android:gravity="center"
-            android:text="@string/title_help"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <include layout="@layout/fragment_home_setup_complete_header" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/header_barrier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="home_header_label_setup_complete_subtitle_bottom_space" />
-
-        <include layout="@layout/fragment_home_setup_incomplete_content" />
-
-        <include layout="@layout/fragment_home_external_links" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/content_barrier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="push_card_view, help_topics_card" />
-
-        <TextView
-            android:id="@+id/home_version_number"
-            style="?textAppearanceBody2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_4"
-            android:layout_marginBottom="@dimen/keyline_5"
-            android:gravity="center"
-            android:textColor="@color/cadet_grey"
-            app:layout_constraintTop_toBottomOf="@+id/content_barrier" />
-
-        <Space
             android:layout_width="match_parent"
             android:layout_height="@dimen/keyline_2"
-            app:layout_constraintTop_toBottomOf="@+id/home_version_number" />
+            android:background="@color/error" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/keyline_5"
+            android:layout_marginBottom="@dimen/keyline_1"
+            android:text="@string/update_available_title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-</ScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/keyline_8"
+            android:layout_marginBottom="@dimen/keyline_5"
+            android:text="@string/update_available_message"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_to_play_store"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/keyline_8"
+            android:layout_marginHorizontal="@dimen/keyline_5"
+            android:layout_marginBottom="@dimen/keyline_4"
+            android:background="@color/dark_green"
+            android:text="@string/update_available_play_store_btn"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/remind_me_later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="@dimen/keyline_5"
+            android:paddingBottom="@dimen/keyline_5"
+            android:text="@string/update_available_dismiss_btn"
+            android:textAlignment="center"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

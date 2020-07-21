@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_how_it_works.*
@@ -21,13 +23,17 @@ class HowItWorksFragment : PagerChildFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.how_it_works_content.text = LinkBuilder.getHowCOVIdSafeWorksContent(requireContext())
         view.how_it_works_content.movementMethod = LinkMovementMethod.getInstance()
     }
 
     override fun onResume() {
         super.onResume()
 
-        // set accessibility focus to the title "How COVIDSafe works"
+        removeViewInLandscapeMode(how_it_works_picture)
+
+        how_it_works_headline.setHeading()
         how_it_works_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 

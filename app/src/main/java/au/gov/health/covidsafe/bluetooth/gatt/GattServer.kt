@@ -42,7 +42,7 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                     CentralLog.i(TAG, "${device?.address} Connected to local GATT server")
                     device?.let {
                         val b = bluetoothManager.getConnectedDevices(BluetoothProfile.GATT)
-                            .contains(device)
+                                .contains(device)
                     }
                 }
 
@@ -62,10 +62,10 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
         }
 
         override fun onCharacteristicReadRequest(
-            device: BluetoothDevice?,
-            requestId: Int,
-            offset: Int,
-            characteristic: BluetoothGattCharacteristic?
+                device: BluetoothDevice?,
+                requestId: Int,
+                offset: Int,
+                characteristic: BluetoothGattCharacteristic?
         ) {
 
             device?.let {
@@ -76,9 +76,15 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
 
                     if (Utils.bmValid(context)) {
                         val peripheral = TracerApp.asPeripheralDevice()
-                        val readRequest = ReadRequestEncryptedPayload(peripheral.modelP,
-                                TracerApp.thisDeviceMsg())
+                        val readRequest = ReadRequestEncryptedPayload(
+                                System.currentTimeMillis() / 1000L,
+                                peripheral.modelP,
+                                TracerApp.thisDeviceMsg()
+                        )
                         val plainRecord = gson.toJson(readRequest)
+
+                        CentralLog.d(TAG, "onCharacteristicReadRequest plainRecord =  $plainRecord")
+
                         val plainRecordByteArray = plainRecord.toByteArray(Charsets.UTF_8)
                         val remoteBlob = Encryption.encryptPayload(plainRecordByteArray)
                         val base = readPayloadMap.getOrPut(device.address, {
@@ -93,25 +99,25 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                         val value = base.copyOfRange(offset, base.size)
 
                         CentralLog.i(
-                            TAG,
-                            "onCharacteristicReadRequest from ${device.address} - $requestId- $offset - ${String(
-                                value,
-                                Charsets.UTF_8
-                            )}"
+                                TAG,
+                                "onCharacteristicReadRequest from ${device.address} - $requestId- $offset - ${String(
+                                        value,
+                                        Charsets.UTF_8
+                                )}"
                         )
 
                         bluetoothGattServer?.sendResponse(device, requestId, GATT_SUCCESS, 0, value)
                     } else {
                         CentralLog.i(
-                            TAG,
-                            "onCharacteristicReadRequest from ${device.address} - $requestId- $offset - BM Expired"
+                                TAG,
+                                "onCharacteristicReadRequest from ${device.address} - $requestId- $offset - BM Expired"
                         )
                         bluetoothGattServer?.sendResponse(
-                            device,
-                            requestId,
-                            GATT_FAILURE,
-                            0,
-                            ByteArray(0)
+                                device,
+                                requestId,
+                                GATT_FAILURE,
+                                0,
+                                ByteArray(0)
                         )
                     }
                 } else {
@@ -126,29 +132,29 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
 
         }
 
-        inner class ReadRequestEncryptedPayload (val modelP : String, val msg: String)
+        inner class ReadRequestEncryptedPayload(val timestamp: Long, val modelP: String, val msg: String)
 
 
         override fun onCharacteristicWriteRequest(
-            device: BluetoothDevice?,
-            requestId: Int,
-            characteristic: BluetoothGattCharacteristic,
-            preparedWrite: Boolean,
-            responseNeeded: Boolean,
-            offset: Int,
-            value: ByteArray?
+                device: BluetoothDevice?,
+                requestId: Int,
+                characteristic: BluetoothGattCharacteristic,
+                preparedWrite: Boolean,
+                responseNeeded: Boolean,
+                offset: Int,
+                value: ByteArray?
         ) {
 
 
             device?.let {
                 CentralLog.i(
-                    TAG,
-                    "onCharacteristicWriteRequest - ${device.address} - preparedWrite: $preparedWrite"
+                        TAG,
+                        "onCharacteristicWriteRequest - ${device.address} - preparedWrite: $preparedWrite"
                 )
 
                 CentralLog.i(
-                    TAG,
-                    "onCharacteristicWriteRequest from ${device.address} - $requestId - $offset"
+                        TAG,
+                        "onCharacteristicWriteRequest from ${device.address} - $requestId - $offset"
                 )
 
                 if (serviceUUID == characteristic.uuid) {
@@ -157,8 +163,8 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                         valuePassed = String(value, Charsets.UTF_8)
                     }
                     CentralLog.i(
-                        TAG,
-                        "onCharacteristicWriteRequest from ${device.address} - $valuePassed"
+                            TAG,
+                            "onCharacteristicWriteRequest from ${device.address} - $valuePassed"
                     )
                     if (value != null) {
                         var dataBuffer = writeDataPayload[device.address]
@@ -171,21 +177,21 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                         writeDataPayload[device.address] = dataBuffer
 
                         CentralLog.i(
-                            TAG,
-                            "Accumulated characteristic: ${String(
-                                dataBuffer,
-                                Charsets.UTF_8
-                            )}"
+                                TAG,
+                                "Accumulated characteristic: ${String(
+                                        dataBuffer,
+                                        Charsets.UTF_8
+                                )}"
                         )
 
                         if (responseNeeded) {
                             CentralLog.i(TAG, "Sending response offset: ${dataBuffer.size}")
                             bluetoothGattServer?.sendResponse(
-                                device,
-                                requestId,
-                                GATT_SUCCESS,
-                                dataBuffer.size,
-                                value
+                                    device,
+                                    requestId,
+                                    GATT_SUCCESS,
+                                    dataBuffer.size,
+                                    value
                             )
                         }
                     }
@@ -196,8 +202,8 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
 
                 if (!preparedWrite) {
                     CentralLog.i(
-                        TAG,
-                        "onCharacteristicWriteRequest - ${device.address} - preparedWrite: $preparedWrite"
+                            TAG,
+                            "onCharacteristicWriteRequest - ${device.address} - preparedWrite: $preparedWrite"
                     )
 
                     saveDataSaved(device)
@@ -218,11 +224,11 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
 
                 if (dataBuffer != null) {
                     CentralLog.i(
-                        TAG,
-                        "onExecuteWrite - $requestId- ${device.address} - ${String(
-                            dataBuffer,
-                            Charsets.UTF_8
-                        )}"
+                            TAG,
+                            "onExecuteWrite - $requestId- ${device.address} - ${String(
+                                    dataBuffer,
+                                    Charsets.UTF_8
+                            )}"
                     )
                     saveDataSaved(device)
                     bluetoothGattServer?.sendResponse(device, requestId, GATT_SUCCESS, 0, null)
@@ -245,18 +251,18 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                         try {
                             centralDevice = CentralDevice(dataWritten.modelC, device.address)
                             val connectionRecord = ConnectionRecord(
-                                version = dataWritten.v,
-                                msg = dataWritten.msg,
-                                org = dataWritten.org,
-                                peripheral = TracerApp.asPeripheralDevice(),
-                                central = centralDevice,
-                                rssi = dataWritten.rssi,
-                                txPower = dataWritten.txPower
+                                    version = dataWritten.v,
+                                    msg = dataWritten.msg,
+                                    org = dataWritten.org,
+                                    peripheral = TracerApp.asPeripheralDevice(),
+                                    central = centralDevice,
+                                    rssi = dataWritten.rssi,
+                                    txPower = dataWritten.txPower
                             )
 
                             Utils.broadcastStreetPassReceived(
-                                context,
-                                connectionRecord
+                                    context,
+                                    connectionRecord
                             )
                         } catch (e: Throwable) {
                             CentralLog.e(TAG, "caught error here ${e.message}")

@@ -9,20 +9,6 @@
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
     </style>
 
-    <style name="PinInput" parent="Widget.AppCompat.EditText">
-        <item name="android:textSize">@dimen/text_otp</item>
-        <item name="android:maxLength">1</item>
-        <item name="android:textColor">?attr/colorPrimary</item>
-        <item name="android:gravity">center</item>
-
-        <item name="android:singleLine">true</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:inputType">number</item>
-        <item name="android:textColorHighlight">?attr/colorPrimary</item>
-        <item name="android:selectAllOnFocus">true</item>
-        <item name="android:digits">0123456789</item>
-    </style>
-
     <style name="HelpToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
         <item name="titleTextAppearance">@style/HelpToolbarTitle</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
@@ -38,6 +24,20 @@
         <item name="android:layout_width">@dimen/keyline_8</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">18dp</item>
+    </style>
+
+    <style name="otpStyle">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/keyline_5</item>
+        <item name="android:layout_marginBottom">@dimen/keyline_5</item>
+        <item name="android:maxLength">6</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:background">@drawable/edit_text_black_background</item>
     </style>
 
 </resources>

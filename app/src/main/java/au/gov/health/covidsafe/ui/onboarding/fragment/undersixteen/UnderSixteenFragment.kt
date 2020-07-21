@@ -1,12 +1,13 @@
 package au.gov.health.covidsafe.ui.onboarding.fragment.undersixteen
 
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import androidx.core.os.bundleOf
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.fragment.enternumber.EnterNumberFragment
@@ -22,6 +23,9 @@ class UnderSixteenFragment : PagerChildFragment() {
     override fun onResume() {
         super.onResume()
         updateButtonState()
+
+        under_sixteen_headline.setHeading()
+        under_sixteen_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     override fun getUploadButtonLayout(): UploadButtonLayout = UploadButtonLayout.ContinueLayout(R.string.consent_button) {

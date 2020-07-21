@@ -33,7 +33,6 @@
             android:layout_marginEnd="@dimen/keyline_5"
             android:textAppearance="?textAppearanceHeadline2"
             android:text="@string/upload_finished_header"
-            android:contentDescription="@string/upload_finished_header_content_description"
             app:layout_constraintBottom_toTopOf="@+id/subHeader"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

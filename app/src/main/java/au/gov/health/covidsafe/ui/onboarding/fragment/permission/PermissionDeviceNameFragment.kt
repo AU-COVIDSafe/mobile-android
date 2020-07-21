@@ -6,7 +6,9 @@ import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_permission.root
@@ -38,6 +40,9 @@ class PermissionDeviceNameFragment : PagerChildFragment() {
                     }
         }
 
+
+        change_device_name_headline.setHeading()
+        change_device_name_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     private fun navigateToNextPage() {

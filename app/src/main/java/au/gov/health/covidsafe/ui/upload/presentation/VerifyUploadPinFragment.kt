@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.os.bundleOf
+import androidx.core.widget.doOnTextChanged
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.fragment.enternumber.EnterNumberFragment
@@ -16,7 +18,10 @@ import au.gov.health.covidsafe.ui.view.UploadingDialog
 import au.gov.health.covidsafe.ui.view.UploadingErrorDialog
 import com.atlassian.mobilekit.module.core.utils.SystemUtils
 import kotlinx.android.synthetic.main.fragment_verify_upload_pin.*
-import kotlinx.android.synthetic.main.fragment_verify_upload_pin.view.*
+import kotlinx.android.synthetic.main.fragment_verify_upload_pin.enter_pin_error_label
+import kotlinx.android.synthetic.main.fragment_verify_upload_pin.pin
+import kotlinx.android.synthetic.main.fragment_verify_upload_pin.root
+import kotlinx.android.synthetic.main.fragment_verify_upload_pin.view.pin
 
 
 class VerifyUploadPinFragment : PagerChildFragment() {
@@ -28,7 +33,7 @@ class VerifyUploadPinFragment : PagerChildFragment() {
 
     private var dialog: Dialog? = null
 
-    private lateinit var presenter : VerifyUploadPinPresenter
+    private lateinit var presenter: VerifyUploadPinPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_verify_upload_pin, container, false)
@@ -42,22 +47,18 @@ class VerifyUploadPinFragment : PagerChildFragment() {
 
     override fun onResume() {
         super.onResume()
-        pin.onPinChanged = {
+
+        pin.doOnTextChanged { _, _, _, _ ->
             updateButtonState()
             hideInvalidOtp()
         }
 
-        // set accessibility focus to the title
+        header.setHeading()
         header.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
-    override fun onPause() {
-        super.onPause()
-        pin.onPinChanged = null
-    }
-
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.action_verify_upload_pin) {
-        presenter.uploadData(requireView().pin.value)
+        presenter.uploadData(requireView().pin.text.toString())
     }
 
     override fun updateButtonState() {
@@ -69,7 +70,7 @@ class VerifyUploadPinFragment : PagerChildFragment() {
     }
 
     private fun isIncorrectPinFormat(): Boolean {
-        return requireView().pin.isIncomplete
+        return requireView().pin.text.toString().length != 6
     }
 
     fun hideKeyboard() {
@@ -92,7 +93,7 @@ class VerifyUploadPinFragment : PagerChildFragment() {
         activity?.let {
             dialog = UploadingErrorDialog(it, object : OnUploadErrorInterface {
                 override fun onPositiveClicked() {
-                    presenter.uploadData(requireView().pin.value)
+                    presenter.uploadData(requireView().pin.text.toString())
                 }
 
                 override fun onNegativeClicked() {

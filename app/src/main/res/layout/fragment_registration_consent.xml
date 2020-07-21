@@ -21,7 +21,7 @@
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/registration_consent_text"
@@ -34,7 +34,7 @@
             android:textColorLink="@color/hyperlink_enabled"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/registration_consent_headline" />
 
         <au.gov.health.covidsafe.ui.view.UlView
             android:id="@+id/registration_consent_first_paragraph"

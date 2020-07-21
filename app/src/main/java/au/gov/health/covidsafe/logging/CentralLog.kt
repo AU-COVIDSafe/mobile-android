@@ -72,7 +72,7 @@ class CentralLog {
             Log.e(tag, getIdleStatus() + message)
         }
 
-        fun e(tag: String, message: String, exception: Exception) {
+        fun e(tag: String, message: String, exception: Exception?) {
             if (!shouldLog()) {
                 return
             }

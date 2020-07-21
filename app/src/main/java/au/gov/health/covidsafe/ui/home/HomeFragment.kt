@@ -13,6 +13,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import au.gov.health.covidsafe.BuildConfig
@@ -20,6 +21,8 @@ import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.WebViewActivity
 import au.gov.health.covidsafe.extensions.*
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -31,7 +34,8 @@ import pub.devrel.easypermissions.EasyPermissions
 import java.text.SimpleDateFormat
 import java.util.*
 
-private const val FOURTEEN_DAYS_IN_MILLIS = 14 * 24 * 60 * 60 * 1000L
+private const val ONE_DAY_IN_MILLIS = 24 * 60 * 60 * 1000L
+private const val FOURTEEN_DAYS_IN_MILLIS = 14 * ONE_DAY_IN_MILLIS
 
 class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
@@ -91,6 +95,19 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
     override fun onResume() {
         super.onResume()
+
+        // display app update reminder
+//        if (System.currentTimeMillis()
+//                -
+//                Preference.getAppUpdateReminderDismissedTime(requireContext())
+//                > ONE_DAY_IN_MILLIS
+//        ) {
+//            app_update_reminder.visibility = VISIBLE
+//        }
+
+        // disable the app update reminder for now
+        app_update_reminder.visibility = GONE
+
         bluetooth_card_view.setOnClickListener { requestBlueToothPermissionThenNextPermission() }
         location_card_view.setOnClickListener { askForLocationPermission() }
         battery_card_view.setOnClickListener { excludeFromBatteryOptimization() }
@@ -112,11 +129,21 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
         }
 
+        go_to_play_store.setOnClickListener {
+            app_update_reminder.visibility = GONE
+        }
+
+        remind_me_later.setOnClickListener {
+            Preference.putAppUpdateReminderDismissedTime(requireContext())
+            app_update_reminder.visibility = GONE
+        }
+
         if (!mIsBroadcastListenerRegistered) {
             registerBroadcast()
         }
         refreshSetupCompleteOrIncompleteUi()
 
+        home_header_no_bluetooth_pairing.text = LinkBuilder.getNoBluetoothPairingContent(requireContext())
         home_header_no_bluetooth_pairing.movementMethod = LinkMovementMethod.getInstance()
     }
 
@@ -176,12 +203,12 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
             )
 
             val line2 = if (isDataUploadedInPast14Days) {
-                "<br/><br/>" + it.getString(R.string.home_header_uploaded_on_date, getDataUploadDateHtmlString(it))
+                it.getString(R.string.home_header_uploaded_on_date, getDataUploadDateHtmlString(it)) + "<br/>"
             } else {
                 ""
             }
 
-            val line3 = "<br/>" + it.getString(
+            val line3 = it.getString(
                     if (isAllPermissionsEnabled) {
                         R.string.home_header_active_no_action_required
                     } else {
@@ -189,25 +216,44 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
                     }
             )
 
-            val headerHtmlText = "$line1$line2$line3"
+            home_header_setup_complete_header_line_1.text = line1
 
-            home_header_setup_complete_header.text =
+            home_header_setup_complete_header_line_1.setHeading()
+            home_header_setup_complete_header_line_1.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+
+            val line2and3 = "$line2$line3"
+
+            home_header_setup_complete_header_line_2.text =
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                        Html.fromHtml(headerHtmlText, Html.FROM_HTML_MODE_COMPACT)
+                        Html.fromHtml(line2and3, Html.FROM_HTML_MODE_COMPACT)
                     } else {
-                        Html.fromHtml(headerHtmlText)
+                        Html.fromHtml(line2and3)
                     }
 
             if (isAllPermissionsEnabled) {
+                home_header_top_left_icon.visibility = GONE
+                home_header_picture_setup_complete.layoutParams.let { layoutParams ->
+                    val size = resources.getDimensionPixelSize(R.dimen.covidsafe_lottie_size)
+                    layoutParams.height = size
+                    layoutParams.width = size
+                }
                 home_header_picture_setup_complete.setAnimation("spinner_home.json")
                 home_header_picture_setup_complete.resumeAnimation()
+
                 content_setup_incomplete_group.visibility = GONE
                 ContextCompat.getColor(it, R.color.lighter_green).let { bgColor ->
                     header_background.setBackgroundColor(bgColor)
                     header_background_overlap.setBackgroundColor(bgColor)
                 }
             } else {
-                home_header_picture_setup_complete.setImageResource(R.drawable.ic_logo_home_inactive)
+                home_header_top_left_icon.visibility = VISIBLE
+                home_header_picture_setup_complete.layoutParams.let { layoutParams ->
+                    val size = resources.getDimensionPixelSize(R.dimen.keyline_8)
+                    layoutParams.height = size
+                    layoutParams.width = size
+                }
+                home_header_picture_setup_complete.setImageResource(R.drawable.ic_red_cross)
+
                 content_setup_incomplete_group.visibility = VISIBLE
                 updateBlueToothStatus()
                 updatePushNotificationStatus()
@@ -227,12 +273,13 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         val bluetoothEnabled = isBlueToothEnabled() ?: false
         val pushNotificationEnabled = isPushNotificationEnabled() ?: true
         val nonBatteryOptimizationAllowed = isBatteryOptimizationDisabled() ?: true
-        val locationStatusAllowed = isFineLocationEnabled() ?: true
+        val locationStatusAllowed = isLocationPermissionAllowed() ?: true
 
         return bluetoothEnabled &&
                 pushNotificationEnabled &&
                 nonBatteryOptimizationAllowed &&
-                locationStatusAllowed
+                locationStatusAllowed &&
+                isLocationEnabledOnDevice()
     }
 
     private fun registerBroadcast() {
@@ -251,7 +298,6 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         val newIntent = Intent(Intent.ACTION_SEND)
         newIntent.type = "text/plain"
         newIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_this_app_content))
-        newIntent.putExtra(Intent.EXTRA_HTML_TEXT, getString(R.string.share_this_app_content_html))
         startActivity(Intent.createChooser(newIntent, null))
     }
 
@@ -291,11 +337,13 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun updateLocationStatus() {
-        isFineLocationEnabled()?.let {
+        isLocationPermissionAllowed()?.let {
+            val locationWorking = it && isLocationEnabledOnDevice()
+
             location_card_view.visibility = VISIBLE
-            location_card_view.render(formatLocationTitle(it), it)
+            location_card_view.render(formatLocationTitle(locationWorking), locationWorking)
         } ?: run {
-            location_card_view.visibility = VISIBLE
+            location_card_view.visibility = GONE
         }
     }
 
@@ -352,7 +400,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-        if (requestCode == LOCATION && EasyPermissions.somePermissionPermanentlyDenied(this, listOf(Manifest.permission.ACCESS_FINE_LOCATION))) {
+        if (requestCode == LOCATION && EasyPermissions.somePermissionPermanentlyDenied(this, listOf(Manifest.permission.ACCESS_COARSE_LOCATION))) {
             AppSettingsDialog.Builder(this).build().show()
         }
     }

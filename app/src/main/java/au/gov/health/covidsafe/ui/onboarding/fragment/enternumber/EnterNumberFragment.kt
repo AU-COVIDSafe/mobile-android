@@ -10,9 +10,8 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView
-import android.widget.TextView.OnEditorActionListener
 import androidx.annotation.NavigationRes
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
@@ -20,6 +19,7 @@ import androidx.core.widget.addTextChangedListener
 import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.CountryCodeSelectionActivity
@@ -98,6 +98,9 @@ class EnterNumberFragment : PagerChildFragment() {
 
         updateButtonState()
         displaySelectedCountryOrRegion()
+
+        enter_number_page_headline.setHeading()
+        enter_number_page_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 
     @SuppressLint("SetTextI18n")

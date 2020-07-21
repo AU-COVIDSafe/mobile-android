@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_0"
-            android:contentDescription="@string/personal_details_headline_content_description"
             android:text="@string/personal_details_headline"
             android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceHeadline2"
@@ -96,15 +95,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/personal_details_name_barrier" />
 
-        <EditText
+        <au.gov.health.covidsafe.ui.onboarding.fragment.personal.SelectionCallbackSpinner
             android:id="@+id/personal_details_age"
             android:layout_width="0dp"
             android:layout_height="@dimen/text_field_height"
             android:layout_marginTop="@dimen/keyline_1"
             android:background="@drawable/edit_text_black_background"
             android:contentDescription="@string/personal_details_age_content_description"
-            android:drawableRight="@drawable/ic_arrow_drop_down"
-            android:drawableTint="@color/black"
             android:gravity="center_vertical|start"
             android:paddingStart="@dimen/keyline_1"
             android:paddingEnd="@dimen/keyline_1"
@@ -115,8 +112,7 @@
             android:textSize="@dimen/text_body_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/personal_details_age_title"
-            tools:text="John Smith" />
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_age_title" />
 
         <TextView
             android:id="@+id/personal_details_age_error"

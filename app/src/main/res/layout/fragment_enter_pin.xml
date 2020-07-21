@@ -40,13 +40,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_pin_headline" />
 
-        <au.gov.health.covidsafe.ui.view.PinInputView
+        <EditText
             android:id="@+id/pin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/otpStyle"
+            android:contentDescription="@string/pin_number"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+            app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number"
+            tools:ignore="TextFields" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/enter_pin_error_label"
@@ -54,13 +54,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/keyline_2"
-            android:text="@string/wrong_pin_number"
+            android:text="@string/wrong_ping_number"
             android:textAlignment="viewStart"
             android:textColor="@color/error"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pin"
-            tools:text="@string/wrong_pin_number"
+            tools:text="@string/wrong_ping_number"
             tools:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -79,8 +79,8 @@
             style="?textAppearanceBody2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="viewStart"
             android:layout_marginStart="@dimen/keyline_0"
+            android:textAlignment="viewStart"
             app:layout_constraintStart_toEndOf="@+id/enter_pin_timer_label"
             app:layout_constraintTop_toTopOf="@+id/enter_pin_timer_label"
             tools:text="1:59" />
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_4"
             android:gravity="center_vertical|start"
-            android:text="@string/pin_issue"
+            android:text="@string/ReceivePinIssue"
             android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceSubtitle1"
             android:textColorLink="?attr/colorPrimary"

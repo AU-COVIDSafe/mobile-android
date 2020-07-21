@@ -1,10 +1,13 @@
 package au.gov.health.covidsafe.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.NavHostFragment
 import au.gov.health.covidsafe.HasBlockingState
+import kotlinx.android.synthetic.main.fragment_intro.*
 
 open class BaseFragment : Fragment() {
 
@@ -30,5 +33,12 @@ open class BaseFragment : Fragment() {
             activity.isUiBlocked = true
         }
         NavHostFragment.findNavController(this).popBackStack()
+    }
+
+    protected fun removeViewInLandscapeMode(viewToRemove: View){
+        if (requireContext().resources.configuration.orientation ==
+                Configuration.ORIENTATION_LANDSCAPE){
+            viewToRemove.visibility = View.GONE
+        }
     }
 }

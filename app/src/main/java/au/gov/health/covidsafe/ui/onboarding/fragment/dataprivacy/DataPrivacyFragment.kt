@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_data_privacy.*
+import kotlinx.android.synthetic.main.fragment_data_privacy.root
 import kotlinx.android.synthetic.main.fragment_data_privacy.view.*
 
 class DataPrivacyFragment : PagerChildFragment() {
@@ -21,13 +24,17 @@ class DataPrivacyFragment : PagerChildFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.data_privacy_content.text = LinkBuilder.getRegistrationAndPrivacyContent(requireContext())
         view.data_privacy_content.movementMethod = LinkMovementMethod.getInstance()
     }
 
     override fun onResume() {
         super.onResume()
 
-        // set accessibility focus to the title "Registration and privacy"
+        removeViewInLandscapeMode(data_privacy_picture)
+
+        data_privacy_headline.setHeading()
         data_privacy_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
 

@@ -17,7 +17,7 @@
         android:ellipsize="end"
         android:lines="1"
         android:gravity="start"
-        android:text="@string/country_au"
+        android:text="@string/country_region_name_au"
         android:textSize="18sp"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toStartOf="@+id/country_list_flag"

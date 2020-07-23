@@ -20,6 +20,6 @@
     <string name="feedback_found_an_issue_in_the_covidsafe_app">Found an issue in the COVIDSafe app?</string>
     <string name="feedback_please_describe_an_issue">Please describe an issue</string>
     <string name="feedback_email_address_required">Email address (Required)</string>
-    <string name="feedback_we_may_reach_out_to_you_for_further_details_about_your_feedback">We may reach out to you for further details about your feedback.\nYour email address won`t be used for any other purpose.</string>
+    <string name="feedback_we_may_reach_out_to_you_for_further_details_about_your_feedback">We may reach out to you for further details about your feedback.\nYour email address won't be used for any other purpose.</string>
 
 </resources>

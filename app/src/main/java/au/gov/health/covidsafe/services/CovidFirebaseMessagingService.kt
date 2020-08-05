@@ -1,6 +1,7 @@
 package au.gov.health.covidsafe.services
 
 import au.gov.health.covidsafe.*
+import au.gov.health.covidsafe.Utils.gotoPlayStore
 import au.gov.health.covidsafe.logging.CentralLog
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -28,8 +29,11 @@ class CovidFirebaseMessagingService : FirebaseMessagingService() {
 
         // log notification payload.
         remoteMessage.notification?.let {
-            CentralLog.d(TAG, "onMessageReceived() notification = ${it.title} ${it.body}")
+            CentralLog.d(TAG, "onMessageReceived() notification = ${it.title} ${it.body} ${it.clickAction}")
 
+            if (it.clickAction == "au.gov.health.covidsafe.UPGRADE_APP"){
+                gotoPlayStore(applicationContext)
+            }
         }
 
         // log data payload.

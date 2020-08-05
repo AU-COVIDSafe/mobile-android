@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_how_it_works.view.*
 
 class HowItWorksFragment : PagerChildFragment() {
 
-    override var stepProgress: Int? = null
+    override var step: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
             : View? = inflater.inflate(R.layout.fragment_how_it_works, container, false)

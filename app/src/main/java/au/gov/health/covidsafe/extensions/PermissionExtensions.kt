@@ -24,7 +24,7 @@ const val LOCATION = 345
 const val BATTERY_OPTIMISER = 789
 
 fun Fragment.requestAllPermissions(onEndCallback: () -> Unit) {
-    if (isBlueToothEnabled() ?: true) {
+    if (requireContext().isBlueToothEnabled() ?: true) {
         requestFineLocationAndCheckBleSupportThenNextPermission(onEndCallback)
     } else {
         requestBlueToothPermissionThenNextPermission()
@@ -104,44 +104,36 @@ fun Fragment.gotoPushNotificationSettings() {
     context.startActivity(intent)
 }
 
-fun Fragment.isBlueToothEnabled(): Boolean? {
-    val bluetoothManager = activity?.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager?
+fun Context.isBlueToothEnabled(): Boolean? {
+    val bluetoothManager = this.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager?
     return bluetoothManager?.adapter?.isEnabled
 }
 
-fun Fragment.isPushNotificationEnabled(): Boolean? {
-    return activity?.let { activity ->
-        NotificationManagerCompat.from(activity).areNotificationsEnabled()
-    }
+fun Context.isPushNotificationEnabled(): Boolean? {
+    return NotificationManagerCompat.from(this).areNotificationsEnabled()
 }
 
-fun Fragment.isLocationPermissionAllowed(): Boolean? {
-    return activity?.let { activity ->
-        EasyPermissions.hasPermissions(activity, ACCESS_COARSE_LOCATION)
-    }
+fun Context.isLocationPermissionAllowed(): Boolean? {
+    return EasyPermissions.hasPermissions(this, ACCESS_COARSE_LOCATION)
 }
 
-fun Fragment.isLocationEnabledOnDevice(): Boolean {
-    val locationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+fun Context.isLocationEnabledOnDevice(): Boolean {
+    val locationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
     return locationManager?.let {
         it.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
                 it.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     } ?: false
 }
 
-fun Fragment.isBatteryOptimizationDisabled(): Boolean? {
-    return activity?.let { activity ->
-        val powerManager = activity.getSystemService(AppCompatActivity.POWER_SERVICE) as PowerManager?
-        val packageName = activity.packageName
+fun Context.isBatteryOptimizationDisabled(): Boolean? {
+    val powerManager = this.getSystemService(AppCompatActivity.POWER_SERVICE) as PowerManager?
+    val packageName = this.packageName
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            powerManager?.isIgnoringBatteryOptimizations(packageName) ?: true
-        } else {
-            null
-        }
-    } ?: run {
-        null
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        return powerManager?.isIgnoringBatteryOptimizations(packageName) ?: true
     }
+
+    return null
 }
 
 fun Fragment.askForLocationPermission() {
@@ -154,7 +146,7 @@ fun Fragment.askForLocationPermission() {
                                 .build())
             }
 
-            !isLocationEnabledOnDevice() -> {
+            !it.isLocationEnabledOnDevice() -> {
                 AlertDialog.Builder(it).apply {
                     setMessage(R.string.need_location_service)
                     setPositiveButton(android.R.string.ok) { _, _ ->

@@ -16,7 +16,10 @@ interface AwsClient {
     fun respondToAuthChallenge(@Body body: AuthChallengeRequest): Call<AuthChallengeResponse>
 
     @GET(BuildConfig.END_POINT_PREFIX + "/getTempId")
-    fun getTempId(@Header("Authorization") jwtToken: String?): Call<BroadcastMessageResponse>
+    fun getTempId(
+            @Header("Authorization") jwtToken: String?,
+            @Query("version") apiVersion: Int
+    ): Call<BroadcastMessageResponse>
 
     @GET(BuildConfig.END_POINT_PREFIX + "/initiateDataUpload")
     fun initiateUpload(
@@ -35,7 +38,9 @@ interface AwsClient {
             @Header("Authorization") jwtToken: String?,
             @Query("os") os: String,
             @Query("appversion") appversion: String,
-            @Query("token") token: String
+            @Query("token") token: String,
+            @Query("healthcheck") healthcheck: String,
+            @Query("preferredLanguages") preferredLanguages: String
     ): Call<MessagesResponse>
 
 }

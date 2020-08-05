@@ -13,7 +13,6 @@ import au.gov.health.covidsafe.ui.PagerContainer
 import au.gov.health.covidsafe.ui.UploadButtonLayout
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
-import kotlinx.android.synthetic.main.fragment_help.*
 import kotlinx.android.synthetic.main.fragment_upload_master.*
 import kotlinx.android.synthetic.main.fragment_upload_master.toolbar
 
@@ -38,13 +37,8 @@ class UploadContainerFragment : Fragment(), PagerContainer {
         toolbar.setNavigationOnClickListener(null)
     }
 
-    override fun updateProgressBar(stepProgress: Int?) {
-        if (stepProgress == null) {
-            upload_progress.visibility = INVISIBLE
-        } else {
-            upload_progress.visibility = VISIBLE
-            upload_progress.progress = stepProgress
-        }
+    override fun updateSteps(step: Int?, totalSteps: Int) {
+        // do nothing
     }
 
     override fun setNavigationIcon(navigationIcon: Int?) {

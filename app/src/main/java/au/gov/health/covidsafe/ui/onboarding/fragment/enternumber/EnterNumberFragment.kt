@@ -38,7 +38,7 @@ class EnterNumberFragment : PagerChildFragment() {
         const val ENTER_NUMBER_PROGRESS = "progress"
     }
 
-    override var stepProgress: Int? = 2
+    override var step: Int? = 2
 
     private val enterNumberPresenter = EnterNumberPresenter(this)
     private var alertDialog: AlertDialog? = null
@@ -67,7 +67,7 @@ class EnterNumberFragment : PagerChildFragment() {
 
         arguments?.let {
             destinationId = it.getInt(ENTER_NUMBER_DESTINATION_ID)
-            stepProgress = if (it.containsKey(ENTER_NUMBER_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
+            step = if (it.containsKey(ENTER_NUMBER_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
         }
     }
 
@@ -166,7 +166,7 @@ class EnterNumberFragment : PagerChildFragment() {
                 ENTER_PIN_CALLING_CODE to callingCode,
                 ENTER_PIN_PHONE_NUMBER to phoneNumber,
                 ENTER_PIN_DESTINATION_ID to destinationId).also { bundle ->
-            stepProgress?.let {
+            step?.let {
                 bundle.putInt(ENTER_PIN_PROGRESS, it + 1)
             }
         }

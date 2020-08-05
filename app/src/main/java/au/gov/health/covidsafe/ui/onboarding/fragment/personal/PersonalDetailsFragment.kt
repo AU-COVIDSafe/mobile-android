@@ -32,7 +32,7 @@ private val NAME_REGEX = Pattern.compile("^[A-Za-z0-9\\u00C0-\\u017F][A-Za-z'0-9
 class PersonalDetailsFragment : PagerChildFragment() {
 
     private var alertDialog: AlertDialog? = null
-    override var stepProgress: Int? = 1
+    override var step: Int? = 1
 
     private lateinit var name: String
     private lateinit var postcode: String

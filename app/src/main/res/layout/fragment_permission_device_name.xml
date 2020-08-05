@@ -68,12 +68,11 @@
             android:paddingStart="@dimen/keyline_1"
             android:paddingEnd="@dimen/keyline_1"
             android:singleLine="true"
+            android:textAlignment="viewStart"
             android:textColor="@color/slack_black"
             android:textColorHighlight="@color/dark_cerulean_3"
             android:textCursorDrawable="@null"
             android:textSize="@dimen/text_body_small"
-            android:textAlignment="viewStart"
-            android:text="@string/change_device_name_default_device_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/change_device_name_new_device_name" />

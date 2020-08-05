@@ -27,16 +27,6 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_upload" />
 
-    <au.gov.health.covidsafe.ui.view.SegmentedProgressBar
-        android:id="@+id/upload_progress"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginStart="@dimen/keyline_5"
-        android:layout_marginTop="@dimen/keyline_4"
-        android:layout_marginEnd="@dimen/keyline_5"
-        app:progress_max_value="5"
-        app:progress_value="1" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

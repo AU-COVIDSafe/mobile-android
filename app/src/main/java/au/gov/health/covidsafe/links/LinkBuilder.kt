@@ -66,6 +66,9 @@ object LinkBuilder {
         return url
     }
 
+    fun getHelpTopicsUrlWithAnchor(anchor : String) =
+            getHelpTopicsUrl() + anchor
+
     private fun getBluetoothPairingRequestUrl() =
             getHelpTopicsUrl() + HELP_TOPICS_ANCHOR_BLUETOOTH_PAIRING_REQUEST
 

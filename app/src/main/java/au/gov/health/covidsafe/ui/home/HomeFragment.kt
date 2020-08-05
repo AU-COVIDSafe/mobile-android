@@ -31,6 +31,7 @@ import kotlinx.android.synthetic.main.fragment_home_setup_complete_header.*
 import kotlinx.android.synthetic.main.fragment_home_setup_incomplete_content.*
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
+import java.lang.ref.WeakReference
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -38,6 +39,10 @@ private const val ONE_DAY_IN_MILLIS = 24 * 60 * 60 * 1000L
 private const val FOURTEEN_DAYS_IN_MILLIS = 14 * ONE_DAY_IN_MILLIS
 
 class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
+
+    companion object{
+        var instanceWeakRef: WeakReference<HomeFragment>? = null
+    }
 
     private lateinit var presenter: HomePresenter
 
@@ -78,8 +83,11 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         view.home_header_help.setOnClickListener {
+            HelpFragment.anchor = null
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
+
         }
         if (BuildConfig.ENABLE_DEBUG_SCREEN) {
             view.header_background.setOnClickListener {
@@ -95,6 +103,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
     override fun onResume() {
         super.onResume()
+
+        instanceWeakRef = WeakReference(this)
 
         // display app update reminder
 //        if (System.currentTimeMillis()
@@ -125,18 +135,25 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         home_setup_complete_app.setOnClickListener {
             goToCovidApp()
         }
+
         help_topics_link.setOnClickListener {
+            HelpFragment.anchor = null
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
         }
 
-        go_to_play_store.setOnClickListener {
-            app_update_reminder.visibility = GONE
+        change_language_link.setOnClickListener {
+            HelpFragment.anchor = "#other-languages"
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
         }
 
-        remind_me_later.setOnClickListener {
-            Preference.putAppUpdateReminderDismissedTime(requireContext())
-            app_update_reminder.visibility = GONE
-        }
+//        go_to_play_store.setOnClickListener {
+//            app_update_reminder.visibility = GONE
+//        }
+//
+//        remind_me_later.setOnClickListener {
+//            Preference.putAppUpdateReminderDismissedTime(requireContext())
+//            app_update_reminder.visibility = GONE
+//        }
 
         if (!mIsBroadcastListenerRegistered) {
             registerBroadcast()
@@ -149,6 +166,9 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
     override fun onPause() {
         super.onPause()
+
+        instanceWeakRef = null
+
         bluetooth_card_view.setOnClickListener(null)
         location_card_view.setOnClickListener(null)
         battery_card_view.setOnClickListener(null)
@@ -189,7 +209,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun refreshSetupCompleteOrIncompleteUi() {
+    fun refreshSetupCompleteOrIncompleteUi() {
         context?.let {
             val isAllPermissionsEnabled = allPermissionsEnabled()
             val isDataUploadedInPast14Days = isDataUploadedInPast14Days(it)
@@ -270,16 +290,18 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun allPermissionsEnabled(): Boolean {
-        val bluetoothEnabled = isBlueToothEnabled() ?: false
-        val pushNotificationEnabled = isPushNotificationEnabled() ?: true
-        val nonBatteryOptimizationAllowed = isBatteryOptimizationDisabled() ?: true
-        val locationStatusAllowed = isLocationPermissionAllowed() ?: true
+        val context = requireContext()
+
+        val bluetoothEnabled = context.isBlueToothEnabled() ?: false
+        val pushNotificationEnabled = context.isPushNotificationEnabled() ?: true
+        val nonBatteryOptimizationAllowed = context.isBatteryOptimizationDisabled() ?: true
+        val locationStatusAllowed = context.isLocationPermissionAllowed() ?: true
 
         return bluetoothEnabled &&
                 pushNotificationEnabled &&
                 nonBatteryOptimizationAllowed &&
                 locationStatusAllowed &&
-                isLocationEnabledOnDevice()
+                context.isLocationEnabledOnDevice()
     }
 
     private fun registerBroadcast() {
@@ -302,7 +324,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun updateBlueToothStatus() {
-        isBlueToothEnabled()?.let {
+        requireContext().isBlueToothEnabled()?.let {
             bluetooth_card_view.visibility = VISIBLE
             bluetooth_card_view.render(formatBlueToothTitle(it), it)
         } ?: run {
@@ -311,7 +333,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun updatePushNotificationStatus() {
-        isPushNotificationEnabled()?.let {
+        requireContext().isPushNotificationEnabled()?.let {
             push_card_view.visibility = VISIBLE
             push_card_view.render(
                     formatPushNotificationTitle(it),
@@ -324,7 +346,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun updateBatteryOptimizationStatus() {
-        isBatteryOptimizationDisabled()?.let {
+        requireContext().isBatteryOptimizationDisabled()?.let {
             battery_card_view.visibility = VISIBLE
             battery_card_view.render(
                     formatNonBatteryOptimizationTitle(!it),
@@ -337,8 +359,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun updateLocationStatus() {
-        isLocationPermissionAllowed()?.let {
-            val locationWorking = it && isLocationEnabledOnDevice()
+        requireContext().isLocationPermissionAllowed()?.let {
+            val locationWorking = it && requireContext().isLocationEnabledOnDevice()
 
             location_card_view.visibility = VISIBLE
             location_card_view.render(formatLocationTitle(locationWorking), locationWorking)

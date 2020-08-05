@@ -7,7 +7,7 @@ interface PagerContainer {
     fun disableNextButton()
     fun showLoading()
     fun hideLoading(@StringRes stringRes: Int?)
-    fun updateProgressBar(stepProgress: Int?)
+    fun updateSteps(step: Int?, totalSteps: Int)
     fun setNavigationIcon(navigationIcon: Int?)
     fun refreshButton(updateButtonLayout: UploadButtonLayout)
 }

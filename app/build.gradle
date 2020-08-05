@@ -41,8 +41,8 @@ android {
         Before you increase the targetSdkVersion make sure that all its usage are still working
          */
         targetSdkVersion 28
-        versionCode 39
-        versionName "1.0.39"
+        versionCode 48
+        versionName "1.0.48"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

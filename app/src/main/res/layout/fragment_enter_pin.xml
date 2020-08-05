@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_1"
         android:paddingStart="@dimen/keyline_5"
         android:paddingEnd="@dimen/keyline_5">
 
@@ -17,7 +18,6 @@
             android:id="@+id/enter_pin_headline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_6"
             android:gravity="center_vertical|start"
             android:text="@string/enter_pin_headline"
             android:textAlignment="viewStart"

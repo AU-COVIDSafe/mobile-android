@@ -52,7 +52,12 @@
         <activity
             android:name="au.gov.health.covidsafe.HomeActivity"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="au.gov.health.covidsafe.UPGRADE_APP" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
 
         <receiver android:name="au.gov.health.covidsafe.boot.StartOnBootReceiver">
             <intent-filter>

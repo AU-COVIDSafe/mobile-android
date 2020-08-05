@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_data_privacy.view.*
 
 class DataPrivacyFragment : PagerChildFragment() {
 
-    override var stepProgress: Int? = null
+    override var step: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
             : View? = inflater.inflate(R.layout.fragment_data_privacy, container, false)

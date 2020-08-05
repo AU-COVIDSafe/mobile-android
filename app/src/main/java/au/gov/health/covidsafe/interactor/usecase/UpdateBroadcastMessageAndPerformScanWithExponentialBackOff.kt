@@ -10,16 +10,18 @@ import au.gov.health.covidsafe.interactor.Either
 import au.gov.health.covidsafe.interactor.Failure
 import au.gov.health.covidsafe.interactor.Success
 import au.gov.health.covidsafe.interactor.UseCase
+import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.response.BroadcastMessageResponse
 import au.gov.health.covidsafe.networking.service.AwsClient
 import kotlin.math.pow
 
+private const val TAG = "UpdateBroadcastMessage"
+private const val RETRIES_LIMIT = 3
+private const val GET_TEMP_ID_API_VERSION = 2
+
 class UpdateBroadcastMessageAndPerformScanWithExponentialBackOff(private val awsClient: AwsClient,
                                                                  private val context: Context,
                                                                  lifecycle: Lifecycle) : UseCase<BroadcastMessageResponse, Void?>(lifecycle) {
-
-    private val TAG = this.javaClass.simpleName
-    private val RETRIES_LIMIT = 3
 
     override suspend fun run(params: Void?): Either<Exception, BroadcastMessageResponse> {
         val jwtToken = Preference.getEncrypterJWTToken(context)
@@ -60,8 +62,12 @@ class UpdateBroadcastMessageAndPerformScanWithExponentialBackOff(private val aws
 
     private fun call(jwtToken: String): Response<BroadcastMessageResponse>? {
         return try {
-            awsClient.getTempId("Bearer $jwtToken").execute()
+            awsClient.getTempId(
+                    "Bearer $jwtToken",
+                    GET_TEMP_ID_API_VERSION
+            ).execute()
         } catch (e: Exception) {
+            CentralLog.e(TAG, " awsClient.getTempId() failed.", e)
             null
         }
     }

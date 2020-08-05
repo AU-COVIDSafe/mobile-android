@@ -34,7 +34,7 @@ class EnterPinFragment : PagerChildFragment() {
         const val ENTER_PIN_PROGRESS = "progress"
     }
 
-    override var stepProgress: Int? = 3
+    override var step: Int? = 3
 
     private val COUNTDOWN_DURATION = 5 * 60L  // OTP Code expiry
 
@@ -57,7 +57,7 @@ class EnterPinFragment : PagerChildFragment() {
             val phoneNumber = it.getString(ENTER_PIN_PHONE_NUMBER)!!
             destinationId = it.getInt(ENTER_PIN_DESTINATION_ID)
 
-            stepProgress = if (it.containsKey(ENTER_PIN_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
+            step = if (it.containsKey(ENTER_PIN_PROGRESS)) it.getInt(ENTER_PIN_PROGRESS) else null
 
             enter_pin_headline.text = resources.getString(R.string.enter_pin_headline, "+$callingCode", phoneNumber)
 

@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_under_sixteen.*
 
 class UnderSixteenFragment : PagerChildFragment() {
 
-    override var stepProgress: Int? = null
+    override var step: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
             : View? = inflater.inflate(R.layout.fragment_under_sixteen, container, false)

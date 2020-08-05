@@ -9,35 +9,73 @@ import android.content.Context
 import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.extensions.isBatteryOptimizationDisabled
+import au.gov.health.covidsafe.extensions.isBlueToothEnabled
+import au.gov.health.covidsafe.extensions.isLocationEnabledOnDevice
+import au.gov.health.covidsafe.extensions.isLocationPermissionAllowed
 import au.gov.health.covidsafe.factory.NetworkFactory.Companion.awsClient
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.response.MessagesResponse
+import au.gov.health.covidsafe.scheduler.GetMessagesScheduler.mostRecentRecordTimestamp
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecord
+import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 
 private const val TAG = "GetMessagesScheduler"
 private const val GET_MESSAGES_JOB_ID = 1
 private const val TWENTY_FOUR_HOURS_IN_MILLIS = 24 * 60 * 60 * 1000L
+private const val SEVEN_DAYS_IN_MILLIS = 7 * TWENTY_FOUR_HOURS_IN_MILLIS
+
+private const val HEALTH_CHECK_RESULT_OK = "OK"
+private const val HEALTH_CHECK_RESULT_POSSIBLE_ERROR = "POSSIBLE_ERROR"
 
 // for testing only
 //private const val TWENTY_FOUR_HOURS_IN_MILLIS = 16 * 60 * 1000L
 
 class GetMessagesJobSchedulerService : JobService() {
+    private val mostRecentRecordLiveData = StreetPassRecordDatabase.getDatabase(TracerApp.AppContext).recordDao().getMostRecentRecord()
+
+    private val mostRecentRecordObserver = androidx.lifecycle.Observer<StreetPassRecord?> {
+        mostRecentRecordTimestamp = it?.timestamp ?: 0
+        CentralLog.d(TAG, "mostRecentRecordObserver updates mostRecentRecordTimestamp to $mostRecentRecordTimestamp")
+    }
+
     override fun onStartJob(params: JobParameters): Boolean {
         CentralLog.d(TAG, "onStartJob()")
-        GetMessagesScheduler.getMessages(this, params)
+
+        mostRecentRecordLiveData.observeForever(mostRecentRecordObserver)
+
+        GlobalScope.launch(Dispatchers.IO) {
+            delay(1000)
+
+            GlobalScope.launch(Dispatchers.Main) {
+                GetMessagesScheduler.getMessages(this@GetMessagesJobSchedulerService, params)
+            }
+        }
+
         return true
     }
 
     override fun onStopJob(params: JobParameters): Boolean {
         CentralLog.d(TAG, "onStopJob()")
+
+        mostRecentRecordLiveData.removeObserver(mostRecentRecordObserver)
+
         return true
     }
 }
 
 object GetMessagesScheduler {
+    var mostRecentRecordTimestamp: Long = 0
+
     fun scheduleGetMessagesJob() {
         CentralLog.d(TAG, "scheduleGetMessagesJob()")
 
@@ -66,11 +104,42 @@ object GetMessagesScheduler {
         val appVersion = "${BuildConfig.VERSION_CODE}"
         val token = Preference.getFirebaseInstanceID(context)
 
+        val isBlueToothEnabled = context.isBlueToothEnabled() != false
+        val isBatteryOptimizationDisabled = context.isBatteryOptimizationDisabled() != false
+        val isLocationPermissionAllowed = context.isLocationPermissionAllowed() != false
+        val isLocationEnabledOnDevice = context.isLocationEnabledOnDevice()
+        val isLastRecordWithinSevenDays =
+                (System.currentTimeMillis() - mostRecentRecordTimestamp) <= SEVEN_DAYS_IN_MILLIS
+
+        CentralLog.d(TAG, "isBlueToothEnabled = $isBlueToothEnabled")
+        CentralLog.d(TAG, "isBatteryOptimizationDisabled = $isBatteryOptimizationDisabled")
+        CentralLog.d(TAG, "isLocationPermissionAllowed = $isLocationPermissionAllowed")
+        CentralLog.d(TAG, "isLocationEnabledOnDevice = $isLocationEnabledOnDevice")
+        CentralLog.d(TAG, "isLastRecordWithinSevenDays = $isLastRecordWithinSevenDays (mostRecentRecordTimestamp = $mostRecentRecordTimestamp)")
+
+        val healthCheck = if (
+                isBlueToothEnabled &&
+                isBatteryOptimizationDisabled &&
+                isLocationPermissionAllowed &&
+                isLocationEnabledOnDevice &&
+                isLastRecordWithinSevenDays
+        ) {
+            HEALTH_CHECK_RESULT_OK
+        } else {
+            HEALTH_CHECK_RESULT_POSSIBLE_ERROR
+        }
+
+        CentralLog.d(TAG, "healthCheck = $healthCheck")
+
+        val preferredLanguages = Locale.getDefault().language
+
         val messagesCall: Call<MessagesResponse> = awsClient.getMessages(
                 "Bearer $jwtToken",
                 os,
                 appVersion,
-                token
+                token,
+                healthCheck,
+                preferredLanguages
         )
 
         CentralLog.d(TAG, "getMessages() to be called with InstanceID = $token")

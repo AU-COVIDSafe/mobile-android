@@ -15,8 +15,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_up"
-        app:navigationContentDescription="@string/navigation_back_button_content_description"/>
+        app:navigationContentDescription="@string/navigation_back_button_content_description"
+        app:navigationIcon="@drawable/ic_up" />
+
+    <View
+        android:id="@+id/toolbarReplacer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyline_4"/>
+
+    <TextView
+        android:id="@+id/textViewSteps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/keyline_5"
+        android:text="@string/stepCounter"
+        android:textAppearance="?textAppearanceBody1"/>
 
     <fragment
         android:id="@+id/fragment_nav_host"
@@ -51,17 +64,6 @@
             android:visibility="visible" />
     </FrameLayout>
 
-    <au.gov.health.covidsafe.ui.view.SegmentedProgressBar
-        android:id="@+id/onboarding_progress_bar"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginStart="@dimen/keyline_7"
-        android:layout_marginTop="@dimen/keyline_4"
-        android:layout_marginEnd="@dimen/keyline_7"
-        android:visibility="gone"
-        app:progress_max_value="5"
-        app:progress_value="1" />
-
     <Button
         android:id="@+id/onboarding_next"
         style="?textAppearanceButton"
@@ -80,7 +82,6 @@
         android:layout_marginTop="@dimen/keyline_5"
         android:layout_marginEnd="@dimen/keyline_5"
         android:gravity="center_horizontal"
-        android:text="@string/change_device_name_new_device_name"
         android:textAppearance="?textAppearanceBody1"
         android:textColor="@color/dark_green"/>
 

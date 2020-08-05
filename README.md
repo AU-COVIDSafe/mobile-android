@@ -1,5 +1,11 @@
 # COVIDSafe app
 
+Thank you for viewing the GitHub repository for the COVIDSafe app by the Australian Government.  
+If you need help with troubleshooting issues with the app, please use our support channels:  
+Email: support@covidsafe.gov.au  
+Phone: 1800 020 080  
+COVIDSafe online help [https://covidsafe.gov.au/help-topics.html](https://covidsafe.gov.au/help-topics.html)  
+
 # Please report any security vulnerabilities using the details from [https://covidsafe.gov.au/.well-known/security.txt](https://covidsafe.gov.au/.well-known/security.txt)  
 
 # [Terms and Conditions for access to COVIDSafe App code](https://github.com/AU-COVIDSafe/mobile-android/blob/master/LICENSE.md)

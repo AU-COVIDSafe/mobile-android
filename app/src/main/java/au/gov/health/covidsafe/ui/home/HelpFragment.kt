@@ -12,19 +12,19 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.ui.BaseFragment
 import com.atlassian.mobilekit.module.feedback.FeedbackModule
 import kotlinx.android.synthetic.main.fragment_help.*
 import kotlinx.android.synthetic.main.fragment_help.view.*
-import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.links.LinkBuilder
-import au.gov.health.covidsafe.logging.CentralLog
-import au.gov.health.covidsafe.ui.BaseFragment
-import kotlinx.android.synthetic.main.activity_country_code_selection.*
-import java.util.*
 
 private const val TAG = "HelpFragment"
 
 class HelpFragment : BaseFragment() {
+    companion object {
+        var anchor: String? = null
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -37,7 +37,14 @@ class HelpFragment : BaseFragment() {
         val webView = view.helpWebView
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = createWebVieClient(view)
-        webView.loadUrl(LinkBuilder.getHelpTopicsUrl())
+
+        val url = when (val anchorReadonly = anchor) {
+            null -> LinkBuilder.getHelpTopicsUrl()
+            else -> LinkBuilder.getHelpTopicsUrlWithAnchor(anchorReadonly)
+        }
+
+        webView.loadUrl(url)
+
         reportAnIssue.setOnClickListener {
             FeedbackModule.showFeedbackScreen()
         }
@@ -85,7 +92,6 @@ class HelpFragment : BaseFragment() {
                     }
                 }
             }
-
 
 
 }

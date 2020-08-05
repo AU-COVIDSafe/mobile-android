@@ -13,8 +13,8 @@ abstract class PagerChildFragment : BaseFragment() {
     }
 
     private fun updateProgressBar() {
-        (parentFragment?.parentFragment as? PagerContainer)?.updateProgressBar(stepProgress)
-        (activity as? PagerContainer)?.updateProgressBar(stepProgress)
+        (parentFragment?.parentFragment as? PagerContainer)?.updateSteps(step, totalSteps)
+        (activity as? PagerContainer)?.updateSteps(step, totalSteps)
     }
 
     private fun updateToolBar() {
@@ -35,6 +35,11 @@ abstract class PagerChildFragment : BaseFragment() {
         }
         (parentFragment?.parentFragment as? PagerContainer)?.refreshButton(updateButtonLayout)
         (activity as? PagerContainer)?.refreshButton(updateButtonLayout)
+    }
+
+    fun disableNavigationButton(){
+        (parentFragment?.parentFragment as? PagerContainer)?.setNavigationIcon(null)
+        (activity as? PagerContainer)?.setNavigationIcon(null)
     }
 
     fun enableContinueButton() {
@@ -59,7 +64,9 @@ abstract class PagerChildFragment : BaseFragment() {
 
     protected open var navigationIconResId: Int? = au.gov.health.covidsafe.R.drawable.ic_up
 
-    abstract var stepProgress: Int?
+    abstract var step: Int?
+    private val totalSteps = 4
+
     abstract fun getUploadButtonLayout(): UploadButtonLayout
     abstract fun updateButtonState()
 }

@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_registration_consent.*
 
 class RegistrationConsentFragment : PagerChildFragment() {
 
-    override var stepProgress: Int? = null
+    override var step: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
             : View? = inflater.inflate(R.layout.fragment_registration_consent, container, false)

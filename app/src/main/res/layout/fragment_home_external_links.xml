@@ -142,5 +142,30 @@
             app:external_linkCard_icon="@drawable/ic_question_circle"
             app:external_linkCard_title="@string/home_set_complete_external_link_help_topics_title" />
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/change_language_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/help_topics_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/change_language_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/keyline_0"
+            android:paddingBottom="@dimen/keyline_0"
+            app:external_linkCard_content="@string/change_language_content"
+            app:external_linkCard_icon="@drawable/ic_globe"
+            app:external_linkCard_title="@string/change_language" />
+    </androidx.cardview.widget.CardView>
 </merge>
 

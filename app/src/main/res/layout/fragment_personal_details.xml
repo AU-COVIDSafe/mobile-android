@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_1"
         android:paddingStart="@dimen/keyline_5"
         android:paddingEnd="@dimen/keyline_5"
         android:paddingBottom="@dimen/keyline_9">
@@ -18,7 +19,6 @@
             android:id="@+id/personal_details_headline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_0"
             android:text="@string/personal_details_headline"
             android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceHeadline2"

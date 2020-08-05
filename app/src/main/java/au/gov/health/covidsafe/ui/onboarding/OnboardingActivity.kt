@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import au.gov.health.covidsafe.HasBlockingState
+import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.ui.PagerContainer
 import au.gov.health.covidsafe.ui.UploadButtonLayout
@@ -47,20 +48,35 @@ class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer 
         }
     }
 
-    override fun updateProgressBar(stepProgress: Int?) {
-        stepProgress?.let { progress ->
-            onboarding_progress_bar.visibility = VISIBLE
-            onboarding_progress_bar.progress = progress
-        } ?: run {
-            onboarding_progress_bar.visibility = GONE
+    override fun onBackPressed() {
+        if (Preference.isOnBoarded(this)) {
+            finish()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    override fun updateSteps(step: Int?, totalSteps: Int) {
+        when (step) {
+            null -> {
+                textViewSteps.visibility = GONE
+            }
+            else -> {
+                textViewSteps.visibility = VISIBLE
+                textViewSteps.text = String.format(getString(R.string.stepCounter), step, totalSteps)
+            }
         }
     }
 
     override fun setNavigationIcon(navigationIcon: Int?) {
         if (navigationIcon == null) {
             toolbar.navigationIcon = null
+            toolbar.visibility = GONE
+            toolbarReplacer.visibility = VISIBLE
         } else {
             toolbar.navigationIcon = ContextCompat.getDrawable(this, navigationIcon)
+            toolbar.visibility = VISIBLE
+            toolbarReplacer.visibility = GONE
         }
     }
 
@@ -118,5 +134,4 @@ class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer 
             onboarding_next.hideProgress(newTextRes = stringRes)
         }
     }
-
 }

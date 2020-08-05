@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_permission_success.*
 
 class PermissionSuccessFragment : PagerChildFragment() {
 
-    override var stepProgress: Int? = null
+    override var step: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
             : View? = inflater.inflate(R.layout.fragment_permission_success, container, false)
@@ -30,6 +30,8 @@ class PermissionSuccessFragment : PagerChildFragment() {
 
         permission_success_content.text = LinkBuilder.getHowPermissionSuccessContent(requireContext())
         permission_success_content.movementMethod = LinkMovementMethod.getInstance()
+
+        disableNavigationButton()
     }
 
     private fun navigateToNextPage() {

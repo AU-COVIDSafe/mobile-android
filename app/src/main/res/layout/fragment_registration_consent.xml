@@ -16,7 +16,6 @@
             android:id="@+id/registration_consent_headline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/keyline_6"
             android:text="@string/registration_consent_headline"
             android:textAppearance="?textAppearanceHeadline2"
             app:layout_constraintEnd_toEndOf="parent"

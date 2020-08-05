@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:barrierDirection="bottom"
-                app:constraint_referenced_ids="push_card_view, help_topics_card" />
+                app:constraint_referenced_ids="push_card_view, change_language_card" />
 
             <TextView
                 android:id="@+id/home_version_number"
@@ -116,48 +116,48 @@
             android:layout_height="@dimen/keyline_2"
             android:background="@color/error" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/keyline_5"
-            android:layout_marginBottom="@dimen/keyline_1"
-            android:text="@string/update_available_title"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="@dimen/keyline_5"-->
+<!--            android:layout_marginBottom="@dimen/keyline_1"-->
+<!--            android:text="@string/update_available_title"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="@dimen/keyline_8"
-            android:layout_marginBottom="@dimen/keyline_5"
-            android:text="@string/update_available_message"
-            android:textAlignment="center"
-            android:textSize="16sp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginHorizontal="@dimen/keyline_8"-->
+<!--            android:layout_marginBottom="@dimen/keyline_5"-->
+<!--            android:text="@string/update_available_message"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="16sp" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/go_to_play_store"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/keyline_8"
-            android:layout_marginHorizontal="@dimen/keyline_5"
-            android:layout_marginBottom="@dimen/keyline_4"
-            android:background="@color/dark_green"
-            android:text="@string/update_available_play_store_btn"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/go_to_play_store"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/keyline_8"-->
+<!--            android:layout_marginHorizontal="@dimen/keyline_5"-->
+<!--            android:layout_marginBottom="@dimen/keyline_4"-->
+<!--            android:background="@color/dark_green"-->
+<!--            android:text="@string/update_available_play_store_btn"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/remind_me_later"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingHorizontal="@dimen/keyline_5"
-            android:paddingBottom="@dimen/keyline_5"
-            android:text="@string/update_available_dismiss_btn"
-            android:textAlignment="center"
-            android:textColor="@color/dark_green"
-            android:textSize="18sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/remind_me_later"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:paddingHorizontal="@dimen/keyline_5"-->
+<!--            android:paddingBottom="@dimen/keyline_5"-->
+<!--            android:text="@string/update_available_dismiss_btn"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/dark_green"-->
+<!--            android:textSize="18sp" />-->
 
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

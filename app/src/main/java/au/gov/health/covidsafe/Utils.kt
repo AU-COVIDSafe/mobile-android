@@ -3,6 +3,7 @@ package au.gov.health.covidsafe
 import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -27,6 +28,8 @@ import au.gov.health.covidsafe.streetpass.ConnectionRecord
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
+
+private const val APP_PACKAGE_NAME = "au.gov.health.covidsafe"
 
 object Utils {
 
@@ -270,6 +273,18 @@ object Utils {
             }
         } catch (e: Exception) {
             CentralLog.e(TAG, "announceForAccessibility throws exception.", e)
+        }
+    }
+
+    fun gotoPlayStore(context: Context) {
+        try {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$APP_PACKAGE_NAME")).also {
+                it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            })
+        } catch (anfe: ActivityNotFoundException) {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$APP_PACKAGE_NAME")).also {
+                it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            })
         }
     }
 }

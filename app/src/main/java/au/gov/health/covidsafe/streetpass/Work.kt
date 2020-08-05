@@ -2,6 +2,7 @@ package au.gov.health.covidsafe.streetpass
 
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothGatt
+import android.bluetooth.BluetoothGattCallback
 import android.content.Context
 import android.os.Build
 import au.gov.health.covidsafe.logging.CentralLog
@@ -40,7 +41,27 @@ class Work constructor(
         gatt = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             device.connectGatt(context, false, gattCallback, BluetoothDevice.TRANSPORT_LE)
         } else {
-            device.connectGatt(context, false, gattCallback)
+            // use reflection to call connectGatt(Context context, boolean autoConnect, BluetoothGattCallback callback, int transport)
+            try {
+                device.javaClass.getMethod(
+                        "connectGatt",
+                        Context::class.java,
+                        Boolean::class.java,
+                        BluetoothGattCallback::class.java,
+                        Int::class.java
+                ).invoke(
+                        device,
+                        context,
+                        false,
+                        gattCallback,
+                        2 // BluetoothDevice.TRANSPORT_LE = 2
+                ) as BluetoothGatt
+            } catch (e: Exception) {
+                CentralLog.e(TAG, "Reflection call of connectGatt() failed.")
+
+                // reflection failed; call connectGatt(Context context, boolean autoConnect, BluetoothGattCallback callback) instead
+                device.connectGatt(context, false, gattCallback)
+            }
         }
 
         if (gatt == null) {

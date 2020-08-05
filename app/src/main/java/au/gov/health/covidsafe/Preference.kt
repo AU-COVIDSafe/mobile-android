@@ -9,6 +9,7 @@ import au.gov.health.covidsafe.security.crypto.AESEncryptionForPreAndroidM
 object Preference {
     private const val PREF_ID = "Tracer_pref"
     private const val IS_ONBOARDED = "IS_ONBOARDED"
+    private const val HAS_DEVICE_NAME_NOTIFICATION_DISPLAYED = "HAS_DEVICE_NAME_NOTIFICATION_DISPLAYED"
     private const val CALLING_CODE = "CALLING_CODE"
     private const val AUSTRALIA_CALLING_CODE = 61
     private const val COUNTRY_NAME_RES_ID = "COUNTRY_NAME"
@@ -120,6 +121,16 @@ object Preference {
     fun isOnBoarded(context: Context): Boolean {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .getBoolean(IS_ONBOARDED, false)
+    }
+
+    fun putHasDeviceNameNotificationDisplayed(context: Context, value: Boolean) {
+        context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putBoolean(HAS_DEVICE_NAME_NOTIFICATION_DISPLAYED, value).apply()
+    }
+
+    fun getHasDeviceNameNotificationDisplayed(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .getBoolean(HAS_DEVICE_NAME_NOTIFICATION_DISPLAYED, false)
     }
 
     fun putPhoneNumber(context: Context, value: String) {

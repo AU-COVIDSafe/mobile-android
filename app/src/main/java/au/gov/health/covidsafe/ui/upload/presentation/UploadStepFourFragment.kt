@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_upload_page_4.*
 class UploadStepFourFragment : PagerChildFragment() {
 
     private var alertDialog: AlertDialog? = null
-    override var stepProgress: Int? = null
+    override var step: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_upload_page_4, container, false)

@@ -34,7 +34,7 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
         )
     }
 
-    override var stepProgress: Int? = 4
+    override var step: Int? = 4
 
     private var navigationStarted = false
 
@@ -48,6 +48,12 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
 
         permission_headline.setHeading()
         permission_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+
+        disableNavigationButton()
+
+        activity?.let {
+            Preference.putIsOnBoarded(it, true)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -76,7 +82,7 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
 
     private fun hasAllPermissionsAndBluetoothOn(): Boolean {
         val context = TracerApp.AppContext
-        return isBlueToothEnabled() == true
+        return context.isBlueToothEnabled() == true
                 && requiredPermissions.all { ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED }
                 && ContextCompat.getSystemService(context, PowerManager::class.java)?.isIgnoringBatteryOptimizations(context.packageName) ?: true
     }
@@ -108,9 +114,6 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
     override fun getUploadButtonLayout() = UploadButtonLayout.ContinueLayout(R.string.permission_button) {
         disableContinueButton()
         navigationStarted = true
-        activity?.let {
-            Preference.putIsOnBoarded(it, true)
-        }
         requestAllPermissions {
             navigateToNextPage()
         }

@@ -16,7 +16,7 @@ By accessing the App Code I accept and agree to the following terms:
 3. I understand and agree that the App Code is provided on an as is where is basis, that the App Code may be updated over time, and that the DTA and the Commonwealth have no liability whatsoever in connection with my access to or use of the App Code.
 
 4. I agree to stop all access and use of the App Code if requested by the DTA.
-5. I will not use the App Code for any product development purposes.
+5. I will not use the App Code for any product development purposes, without first gaining approval from the DTA in writing for my specific intended use of the code.
 6. I will promptly report to the DTA on any actual or potential security vulnerabilities I become aware of in respect of the COVIDSafe App.
 7. I am responsible for any costs of third party claims associated with my access to the App Code, and must pay those claims on request.
 8. I understand and agree that:

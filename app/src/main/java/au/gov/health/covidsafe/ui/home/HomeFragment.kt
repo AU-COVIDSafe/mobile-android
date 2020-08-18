@@ -5,7 +5,9 @@ import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.content.*
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
@@ -14,33 +16,42 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
+import android.widget.LinearLayout
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.children
 import androidx.navigation.fragment.findNavController
-import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.Preference
-import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.WebViewActivity
+import au.gov.health.covidsafe.*
 import au.gov.health.covidsafe.extensions.*
 import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.logging.CentralLog
+import au.gov.health.covidsafe.networking.response.MessagesResponse
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.BaseFragment
+import au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_home_external_links.*
 import kotlinx.android.synthetic.main.fragment_home_setup_complete_header.*
 import kotlinx.android.synthetic.main.fragment_home_setup_incomplete_content.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import java.lang.ref.WeakReference
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+private const val TAG = "HomeFragment"
+
 private const val ONE_DAY_IN_MILLIS = 24 * 60 * 60 * 1000L
 private const val FOURTEEN_DAYS_IN_MILLIS = 14 * ONE_DAY_IN_MILLIS
 
 class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
-    companion object{
+    companion object {
         var instanceWeakRef: WeakReference<HomeFragment>? = null
     }
 
@@ -106,22 +117,12 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
         instanceWeakRef = WeakReference(this)
 
-        // display app update reminder
-//        if (System.currentTimeMillis()
-//                -
-//                Preference.getAppUpdateReminderDismissedTime(requireContext())
-//                > ONE_DAY_IN_MILLIS
-//        ) {
-//            app_update_reminder.visibility = VISIBLE
-//        }
-
         // disable the app update reminder for now
         app_update_reminder.visibility = GONE
 
         bluetooth_card_view.setOnClickListener { requestBlueToothPermissionThenNextPermission() }
         location_card_view.setOnClickListener { askForLocationPermission() }
         battery_card_view.setOnClickListener { excludeFromBatteryOptimization() }
-        push_card_view.setOnClickListener { gotoPushNotificationSettings() }
 
         home_been_tested_button.setOnClickListener {
             navigateTo(R.id.action_home_to_selfIsolate)
@@ -146,15 +147,6 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
         }
 
-//        go_to_play_store.setOnClickListener {
-//            app_update_reminder.visibility = GONE
-//        }
-//
-//        remind_me_later.setOnClickListener {
-//            Preference.putAppUpdateReminderDismissedTime(requireContext())
-//            app_update_reminder.visibility = GONE
-//        }
-
         if (!mIsBroadcastListenerRegistered) {
             registerBroadcast()
         }
@@ -162,6 +154,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
 
         home_header_no_bluetooth_pairing.text = LinkBuilder.getNoBluetoothPairingContent(requireContext())
         home_header_no_bluetooth_pairing.movementMethod = LinkMovementMethod.getInstance()
+
+        updateNotificationStatusTile()
     }
 
     override fun onPause() {
@@ -177,6 +171,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         home_setup_complete_news.setOnClickListener(null)
         home_setup_complete_app.setOnClickListener(null)
         help_topics_link.setOnClickListener(null)
+
         activity?.let { activity ->
             if (mIsBroadcastListenerRegistered) {
                 activity.unregisterReceiver(mBroadcastListener)
@@ -272,11 +267,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
                     layoutParams.height = size
                     layoutParams.width = size
                 }
-                home_header_picture_setup_complete.setImageResource(R.drawable.ic_red_cross)
+                home_header_picture_setup_complete.setImageResource(R.drawable.ic_red_cross_no_circle)
 
                 content_setup_incomplete_group.visibility = VISIBLE
                 updateBlueToothStatus()
-                updatePushNotificationStatus()
                 updateBatteryOptimizationStatus()
                 updateLocationStatus()
                 ContextCompat.getColor(it, R.color.grey).let { bgColor ->
@@ -293,12 +287,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         val context = requireContext()
 
         val bluetoothEnabled = context.isBlueToothEnabled() ?: false
-        val pushNotificationEnabled = context.isPushNotificationEnabled() ?: true
         val nonBatteryOptimizationAllowed = context.isBatteryOptimizationDisabled() ?: true
         val locationStatusAllowed = context.isLocationPermissionAllowed() ?: true
 
         return bluetoothEnabled &&
-                pushNotificationEnabled &&
                 nonBatteryOptimizationAllowed &&
                 locationStatusAllowed &&
                 context.isLocationEnabledOnDevice()
@@ -332,19 +324,6 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
         }
     }
 
-    private fun updatePushNotificationStatus() {
-        requireContext().isPushNotificationEnabled()?.let {
-            push_card_view.visibility = VISIBLE
-            push_card_view.render(
-                    formatPushNotificationTitle(it),
-                    it,
-                    getString(R.string.home_app_permission_push_notification_prompt)
-            )
-        } ?: run {
-            push_card_view.visibility = GONE
-        }
-    }
-
     private fun updateBatteryOptimizationStatus() {
         requireContext().isBatteryOptimizationDisabled()?.let {
             battery_card_view.visibility = VISIBLE
@@ -361,9 +340,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     private fun updateLocationStatus() {
         requireContext().isLocationPermissionAllowed()?.let {
             val locationWorking = it && requireContext().isLocationEnabledOnDevice()
+            val locationOffPrompts = getString(R.string.home_set_location_why)
 
             location_card_view.visibility = VISIBLE
-            location_card_view.render(formatLocationTitle(locationWorking), locationWorking)
+            location_card_view.render(formatLocationTitle(locationWorking), locationWorking, locationOffPrompts)
         } ?: run {
             location_card_view.visibility = GONE
         }
@@ -436,6 +416,113 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
+    }
+
+    fun updateConnectionTile(isInternetConnected: Boolean) {
+        // called on IO thread; run the UI logic on UI thread
+        GlobalScope.launch(Dispatchers.Main) {
+            CentralLog.d(TAG, "updateConnectionTile() isInternetConnected = $isInternetConnected")
+
+            var visibility = if (isInternetConnected) GONE else VISIBLE
+
+            // don't display the tile when there's permission not enabled
+            if (!allPermissionsEnabled()) {
+                visibility = GONE
+            }
+
+            improve_performance_card.visibility = visibility
+            internet_connection_tile.visibility = visibility
+
+            if (visibility == VISIBLE) {
+                internet_connection_tile.setOnClickListener {
+                    // startActivity(Intent(ACTION_DATA_ROAMING_SETTINGS))
+                    // startActivity(Intent(ACTION_WIFI_SETTINGS))
+
+                    startActivity(Intent(requireContext(), InternetConnectionIssuesActivity::class.java))
+                }
+            }
+        }
+    }
+
+    fun updateMessageTiles(messagesResponse: MessagesResponse) {
+        GlobalScope.launch(Dispatchers.Main) {
+            improve_performance_card_linear_layout.children.forEach {
+                if (it != internet_connection_tile && it != improve_performance_title) {
+                    improve_performance_card_linear_layout.removeView(it)
+                }
+            }
+
+            if (!messagesResponse.messages.isNullOrEmpty()) {
+                improve_performance_card.visibility = VISIBLE
+
+                messagesResponse.messages.forEach { message ->
+                    ExternalLinkCard(requireContext(), null, 0).also {
+                        it.layoutParams = LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                        ).also { layoutParams ->
+                            layoutParams.setMargins(0, resources.getDimensionPixelSize(R.dimen.divider_height), 0, 0)
+                        }
+
+                        it.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+
+                        it.setMessage(message)
+                        it.setErrorTextColor()
+
+                        improve_performance_card_linear_layout.addView(it)
+                    }
+                }
+            } else {
+                improve_performance_card.visibility = GONE
+            }
+        }
+    }
+
+    private fun updateNotificationStatusTile() {
+        var title = ""
+        var body = ""
+
+        if (NotificationManagerCompat.from(requireContext()).areNotificationsEnabled()
+        ) {
+            notification_status_link.setTopRightIcon(R.drawable.ic_green_tick)
+            title = getString(R.string.home_set_complete_external_link_notifications_title_iOS)
+            body = getString(R.string.NotificationsEnabledBlurb)
+        } else {
+            notification_status_link.setTopRightIcon(R.drawable.ic_red_cross)
+            title = getString(R.string.home_set_complete_external_link_notifications_title_iOS_off)
+            body = getString(R.string.NotificationsEnabledBlurb)
+        }
+
+        notification_status_link.setTitleBodyAndClickCallback(title, body) {
+            openAppNotificationSettings()
+        }
+
+        notification_status_link.setColorForContentWithAction()
+    }
+
+    private fun openAppNotificationSettings() {
+        val context = requireContext()
+
+        val intent = Intent().apply {
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O -> {
+                    action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+                    putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+                }
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP -> {
+                    action = "android.settings.APP_NOTIFICATION_SETTINGS"
+                    putExtra("app_package", context.packageName)
+                    putExtra("app_uid", context.applicationInfo.uid)
+                }
+                else -> {
+                    action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+                    addCategory(Intent.CATEGORY_DEFAULT)
+                    data = Uri.parse("package:" + context.packageName)
+                }
+            }
+        }
+
+        context.startActivity(intent)
     }
 
 }

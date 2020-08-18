@@ -31,6 +31,8 @@ private const val HELP_TOPICS_VIETNAMESE_PAGE = "/vi"
 private const val HELP_TOPICS_KOREAN_PAGE = "/ko"
 private const val HELP_TOPICS_GREEK_PAGE = "/el"
 private const val HELP_TOPICS_ITALIAN_PAGE = "/it"
+private const val HELP_TOPICS_PUNJABI_PAGE = "/pa-in"
+private const val HELP_TOPICS_TURKISH_PAGE = "/tr"
 
 private const val HELP_TOPICS_ANCHOR_VERIFY_MOBILE_NUMBER_PIN = "#verify-mobile-number-pin"
 private const val HELP_TOPICS_ANCHOR_BLUETOOTH_PAIRING_REQUEST = "#bluetooth-pairing-request"
@@ -55,6 +57,8 @@ object LinkBuilder {
             localeLanguageTag.startsWith("ko") -> HELP_TOPICS_KOREAN_PAGE
             localeLanguageTag.startsWith("el") -> HELP_TOPICS_GREEK_PAGE
             localeLanguageTag.startsWith("it") -> HELP_TOPICS_ITALIAN_PAGE
+            localeLanguageTag.startsWith("pa") -> HELP_TOPICS_PUNJABI_PAGE
+            localeLanguageTag.startsWith("tr") -> HELP_TOPICS_TURKISH_PAGE
             else -> HELP_TOPICS_ENGLISH_PAGE
         } + HELP_TOPICS_SUFFIX
 

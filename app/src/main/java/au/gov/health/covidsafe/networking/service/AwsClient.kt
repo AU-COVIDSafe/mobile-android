@@ -40,7 +40,7 @@ interface AwsClient {
             @Query("appversion") appversion: String,
             @Query("token") token: String,
             @Query("healthcheck") healthcheck: String,
-            @Query("preferredLanguages") preferredLanguages: String
+            @Query("preferredlanguages") preferredLanguages: String
     ): Call<MessagesResponse>
 
 }

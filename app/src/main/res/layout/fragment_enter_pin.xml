@@ -44,7 +44,7 @@
             android:id="@+id/pin"
             style="@style/otpStyle"
             android:contentDescription="@string/pin_number"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number"
             tools:ignore="TextFields" />
 

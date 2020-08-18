@@ -48,6 +48,8 @@
             android:windowSoftInputMode="adjustPan" />
 
         <activity android:name="au.gov.health.covidsafe.WebViewActivity" />
+        <activity android:name="au.gov.health.covidsafe.DeviceNameChangePromptActivity" />
+        <activity android:name="au.gov.health.covidsafe.InternetConnectionIssuesActivity" />
 
         <activity
             android:name="au.gov.health.covidsafe.HomeActivity"

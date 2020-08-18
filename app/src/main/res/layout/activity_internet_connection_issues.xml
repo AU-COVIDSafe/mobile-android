@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationContentDescription="@string/navigation_back_button_content_description"
+        app:navigationIcon="@drawable/ic_up" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/keyline_5"
+            android:paddingEnd="@dimen/keyline_5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_7"
+                android:src="@drawable/ic_internet_issues" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_6"
+                android:text="@string/internet_screen_heading"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceHeadline2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:text="@string/internet_screen_content"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+
+            <TextView
+                android:id="@+id/text_internet_content_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:text="@string/internet_screen_content_1"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+
+            <TextView
+                android:id="@+id/text_internet_content_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:text="@string/internet_screen_content_2"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

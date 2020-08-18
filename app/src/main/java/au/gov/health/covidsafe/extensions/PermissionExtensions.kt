@@ -109,10 +109,6 @@ fun Context.isBlueToothEnabled(): Boolean? {
     return bluetoothManager?.adapter?.isEnabled
 }
 
-fun Context.isPushNotificationEnabled(): Boolean? {
-    return NotificationManagerCompat.from(this).areNotificationsEnabled()
-}
-
 fun Context.isLocationPermissionAllowed(): Boolean? {
     return EasyPermissions.hasPermissions(this, ACCESS_COARSE_LOCATION)
 }

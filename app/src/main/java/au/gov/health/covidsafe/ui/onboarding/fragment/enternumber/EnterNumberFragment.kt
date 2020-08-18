@@ -78,6 +78,8 @@ class EnterNumberFragment : PagerChildFragment() {
 
         enter_number_phone_number.addTextChangedListener {
             enter_number_phone_number.setTextColor(normalTextColor)
+
+            updateButtonState()
         }
 
         enter_number_phone_number.setOnEditorActionListener { _, actionId, event ->

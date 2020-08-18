@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
+import au.gov.health.covidsafe.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.PagerChildFragment
@@ -27,6 +28,7 @@ class PermissionDeviceNameFragment : PagerChildFragment() {
         context?.let {
             change_device_name_content.setText(R.string.change_device_name_content_line_2)
             change_device_name_text_box.setText(Settings.Secure.getString(it.contentResolver, "bluetooth_name"))
+            Preference.setDeviceNameChangePromptDisplayed(it)
         }
 
         change_device_name_headline.setHeading()

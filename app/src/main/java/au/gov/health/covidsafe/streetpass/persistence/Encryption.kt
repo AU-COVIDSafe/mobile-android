@@ -1,13 +1,10 @@
 package au.gov.health.covidsafe.streetpass.persistence
 
+import android.os.Build
 import android.util.Base64
 import au.gov.health.covidsafe.BuildConfig
 import java.math.BigInteger
-import java.security.KeyFactory
-import java.security.KeyPair
-import java.security.KeyPairGenerator
-import java.security.MessageDigest
-import java.security.PublicKey
+import java.security.*
 import java.security.interfaces.ECPublicKey
 import java.security.spec.X509EncodedKeySpec
 import javax.crypto.Cipher
@@ -98,6 +95,11 @@ object Encryption {
 
     private val NONCE_PADDING = ByteArray(14) { 0x0E.toByte() }
     private val serverPubKey: PublicKey = readKey()
+    private val random: SecureRandom = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        SecureRandom.getInstanceStrong()
+    } else {
+        SecureRandom()
+    }
 
     private var cachedEphPubKey: ByteArray? = null
     private var cachedAesKey: SecretKey? = null
@@ -146,13 +148,21 @@ object Encryption {
 
     @Synchronized
     private fun encryptionKeys(): EncryptionKeys {
-        if (keyGenTime <= System.currentTimeMillis() - KEY_GEN_TIME_DELTA || counter >= 65535) {
+        // Allowing 2^8 encryption cycles with a 2B random IV gives a ~40% chance of IV collision.
+        // This threshold has been chosen as a balance between the competing needs of:
+        // - Reducing the number of key agreements, due to mobile platform limitations (battery, performance, background compute restrictions)
+        // - Ensuring semantic security
+        if (keyGenTime <= System.currentTimeMillis() - KEY_GEN_TIME_DELTA || counter >= 255) {
             generateKeys()
             keyGenTime = System.currentTimeMillis()
             counter = 0
         } else {
             counter++
         }
-        return EncryptionKeys(cachedEphPubKey!!, cachedAesKey!!, cachedMacKey!!, counterBytes(counter))
+
+        val nonce: ByteArray = ByteArray(2)
+        random.nextBytes(nonce)
+
+        return EncryptionKeys(cachedEphPubKey!!, cachedAesKey!!, cachedMacKey!!, nonce)
     }
 }

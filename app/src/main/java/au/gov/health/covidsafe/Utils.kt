@@ -25,9 +25,14 @@ import au.gov.health.covidsafe.status.Status
 import au.gov.health.covidsafe.streetpass.ACTION_DEVICE_SCANNED
 import au.gov.health.covidsafe.streetpass.ConnectablePeripheral
 import au.gov.health.covidsafe.streetpass.ConnectionRecord
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.io.File
+import java.net.InetAddress
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 private const val APP_PACKAGE_NAME = "au.gov.health.covidsafe"
 
@@ -287,4 +292,30 @@ object Utils {
             })
         }
     }
+
+    private fun checkInternetConnectionToURL(url: String, callback: (Boolean) -> Unit) {
+        GlobalScope.launch(Dispatchers.IO) {
+            var reachable = false
+
+            reachable = try {
+                InetAddress.getByName(url).isReachable(2000)
+            } catch (e: Exception) {
+                CentralLog.w(TAG, "checkInternetConnectionToURL() failed to reach the url $url")
+                false
+            }
+
+            CentralLog.w(TAG, "checkInternetConnectionToURL() reachability to url $url is $reachable")
+
+            callback(reachable)
+        }
+    }
+
+    fun checkInternetConnectionToCOVIDSafeBackend(callback: (Boolean) -> Unit) {
+        checkInternetConnectionToURL(BuildConfig.BASE_URL, callback)
+    }
+
+    fun checkInternetConnectionToGoogle(callback: (Boolean) -> Unit) {
+        checkInternetConnectionToURL("8.8.8.8", callback)
+    }
+
 }

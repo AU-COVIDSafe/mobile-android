@@ -32,8 +32,7 @@ object Preference {
     private const val IS_MINOR = "IS_MINOR"
     private const val POST_CODE = "POST_CODE"
     private const val AGE = "AGE"
-
-    private const val APP_UPDATE_REMINDER_DISMISSED_TIME = "APP_UPDATE_REMINDER_DISMISSED_TIME"
+    private const val IS_DEVICE_NAME_CHANGE_PROMPT_DISPLAYED = "IS_DEVICE_NAME_CHANGE_DISPLAYED"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -266,14 +265,14 @@ object Preference {
                 .getString(AGE, null)
     }
 
-    fun putAppUpdateReminderDismissedTime(context: Context): Boolean {
+    fun setDeviceNameChangePromptDisplayed(context: Context): Boolean {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
-                .edit().putLong(APP_UPDATE_REMINDER_DISMISSED_TIME, System.currentTimeMillis()).commit()
+                .edit().putBoolean(IS_DEVICE_NAME_CHANGE_PROMPT_DISPLAYED, true).commit()
     }
 
-    fun getAppUpdateReminderDismissedTime(context: Context): Long {
+    fun isDeviceNameChangePromptDisplayed(context: Context): Boolean {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
-                .getLong(APP_UPDATE_REMINDER_DISMISSED_TIME, 0L)
+                .getBoolean(IS_DEVICE_NAME_CHANGE_PROMPT_DISPLAYED, false)
     }
 
 }

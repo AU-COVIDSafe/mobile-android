@@ -88,17 +88,6 @@
                 android:layout_height="wrap_content"
                 app:title="@string/home_non_battery_optimization_permission" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/slack_black_3" />
-
-            <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
-                android:id="@+id/push_card_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title="@string/home_push_notification_permission" />
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="divider_height">1dp</dimen>
+
     <dimen name="keyline_0">4dp</dimen>
     <dimen name="keyline_1">8dp</dimen>
     <dimen name="keyline_2">12dp</dimen>

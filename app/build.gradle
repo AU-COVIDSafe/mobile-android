@@ -41,8 +41,8 @@ android {
         Before you increase the targetSdkVersion make sure that all its usage are still working
          */
         targetSdkVersion 28
-        versionCode 48
-        versionName "1.0.48"
+        versionCode 54
+        versionName "1.0.54"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -210,7 +210,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
@@ -241,7 +241,7 @@ dependencies {
 
     implementation 'com.google.guava:guava:28.2-android'
     implementation "androidx.collection:collection:1.1.0"
-    implementation "com.google.crypto.tink:tink-android:1.4.0-rc2"
+    implementation "com.google.crypto.tink:tink-android:1.4.0"
     implementation "androidx.lifecycle:lifecycle-service:2.2.0"
     implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
 
@@ -249,7 +249,7 @@ dependencies {
     implementation 'com.michaelfotiadis:android-country-flags:1.0.3'
 
     // Firebase Cloud Messaging
-    implementation 'com.google.firebase:firebase-messaging:20.2.3'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
     androidTestImplementation "androidx.room:room-testing:2.2.5"
 

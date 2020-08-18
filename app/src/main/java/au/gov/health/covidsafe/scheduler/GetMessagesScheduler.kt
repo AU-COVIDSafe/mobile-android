@@ -76,24 +76,30 @@ class GetMessagesJobSchedulerService : JobService() {
 object GetMessagesScheduler {
     var mostRecentRecordTimestamp: Long = 0
 
-    fun scheduleGetMessagesJob() {
-        CentralLog.d(TAG, "scheduleGetMessagesJob()")
+    var messagesResponseCallback: ((MessagesResponse) -> Unit)? = null
 
-        val context = TracerApp.AppContext
+    fun scheduleGetMessagesJob(callback: (MessagesResponse) -> Unit) {
+        GlobalScope.launch(Dispatchers.Default) {
+            CentralLog.d(TAG, "scheduleGetMessagesJob()")
 
-        (context.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler?)
-                ?.let {
-                    CentralLog.d(TAG, "JobScheduler available")
+            messagesResponseCallback = callback
 
-                    it.schedule(
-                            JobInfo.Builder(GET_MESSAGES_JOB_ID,
-                                    ComponentName(context, GetMessagesJobSchedulerService::class.java))
-                                    .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
-                                    .setPersisted(true)
-                                    .setPeriodic(TWENTY_FOUR_HOURS_IN_MILLIS)
-                                    .build()
-                    )
-                }
+            val context = TracerApp.AppContext
+
+            (context.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler?)
+                    ?.let {
+                        CentralLog.d(TAG, "JobScheduler available")
+
+                        it.schedule(
+                                JobInfo.Builder(GET_MESSAGES_JOB_ID,
+                                        ComponentName(context, GetMessagesJobSchedulerService::class.java))
+                                        .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+                                        .setPersisted(true)
+                                        .setPeriodic(TWENTY_FOUR_HOURS_IN_MILLIS)
+                                        .build()
+                        )
+                    }
+        }
     }
 
     fun getMessages(jobService: JobService? = null, params: JobParameters? = null) {
@@ -147,11 +153,14 @@ object GetMessagesScheduler {
         messagesCall.enqueue(object : Callback<MessagesResponse> {
             override fun onResponse(call: Call<MessagesResponse>, response: Response<MessagesResponse>) {
                 val responseCode = response.code()
+
                 if (responseCode == 200) {
                     CentralLog.d(TAG, "onResponse() got 200 response.")
 
                     response.body()?.let {
                         CentralLog.d(TAG, "onResponse() MessagesResponse = $it")
+
+                        messagesResponseCallback?.invoke(it)
                     }
                 } else {
                     CentralLog.w(TAG, "onResponse() got error response code = $responseCode.")

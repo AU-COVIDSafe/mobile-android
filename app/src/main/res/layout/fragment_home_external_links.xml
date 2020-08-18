@@ -11,11 +11,58 @@
         app:constraint_referenced_ids="permissions_card_bottom_space,header_barrier" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/improve_performance_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyline_4"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/cards_top_barrier"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <LinearLayout
+            android:id="@+id/improve_performance_card_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/slack_black_3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/improve_performance_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/keyline_4"
+                android:text="@string/improve_heading"
+                android:textSize="28sp" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/internet_connection_tile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
+                android:paddingTop="@dimen/keyline_0"
+                android:paddingBottom="@dimen/keyline_0"
+                app:external_linkCard_content="@string/internet_connection_content"
+                app:external_linkCard_icon="@drawable/ic_home_share"
+                app:external_linkCard_icon_visible="false"
+                app:external_linkCard_text_color="@color/error"
+                app:external_linkCard_title="@string/internet_connection_heading" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/external_links_top_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/keyline_4"
-        app:layout_constraintTop_toBottomOf="@+id/cards_top_barrier"
+        app:layout_constraintTop_toBottomOf="@+id/improve_performance_card"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="6dp"
         card_view:cardMaxElevation="2dp"
@@ -32,9 +79,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
                 android:paddingTop="@dimen/keyline_0"
                 android:paddingBottom="@dimen/keyline_0"
-                android:minHeight="@dimen/external_link_height"
                 app:external_linkCard_content="@string/home_set_complete_external_link_share_content"
                 app:external_linkCard_icon="@drawable/ic_home_share"
                 app:external_linkCard_icon_background="@drawable/background_circular_green"
@@ -144,11 +191,36 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/change_language_card"
+        android:id="@+id/notification_status_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/keyline_4"
         app:layout_constraintTop_toBottomOf="@+id/help_topics_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/notification_status_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/keyline_0"
+            android:paddingBottom="@dimen/keyline_0"
+            app:external_linkCard_content="@string/NotificationsEnabledBlurb"
+            app:external_linkCard_icon="@drawable/ic_bell"
+            app:external_linkCard_title="@string/home_set_complete_external_link_notifications_title_iOS" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/change_language_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/notification_status_card"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="6dp"
         card_view:cardMaxElevation="2dp"

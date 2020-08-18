@@ -9,9 +9,11 @@
     <declare-styleable name="ExternalLinkCard">
         <attr name="external_linkCard_title" format="string" />
         <attr name="external_linkCard_icon" format="reference" />
+        <attr name="external_linkCard_icon_visible" format="boolean" />
         <attr name="external_linkCard_content" format="string" />
         <attr name="external_linkCard_icon_background" format="reference" />
         <attr name="external_linkCard_icon_padding" format="dimension" />
+        <attr name="external_linkCard_text_color" format="reference" />
     </declare-styleable>
     <declare-styleable name="SegmentedProgressBar">
         <attr name="progress_max_value" format="integer|reference" />

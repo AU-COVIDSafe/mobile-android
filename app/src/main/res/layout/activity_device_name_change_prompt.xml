@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DeviceNameChangePromptActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/keyline_9"
+        android:layout_gravity="center">
+
+        <include layout="@layout/fragment_permission_device_name"/>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button_continue"
+        style="?textAppearanceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/keyline_5"
+        android:layout_marginTop="@dimen/keyline_5"
+        android:layout_marginEnd="@dimen/keyline_5"
+        android:layout_marginBottom="@dimen/keyline_5"
+        android:text="@string/action_continue" />
+</FrameLayout>

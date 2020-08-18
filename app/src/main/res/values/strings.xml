@@ -398,6 +398,13 @@
     <!-- Figma page Android Screens (05/06) -->
     <string name="Enter_your_mobile_number_label">Enter your mobile number</string>
     <string name="heading">Heading</string>
+    <!-- Figma page iOS Screens (05/06) -->
+    <string name="home_set_complete_external_link_notifications_content_iOS_off">You will not receive any notifications if COVIDSafe is not active.</string>
+    <!-- Figma page iOS Screens (05/06) -->
+    <string name="home_set_complete_external_link_notifications_title_iOS">Notifications are enabled</string>
+    <!-- Figma page iOS Screens (05/06) -->
+    <string name="home_set_complete_external_link_notifications_title_iOS_off">Notifications are disabled</string>
+    <string name="home_set_location_why">Your device requires location permissions for apps to access to Bluetooth®. COVIDSafe does not store or use location data.</string>
     <string name="improve_heading">Improve the performance of COVIDSafe</string>
     <string name="internet_connection_content">Connect to the internet to ensure you get notified of issues and updates.</string>
     <string name="internet_connection_heading">No internet connection</string>
@@ -408,8 +415,18 @@
     <string name="need_location_service">For COVIDSafe to work you need to turn on Location in Settings.</string>
     <!-- Figma page Android Screens (05/06) -->
     <string name="norfolk_hint">For example: 51234</string>
+    <string name="notification_battery">Disable Battery optimisation for COVIDSafe to work.</string>
+    <string name="notification_bluetooth">Turn on Bluetooth for COVIDSafe to work.</string>
+    <string name="notification_bt_and_battery">Turn on Bluetooth and disable Battery optimisation for COVIDSafe to work.</string>
+    <string name="notification_internet_content">Open the app and check your internet connection for COVIDSafe to work.</string>
     <string name="notification_update_content">Update your app to access the latest improvements.</string>
     <string name="notification_update_heading">COVIDSafe update available </string>
+    <!-- Figma page iOS Screens (05/06) -->
+    <string name="NotificationsBlurbLink">Change notifications settings</string>
+    <!-- Figma page iOS Screens (05/06) -->
+    <string name="NotificationsDisabledBlurb">You will not receive a notification if COVIDSafe is not active.\nChange notifications settings</string>
+    <!-- Figma page iOS Screens (05/06) -->
+    <string name="NotificationsEnabledBlurb">You will receive a notification if COVIDSafe is not active.\nChange notifications settings</string>
     <string name="personal_details_name_characters_prompt">Please use English characters for your full name. Do not use other languages or symbols like \',\' or \'?\'.</string>
     <string name="pin_number">pin number</string>
     <string name="PINNumber_VO_Label">PIN number</string>
@@ -429,3 +446,4 @@
     <string name="update_available_play_store_btn">Go to Google Play Store</string>
     <string name="update_available_title">Update available!</string>
 </resources>
+

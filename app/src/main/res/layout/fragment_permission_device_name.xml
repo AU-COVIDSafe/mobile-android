@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_4"
-            android:text="@string/change_device_name_content_line_1"
+            android:text="@string/change_device_name_content_line_2"
             android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"

@@ -3,25 +3,25 @@
     android:exitFadeDuration="@android:integer/config_mediumAnimTime">
     <item
         android:state_enabled="false"
-        android:drawable="@drawable/small_red_cross" />
+        android:drawable="@drawable/ic_red_cross" />
     <item
         android:state_activated="true"
-        android:drawable="@drawable/small_green_tick" />
+        android:drawable="@drawable/ic_green_tick" />
     <item
         android:state_selected="true"
-        android:drawable="@drawable/small_green_tick" />
+        android:drawable="@drawable/ic_green_tick" />
     <item
         android:state_selected="false"
-        android:drawable="@drawable/small_red_cross" />
+        android:drawable="@drawable/ic_red_cross" />
     <item
         android:state_checked="true"
-        android:drawable="@drawable/small_green_tick" />
+        android:drawable="@drawable/ic_green_tick" />
     <item
         android:state_pressed="true"
-        android:drawable="@drawable/small_green_tick" />
+        android:drawable="@drawable/ic_green_tick" />
     <item
         android:state_focused="true"
-        android:drawable="@drawable/small_green_tick" />
+        android:drawable="@drawable/ic_green_tick" />
     <item
-        android:drawable="@drawable/small_green_tick" />
+        android:drawable="@drawable/ic_green_tick" />
 </selector>

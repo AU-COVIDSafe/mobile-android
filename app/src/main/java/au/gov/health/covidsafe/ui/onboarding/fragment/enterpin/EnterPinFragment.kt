@@ -1,6 +1,7 @@
 package au.gov.health.covidsafe.ui.onboarding.fragment.enterpin
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.method.LinkMovementMethod
@@ -9,15 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import androidx.annotation.NavigationRes
-import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.Utils.announceForAccessibility
+import au.gov.health.covidsafe.ui.utils.Utils.announceForAccessibility
 import au.gov.health.covidsafe.extensions.toHyperlink
 import au.gov.health.covidsafe.links.LinkBuilder
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import com.atlassian.mobilekit.module.core.utils.SystemUtils
 import kotlinx.android.synthetic.main.fragment_enter_pin.*
 import kotlinx.android.synthetic.main.fragment_enter_pin.view.*
@@ -107,23 +107,15 @@ class EnterPinFragment : PagerChildFragment() {
                 } else {
                     "$numberOfSecondsInt"
                 }
-
                 enter_pin_timer_value?.text = "$numberOfMinsInt:$finalNumberOfSecondsString"
             }
-
             override fun onFinish() {
                 enter_pin_timer_value?.text = "0:00"
-                enter_pin_resend_pin.isEnabled = true
-                activity?.let {
-                    enter_pin_resend_pin.setLinkTextColor(ContextCompat.getColor(it, R.color.hyperlink_enabled))
-                }
+                setupTimer(false)
             }
         }
         stopWatch?.start()
-        enter_pin_resend_pin.isEnabled = false
-        activity?.let {
-            enter_pin_resend_pin.setLinkTextColor(ContextCompat.getColor(it, R.color.hyperlink_disabled))
-        }
+        setupTimer(true)
     }
 
     fun resetTimer() {
@@ -200,4 +192,10 @@ class EnterPinFragment : PagerChildFragment() {
                 .setPositiveButton(android.R.string.yes, null).show()
     }
 
+    private fun setupTimer(isTimerOn: Boolean) {
+        enter_pin_resend_pin.visibility = if (isTimerOn) View.GONE else View.VISIBLE
+        enter_pin_timer_label.text = if (isTimerOn) context?.getString(R.string.enter_pin_timer_expire) else context?.getString(R.string.CodeHasExpired)
+        enter_pin_timer_label.setTextColor(if (isTimerOn) Color.BLACK else Color.RED)
+        enter_pin_timer_value.visibility = if (isTimerOn) View.VISIBLE else View.INVISIBLE
+    }
 }

@@ -2,8 +2,8 @@ package au.gov.health.covidsafe.interactor.usecase
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle
-import au.gov.health.covidsafe.Preference
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.preference.Preference
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.interactor.Either
 import au.gov.health.covidsafe.interactor.Failure
 import au.gov.health.covidsafe.interactor.Success
@@ -26,8 +26,8 @@ class UploadData(private val awsClient: AwsClient,
     private val TAG = this.javaClass.simpleName
 
     override suspend fun run(params: String): Either<Exception, None> {
-        val jwtToken = Preference.getEncrypterJWTToken(context)
-        return jwtToken?.let { jwtToken ->
+        val token = Preference.getEncrypterJWTToken(context)
+        return token?.let { jwtToken ->
             try {
                 val initialUploadResponse = retryRetrofitCall {
                     awsClient.initiateUpload("Bearer $jwtToken", params).execute()

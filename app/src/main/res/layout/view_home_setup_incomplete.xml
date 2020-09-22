@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_setup_incomplete_permissions_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/error_red"
+        android:padding="@dimen/space_16">
+
+        <TextView
+            android:id="@+id/permissions_card_title"
+            style="@style/fontRobotoRegular20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/inactive_error_image_view"
+            android:text="@string/home_header_inactive_title"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/inactive_error_image_view"
+            android:layout_width="@dimen/active_status_tick_image_size"
+            android:layout_height="@dimen/active_status_tick_image_size"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_red_error" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/permissions_card_subtitle"
+        style="@style/fontRobotoRegular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
+        android:text="@string/home_app_permission_status_subtitle"
+        android:textColor="@color/slate_black_1" />
+
+    <FrameLayout
+        android:id="@+id/bluetooth_card_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_line_grey" />
+
+        <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+            android:id="@+id/bluetooth_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/home_bluetooth_permission" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/location_card_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_line_grey" />
+
+        <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+            android:id="@+id/location_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/home_location_permission" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/battery_card_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_line_grey" />
+
+        <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+            android:id="@+id/battery_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/home_non_battery_optimization_permission" />
+
+    </FrameLayout>
+
+</LinearLayout>

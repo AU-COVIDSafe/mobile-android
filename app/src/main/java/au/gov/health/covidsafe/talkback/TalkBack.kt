@@ -3,7 +3,7 @@ package au.gov.health.covidsafe.talkback
 import android.view.View
 import android.widget.TextView
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.logging.CentralLog
 import java.lang.StringBuilder
 

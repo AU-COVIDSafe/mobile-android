@@ -5,6 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/home_push_notification_token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_16"
+        android:background="@color/screen_background"
+        android:gravity="center"
+        android:paddingStart="@dimen/space_8"
+        android:paddingEnd="@dimen/space_8"
+        android:text="Firebase Push Token:"
+        style="?textAppearanceBody2"
+        android:textColor="@color/slate_black_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/push_token_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_24"
+        app:layout_constraintTop_toBottomOf="@+id/home_push_notification_token" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="0dp"
@@ -12,21 +33,10 @@
         android:background="@android:color/darker_gray"
         android:backgroundTint="@color/lighter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/push_token_space"
         tools:listitem="@layout/recycler_view_item" />
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </LinearLayout>
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/delete"
@@ -35,9 +45,7 @@
         android:layout_margin="8dp"
         android:src="@drawable/ic_delete_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/home_push_notification_token" />
 
     <LinearLayout
         android:layout_width="wrap_content"

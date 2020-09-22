@@ -8,11 +8,11 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import au.gov.health.covidsafe.HasBlockingState
-import au.gov.health.covidsafe.Preference
+import au.gov.health.covidsafe.ui.base.HasBlockingState
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.ui.PagerContainer
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerContainer
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import com.github.razir.progressbutton.bindProgressButton
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress

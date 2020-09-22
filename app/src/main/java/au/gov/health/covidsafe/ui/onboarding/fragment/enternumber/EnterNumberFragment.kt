@@ -16,12 +16,12 @@ import androidx.annotation.NavigationRes
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
-import au.gov.health.covidsafe.Preference
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.CountryCodeSelectionActivity
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_CALLING_CODE
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_CHALLENGE_NAME
@@ -50,7 +50,7 @@ class EnterNumberFragment : PagerChildFragment() {
     private var callingCode: Int = 0
     private var nationalFlagResID: Int = 0
 
-    private val errorTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.error)
+    private val errorTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.error_red)
     private val normalTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.slack_black)
 
     private fun updateSelectedCountry() {

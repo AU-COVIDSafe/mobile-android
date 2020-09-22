@@ -11,8 +11,8 @@ import androidx.core.os.bundleOf
 import androidx.core.widget.doOnTextChanged
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.fragment.enternumber.EnterNumberFragment
 import au.gov.health.covidsafe.ui.view.UploadingDialog
 import au.gov.health.covidsafe.ui.view.UploadingErrorDialog

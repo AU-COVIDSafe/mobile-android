@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.PowerManager
@@ -13,13 +14,13 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.HomeActivity
-import au.gov.health.covidsafe.Preference
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.extensions.*
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_permission.*
 import pub.devrel.easypermissions.EasyPermissions
 
@@ -74,7 +75,7 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
     private fun navigateToNextPage() {
         navigationStarted = false
         if (hasAllPermissionsAndBluetoothOn()) {
-            navigateTo(R.id.action_permissionFragment_to_permissionDeviceNameFragment )
+            navigateTo(R.id.action_permissionFragment_to_permissionDeviceNameFragment)
         } else {
             navigateToMainActivity()
         }
@@ -82,9 +83,25 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
 
     private fun hasAllPermissionsAndBluetoothOn(): Boolean {
         val context = TracerApp.AppContext
-        return context.isBlueToothEnabled() == true
-                && requiredPermissions.all { ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED }
-                && ContextCompat.getSystemService(context, PowerManager::class.java)?.isIgnoringBatteryOptimizations(context.packageName) ?: true
+        return context.isBlueToothEnabled() == true && checkAllRequiredPermissions() && checkIgnoreBatteryOptimization()
+    }
+
+    private fun checkAllRequiredPermissions(): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val context = TracerApp.AppContext
+            requiredPermissions.all { ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED }
+        } else {
+            true
+        }
+    }
+
+    private fun checkIgnoreBatteryOptimization(): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val context = TracerApp.AppContext
+            ContextCompat.getSystemService(context, PowerManager::class.java)?.isIgnoringBatteryOptimizations(context.packageName) ?: true
+        } else {
+            true
+        }
     }
 
     private fun navigateToMainActivity() {

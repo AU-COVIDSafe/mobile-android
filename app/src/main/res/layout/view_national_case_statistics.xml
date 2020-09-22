@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="au.gov.health.covidsafe.ui.home.HomeFragmentViewModel" />
+
+        <import type="au.gov.health.covidsafe.ui.home.CaseNumbersState" />
+
+    </data>
+
+    <merge>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/national_case_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            visibility="@{viewModel.caseStatisticsLiveData != null}"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/top_case_line_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line_grey"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/national_new_case_card"
+                externalCardTitle="@{viewModel.caseStatisticsLiveData.national.newCases}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:external_linkCard_content="@string/new_cases"
+                app:external_linkCard_end_icon_visible="false"
+                app:external_linkCard_start_icon="@drawable/ic_trending_up"
+                app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+                app:external_linkCard_start_icon_padding="@dimen/space_8"
+                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/national_confirmed_case_card"
+                externalCardTitle="@{viewModel.caseStatisticsLiveData.national.totalCases}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:external_linkCard_content="@string/total_confirmed_cases"
+                app:external_linkCard_end_icon_visible="false"
+                app:external_linkCard_start_icon="@drawable/ic_confirmed_cases"
+                app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+                app:external_linkCard_start_icon_padding="@dimen/space_8"
+                app:layout_constraintTop_toBottomOf="@+id/national_new_case_card" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/national_total_case_recovered_card"
+                externalCardTitle="@{viewModel.caseStatisticsLiveData.national.recoveredCases}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:external_linkCard_content="@string/recovered"
+                app:external_linkCard_end_icon_visible="false"
+                app:external_linkCard_start_icon="@drawable/ic_heart"
+                app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+                app:external_linkCard_start_icon_padding="@dimen/space_8"
+                app:layout_constraintTop_toBottomOf="@+id/national_confirmed_case_card" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/total_deaths_card"
+                externalCardTitle="@{viewModel.caseStatisticsLiveData.national.deaths}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:external_linkCard_content="@string/deaths"
+                app:external_linkCard_end_icon_visible="false"
+                app:external_linkCard_start_icon="@drawable/ic_confirmed_cases"
+                app:external_linkCard_start_icon_background="@drawable/background_circular_grey"
+                app:external_linkCard_start_icon_padding="@dimen/space_8"
+                app:layout_constraintTop_toBottomOf="@+id/national_total_case_recovered_card" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </merge>
+
+</layout>

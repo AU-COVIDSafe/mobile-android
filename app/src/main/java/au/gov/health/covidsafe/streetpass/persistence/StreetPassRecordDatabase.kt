@@ -8,14 +8,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import au.gov.health.covidsafe.LocalBlobV2
+import au.gov.health.covidsafe.ui.utils.LocalBlobV2
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.status.persistence.StatusRecord
 import au.gov.health.covidsafe.status.persistence.StatusRecordDao
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import kotlin.concurrent.thread
-
 
 const val CURRENT_DB_VERSION = 3
 
@@ -31,7 +29,7 @@ abstract class StreetPassRecordDatabase : RoomDatabase() {
 
     companion object {
 
-        private val TAG = this.javaClass.simpleName
+        private val TAG = this::class.java.simpleName
 
         private const val ID_COLUMN_INDEX = 0
         private const val TIMESTAMP_COLUMN_INDEX = 1
@@ -147,12 +145,12 @@ abstract class StreetPassRecordDatabase : RoomDatabase() {
                     val localBlob: String = if (version == 1) {
                         ENCRYPTED_EMPTY_DICT
                     } else {
-                        val modelP = if (DUMMY_DEVICE == modelP) null else modelP
-                        val modelC = if (DUMMY_DEVICE == modelC) null else modelC
-                        val rssi = if (DUMMY_RSSI == rssi) null else rssi
-                        val txPower = if (DUMMY_TXPOWER == txPower) null else txPower
-                        val plainRecord = gson.toJson(LocalBlobV2(modelP, modelC, rssi, txPower)).toByteArray(Charsets.UTF_8)
-                        Encryption.encryptPayload(plainRecord)
+                        val colModelP = if (DUMMY_DEVICE == modelP) null else modelP
+                        val colModelC = if (DUMMY_DEVICE == modelC) null else modelC
+                        val colRssi = if (DUMMY_RSSI == rssi) null else rssi
+                        val colTxPower = if (DUMMY_TXPOWER == txPower) null else txPower
+                        val updatedPlainRecord = gson.toJson(LocalBlobV2(colModelP, colModelC, colRssi, colTxPower)).toByteArray(Charsets.UTF_8)
+                        Encryption.encryptPayload(updatedPlainRecord)
                     }
                     contentValues.put("v", VERSION_TWO)
                     contentValues.put("org", org)

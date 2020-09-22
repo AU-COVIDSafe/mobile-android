@@ -5,7 +5,7 @@ import android.bluetooth.le.ScanResult
 import android.content.Context
 import android.os.Build
 import android.os.Handler
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.bluetooth.BLEScanner
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.status.Status

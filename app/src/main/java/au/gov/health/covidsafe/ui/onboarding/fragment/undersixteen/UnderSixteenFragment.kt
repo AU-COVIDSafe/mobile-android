@@ -8,8 +8,8 @@ import android.view.accessibility.AccessibilityEvent
 import androidx.core.os.bundleOf
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.fragment.enternumber.EnterNumberFragment
 import kotlinx.android.synthetic.main.fragment_under_sixteen.*
 

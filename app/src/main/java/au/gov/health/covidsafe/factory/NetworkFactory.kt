@@ -19,11 +19,22 @@ interface NetworkFactory {
             RetrofitServiceGenerator.createService(AwsClient::class.java)
         }
 
+        private const val USER_AGENT_TAG = "User-Agent"
+
         val okHttpClient: OkHttpClient by lazy {
             val okHttpClientBuilder = OkHttpClient.Builder()
 
             if (!okHttpClientBuilder.interceptors().contains(logging) && BuildConfig.DEBUG) {
                 okHttpClientBuilder.addInterceptor(logging)
+            }
+
+            okHttpClientBuilder.addInterceptor { chain ->
+                val request = chain.request()
+                val newRequest = request.newBuilder()
+                        .removeHeader(USER_AGENT_TAG)
+                        .addHeader(USER_AGENT_TAG, getCustomUserAgent())
+                        .build()
+                chain.proceed(newRequest)
             }
 
             // This certificate pinning mechanism is only needed on Android 23 and lower.
@@ -52,6 +63,10 @@ interface NetworkFactory {
 
             okHttpClientBuilder.build()
         }
+
+        private fun getCustomUserAgent(): String = "COVIDSafe/${BuildConfig.VERSION_NAME}" +
+                " (build:${BuildConfig.VERSION_CODE}; android-${Build.VERSION.SDK_INT}) " + okhttp3.internal.userAgent
+
     }
 }
 

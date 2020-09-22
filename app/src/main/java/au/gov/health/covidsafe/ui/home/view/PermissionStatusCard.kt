@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.app.TracerApp
 import kotlinx.android.synthetic.main.view_card_permission_card.view.*
 
 class PermissionStatusCard @JvmOverloads constructor(
@@ -32,7 +32,7 @@ class PermissionStatusCard @JvmOverloads constructor(
     }
 
     fun render(title: String, correct: Boolean, body: String? = null) {
-        val errorTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.error)
+        val errorTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.error_red)
         val normalTextColor = ContextCompat.getColor(TracerApp.AppContext, R.color.slack_black)
 
         permission_icon.isSelected = correct

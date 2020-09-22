@@ -13,12 +13,12 @@ import android.widget.ArrayAdapter
 import android.widget.TextView.OnEditorActionListener
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
-import au.gov.health.covidsafe.Preference
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import au.gov.health.covidsafe.ui.onboarding.fragment.enternumber.EnterNumberFragment
 import kotlinx.android.synthetic.main.fragment_personal_details.*
 import java.util.regex.Pattern
@@ -27,7 +27,7 @@ import java.util.regex.Pattern
 private const val TAG = "PersonalDetailsFragment"
 
 private val POST_CODE_REGEX = Pattern.compile("^(?:(?:[2-8]\\d|9[0-7]|0?[28]|0?9(?=09))(?:\\d{2}))$")
-private val NAME_REGEX = Pattern.compile("^[A-Za-z0-9\\u00C0-\\u017F][A-Za-z'0-9\\-\\u00C0-\\u017F ]{0,80}\$")
+private val NAME_REGEX = Pattern.compile("^[.A-Za-z0-9\\u00C0-\\u017F][.A-Za-z'0-9\\-\\u00C0-\\u017F ]{0,80}\$")
 
 class PersonalDetailsFragment : PagerChildFragment() {
 
@@ -121,7 +121,7 @@ class PersonalDetailsFragment : PagerChildFragment() {
             }
         }
 
-        personal_details_name.setOnEditorActionListener(OnEditorActionListener { textView, actionId, event ->
+        personal_details_name.setOnEditorActionListener(OnEditorActionListener { textView, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_NEXT) {
                 hideKeyboard()
                 textView.clearFocus()

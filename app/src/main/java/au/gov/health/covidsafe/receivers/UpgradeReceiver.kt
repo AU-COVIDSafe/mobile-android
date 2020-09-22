@@ -3,7 +3,7 @@ package au.gov.health.covidsafe.receivers
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.logging.CentralLog
 
 class UpgradeReceiver : BroadcastReceiver() {

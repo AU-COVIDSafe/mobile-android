@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="au.gov.health.covidsafe.ui.home.HomeFragmentViewModel" />
+
+    </data>
+
+    <merge>
+
+        <LinearLayout
+            android:id="@+id/state_level_case_layout"
+            visibility="@{viewModel.caseStatisticsLiveData != null}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line_grey" />
+
+            <TextView
+                android:id="@+id/state_top_level_info_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_16"
+                android:paddingTop="@dimen/space_16"
+                android:paddingEnd="@dimen/space_16"
+                android:text="@string/total_per_state"
+                android:textAppearance="@style/fontRobotoRegular20"
+                android:textColor="@color/slate_black_1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_marginBottom="@dimen/space_8"
+                android:background="@color/divider_line_grey" />
+
+            <RelativeLayout
+                android:id="@+id/act_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_act_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_act_count_text_view"
+                    android:text="@string/australian_capital_territory"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_act_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.act.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_act_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nsw_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_nsw_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_nsw_count_text_view"
+                    android:text="@string/new_south_wales"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_nsw_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.nsw.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_nsw_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nt_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_nt_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_nt_count_text_view"
+                    android:text="@string/northern_territory"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_nt_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.nt.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_nt_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/qld_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_qld_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_qld_count_text_view"
+                    android:text="@string/queensland"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_qld_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.qld.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_qld_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sa_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_sa_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_sa_count_text_view"
+                    android:text="@string/south_australia"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_sa_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.sa.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_sa_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tas_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_tas_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_tas_count_text_view"
+                    android:text="@string/tasmania"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_tas_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.tas.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_tas_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/vic_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_vic_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_vic_count_text_view"
+                    android:text="@string/victoria"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_vic_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.vic.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_vic_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wa_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/state_wa_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_toStartOf="@+id/state_wa_count_text_view"
+                    android:text="@string/western_australia"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <TextView
+                    android:id="@+id/state_wa_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_16"
+                    stateCaseNumberFormat="@{viewModel.caseStatisticsLiveData.wa.totalCases}"
+                    android:textAppearance="@style/fontRobotoRegular16"
+                    android:textColor="@color/slate_black_2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/state_wa_text_view"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:background="@color/divider_line_grey" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </merge>
+
+</layout>

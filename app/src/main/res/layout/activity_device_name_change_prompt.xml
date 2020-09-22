@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".DeviceNameChangePromptActivity">
+    tools:context=".ui.devicename.DeviceNameChangePromptActivity">
 
     <FrameLayout
         android:layout_width="match_parent"

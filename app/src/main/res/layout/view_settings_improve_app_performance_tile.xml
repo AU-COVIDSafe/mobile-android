@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/improve_performance_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="improve_performance_card, performance_card_bottom_space" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/improve_performance_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_24"
+        app:layout_constraintTop_toBottomOf="@+id/settings_cards_performance_top_barrier"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <LinearLayout
+            android:id="@+id/improve_performance_card_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/divider_line_grey"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/improve_performance_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/space_16"
+                android:text="@string/improve_heading"
+                android:textAppearance="@style/fontRobotoRegular28"
+                android:textColor="@color/slack_black" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/internet_connection_tile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
+                android:paddingTop="@dimen/keyline_0"
+                android:paddingBottom="@dimen/keyline_0"
+                app:external_linkCard_content="@string/internet_connection_content"
+                app:external_linkCard_start_icon="@drawable/ic_home_share"
+                app:external_linkCard_start_icon_visible="false"
+                app:external_linkCard_text_color="@color/error_red"
+                app:external_linkCard_title="@string/internet_connection_heading" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:id="@+id/performance_card_bottom_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_24"
+        app:layout_constraintTop_toBottomOf="@+id/improve_performance_card"
+        android:background="@color/screen_background" />
+
+</merge>

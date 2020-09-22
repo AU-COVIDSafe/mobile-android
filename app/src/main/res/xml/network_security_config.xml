@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
     <domain-config>
         <domain includeSubdomains="true">aws.covidsafe.gov.au</domain>
         <trust-anchors>

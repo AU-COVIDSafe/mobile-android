@@ -56,7 +56,7 @@
             android:layout_marginStart="@dimen/keyline_2"
             android:text="@string/wrong_ping_number"
             android:textAlignment="viewStart"
-            android:textColor="@color/error"
+            android:textColor="@color/error_red"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pin"

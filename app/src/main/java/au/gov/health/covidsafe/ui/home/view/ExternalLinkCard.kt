@@ -3,6 +3,7 @@ package au.gov.health.covidsafe.ui.home.view
 import android.content.Context
 import android.content.Intent
 import android.content.res.TypedArray
+import android.graphics.Typeface
 import android.net.Uri
 import android.text.Html
 import android.util.AttributeSet
@@ -26,24 +27,32 @@ class ExternalLinkCard @JvmOverloads constructor(
 
         attrs?.let {
             val a: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.ExternalLinkCard)
-            val icon = a.getDrawable(R.styleable.ExternalLinkCard_external_linkCard_icon)
-            val iconVisible = a.getBoolean(R.styleable.ExternalLinkCard_external_linkCard_icon_visible, true)
+            val startIcon = a.getDrawable(R.styleable.ExternalLinkCard_external_linkCard_start_icon)
+            val startIconVisible = a.getBoolean(R.styleable.ExternalLinkCard_external_linkCard_start_icon_visible, true)
             val title = a.getString(R.styleable.ExternalLinkCard_external_linkCard_title)
             val content = a.getString(R.styleable.ExternalLinkCard_external_linkCard_content)
-            val padding = a.getDimension(R.styleable.ExternalLinkCard_external_linkCard_icon_padding, 0f).toInt()
-            val iconBackground = a.getResourceId(R.styleable.ExternalLinkCard_external_linkCard_icon_background, R.color.transparent)
+            val padding = a.getDimension(R.styleable.ExternalLinkCard_external_linkCard_start_icon_padding, 0f).toInt()
+            val contentPadding = a.getDimension(R.styleable.ExternalLinkCard_external_linkCard_content_padding, 0f).toInt()
+            val iconBackground = a.getResourceId(R.styleable.ExternalLinkCard_external_linkCard_start_icon_background, R.color.transparent)
             val textColorResId = a.getResourceId(R.styleable.ExternalLinkCard_external_linkCard_text_color, R.color.slack_black)
+            val endIconVisible = a.getBoolean(R.styleable.ExternalLinkCard_external_linkCard_end_icon_visible, true)
             val textColor = ContextCompat.getColor(context, textColorResId)
 
-            external_link_round_image.setImageDrawable(icon)
-            external_link_round_image.visibility = if (iconVisible) View.VISIBLE else View.GONE
+            external_link_round_image.setImageDrawable(startIcon)
+            external_link_round_image.visibility = if (startIconVisible) View.VISIBLE else View.GONE
             external_link_round_image.setBackgroundResource(iconBackground)
             external_link_round_image.setPadding(padding, padding, padding, padding)
+
             external_link_headline.text = title
+
             external_link_content.text = content
+            if (contentPadding > 0) {
+                external_link_content.setPadding(0, contentPadding, 0, 0)
+            }
+
+            external_link_end_image_view.visibility = if (endIconVisible) View.VISIBLE else View.GONE
 
             setTextColor(textColor)
-
             a.recycle()
         }
     }
@@ -53,17 +62,31 @@ class ExternalLinkCard @JvmOverloads constructor(
         external_link_content.setTextColor(textColor)
 
         val icChevron =
-                if (textColor == ContextCompat.getColor(context, R.color.error)) {
-                    R.drawable.ic_chevron_right_red
-                } else {
-                    R.drawable.ic_chevron_right
+                when (textColor) {
+                    ContextCompat.getColor(context, R.color.error_red) -> {
+                        R.drawable.ic_chevron_right_red
+                    }
+                    ContextCompat.getColor(context, R.color.white) -> {
+                        R.drawable.ic_chevron_right_white
+                    }
+                    else -> {
+                        R.drawable.ic_chevron_right_black
+                    }
                 }
 
-        next_arrow.setImageDrawable(
+        external_link_end_image_view.setImageDrawable(
                 ContextCompat.getDrawable(context, icChevron).also {
                     it?.isAutoMirrored = true
                 }
         )
+    }
+
+    fun setTitleTextTypeFace(typeface: Typeface) {
+        external_link_headline.typeface = typeface
+    }
+
+    fun setContentTextTypeFace(typeface: Typeface) {
+        external_link_content.typeface = typeface
     }
 
     fun setMessage(message: Message) {
@@ -79,6 +102,10 @@ class ExternalLinkCard @JvmOverloads constructor(
         }
     }
 
+    fun setTitleText(title: String) {
+        external_link_headline.text = title
+    }
+
     fun setTitleBodyAndClickCallback(title: String, body: String, clickCallBack: () -> Unit) {
         external_link_headline.text = title
         external_link_content.text = body
@@ -89,11 +116,11 @@ class ExternalLinkCard @JvmOverloads constructor(
     }
 
     fun setErrorTextColor() {
-        setTextColor(ContextCompat.getColor(context, R.color.error))
+        setTextColor(ContextCompat.getColor(context, R.color.error_red))
     }
 
     fun setTopRightIcon(iconResID: Int) {
-        next_arrow.setImageResource(iconResID)
+        external_link_end_image_view.setImageResource(iconResID)
     }
 
     fun setColorForContentWithAction() {

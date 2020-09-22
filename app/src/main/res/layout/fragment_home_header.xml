@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_screen_header_top_height"
+        android:background="@color/lighter_green"
+        android:importantForAccessibility="no"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/home_header_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/header_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/space_16"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/settings_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_settings_outline_black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_16"
+            android:background="@color/transparent"
+            android:layout_below="@+id/settings_image_view"
+            android:layout_marginTop="@dimen/space_6"
+            android:textAppearance="@style/fontRobotoRegular16"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:text="@string/settings"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/slate_black_1" />
+
+    </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/home_header_picture_setup_complete"
+        android:layout_width="@dimen/covidsafe_lottie_size"
+        android:layout_height="@dimen/covidsafe_lottie_size"
+        android:layout_marginBottom="@dimen/space_16"
+        app:layout_constraintBottom_toBottomOf="@id/header_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="spinner_home.json"
+        app:lottie_loop="true"
+        app:lottie_speed="1" />
+
+</merge>

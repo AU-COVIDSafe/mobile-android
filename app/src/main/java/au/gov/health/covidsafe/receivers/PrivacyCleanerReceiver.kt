@@ -7,7 +7,6 @@ import android.content.Context
 import android.content.Intent
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.services.BluetoothMonitoringService.Companion.PENDING_PRIVACY_CLEANER_CODE
-import au.gov.health.covidsafe.services.SensorMonitoringService.Companion.TAG
 import au.gov.health.covidsafe.status.persistence.StatusRecordStorage
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordStorage
 import kotlinx.coroutines.CoroutineScope
@@ -18,8 +17,6 @@ import java.util.*
 import kotlin.coroutines.CoroutineContext
 
 class PrivacyCleanerReceiver : BroadcastReceiver(), CoroutineScope {
-
-    private val TAG = this.javaClass.simpleName
 
     private var job: Job = Job()
 
@@ -40,7 +37,7 @@ class PrivacyCleanerReceiver : BroadcastReceiver(), CoroutineScope {
             alarm.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), AlarmManager.INTERVAL_DAY, pendingIntent)
         }
 
-        suspend fun cleanDb(context: Context) {
+        fun cleanDb(context: Context) {
             val twentyOneDaysAgo = Calendar.getInstance()
             twentyOneDaysAgo.set(Calendar.HOUR_OF_DAY, 23)
             twentyOneDaysAgo.set(Calendar.MINUTE, 59)
@@ -53,6 +50,8 @@ class PrivacyCleanerReceiver : BroadcastReceiver(), CoroutineScope {
             CentralLog.i(TAG, "Street info deleted count : $countStreetDeleted")
             CentralLog.i(TAG, "Status info deleted count : $countStatusDeleted")
         }
+
+        const val TAG = "PrivacyCleanerReceiver"
     }
 
     override fun onReceive(context: Context, intent: Intent) {

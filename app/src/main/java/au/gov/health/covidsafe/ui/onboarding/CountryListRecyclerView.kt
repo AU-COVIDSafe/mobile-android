@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import au.gov.health.covidsafe.Preference
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.app.TracerApp
 
 const val VIEW_TYPE_GROUP_TITLE = 1
 const val VIEW_TYPE_COUNTRY = 2

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+        android:id="@+id/app_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="@dimen/external_link_height"
+        android:paddingTop="@dimen/space_4"
+        android:paddingBottom="@dimen/space_4"
+        app:external_linkCard_content="@string/home_set_complete_external_link_share_content"
+        app:external_linkCard_start_icon="@drawable/ic_home_share"
+        app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+        app:external_linkCard_start_icon_padding="@dimen/space_8"
+        app:external_linkCard_title="@string/home_set_complete_external_link_share_title" />
+
+</merge>

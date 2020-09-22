@@ -4,24 +4,31 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
-import android.content.*
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.location.LocationManager
 import android.os.Build
-import android.os.IBinder
 import android.os.PowerManager
 import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleService
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import au.gov.health.covidsafe.*
+import au.gov.health.covidsafe.BuildConfig
+import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.bluetooth.BLEAdvertiser
 import au.gov.health.covidsafe.bluetooth.gatt.ACTION_RECEIVED_STATUS
 import au.gov.health.covidsafe.bluetooth.gatt.ACTION_RECEIVED_STREETPASS
 import au.gov.health.covidsafe.bluetooth.gatt.STATUS
 import au.gov.health.covidsafe.bluetooth.gatt.STREET_PASS
+import au.gov.health.covidsafe.extensions.isLocationEnabledOnDevice
 import au.gov.health.covidsafe.factory.NetworkFactory
 import au.gov.health.covidsafe.interactor.usecase.UpdateBroadcastMessageAndPerformScanWithExponentialBackOff
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.notifications.NotificationTemplates
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.receivers.PrivacyCleanerReceiver
 import au.gov.health.covidsafe.status.Status
 import au.gov.health.covidsafe.status.persistence.StatusRecord
@@ -39,6 +46,8 @@ import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.C
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.ENCRYPTED_EMPTY_DICT
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.VERSION_ONE
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordStorage
+import au.gov.health.covidsafe.ui.utils.LocalBlobV2
+import au.gov.health.covidsafe.ui.utils.Utils
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
@@ -46,14 +55,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.EasyPermissions
-import java.lang.Exception
 import java.lang.ref.WeakReference
 import kotlin.coroutines.CoroutineContext
 
+private const val POWER_SAVE_WHITELIST_CHANGED = "android.os.action.POWER_SAVE_WHITELIST_CHANGED"
+
 @Keep
 class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
-
-    private var mNotificationManager: NotificationManager? = null
 
     @Keep
     private lateinit var serviceUUID: String
@@ -78,30 +86,11 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
     private lateinit var commandHandler: CommandHandler
 
-    private lateinit var mService: SensorMonitoringService
-    private var mBound: Boolean = false
-
     private lateinit var localBroadcastManager: LocalBroadcastManager
 
     private val awsClient = NetworkFactory.awsClient
 
     private val gson: Gson = GsonBuilder().disableHtmlEscaping().create()
-
-
-    /** Defines callbacks for service binding, passed to bindService()  */
-    private val connection = object : ServiceConnection {
-
-        override fun onServiceConnected(className: ComponentName, service: IBinder) {
-            // We've bound to LocalService, cast the IBinder and get LocalService instance
-            val binder = service as SensorMonitoringService.LocalBinder
-            mService = binder.getService()
-            mBound = true
-        }
-
-        override fun onServiceDisconnected(arg0: ComponentName) {
-            mBound = false
-        }
-    }
 
     override fun onCreate() {
         super.onCreate()
@@ -171,6 +160,10 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         return EasyPermissions.hasPermissions(this.applicationContext, *perms)
     }
 
+    private fun isLocationPermissionEnabled(): Boolean {
+        return hasLocationPermissions() && this.isLocationEnabledOnDevice()
+    }
+
     private fun isBluetoothEnabled(): Boolean {
         var btOn = false
         val bluetoothAdapter: BluetoothAdapter? by lazy(LazyThreadSafetyMode.NONE) {
@@ -204,20 +197,13 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         super.onStartCommand(intent, flags, startId)
         CentralLog.i(TAG, "Service onStartCommand")
 
-        // Bind to LocalService
-        Intent(this.applicationContext, SensorMonitoringService::class.java).also { intent ->
-            bindService(intent, connection, Context.BIND_AUTO_CREATE)
-        }
-
         //check for permissions
-        if (!hasLocationPermissions() || !isBluetoothEnabled() || !isBatteryOptimizationDisabled()) {
+        if (!isLocationPermissionEnabled() || !isBluetoothEnabled() || !isBatteryOptimizationDisabled()) {
             CentralLog.i(
                     TAG,
-                    "location permission: ${hasLocationPermissions()} bluetooth: ${isBluetoothEnabled()}"
+                    "location permission: ${isLocationPermissionEnabled()} bluetooth: ${isBluetoothEnabled()}"
             )
-            val notif =
-                    NotificationTemplates.lackingThingsNotification(this.applicationContext, CHANNEL_ID)
-            startForeground(NOTIFICATION_ID, notif)
+            showForegroundNotification()
             return START_STICKY
         }
 
@@ -242,14 +228,12 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         CentralLog.i(TAG, "Command is:${cmd?.string}")
 
         //check for permissions
-        if (!hasLocationPermissions() || !isBluetoothEnabled()) {
+        if (!isLocationPermissionEnabled() || !isBluetoothEnabled()) {
             CentralLog.i(
                     TAG,
-                    "location permission: ${hasLocationPermissions()} bluetooth: ${isBluetoothEnabled()}"
+                    "location permission: ${isLocationPermissionEnabled()} bluetooth: ${isBluetoothEnabled()}"
             )
-            val notif =
-                    NotificationTemplates.lackingThingsNotification(this.applicationContext, CHANNEL_ID)
-            startForeground(NOTIFICATION_ID, notif)
+            showForegroundNotification()
             return
         }
 
@@ -326,7 +310,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         }
     }
 
-
     private fun actionUpdateBm() {
         Utils.scheduleBMUpdateCheck(this.applicationContext, bmCheckInterval)
 
@@ -345,7 +328,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         } else {
             CentralLog.i(TAG, "Don't need to update bm")
         }
-
     }
 
     private fun calcPhaseShift(min: Long, max: Long): Long {
@@ -448,11 +430,9 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         CentralLog.i(TAG, "Performing self diagnosis")
 
-        if (!hasLocationPermissions() || !isBluetoothEnabled() || !isBatteryOptimizationDisabled()) {
+        if (!isLocationPermissionEnabled() || !isBluetoothEnabled() || !isBatteryOptimizationDisabled()) {
             CentralLog.i(TAG, "no location permission")
-            val notif =
-                    NotificationTemplates.lackingThingsNotification(this.applicationContext, CHANNEL_ID)
-            startForeground(NOTIFICATION_ID, notif)
+            showForegroundNotification()
             return
         }
 
@@ -480,8 +460,10 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         } else {
             CentralLog.w(
                     TAG,
-                    "Advertise Schedule present. Should be advertising?:  ${advertiser?.shouldBeAdvertising
-                            ?: false}. Is Advertising?: ${advertiser?.isAdvertising ?: false}"
+                    "Advertise Schedule present. Should be advertising?:  ${
+                        advertiser?.shouldBeAdvertising
+                                ?: false
+                    }. Is Advertising?: ${advertiser?.isAdvertising ?: false}"
             )
         }
     }
@@ -498,12 +480,72 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         job.cancel()
 
-        if (mBound) {
-            unbindService(connection)
-            mBound = false
-        }
-
         CentralLog.i(TAG, "BluetoothMonitoringService destroyed")
+    }
+
+    private fun showForegroundNotification() {
+
+        launch(Dispatchers.Main) {
+
+            val notificationContentText: Int = if (!isLocationPermissionEnabled() && isBluetoothEnabled() && isBatteryOptimizationDisabled()) {
+                //Location Disabled
+                R.string.notification_location
+            } else if (!isBluetoothEnabled() && isLocationPermissionEnabled() && isBatteryOptimizationDisabled()) {
+                //Bluetooth Disabled
+                R.string.notification_bluetooth
+            } else if (!isBatteryOptimizationDisabled() && isLocationPermissionEnabled() && isBluetoothEnabled()) {
+                //Battery optimization Disabled
+                R.string.notification_battery
+            } else if (!isBatteryOptimizationDisabled() || !isLocationPermissionEnabled() || !isBluetoothEnabled()) {
+                //Multiple permission Disabled
+                R.string.notification_settings
+            } else {
+                //All permission are enabled, so we should show Active message.
+                -1
+            }
+
+            val notificationMessage = if (notificationContentText > 0) {
+                NotificationTemplates.lackingThingsNotification(
+                        this@BluetoothMonitoringService.applicationContext,
+                        notificationContentText,
+                        CHANNEL_ID)
+            } else {
+                //All permissions are enabled
+                NotificationTemplates.getRunningNotification(this@BluetoothMonitoringService.applicationContext, CHANNEL_ID)
+            }
+
+            startForeground(NOTIFICATION_ID, notificationMessage)
+        }
+    }
+
+    private val gpsSwitchStateReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            intent.action?.let {
+                if (it == LocationManager.PROVIDERS_CHANGED_ACTION) {
+                    CentralLog.i(TAG, "Location ON/OFF status changed")
+                    showForegroundNotification()
+                }
+            }
+        }
+    }
+
+    private val powerStateChangeReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            intent.action?.let {
+                if (it == POWER_SAVE_WHITELIST_CHANGED) {
+                    CentralLog.i(TAG, "Save mode status changed")
+                    showForegroundNotification()
+                }
+            }
+        }
+    }
+
+    private fun registerLocationChangeReceiver() {
+        registerReceiver(gpsSwitchStateReceiver, IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION))
+    }
+
+    private fun registerPowerModeChangeReceiver() {
+        registerReceiver(powerStateChangeReceiver, IntentFilter(POWER_SAVE_WHITELIST_CHANGED))
     }
 
     private fun registerReceivers() {
@@ -515,6 +557,9 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         val bluetoothStatusReceivedFilter = IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED)
         registerReceiver(bluetoothStatusReceiver, bluetoothStatusReceivedFilter)
+
+        registerLocationChangeReceiver()
+        registerPowerModeChangeReceiver()
 
         CentralLog.i(TAG, "Receivers registered")
     }
@@ -534,8 +579,28 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         try {
             unregisterReceiver(bluetoothStatusReceiver)
+
         } catch (e: Throwable) {
             CentralLog.w(TAG, "bluetoothStatusReceiver is not registered?")
+        }
+
+        unregisterLocationReceiver()
+        unregisterPowerStateChangeReceiver()
+    }
+
+    private fun unregisterLocationReceiver() {
+        try {
+            unregisterReceiver(gpsSwitchStateReceiver)
+        } catch (e: Throwable) {
+            CentralLog.w(TAG, "Location Receiver is not registered?")
+        }
+    }
+
+    private fun unregisterPowerStateChangeReceiver() {
+        try {
+            unregisterReceiver(powerStateChangeReceiver)
+        } catch (e: Throwable) {
+            CentralLog.w(TAG, "Power State Receiver is not registered?")
         }
     }
 
@@ -549,11 +614,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
                     when (intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)) {
                         BluetoothAdapter.STATE_TURNING_OFF -> {
                             CentralLog.d(TAG, "BluetoothAdapter.STATE_TURNING_OFF")
-                            val notif = NotificationTemplates.lackingThingsNotification(
-                                    this@BluetoothMonitoringService.applicationContext,
-                                    CHANNEL_ID
-                            )
-                            startForeground(NOTIFICATION_ID, notif)
+                            showForegroundNotification()
                             teardown()
                         }
                         BluetoothAdapter.STATE_OFF -> {
@@ -565,6 +626,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
                         BluetoothAdapter.STATE_ON -> {
                             CentralLog.d(TAG, "BluetoothAdapter.STATE_ON")
                             Utils.startBluetoothMonitoringService(this@BluetoothMonitoringService.applicationContext)
+                            showForegroundNotification()
                         }
                     }
                 }
@@ -580,21 +642,9 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
             if (ACTION_RECEIVED_STREETPASS == intent.action) {
                 val connRecord: ConnectionRecord? = intent.getParcelableExtra(STREET_PASS)
-                CentralLog.d(
-                        TAG,
-                        "StreetPass received: $connRecord"
-                )
+                CentralLog.d(TAG, "StreetPass received: $connRecord")
 
                 if (connRecord != null && connRecord.msg.isNotEmpty()) {
-
-                    if (mBound) {
-                        val proximity = mService.proximity
-                        val light = mService.light
-                        CentralLog.d(
-                                TAG,
-                                "Sensor values just before saving StreetPassRecord: proximity=$proximity light=$light"
-                        )
-                    }
 
                     val remoteBlob: String = if (connRecord.version == VERSION_ONE) {
                         with(receiver = connRecord) {
@@ -646,13 +696,15 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         override fun onReceive(context: Context, intent: Intent) {
 
             if (ACTION_RECEIVED_STATUS == intent.action) {
-                val statusRecord: Status = intent.getParcelableExtra(STATUS)
-                CentralLog.d(TAG, "Status received: ${statusRecord.msg}")
+                val status: Status? = intent.getParcelableExtra(STATUS)
+                status?.let {
+                    CentralLog.d(TAG, "Status received: ${it.msg}")
 
-                if (statusRecord.msg.isNotEmpty()) {
-                    val statusRecord = StatusRecord(statusRecord.msg)
-                    launch {
-                        statusRecordStorage.saveRecord(statusRecord)
+                    if (it.msg.isNotEmpty()) {
+                        val statusRecord = StatusRecord(it.msg)
+                        launch {
+                            statusRecordStorage.saveRecord(statusRecord)
+                        }
                     }
                 }
             }
@@ -713,6 +765,4 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         const val blacklistDuration: Long = BuildConfig.BLACKLIST_DURATION
 
     }
-
-
 }

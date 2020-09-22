@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notification_status_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/settings_external_barrier"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/notification_status_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4"
+            app:external_linkCard_content="@string/NotificationsEnabledBlurb"
+            app:external_linkCard_content_padding="@dimen/space_6"
+            app:external_linkCard_start_icon="@drawable/ic_bell"
+            app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+            app:external_linkCard_start_icon_padding="@dimen/space_8"
+            app:external_linkCard_title="@string/home_set_complete_external_link_notifications_title_iOS" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/help_topics_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        app:layout_constraintTop_toBottomOf="@+id/notification_status_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="@dimen/card_elevation_10dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <include layout="@layout/view_help_topics_tile" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/support_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/help_topics_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="@dimen/card_elevation_10dp"
+        card_view:cardUseCompatPadding="false"
+        card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/settings_support_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4"
+            app:external_linkCard_content="@string/support_content"
+            app:external_linkCard_start_icon="@drawable/ic_mail_support"
+            app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+            app:external_linkCard_start_icon_padding="@dimen/space_8"
+            app:external_linkCard_title="@string/support" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/share_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/support_card_view"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="@dimen/card_elevation_10dp"
+        card_view:cardUseCompatPadding="false"
+        card_view:contentPadding="0dp">
+
+        <include layout="@layout/view_covid_share_tile" />
+
+    </androidx.cardview.widget.CardView>
+
+</merge>

@@ -10,7 +10,7 @@ import android.os.ParcelUuid
 import android.util.Base64
 import android.util.Base64.decode
 import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.bluetooth.BLEScanner.FilterConstant.APPLE_MANUFACTURER_ID
 import au.gov.health.covidsafe.bluetooth.BLEScanner.FilterConstant.BACKGROUND_IOS_SERVICE_UUID
 import au.gov.health.covidsafe.logging.CentralLog

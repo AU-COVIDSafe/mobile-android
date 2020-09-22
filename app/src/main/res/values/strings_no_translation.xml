@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="default_notification_channel_name" translatable="false">COVIDSafe</string>
+    <string name="default_notification_channel_id" translatable="false">COVIDSafe_push_notification_channel_id</string>
+
+    <!-- Push notification click action which are required to be updated/added manually in manifest without fail -->
+    <string name="notification_click_action_upgrade_app" translatable="false">au.gov.health.covidsafe.UPGRADE_APP</string>
+    <string name="notification_click_action_check_possible_issue" translatable="false">au.gov.health.covidsafe.POSSIBLE_ISSUE</string>
+    <string name="notification_click_action_no_check_in" translatable="false">au.gov.health.covidsafe.NO_CHECKIN</string>
+    <string name="notification_click_action_check_possible_encountered_error" translatable="false">au.gov.health.covidsafe.POSSIBLE_ENCOUNTER_ERROR</string>
+
     <string-array name="age_range_array">
         <item>@string/personal_details_age_content_description</item>
         <item>0-15</item>

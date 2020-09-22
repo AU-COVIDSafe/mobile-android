@@ -11,10 +11,9 @@ import android.os.PowerManager
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.ui.utils.Utils
 import pub.devrel.easypermissions.EasyPermissions
 import pub.devrel.easypermissions.PermissionRequest
 
@@ -62,6 +61,7 @@ private fun Fragment.requestFineLocationAndCheckBleSupportThenNextPermission(onE
         }
     } else {
         checkBLESupport()
+        onEndCallback.invoke()
     }
 }
 

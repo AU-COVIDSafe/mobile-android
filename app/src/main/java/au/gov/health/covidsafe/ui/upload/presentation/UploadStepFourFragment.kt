@@ -10,8 +10,8 @@ import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.links.LinkBuilder
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_upload_page_4.*
 
 class UploadStepFourFragment : PagerChildFragment() {

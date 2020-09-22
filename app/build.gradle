@@ -1,19 +1,14 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
-
 apply plugin: "androidx.navigation.safeargs.kotlin"
-
 apply plugin: 'com.google.gms.google-services'
 
 buildscript {
     repositories {
         google()
-
+        jcenter()
     }
 }
 
@@ -27,25 +22,21 @@ def getGitHash = { ->
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "au.gov.health.covidsafe"
-        minSdkVersion 21
+        minSdkVersion rootProject.ext.minSdkVersion
         /*
         TargetSdk is currently set to 28 because we are using a greylisted api in SDK 29, in order to fix a BLE vulnerability
         Before you increase the targetSdkVersion make sure that all its usage are still working
          */
-        targetSdkVersion 28
-        versionCode 54
-        versionName "1.0.54"
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 72
+        versionName "1.11.0"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -105,9 +96,9 @@ android {
 
 
             String ssid = STAGING_SERVICE_UUID
-            versionNameSuffix "-debug-${getGitHash()}-${ssid.substring(ssid.length() - 5,ssid.length() - 1 )}"
+            versionNameSuffix "-debug-${getGitHash()}-${ssid.substring(ssid.length() - 5, ssid.length() - 1)}"
             resValue "string", "app_name", "COVIDSafe Debug"
-            applicationIdSuffix "debug"
+            applicationIdSuffix ".debug"
             signingConfig signingConfigs.debug
         }
 
@@ -119,15 +110,12 @@ android {
             buildConfigField "String", "IOS_BACKGROUND_UUID", STAGING_BACKGROUND_IOS_SERVICE_UUID
             buildConfigField "String", "ENCRYPTION_PUBLIC_KEY", STAGING_ENCRYPTION_PUBLIC_KEY
 
-
-
-
             // Retrieve bluetooth ssid from staging's strings.xml
             String ssid = STAGING_SERVICE_UUID
-            versionNameSuffix "-beta-${getGitHash()}-${ssid.substring(ssid.length() - 5,ssid.length() - 1 )}"
+            versionNameSuffix "-beta-${getGitHash()}-${ssid.substring(ssid.length() - 5, ssid.length() - 1)}"
             debuggable false
 
-            applicationIdSuffix "beta"
+            applicationIdSuffix ".beta"
             resValue "string", "app_name", "COVIDSafe beta"
 
             lintOptions {
@@ -137,6 +125,7 @@ android {
             matchingFallbacks = ['release']
             signingConfig signingConfigs.staging
         }
+
         release {
 
             buildConfigField "String", "BLE_SSID", PRODUCTION_SERVICE_UUID
@@ -144,8 +133,6 @@ android {
             buildConfigField "String", "BASE_URL", PROD_BASE_URL
             buildConfigField "String", "IOS_BACKGROUND_UUID", PRODUCTION_BACKGROUND_IOS_SERVICE_UUID
             buildConfigField "String", "ENCRYPTION_PUBLIC_KEY", PRODUCTION_ENCRYPTION_PUBLIC_KEY
-
-
 
             debuggable false
             jniDebuggable false
@@ -161,8 +148,11 @@ android {
                 abortOnError false
             }
             signingConfig signingConfigs.release
-
         }
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 
     sourceSets {
@@ -185,45 +175,31 @@ android {
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
-
 }
-
-repositories {
-    jcenter()
-}
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation project(":feedback-android")
     // kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    def kotlin_coroutines_version = "1.3.5"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
 
     //androidx
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0-alpha01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // room
-    def room_version = "2.2.5"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
-    // http
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
     // rx
@@ -233,11 +209,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
 
-    //cardview
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$androidx_swiperefreshlayout_version"
 
     //Lottie
-    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'com.airbnb.android:lottie:3.4.1'
 
     implementation 'com.google.guava:guava:28.2-android'
     implementation "androidx.collection:collection:1.1.0"
@@ -251,7 +226,9 @@ dependencies {
     // Firebase Cloud Messaging
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
+    //Unit testing
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation "androidx.room:room-testing:2.2.5"
-
-
 }

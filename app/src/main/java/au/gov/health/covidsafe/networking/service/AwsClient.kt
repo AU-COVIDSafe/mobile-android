@@ -1,6 +1,7 @@
 package au.gov.health.covidsafe.networking.service
 
 import au.gov.health.covidsafe.BuildConfig
+import au.gov.health.covidsafe.networking.response.CaseStatisticResponse
 import au.gov.health.covidsafe.networking.request.AuthChallengeRequest
 import au.gov.health.covidsafe.networking.request.OTPChallengeRequest
 import au.gov.health.covidsafe.networking.response.*
@@ -40,7 +41,11 @@ interface AwsClient {
             @Query("appversion") appversion: String,
             @Query("token") token: String,
             @Query("healthcheck") healthcheck: String,
+            @Query("encountershealth") encountershealth: String,
             @Query("preferredlanguages") preferredLanguages: String
     ): Call<MessagesResponse>
+
+    @GET(BuildConfig.END_POINT_PREFIX + "/statistics")
+    fun getCaseStatistics(@Header("Authorization") jwtToken: String?): Call<CaseStatisticResponse>
 
 }

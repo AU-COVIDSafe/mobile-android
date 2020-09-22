@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
-        android:name="au.gov.health.covidsafe.TracerApp"
+        android:name="au.gov.health.covidsafe.app.TracerApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -30,7 +30,7 @@
         tools:replace="android:supportsRtl">
 
         <activity
-            android:name="au.gov.health.covidsafe.SplashActivity"
+            android:name="au.gov.health.covidsafe.ui.splash.SplashActivity"
             android:configChanges="keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,17 +47,21 @@
 
             android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name="au.gov.health.covidsafe.WebViewActivity" />
-        <activity android:name="au.gov.health.covidsafe.DeviceNameChangePromptActivity" />
-        <activity android:name="au.gov.health.covidsafe.InternetConnectionIssuesActivity" />
+        <activity android:name="au.gov.health.covidsafe.ui.webview.WebViewActivity" />
+        <activity android:name="au.gov.health.covidsafe.ui.devicename.DeviceNameChangePromptActivity" />
+        <activity android:name="au.gov.health.covidsafe.ui.connection.InternetConnectionIssuesActivity" />
 
         <activity
             android:name="au.gov.health.covidsafe.HomeActivity"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan" >
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="au.gov.health.covidsafe.UPGRADE_APP" />
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="au.gov.health.covidsafe.POSSIBLE_ISSUE" />
+                <action android:name="au.gov.health.covidsafe.NO_CHECKIN" />
+                <action android:name="au.gov.health.covidsafe.POSSIBLE_ENCOUNTER_ERROR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -72,8 +76,6 @@
             android:name="au.gov.health.covidsafe.services.BluetoothMonitoringService"
             android:foregroundServiceType="location" />
 
-        <service android:name="au.gov.health.covidsafe.services.SensorMonitoringService" />
-
         <receiver android:name="au.gov.health.covidsafe.receivers.UpgradeReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
@@ -83,7 +85,7 @@
         <receiver android:name="au.gov.health.covidsafe.receivers.PrivacyCleanerReceiver" />
 
         <service
-            android:name="au.gov.health.covidsafe.services.CovidFirebaseMessagingService"
+            android:name="au.gov.health.covidsafe.notifications.CovidFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -92,8 +94,8 @@
 
         <service
             android:name="au.gov.health.covidsafe.scheduler.GetMessagesJobSchedulerService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:exported="true"/>
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
     </application>
 

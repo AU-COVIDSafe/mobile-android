@@ -7,8 +7,8 @@ import android.app.job.JobService
 import android.content.ComponentName
 import android.content.Context
 import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.Preference
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.preference.Preference
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.extensions.isBatteryOptimizationDisabled
 import au.gov.health.covidsafe.extensions.isBlueToothEnabled
 import au.gov.health.covidsafe.extensions.isLocationEnabledOnDevice
@@ -31,14 +31,16 @@ import java.util.*
 
 private const val TAG = "GetMessagesScheduler"
 private const val GET_MESSAGES_JOB_ID = 1
-private const val TWENTY_FOUR_HOURS_IN_MILLIS = 24 * 60 * 60 * 1000L
+private const val ONE_HOURS_IN_MILLIS = 60 * 60 * 1000L
+private const val FOUR_HOURS_IN_MILLIS = 4 * ONE_HOURS_IN_MILLIS
+private const val TWENTY_FOUR_HOURS_IN_MILLIS = 24 * ONE_HOURS_IN_MILLIS
 private const val SEVEN_DAYS_IN_MILLIS = 7 * TWENTY_FOUR_HOURS_IN_MILLIS
 
 private const val HEALTH_CHECK_RESULT_OK = "OK"
 private const val HEALTH_CHECK_RESULT_POSSIBLE_ERROR = "POSSIBLE_ERROR"
 
 // for testing only
-//private const val TWENTY_FOUR_HOURS_IN_MILLIS = 16 * 60 * 1000L
+//private const val FOUR_HOURS_IN_MILLIS = 16 * 60 * 1000L
 
 class GetMessagesJobSchedulerService : JobService() {
     private val mostRecentRecordLiveData = StreetPassRecordDatabase.getDatabase(TracerApp.AppContext).recordDao().getMostRecentRecord()
@@ -89,17 +91,25 @@ object GetMessagesScheduler {
             (context.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler?)
                     ?.let {
                         CentralLog.d(TAG, "JobScheduler available")
+                        val schedulerInMillis = getRandomMinsInMillis() + FOUR_HOURS_IN_MILLIS
+                        CentralLog.d(TAG, "Next scheduled Jon run in ${(schedulerInMillis / 1000) / 60} mins")
 
                         it.schedule(
                                 JobInfo.Builder(GET_MESSAGES_JOB_ID,
                                         ComponentName(context, GetMessagesJobSchedulerService::class.java))
                                         .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                                         .setPersisted(true)
-                                        .setPeriodic(TWENTY_FOUR_HOURS_IN_MILLIS)
+                                        .setPeriodic(schedulerInMillis)
                                         .build()
                         )
                     }
         }
+    }
+
+    private fun getRandomMinsInMillis(): Long {
+        //We don't want everyone calling at the same time eg 9 am, 1 pm, etc we want to add an offset between 0-30 minutes based upon some random number.
+        val randomSecs = Random().nextInt(30 * 60)
+        return randomSecs * 1000L
     }
 
     fun getMessages(jobService: JobService? = null, params: JobParameters? = null) {
@@ -127,9 +137,14 @@ object GetMessagesScheduler {
                 isBlueToothEnabled &&
                 isBatteryOptimizationDisabled &&
                 isLocationPermissionAllowed &&
-                isLocationEnabledOnDevice &&
-                isLastRecordWithinSevenDays
+                isLocationEnabledOnDevice
         ) {
+            HEALTH_CHECK_RESULT_OK
+        } else {
+            HEALTH_CHECK_RESULT_POSSIBLE_ERROR
+        }
+
+        val encountersHealth = if (isLastRecordWithinSevenDays) {
             HEALTH_CHECK_RESULT_OK
         } else {
             HEALTH_CHECK_RESULT_POSSIBLE_ERROR
@@ -145,6 +160,7 @@ object GetMessagesScheduler {
                 appVersion,
                 token,
                 healthCheck,
+                encountersHealth,
                 preferredLanguages
         )
 

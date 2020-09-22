@@ -13,7 +13,30 @@
     <dimen name="keyline_8">48dp</dimen>
     <dimen name="keyline_9">60dp</dimen>
 
-    <dimen name="covidsafe_lottie_size">160dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_6">6dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_28">28dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+
+    <dimen name="card_elevation_10">10dp</dimen>
+
+    <!-- text size scale -->
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_28">28sp</dimen>
+    <dimen name="text_size_32">32sp</dimen>
+
+    <dimen name="covidsafe_lottie_size">72dp</dimen>
 
     <dimen name="text_head1">32sp</dimen>
     <dimen name="text_head2">24sp</dimen>
@@ -33,4 +56,15 @@
     <dimen name="report_an_issue_Text">16sp</dimen>
 
     <dimen name="button_radius">4dp</dimen>
+
+    <dimen name="settings_text_width">63dp</dimen>
+    <dimen name="home_screen_header_top_height">104dp</dimen>
+
+    <dimen name="active_status_tick_image_size">24dp</dimen>
+    <dimen name="inactive_status_error_image_size">24dp</dimen>
+
+    <dimen name="settings_toolbar_height">80dp</dimen>
+
+    <dimen name="covidsafe_loading_animation_size">118dp</dimen>
+    <dimen name="case_number_loading_card_height">210dp</dimen>
 </resources>

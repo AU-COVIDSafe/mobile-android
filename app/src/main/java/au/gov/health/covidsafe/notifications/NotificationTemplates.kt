@@ -45,7 +45,11 @@ class NotificationTemplates {
             return builder.build()
         }
 
-        fun lackingThingsNotification(context: Context, channel: String): Notification {
+        fun lackingThingsNotification(context: Context, contentTextResId: Int, channel: String): Notification {
+            return lackingThingsNotification(context, context.getString(contentTextResId), channel)
+        }
+
+        fun lackingThingsNotification(context: Context, contentText: String, channel: String): Notification {
             val intent = Intent(context, HomeActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.putExtra("page", 3)
@@ -57,13 +61,13 @@ class NotificationTemplates {
 
             val builder = NotificationCompat.Builder(context, channel)
                     .setContentTitle(context.getText(R.string.service_not_ok_title))
-                    .setContentText(context.getText(R.string.service_not_ok_body))
-                    .setStyle(NotificationCompat.BigTextStyle().bigText(context.getText(R.string.service_not_ok_body)))
+                    .setContentText(contentText)
+                    .setStyle(NotificationCompat.BigTextStyle().bigText(contentText))
 
                     .setOngoing(true)
                     .setPriority(NotificationCompat.PRIORITY_LOW)
                     .setSmallIcon(R.drawable.ic_notification_warning)
-                    .setTicker(context.getText(R.string.service_not_ok_body))
+                    .setTicker(contentText)
                     .addAction(
                             R.drawable.ic_notification_setting,
                             context.getText(R.string.service_not_ok_action),

@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/keyline_1"
         android:layout_marginTop="@dimen/keyline_1">
 
         <TextView
@@ -132,7 +133,7 @@
             android:layout_marginEnd="@dimen/keyline_5"
             android:text="@string/invalid_phone_number"
             android:textAlignment="viewStart"
-            android:textColor="@color/error"
+            android:textColor="@color/error_red"
             android:textSize="16sp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"

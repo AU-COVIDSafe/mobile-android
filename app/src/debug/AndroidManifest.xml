@@ -3,7 +3,7 @@
     package="au.gov.health.covidsafe">
 
     <application
-        android:name=".TracerApp"
+        android:name=".app.TracerApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

@@ -1,7 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-
     <style name="word_title">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginBottom">4dp</item>
@@ -10,12 +8,19 @@
     </style>
 
     <style name="HelpToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
-        <item name="titleTextAppearance">@style/HelpToolbarTitle</item>
+        <item name="titleTextAppearance">@style/ToolbarTitle</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
     </style>
 
-    <style name="HelpToolbarTitle" parent="@style/TextAppearance.MyTheme.Headline1">
+    <style name="ToolbarTitle" parent="@style/TextAppearance.MyTheme.Headline1">
         <item name="android:fontFamily">@font/font_roboto_regular</item>
+    </style>
+
+    <style name="ToolbarStyle.TitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="titleTextAppearance">@style/ToolbarTitle</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="countryListIndex">

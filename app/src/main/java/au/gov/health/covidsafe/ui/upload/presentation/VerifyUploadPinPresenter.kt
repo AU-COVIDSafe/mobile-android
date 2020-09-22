@@ -4,7 +4,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.Preference
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.extensions.isInternetAvailable
 import au.gov.health.covidsafe.factory.NetworkFactory
 import au.gov.health.covidsafe.interactor.usecase.UploadData

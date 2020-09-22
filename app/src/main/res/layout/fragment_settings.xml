@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/settings_toolbar"
+        app:titleTextAppearance="@style/ToolbarStyle.TitleTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settings_toolbar_height"
+        android:background="@color/lighter_green"
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationContentDescription="@string/navigation_back_button_content_description"
+        app:navigationIcon="@drawable/ic_up"
+        app:title="@string/settings"
+        app:titleTextColor="@color/slate_black_1"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/settings_toolbar_height"
+        app:layout_constraintTop_toBottomOf="@id/settings_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/settings_cards_top_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="settings_toolbar" />
+
+            <include layout="@layout/view_settings_improve_app_performance_tile" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/settings_external_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="performance_card_bottom_space, settings_cards_top_barrier" />
+
+            <include layout="@layout/fragment_settings_external_link" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/app_version_content_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="share_card_view" />
+
+            <TextView
+                android:id="@+id/settings_version_number"
+                style="?textAppearanceBody2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_24"
+                android:gravity="center"
+                android:textColor="@color/slate_black_2"
+                app:layout_constraintTop_toBottomOf="@+id/app_version_content_barrier" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_24"
+                app:layout_constraintTop_toBottomOf="@+id/settings_version_number" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

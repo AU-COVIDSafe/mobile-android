@@ -10,7 +10,7 @@ import android.text.TextPaint
 import android.text.style.ClickableSpan
 import android.view.View
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.logging.CentralLog
 import java.lang.StringBuilder
 import java.util.*
@@ -18,11 +18,13 @@ import java.util.*
 
 const val TAG = "LinkBuilder"
 
-private const val PRIVACY_URL = "https://www.health.gov.au/using-our-websites/privacy/privacy-notice-for-covidsafe-app"
 private const val DEPARTMENT_OF_HEALTH_URL = "https://www.health.gov.au/"
+private const val HOST_URL = "https://www.covidsafe.gov.au"
 
-private const val HELP_TOPICS_BASE = "https://www.covidsafe.gov.au/help-topics"
-private const val HELP_TOPICS_SUFFIX = ".html"
+private const val HELP_TOPICS_BASE = "/help-topics"
+private const val PRIVACY_TOPICS_BASE = "/privacy-policy"
+
+private const val TOPICS_EXT_SUFFIX = ".html"
 private const val HELP_TOPICS_ENGLISH_PAGE = ""
 private const val HELP_TOPICS_S_CHINESE_PAGE = "/zh-hans"
 private const val HELP_TOPICS_T_CHINESE_PAGE = "/zh-hant"
@@ -36,6 +38,7 @@ private const val HELP_TOPICS_TURKISH_PAGE = "/tr"
 
 private const val HELP_TOPICS_ANCHOR_VERIFY_MOBILE_NUMBER_PIN = "#verify-mobile-number-pin"
 private const val HELP_TOPICS_ANCHOR_BLUETOOTH_PAIRING_REQUEST = "#bluetooth-pairing-request"
+private const val HELP_TOPICS_ANCHOR_LOCATION_PERMISSION_ANDROID = "#location-permission-android"
 
 object LinkBuilder {
 
@@ -47,9 +50,23 @@ object LinkBuilder {
             }
 
     fun getHelpTopicsUrl(): String {
+        val url = buildLocalisedURL(HELP_TOPICS_BASE)
+        CentralLog.d(TAG, "getHelpTopicsUrl() $url")
+        return url
+    }
+
+    private fun getPrivacyTopicsUrl(): String {
+        val url = buildLocalisedURL(PRIVACY_TOPICS_BASE)
+        CentralLog.d(TAG, "getPrivacyTopicsUrl() $url")
+        return url
+    }
+
+    private fun buildLocalisedURL(path: String): String {
         val localeLanguageTag = Locale.getDefault().toLanguageTag()
 
-        val url = HELP_TOPICS_BASE + when {
+        CentralLog.d(TAG, "Locale Language: $localeLanguageTag")
+
+        return HOST_URL + path + when {
             localeLanguageTag.startsWith("zh-Hans") -> HELP_TOPICS_S_CHINESE_PAGE
             localeLanguageTag.startsWith("zh-Hant") -> HELP_TOPICS_T_CHINESE_PAGE
             localeLanguageTag.startsWith("ar") -> HELP_TOPICS_ARABIC_PAGE
@@ -60,21 +77,18 @@ object LinkBuilder {
             localeLanguageTag.startsWith("pa") -> HELP_TOPICS_PUNJABI_PAGE
             localeLanguageTag.startsWith("tr") -> HELP_TOPICS_TURKISH_PAGE
             else -> HELP_TOPICS_ENGLISH_PAGE
-        } + HELP_TOPICS_SUFFIX
+        } + TOPICS_EXT_SUFFIX
 
-
-        CentralLog.d(TAG, "getHelpTopicsUrl() " +
-                "localeLanguageTag = $localeLanguageTag " +
-                "url = $url")
-
-        return url
     }
 
-    fun getHelpTopicsUrlWithAnchor(anchor : String) =
+    fun getHelpTopicsUrlWithAnchor(anchor: String) =
             getHelpTopicsUrl() + anchor
 
     private fun getBluetoothPairingRequestUrl() =
             getHelpTopicsUrl() + HELP_TOPICS_ANCHOR_BLUETOOTH_PAIRING_REQUEST
+
+    private fun getLocationPairingRequestUrl() =
+            getHelpTopicsUrl() + HELP_TOPICS_ANCHOR_LOCATION_PERMISSION_ANDROID
 
     private fun getVerifyMobileNumberPinLink(linkText: String) = buildHtmlText(
             "<a href=\"${getHelpTopicsUrl() + HELP_TOPICS_ANCHOR_VERIFY_MOBILE_NUMBER_PIN}\">$linkText</a>")
@@ -126,15 +140,16 @@ object LinkBuilder {
     }
 
     fun getRegistrationAndPrivacyContent(context: Context): SpannableString {
+        val privacyUrl = getPrivacyTopicsUrl()
         return buildSpannableStringContent(
                 context,
                 TracerApp.AppContext.getString(R.string.data_privacy_content),
                 listOf(
-                        PRIVACY_URL,
-                        PRIVACY_URL,
+                        privacyUrl,
+                        privacyUrl,
                         getHelpTopicsUrl(),
                         DEPARTMENT_OF_HEALTH_URL,
-                        PRIVACY_URL
+                        privacyUrl
                 )
         )
     }
@@ -143,7 +158,7 @@ object LinkBuilder {
         return buildSpannableStringContent(
                 context,
                 TracerApp.AppContext.getString(R.string.permission_success_content),
-                listOf(getBluetoothPairingRequestUrl())
+                listOf(getBluetoothPairingRequestUrl(), getLocationPairingRequestUrl())
         )
     }
 
@@ -166,7 +181,7 @@ object LinkBuilder {
         return buildSpannableStringContent(
                 context,
                 TracerApp.AppContext.getString(R.string.upload_step_4_sub_header),
-                listOf(PRIVACY_URL)
+                listOf(getPrivacyTopicsUrl())
         )
     }
 }

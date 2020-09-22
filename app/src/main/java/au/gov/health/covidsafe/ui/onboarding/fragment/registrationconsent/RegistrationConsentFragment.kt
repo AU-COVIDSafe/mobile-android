@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.talkback.setHeading
-import au.gov.health.covidsafe.ui.PagerChildFragment
-import au.gov.health.covidsafe.ui.PagerContainer
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerChildFragment
+import au.gov.health.covidsafe.ui.base.PagerContainer
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_registration_consent.*
 
 class RegistrationConsentFragment : PagerChildFragment() {

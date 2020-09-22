@@ -14,7 +14,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.links.LinkBuilder
-import au.gov.health.covidsafe.ui.BaseFragment
+import au.gov.health.covidsafe.ui.base.BaseFragment
 import com.atlassian.mobilekit.module.feedback.FeedbackModule
 import kotlinx.android.synthetic.main.fragment_help.*
 import kotlinx.android.synthetic.main.fragment_help.view.*

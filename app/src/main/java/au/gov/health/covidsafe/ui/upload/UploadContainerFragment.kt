@@ -9,8 +9,8 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.ui.PagerContainer
-import au.gov.health.covidsafe.ui.UploadButtonLayout
+import au.gov.health.covidsafe.ui.base.PagerContainer
+import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
 import kotlinx.android.synthetic.main.fragment_upload_master.*
@@ -26,9 +26,8 @@ class UploadContainerFragment : Fragment(), PagerContainer {
             activity?.onBackPressed()
         }
 
-        if (resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL) {
-            toolbar.navigationIcon =
-                    requireContext().getDrawable(R.drawable.ic_up_rtl)
+        if (resources.configuration.layoutDirection == LAYOUT_DIRECTION_RTL) {
+            toolbar.navigationIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_up_rtl)
         }
     }
 
@@ -51,13 +50,13 @@ class UploadContainerFragment : Fragment(), PagerContainer {
         }
     }
 
-    override fun refreshButton(uploadButtonLayout: UploadButtonLayout) {
-        when (uploadButtonLayout) {
+    override fun refreshButton(updateButtonLayout: UploadButtonLayout) {
+        when (updateButtonLayout) {
             is UploadButtonLayout.ContinueLayout -> {
                 upload_continue.setOnClickListener {
-                    uploadButtonLayout.buttonListener?.invoke()
+                    updateButtonLayout.buttonListener?.invoke()
                 }
-                upload_continue.setText(uploadButtonLayout.buttonText)
+                upload_continue.setText(updateButtonLayout.buttonText)
                 upload_continue.visibility = VISIBLE
                 upload_answerNo.setOnClickListener(null)
                 upload_answerYes.setOnClickListener(null)
@@ -68,10 +67,10 @@ class UploadContainerFragment : Fragment(), PagerContainer {
                 upload_continue.setOnClickListener(null)
                 upload_continue.visibility = GONE
                 upload_answerNo.setOnClickListener {
-                    uploadButtonLayout.buttonNoListener.invoke()
+                    updateButtonLayout.buttonNoListener.invoke()
                 }
                 upload_answerYes.setOnClickListener {
-                    uploadButtonLayout.buttonYesListener.invoke()
+                    updateButtonLayout.buttonYesListener.invoke()
                 }
                 upload_answerNo.visibility = VISIBLE
                 upload_answerYes.visibility = VISIBLE

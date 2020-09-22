@@ -3,22 +3,94 @@ package au.gov.health.covidsafe
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
-import au.gov.health.covidsafe.Utils.checkInternetConnectionToGoogle
+import androidx.lifecycle.MutableLiveData
+import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.response.Message
 import au.gov.health.covidsafe.networking.response.MessagesResponse
+import au.gov.health.covidsafe.notifications.NotificationBuilder
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.scheduler.GetMessagesScheduler
-import au.gov.health.covidsafe.ui.home.HomeFragment
+import au.gov.health.covidsafe.ui.devicename.DeviceNameChangePromptActivity
+import au.gov.health.covidsafe.ui.utils.Utils
+import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 
 private const val TAG = "HomeActivity"
 
-class HomeActivity : FragmentActivity() {
-    private fun checkInternetConnection() {
-        checkInternetConnectionToGoogle {
-            HomeFragment.instanceWeakRef?.get()?.updateConnectionTile(it)
+class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectionListener {
+
+    var isAppUpdateAvailableLiveData = MutableLiveData<Boolean>()
+    var appUpdateAvailableMessageResponseLiveData = MutableLiveData<MessagesResponse>()
+    var isWindowFocusChangeLiveData = MutableLiveData<Boolean>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        CentralLog.d(TAG, "onCreate() intent.action = ${intent.action}")
+        NotificationBuilder.clearPossibleIssueNotificationCheck()
+        NotificationBuilder.handlePushNotification(this, intent.action)
+
+        setContentView(R.layout.activity_home)
+
+        Utils.startBluetoothMonitoringService(this)
+
+        //Get Firebase Token
+        getInstanceID()
+
+        NetworkConnectionCheck.addNetworkChangedListener(this, this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        checkAndShowDeviceNameChangePrompt()
+        checkAndUpdateHealthStatus()
+    }
+
+    private fun checkAndShowDeviceNameChangePrompt() {
+        if (!Preference.isDeviceNameChangePromptDisplayed(this)) {
+            Intent(this, DeviceNameChangePromptActivity::class.java).also {
+                startActivity(it)
+            }
+            Preference.setDeviceNameChangePromptDisplayed(this)
         }
+    }
+
+    private fun checkAndUpdateHealthStatus() {
+        GetMessagesScheduler.scheduleGetMessagesJob {
+            val isAppWithLatestVersion = it.messages.isNullOrEmpty()
+            isAppUpdateAvailableLiveData.postValue(isAppWithLatestVersion)
+            CentralLog.d(TAG, "isAppWithLatestVersion: $it")
+
+            if (!isAppWithLatestVersion) {
+                val title = getString(R.string.update_available_title)
+                val body = getString(R.string.update_available_message_android)
+
+                appUpdateAvailableMessageResponseLiveData.postValue(MessagesResponse(
+                        listOf(
+                                Message(
+                                        title,
+                                        body,
+                                        "https://play.google.com/store/apps/details?id=au.gov.health.covidsafe")
+                        )
+                ))
+            }
+        }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        CentralLog.d(TAG, "onNewIntent = ${intent?.action})")
+        NotificationBuilder.handlePushNotification(this, intent?.action)
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        CentralLog.d(TAG, "onWindowFocusChanged(hasFocus = $hasFocus)")
+        isWindowFocusChangeLiveData.postValue(hasFocus)
+
+        super.onWindowFocusChanged(hasFocus)
     }
 
     /**
@@ -46,76 +118,12 @@ class HomeActivity : FragmentActivity() {
                 })
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        CentralLog.d(TAG, "onCreate() intent.action = ${intent.action}")
-
-        setContentView(R.layout.activity_home)
-
-        Utils.startBluetoothMonitoringService(this)
-
-        // messages API related
-        getInstanceID()
+    private var previousInternetConnection = true
+    override fun onNetworkStatusChanged(isAvailable: Boolean) {
+        if (!previousInternetConnection && isAvailable) {
+            checkAndUpdateHealthStatus()
+        }
+        previousInternetConnection = isAvailable
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        CentralLog.d(TAG, "onResume() intent.action = ${intent.action}")
-
-        if (intent.action == "au.gov.health.covidsafe.UPGRADE_APP") {
-            Utils.gotoPlayStore(this)
-        }
-
-        if (!Preference.isDeviceNameChangePromptDisplayed(this)) {
-            Intent(this, DeviceNameChangePromptActivity::class.java).also {
-                startActivity(it)
-            }
-
-            Preference.setDeviceNameChangePromptDisplayed(this)
-        }
-
-        checkInternetConnection()
-
-        GetMessagesScheduler.scheduleGetMessagesJob {
-//            HomeFragment.instanceWeakRef?.get()?.updateMessageTiles(it)
-
-//            HomeFragment.instanceWeakRef?.get()?.updateMessageTiles(MessagesResponse(
-//                    listOf(
-//                            Message(
-//                                    "Update available",
-//                                    "We’ve been making improvements to COVIDSafe. Update via Google Play Store.",
-//                                    "market://details?id=au.gov.health.covidsafe"),
-//                            Message(
-//                                    "Update available",
-//                                    "We’ve been making improvements to COVIDSafe. Update via Google Play Store.",
-//                                    "https://play.google.com/store/apps/details?id=au.gov.health.covidsafe")
-//                    )
-//            ))
-
-            if (!it.messages.isNullOrEmpty()) {
-                val title = getString(R.string.update_available_title)
-                val body = getString(R.string.update_available_message_android)
-
-                HomeFragment.instanceWeakRef?.get()?.updateMessageTiles(MessagesResponse(
-                        listOf(
-                                Message(
-                                        title,
-                                        body,
-                                        "https://play.google.com/store/apps/details?id=au.gov.health.covidsafe")
-                        )
-                ))
-            }
-        }
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        CentralLog.d(TAG, "onWindowFocusChanged(hasFocus = $hasFocus)")
-
-        HomeFragment.instanceWeakRef?.get()?.refreshSetupCompleteOrIncompleteUi()
-        checkInternetConnection()
-
-        super.onWindowFocusChanged(hasFocus)
-    }
 }

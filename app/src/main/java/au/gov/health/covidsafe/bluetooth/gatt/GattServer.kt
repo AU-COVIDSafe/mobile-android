@@ -4,8 +4,8 @@ import android.bluetooth.*
 import android.bluetooth.BluetoothGatt.GATT_FAILURE
 import android.bluetooth.BluetoothGatt.GATT_SUCCESS
 import android.content.Context
-import au.gov.health.covidsafe.TracerApp
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.app.TracerApp
+import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.streetpass.CentralDevice
 import au.gov.health.covidsafe.streetpass.ConnectionRecord
@@ -41,8 +41,7 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                 BluetoothProfile.STATE_CONNECTED -> {
                     CentralLog.i(TAG, "${device?.address} Connected to local GATT server")
                     device?.let {
-                        val b = bluetoothManager.getConnectedDevices(BluetoothProfile.GATT)
-                                .contains(device)
+                        bluetoothManager.getConnectedDevices(BluetoothProfile.GATT).contains(device)
                     }
                 }
 

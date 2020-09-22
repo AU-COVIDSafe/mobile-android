@@ -10,38 +10,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?android:selectableItemBackground"
-        android:padding="@dimen/keyline_4">
+        android:padding="@dimen/space_16">
 
         <ImageView
             android:id="@+id/permission_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/icon_checkbox"
+            android:background="@drawable/ic_white_background_red_error"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/permission_title"
-            style="?textAppearanceBody1"
+            style="@style/fontRobotoRegular20"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:gravity="start"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:visibility="visible"
+            android:maxLines="2"
+            android:textColor="@color/error_red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/permission_icon"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Bluetooth : " />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/permission_body"
-            style="?textAppearanceBody2"
+            style="@style/fontRobotoRegular16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:paddingTop="@dimen/keyline_0"
+            android:paddingTop="@dimen/space_8"
+            android:textColor="@color/error_red"
             android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@id/permission_title"
             app:layout_constraintStart_toStartOf="parent"

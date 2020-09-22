@@ -27,6 +27,13 @@
         <action
             android:id="@+id/action_homeFragment_to_peekActivity"
             app:destination="@id/peekActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -39,9 +46,21 @@
         android:name="au.gov.health.covidsafe.ui.home.HelpFragment"
         android:label="HelpFragment"
         tools:layout="@layout/fragment_help"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="au.gov.health.covidsafe.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+
     <activity
         android:id="@+id/peekActivity"
         android:name="au.gov.health.covidsafe.PeekActivity"
         android:label="PeekActivity" />
+
 
 </navigation>

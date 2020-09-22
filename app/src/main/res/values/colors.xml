@@ -16,6 +16,8 @@
     <!-- Splash Screen -->
     <color name="splash_background">#E5E5E5</color>
     <color name="splash_frame_background">#C8FFB9</color>
+    
+    <color name="screen_background">#E5E5E5</color>
 
     <color name="notification_tint">#2A3756</color>
 
@@ -26,10 +28,16 @@
     <color name="transparent">#00000000</color>
     <color name="black">#000000</color>
 
-    <color name="error">#A31919</color>
+    <color name="error_red">#A31919</color>
 
     <color name="hyperlink_enabled">@color/dark_green</color>
     <color name="hyperlink_disabled">@color/slack_black_2</color>
 
     <color name="segment">#DBDDDD</color>
+
+    <color name="slate_black_1">#131313</color>
+    <color name="slate_black_2">#4D4D4D</color>
+    <color name="divider_line_grey">#DDDDDD</color>
+    
+    <color name="death_icon_background_color_grey">#DDDDDD</color>
 </resources>

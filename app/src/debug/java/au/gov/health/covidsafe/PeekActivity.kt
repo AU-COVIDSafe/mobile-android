@@ -12,14 +12,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.gov.health.covidsafe.extensions.fromHtml
 import au.gov.health.covidsafe.logging.CentralLog
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordStorage
 import au.gov.health.covidsafe.streetpass.view.RecordViewModel
+import au.gov.health.covidsafe.ui.utils.Utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.database_peek.*
+import kotlinx.android.synthetic.main.database_peek.home_push_notification_token
 import java.io.File
 
 private const val TAG = "PeekActivity"
@@ -42,8 +46,8 @@ class PeekActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
         val dividerItemDecoration = DividerItemDecoration(
-            recyclerView.context,
-            layoutManager.orientation
+                recyclerView.context,
+                layoutManager.orientation
         )
         recyclerView.addItemDecoration(dividerItemDecoration)
 
@@ -69,28 +73,28 @@ class PeekActivity : AppCompatActivity() {
 
             val builder = AlertDialog.Builder(this)
             builder
-                .setTitle("Are you sure?")
-                .setCancelable(false)
-                .setMessage("Deleting the DB records is irreversible")
-                .setPositiveButton("DELETE") { dialog, which ->
-                    Observable.create<Boolean> {
-                        StreetPassRecordStorage(this).nukeDb()
-                        it.onNext(true)
-                    }
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeOn(Schedulers.io())
-                        .subscribe { result ->
-                            Toast.makeText(this, "Database nuked: $result", Toast.LENGTH_SHORT)
-                                .show()
-                            view.isEnabled = true
-                            dialog.cancel()
+                    .setTitle("Are you sure?")
+                    .setCancelable(false)
+                    .setMessage("Deleting the DB records is irreversible")
+                    .setPositiveButton("DELETE") { dialog, _ ->
+                        Observable.create<Boolean> {
+                            StreetPassRecordStorage(this).nukeDb()
+                            it.onNext(true)
                         }
-                }
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .subscribeOn(Schedulers.io())
+                                .subscribe { result ->
+                                    Toast.makeText(this, "Database nuked: $result", Toast.LENGTH_SHORT)
+                                            .show()
+                                    view.isEnabled = true
+                                    dialog.cancel()
+                                }
+                    }
 
-                .setNegativeButton("DON'T DELETE") { dialog, which ->
-                    view.isEnabled = true
-                    dialog.cancel()
-                }
+                    .setNegativeButton("DON'T DELETE") { dialog, _ ->
+                        view.isEnabled = true
+                        dialog.cancel()
+                    }
 
             val dialog: AlertDialog = builder.create()
             dialog.show()
@@ -100,12 +104,12 @@ class PeekActivity : AppCompatActivity() {
 
         shareDatabase.setOnClickListener {
             val authority = "${BuildConfig.APPLICATION_ID}.fileprovider"
-            val databaseFilePath= getDatabasePath("record_database").absolutePath
+            val databaseFilePath = getDatabasePath("record_database").absolutePath
             val databaseFile = File(databaseFilePath)
 
             CentralLog.d(TAG, "authority = $authority, databaseFilePath = $databaseFilePath")
 
-            if(databaseFile.exists()) {
+            if (databaseFile.exists()) {
                 CentralLog.d(TAG, "databaseFile.length = ${databaseFile.length()}")
 
                 FileProvider.getUriForFile(
@@ -123,12 +127,28 @@ class PeekActivity : AppCompatActivity() {
             }
         }
 
-        if(!BuildConfig.DEBUG) {
+        showPushTokenOnDebugBuild()
+
+        if (!BuildConfig.DEBUG) {
             start.visibility = View.GONE
             stop.visibility = View.GONE
             delete.visibility = View.GONE
         }
 
+    }
+
+    private fun showPushTokenOnDebugBuild() {
+        if (BuildConfig.DEBUG) {
+            val token = Preference.getFirebaseInstanceID(this)
+            home_push_notification_token.run {
+                visibility = View.VISIBLE
+                val tokenText = "<b>Firebase Push Token:</b> $token"
+                text = fromHtml(tokenText)
+            }
+
+        } else {
+            home_push_notification_token.visibility = View.GONE
+        }
     }
 
     private var timePeriod: Int = 0

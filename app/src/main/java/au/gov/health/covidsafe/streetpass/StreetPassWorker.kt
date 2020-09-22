@@ -9,8 +9,8 @@ import android.os.Handler
 import androidx.annotation.Keep
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.TracerApp
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.app.TracerApp
+import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.bluetooth.gatt.*
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.services.BluetoothMonitoringService

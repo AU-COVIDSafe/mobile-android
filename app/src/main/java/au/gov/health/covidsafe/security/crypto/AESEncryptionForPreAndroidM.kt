@@ -3,8 +3,8 @@ package au.gov.health.covidsafe.security.crypto
 import android.security.KeyPairGeneratorSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
-import au.gov.health.covidsafe.Preference
-import au.gov.health.covidsafe.TracerApp
+import au.gov.health.covidsafe.preference.Preference
+import au.gov.health.covidsafe.app.TracerApp
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.math.BigInteger

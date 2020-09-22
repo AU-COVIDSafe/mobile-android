@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.lifecycle.Lifecycle
 import kotlinx.coroutines.delay
 import retrofit2.Response
-import au.gov.health.covidsafe.Preference
-import au.gov.health.covidsafe.Utils
+import au.gov.health.covidsafe.preference.Preference
+import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.interactor.Either
 import au.gov.health.covidsafe.interactor.Failure
 import au.gov.health.covidsafe.interactor.Success
@@ -24,8 +24,8 @@ class UpdateBroadcastMessageAndPerformScanWithExponentialBackOff(private val aws
                                                                  lifecycle: Lifecycle) : UseCase<BroadcastMessageResponse, Void?>(lifecycle) {
 
     override suspend fun run(params: Void?): Either<Exception, BroadcastMessageResponse> {
-        val jwtToken = Preference.getEncrypterJWTToken(context)
-        return jwtToken?.let { jwtToken ->
+        val token = Preference.getEncrypterJWTToken(context)
+        return token?.let { jwtToken ->
             var response = call(jwtToken)
             var retryCount = 0
             while ((response == null || !response.isSuccessful || response.body() == null) && retryCount < RETRIES_LIMIT) {

@@ -19,7 +19,8 @@
   <string name="change_device_name_secondary_action">ਛੱਡੋ ਅਤੇ ਜਿਂਵੇ ਦਾ ਤਿਵੇਂ ਰੱਖੋ</string>
   <string name="change_language">ਭਾਸ਼ਾ ਬਦਲੋ</string>
   <string name="change_language_content">COVIDSafe ਦੀ ਵਰਤੋਂ ਕਿਸੇ ਵੱਖਰੀ ਭਾਸ਼ਾ ਵਿੱਚ ਕਰਨ ਲਈ ਇਹ ਗਾਈਡ ਪੜ੍ਹੋ।</string>
-  <string name="CodeHasExpired">ਤੁਹਾਡਾ ਕੋਡ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।</string>
+  <string name="CodeHasExpired">ਤੁਹਾਡਾ ਪਿੰਨ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।</string>
+  <string name="collection_message">COVIDSafe ਐਪ ਦੀ ਟ੍ਰਬਲਸ਼ੂਟ ਲਈ ਤੁਹਾਡੀ ਸਹਾਇਤਾ ਵਜੋਂ  ਹੁਣ ਤੁਹਾਡੀ ਡਾਇਗਨੌਸਟਿਕ ਜਾਣਕਾਰੀ ਇਕੱਤਰ ਕਰਦਾ ਹੈ। *ਵਧੇਰੇ ਜਾਣੋ*</string>
   <string name="consent_button">ਮੈਂ ਸਹਿਮਤ ਹਾਂ</string>
   <!-- Shared Consent Actions -->
   <string name="consent_call_for_action">ਸਹਿਮਤੀ ਦੀ ਪੁਸ਼ਟੀ ਲਈ \'ਮੈਂ ਸਹਿਮਤ ਹਾਂ\' ਚੋਣ ਕਰੋ।</string>
@@ -236,7 +237,6 @@
   <string name="country_region_name_zm">ਜ਼ਾਂਬੀਆ</string>
   <string name="country_region_name_zw">ਜਿੰਮਬਾਬਵੇ</string>
   <string name="data_privacy_button">ਅੱਗੇ</string>
-  <string name="data_privacy_content">ਇਹ ਮਹੱਤਵਪੂਰਨ ਹੈ ਕਿ ਤੁਸੀਂ COVIDSafe ਪੰਜੀਕਰਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ  COVIDSafe *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਪੜ੍ਹੋ।\n\nਜੇ ਤੁਹਾਡੀ ਉਮਰ 16 ਸਾਲ ਤੋਂ ਘੱਟ ਹੈ, ਤਾਂ ਤੁਹਾਡੇ ਮਾਪੇ/ਸਰਪ੍ਰਸਤ ਨੂੰ ਵੀ *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਪੜ੍ਹਨੀ ਚਾਹੀਦੀ ਹੈ।\n\nCOVIDSafe ਦੀ ਵਰਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਵੈ-ਇੱਛਤ ਹੈ। ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਇੰਸਟਾਲ ਜਾਂ ਡਿਲੀਟ ਕਰ ਸਕਦੇ ਹੋ। ਜੇ ਤੁਸੀਂ COVIDSafe ਨੂੰ ਡਿਲੀਟ ਕਰ ਦਿੰਦੇ ਹੋ,  ਤਾਂ ਸੁਰੱਖਿਅਤ ਸਰਵਰ ਤੋਂ *ਤੁਸੀਂ ਆਪਣੀ ਜਾਣਕਾਰੀ ਨੂੰ ਮਿਟਾਉਣ ਲਈ ਵੀ ਕਹਿ ਸਕਦੇ ਹੋ*।\n\nCOVIDSafe ਪੰਜੀਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਅਪਣਾ ਨਾਮ (ਜਾਂ ਨਕਲੀ ਨਾਮ), ਮੋਬਾਈਲ ਨੰਬਰ, ਉਮਰ ਸੀਮਾ ਅਤੇ ਪੋਸਟਕੋਡ ਭਰਨਾ ਪਵੇਗਾ।\n\nਜਦ ਤੁਸੀਂ ਰਜਿਸਟਰ ਕਰਦੇ ਹੋ ਤਾਂ COVIDSafe ਦੀ ਤੁਹਾਡੀ ਵਰਤੋਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਨੂੰ ਇਕੱਤਰ ਕੀਤਾ ਜਾਵੇਗਾ ਅਤੇ ਇਸ ਜਾਣਕਾਰੀ  ਨੂੰ ਇੱਕ ਬੇਹੱਦ ਸੁਰੱਖਿਅਤ ਸਰਵਰ \'ਤੇ ਸਟੋਰ ਕੀਤਾ ਜਾਵੇਗਾ।\n\nCOVIDSafe ਤੁਹਾਡੀ ਲੋਕੇਸ਼ਨ ਜਾਣਕਾਰੀ ਨੂੰ ਇਕੱਤਰ ਨਹੀਂ ਕਰੇਗਾ।\n\n COVIDSafe ਤੁਹਾਡੀ  ਡਿਵਾਈਸ \'ਤੇ, ਤੁਹਾਡੇ ਸੰਪਰਕ ਦੇ ਸਮੇਂ, ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਗੁੰਮਨਾਮ ਆਈਡੀ ਕੋਡ, ਬਲੂਟੁੱਥ® ਸਿਗਨਲ ਸ਼ਕਤੀ ਅਤੇ ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਫ਼ੋਨ ਮਾਡਲ ਨੋਟ ਕਰੇਗਾ।\n\nਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ ਜਿੰਨ੍ਹਾਂ ਨਾਲ ਤੁਸੀਂ ਸੰਪਰਕ ਵਿੱਚ ਆਉਂਦੇ ਹੋ, ਤੁਹਾਡੇ ਗੁੰਮਨਾਮ ਆਈਡੀ ਕੋਡ, ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਦੀ ਤਾਰੀਖ਼ ਅਤੇ ਸਮਾਂ, ਬਲੂਟੁੱਥ® ਸਿਗਨਲ ਸ਼ਕਤੀ ਅਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਮਾਡਲ ਨੂੰ ਉਹਨਾਂ ਦੀ ਡੀਵਾਈਸ \'ਤੇ ਨੋਟ ਕਰਨਗੇ।\n\nਜੇ ਕੋਈ ਹੋਰ ਵਰਤੋਂਕਾਰ ਕੋਵਿਡ-19   ਪਾਜ਼ੇਟਿਵ ਟੈਸਟ ਕਰਦਾ ਹੈ, ਤਾਂ ਉਹ ਆਪਣੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਨੂੰ ਅੱਪਲੋਡ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਕੋਈ  ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਲਈ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦਾ ਹੈ। \n\nਤੁਹਾਡੇ ਪੰਜੀਕਰਨ ਦੇ ਵਿਸਥਾਰਾਂ ਨੂੰ ਕੇਵਲ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਲਈ ਅਤੇ COVIDSafe ਦੇ ਉਚਿਤ ਅਤੇ ਕਨੂੰਨੀ ਕਾਰਜ-ਖੇਤਰ ਲਈ ਹੀ ਵਰਤਿਆ ਜਾਂ ਖੁਲਾਸਾ ਕੀਤਾ ਜਾਵੇਗਾ। \n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ *ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ* ਦੀ ਵੈੱਬਸਾਈਟ \'ਤੇ ਉਪਲਬਧ ਹੈ।\n\nਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਅਤੇ ਅਧਿਕਾਰਾਂ ਬਾਰੇ ਅਤੇ ਇਸ ਨਾਲ ਕਿਵੇਂ ਨਿਪਟਿਆ ਜਾਵੇਗਾ ਅਤੇ ਇਸਨੂੰ ਸਾਂਝਾ ਕਿਵੇਂ ਕੀਤਾ ਜਾਵੇਗਾ, ਇਸ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਾਂ ਲਈ COVIDSafe *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਦੇਖੋ।</string>
   <string name="data_privacy_content_android">ਇਹ ਮਹੱਤਵਪੂਰਨ ਹੈ ਕਿ ਤੁਸੀਂ COVIDSafe ਪੰਜੀਕਰਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ  COVIDSafe *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਪੜ੍ਹੋ।\n\nਜੇ ਤੁਹਾਡੀ ਉਮਰ 16 ਸਾਲ ਤੋਂ ਘੱਟ ਹੈ, ਤਾਂ ਤੁਹਾਡੇ ਮਾਪੇ/ਸਰਪ੍ਰਸਤ ਨੂੰ ਵੀ *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਪੜ੍ਹਨੀ ਚਾਹੀਦੀ ਹੈ।\n\nCOVIDSafe ਦੀ ਵਰਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਵੈ-ਇੱਛਤ ਹੈ। ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਇੰਸਟਾਲ ਜਾਂ ਡਿਲੀਟ ਕਰ ਸਕਦੇ ਹੋ। ਜੇ ਤੁਸੀਂ COVIDSafe ਨੂੰ ਡਿਲੀਟ ਕਰ ਦਿੰਦੇ ਹੋ,  ਤਾਂ ਸੁਰੱਖਿਅਤ ਸਰਵਰ ਤੋਂ *ਤੁਸੀਂ ਆਪਣੀ ਜਾਣਕਾਰੀ ਨੂੰ ਮਿਟਾਉਣ ਲਈ ਵੀ ਕਹਿ ਸਕਦੇ ਹੋ*।\n\nCOVIDSafe ਪੰਜੀਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਅਪਣਾ ਨਾਮ (ਜਾਂ ਨਕਲੀ ਨਾਮ), ਮੋਬਾਈਲ ਨੰਬਰ, ਉਮਰ ਸੀਮਾ ਅਤੇ ਪੋਸਟਕੋਡ ਭਰਨਾ ਪਵੇਗਾ।\n\nਜਦ ਤੁਸੀਂ ਰਜਿਸਟਰ ਕਰਦੇ ਹੋ ਤਾਂ COVIDSafe ਦੀ ਤੁਹਾਡੀ ਵਰਤੋਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਨੂੰ ਇਕੱਤਰ ਕੀਤਾ ਜਾਵੇਗਾ ਅਤੇ ਇਸ ਜਾਣਕਾਰੀ  ਨੂੰ ਇੱਕ ਬੇਹੱਦ ਸੁਰੱਖਿਅਤ ਸਰਵਰ \'ਤੇ ਸਟੋਰ ਕੀਤਾ ਜਾਵੇਗਾ।\n\nCOVIDSafe ਤੁਹਾਡੀ ਲੋਕੇਸ਼ਨ ਜਾਣਕਾਰੀ ਨੂੰ ਇਕੱਤਰ ਨਹੀਂ ਕਰੇਗਾ।\n\n COVIDSafe ਤੁਹਾਡੀ  ਡਿਵਾਈਸ \'ਤੇ, ਤੁਹਾਡੇ ਸੰਪਰਕ ਦੇ ਸਮੇਂ, ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਗੁੰਮਨਾਮ ਆਈਡੀ ਕੋਡ, ਬਲੂਟੁੱਥ® ਸਿਗਨਲ ਸ਼ਕਤੀ ਅਤੇ ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਫ਼ੋਨ ਮਾਡਲ ਨੋਟ ਕਰੇਗਾ।\n\nਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ ਜਿੰਨ੍ਹਾਂ ਨਾਲ ਤੁਸੀਂ ਸੰਪਰਕ ਵਿੱਚ ਆਉਂਦੇ ਹੋ, ਤੁਹਾਡੇ ਗੁੰਮਨਾਮ ਆਈਡੀ ਕੋਡ, ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਦੀ ਤਾਰੀਖ਼ ਅਤੇ ਸਮਾਂ, ਬਲੂਟੁੱਥ® ਸਿਗਨਲ ਸ਼ਕਤੀ ਅਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਮਾਡਲ ਨੂੰ ਉਹਨਾਂ ਦੀ ਡੀਵਾਈਸ \'ਤੇ ਨੋਟ ਕਰਨਗੇ।\n\nਜੇ ਕੋਈ ਹੋਰ ਵਰਤੋਂਕਾਰ ਕੋਵਿਡ-19   ਪਾਜ਼ੇਟਿਵ ਟੈਸਟ ਕਰਦਾ ਹੈ, ਤਾਂ ਉਹ ਆਪਣੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਨੂੰ ਅੱਪਲੋਡ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਕੋਈ  ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਲਈ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦਾ ਹੈ। \n\nਤੁਹਾਡੇ ਪੰਜੀਕਰਨ ਦੇ ਵਿਸਥਾਰਾਂ ਨੂੰ ਕੇਵਲ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਲਈ ਅਤੇ COVIDSafe ਦੇ ਉਚਿਤ ਅਤੇ ਕਨੂੰਨੀ ਕਾਰਜ-ਖੇਤਰ ਲਈ ਹੀ ਵਰਤਿਆ ਜਾਂ ਖੁਲਾਸਾ ਕੀਤਾ ਜਾਵੇਗਾ। \n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ *ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ* ਦੀ ਵੈੱਬਸਾਈਟ \'ਤੇ ਉਪਲਬਧ ਹੈ।\n\nਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਅਤੇ ਅਧਿਕਾਰਾਂ ਬਾਰੇ ਅਤੇ ਇਸ ਨਾਲ ਕਿਵੇਂ ਨਿਪਟਿਆ ਜਾਵੇਗਾ ਅਤੇ ਇਸਨੂੰ ਸਾਂਝਾ ਕਿਵੇਂ ਕੀਤਾ ਜਾਵੇਗਾ, ਇਸ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਾਂ ਲਈ COVIDSafe *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਦੇਖੋ।</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">ਪੰਜੀਕਰਨ ਅਤੇ ਪ੍ਰਾਈਵੇਸੀ</string>
@@ -247,6 +247,7 @@
   <string name="dialog_error_uploading_positive">ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
   <string name="dialog_uploading_message">ਤੁਹਾਡੀ COVIDSafe ਜਾਣਕਾਰੀ ਨੂੰ  ਇਸ ਵੇਲੇ ਅੱਪਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।\n\nਕਿਰਪਾ ਕਰਕੇ ਐਪ ਬੰਦ ਨਾ ਕਰੋ।</string>
   <string name="disabled">ਬੰਦ  ਹੈ (ਡਿਸੇਬਲੇਡ)</string>
+  <string name="dismiss">ਰੱਦ ਕਰਨਾ</string>
   <string name="done_success">ਕੀਤਾ</string>
   <string name="enabled">ਚਾਲੂ ਹੈ  (ਅਨੇਬਲਡ)</string>
   <string name="enter_number_button">ਪਿੰਨ ਲਓ</string>
@@ -267,6 +268,7 @@
   <string name="generic_error">ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
   <string name="generic_internet_error">ਕਿਰਪਾ ਕਰਕੇ ਅਪਣਾ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਚੈੱਕ ਕਰੋ</string>
   <string name="heading">ਸਿਰਲੇਖ</string>
+  <string name="hide">ਛੁਪਾਣਾ</string>
   <string name="home_app_permission_push_notification_prompt">COVIDSafe ਨੂੰ ਸੂਚਨਾਵਾਂ ਦੇਣ ਦਿਓ।</string>
   <string name="home_app_permission_status_subtitle">COVIDSafe ਸਹੀ ਸੈਟਿੰਗਾਂ ਤੋਂ ਬਿਨਾਂ ਕੰਮ ਨਹੀਂ ਕਰੇਗਾ।</string>
   <string name="home_app_permission_status_title">ਆਪਣੀਆਂ ਸੈਟਿੰਗਾਂ ਚੈੱਕ ਕਰੋ</string>
@@ -297,7 +299,7 @@
   <string name="home_set_complete_external_link_app_url">https://www.health.gov.au/resources/apps-and-tools/coronavirus-australia-app</string>
   <string name="home_set_complete_external_link_been_contacted_content">ਤੁਸੀਂ ਆਪਣੀ ਜਾਣਕਾਰੀ ਤਾਂ ਹੀ ਅੱਪਲੋਡ ਕਰ ਸਕਦੇ ਹੋ ਜੇਕਰ ਤੁਹਾਡਾ ਟੈਸਟ ਪਾਜ਼ੇਟਿਵ ਆਇਆ ਹੋਵੇ|</string>
   <string name="home_set_complete_external_link_been_contacted_title">ਕੀ ਕਿਸੇ ਸਿਹਤ ਅਧਿਕਾਰੀ ਨੇ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕੀਤਾ ਹੈ?</string>
-  <string name="home_set_complete_external_link_help_topics_content">ਤਕਨੀਕੀ ਸਮੱਸਿਆਵਾਂ ਨੂੰ ਹੱਲ ਕਰਨ ਅਤੇ ਠੀਕ ਕਰਨ ਦੇ ਤਰੀਕੇ ਬਾਰੇ ਮਾਰਗ ਦਰਸ਼ਨ।</string>
+  <string name="home_set_complete_external_link_help_topics_content">ਤਕਨੀਕੀ ਸਮੱਸਿਆਵਾਂ ਨੂੰ ਟ੍ਰਬਲਸ਼ੂਟ ਅਤੇ ਹੱਲ ਕਰਨ ਬਾਰੇ ਮਾਰਗ ਦਰਸ਼ਨ</string>
   <string name="home_set_complete_external_link_help_topics_title">ਸਹਾਇਤਾ ਵਿਸ਼ੇ</string>
   <string name="home_set_complete_external_link_news_content">ਤਾਜ਼ਾ ਕੋਰੋਨਾਵਾਇਰਸ ਖ਼ਬਰਾਂ  ਲਈ aus.gov.au ਵੱਲ ਜਾਓ।</string>
   <string name="home_set_complete_external_link_news_title">ਤਾਜ਼ਾ ਖ਼ਬਰਾਂ ਅਤੇ ਅੱਪਡੇਟ</string>
@@ -311,14 +313,14 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">ਹੋਰਨਾਂ ਨੂੰ ਸਹਾਇਤਾ ਲਈ ਬੁਲਾਓ। ਇਕੱਠੇ ਅਸੀਂ ਵਧੇਰੇ ਮਜ਼ਬੂਤ ਹਾਂ।</string>
   <string name="home_set_complete_external_link_share_title">COVIDSafe ਸਾਂਝਾ ਕਰੋ</string>
-  <string name="home_set_location_why">ਐਂਡਰਾਇਡ ਐਪ ਨੂੰ ਬਲੁਟੁੱਥ® ਲਈ ਲੋਕੇਸ਼ਨ ਆਗਿਆ ਚਾਲੂ ਹੋਣ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ. COVIDSafe ਲੋਕੇਸ਼ਨ ਡਾਟਾ ਨੂੰ ਸਟੋਰ ਜਾਂ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦਾ ਹੈ।</string>
+  <string name="home_set_location_why">Bluetooth® ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਗੂਗਲ ਨੂੰ *ਐਂਡਰਾਇਡ ਐਪਾਂ ਲਈ ਲੋਕੇਸ਼ਨ ਆਗਿਆ* ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। COVIDSafe ਲੋਕੇਸ਼ਨ ਡੇਟਾ ਸਟੋਰ ਜਾਂ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦਾ।</string>
   <string name="home_setup_help">ਸਹਾਇਤਾ</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe ਨੂੰ ਇਹਨਾਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੱਕ ਜਾਣ ਲਈ ਆਗਿਆ ਦੀ ਲੋੜ ਹੈ।</string>
   <string name="home_setup_incomplete_title">ਮਨਜ਼ੂਰੀਆਂ ਦੀ ਜਾਂਚ ਕਰੋ</string>
   <string name="home_version_number">ਵਰਜਨ ਨੰਬਰ:%s</string>
   <string name="how_it_works_button">ਅੱਗੇ</string>
   <string name="how_it_works_consent">ਜੇ ਸਿਹਤ ਟਰੇਸਿੰਗ ਦੀ ਲੋੜ ਪਈ ਤਾਂ ਤੁਹਾਡੀ ਸਹਿਮਤੀ  ਲਈ ਹਮੇਸ਼ਾ ਬੇਨਤੀ ਕੀਤੀ ਜਾਵੇਗੀ।</string>
-  <string name="how_it_works_content">ਬਲੂਟੁੱਥ ਸਿਗਨਲਾਂ ਦੀ ਵਰਤੋਂ ਇਹ ਦੱਸਦੀ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਕਿਸੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ ਦੇ ਨੇੜੇ ਹੁੰਦੇ ਹੋ।\n\nਤੁਹਾਡੇ ਅਤੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਵਿਚਕਾਰ ਨਜ਼ਦੀਕੀ ਸੰਪਰਕ ਦੀ ਹਰੇਕ ਇਕਾਈ ਨੂੰ ਨਜ਼ਦੀਕੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਲਈ ਨੋਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ। ਇਹ ਜਾਣਕਾਰੀ ਏਨਕ੍ਰਿਪਟਿਡ ਹੁੰਦੀ ਹੈ ਅਤੇ ਕੇਵਲ ਤੁਹਾਡੇ ਫ਼ੋਨ ਵਿੱਚ ਹੀ ਸਟੋਰ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।\n\nਜੇ ਤੁਸੀਂ COVIDSafe ਵਰਤੋਂਕਾਰ ਵਜੋਂ  ਕੋਵਿਡ-19  ਪਾਜ਼ੇਟਿਵ  ਟੈਸਟ ਕਰਦੇ ਹੋ, ਤਾਂ ਕੋਈ ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੇਗਾ। ਉਹ ਤੁਹਾਡੀ ਨਜ਼ਦੀਕੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਨੂੰ ਇੱਕ ਬੇਹੱਦ ਸੁਰੱਖਿਅਤ ਜਾਣਕਾਰੀ ਸਟੋਰੇਜ ਸਿਸਟਮ ਵਿੱਚ ਅੱਪਲੋਡ ਕਰਨ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰਨਗੇ।  \n\nਜੇ ਤੁਸੀਂ ਕਿਸੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ  ਜੋ ਪਾਜ਼ੇਟਿਵ ਟੈਸਟ ਹੋਇਆ ਸੀ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਆਏ ਤਾਂ ਭੀ ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹਨ|\n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ *ਸਹਾਇਤਾ ਵਿਸ਼ੇ* ਪੰਨਾ  ਦੇਖੋ।\n</string>
+  <string name="how_it_works_content">Bluetooth ਸਿਗਨਲਾਂ ਦੀ ਵਰਤੋਂ ਇਹ ਦੱਸਦੀ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਕਿਸੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ ਦੇ ਨੇੜੇ ਹੁੰਦੇ ਹੋ।\n\nਤੁਹਾਡੇ ਅਤੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਵਿਚਕਾਰ ਨਜ਼ਦੀਕੀ ਸੰਪਰਕ ਦੀ ਹਰੇਕ ਇਕਾਈ ਨੂੰ ਨਜ਼ਦੀਕੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਲਈ ਨੋਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ। ਇਹ ਜਾਣਕਾਰੀ ਏਨਕ੍ਰਿਪਟਿਡ ਹੁੰਦੀ ਹੈ ਅਤੇ ਕੇਵਲ ਤੁਹਾਡੇ ਫ਼ੋਨ ਵਿੱਚ ਹੀ ਸਟੋਰ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।\n\nਜੇ ਤੁਸੀਂ COVIDSafe ਵਰਤੋਂਕਾਰ ਵਜੋਂ  ਕੋਵਿਡ-19  ਪਾਜ਼ੇਟਿਵ  ਟੈਸਟ ਕਰਦੇ ਹੋ, ਤਾਂ ਕੋਈ ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੇਗਾ। ਉਹ ਤੁਹਾਡੀ ਨਜ਼ਦੀਕੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਨੂੰ ਇੱਕ ਬੇਹੱਦ ਸੁਰੱਖਿਅਤ ਜਾਣਕਾਰੀ ਸਟੋਰੇਜ ਸਿਸਟਮ ਵਿੱਚ ਅੱਪਲੋਡ ਕਰਨ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰਨਗੇ।  \n\nਜੇ ਤੁਸੀਂ ਕਿਸੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ  ਜੋ ਪਾਜ਼ੇਟਿਵ ਟੈਸਟ ਹੋਇਆ ਸੀ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਆਏ ਤਾਂ ਭੀ ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹਨ|\n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ *ਸਹਾਇਤਾ ਵਿਸ਼ੇ* ਪੰਨਾ  ਦੇਖੋ।</string>
   <!-- OnBoarding How it works -->
   <string name="how_it_works_headline">COVIDSafe ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ</string>
   <string name="how_it_works_headline_content_description">ਸਿਰਲੇਖ, COVIDSafe ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ</string>
@@ -331,7 +333,7 @@
   <string name="internet_screen_content_2">ਜਦੋਂ ਕੋਈ ਅੱਪਡੇਟ ਦਾ ਨਵਾਂ ਵਰਜਨ  ਉਪਲਬਧ ਹੋਵੇ|</string>
   <string name="internet_screen_heading">COVIDSafe ਦੇ ਪ੍ਰਦਰਸ਼ਨ ਵਿੱਚ ਸੁਧਾਰ ਕਰਨ ਲਈ ਇੰਟਰਨੈੱਟ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਬਾਰੇ</string>
   <string name="intro_button">ਮੈਂ ਸਹਾਇਤਾ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ</string>
-  <string name="intro_content">COVIDSafe ਨੂੰ ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੁਆਰਾ ਵਿਕਸਤ ਕੀਤਾ ਗਿਆ ਹੈ ਤਾਂ ਜੋ ਸਮਾਜ ਨੂੰ ਕੋਰੋਨਾਵਾਇਰਸ ਦੇ ਫੈਲਣ ਤੋਂ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਵਿੱਚ ਸਹਾਇਤਾ ਮਿਲ ਸਕੇ।\n\nCOVIDSafe ਤੁਹਾਡੇ ਐਪ ਦੇ ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਸੰਪਰਕ ਸੁਰੱਖਿਅਤ ਤਰੀਕੇ ਨਾਲ ਨੋਟ ਕਰੇਗਾ। ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਅਜਿਹੇ ਵਿਅਕਤੀ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਆਏ ਹੋ ਜਿਸਦਾ ਵਾਇਰਸ ਟੈਸਟ ਪਾਜ਼ੇਟਿਵ ਆਇਆ ਹੈ ਤਾਂ ਇਹ ਰਾਜ ਅਤੇ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀਆਂ ਨੂੰ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਦੇ ਯੋਗ ਬਣਾਵੇਗਾ|\n\nਇਕੱਠੇ ਅਸੀਂ ਫੈਲਣ ਨੂੰ ਰੋਕਣ ਅਤੇ ਸਿਹਤਮੰਦ ਬਣੇ ਰਹਿਣ ਵਿੱਚ ਸਹਾਈ ਹੋ ਸਕਦੇ ਹਾਂ।\n\n\n\n\n\n\n</string>
+  <string name="intro_content">COVIDSafe ਨੂੰ ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੁਆਰਾ ਵਿਕਸਤ ਕੀਤਾ ਗਿਆ ਹੈ ਤਾਂ ਜੋ ਸਮਾਜ ਨੂੰ ਕੋਰੋਨਾਵਾਇਰਸ ਦੇ ਫੈਲਣ ਤੋਂ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਵਿੱਚ ਸਹਾਇਤਾ ਮਿਲ ਸਕੇ।\n\nCOVIDSafe ਤੁਹਾਡੇ ਐਪ ਦੇ ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਸੰਪਰਕ ਸੁਰੱਖਿਅਤ ਤਰੀਕੇ ਨਾਲ ਨੋਟ ਕਰੇਗਾ। ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਅਜਿਹੇ ਵਿਅਕਤੀ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਆਏ ਹੋ ਜਿਸਦਾ ਵਾਇਰਸ ਟੈਸਟ ਪਾਜ਼ੇਟਿਵ ਆਇਆ ਹੈ ਤਾਂ ਇਹ ਰਾਜ ਅਤੇ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀਆਂ ਨੂੰ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਦੇ ਯੋਗ ਬਣਾਵੇਗਾ|\n\nਇਕੱਠੇ ਅਸੀਂ ਫੈਲਣ ਨੂੰ ਰੋਕਣ ਅਤੇ ਸਿਹਤਮੰਦ ਬਣੇ ਰਹਿਣ ਵਿੱਚ ਸਹਾਈ ਹੋ ਸਕਦੇ ਹਾਂ।</string>
   <!-- OnBoarding Intro -->
   <string name="intro_headline">ਇਕੱਠੇ ਅਸੀਂ ਕੋਵਿਡ-19 ਦੇ ਫੈਲਾਅ ਨੂੰ ਰੋਕ ਸਕਦੇ ਹਾਂ।</string>
   <string name="intro_headline_content_description">ਸਿਰਲੇਖ, ਇਕੱਠੇ ਅਸੀਂ ਕੋਵਿਡ-19 ਦੇ ਫੈਲਾਅ ਨੂੰ ਰੋਕ ਸਕਦੇ ਹਾਂ।</string>
@@ -343,6 +345,8 @@
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">%1s ਵਿੱਚ ਮੋਬਾਈਲ ਨੰਬਰਾਂ ਦੇ %2s ਅੰਕ ਹੁੰਦੇ ਹਨ।</string>
   <string name="invalid_post_code">ਗਲਤ ਪੋਸਟਕੋਡ</string>
   <string name="IssueFooter">ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਾਂ ਲਈ ਅਸੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹਾਂ| ਤੁਹਾਡੀ ਈਮੇਲ ਦੀ ਵਰਤੋਂ ਕਿਸੇ ਹੋਰ ਉਦੇਸ਼ ਲਈ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ|</string>
+  <string name="jwt_description">ਤੁਹਾਡੇ ਪੰਜੀਕਰਨ (ਰਜ਼ਿਸਟ੍ਰੇਸ਼ਨ) ਦੇ ਵਿਸਥਾਰਾਂ ਵਿੱਚ ਕੋਈ ਸਮੱਸਿਆ ਹੈ।</string>
+  <string name="jwt_heading">ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਰਜਿਸਟਰ ਕਰੋ</string>
   <string name="loading_numbers">ਤਾਜ਼ਾ ਅੰਕੜੇ ਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe ਅੱਪਡੇਟ ਚੱਲ ਰਿਹਾ ਹੈ। \n\nਕਿਰਪਾ ਕਰਕੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਹਾਡਾ ਫ਼ੋਨ ਤਦ ਤੱਕ ਬੰਦ ਨਹੀਂ ਹੋਣਾ ਚਾਹੀਦਾ ਜਦ ਤੱਕ ਅੱਪਡੇਟ ਪੂਰਾ ਨਹੀਂ ਹੋ ਜਾਂਦਾ।</string>
@@ -360,11 +364,11 @@
   <string name="notification_battery">COVIDSafe ਦੇ ਕੰਮ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਬੈਟਰੀ ਅਨੁਕੂਲਤਾ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਬੰਦ ਕਰੋ|</string>
   <string name="notification_bluetooth">COVIDSafe ਦੇ ਕੰਮ ਕਰਨ ਲਈ ਬਲੂਟੁੱਥ ਚਾਲੂ ਕਰੋ।</string>
   <string name="notification_bt_and_battery">COVIDSafe  ਦੇ ਕੰਮ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਬਲੂਟੁਥ ਚਾਲੂ ਕਰੋ ਅਤੇ ਬੈਟਰੀ ਅਨੁਕੂਲਤਾ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਬੰਦ ਕਰੋ।</string>
-  <string name="notification_internet_content">COVIDSafe  ਦੇ ਕੰਮ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇਸਦਾ ਐਪ ਖੋਲੋ ਅਤੇ ਆਪਣਾ ਇੰਟਰਨੇਟ ਕੁਨੈਕਸ਼ਨ ਚੈਕ ਕਰੋ।</string>
-  <string name="notification_location">ਬਲੂਟੁੱਥ ਨੂੰ ਕੰਮ ਕਰਨ ਲਈ ਲੋਕੇਸ਼ਨ ਇਜ਼ਾਜ਼ਤ ਦਿਓ।</string>
+  <string name="notification_internet_content">ਐਪ ਖੋਲੋ ਅਤੇ ਆਪਣਾ ਇੰਟਰਨੇਟ ਕੁਨੈਕਸ਼ਨ ਚੈਕ ਕਰੋ।</string>
+  <string name="notification_location">Bluetooth® ਨੂੰ ਕੰਮ ਕਰਨ ਲਈ ਲੋਕੇਸ਼ਨ ਆਗਿਆ ਦਿਓ।</string>
   <string name="notification_not_active_body">ਘਰੋਂ ਬਾਹਰ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ ਜਾਂ ਜਦੋਂ ਤੁਸੀਂ ਜਨਤਕ ਸਥਾਨਾਂ ਤੇ ਹੋ ਤਾਂ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ COVIDSafe ਐਕਟਿਵ ਹੈ|</string>
   <string name="notification_not_active_title">COVIDSafe ਐਕਟਿਵ ਨਹੀਂ ਹੈ|</string>
-  <string name="notification_settings">ਆਪਣੀਆਂ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਐਪ ਨੂੰ ਖੋਲ੍ਹੋ।</string>
+  <string name="notification_settings">ਆਪਣੀਆਂ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਐਪ ਖੋਲ੍ਹੋ।</string>
   <string name="notification_update_content">ਤਾਜ਼ਾ ਸੁਧਾਰਾਂ ਲਈ ਆਪਣੀ ਐਪ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ।</string>
   <string name="notification_update_heading">COVIDSafe ਅੱਪਡੇਟ ਉਪਲਬਧ ਹੈ|</string>
   <!-- Figma page iOS Screens (05/06) -->
@@ -374,16 +378,16 @@
   <!-- Figma page iOS Screens (05/06) -->
   <string name="NotificationsEnabledBlurb">ਜੇ COVIDSafe ਐਕਟਿਵ ਨਹੀਂ  ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਮਿਲੇਗੀ| \nਸੂਚਨਾ ਸੈਟਿੰਗ ਬਦਲੋ</string>
   <string name="numbers_error">ਅੱਪਡੇਟ ਕੀਤੇ ਨੰਬਰਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ।</string>
-  <string name="numbers_no_internet">ਅੱਪਡੇਟ ਅੰਕੜੇ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਇੰਟਰਨੈੱਟ ਨਾਲ ਕਨੈਕਟ ਕਰੋ|</string>
-  <string name="numbers_refresh">ਹੁਣ ਰਿਫਰੈਸ਼ ਕਰੋ|</string>
+  <string name="numbers_no_internet">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ  ਕਿ ਤੁਹਾਨੂੰ ਅੱਪਡੇਟਿਡ ਨੰਬਰ ਪ੍ਰਾਪਤ ਹੋਣ ਇੰਟਰਨੈੱਟ ਨਾਲ ਕਨੈਕਟ ਕਰੋ|</string>
+  <string name="numbers_refresh">ਹੁਣ ਰਿਫਰੈਸ਼ ਕਰੋ</string>
   <string name="options_for_australia">ਆਸਟਰੇਲੀਆ ਲਈ ਵਿਕਲਪ</string>
   <string name="permission_button">ਅੱਗੇ ਵਧੋ</string>
-  <string name="permission_content">ਕੰਮ ਕਰਣ ਲਈ COVIDSafe ਨੂੰ ਬਲੂਟੁੱਥ®  ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਸੂਚਨਾਵਾਂ ਅਨੇਬਲਡ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ\n\n\'ਅੱਗੇ ਵਧੋ\' ਚੁਣੋ:\n\n1. ਬਲੂਟੁੱਥ ਅਨੇਬਲ ਕਰੋ®\n\n2. ਲੋਕੇਸ਼ਨ ਇਜਾਜ਼ਤ ਦਿਓ\n\n3. ਬੈਟਰੀ ਅਨੁਕੂਲਣ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਬੰਦ ਕਰੋ\n\nਕੰਮ ਕਰਨ ਲਈ ਐਂਡਰਾਇਡ ਨੂੰ ਬਲੂਟੁੱਥ® ਲਈ ਲੋਕੇਸ਼ਨ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।\n\nCOVIDSafe ਪੇਅਰਿੰਗ ਦੀਆਂ ਬੇਨਤੀਆਂ ਨਹੀਂ ਭੇਜਦੀ।</string>
+  <string name="permission_content">COVIDSafe ਨੂੰ ਕੰਮ ਕਰਣ ਲਈ Bluetooth® ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਸੂਚਨਾਵਾਂ  ਇਨੇਬਲਡ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ\n\n\'ਅੱਗੇ ਵਧੋ\' ਲਈ ਚੁਣੋ:\n\n1. Bluetooth® ਇਨੇਬਲ ਕਰੋ\n\n2. ਲੋਕੇਸ਼ਨ ਆਗਿਆ ਦਿਓ\n\n3. ਬੈਟਰੀ ਅਨੁਕੂਲਣ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਬੰਦ ਕਰੋ\n\n Bluetooth® ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਗੂਗਲ ਨੂੰ ਐਂਡਰਾਇਡ ਐਪਾਂ ਲਈ ਲੋਕੇਸ਼ਨ ਆਗਿਆ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। COVIDSafe ਲੋਕੇਸ਼ਨ ਡੇਟਾ ਸਟੋਰ ਜਾਂ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦਾ।\n\nCOVIDSafe ਪੇਅਰਿੰਗ ਦੀਆਂ ਬੇਨਤੀਆਂ ਨਹੀਂ ਭੇਜਦੀ।</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">ਐਪ ਸੈਟਿੰਗਾਂ</string>
   <string name="permission_location_rationale">COVIDSafe ਲਈ ਬਲੂਟੁੱਥ® ਫੰਕਸ਼ਨਾਂ ਨੂੰ ਅਨੇਬਲ ਕਰਣ ਲਈ ਐਂਡਰਾਇਡ ਨੂੰ ਲੋਕੇਸ਼ਨ ਐਕਸੈਸ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਇਸ ਤੋਂ ਬਿਨਾਂ COVIDSafe ਸਹੀ ਤਰੀਕੇ ਨਾਲ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦਾ|</string>
   <string name="permission_success_button">ਕੀਤਾ</string>
-  <string name="permission_success_content">1. ਜਦੋਂ ਤੁਸੀਂ ਘਰੋਂ ਬਾਹਰ ਜਾਂਦੇ ਹੋ, ਤਾਂ ਫ਼ੋਨ ਅਪਣੇ ਨਾਲ ਰੱਖੋ ਅਤੇ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ COVIDSafe ਐਕਟਿਵ ਹੈ।\n\n2. ਬਲੂਟੁੱਥ® ਔਨ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ।\n\n3. ਬੈਟਰੀ ਅਨੁਕੂਲਨ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਔੱਫ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।\n\n4. COVIDSafe ਪੇਅਰਿੰਗ ਦੀ ਬੇਨਤੀ ਨਹੀਂ ਭੇਜਦਾ। *ਹੋਰ ਸਿੱਖੋ*।\n\n5. *ਬਲੂਟੁੱਥ® ਅੇਕਸੇਸ ਕਰਨ ਲਈ \'ਐਂਡਰਾਇਡ ਲਈ ਲੋਕੇਸ਼ਨ ਪਰਮਿਸ਼ਨ\' ਜ਼ਰੂਰੀ ਹੈ। COVIDSafe ਲੋਕੇਸ਼ਨ ਡੇਟਾ ਨੂੰ ਸਟੋਰ ਜਾਂ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦਾ।</string>
+  <string name="permission_success_content">1. ਜਦੋਂ ਤੁਸੀਂ ਘਰੋਂ ਬਾਹਰ ਜਾਂਦੇ ਹੋ, ਤਾਂ ਫ਼ੋਨ ਅਪਣੇ ਨਾਲ ਰੱਖੋ ਅਤੇ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ COVIDSafe ਐਕਟਿਵ ਹੈ।\n\n2. Bluetooth® ਔਨ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ।\n\n3. ਬੈਟਰੀ ਅਨੁਕੂਲਨ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਔੱਫ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।\n\n4. COVIDSafe ਪੇਅਰਿੰਗ ਦੀ ਬੇਨਤੀ ਨਹੀਂ ਭੇਜਦਾ। *ਹੋਰ ਸਿੱਖੋ*।\n\n5. Bluetooth® ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਗੂਗਲ ਨੂੰ *ਐਂਡਰਾਇਡ ਐਪਾਂ ਲਈ ਲੋਕੇਸ਼ਨ ਆਗਿਆ* ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। COVIDSafe ਲੋਕੇਸ਼ਨ ਡੇਟਾ ਸਟੋਰ ਜਾਂ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦਾ।</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">ਤੁਸੀਂ ਸਫਲਤਾ ਪੂਰਵਕ ਰਜਿਸਟਰ ਕੀਤਾ ਹੈ</string>
   <string name="permission_success_warning">COVIDSafe ਲਈ ਪੁਸ਼ ਸੂਚਨਾਵਾਂ ਨੂੰ ਔਨ ਰੱਖੋ ਤਾਂ ਜੋ ਜੇ ਐਪ ਸਹੀ ਕੰਮ ਨਹੀਂ ਕਰ ਰਹੀ ਤਾਂ ਅਸੀਂ ਤੁਹਾਨੂੰ ਤੁਰੰਤ ਸੂਚਿਤ ਕਰ ਸਕੀਏ|</string>
@@ -411,7 +415,8 @@
   <string name="queensland">ਕੁਈਨਜ਼ਲੈਂਡ</string>
   <string name="ReceivePinIssue">ਤੁਹਾਡੇ ਪਿੰਨ ਮਿਲਣ ਵਿੱਚ ਮੁੱਦੇ?</string>
   <string name="recovered">ਠੀਕ ਹੋਏ ਕੁੱਲ ਕੇਸ</string>
-  <string name="registration_consent_content">ਮੈਂ ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ ਦੇ ਸਕੱਤਰ ਦੁਆਰਾ ਕੀਤੇ ਕਨੂੰਨੀ ਨਿਰਣੇ ਦੇ ਤਹਿਤ, ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸ਼ਕ ਵਜੋਂ ਡਿਜ਼ਿਟਲ ਤਬਦੀਲੀ ਏਜੰਸੀ ਨੂੰ ਡੇਟਾ ਇਕੱਤਰ ਕਰਣ ਬਾਰੇ ਸਹਿਮਤੀ ਦਿੰਦਾ/ਦਿੰਦੀ ਹਾਂ:</string>
+  <string name="registration_consent_content">ਮੈਂ ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ ਦੇ ਸਕੱਤਰ ਦੁਆਰਾ ਕੀਤੇ ਕਨੂੰਨੀ ਨਿਰਣੇ ਦੇ ਤਹਿਤ, ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸਕ ਵਜੋਂ, ਡਿਜ਼ਿਟਲ ਤਬਦੀਲੀ ਏਜੰਸੀ ਨੂੰ ਸਹਿਮਤੀ ਦਿੰਦਾ/ਦਿੰਦੀ ਹਾਂ|</string>
+  <string name="registration_consent_diagnostic">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਜਾਣਕਾਰੀ ਕਿ COVIDSafe ਮੇਰੀ ਡੀਵਾਈਸ \'ਤੇ  ਠੀਕ ਕੰਮ ਕਰ ਰਹੀ ਹੈ।</string>
   <string name="registration_consent_first_paragraph">ਮੇਰੀ ਪੰਜੀਕਰਨ ਜਾਣਕਾਰੀ।</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">ਰਜਿਸਟਰੇਸ਼ਨ ਸਹਿਮਤੀ</string>
@@ -428,14 +433,15 @@
   <string name="service_ok_title">COVIDSafe ਐਕਟਿਵ ਹੈ|</string>
   <string name="settings">ਸੈਟਿੰਗਾਂ</string>
   <string name="share_this_app_content">ਕੋਵਿਡ-19 ਦੇ ਫੈਲਾਅ ਨੂੰ ਰੋਕਣ ਲਈ ਮੇਰੇ ਨਾਲ ਜੁੜੋ!  COVIDSafe ਨੂੰ ਡਾਊਨਲੋਡ ਕਰੋ, ਜੋ ਕਿ ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੀ ਐਪ ਹੈ। #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+  <string name="show">ਦਿਖਾਓ</string>
   <string name="south_australia">ਦੱਖਣੀ ਆਸਟਰੇਲੀਆ</string>
   <string name="stepCounter" formatted="false">ਸਟੈਪ %d ਦਾ%d</string>
   <string name="support">ਸਹਾਇਤਾ</string>
-  <string name="support_content">ਜੋ ਮੁੱਦੇ ਸਹਾਇਤਾ ਵਿਸ਼ੇ ਦੁਆਰਾ ਕਵਰ ਨਹੀਂ ਹੁੰਦੇ ਉਨ੍ਹਾਂ ਵਾਸਤੇ ਮਦਦ</string>
+  <string name="support_content">ਜੋ ਮੁੱਦੇ ਸਹਾਇਤਾ ਵਿਸ਼ੇ ਦੁਆਰਾ ਕਵਰ ਨਹੀਂ ਹੁੰਦੇ ਉਨ੍ਹਾਂ ਲਈ ਸਹਾਇਤਾ</string>
   <string name="tasmania">ਤਸਮਾਨੀਆ</string>
   <string name="title_help">ਸਹਾਇਤਾ</string>
   <string name="total_confirmed_cases">ਕੁੱਲ ਪੁਸ਼ਟੀ ਕੀਤੇ ਕੇਸ</string>
-  <string name="total_per_state">ਰਾਜ ਅਤੇ ਖੇਤਰ ਮੁਤਾਬਕ ਕੁੱਲ ਪੁਸ਼ਟੀ ਕੀਤੇ ਕੇਸ</string>
+  <string name="total_per_state">ਪ੍ਰਾਂਤ ਅਤੇ ਹਲਕੇ ਅਨੁਸਾਰ ਕੁੱਲ ਪੁਸ਼ਟੀ ਕੀਤੇ ਕੇਸ</string>
   <string name="under_sixteen_content">ਮੈਂ ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ ਦੇ ਸਕੱਤਰ ਦੁਆਰਾ ਕੀਤੇ ਕਨੂੰਨੀ ਨਿਰਣੇ ਦੇ ਤਹਿਤ, ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸ਼ਕ ਵਜੋਂ ਡਿਜ਼ਿਟਲ ਤਬਦੀਲੀ ਏਜੰਸੀ ਨੂੰ ਮੇਰੇ ਮਾਪੇ ਜਾਂ ਸਰਪ੍ਰਸਤ ਦੀਆਂ ਸਹਿਮਤੀਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦਾ/ਕਰਦੀ ਹਾਂ:</string>
   <string name="under_sixteen_first_paragraph">ਮੇਰੀ ਪੰਜੀਕਰਨ ਜਾਣਕਾਰੀ।</string>
   <!-- OnBoarding Under Sixteen -->
@@ -450,6 +456,7 @@
   <string name="update_available_message_android">ਅਸੀਂ COVIDSafe ਵਿੱਚ ਸੁਧਾਰ ਕਰਦੇ ਆ ਰਹੇ ਹਾਂ। ਗੂਗਲ ਪਲੇ ਸਟੋਰ ਰਾਹੀਂ ਅੱਪਡੇਟ ਕਰੋ।</string>
   <string name="update_available_play_store_btn">ਗੂਗਲ ਪਲੇ ਸਟੋਰ \'ਤੇ ਜਾਓ</string>
   <string name="update_available_title">ਅੱਪਡੇਟ ਉਪਲਬਧ ਹੈ|</string>
+  <string name="update_screen_location">Bluetooth® ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਗੂਗਲ ਨੂੰ *ਐਂਡਰਾਇਡ ਐਪਾਂ ਲਈ ਲੋਕੇਸ਼ਨ ਆਗਿਆ* ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। COVIDSafe ਲੋਕੇਸ਼ਨ ਡੇਟਾ ਸਟੋਰ ਜਾਂ ਵਰਤੋਂ ਨਹੀਂ ਕਰਦਾ।</string>
   <string name="upload_answer_no">ਨਹੀਂ</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">ਹਾਂ</string>
@@ -468,6 +475,7 @@
   <string name="upload_step_verify_pin_header_content_description">ਸਿਰਲੇਖ, ਆਪਣੀ ਜਾਣਕਾਰੀ ਅੱਪਲੋਡ ਕਰੋ</string>
   <string name="upload_step_verify_pin_sub_header">ਕੋਈ ਰਾਜ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਲਿਖਤੀ ਸੰਦੇਸ਼ ਰਾਹੀਂ ਤੁਹਾਡੀ ਡੀਵਾਈਸ \'ਤੇ ਪਿੰਨ ਭੇਜੇਗਾ। ਆਪਣੀ ਜਾਣਕਾਰੀ ਨੂੰ ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਹੇਠਾਂ ਭਰੋ।</string>
   <string name="us_consent_button">ਮੈਂ ਸਹਿਮਤ ਹਾਂ</string>
+  <string name="us_registration_consent_diagnostic">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਜਾਣਕਾਰੀ ਕਿ COVIDSafe ਮੇਰੀ ਡੀਵਾਈਸ \'ਤੇ  ਠੀਕ ਕੰਮ ਕਰ ਰਹੀ ਹੈ।</string>
   <string name="victoria">ਵਿਕਟੋਰੀਆ</string>
   <string name="western_australia">ਪੱਛਮੀ ਆਸਟਰੇਲੀਆ</string>
   <string name="wrong_ping_number">ਗਲਤ ਪਿੰਨ ਭਰਿਆ</string>

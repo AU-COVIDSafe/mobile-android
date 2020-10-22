@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/keyline_4"
-            android:text="@string/data_privacy_content"
+            android:text="@string/data_privacy_content_android"
             android:textAlignment="viewStart"
             android:textAppearance="?textAppearanceBody1"
             android:textColorLink="@color/hyperlink_enabled"

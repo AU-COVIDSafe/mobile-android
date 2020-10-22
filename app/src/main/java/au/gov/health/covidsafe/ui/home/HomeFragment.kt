@@ -3,7 +3,10 @@ package au.gov.health.covidsafe.ui.home
 import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
-import android.content.*
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
@@ -13,12 +16,15 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import au.gov.health.covidsafe.*
+import au.gov.health.covidsafe.BuildConfig
+import au.gov.health.covidsafe.HomeActivity
+import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.databinding.FragmentHomeBinding
 import au.gov.health.covidsafe.extensions.*
@@ -28,21 +34,26 @@ import au.gov.health.covidsafe.notifications.NotificationBuilder
 import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.base.BaseFragment
+import au.gov.health.covidsafe.utils.AnimationUtils.slideAnimation
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
-import kotlinx.android.synthetic.main.fragment_home_case_statistics.*
+import au.gov.health.covidsafe.utils.SlideDirection
+import au.gov.health.covidsafe.utils.SlideType
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home_case_statistics.*
 import kotlinx.android.synthetic.main.fragment_home_external_links.*
 import kotlinx.android.synthetic.main.fragment_home_header.*
 import kotlinx.android.synthetic.main.view_covid_share_tile.*
 import kotlinx.android.synthetic.main.view_help_topics_tile.*
 import kotlinx.android.synthetic.main.view_home_setup_complete.*
 import kotlinx.android.synthetic.main.view_home_setup_incomplete.*
+import kotlinx.android.synthetic.main.view_national_case_statistics.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 private const val TAG = "HomeFragment"
 
@@ -59,6 +70,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private var checkIsInternetConnected = false
     private var isAppWithLatestVersion = false
+    lateinit var staticsLayout: ConstraintLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +88,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        staticsLayout = national_case_layout
+        initialisePrivacyPolicyMessageAfterUpdate()
         initializeSettingsNavigation()
         setAppVersionNumber()
         initializeDebugTestActivity()
@@ -116,6 +130,26 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
             isAppUpdateAvailableLiveData.observe(this@HomeFragment, latestAppAvailable)
             isWindowFocusChangeLiveData.observe(this@HomeFragment, refreshUiObserver)
         }
+
+        homeFragmentViewModel.turnCaseNumber.observe(this, Observer { turnOn ->
+            showAndHideCaseNumber(turnOn)
+        })
+
+        homeFragmentViewModel.caseStatisticsLiveData.observe(this, Observer { caseNumber ->
+            if (caseNumber == null) {
+                national_case_layout.visibility = GONE
+            }
+        })
+
+        homeFragmentViewModel.collectionMessageVisible.observe(this, Observer { visible ->
+            visible?.let {
+                if (visible) {
+                    enableParentViewWhenNotificationIsShowing(false)
+                } else {
+                    enableParentViewWhenNotificationIsShowing(true)
+                }
+            }
+        })
     }
 
     private val latestAppAvailable = Observer<Boolean> {
@@ -154,6 +188,15 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         initializeBluetoothPairingInfo()
     }
 
+    private fun initialisePrivacyPolicyMessageAfterUpdate() {
+        homeFragmentViewModel.getCollectionMessage()
+        txt_collection_message.text = LinkBuilder.getCollectionMassageLearnMore(requireContext())
+        txt_collection_message.movementMethod = LinkMovementMethod.getInstance()
+
+        txt_location_permission.text = LinkBuilder.getLocationPermission(requireContext())
+        txt_location_permission.movementMethod = LinkMovementMethod.getInstance()
+    }
+
     private fun initializeSettingsNavigation() {
         home_header_settings.setOnClickListener {
             navigateToSettingsFragment()
@@ -172,6 +215,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         bluetooth_card_view.setOnClickListener { requestBlueToothPermissionThenNextPermission() }
         location_card_view.setOnClickListener { askForLocationPermission() }
         battery_card_view.setOnClickListener { excludeFromBatteryOptimization() }
+        txt_proceed.setOnClickListener {
+            homeFragmentViewModel.collectionMessageVisible.value = false
+            askForLocationPermission()
+        }
     }
 
     private fun initializeUploadTestDataNavigation() {
@@ -454,7 +501,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-        if (requestCode == LOCATION && EasyPermissions.somePermissionPermanentlyDenied(this, listOf(Manifest.permission.ACCESS_COARSE_LOCATION))) {
+        if (requestCode == LOCATION && EasyPermissions.somePermissionPermanentlyDenied(this, listOf(Manifest.permission.ACCESS_FINE_LOCATION))) {
             AppSettingsDialog.Builder(this).build().show()
         }
     }
@@ -478,6 +525,23 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         activity?.runOnUiThread {
             context?.let {
                 home_header_setup_complete_header_line_1.text = it.getString(getCovidActiveStatusMessage(it.allPermissionsEnabled()))
+            }
+        }
+    }
+
+    private fun showAndHideCaseNumber(turnOn: Boolean) {
+        //When we open the app, should show the previous setting (hide/show) and doesn't need animation
+        if (homeFragmentViewModel.getTurningCaseAfterOpenPage()) {
+            if (turnOn) {
+                national_case_layout.visibility = VISIBLE
+            } else {
+                national_case_layout.visibility = GONE
+            }
+        } else {
+            if (turnOn) {
+                national_case_layout.slideAnimation(SlideDirection.DOWN, SlideType.SHOW)
+            } else {
+                national_case_layout.slideAnimation(SlideDirection.UP, SlideType.HIDE)
             }
         }
     }
@@ -509,5 +573,13 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                 }
             }
         }
+    }
+
+    private fun enableParentViewWhenNotificationIsShowing(enableParent: Boolean) {
+        txt_hide_number.isEnabled = enableParent
+        txt_show_number.isEnabled = enableParent
+        bluetooth_card_view.isEnabled = enableParent
+        location_card_view.isEnabled = enableParent
+        battery_card_view.isEnabled = enableParent
     }
 }

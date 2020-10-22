@@ -35,6 +35,8 @@ object Preference {
     private const val AGE = "AGE"
     private const val CASE_STATISTIC = "CASESTATISTIC"
     private const val IS_DEVICE_NAME_CHANGE_PROMPT_DISPLAYED = "IS_DEVICE_NAME_CHANGE_DISPLAYED"
+    private const val BUILD_NUMBER_FOR_POP_UP_NOTIFICATION = "BUILD_NUMBER_FOR_POP_UP_NOTIFICATION"
+    private const val TURN_CASE_NUMBER = "TURN_CASE_NUMBER"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -287,4 +289,24 @@ object Preference {
                 .getString(CASE_STATISTIC, null)
     }
 
+    fun putBuildNumber(context: Context, buildNumber: Int) {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putInt(BUILD_NUMBER_FOR_POP_UP_NOTIFICATION, buildNumber).apply()
+    }
+
+    fun getBuildNumber(context: Context): Int {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                ?.getInt(BUILD_NUMBER_FOR_POP_UP_NOTIFICATION, 0)
+                ?: 0
+    }
+
+    fun setTurnCaseNumber(context: Context, turnOff: Boolean): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putBoolean(TURN_CASE_NUMBER, turnOff).commit()
+    }
+
+    fun getTurnCaseNumber(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+            .getBoolean(TURN_CASE_NUMBER, true)
+    }
 }

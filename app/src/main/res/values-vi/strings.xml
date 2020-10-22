@@ -19,7 +19,8 @@
   <string name="change_device_name_secondary_action">Bỏ qua và giữ nguyên</string>
   <string name="change_language">Thay đổi ngôn ngữ</string>
   <string name="change_language_content">Đọc hướng dẫn về cách sử dụng COVIDSafe bằng ngôn ngữ khác.</string>
-  <string name="CodeHasExpired">Mã của bạn đã hết hạn.</string>
+  <string name="CodeHasExpired">Mã PIN của bạn đã hết hạn.</string>
+  <string name="collection_message">COVIDSafe hiện đang thu thập thông tin chẩn đoán để giúp bạn khắc phục sự cố với Ứng dụng của mình. *Tìm hiểu thêm *</string>
   <string name="consent_button">Tôi đồng ý</string>
   <!-- Shared Consent Actions -->
   <string name="consent_call_for_action">Chọn \'Tôi đồng ý\' để xác nhận đồng ý.</string>
@@ -236,7 +237,6 @@
   <string name="country_region_name_zm">Zambia</string>
   <string name="country_region_name_zw">Zimbabwe</string>
   <string name="data_privacy_button">Tiếp theo</string>
-  <string name="data_privacy_content">Điều quan trọng là bạn phải đọc *chính sách bảo mật* COVIDSafe trước khi đăng ký COVIDSafe. \n\nNếu bạn dưới 16 tuổi, cha mẹ/người giám hộ của bạn cũng phải đọc *chính sách bảo mật *. \n\nSử dụng COVIDSafe là hoàn toàn tự nguyện. Bạn có thể cài đặt hoặc xóa ứng dụng bất cứ lúc nào. Nếu bạn xóa COVIDSafe, *bạn cũng có thể yêu cầu xóa thông tin của mình* khỏi máy chủ bảo mật. \n\nĐể đăng ký COVIDSafe, bạn sẽ cần nhập tên (hoặc biệt danh), số điện thoại di động, độ tuổi và mã bưu điện. \n\nThông tin bạn gửi khi đăng ký và thông tin về việc sử dụng COVIDSafe của bạn sẽ được thu thập và lưu trữ trên một máy chủ có độ an toàn cao. \n\nCOVIDSafe sẽ không thu thập thông tin vị trí của bạn. \n\nCOVIDSafe sẽ ghi nhớ thời gian tiếp xúc, mã ID ẩn danh của những người dùng COVIDSafe khác mà bạn tiếp xúc, cường độ tín hiệu Bluetooth® và kiểu điện thoại của người dùng khác trên thiết bị của bạn. \n\nNhững người dùng COVIDSafe khác mà bạn tiếp xúc cũng sẽ ghi nhớ mã ID ẩn danh của bạn, thời gian tiếp xúc, cường độ tín hiệu Bluetooth® và kiểu điện thoại của bạn, trên thiết bị của họ.\n\nNếu người dùng khác xét nghiệm dương tính với COVID-19, họ có thể đăng tải thông tin tiếp xúc của họ và nhân viên y tế của tiểu bang hoặc lãnh thổ có thể liên hệ với bạn nhằm mục đích truy tìm tiếp xúc. \n\nChi tiết đăng ký của bạn sẽ chỉ được sử dụng hoặc tiết lộ để theo dõi việc tiếp xúc và hoạt động đúng đắn và hợp pháp của COVIDSafe. \n\nThông tin để tìm hiểu thêm có tại trang mạng của *Bộ Y tế Chính phủ Úc*. \n\n Xem *chính sách bảo mật* của COVIDSafe để biết thêm chi tiết các quyền về thông tin của bạn và cách xử lý và chia sẻ thông tin đó.\n </string>
   <string name="data_privacy_content_android">Điều quan trọng là bạn phải đọc *chính sách bảo mật* COVIDSafe trước khi đăng ký COVIDSafe. \n\nNếu bạn dưới 16 tuổi, cha mẹ/người giám hộ của bạn cũng phải đọc *chính sách bảo mật *. \n\nSử dụng COVIDSafe là hoàn toàn tự nguyện. Bạn có thể cài đặt hoặc xóa ứng dụng bất cứ lúc nào. Nếu bạn xóa COVIDSafe, *bạn cũng có thể yêu cầu xóa thông tin của mình* khỏi máy chủ bảo mật. \n\nĐể đăng ký COVIDSafe, bạn sẽ cần nhập tên (hoặc biệt danh), số điện thoại di động, độ tuổi và mã bưu điện. \n\nThông tin bạn gửi khi đăng ký và thông tin về việc sử dụng COVIDSafe của bạn sẽ được thu thập và lưu trữ trên một máy chủ có độ an toàn cao. \n\nCOVIDSafe sẽ không thu thập thông tin vị trí của bạn. \n\nCOVIDSafe sẽ ghi nhớ thời gian tiếp xúc, mã ID ẩn danh của những người dùng COVIDSafe khác mà bạn tiếp xúc, cường độ tín hiệu Bluetooth® và kiểu điện thoại của người dùng khác trên thiết bị của bạn. \n\nNhững người dùng COVIDSafe khác mà bạn tiếp xúc cũng sẽ ghi nhớ mã ID ẩn danh của bạn, thời gian tiếp xúc, cường độ tín hiệu Bluetooth® và kiểu điện thoại của bạn, trên thiết bị của họ.\n\nNếu người dùng khác xét nghiệm dương tính với COVID-19, họ có thể đăng tải thông tin tiếp xúc của họ và nhân viên y tế của tiểu bang hoặc lãnh thổ có thể liên hệ với bạn nhằm mục đích truy tìm tiếp xúc. \n\nChi tiết đăng ký của bạn sẽ chỉ được sử dụng hoặc tiết lộ để theo dõi việc tiếp xúc và hoạt động đúng đắn và hợp pháp của COVIDSafe. \n\nThông tin để tìm hiểu thêm có tại trang mạng của *Bộ Y tế Chính phủ Úc*. \n\n Xem *chính sách bảo mật* của COVIDSafe để biết thêm chi tiết các quyền về thông tin của bạn và cách xử lý và chia sẻ thông tin đó.\n </string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Đăng ký và bảo mật</string>
@@ -247,6 +247,7 @@
   <string name="dialog_error_uploading_positive">Thử lại</string>
   <string name="dialog_uploading_message">Thông tin COVIDSafe của bạn hiện đang được đăng tải. \n\n Vui lòng không đóng ứng dụng.</string>
   <string name="disabled">Đã tắt</string>
+  <string name="dismiss">Bỏ qua</string>
   <string name="done_success">Hoàn tất</string>
   <string name="enabled">Đã bật</string>
   <string name="enter_number_button">Nhận mã PIN</string>
@@ -267,6 +268,7 @@
   <string name="generic_error">Vui lòng thử lại sau</string>
   <string name="generic_internet_error">Xin vui lòng kiểm tra kết nối Internet của bạn</string>
   <string name="heading">Tiêu đề</string>
+  <string name="hide">Ẩn</string>
   <string name="home_app_permission_push_notification_prompt">Cho phép COVIDSafe gửi thông báo.</string>
   <string name="home_app_permission_status_subtitle">COVIDSafe sẽ không hoạt động nếu không có cài đặt phù hợp.</string>
   <string name="home_app_permission_status_title">Kiểm tra cài đặt của bạn</string>
@@ -284,7 +286,7 @@
   <string name="home_header_active_title_thanks">Cảm ơn, COVIDSafe hiện đang hoạt động.</string>
   <string name="home_header_inactive_check_your_permissions">Kiểm tra cài đặt của bạn.</string>
   <string name="home_header_inactive_title">COVIDSafe không hoạt động</string>
-  <string name="home_header_no_pairing">COVIDSafe không gửi *yêu cầu kết nối*.</string>
+  <string name="home_header_no_pairing">COVIDSafe không gửi *yêu cầu ghép nối*.</string>
   <string name="home_header_uploaded_on_date">Thông tin của bạn đã được đăng tải lên %s .</string>
   <string name="home_location_permission">Vị trí: %s</string>
   <string name="home_non_battery_optimization_permission">Tối ưu hóa pin: %s</string>
@@ -297,7 +299,7 @@
   <string name="home_set_complete_external_link_app_url">https://www.health.gov.au/resource/apps-and-tools/coronavirus-australia-app</string>
   <string name="home_set_complete_external_link_been_contacted_content">Bạn chỉ có thể đăng tải thông tin của mình nếu bạn được xét nghiệm có kết quả dương tính.</string>
   <string name="home_set_complete_external_link_been_contacted_title">Nhân viên y tế có liên lạc với bạn không?</string>
-  <string name="home_set_complete_external_link_help_topics_content">Hướng dẫn cách khắc phục và sửa chữa sự cố kỹ thuật</string>
+  <string name="home_set_complete_external_link_help_topics_content">Hướng dẫn cách khắc phục và sửa chữa các sự cố kỹ thuật</string>
   <string name="home_set_complete_external_link_help_topics_title">Các chủ đề trợ giúp</string>
   <string name="home_set_complete_external_link_news_content">Vào aus.gov.au để biết tin tức mới nhất về Coronavirus.</string>
   <string name="home_set_complete_external_link_news_title">Tin tức và cập nhật mới nhất</string>
@@ -311,7 +313,7 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">Mời những người khác giúp đỡ. Cùng nhau, chúng ta mạnh mẽ hơn.</string>
   <string name="home_set_complete_external_link_share_title">Chia sẻ COVIDSafe</string>
-  <string name="home_set_location_why">Ứng dụng Android cần được bật quyền truy cập vị trí để tiếp cận Bluetooth®. COVIDSafe không lưu trữ hoặc sử dụng dữ liệu về vị trí.</string>
+  <string name="home_set_location_why">Google cần quyền truy cập Vị trí để các ứng dụng Android truy cập Bluetooth®. COVIDSafe không lưu trữ hoặc sử dụng dữ liệu vị trí.</string>
   <string name="home_setup_help">Trợ giúp</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe cần được cho phép để truy cập các tính năng này.</string>
   <string name="home_setup_incomplete_title">Kiểm tra \nsự cho phép</string>
@@ -322,6 +324,7 @@
   <!-- OnBoarding How it works -->
   <string name="how_it_works_headline">COVIDSafe hoạt động như thế nào</string>
   <string name="how_it_works_headline_content_description">Tiêu đề, COVIDSafe hoạt động như thế nào</string>
+  <string name="improve">Cải thiện hiệu năng của ứng dụng</string>
   <string name="improve_heading">Cải thiện hoạt động của COVIDSafe</string>
   <string name="internet_connection_content">Kết nối với internet để đảm bảo nhận được thông báo về các sự cố và cập nhật.</string>
   <string name="internet_connection_heading">Không có kết nối Internet</string>
@@ -342,6 +345,9 @@
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">Số điện thoại di động ở %1s chứa %2s chữ số.</string>
   <string name="invalid_post_code">Mã bưu điện không hợp lệ</string>
   <string name="IssueFooter">Chúng tôi có thể liên lạc với bạn để biết thêm chi tiết về phản hồi của bạn. Địa chỉ email của bạn sẽ không được sử dụng cho bất kỳ mục đích nào khác.</string>
+  <string name="jwt_description">Có vấn đề với thông tin đăng ký của bạn.</string>
+  <string name="jwt_heading">Vui lòng đăng ký lại</string>
+  <string name="loading_numbers">Đang tải các số mới nhất</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe trong tiến trình cập nhật. \n\nVui lòng đảm bảo điện thoại của bạn không bị tắt cho đến khi cập nhật hoàn tất.</string>
   <string name="national_numbers">Số ca nhiễm trên toàn quốc</string>
@@ -358,7 +364,8 @@
   <string name="notification_battery">Tắt tính năng tối ưu hóa pin để COVIDSafe hoạt động.</string>
   <string name="notification_bluetooth">Bật Bluetooth để COVIDSafe hoạt động</string>
   <string name="notification_bt_and_battery">Bật Bluetooth và tắt tính năng tối ưu hóa Pin để COVIDSafe hoạt động.</string>
-  <string name="notification_internet_content">Mở ứng dụng và kiểm tra kết nối internet của bạn để COVIDSafe hoạt động.</string>
+  <string name="notification_internet_content">Mở ứng dụng và kiểm tra kết nối internet của bạn.</string>
+  <string name="notification_location">Cho phép quyền truy cập Vị trí để Bluetooth hoạt động.</string>
   <string name="notification_not_active_body">Đảm bảo COVIDSafe hoạt động trước khi bạn rời khỏi nhà hoặc khi ở những nơi công cộng.</string>
   <string name="notification_not_active_title">COVIDSafe không hoạt động</string>
   <string name="notification_settings">Mở ứng dụng để kiểm tra cài đặt của bạn.</string>
@@ -370,14 +377,17 @@
   <string name="NotificationsDisabledBlurb">Bạn sẽ không nhận được thông báo nếu COVIDSafe không hoạt động. \nThay đổi cài đặt thông báo</string>
   <!-- Figma page iOS Screens (05/06) -->
   <string name="NotificationsEnabledBlurb">Bạn sẽ nhận được thông báo nếu COVIDSafe không hoạt động. \nThay đổi cài đặt thông báo</string>
+  <string name="numbers_error">Không thể kiểm tra các số đã cập nhật.</string>
+  <string name="numbers_no_internet">Kết nối với internet để đảm bảo bạn nhận được các số cập nhật.</string>
+  <string name="numbers_refresh">Làm mới ngay</string>
   <string name="options_for_australia">Tùy chọn cho Úc</string>
   <string name="permission_button">Kích hoạt</string>
-  <string name="permission_content">COVIDSafe cần Bluetooth® và thông báo được bật mở để hoạt động. \n\n Chọn \'Kích hoạt\' để: \n\n 1. Bật mở Bluetooth® \n\n 2. Cho phép quyền truy cập vị trí \n\n 3. Tắt tối ưu hóa pin \n\n\nAndroid cần quyền truy cập Vị trí để Bluetooth® hoạt động. \n\nCOVIDSafe không gửi yêu cầu kết nối.</string>
+  <string name="permission_content">Bluetooth® và thông báo cần được bật để COVIDSafe hoạt động. \n\n Chọn \'Kích hoạt\' để: \n\n 1. Bật Bluetooth® \n\n 2. Cho phép quyền truy cập vị trí \n\n 3. Tắt tối ưu hóa pin \n\nGoodle cần quyền truy cập Vị trí để các ứng dụng Android truy cập Bluetooth. COVIDSafe không lưu trữ hoặc sử dụng dữ liệu vị trí. COVIDSafe không gửi yêu cầu ghép nối.</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">Cài đặt ứng dụng</string>
   <string name="permission_location_rationale">Android yêu cầu quyền truy cập vị trí để kích hoạt các chức năng Bluetooth® cho COVIDSafe. Nếu không, COVIDSafe sẽ không thể hoạt động đúng cách</string>
   <string name="permission_success_button">Hoàn tất</string>
-  <string name="permission_success_content">1. Hãy mang theo điện thoại khi rời khỏi nhà và chắc rằng COVIDSafe đang hoạt động. \n\n2. Nên BẬT Bluetooth®. \n\n3. Nên TẮT tối ưu hóa pin. \n\n4. COVIDSafe không gửi yêu cầu ghép nối. *Tìm hiểu thêm*.\n \n5. *Quyền truy cập vị trí cho Android* là cần thiết để tiếp cận Bluetooth® . COVIDsafe không lưu trữ hoặc sử dụng dữ liệu vị trí.</string>
+  <string name="permission_success_content">1. Hãy mang theo điện thoại khi rời khỏi nhà và chắc rằng COVIDSafe đang hoạt động. \n\n2. Nên BẬT Bluetooth®. \n\n3. Nên TẮT tối ưu hóa pin. \n\n4. COVIDSafe không gửi yêu cầu ghép nối. *Tìm hiểu thêm*.\n \n5. Google cần *Quyền truy cập vị trí cho các ứng dụng Android* để truy cập Bluetooth. COVIDsafe không lưu trữ hoặc sử dụng dữ liệu vị trí.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">Bạn đã đăng ký thành công</string>
   <string name="permission_success_warning">Luôn bật gửi thông báo của COVIDSafe để chúng tôi có thể nhanh chóng thông báo cho bạn nếu ứng dụng không hoạt động đúng cách.</string>
@@ -405,7 +415,8 @@
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">Có vấn đề với việc nhận mã PIN?</string>
   <string name="recovered">Tổng số ca phục hồi</string>
-  <string name="registration_consent_content">Tôi đồng ý cho Cơ quan Chuyển đổi Kỹ thuật số với tư cách là nhà quản trị cửa hàng dữ liệu, theo quyết định pháp lý của Bộ trưởng Bộ Y tế Chính phủ Úc thu thập:</string>
+  <string name="registration_consent_content">Tôi đồng ý cho Cơ quan Chuyển đổi Kỹ thuật số với tư cách là nhà quản trị kho dữ liệu, theo quyết định pháp lý của Bộ trưởng Bộ Y tế Chính phủ Úc thu thập:</string>
+  <string name="registration_consent_diagnostic">Thông tin để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của tôi.</string>
   <string name="registration_consent_first_paragraph">Thông tin đăng ký của tôi.</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Đồng ý đăng ký</string>
@@ -420,11 +431,13 @@
   <string name="service_not_ok_title">COVIDSafe không hoạt động</string>
   <string name="service_ok_body">Giữ COVIDSafe hoạt động khi bạn rời khỏi nhà hoặc ở những nơi công cộng.</string>
   <string name="service_ok_title">COVIDSafe đang hoạt động</string>
+  <string name="settings">Cài đặt</string>
   <string name="share_this_app_content">Hãy cùng tôi ngăn chặn sự lây lan của COVID-19! Tải COVIDSafe, ứng dụng của Chính phủ Úc. # COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+  <string name="show">Hiển thị</string>
   <string name="south_australia">Nam Úc</string>
   <string name="stepCounter" formatted="false">Bước %d của %d</string>
   <string name="support">Hỗ trợ</string>
-  <string name="support_content">Để được hỗ trợ về các vấn đề không có trong chủ đề Trợ giúp</string>
+  <string name="support_content">Để được trợ giúp về các vấn đề không có trong chủ đề Trợ giúp</string>
   <string name="tasmania">Tasmania</string>
   <string name="title_help">Trợ giúp</string>
   <string name="total_confirmed_cases">Tổng số ca nhiễm</string>
@@ -440,9 +453,10 @@
   <!-- Figma page Android Screens (05/06) -->
   <string name="under_sixteen_consent_call_for_action">Chọn \'Tôi đồng ý\' để xác nhận sự đồng ý.</string>
   <string name="update_available_dismiss_btn">Nhắc tôi sau</string>
-  <string name="update_available_message_android">Chúng tôi đã và đang cải thiện COVIDSafe. Cập nhật qua Cửa hàng Google Play (Google Play Store).</string>
+  <string name="update_available_message_android">Chúng tôi đã và đang cải thiện COVIDSafe. Cập nhật qua Kho Google Play (Google Play Store).</string>
   <string name="update_available_play_store_btn">Vào Google Play Store</string>
   <string name="update_available_title">Cập nhật có sẵn!</string>
+  <string name="update_screen_location">Google cần *quyền truy cập vị trí cho các ứng dụng Android* để truy cập Bluetooth®. COVIDSafe không lưu trữ hoặc sử dụng dữ liệu vị trí.</string>
   <string name="upload_answer_no">Không</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">Có</string>
@@ -461,6 +475,7 @@
   <string name="upload_step_verify_pin_header_content_description">Tiêu đề, Đăng tải thông tin của bạn</string>
   <string name="upload_step_verify_pin_sub_header">Nhân viên y tế của tiểu bang hoặc lãnh thổ sẽ gửi mã PIN qua tin nhắn đến thiết bị của bạn. Nhập mã PIN vào đây để đăng tải thông tin của bạn.</string>
   <string name="us_consent_button">Tôi đồng ý</string>
+  <string name="us_registration_consent_diagnostic">Thông tin để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của tôi.</string>
   <string name="victoria">Victoria</string>
   <string name="western_australia">Tây Úc</string>
   <string name="wrong_ping_number">Nhập sai mã PIN</string>

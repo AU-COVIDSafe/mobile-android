@@ -20,6 +20,7 @@
   <string name="change_language">언어를 변경하십시오</string>
   <string name="change_language_content">다른 언어로 COVIDSafe 사용에 대한 안내서를 읽으십시오.</string>
   <string name="CodeHasExpired">코드가 만료되었습니다.</string>
+  <string name="collection_message">이제 COVIDSafe는 앱 문제를 해결하는 데 도움이 되는 진단 정보를 수집합니다. *더 알아보기*</string>
   <string name="consent_button">동의</string>
   <!-- Shared Consent Actions -->
   <string name="consent_call_for_action">동의 확인을 위해 \'동의\'를 선택하세요. </string>
@@ -236,7 +237,6 @@
   <string name="country_region_name_zm">잠비아</string>
   <string name="country_region_name_zw">짐바브웨</string>
   <string name="data_privacy_button">다음</string>
-  <string name="data_privacy_content">COVIDSafe에 등록하기 전에 COVIDSafe *개인 정보 보호 정책*을 읽는 것이 중요합니다. \n\n16세 미만이라면, 그 부모 또는 보호자도 반드시 *개인 정보 보호 정책*을 읽어야 합니다. \n\nCOVIDSafe의 사용은 전적으로 자발적입니다. 언제든지 앱을 설치 또는 삭제할 수 있습니다. COVIDSafe를 삭제하면, *여러분은 보안 서버에 있는 자신의 정보 삭제*도 요청할 수 있습니다. \n\nCOVIDSafe에 등록하려면, 성명 (또는 가명), 휴대폰 번호, 연령대 및 우편 번호를 입력해야 합니다. \n\n등록 시 제출한 정보 및 여러분의 COVIDSafe 사용 정보는 보안성 높은 서버에 수집 및 저장됩니다. \n\nCOVIDSafe는 여러분의 위치 정보를 수집하지 않습니다. \n\nCOVIDSafe는 접촉 시각 및 여러분과 접촉한 다른 COVIDSafe 사용자의 익명 ID 코드, 블루투스® 신호 강도 및 다른 사용자의 전화기 모델 등을 여러분 장치에 기록합니다. \n\n여러분과 접촉한 다른 COVIDSafe 사용자의 장치에도 여러분의 익명 ID 코드 및 접촉일과 시각, 블루투스® 신호 강도 및 다른 사용자의 전화기 모델 등이 여러분 장치에 기록됩니다.  \n\n다른 사용자가 COVID-19 양성 결과를 받으면, 그들은 자신의 접촉 정보를 업로드할 수 있으며, 주 또는 테리토리 보건 담당자가 접촉 추적 목적으로 여러분에게 연락을 취할 수 있습니다. \n\n여러분의 등록 정보는 접촉 추적 및 COVIDSafe의 적절하고 합법적인 기능을 위해서만 사용 또는 공개됩니다. \n\n자세한 정보는 *호주 정부 보건부* 웹사이트에서 확인할 수 있습니다. \n\n자신의 정보에 대한 권리와 개인 정보의 취급 및 공유 방법에 대한 자세한 내용은 COVIDSafe *개인 정보 보호 정책*을 참조하십시오.</string>
   <string name="data_privacy_content_android">COVIDSafe에 등록하기 전에 COVIDSafe *개인 정보 보호 정책*을 읽는 것이 중요합니다. \n\n16세 미만이라면, 그 부모 또는 보호자도 반드시 *개인 정보 보호 정책*을 읽어야 합니다. \n\nCOVIDSafe의 사용은 전적으로 자발적입니다. 언제든지 앱을 설치 또는 삭제할 수 있습니다. COVIDSafe를 삭제하면, *여러분은 보안 서버에 있는 자신의 정보 삭제*도 요청할 수 있습니다. \n\nCOVIDSafe에 등록하려면, 성명 (또는 가명), 휴대폰 번호, 연령대 및 우편 번호를 입력해야 합니다. \n\n등록 시 제출한 정보 및 여러분의 COVIDSafe 사용 정보는 보안성 높은 서버에 수집 및 저장됩니다. \n\nCOVIDSafe는 여러분의 위치 정보를 수집하지 않습니다. \n\nCOVIDSafe는 접촉 시각 및 여러분과 접촉한 다른 COVIDSafe 사용자의 익명 ID 코드, 블루투스® 신호 강도 및 다른 사용자의 전화기 모델 등을 여러분 장치에 기록합니다. \n\n여러분과 접촉한 다른 COVIDSafe 사용자의 장치에도 여러분의 익명 ID 코드 및 접촉일과 시각, 블루투스® 신호 강도 및 다른 사용자의 전화기 모델 등이 여러분 장치에 기록됩니다.  \n\n다른 사용자가 COVID-19 양성 결과를 받으면, 그들은 자신의 접촉 정보를 업로드할 수 있으며, 주 또는 테리토리 보건 담당자가 접촉 추적 목적으로 여러분에게 연락을 취할 수 있습니다. \n\n여러분의 등록 정보는 접촉 추적 및 COVIDSafe의 적절하고 합법적인 기능을 위해서만 사용 또는 공개됩니다. \n\n자세한 정보는 *호주 정부 보건부* 웹사이트에서 확인할 수 있습니다. \n\n자신의 정보에 대한 권리와 개인 정보의 취급 및 공유 방법에 대한 자세한 내용은 COVIDSafe *개인 정보 보호 정책*을 참조하십시오.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">등록 및 개인정보 보호</string>
@@ -247,6 +247,7 @@
   <string name="dialog_error_uploading_positive">다시 시도</string>
   <string name="dialog_uploading_message">당신의 COVIDSafe 정보가 현재 업로드 중입니다. \n\n앱을 닫지 마세요.</string>
   <string name="disabled">비활성화 됨</string>
+  <string name="dismiss">무시하기</string>
   <string name="done_success">완료</string>
   <string name="enabled">활성화 됨</string>
   <string name="enter_number_button">PIN 받기</string>
@@ -267,6 +268,7 @@
   <string name="generic_error">나중에 다시 시도하세요.</string>
   <string name="generic_internet_error">인터넷 연결상태를 확인하세요.</string>
   <string name="heading">제목</string>
+  <string name="hide">숨기기</string>
   <string name="home_app_permission_push_notification_prompt">COVIDSafe가 푸시 알림을 하도록 허용해 주세요.</string>
   <string name="home_app_permission_status_subtitle">COVIDSafe는 올바른 설정없이는 작동되지 않습니다.</string>
   <string name="home_app_permission_status_title">설정을 확인하세요.</string>
@@ -311,7 +313,7 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">다른 이들에게 참여를 권유하세요. 우리는 함께할 때 더 강해집니다.</string>
   <string name="home_set_complete_external_link_share_title">COVIDSafe 공유하기</string>
-  <string name="home_set_location_why">안드로이드 앱에서 블루투스®에 접속하려면 위치 권한이 켜져 있어야합니다. COVIDSafe는 위치 데이터를 저장하거나 사용하지 않습니다.</string>
+  <string name="home_set_location_why">안드로이드 앱에서 블루투스®에 접속하려면 위치 권한이 켜져 있어야 합니다. COVIDSafe는 위치 데이터를 저장하거나 사용하지 않습니다.</string>
   <string name="home_setup_help">도움</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe가 이러한 기능에 액세스하려면 승인이 필요합니다.</string>
   <string name="home_setup_incomplete_title">승인 \n확인</string>
@@ -343,6 +345,9 @@
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">%1s 휴대폰 번호에는 %2s자리가 있습니다.</string>
   <string name="invalid_post_code">잘못된 우편번호</string>
   <string name="IssueFooter">여러분의 피드백에 대한 자세한 내용에 대해 연락을 드릴 수도 있습니다. 여러분의 이메일 주소는 다른 목적으로 사용되지 않습니다.</string>
+  <string name="jwt_description">등록 세부 정보에 문제가 있습니다.</string>
+  <string name="jwt_heading">다시 등록하십시오</string>
+  <string name="loading_numbers">최신 번호 로드 중</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe 업데이트 진행 중. \n\n업데이트가 완료될 때까지 휴대폰이 꺼지지 않도록 해주세요.</string>
   <string name="national_numbers">전국 수</string>
@@ -359,7 +364,8 @@
   <string name="notification_battery">COVIDSafe 작동을 위해 배터리 최적화를 비활성화해 주세요.</string>
   <string name="notification_bluetooth">COVIDSafe 작동을 위해 블루투스를 켜 주세요.</string>
   <string name="notification_bt_and_battery">COVIDSafe 작동을 위해 블루투스를 켜고 배터리 최적화를 비활성화해 주세요.</string>
-  <string name="notification_internet_content">COVIDSafe 작동을 위해 앱을 열고 인터넷 연결을 확인해 주세요.</string>
+  <string name="notification_internet_content">앱을 열고 인터넷 연결을 확인하십시오.</string>
+  <string name="notification_location">블루투스가 작동하도록 위치 권한을 허용하십시오.</string>
   <string name="notification_not_active_body">외출 시 혹은 공공 장소에 있을 때 COVIDSafe가 활성화되어 있도록 하세요.</string>
   <string name="notification_not_active_title">COVIDSafe가 활성화되어 있지 않습니다.</string>
   <string name="notification_settings">앱을 열어 여러분의 설정을 확인하십시오.</string>
@@ -371,6 +377,9 @@
   <string name="NotificationsDisabledBlurb">COVIDSafe가 비활성화되어 있으면 알림을 받을 것입니다.</string>
   <!-- Figma page iOS Screens (05/06) -->
   <string name="NotificationsEnabledBlurb">COVIDSafe가 비활성화되어 있으면 알림을 받을 것입니다.\n알림 설정 변경하기</string>
+  <string name="numbers_error">업데이트된 번호를 확인할 수 없습니다.</string>
+  <string name="numbers_no_internet">업데이트된 번호를 얻으려면 인터넷에 연결하십시오.</string>
+  <string name="numbers_refresh">지금 새로 고침</string>
   <string name="options_for_australia">호주 관련 옵션</string>
   <string name="permission_button">진행</string>
   <string name="permission_content">COVIDSafe는 블루투스® 및 알림 기능이 활성화되어야 작동됩니다. \n\n \'진행\'을 선택하여 다음을 수행하십시오: \n\n 1. 블루투스® 사용 \n\n 2. 위치 액세스 허용 \n\n 3. 배터리 최적화 비활성화 \n\n\n 안드로이드 상 블루투스®가 작동하려면 위치 액세스 권한이 필요합니다. \n\n COVIDSafe는 페어링 요청을 보내지 않습니다.</string>
@@ -378,7 +387,7 @@
   <string name="permission_headline">앱 설정</string>
   <string name="permission_location_rationale">안드로이드 상 COVIDSafe 관련 블루투스® 기능을 사용하려면 위치 액세스 권한이 필요합니다. 그 권한 없이는 COVIDSafe가 제대로 작동하지 않습니다</string>
   <string name="permission_success_button">완료</string>
-  <string name="permission_success_content">1. 외출 시, 휴대폰을 소지하고, COVIDSafe가 켜져 있도록 하십시오. \n\n2. 블루투스®가 켜져있어야 합니다. \n\n3. 배터리 최적화는 꺼져있어야 합니다.\n\n4. COVIDSafe는 페어링 요청을 보내지 않습니다. *더 자세히 알아보십시오*.\n\n5. * 안드로이드 *에 대한 위치 권한이 있어야 블루투스®에 접속할 수 있습니다. COVIDSafe는 위치 데이터를 저장하거나 사용하지 않습니다.</string>
+  <string name="permission_success_content">1. 외출 시, 휴대폰을 소지하고, COVIDSafe가 켜져 있도록 하십시오. \n\n2. 블루투스®가 켜져 있어야 합니다. \n\n3. 배터리 최적화는 꺼져 있어야 합니다.\n\n4. COVIDSafe는 페어링 요청을 보내지 않습니다. *더 자세히 알아보십시오*.\n\n5. * 안드로이드*에 대한 위치 권한이 있어야 블루투스®에 접속할 수 있습니다. COVIDSafe는 위치 데이터를 저장하거나 사용하지 않습니다.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">등록에 성공했습니다.</string>
   <string name="permission_success_warning">COVIDSafe에 대한 푸시 알림을 켜 놓으면 앱이 제대로 작동하지 않는 경우 신속하게 알려드릴 수 있습니다.</string>
@@ -407,6 +416,7 @@
   <string name="ReceivePinIssue">PIN을 받는 데 문제가 있습니까?</string>
   <string name="recovered">회복된 총 확진자 수</string>
   <string name="registration_consent_content">본인은 호주 정부 보건부 장관의 법적 결정에 따라, 데이터 저장소 관리자로서 Digital Transformation Agency가 다음 정보를 수집하는 것에 동의합니다:</string>
+  <string name="registration_consent_diagnostic">COVIDSafe가 내 장치에서 제대로 작동하는지 확인하기 위한 정보.</string>
   <string name="registration_consent_first_paragraph">나의 등록 정보.</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">등록 동의</string>
@@ -423,6 +433,7 @@
   <string name="service_ok_title">COVIDSafe가 활성화되어 있습니다.</string>
   <string name="settings">설정</string>
   <string name="share_this_app_content">COVID-19의 확산을 막아주세요! 호주 정부의 앱인 COVIDSafe를 다운로드하세요. # COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+  <string name="show">보여주기</string>
   <string name="south_australia">남호주</string>
   <string name="stepCounter" formatted="false">%d 의 단계들 중 %d 단계</string>
   <string name="support">지원</string>
@@ -445,6 +456,7 @@
   <string name="update_available_message_android">저희는 COVIDSafe의 기능들을 향상시키고 있습니다. 구글 플레이 스토어를 통해 업데이트하십시오.</string>
   <string name="update_available_play_store_btn">구글 플레이 스토어 가기</string>
   <string name="update_available_title">업데이트 가능!</string>
+  <string name="update_screen_location">안드로이드 앱에서 블루투스®에 접속하려면 위치 권한이 켜져 있어야 합니다. COVIDSafe는 위치 데이터를 저장하거나 사용하지 않습니다.</string>
   <string name="upload_answer_no">아니요</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">예</string>
@@ -463,6 +475,7 @@
   <string name="upload_step_verify_pin_header_content_description">제목, 본인의 정보를 업로드하세요</string>
   <string name="upload_step_verify_pin_sub_header">주 또는 테리토리 보건 담당자가 당신의 장치에 문자 메시지로 PIN을 보낼 것입니다. 본인의 정보를 업로드하려면 아래에 그 번호를 입력하십시오.</string>
   <string name="us_consent_button">동의</string>
+  <string name="us_registration_consent_diagnostic">COVIDSafe가 내 장치에서 제대로 작동하는지 확인하기 위한 정보.</string>
   <string name="victoria">빅토리아</string>
   <string name="western_australia">서호주</string>
   <string name="wrong_ping_number">잘못된 PIN 입력</string>

@@ -19,7 +19,8 @@
   <string name="change_device_name_secondary_action">Atla ve mevcut adı koru</string>
   <string name="change_language">Dili değiştir</string>
   <string name="change_language_content">COVIDSafe\'i farklı bir dilde kullanmak için ilgili kılavuzu okuyunuz.</string>
-  <string name="CodeHasExpired">Kodunuzun süresi doldu.</string>
+  <string name="CodeHasExpired">PIN kodunuzun süresi doldu.</string>
+  <string name="collection_message">COVIDSafe artık uygulamanızla ilgili sorunları gidermenize yardımcı olmak için tanılama bilgileri toplamaktadır. *Daha fazla bilgi edin*</string>
   <string name="consent_button">Kabul ediyorum</string>
   <!-- Shared Consent Actions -->
   <string name="consent_call_for_action">Rızanızı onaylamak için \'Kabul ediyorum\'u seçiniz.</string>
@@ -236,7 +237,6 @@
   <string name="country_region_name_zm">Zambiya</string>
   <string name="country_region_name_zw">Zimbabve</string>
   <string name="data_privacy_button">Sonraki</string>
-  <string name="data_privacy_content">COVIDSafe\'a kaydolmadan önce *COVIDSafe gizlilik ilkesini* okumanız önemlidir. \n\n16 yaşından küçükseniz, ebeveyniniz/veliniz de *gizlilik ilkesini* okumalıdır. \n\nCOVIDSafe kullanımı tamamen isteğe bağlıdır. Uygulamayı istediğiniz zaman yükleyebilir veya silebilirsiniz. COVIDSafe\'i silerseniz *bilgilerinizin güvenli sunucudan silinmesini de* isteyebilirsiniz. \n\nCOVIDSafe\'e kaydolmak için bir ad (veya takma ad), cep telefonu numarası, yaş aralığı ve posta kodu girmeniz gerekir. \n\nKayıt olurken gönderdiğiniz bilgiler ve COVIDSafe kullanımınızla ilgili bilgiler yüksek düzeyde güvenli bir sunucuda toplanacak ve saklanacaktır. \n\nCOVIDSafe konum bilgilerinizi toplamaz. \n\nCOVIDSafe temas saatini, temas ettiğiniz diğer COVIDSafe kullanıcılarının gizli kimlik kodlarını, Bluetooth® sinyal gücünü ve diğer kullanıcıların telefon modellerini cihazınıza kaydeder. \n\nTemas ettiğiniz diğer COVIDSafe kullanıcıları da gizli  kimlik kodunuzu, sizinle temas tarih ve saatini, Bluetooth® sinyal gücünü ve telefon modelinizi kendi cihazlarında kaydedecektir. \n\nBaşka bir kullanıcının COVID-19 testinin pozitif çıkması durumunda kendi iletişim bilgilerini sisteme yükleyebilir ve bir eyalet veya bölge sağlık yetkilisi temas takibi amacıyla sizinle iletişime geçebilir. \n\nKayıt bilgileriniz yalnızca temas takibi ve COVIDSafe\'in düzgün ve yasalara uygun çalışması için kullanılacak ya da açıklanacaktır. \n\nDaha fazla bilgiyi *Avustralya Hükümeti Sağlık Bakanlığı* web sitesinde bulabilirsiniz. \n\nBilgileriniz ve bu bilgilerin nasıl işleneceği ve paylaşılacağına dair haklarınızla ilgili daha fazla bilgi için COVIDSafe *gizlilik ilkesine* bakınız.</string>
   <string name="data_privacy_content_android">COVIDSafe\'a kaydolmadan önce *COVIDSafe gizlilik ilkesini* okumanız önemlidir. \n\n16 yaşından küçükseniz, ebeveyniniz/veliniz de *gizlilik ilkesini* okumalıdır. \n\nCOVIDSafe kullanımı tamamen isteğe bağlıdır. Uygulamayı istediğiniz zaman yükleyebilir veya silebilirsiniz. COVIDSafe\'i silerseniz *bilgilerinizin güvenli sunucudan silinmesini de* isteyebilirsiniz. \n\nCOVIDSafe\'e kaydolmak için bir ad (veya takma ad), cep telefonu numarası, yaş aralığı ve posta kodu girmeniz gerekir. \n\nKayıt olurken gönderdiğiniz bilgiler ve COVIDSafe kullanımınızla ilgili bilgiler yüksek düzeyde güvenli bir sunucuda toplanacak ve saklanacaktır. \n\nCOVIDSafe konum bilgilerinizi toplamaz. \n\nCOVIDSafe temas saatini, temas ettiğiniz diğer COVIDSafe kullanıcılarının gizli kimlik kodlarını, Bluetooth® sinyal gücünü ve diğer kullanıcıların telefon modellerini cihazınıza kaydeder. \n\nTemas ettiğiniz diğer COVIDSafe kullanıcıları da gizli  kimlik kodunuzu, sizinle temas tarih ve saatini, Bluetooth® sinyal gücünü ve telefon modelinizi kendi cihazlarında kaydedecektir. \n\nBaşka bir kullanıcının COVID-19 testinin pozitif çıkması durumunda kendi iletişim bilgilerini sisteme yükleyebilir ve bir eyalet veya bölge sağlık yetkilisi temas takibi amacıyla sizinle iletişime geçebilir. \n\nKayıt bilgileriniz yalnızca temas takibi ve COVIDSafe\'in düzgün ve yasalara uygun çalışması için kullanılacak ya da açıklanacaktır. \n\nDaha fazla bilgiyi *Avustralya Hükümeti Sağlık Bakanlığı* web sitesinde bulabilirsiniz. \n\nBilgileriniz ve bu bilgilerin nasıl işleneceği ve paylaşılacağına dair haklarınızla ilgili daha fazla bilgi için COVIDSafe *gizlilik ilkesine* bakınız.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Kayıt ve gizlilik</string>
@@ -247,6 +247,7 @@
   <string name="dialog_error_uploading_positive">Tekrar deneyin</string>
   <string name="dialog_uploading_message">COVIDSafe bilgileriniz şu anda sisteme yükleniyor. \n\n Lütfen uygulamayı kapatmayın.</string>
   <string name="disabled">Devre dışı</string>
+  <string name="dismiss">Reddet</string>
   <string name="done_success">Bitti</string>
   <string name="enabled">Etkin</string>
   <string name="enter_number_button">PIN al</string>
@@ -267,6 +268,7 @@
   <string name="generic_error">Lütfen daha sonra tekrar deneyin</string>
   <string name="generic_internet_error">Lütfen internet bağlantınızı kontrol edin</string>
   <string name="heading">Başlık</string>
+  <string name="hide">Gizle</string>
   <string name="home_app_permission_push_notification_prompt">COVIDSafe\'in anında bildirimleri iletmesine izin verin.</string>
   <string name="home_app_permission_status_subtitle">COVIDSafe doğru ayarlar olmadan çalışmaz. </string>
   <string name="home_app_permission_status_title">Ayarlarınızı kontrol edin</string>
@@ -311,7 +313,7 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">Başkalarını yardıma davet edin. Birlikte daha da güçlüyüz.</string>
   <string name="home_set_complete_external_link_share_title">COVIDSafe\'i paylaşın</string>
-  <string name="home_set_location_why">Bluetooth®\'a erişmek için Android uygulamalarının konum izinlerinin açık olması gerekir. COVIDSafe, konum verilerini saklamaz ve kullanmaz.</string>
+  <string name="home_set_location_why">Google\'ın Bluetooth®\'a erişmesi için Android uygulamaları için konum izni gereklidir. COVIDSafe, konum verilerini saklamaz ve kullanmaz.</string>
   <string name="home_setup_help">Yardım</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe\'in bu özelliklere erişmek için izne ihtiyacı vardır.</string>
   <string name="home_setup_incomplete_title">İzinleri\nkontrol edin</string>
@@ -343,7 +345,9 @@
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">%1s ülkesindeki cep telefonu numaraları %2s rakam içerir.</string>
   <string name="invalid_post_code">Geçersiz posta kodu</string>
   <string name="IssueFooter">Geri bildiriminiz hakkında daha fazla bilgi için sizinle iletişime geçebiliriz. E-posta adresiniz başka hiçbir amaçla kullanılmayacaktır.</string>
-  <string name="loading_numbers">En son sayıla yükleniyor</string>
+  <string name="jwt_description">Kayıt bilgilerinizle ilgili bir sorun var.</string>
+  <string name="jwt_heading">Lütfen tekrar kayıt olun</string>
+  <string name="loading_numbers">En son sayılar yükleniyor</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe güncellemesi devam ediyor. \n\n Lütfen güncelleme tamamlanana kadar telefonunuzu kapatmayın.</string>
   <string name="national_numbers">Ulusal sayılar</string>
@@ -360,7 +364,7 @@
   <string name="notification_battery">COVIDSafe\'in çalışması için Pil optimizasyonunu devre dışı bırakınız.</string>
   <string name="notification_bluetooth">COVIDSafe\'in çalışması için Bluetooth\'u açınız.</string>
   <string name="notification_bt_and_battery">COVIDSafe\'in çalışması için Bluetooth\'u açınız ve Pil optimizasyonunu devre dışı bırakınız.</string>
-  <string name="notification_internet_content">Uygulamayı açınız ve COVIDSafe\'in çalışması için internet bağlantınızı kontrol ediniz.</string>
+  <string name="notification_internet_content">Uygulamayı açın ve internet bağlantınızı kontrol edin.</string>
   <string name="notification_location">Bluetooth\'un çalışması için Konum izinlerini verin.</string>
   <string name="notification_not_active_body">Evden çıkarken veya halka açık yerlerde COVIDSafe\'yi aktif tuttuğunuzdan emin olun.</string>
   <string name="notification_not_active_title">COVIDSafe aktif değildir</string>
@@ -374,16 +378,16 @@
   <!-- Figma page iOS Screens (05/06) -->
   <string name="NotificationsEnabledBlurb">COVIDSafe aktif olmadığında bildirim alacaksınız.\nBildirim ayarlarını değiştir</string>
   <string name="numbers_error">Güncellenen sayılar kontrol edilemiyor.</string>
-  <string name="numbers_no_internet">Güncellenen sayıları aldığınızdan emin olmak için internete bağlanın</string>
+  <string name="numbers_no_internet">Güncellenen sayıları aldığınızdan emin olmak için internete bağlanın.</string>
   <string name="numbers_refresh">Şimdi yenile</string>
   <string name="options_for_australia">Avustralya için seçenekler</string>
   <string name="permission_button">İlerle</string>
-  <string name="permission_content">COVIDSafe\'in çalışması için Bluetooth® ve bildirimlerin etkin olmalıdır. \n\nAşağıdakileri yapmak için \'İlerle\'yi seçin: \n\n1. Bluetooth®\'u etkinleştirmek \n\n2. Konum izinlerini vermek\n\n3. Pil optimizasyonunu devre dışı bırakmak \n\n\nAndroid, Bluetooth®\'un çalışması için Konum izinlerine ihtiyaç duyar. \n\nCOVIDSafe eşleştirme istekleri göndermez.</string>
+  <string name="permission_content">COVIDSafe\'in çalışması için Bluetooth® ve bildirimler etkin olmalıdır. \n\nAşağıdakileri yapmak için \'İlerle\'yi seçin: \n\n1. Bluetooth®\'u etkinleştirmek \n\n2. Konum izinlerini vermek\n\n3. Pil optimizasyonunu devre dışı bırakmak \n\nGoogle\'ın Bluetooth®\'a erişmesi için Android uygulamaları için konum izni gereklidir. COVIDSafe konum verilerini saklamaz ve kullanmaz. \n\nCOVIDSafe eşleştirme istekleri göndermez.</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">Uygulama ayarları</string>
   <string name="permission_location_rationale">Android, COVIDSafe için Bluetooth® işlevlerini etkinleştirmek amacıyla konuma erişim gerektirir. COVIDSafe, Bluetooth® olmadan düzgün çalışamaz</string>
   <string name="permission_success_button">Bitti</string>
-  <string name="permission_success_content">1. Evden çıkarken telefonunuzu yanınıza alın ve COVIDSafe\'in aktif olduğundan emin olun. \n\n2. Bluetooth® AÇIK tutulmalıdır.\n\n3. Pil optimizasyonu KAPALI olmalıdır.\n\n4. COVIDSafe eşleştirme istekleri göndermez. *Daha fazla bilgi edinin*.\n\n5. Bluetooth®\'a erişmek için *Android için konum izinleri* gereklidir. COVIDSafe konum verilerini saklamaz ve kullanmaz.</string>
+  <string name="permission_success_content">1. Evden çıkarken telefonunuzu yanınıza alın ve COVIDSafe\'in aktif olduğundan emin olun. \n\n2. Bluetooth® AÇIK tutulmalıdır.\n\n3. Pil optimizasyonu KAPALI olmalıdır.\n\n4. COVIDSafe eşleştirme istekleri göndermez. *Daha fazla bilgi edinin*.\n\n5. Google\'ın Bluetooth®\'a erişmesi için *Android uygulamaları için konum izni* gereklidir. COVIDSafe konum verilerini saklamaz ve kullanmaz.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">Başarıyla kayıt oldunuz</string>
   <string name="permission_success_warning">COVIDSafe için anlık bildirimleri açık tutun, böylece uygulama düzgün çalışmıyorsa sizi hızlı bir şekilde bilgilendirebiliriz.</string>
@@ -410,8 +414,9 @@
   <string name="PN_MobileNumber_VOLabel">Cep telefonu numarası</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">PIN alma sorunu mu yaşıyorsunuz?</string>
-  <string name="recovered">İyileşen toplam vakalar</string>
+  <string name="recovered">Toplam iyileşen vakalar</string>
   <string name="registration_consent_content">Avustralya Hükümeti Sağlık Bakanının yasal olarak belirlediğine uygun olarak aşağıdaki bilgileri toplayan Dijital Dönüşüm Ajansı\'nı veri deposu yöneticisi olarak onaylıyorum:</string>
+  <string name="registration_consent_diagnostic">COVIDSafe\'in cihazımda düzgün çalıştığından emin olmak için gereken bilgiler.</string>
   <string name="registration_consent_first_paragraph">Kayıt bilgilerim.</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Kayıt onayı</string>
@@ -428,6 +433,7 @@
   <string name="service_ok_title">COVIDSafe aktif durumdadır</string>
   <string name="settings">Ayarlar</string>
   <string name="share_this_app_content">COVID-19\'un yayılmasını durdurmada bana katılın! Avustralya Hükümeti\'nin bir uygulaması olan COVIDSafe\'i indirin. # COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+  <string name="show">Göster</string>
   <string name="south_australia">Güney Avustralya</string>
   <string name="stepCounter" formatted="false">Adım %d / %d</string>
   <string name="support">Destek</string>
@@ -450,6 +456,7 @@
   <string name="update_available_message_android">COVIDSafe\'de iyileştirmeler yapmaktayız.\nGoogle Play Store üzerinden güncelleme yapın</string>
   <string name="update_available_play_store_btn">Google Play Store\'a git</string>
   <string name="update_available_title">Güncelleme mevcut!</string>
+  <string name="update_screen_location">Google\'ın Bluetooth®\'a erişmesi için *Android uygulamaları için konum izni* gereklidir. COVIDSafe, konum verilerini saklamaz veya kullanmaz.</string>
   <string name="upload_answer_no">Hayır</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">Evet</string>
@@ -468,6 +475,7 @@
   <string name="upload_step_verify_pin_header_content_description">Başlık, bilgilerinizi sisteme yükleyiniz</string>
   <string name="upload_step_verify_pin_sub_header">Eyalet veya bölge sağlık yetkilisi cihazınıza mesaj olarak bir PIN gönderecektir. Bilgilerinizi sisteme yüklemek için PIN\'i aşağıya giriniz.</string>
   <string name="us_consent_button">Kabul ediyorum</string>
+  <string name="us_registration_consent_diagnostic">COVIDSafe\'in cihazımda düzgün çalıştığından emin olmak için gereken bilgiler.</string>
   <string name="victoria">Viktorya</string>
   <string name="western_australia">Batı Avustralya</string>
   <string name="wrong_ping_number"> Yanlış PIN girildi</string>

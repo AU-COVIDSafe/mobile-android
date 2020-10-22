@@ -2,6 +2,8 @@ package au.gov.health.covidsafe.ui.onboarding.fragment.personal
 
 import android.app.Activity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +12,6 @@ import android.view.accessibility.AccessibilityEvent
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
-import android.widget.TextView.OnEditorActionListener
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import au.gov.health.covidsafe.preference.Preference
@@ -53,7 +54,6 @@ class PersonalDetailsFragment : PagerChildFragment() {
 
     private fun checkAgeAndDisplayAgeError(): Boolean {
         val isValidAge = isValidAge()
-
         if (isValidAge) {
             personal_details_age_error.visibility = View.GONE
         } else {
@@ -70,7 +70,6 @@ class PersonalDetailsFragment : PagerChildFragment() {
 
     override fun onResume() {
         super.onResume()
-
         ArrayAdapter.createFromResource(
                 requireContext(),
                 R.array.age_range_array,
@@ -110,18 +109,20 @@ class PersonalDetailsFragment : PagerChildFragment() {
             }
         })
 
+        val position = getAgePosition(age)
+        personal_details_age.setSelection(position)
         personal_details_name.setOnFocusChangeListener { _, hasFocus ->
             updatePersonalDetailsDataField()
             updateButtonState()
 
-            personal_details_name_error.visibility = if (hasFocus || isValidName()) {
+            this.personal_details_name_error.visibility = if (hasFocus || isValidName()) {
                 View.GONE
             } else {
                 View.VISIBLE
             }
         }
 
-        personal_details_name.setOnEditorActionListener(OnEditorActionListener { textView, actionId, _ ->
+        personal_details_name.setOnEditorActionListener { textView, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_NEXT) {
                 hideKeyboard()
                 textView.clearFocus()
@@ -130,7 +131,7 @@ class PersonalDetailsFragment : PagerChildFragment() {
             }
 
             true
-        })
+        }
 
         personal_details_post_code.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
@@ -161,7 +162,7 @@ class PersonalDetailsFragment : PagerChildFragment() {
 
             false // pass on to other listeners.
         }
-
+        setUpListener()
         personal_details_headline.setHeading()
         personal_details_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
     }
@@ -198,6 +199,48 @@ class PersonalDetailsFragment : PagerChildFragment() {
                     EnterNumberFragment.ENTER_NUMBER_DESTINATION_ID to R.id.action_otpFragment_to_permissionFragment,
                     EnterNumberFragment.ENTER_NUMBER_PROGRESS to 2)
             navigateTo(PersonalDetailsFragmentDirections.actionPersonalDetailsToEnterNumberFragment().actionId, bundle)
+        }
+    }
+
+    private fun setUpListener() {
+        personal_details_name.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                updateButtonState()
+            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+        })
+
+        personal_details_post_code.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                updateButtonState()
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+        })
+    }
+
+    private fun getAgePosition(age: Int): Int {
+        return when (age) {
+            -1 -> 0
+            8 -> 1
+            22 -> 2
+            35 -> 3
+            45 -> 4
+            55 -> 5
+            65 -> 6
+            75 -> 7
+            85 -> 8
+            95 -> 9
+            else -> 0
         }
     }
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:card_view="http://schemas.android.com/tools">
 
     <data>
 
@@ -68,32 +67,53 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
                     <TextView
                         android:id="@+id/national_numbers_text_view"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/space_16"
-                        android:layout_marginTop="@dimen/space_16"
-                        android:layout_marginBottom="@dimen/space_8"
+                        android:gravity="center_vertical"
                         android:text="@string/national_numbers"
+                        android:textSize="20sp"
                         android:textAppearance="@style/fontRobotoRegular28"
                         android:textColor="@color/slate_black_1"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/date_text_view"
-                        dateFormat="@{viewModel.caseStatisticsLiveData.updatedDate}"
-                        visibility="@{viewModel.caseStatisticsLiveData != null}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/space_16"
-                        android:layout_marginEnd="@dimen/space_16"
-                        android:layout_marginBottom="@dimen/space_16"
-                        android:text="27 August 2020 at 3pm AEST"
-                        android:textAppearance="@style/fontRobotoRegular16"
-                        android:textColor="@color/slate_black_2"
-                        android:visibility="visible"
-                        tools:text="27 August 2020 at 3pm AEST" />
+                        <TextView
+                            android:id="@+id/txt_show_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:gravity="center_vertical"
+                            android:text="@string/show"
+                            android:textAppearance="@style/fontRobotoRegular28"
+                            android:textColor="@color/dark_green"
+                            android:textSize="@dimen/text_size_16"
+                            android:layout_alignParentEnd="true"
+                            style="@style/fontRobotoRegular20"
+                            visibility="@{!viewModel.turnCaseNumber}"
+                            android:onClick="@{() -> viewModel.turnCaseNumber(true)}"/>
+
+                        <TextView
+                            android:id="@+id/txt_hide_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:gravity="center_vertical"
+                            android:text="@string/hide"
+                            android:textAppearance="@style/fontRobotoRegular28"
+                            android:textColor="@color/dark_green"
+                            android:textSize="@dimen/text_size_16"
+                            android:layout_alignParentEnd="true"
+                            style="@style/fontRobotoRegular20"
+                            visibility="@{viewModel.turnCaseNumber}"
+                            android:onClick="@{() -> viewModel.turnCaseNumber(false)}"/>
+
+                    </RelativeLayout>
 
                     <FrameLayout
                         android:id="@+id/show_error_message"
@@ -146,10 +166,6 @@
                         android:textAppearance="@style/fontRobotoRegular16"
                         android:textColor="@color/dark_green"
                         android:visibility="gone" />
-
-                    <include
-                        layout="@layout/view_national_case_statistics"
-                        app:viewModel="@{viewModel}" />
 
                     <include
                         layout="@layout/view_state_case_statistics"

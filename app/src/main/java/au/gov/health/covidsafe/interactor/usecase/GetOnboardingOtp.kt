@@ -15,6 +15,7 @@ class GetOnboardingOtp(private val awsClient: AwsClient, lifecycle: Lifecycle) :
     private val TAG = this.javaClass.simpleName
 
     override suspend fun run(params: GetOtpParams): Either<Exception, OTPChallengeResponse> {
+        
         return try {
             val response = awsClient.initiateAuth(
                     OTPChallengeRequest(

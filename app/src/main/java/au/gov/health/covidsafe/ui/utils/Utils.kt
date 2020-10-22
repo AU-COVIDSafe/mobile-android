@@ -46,7 +46,7 @@ object Utils {
     private const val TAG = "Utils"
 
     fun getRequiredPermissions(): Array<String> {
-        return arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION)
+        return arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
     }
 
     fun getBatteryOptimizerExemptionIntent(packageName: String): Intent {

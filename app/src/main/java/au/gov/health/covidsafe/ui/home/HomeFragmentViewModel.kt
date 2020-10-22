@@ -1,8 +1,13 @@
 package au.gov.health.covidsafe.ui.home
 
+import android.Manifest
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.*
+import au.gov.health.covidsafe.BuildConfig
+import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.extensions.LOCATION
+import au.gov.health.covidsafe.extensions.askForLocationPermission
 import au.gov.health.covidsafe.factory.RetrofitServiceGenerator
 import au.gov.health.covidsafe.interactor.usecase.GetCaseStatisticsUseCase
 import au.gov.health.covidsafe.logging.CentralLog
@@ -13,6 +18,8 @@ import au.gov.health.covidsafe.preference.Preference
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import pub.devrel.easypermissions.EasyPermissions
+import pub.devrel.easypermissions.PermissionRequest
 
 private const val TAG = "HomeFragmentViewModel"
 
@@ -21,12 +28,19 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     val caseNumberDataState = MutableLiveData<CaseNumbersState>()
     val caseStatisticsLiveData = MutableLiveData<CaseStatisticResponse>()
     val isRefreshing = MutableLiveData<Boolean>()
+    val collectionMessageVisible = MutableLiveData<Boolean>()
+    // Show = true and hide = false
+    val turnCaseNumber = MutableLiveData<Boolean>()
+    lateinit var context: Context
+    var turnCaseAfterOpenPage = true
 
     val awsClient: AwsClient by lazy {
         RetrofitServiceGenerator.createService(AwsClient::class.java)
     }
 
     fun fetchGetCaseStatistics(lifecycle: Lifecycle) {
+        context = getApplication() as Context
+        turnCaseNumber.value = Preference.getTurnCaseNumber(context)
         if(caseNumberDataState.value != CaseNumbersState.LOADING) {
             caseNumberDataState.value = CaseNumbersState.LOADING
 
@@ -58,12 +72,27 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         }
     }
 
+    fun getCollectionMessage() {
+        val context = getApplication() as Context
+
+        val latestVersion = Preference.getBuildNumber(context)
+        // When We want to show disclaimer to user after update, minVersionShowPolicy should be as same as the current version
+        val minVersionShowPolicy = 74
+        val currentVersion = BuildConfig.VERSION_CODE
+        if (latestVersion == 0) {
+            collectionMessageVisible.value = true
+        } else {
+            collectionMessageVisible.value = currentVersion <= minVersionShowPolicy && currentVersion > latestVersion
+        }
+        Preference.putBuildNumber(context, currentVersion)
+    }
+
     private fun showErrorMessage() {
         viewModelScope.launch {
 
             isRefreshing.value = false
 
-            val context = getApplication() as Context
+            context = getApplication() as Context
             caseStatisticsLiveData.value = getCachedCaseStatisticDataFromPersistent(context)
             if (context.isInternetAvailable()) {
                 caseNumberDataState.value = CaseNumbersState.ERROR_UNKNOWN
@@ -85,4 +114,13 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
             caseStatisticData
         }
     }
+
+    fun turnCaseNumber(turnoff: Boolean) {
+        turnCaseAfterOpenPage = false
+        context = getApplication() as Context
+        Preference.setTurnCaseNumber(context, turnoff)
+        turnCaseNumber.value = turnoff
+    }
+
+    fun getTurningCaseAfterOpenPage() = turnCaseAfterOpenPage
 }

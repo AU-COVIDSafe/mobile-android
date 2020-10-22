@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -18,7 +19,6 @@
             android:id="@+id/national_case_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            visibility="@{viewModel.caseStatisticsLiveData != null}"
             android:background="@color/white"
             android:orientation="vertical">
 
@@ -28,6 +28,24 @@
                 android:layout_height="1dp"
                 android:background="@color/divider_line_grey"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/date_text_view"
+                dateFormat="@{viewModel.caseStatisticsLiveData.updatedDate}"
+                visibility="@{viewModel.caseStatisticsLiveData != null}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_marginBottom="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:text="27 August 2020 at 3pm AEST"
+                android:textAppearance="@style/fontRobotoRegular16"
+                android:textColor="@color/slate_black_2"
+                android:visibility="visible"
+                tools:text="27 August 2020 at 3pm AEST"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider" />
 
             <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
                 android:id="@+id/national_new_case_card"
@@ -40,7 +58,7 @@
                 app:external_linkCard_start_icon="@drawable/ic_trending_up"
                 app:external_linkCard_start_icon_background="@drawable/background_circular_green"
                 app:external_linkCard_start_icon_padding="@dimen/space_8"
-                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider" />
+                app:layout_constraintTop_toBottomOf="@+id/date_text_view" />
 
             <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
                 android:id="@+id/national_confirmed_case_card"

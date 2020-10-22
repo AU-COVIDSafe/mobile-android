@@ -61,6 +61,22 @@ object LinkBuilder {
         return url
     }
 
+    fun getCollectionMassageLearnMore(context: Context): SpannableString {
+        return buildSpannableStringContent(
+                context,
+                TracerApp.AppContext.getString(R.string.collection_message),
+                listOf(getPrivacyTopicsUrl())
+        )
+    }
+
+    fun getLocationPermission(context: Context): SpannableString {
+        return buildSpannableStringContent(
+                context,
+                TracerApp.AppContext.getString(R.string.update_screen_location),
+                listOf(getLocationPairingRequestUrl())
+        )
+    }
+
     private fun buildLocalisedURL(path: String): String {
         val localeLanguageTag = Locale.getDefault().toLanguageTag()
 
@@ -143,12 +159,12 @@ object LinkBuilder {
         val privacyUrl = getPrivacyTopicsUrl()
         return buildSpannableStringContent(
                 context,
-                TracerApp.AppContext.getString(R.string.data_privacy_content),
+                TracerApp.AppContext.getString(R.string.data_privacy_content_android),
                 listOf(
                         privacyUrl,
                         privacyUrl,
                         getHelpTopicsUrl(),
-                        DEPARTMENT_OF_HEALTH_URL,
+                        HOST_URL,
                         privacyUrl
                 )
         )

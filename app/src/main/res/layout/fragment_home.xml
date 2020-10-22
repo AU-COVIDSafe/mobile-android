@@ -8,7 +8,6 @@
         <variable
             name="viewModel"
             type="au.gov.health.covidsafe.ui.home.HomeFragmentViewModel" />
-
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -111,6 +110,74 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:alpha="@{viewModel.collectionMessageVisible ? 0.7f : 0.0f}" />
+
+        <FrameLayout
+            android:id="@+id/layout_collection_message"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@+id/swipeRefreshLayout"
+            app:layout_anchorGravity="center"
+            android:background="@color/white"
+            android:elevation="12dp"
+            visibility="@{viewModel.collectionMessageVisible}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/txt_collection_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:textColor="#141515"
+                    style="?textAppearanceBody1"
+                    android:textAlignment="center"
+                    android:lineSpacingExtra="5dp"
+                    android:textSize="16sp"
+                    android:text="@string/collection_message" />
+
+                <TextView
+                    android:id="@+id/txt_location_permission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:textColor="#141515"
+                    style="?textAppearanceBody1"
+                    android:textAlignment="center"
+                    android:lineSpacingExtra="5dp"
+                    android:textSize="16sp"
+                    android:text="@string/update_screen_location" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/lighter_green"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:id="@+id/txt_proceed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/dark_green"
+                        android:text="@string/permission_button"
+                        tools:text="Proceed" />
+
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

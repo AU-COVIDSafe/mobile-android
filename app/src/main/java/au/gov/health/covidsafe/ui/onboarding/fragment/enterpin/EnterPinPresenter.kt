@@ -4,6 +4,7 @@ import android.text.TextUtils
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.extensions.isInternetAvailable
 import au.gov.health.covidsafe.factory.NetworkFactory
@@ -90,6 +91,9 @@ class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
                     }
                     enterPinFragment.hideKeyboard()
                     enterPinFragment.navigateToNextPage()
+
+                    val context = enterPinFragment.requireContext()
+                    Preference.putBuildNumber(context, BuildConfig.VERSION_CODE)
                 } else {
                     onError()
                 }

@@ -60,6 +60,19 @@
             app:layout_constraintTop_toBottomOf="@+id/registration_consent_first_paragraph"
             app:ul_view_text="@string/registration_consent_second_paragraph" />
 
+        <au.gov.health.covidsafe.ui.view.UlView
+            android:id="@+id/registration_consent_third_paragraph"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:textAlignment="viewStart"
+            android:textAppearance="?textAppearanceBody1"
+            android:textColorLink="@color/hyperlink_enabled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registration_consent_second_paragraph"
+            app:ul_view_text="@string/registration_consent_diagnostic" />
+
         <TextView
             android:id="@+id/registration_consent_call_for_action"
             android:layout_width="0dp"
@@ -71,7 +84,7 @@
             android:textColorLink="@color/hyperlink_enabled"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registration_consent_second_paragraph" />
+            app:layout_constraintTop_toBottomOf="@+id/registration_consent_third_paragraph" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

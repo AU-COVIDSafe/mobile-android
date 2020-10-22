@@ -1,6 +1,6 @@
 package au.gov.health.covidsafe.extensions
 
-import android.Manifest.permission.ACCESS_COARSE_LOCATION
+import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.content.Context
@@ -47,13 +47,13 @@ private fun Fragment.requestFineLocationAndCheckBleSupportThenNextPermission(onE
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         activity?.let {
             when {
-                EasyPermissions.hasPermissions(it, ACCESS_COARSE_LOCATION) -> {
+                EasyPermissions.hasPermissions(it, ACCESS_FINE_LOCATION) -> {
                     checkBLESupport()
                     excludeFromBatteryOptimization(onEndCallback)
                 }
                 else -> {
                     EasyPermissions.requestPermissions(
-                            PermissionRequest.Builder(this, LOCATION, ACCESS_COARSE_LOCATION)
+                            PermissionRequest.Builder(this, LOCATION, ACCESS_FINE_LOCATION)
                                     .setRationale(R.string.permission_location_rationale)
                                     .build())
                 }
@@ -110,7 +110,7 @@ fun Context.isBlueToothEnabled(): Boolean? {
 }
 
 fun Context.isLocationPermissionAllowed(): Boolean? {
-    return EasyPermissions.hasPermissions(this, ACCESS_COARSE_LOCATION)
+    return EasyPermissions.hasPermissions(this, ACCESS_FINE_LOCATION)
 }
 
 fun Context.isLocationEnabledOnDevice(): Boolean {
@@ -135,9 +135,9 @@ fun Context.isBatteryOptimizationDisabled(): Boolean? {
 fun Fragment.askForLocationPermission() {
     activity?.let {
         when {
-            !EasyPermissions.hasPermissions(it, ACCESS_COARSE_LOCATION) -> {
+            !EasyPermissions.hasPermissions(it, ACCESS_FINE_LOCATION) -> {
                 EasyPermissions.requestPermissions(
-                        PermissionRequest.Builder(this, LOCATION, ACCESS_COARSE_LOCATION)
+                        PermissionRequest.Builder(this, LOCATION, ACCESS_FINE_LOCATION)
                                 .setRationale(R.string.permission_location_rationale)
                                 .build())
             }

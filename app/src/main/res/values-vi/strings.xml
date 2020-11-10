@@ -253,7 +253,7 @@
   <string name="enter_number_button">Nhận mã PIN</string>
   <string name="enter_number_content">Chúng tôi sẽ gửi cho bạn mã PIN gồm 6 chữ số để xác minh số điện thoại của bạn.</string>
   <string name="enter_number_for_example">Ví dụ:</string>
-  <string name="enter_number_headline">Nhập sô điện thoại di động của bạn</string>
+  <string name="enter_number_headline">Nhập số điện thoại di động của bạn</string>
   <string name="enter_number_prefix">+61</string>
   <string name="enter_number_relative">Đăng ký dùm bạn bè hoặc người thân? \n\nHọ cần phải đăng ký bằng máy điện thoại và số điện thoại của riêng họ để COVIDSafe có thể hoạt động cho họ.</string>
   <string name="enter_pin_button">Xác minh</string>

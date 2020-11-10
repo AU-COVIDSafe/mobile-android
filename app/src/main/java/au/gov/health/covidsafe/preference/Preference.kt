@@ -37,6 +37,7 @@ object Preference {
     private const val IS_DEVICE_NAME_CHANGE_PROMPT_DISPLAYED = "IS_DEVICE_NAME_CHANGE_DISPLAYED"
     private const val BUILD_NUMBER_FOR_POP_UP_NOTIFICATION = "BUILD_NUMBER_FOR_POP_UP_NOTIFICATION"
     private const val TURN_CASE_NUMBER = "TURN_CASE_NUMBER"
+    private const val IS_REREGISTER = "IS_REREGISTER"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -124,6 +125,16 @@ object Preference {
     fun isOnBoarded(context: Context): Boolean {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .getBoolean(IS_ONBOARDED, false)
+    }
+
+    fun putIsReRegister(context: Context, value: Boolean) {
+        context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putBoolean(IS_REREGISTER, value).apply()
+    }
+
+    fun isReRegister(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .getBoolean(IS_REREGISTER, false)
     }
 
     fun putHasDeviceNameNotificationDisplayed(context: Context, value: Boolean) {

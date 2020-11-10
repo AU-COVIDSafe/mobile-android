@@ -16,14 +16,17 @@ import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
+import kotlinx.android.synthetic.main.view_home_setup_incomplete.*
 
 private const val TAG = "HomeActivity"
+private const val UNAUTHORIZED = "Unauthorized"
 
 class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectionListener {
 
     var isAppUpdateAvailableLiveData = MutableLiveData<Boolean>()
     var appUpdateAvailableMessageResponseLiveData = MutableLiveData<MessagesResponse>()
     var isWindowFocusChangeLiveData = MutableLiveData<Boolean>()
+    var isJWTCorrupted = MutableLiveData<Boolean>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +63,13 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
 
     private fun checkAndUpdateHealthStatus() {
         GetMessagesScheduler.scheduleGetMessagesJob {
+
+            if (it.errorBodyMessage.equals(UNAUTHORIZED)) {
+                isJWTCorrupted.postValue(true)
+            } else{
+                isJWTCorrupted.postValue(false)
+            }
+
             val isAppWithLatestVersion = it.messages.isNullOrEmpty()
             isAppUpdateAvailableLiveData.postValue(isAppWithLatestVersion)
             CentralLog.d(TAG, "isAppWithLatestVersion: $it")
@@ -75,7 +85,7 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
                                         body,
                                         "https://play.google.com/store/apps/details?id=au.gov.health.covidsafe")
                         )
-                ))
+                , it.message, it.forceappupgrade, it.errorBodyMessage))
             }
         }
     }

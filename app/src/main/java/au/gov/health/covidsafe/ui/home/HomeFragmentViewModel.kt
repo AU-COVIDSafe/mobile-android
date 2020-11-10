@@ -1,13 +1,9 @@
 package au.gov.health.covidsafe.ui.home
 
-import android.Manifest
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.*
 import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.R
-import au.gov.health.covidsafe.extensions.LOCATION
-import au.gov.health.covidsafe.extensions.askForLocationPermission
 import au.gov.health.covidsafe.factory.RetrofitServiceGenerator
 import au.gov.health.covidsafe.interactor.usecase.GetCaseStatisticsUseCase
 import au.gov.health.covidsafe.logging.CentralLog
@@ -18,8 +14,6 @@ import au.gov.health.covidsafe.preference.Preference
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pub.devrel.easypermissions.EasyPermissions
-import pub.devrel.easypermissions.PermissionRequest
 
 private const val TAG = "HomeFragmentViewModel"
 

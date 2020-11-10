@@ -50,7 +50,7 @@ fun setDateFormat(textView: TextView, dateString: String?) {
         val convertedDateString = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault()).format(cal.time)
         val convertedTimeString = SimpleDateFormat("h a", Locale.getDefault()).format(cal.time)
 
-        val finalDisplayDateFormat = "$convertedDateString at $convertedTimeString AEST"
+        val finalDisplayDateFormat = "$convertedDateString at $convertedTimeString"
         textView.text = finalDisplayDateFormat
     }
 }

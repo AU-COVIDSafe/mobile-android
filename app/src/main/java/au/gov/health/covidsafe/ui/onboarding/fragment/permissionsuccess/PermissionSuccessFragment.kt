@@ -10,6 +10,7 @@ import android.view.accessibility.AccessibilityEvent
 import au.gov.health.covidsafe.HomeActivity
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.links.LinkBuilder
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.base.PagerChildFragment
 import au.gov.health.covidsafe.ui.base.UploadButtonLayout
@@ -27,6 +28,12 @@ class PermissionSuccessFragment : PagerChildFragment() {
 
         permission_success_headline.setHeading()
         permission_success_headline.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+
+        if (Preference.isReRegister(requireContext())) {
+            permission_success_headline.text = requireContext().getString(R.string.jwt_success)
+        } else {
+            permission_success_headline.text = requireContext().getString(R.string.permission_success_headline)
+        }
 
         permission_success_content.text = LinkBuilder.getHowPermissionSuccessContent(requireContext())
         permission_success_content.movementMethod = LinkMovementMethod.getInstance()

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_setup_incomplete_permissions_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -40,7 +41,7 @@
         style="@style/fontRobotoRegular16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_16"
+        android:padding="@dimen/space_16"
         android:text="@string/home_app_permission_status_subtitle"
         android:textColor="@color/slate_black_1" />
 
@@ -98,4 +99,58 @@
 
     </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/jwt_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/registration_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackground"
+            android:padding="@dimen/space_16"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ic_register_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_vector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/re_register"
+                style="@style/fontRobotoRegular20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="2"
+                android:textColor="@color/error_red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/permission_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/jwt_heading"
+                tools:text="Please register again" />
+
+            <TextView
+                android:id="@+id/register_body"
+                style="@style/fontRobotoRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingTop="@dimen/space_8"
+                android:textColor="@color/error_red"
+                app:layout_constraintTop_toBottomOf="@id/re_register"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ic_register_again"
+                tools:visibility="visible"
+                android:text="@string/jwt_description"
+                tools:text="There is an issue with your registration details." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
 </LinearLayout>

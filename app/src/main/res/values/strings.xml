@@ -347,6 +347,7 @@
   <string name="IssueFooter">We may contact you for further details about your feedback. Your email address won’t be used for any other purpose.</string>
   <string name="jwt_description">There is an issue with your registration details.</string>
   <string name="jwt_heading">Please register again</string>
+  <string name="jwt_success">Registration successfully renewed</string>
   <string name="loading_numbers">Loading latest numbers</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe update in progress. \n\n Please make sure you phone is not switched off until the update is complete.</string>

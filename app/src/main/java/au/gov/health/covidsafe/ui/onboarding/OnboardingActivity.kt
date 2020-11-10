@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.fragment.NavHostFragment
 import au.gov.health.covidsafe.ui.base.HasBlockingState
 import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
@@ -32,6 +33,16 @@ class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer 
         bindProgressButton(onboarding_next)
         if (isUiBlocked) {
             loadingProgressBarFrame?.isVisible = true
+        }
+
+        val myNavHostFragment: NavHostFragment = fragment_nav_host as NavHostFragment
+        val inflater = myNavHostFragment.navController.navInflater
+        if (Preference.isReRegister(this)) {
+            val graph = inflater.inflate(R.navigation.nav_re_register)
+            myNavHostFragment.navController.graph = graph
+        } else {
+            val graph = inflater.inflate(R.navigation.nav_onboarding)
+            myNavHostFragment.navController.graph = graph
         }
     }
 

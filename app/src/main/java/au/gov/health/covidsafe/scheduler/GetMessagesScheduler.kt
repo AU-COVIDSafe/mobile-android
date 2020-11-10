@@ -7,7 +7,6 @@ import android.app.job.JobService
 import android.content.ComponentName
 import android.content.Context
 import au.gov.health.covidsafe.BuildConfig
-import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.extensions.isBatteryOptimizationDisabled
 import au.gov.health.covidsafe.extensions.isBlueToothEnabled
@@ -15,10 +14,13 @@ import au.gov.health.covidsafe.extensions.isLocationEnabledOnDevice
 import au.gov.health.covidsafe.extensions.isLocationPermissionAllowed
 import au.gov.health.covidsafe.factory.NetworkFactory.Companion.awsClient
 import au.gov.health.covidsafe.logging.CentralLog
+import au.gov.health.covidsafe.networking.response.ErrorMessage
 import au.gov.health.covidsafe.networking.response.MessagesResponse
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.scheduler.GetMessagesScheduler.mostRecentRecordTimestamp
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecord
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -175,8 +177,13 @@ object GetMessagesScheduler {
 
                     response.body()?.let {
                         CentralLog.d(TAG, "onResponse() MessagesResponse = $it")
-
                         messagesResponseCallback?.invoke(it)
+                    }
+                } else if (responseCode == 401) {
+                    response.errorBody()?.let {
+                        val errorMessage: ErrorMessage = Gson().fromJson(it.string(), ErrorMessage::class.java)
+                        val messageResponse = MessagesResponse(emptyList(), null, false, errorMessage.message)
+                        messagesResponseCallback?.invoke(messageResponse)
                     }
                 } else {
                     CentralLog.w(TAG, "onResponse() got error response code = $responseCode.")

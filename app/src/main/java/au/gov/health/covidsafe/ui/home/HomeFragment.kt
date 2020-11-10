@@ -16,6 +16,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
+import androidx.constraintlayout.solver.GoalRow
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -34,6 +35,7 @@ import au.gov.health.covidsafe.notifications.NotificationBuilder
 import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.base.BaseFragment
+import au.gov.health.covidsafe.ui.onboarding.OnboardingActivity
 import au.gov.health.covidsafe.utils.AnimationUtils.slideAnimation
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import au.gov.health.covidsafe.utils.SlideDirection
@@ -67,6 +69,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     private var mIsBroadcastListenerRegistered = false
 
     private var counter: Int = 0
+    private var jwtExpired: Boolean = false
 
     private var checkIsInternetConnected = false
     private var isAppWithLatestVersion = false
@@ -95,8 +98,8 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         initializeDebugTestActivity()
         initializeNoNetworkError()
         initializeRefreshButton()
-
         initializePullToRefresh()
+        initialiseReRegistration()
 
         NetworkConnectionCheck.addNetworkChangedListener(requireContext(), this)
     }
@@ -119,6 +122,14 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         }
     }
 
+    private fun initialiseReRegistration() {
+        registration_layout.setOnClickListener {
+            Preference.putIsOnBoarded(requireContext(), false)
+            Preference.putIsReRegister(requireContext(), true)
+            startActivity(Intent(requireContext(), OnboardingActivity::class.java))
+        }
+    }
+
     private fun initiateFetchingCaseNumbers() {
         lifecycleScope.launch {
             homeFragmentViewModel.fetchGetCaseStatistics(lifecycle)
@@ -127,6 +138,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private fun initializeObservers() {
         (activity as HomeActivity?)?.run {
+            isJWTCorrupted.observe(this@HomeFragment, isJwtExpired)
             isAppUpdateAvailableLiveData.observe(this@HomeFragment, latestAppAvailable)
             isWindowFocusChangeLiveData.observe(this@HomeFragment, refreshUiObserver)
         }
@@ -164,6 +176,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         if (it) {
             initiateFetchingCaseNumbers()
         }
+    }
+
+    private val isJwtExpired = Observer<Boolean> { expired ->
+        jwtExpired = expired
     }
 
     override fun onResume() {
@@ -337,12 +353,12 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         lifecycleScope.launch(Dispatchers.Main) {
             CentralLog.d(TAG, "refreshSetupCompleteOrIncompleteUi")
             context?.let {
-                val isAllPermissionsEnabled = it.allPermissionsEnabled()
+                val isAllPermissionsEnabled = it.allPermissionsEnabled() && !jwtExpired
                 if (!isAllPermissionsEnabled) {
                     NotificationBuilder.clearPossibleIssueNotificationCheck()
+                    updateJwtExpiredHeader()
                 }
                 val isDataUploadedInPast14Days = isDataUploadedInPast14Days(it)
-
                 updateSetupCompleteStatus(isAllPermissionsEnabled)
                 updateSetupCompleteHeaderTitle1(it, isAllPermissionsEnabled, isDataUploadedInPast14Days)
                 updateSetupCompleteHeaderTitle2(isAllPermissionsEnabled)
@@ -376,6 +392,16 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                     navigateToSettingsFragment()
                 }
             }
+        }
+    }
+
+    private fun updateJwtExpiredHeader() {
+        if (jwtExpired) {
+            permissions_card_subtitle.visibility = GONE
+            registration_layout.visibility = VISIBLE
+        } else {
+            permissions_card_subtitle.visibility = VISIBLE
+            registration_layout.visibility = GONE
         }
     }
 
@@ -430,7 +456,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private fun updateBlueToothStatus() {
         requireContext().isBlueToothEnabled()?.let {
-            if (!it) {
+            if (!it && !jwtExpired) {
                 bluetooth_card_view_layout.visibility = VISIBLE
                 bluetooth_card_view.render(formatBlueToothTitle(it), it)
             } else {
@@ -443,7 +469,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private fun updateBatteryOptimizationStatus() {
         requireContext().isBatteryOptimizationDisabled()?.let {
-            if (!it) {
+            if (!it && !jwtExpired) {
                 battery_card_view_layout.visibility = VISIBLE
                 battery_card_view.render(
                         formatNonBatteryOptimizationTitle(!it),
@@ -462,7 +488,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         requireContext().isLocationPermissionAllowed()?.let {
             val locationWorking = it && requireContext().isLocationEnabledOnDevice()
             val locationOffPrompts = getString(R.string.home_set_location_why)
-            if (!locationWorking) {
+            if (!locationWorking && !jwtExpired) {
                 location_card_view_layout.visibility = VISIBLE
                 location_card_view.render(formatLocationTitle(locationWorking), locationWorking, locationOffPrompts)
             } else {

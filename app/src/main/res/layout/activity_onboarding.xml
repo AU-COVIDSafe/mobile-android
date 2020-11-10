@@ -37,8 +37,7 @@
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_onboarding" />
+        app:defaultNavHost="true"/>
 
     <FrameLayout
         android:id="@+id/loadingProgressBarFrame"

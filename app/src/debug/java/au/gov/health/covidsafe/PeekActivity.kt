@@ -134,7 +134,9 @@ class PeekActivity : AppCompatActivity() {
             stop.visibility = View.GONE
             delete.visibility = View.GONE
         }
-
+        btn_de_active_token.setOnClickListener {
+            Preference.putEncrypterJWTToken(this, "123456789" )
+        }
     }
 
     private fun showPushTokenOnDebugBuild() {

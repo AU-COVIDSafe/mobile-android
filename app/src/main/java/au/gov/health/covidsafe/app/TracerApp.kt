@@ -4,25 +4,21 @@ import android.app.Application
 import android.content.Context
 import android.os.Build
 import au.gov.health.covidsafe.BuildConfig
-import com.atlassian.mobilekit.module.feedback.FeedbackModule
-
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.services.BluetoothMonitoringService
 import au.gov.health.covidsafe.streetpass.CentralDevice
 import au.gov.health.covidsafe.streetpass.PeripheralDevice
+import com.atlassian.mobilekit.module.feedback.FeedbackModule
 
 class TracerApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        AppContext = applicationContext
+        AppContext = this.applicationContext
         FeedbackModule.init(this)
-
-//        GetMessagesScheduler.scheduleGetMessagesJob()
     }
 
     companion object {
-
 
         private const val TAG = "TracerApp"
         const val ORG = BuildConfig.ORG
@@ -30,14 +26,13 @@ class TracerApp : Application() {
 
         lateinit var AppContext: Context
 
-        fun thisDeviceMsg(): String {
+        fun thisDeviceMsg(): String? {
             BluetoothMonitoringService.broadcastMessage?.let {
                 CentralLog.i(TAG, "Retrieved BM for storage: $it")
                 return it
             }
-
             CentralLog.e(TAG, "No local Broadcast Message")
-            return BluetoothMonitoringService.broadcastMessage!!
+            return ""
         }
 
         fun asPeripheralDevice(): PeripheralDevice {
@@ -47,6 +42,5 @@ class TracerApp : Application() {
         fun asCentralDevice(): CentralDevice {
             return CentralDevice(Build.MODEL, "SELF")
         }
-
     }
 }

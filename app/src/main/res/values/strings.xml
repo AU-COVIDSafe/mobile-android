@@ -242,7 +242,7 @@
   <string name="data_privacy_headline">Registration and privacy</string>
   <string name="data_privacy_headline_content_description">Heading, Registration and privacy</string>
   <string name="deaths">Deaths</string>
-  <string name="dialog_error_uploading_message">An error occurred while uploading your information, please try again.</string>
+  <string name="dialog_error_uploading_message">Try uploading your data again.\n\nRefer to this error code if a state or territory health official asks for it: %@</string>
   <string name="dialog_error_uploading_negative">Cancel</string>
   <string name="dialog_error_uploading_positive">Try again</string>
   <string name="dialog_uploading_message">Your COVIDSafe information is currently being uploaded.\n\nPlease do not close the app.</string>
@@ -313,7 +313,7 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">Invite others to help. Together, we’re stronger.</string>
   <string name="home_set_complete_external_link_share_title">Share COVIDSafe</string>
-  <string name="home_set_location_why">Google requires Location permission for Android apps to access Bluetooth®. COVIDSafe does not store or use location data.</string>
+  <string name="home_set_location_why">Google requires Location permission for Android apps to access Bluetooth®. COVIDSafe does NOT track or store your location data.</string>
   <string name="home_setup_help">Help</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe needs permission to access these features.</string>
   <string name="home_setup_incomplete_title">Check\npermissions</string>
@@ -383,12 +383,12 @@
   <string name="numbers_refresh">Refresh now</string>
   <string name="options_for_australia">Options for Australia</string>
   <string name="permission_button">Proceed</string>
-  <string name="permission_content">COVIDSafe needs Bluetooth® and notifications enabled to work.\n\nSelect ‘Proceed’ to:\n\n1. Enable Bluetooth\n\n2. Allow Location permission\n\n3. Disable Battery optimisation\n\nGoogle requires Location permission for Android apps to access Bluetooth. COVIDSafe does not store or use location data.\n\nCOVIDSafe does not send pairing requests.</string>
+  <string name="permission_content">COVIDSafe needs Bluetooth® and notifications enabled to work.\n\nSelect ‘Proceed’ to:\n\n1. Enable Bluetooth\n\n2. Allow Location permission\n\n3. Disable Battery optimisation\n\nGoogle requires Location permission for Android apps to access Bluetooth. COVIDSafe does NOT track or store your location data.\n\nCOVIDSafe does not send pairing requests.</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">App settings</string>
   <string name="permission_location_rationale">Android requires location access to enable Bluetooth® functions for COVIDSafe. COVIDSafe cannot work properly without it</string>
   <string name="permission_success_button">Done</string>
-  <string name="permission_success_content">1. When you leave home, keep your phone with you and make sure COVIDSafe is active.\n\n2. Bluetooth® should be kept ON.\n\n3. Battery optimisation should be OFF.\n\n4. COVIDSafe does not send pairing requests. *Learn more*.\n\n5. Google requires *Location permission for Android apps* to access Bluetooth. COVIDSafe does not store or use location data.</string>
+  <string name="permission_success_content">1. When you leave home, keep your phone with you and make sure COVIDSafe is active.\n\n2. Bluetooth® should be kept ON.\n\n3. Battery optimisation should be OFF.\n\n4. COVIDSafe does not send pairing requests. *Learn more*.\n\n5. Google requires *Location permission for Android apps* to access Bluetooth. COVIDSafe does NOT track or store your location data.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">You\'ve successfully registered</string>
   <string name="permission_success_warning">Keep push notifications on for COVIDSafe so we can notify you quickly if the app isn\'t working properly.</string>
@@ -457,11 +457,14 @@
   <string name="update_available_message_android">We’ve been making improvements to COVIDSafe.\nUpdate through the Google Play Store</string>
   <string name="update_available_play_store_btn">Go to Google Play Store</string>
   <string name="update_available_title">Update available!</string>
-  <string name="update_screen_location">Google requires *Location permission for Android apps* to access Bluetooth®. COVIDSafe does not store or use location data.</string>
+  <string name="update_description_android">This update improves COVIDSafe’s Bluetooth performance with new ways for COVIDSafe to better capture your close contacts. <a href="https://www.covidsafe.gov.au/help-topics.html#herald">Find out more about how we’ve improved COVIDSafe</a>\n\nGoogle requires Location permission for Android apps to access Bluetooth. <a href="https://www.covidsafe.gov.au/help-topics.html#location-permissions">COVIDSafe does NOT collect, store or use your location data</a></string>
+  <string name="update_heading_android">Improved performance</string>
+  <string name="update_screen_location">Google requires *Location permission for Android apps* to access Bluetooth®. COVIDSafe does NOT track or store your location data.</string>
   <string name="upload_answer_no">No</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">Yes</string>
   <string name="upload_consent_button">I agree</string>
+  <string name="upload_fail_heading">Your upload failed</string>
   <string name="upload_failed">Upload failed</string>
   <string name="upload_finished_header">Thank you for helping to stop the spread of COVID-19!</string>
   <string name="upload_finished_header_content_description">Heading, Thank you for helping to stop the spread of COVID-19!</string>

@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">注册及隐私</string>
   <string name="data_privacy_headline_content_description">Heading，注册及隐私</string>
   <string name="deaths">死亡人数</string>
-  <string name="dialog_error_uploading_message">个人信息上传时发生错误，请重试。</string>
   <string name="dialog_error_uploading_negative">取消</string>
   <string name="dialog_error_uploading_positive">重试</string>
   <string name="dialog_uploading_message">您的COVIDSafe信息正在上传中。 \n\n请不要关闭该应用程序。</string>

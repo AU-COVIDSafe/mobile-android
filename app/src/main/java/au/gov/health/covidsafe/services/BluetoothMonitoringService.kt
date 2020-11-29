@@ -14,70 +14,47 @@ import android.os.PowerManager
 import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleService
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.app.TracerApp
-import au.gov.health.covidsafe.bluetooth.BLEAdvertiser
-import au.gov.health.covidsafe.bluetooth.gatt.ACTION_RECEIVED_STATUS
-import au.gov.health.covidsafe.bluetooth.gatt.ACTION_RECEIVED_STREETPASS
-import au.gov.health.covidsafe.bluetooth.gatt.STATUS
-import au.gov.health.covidsafe.bluetooth.gatt.STREET_PASS
+import au.gov.health.covidsafe.bluetooth.gatt.ReadRequestPayload
 import au.gov.health.covidsafe.extensions.isLocationEnabledOnDevice
 import au.gov.health.covidsafe.factory.NetworkFactory
 import au.gov.health.covidsafe.interactor.usecase.UpdateBroadcastMessageAndPerformScanWithExponentialBackOff
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.notifications.NotificationTemplates
 import au.gov.health.covidsafe.preference.Preference
-import au.gov.health.covidsafe.receivers.PrivacyCleanerReceiver
-import au.gov.health.covidsafe.status.Status
-import au.gov.health.covidsafe.status.persistence.StatusRecord
-import au.gov.health.covidsafe.status.persistence.StatusRecordStorage
-import au.gov.health.covidsafe.streetpass.ConnectionRecord
-import au.gov.health.covidsafe.streetpass.StreetPassScanner
-import au.gov.health.covidsafe.streetpass.StreetPassServer
-import au.gov.health.covidsafe.streetpass.StreetPassWorker
+import au.gov.health.covidsafe.sensor.Sensor
+import au.gov.health.covidsafe.sensor.SensorArray
+import au.gov.health.covidsafe.sensor.SensorDelegate
+import au.gov.health.covidsafe.sensor.ble.BLEDevice
+import au.gov.health.covidsafe.sensor.ble.BLESensorConfiguration
+import au.gov.health.covidsafe.sensor.ble.BLE_TxPower
+import au.gov.health.covidsafe.sensor.datatype.*
+import au.gov.health.covidsafe.sensor.payload.PayloadDataSupplier
 import au.gov.health.covidsafe.streetpass.persistence.Encryption
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecord
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase
-import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_DEVICE
-import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_RSSI
-import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.DUMMY_TXPOWER
-import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.ENCRYPTED_EMPTY_DICT
-import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordDatabase.Companion.VERSION_ONE
 import au.gov.health.covidsafe.streetpass.persistence.StreetPassRecordStorage
 import au.gov.health.covidsafe.ui.utils.LocalBlobV2
 import au.gov.health.covidsafe.ui.utils.Utils
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.EasyPermissions
 import java.lang.ref.WeakReference
+import java.util.*
+import kotlin.collections.HashMap
 import kotlin.coroutines.CoroutineContext
 
 private const val POWER_SAVE_WHITELIST_CHANGED = "android.os.action.POWER_SAVE_WHITELIST_CHANGED"
 
 @Keep
-class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
+class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDelegate, PayloadDataSupplier {
 
     @Keep
-    private lateinit var serviceUUID: String
-
-    private var streetPassServer: StreetPassServer? = null
-    private var streetPassScanner: StreetPassScanner? = null
-    private var advertiser: BLEAdvertiser? = null
-
-    private var worker: StreetPassWorker? = null
-
-    private val streetPassReceiver = StreetPassReceiver()
-    private val statusReceiver = StatusReceiver()
     private val bluetoothStatusReceiver = BluetoothStatusReceiver()
-
-    private lateinit var streetPassRecordStorage: StreetPassRecordStorage
-    private lateinit var statusRecordStorage: StatusRecordStorage
 
     private var job: Job = Job()
 
@@ -86,52 +63,42 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
     private lateinit var commandHandler: CommandHandler
 
-    private lateinit var localBroadcastManager: LocalBroadcastManager
-
     private val awsClient = NetworkFactory.awsClient
 
-    private val gson: Gson = GsonBuilder().disableHtmlEscaping().create()
+    // Sensor for proximity detection
+    private var sensor: Sensor? = null
+    private lateinit var streetPassRecordStorage: StreetPassRecordStorage
+    private var appDelegate: BluetoothMonitoringService = this
+
+    private var recentSaves: MutableMap<String,Date> = HashMap()
 
     override fun onCreate() {
         super.onCreate()
-        localBroadcastManager = LocalBroadcastManager.getInstance(this)
+        AppContext = applicationContext
         setup()
     }
 
     private fun setup() {
+        streetPassRecordStorage = StreetPassRecordStorage(applicationContext)
         val pm = getSystemService(Context.POWER_SERVICE) as PowerManager
 
         CentralLog.setPowerManager(pm)
-
         commandHandler = CommandHandler(WeakReference(this))
 
-        CentralLog.d(TAG, "Creating service - BluetoothMonitoringService")
-        serviceUUID = BuildConfig.BLE_SSID
-
-        worker = StreetPassWorker(this.applicationContext)
-
+        broadcastMessage = Utils.retrieveBroadcastMessage(this.applicationContext)
         unregisterReceivers()
         registerReceivers()
 
-        streetPassRecordStorage = StreetPassRecordStorage(this.applicationContext)
-        statusRecordStorage = StatusRecordStorage(this.applicationContext)
-        PrivacyCleanerReceiver.startAlarm(this.applicationContext)
         setupNotifications()
-        broadcastMessage = Utils.retrieveBroadcastMessage(this.applicationContext)
     }
 
     fun teardown() {
-        streetPassServer?.tearDown()
-        streetPassServer = null
-
-        streetPassScanner?.stopScan()
-        streetPassScanner = null
-
         commandHandler.removeCallbacksAndMessages(null)
 
         Utils.cancelBMUpdateCheck(this.applicationContext)
         Utils.cancelNextScan(this.applicationContext)
         Utils.cancelNextAdvertise(this.applicationContext)
+        sensor?.stop()
     }
 
     private fun setupNotifications() {
@@ -239,18 +206,15 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         when (cmd) {
             Command.ACTION_START -> {
-                setupService()
                 actionStart()
                 Utils.scheduleNextHealthCheck(this.applicationContext, healthCheckInterval)
                 Utils.scheduleBMUpdateCheck(this.applicationContext, bmCheckInterval)
             }
 
             Command.ACTION_SCAN -> {
-                actionScan()
             }
 
             Command.ACTION_ADVERTISE -> {
-                actionAdvertise()
             }
 
             Command.ACTION_UPDATE_BM -> {
@@ -267,17 +231,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
             else -> CentralLog.i(TAG, "Invalid command: $cmd. Nothing to do")
         }
-    }
-
-    private fun actionStop() {
-        stopForeground(true)
-        stopSelf()
-        CentralLog.w(TAG, "Service Stopping")
-    }
-
-    private fun actionHealthCheck() {
-        Utils.scheduleNextHealthCheck(this.applicationContext, healthCheckInterval)
-        performHealthCheck()
     }
 
     private fun actionStart() {
@@ -299,15 +252,45 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
                         params = null,
                         onSuccess = {
                             broadcastMessage = it.tempId
-                            setupCycles()
+                            sensorStart()
                         },
                         onFailure = {
                         }
                 )
-            } else if (Preference.isOnBoarded(this)) {
-                setupCycles()
             }
+            sensorStart()
         }
+    }
+
+    fun sensorStart() {
+        if (broadcastMessage != null) {
+            streetPassRecordStorage = StreetPassRecordStorage(applicationContext)
+            sensor = SensorArray(applicationContext, this)
+            getAppDelegate().sensor()?.add(this)
+            // Sensor will start and stop with Bluetooth power on / off events
+            sensor?.start()
+        }
+    }
+
+    /// Get app delegate
+    fun getAppDelegate(): BluetoothMonitoringService {
+        return appDelegate
+    }
+
+    /// Get sensor
+    fun sensor(): Sensor? {
+        return sensor
+    }
+
+    private fun actionStop() {
+        stopForeground(true)
+        stopSelf()
+        CentralLog.w(TAG, "Service Stopping")
+    }
+
+    private fun actionHealthCheck() {
+        Utils.scheduleNextHealthCheck(this.applicationContext, healthCheckInterval)
+        performHealthCheck()
     }
 
     private fun actionUpdateBm() {
@@ -330,102 +313,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         }
     }
 
-    private fun calcPhaseShift(min: Long, max: Long): Long {
-        return (min + (Math.random() * (max - min))).toLong()
-    }
-
-    private fun actionScan() {
-        if (Preference.isOnBoarded(this) && Utils.needToUpdate(this.applicationContext) || broadcastMessage == null) {
-            //need to pull new BM
-            UpdateBroadcastMessageAndPerformScanWithExponentialBackOff(awsClient, applicationContext, lifecycle).invoke(
-                    params = null,
-                    onSuccess = {
-                        broadcastMessage = it.tempId
-                        performScanAndScheduleNextScan()
-                    },
-                    onFailure = {
-                    }
-            )
-        } else if (Preference.isOnBoarded(this)) {
-            performScanAndScheduleNextScan()
-        }
-    }
-
-    private fun actionAdvertise() {
-        setupAdvertiser()
-
-        if (isBluetoothEnabled()) {
-            advertiser?.startAdvertising(advertisingDuration)
-        } else {
-            CentralLog.w(TAG, "Unable to start advertising, bluetooth is off")
-        }
-
-        commandHandler.scheduleNextAdvertise(advertisingDuration + advertisingGap)
-    }
-
-    private fun setupService() {
-        streetPassServer =
-                streetPassServer ?: StreetPassServer(this.applicationContext, serviceUUID)
-        setupScanner()
-        setupAdvertiser()
-    }
-
-    private fun setupScanner() {
-        streetPassScanner = streetPassScanner ?: StreetPassScanner(
-                this,
-                serviceUUID,
-                scanDuration
-        )
-    }
-
-    private fun setupAdvertiser() {
-        advertiser = advertiser ?: BLEAdvertiser(serviceUUID)
-    }
-
-    private fun setupCycles() {
-        setupScanCycles()
-        setupAdvertisingCycles()
-    }
-
-    private fun setupScanCycles() {
-        actionScan()
-    }
-
-    private fun setupAdvertisingCycles() {
-        actionAdvertise()
-    }
-
-    private fun performScanAndScheduleNextScan() {
-
-        setupScanner()
-
-        commandHandler.scheduleNextScan(
-                scanDuration + calcPhaseShift(
-                        minScanInterval,
-                        maxScanInterval
-                )
-        )
-
-        startScan()
-
-    }
-
-    private fun startScan() {
-
-        if (isBluetoothEnabled()) {
-
-            streetPassScanner?.let { scanner ->
-                if (!scanner.isScanning()) {
-                    scanner.startScan()
-                } else {
-                    CentralLog.e(TAG, "Already scanning!")
-                }
-            }
-        } else {
-            CentralLog.w(TAG, "Unable to start scan - bluetooth is off")
-        }
-    }
-
     private fun performHealthCheck() {
 
         CentralLog.i(TAG, "Performing self diagnosis")
@@ -443,29 +330,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
                         CHANNEL_ID
                 )
         )
-
-        //ensure our service is there
-        setupService()
-
-        if (!commandHandler.hasScanScheduled()) {
-            CentralLog.w(TAG, "Missing Scan Schedule - rectifying")
-            setupScanCycles()
-        } else {
-            CentralLog.w(TAG, "Scan Schedule present")
-        }
-
-        if (!commandHandler.hasAdvertiseScheduled()) {
-            CentralLog.w(TAG, "Missing Advertise Schedule - rectifying")
-            setupAdvertisingCycles()
-        } else {
-            CentralLog.w(
-                    TAG,
-                    "Advertise Schedule present. Should be advertising?:  ${
-                        advertiser?.shouldBeAdvertising
-                                ?: false
-                    }. Is Advertising?: ${advertiser?.isAdvertising ?: false}"
-            )
-        }
     }
 
     override fun onDestroy() {
@@ -474,9 +338,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
 
         teardown()
         unregisterReceivers()
-
-        worker?.terminateConnections()
-        worker?.unregisterReceivers()
 
         job.cancel()
 
@@ -540,43 +401,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         }
     }
 
-    private fun registerLocationChangeReceiver() {
-        registerReceiver(gpsSwitchStateReceiver, IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION))
-    }
-
-    private fun registerPowerModeChangeReceiver() {
-        registerReceiver(powerStateChangeReceiver, IntentFilter(POWER_SAVE_WHITELIST_CHANGED))
-    }
-
-    private fun registerReceivers() {
-        val recordAvailableFilter = IntentFilter(ACTION_RECEIVED_STREETPASS)
-        localBroadcastManager.registerReceiver(streetPassReceiver, recordAvailableFilter)
-
-        val statusReceivedFilter = IntentFilter(ACTION_RECEIVED_STATUS)
-        localBroadcastManager.registerReceiver(statusReceiver, statusReceivedFilter)
-
-        val bluetoothStatusReceivedFilter = IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED)
-        registerReceiver(bluetoothStatusReceiver, bluetoothStatusReceivedFilter)
-
-        registerLocationChangeReceiver()
-        registerPowerModeChangeReceiver()
-
-        CentralLog.i(TAG, "Receivers registered")
-    }
-
     private fun unregisterReceivers() {
-        try {
-            localBroadcastManager.unregisterReceiver(streetPassReceiver)
-        } catch (e: Throwable) {
-            CentralLog.w(TAG, "streetPassReceiver is not registered?")
-        }
-
-        try {
-            localBroadcastManager.unregisterReceiver(statusReceiver)
-        } catch (e: Throwable) {
-            CentralLog.w(TAG, "statusReceiver is not registered?")
-        }
-
         try {
             unregisterReceiver(bluetoothStatusReceiver)
 
@@ -602,6 +427,24 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         } catch (e: Throwable) {
             CentralLog.w(TAG, "Power State Receiver is not registered?")
         }
+    }
+
+    private fun registerLocationChangeReceiver() {
+        registerReceiver(gpsSwitchStateReceiver, IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION))
+    }
+
+    private fun registerPowerModeChangeReceiver() {
+        registerReceiver(powerStateChangeReceiver, IntentFilter(POWER_SAVE_WHITELIST_CHANGED))
+    }
+
+    private fun registerReceivers() {
+        val bluetoothStatusReceivedFilter = IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED)
+        registerReceiver(bluetoothStatusReceiver, bluetoothStatusReceivedFilter)
+
+        registerLocationChangeReceiver()
+        registerPowerModeChangeReceiver()
+
+        CentralLog.i(TAG, "Receivers registered")
     }
 
     inner class BluetoothStatusReceiver : BroadcastReceiver() {
@@ -634,83 +477,6 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         }
     }
 
-    inner class StreetPassReceiver : BroadcastReceiver() {
-
-        private val TAG = "StreetPassReceiver"
-
-        override fun onReceive(context: Context, intent: Intent) {
-
-            if (ACTION_RECEIVED_STREETPASS == intent.action) {
-                val connRecord: ConnectionRecord? = intent.getParcelableExtra(STREET_PASS)
-                CentralLog.d(TAG, "StreetPass received: $connRecord")
-
-                if (connRecord != null && connRecord.msg.isNotEmpty()) {
-
-                    val remoteBlob: String = if (connRecord.version == VERSION_ONE) {
-                        with(receiver = connRecord) {
-                            val plainRecordByteArray = gson.toJson(StreetPassRecordDatabase.Companion.EncryptedRecord(
-                                    peripheral.modelP, central.modelC, rssi, txPower, msg = msg))
-                                    .toByteArray(Charsets.UTF_8)
-                            Encryption.encryptPayload(plainRecordByteArray)
-                        }
-                    } else {
-                        //For version after version 1, the message is already encrypted in msg and we can store it as remote BLOB
-                        connRecord.msg
-                    }
-                    val localBlob: String = if (connRecord.version == VERSION_ONE) {
-                        ENCRYPTED_EMPTY_DICT
-                    } else {
-                        with(receiver = connRecord) {
-                            val modelP = if (DUMMY_DEVICE == peripheral.modelP) null else peripheral.modelP
-                            val modelC = if (DUMMY_DEVICE == central.modelC) null else central.modelC
-                            val rssi = if (rssi == DUMMY_RSSI) null else rssi
-                            val txPower = if (txPower == DUMMY_TXPOWER) null else txPower
-                            val plainLocalBlob = gson.toJson(LocalBlobV2(modelP, modelC, rssi, txPower))
-                                    .toByteArray(Charsets.UTF_8)
-                            Encryption.encryptPayload(plainLocalBlob)
-                        }
-                    }
-
-                    val record = StreetPassRecord(
-                            v = if (connRecord.version == 1) TracerApp.protocolVersion else (connRecord.version),
-                            org = connRecord.org,
-                            localBlob = localBlob,
-                            remoteBlob = remoteBlob
-                    )
-
-                    launch {
-                        CentralLog.d(
-                                TAG,
-                                "Coroutine - Saving StreetPassRecord: ${Utils.getDate(record.timestamp)} $record")
-
-                        streetPassRecordStorage.saveRecord(record)
-                    }
-                }
-            }
-        }
-    }
-
-    inner class StatusReceiver : BroadcastReceiver() {
-        private val TAG = "StatusReceiver"
-
-        override fun onReceive(context: Context, intent: Intent) {
-
-            if (ACTION_RECEIVED_STATUS == intent.action) {
-                val status: Status? = intent.getParcelableExtra(STATUS)
-                status?.let {
-                    CentralLog.d(TAG, "Status received: ${it.msg}")
-
-                    if (it.msg.isNotEmpty()) {
-                        val statusRecord = StatusRecord(it.msg)
-                        launch {
-                            statusRecordStorage.saveRecord(statusRecord)
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     enum class Command(val index: Int, val string: String) {
         INVALID(-1, "INVALID"),
         ACTION_START(0, "START"),
@@ -724,6 +490,128 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
             private val types = values().associate { it.index to it }
             fun findByValue(value: Int) = types[value]
         }
+    }
+
+    override fun sensor(sensor: SensorType?, didDetect: TargetIdentifier?) {
+        CentralLog.d(TAG, "${sensor?.name} ,didDetect= $didDetect")
+    }
+
+    override fun sensor(sensor: SensorType?, didRead: PayloadData?, fromTarget: TargetIdentifier?) {
+        CentralLog.d(TAG, "${sensor?.name} ,didRead= ${didRead?.shortName()} ,fromTarget= $fromTarget")
+    }
+
+    override fun sensor(sensor: SensorType?, didShare: MutableList<PayloadData>?, fromTarget: TargetIdentifier?) {
+        val payloads: MutableList<String> = ArrayList(didShare!!.size)
+        for (payloadData in didShare) {
+            payloads.add(payloadData.shortName())
+        }
+        CentralLog.d(TAG, "${sensor?.name} ,didShare= $payloads ,fromTarget= $fromTarget")
+    }
+
+    override fun sensor(sensor: SensorType?, didMeasure: Proximity?, fromTarget: TargetIdentifier?) {
+        CentralLog.d(TAG, "${sensor?.name} ,didMeasure= ${didMeasure?.description()} ,fromTarget= $fromTarget")
+    }
+
+    override fun sensor(sensor: SensorType?, didVisit: Location?) {
+        CentralLog.d(TAG, "${sensor?.name} ,didVisit= ${didVisit?.description()}")
+    }
+
+    override fun sensor(sensor: SensorType?, didMeasure: Proximity?, fromTarget: TargetIdentifier?, withPayload: PayloadData?, device: BLEDevice) {
+        CentralLog.d(TAG, "${sensor?.name} ,didMeasure= ${didMeasure?.description()} ,fromTarget= ${fromTarget} ,withPayload= ${withPayload?.shortName()}, withDevice=$device")
+        wrtieEncounterRecordToDB(device)
+    }
+
+    override fun sensor(sensor: SensorType?, didMeasure: Proximity?, fromTarget: TargetIdentifier?, withPayload: PayloadData?){
+        CentralLog.d(TAG, "${sensor?.name} ,didMeasure= ${didMeasure?.description()} ,fromTarget= ${fromTarget} ,withPayload= ${withPayload?.shortName()}")
+    }
+
+    override fun sensor(sensor: SensorType?, didUpdateState: SensorState?) {
+        CentralLog.d(TAG, "${sensor?.name} ,didUpdateState= ${didUpdateState?.name}")
+    }
+
+    override fun sensor(sensor: SensorType?, didRead: PayloadData?, fromTarget: TargetIdentifier?, atProximity: Proximity?, withTxPower: Int, device: BLEDevice) {
+        CentralLog.d(TAG, "${sensor?.name} ,fromTarget= $fromTarget , atProximity= ${atProximity}, withTxPower= $withTxPower")
+        //wrtieEncounterRecordToDB(device)
+    }
+
+    private fun cleanRecentSaves() {
+        recentSaves = recentSaves.filter { (key, value) -> TimeInterval( Date().time - value.time).value < BuildConfig.PERIPHERAL_PAYLOAD_SAVE_INTERVAL} as MutableMap<String, Date>
+    }
+
+    private fun wrtieEncounterRecordToDB(device: BLEDevice): Any {
+
+        return try {
+
+            var deviceId: String = if(device.pseudoDeviceAddress()==null)device.identifier.value else device.pseudoDeviceAddress().toString()
+            cleanRecentSaves()
+            if(device.payloadData() != null && !recentSaves.containsKey(deviceId)) {
+                recentSaves.put(deviceId,Date())
+
+                val didRead = device.payloadData()
+                val deviceRssi = device.rssi()
+                val withTxPower = device.txPower()
+
+                val peripheralrecord = ReadRequestPayload.gson.fromJson(String(didRead.value), ReadRequestPayload::class.java)
+                val modelC = if (StreetPassRecordDatabase.DUMMY_DEVICE == TracerApp.asCentralDevice().modelC) null else TracerApp.asCentralDevice().modelC
+                val modelP = if (StreetPassRecordDatabase.DUMMY_DEVICE == peripheralrecord.modelP) null else peripheralrecord.modelP
+                val rssi = if (deviceRssi?.value == StreetPassRecordDatabase.DUMMY_RSSI) null else deviceRssi.value
+                val txPower = if (withTxPower == null || withTxPower.value == StreetPassRecordDatabase.DUMMY_TXPOWER) null else withTxPower.value
+                val plainLocalBlob = ReadRequestPayload.gson.toJson(LocalBlobV2(
+                        modelP,
+                        modelC,
+                        txPower,
+                        rssi
+                )).toByteArray(Charsets.UTF_8)
+
+                val localBlob = Encryption.encryptPayload(plainLocalBlob)
+                val record = StreetPassRecord(
+                        v = peripheralrecord.v,
+                        org = peripheralrecord.org,
+                        localBlob = localBlob,
+                        remoteBlob = peripheralrecord.msg
+                )
+
+                launch {
+                    streetPassRecordStorage.saveRecord(record)
+                }
+            }else{}
+        } catch (e: java.lang.Exception) {
+            CentralLog.d(TAG, "Json parsing failed = $e")
+        }
+    }
+
+    override fun payload(data: Data?): MutableList<PayloadData> {
+        // Split raw data comprising of concatenated payloads into individual payloads, in our case we will only every get one payload at a time
+        val payload = PayloadData(data?.value)
+        val payloads: MutableList<PayloadData> = ArrayList()
+        payloads.add(payload)
+        return payloads
+    }
+
+    inner class ReadRequestEncryptedPayload(val timestamp: Long, val modelP: String, val msg: String?)
+
+    override fun payload(timestamp: PayloadTimestamp?): PayloadData {
+        val peripheral = TracerApp.asPeripheralDevice()
+        val readRequest = ReadRequestEncryptedPayload(
+                System.currentTimeMillis() / 1000L,
+                peripheral.modelP,
+                thisDeviceMsg()
+        )
+        val plainRecord = ReadRequestPayload.gson.toJson(readRequest)
+
+        CentralLog.d(TAG, "onCharacteristicReadRequest plainRecord =  $plainRecord")
+
+        val plainRecordByteArray = plainRecord.toByteArray(Charsets.UTF_8)
+        val remoteBlob = Encryption.encryptPayload(plainRecordByteArray)
+        val base =
+                ReadRequestPayload(
+                        v = TracerApp.protocolVersion,
+                        msg = remoteBlob,
+                        org = TracerApp.ORG,
+                        modelP = null //This is going to be stored as empty in the db as DUMMY value
+                ).getPayload()
+        val value = base.copyOfRange(0, base.size)
+        return PayloadData(value)
     }
 
     companion object {
@@ -744,25 +632,23 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope {
         const val PENDING_WIZARD_REQ_CODE = 10
         const val PENDING_BM_UPDATE = 11
         const val PENDING_PRIVACY_CLEANER_CODE = 12
-        const val DAILY_UPLOAD_NOTIFICATION_CODE = 13
-
 
         var broadcastMessage: String? = null
-
-        const val scanDuration: Long = BuildConfig.SCAN_DURATION
-        const val minScanInterval: Long = BuildConfig.MIN_SCAN_INTERVAL
-        const val maxScanInterval: Long = BuildConfig.MAX_SCAN_INTERVAL
-
-        const val advertisingDuration: Long = BuildConfig.ADVERTISING_DURATION
-        const val advertisingGap: Long = BuildConfig.ADVERTISING_INTERVAL
 
         const val maxQueueTime: Long = BuildConfig.MAX_QUEUE_TIME
         const val bmCheckInterval: Long = BuildConfig.BM_CHECK_INTERVAL
         const val healthCheckInterval: Long = BuildConfig.HEALTH_CHECK_INTERVAL
-
         const val connectionTimeout: Long = BuildConfig.CONNECTION_TIMEOUT
 
         const val blacklistDuration: Long = BuildConfig.BLACKLIST_DURATION
-
+        lateinit var AppContext: Context
+        fun thisDeviceMsg(): String? {
+            broadcastMessage?.let {
+                CentralLog.i(TAG, "Retrieved BM for storage: $it")
+                return it
+            }
+            CentralLog.e(TAG, "No local Broadcast Message")
+            return ""
+        }
     }
 }

@@ -1,3 +1,14 @@
+# The new Herald Protocol is being integrated into COVIDSafe
+
+Even though we have made a range of significant improvements to COVIDSafe, we continue to look for ways we can improve the app further. Herald, a Bluetooth communication and range finding protocol that supports contact tracing, is one such improvement.  
+  
+The Herald Protocol employs several techniques to improve Bluetooth communication across a wide range of mobile devices. This provides contact tracing apps with regular and accurate proximity information that helps make them highly effective, especially in background on iOS devices.  
+  
+Herald is a VMware-originated open source project. It is part of VMware’s ongoing contribution towards the Linux Foundation Public Health initiative. The initiative aims to use open source technologies to help public health authorities across the world combat COVID-19.  
+
+Find out more about Herald and COVIDSafe:  [https://www.dta.gov.au/news/covidsafe-captures-close-contacts-new-herald-protocol](https://www.dta.gov.au/news/covidsafe-captures-close-contacts-new-herald-protocol)
+  
+  
 # COVIDSafe app
 
 Thank you for viewing the GitHub repository for the COVIDSafe app by the Australian Government.  

@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">등록 및 개인정보 보호</string>
   <string name="data_privacy_headline_content_description">제목, 등록 및 개인정보 보호</string>
   <string name="deaths">사망자</string>
-  <string name="dialog_error_uploading_message">정보를 업로드하는 동안 오류가 발생했습니다. 다시 시도하세요.</string>
   <string name="dialog_error_uploading_negative">취소</string>
   <string name="dialog_error_uploading_positive">다시 시도</string>
   <string name="dialog_uploading_message">당신의 COVIDSafe 정보가 현재 업로드 중입니다. \n\n앱을 닫지 마세요.</string>

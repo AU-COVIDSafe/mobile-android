@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">Đăng ký và bảo mật</string>
   <string name="data_privacy_headline_content_description">Tiêu đề, Đăng ký và bảo mật</string>
   <string name="deaths">Tử vong</string>
-  <string name="dialog_error_uploading_message">Bị lỗi trong khi đăng tải thông tin của bạn, vui lòng thử lại.</string>
   <string name="dialog_error_uploading_negative">Hủy bỏ</string>
   <string name="dialog_error_uploading_positive">Thử lại</string>
   <string name="dialog_uploading_message">Thông tin COVIDSafe của bạn hiện đang được đăng tải. \n\n Vui lòng không đóng ứng dụng.</string>

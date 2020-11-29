@@ -25,5 +25,4 @@ class StreetPassRecordStorage(val context: Context) {
     fun getAllRecords(): List<StreetPassRecord> {
         return recordDao.getCurrentRecords()
     }
-
 }

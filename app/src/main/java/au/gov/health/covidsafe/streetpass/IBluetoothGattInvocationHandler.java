@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import au.gov.health.covidsafe.logging.CentralLog;
 
-        /* This class is used by StreetPassPairingFix to proxy calls between BluetoothGatt and the underlying
+/* This class is used by StreetPassPairingFix to proxy calls between BluetoothGatt and the underlying
  * IBluetoothGatt implementation (the interface between Android SDK's bluetooth API and the system
  * bluetooth daemon)
 

@@ -81,10 +81,20 @@ class ConcreteBLETransmitter(
         override fun bleTimer(now: Long) {
             if (!isSupported || bluetoothStateManager.state() == BluetoothState.poweredOff) {
                 if (advertLoopState != AdvertLoopState.stopped) {
+                    // [AT] Clear services and close GATT server, if it exists
+                    try {
+                        if (bluetoothGattServer != null) {
+                            logger.debug("[AT] bleTimer, non-null gatt server, stopping GATT server")
+                            bluetoothGattServer!!.clearServices()
+                            bluetoothGattServer!!.close()
+                        }
+                    } catch (e: Throwable) {
+                        logger.fault("[AT] bleTimer, failed to stop GATT server", e)
+                    }
                     advertiseCallback = null
                     bluetoothGattServer = null
                     state(now, AdvertLoopState.stopped)
-                    logger.debug("advertLoopTask, stop advert (advert={}ms)", timeSincelastStateChange(now))
+                    logger.debug("[AT] advertLoopTask, BluetoothState.powerdOff, stop advert (advert={}ms)", timeSincelastStateChange(now))
                 }
                 return
             }

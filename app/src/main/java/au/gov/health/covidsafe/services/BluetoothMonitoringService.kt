@@ -11,6 +11,7 @@ import android.content.IntentFilter
 import android.location.LocationManager
 import android.os.Build
 import android.os.PowerManager
+import android.util.Log
 import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleService
@@ -93,12 +94,16 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
     }
 
     fun teardown() {
-        commandHandler.removeCallbacksAndMessages(null)
+        //commandHandler.removeCallbacksAndMessages(null)
 
-        Utils.cancelBMUpdateCheck(this.applicationContext)
-        Utils.cancelNextScan(this.applicationContext)
-        Utils.cancelNextAdvertise(this.applicationContext)
-        sensor?.stop()
+        //Utils.cancelBMUpdateCheck(this.applicationContext)
+        //Utils.cancelNextScan(this.applicationContext)
+        //Utils.cancelNextAdvertise(this.applicationContext)
+
+        //[AT]
+        Log.i(TAG, "[AT] teardown, do nothing")
+
+        //sensor?.stop()
     }
 
     private fun setupNotifications() {
@@ -263,8 +268,15 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
     }
 
     fun sensorStart() {
-        if (broadcastMessage != null) {
+        // [AT] Don't create a new sensor, to avoid creating multiple advertisements/duplicate GATT services
+        Log.i(TAG, "[AT] sensorStart")
+
+        if (broadcastMessage != null && sensor == null) {
+
             streetPassRecordStorage = StreetPassRecordStorage(applicationContext)
+
+            Log.i(TAG, "[AT] creating a new SensorArray")
+
             sensor = SensorArray(applicationContext, this)
             getAppDelegate().sensor()?.add(this)
             // Sensor will start and stop with Bluetooth power on / off events

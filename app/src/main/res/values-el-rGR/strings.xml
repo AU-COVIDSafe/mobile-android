@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">Εγγραφή και προστασία του απορρήτου</string>
   <string name="data_privacy_headline_content_description">Επικεφαλίδα, Εγγραφή και προστασία του απορρήτου</string>
   <string name="deaths">Θάνατοι</string>
-  <string name="dialog_error_uploading_message">Παρουσιάστηκε πρόβλημα κατά την ανάρτηση των στοιχείων σας. Δοκιμάστε ξανά.</string>
   <string name="dialog_error_uploading_negative">Ακύρωση</string>
   <string name="dialog_error_uploading_positive">Προσπαθήστε ξανά</string>
   <string name="dialog_uploading_message">Τα στοιχεία σας αναρτίζονται στην COVIDSafe αυτή τη στιγμή. \n\nΜην κλείσετε την εφαρμογή.</string>

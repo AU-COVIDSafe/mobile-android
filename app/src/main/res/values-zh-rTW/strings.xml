@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">註册及私隱權</string>
   <string name="data_privacy_headline_content_description">標題，註册及私隱權</string>
   <string name="deaths">死亡人數</string>
-  <string name="dialog_error_uploading_message">個人資料上傳時發生錯誤，請重試。</string>
   <string name="dialog_error_uploading_negative">取消</string>
   <string name="dialog_error_uploading_positive">重試</string>
   <string name="dialog_uploading_message">正在上傳你的 COVIDSafe 資料。 \n\n請勿關閉應用程式。</string>

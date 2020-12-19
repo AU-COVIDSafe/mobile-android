@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">Kayıt ve gizlilik</string>
   <string name="data_privacy_headline_content_description">Başlık, Kayıt ve gizlilik</string>
   <string name="deaths">Ölümler</string>
-  <string name="dialog_error_uploading_message">Bilgileriniz sisteme yüklerken bir hata oluştu, lütfen tekrar deneyin.</string>
   <string name="dialog_error_uploading_negative">İptal</string>
   <string name="dialog_error_uploading_positive">Tekrar deneyin</string>
   <string name="dialog_uploading_message">COVIDSafe bilgileriniz şu anda sisteme yükleniyor. \n\n Lütfen uygulamayı kapatmayın.</string>

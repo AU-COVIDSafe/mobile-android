@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">ਪੰਜੀਕਰਨ ਅਤੇ ਪ੍ਰਾਈਵੇਸੀ</string>
   <string name="data_privacy_headline_content_description">ਸਿਰਲੇਖ, ਪੰਜੀਕਰਨ ਅਤੇ ਪ੍ਰਾਈਵੇਸੀ</string>
   <string name="deaths">ਮੌਤਾਂ</string>
-  <string name="dialog_error_uploading_message">ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਨੂੰ ਅੱਪਲੋਡ ਕਰਨ ਦੌਰਾਨ ਇੱਕ ਗਲਤੀ ਆਈ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
   <string name="dialog_error_uploading_negative">ਰੱਦ</string>
   <string name="dialog_error_uploading_positive">ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
   <string name="dialog_uploading_message">ਤੁਹਾਡੀ COVIDSafe ਜਾਣਕਾਰੀ ਨੂੰ  ਇਸ ਵੇਲੇ ਅੱਪਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।\n\nਕਿਰਪਾ ਕਰਕੇ ਐਪ ਬੰਦ ਨਾ ਕਰੋ।</string>
@@ -347,6 +346,7 @@
   <string name="IssueFooter">ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਾਂ ਲਈ ਅਸੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹਾਂ| ਤੁਹਾਡੀ ਈਮੇਲ ਦੀ ਵਰਤੋਂ ਕਿਸੇ ਹੋਰ ਉਦੇਸ਼ ਲਈ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ|</string>
   <string name="jwt_description">ਤੁਹਾਡੇ ਪੰਜੀਕਰਨ (ਰਜ਼ਿਸਟ੍ਰੇਸ਼ਨ) ਦੇ ਵਿਸਥਾਰਾਂ ਵਿੱਚ ਕੋਈ ਸਮੱਸਿਆ ਹੈ।</string>
   <string name="jwt_heading">ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਰਜਿਸਟਰ ਕਰੋ</string>
+  <string name="jwt_success">ਰਜਿਸਟਰੇਸ਼ਨ ਸਫਲਤਾਪੂਰਵਕ ਰਿਨਿਯੂ ਕੀਤਾ ਗਿਆ</string>
   <string name="loading_numbers">ਤਾਜ਼ਾ ਅੰਕੜੇ ਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe ਅੱਪਡੇਟ ਚੱਲ ਰਿਹਾ ਹੈ। \n\nਕਿਰਪਾ ਕਰਕੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਹਾਡਾ ਫ਼ੋਨ ਤਦ ਤੱਕ ਬੰਦ ਨਹੀਂ ਹੋਣਾ ਚਾਹੀਦਾ ਜਦ ਤੱਕ ਅੱਪਡੇਟ ਪੂਰਾ ਨਹੀਂ ਹੋ ਜਾਂਦਾ।</string>

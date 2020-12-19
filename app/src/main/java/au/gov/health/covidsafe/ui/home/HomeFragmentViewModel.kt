@@ -23,6 +23,7 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     val caseStatisticsLiveData = MutableLiveData<CaseStatisticResponse>()
     val isRefreshing = MutableLiveData<Boolean>()
     val collectionMessageVisible = MutableLiveData<Boolean>()
+    val heraldUpgradeMessage = MutableLiveData<Boolean>()
     // Show = true and hide = false
     val turnCaseNumber = MutableLiveData<Boolean>()
     lateinit var context: Context
@@ -72,10 +73,13 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         val latestVersion = Preference.getBuildNumber(context)
         // When We want to show disclaimer to user after update, minVersionShowPolicy should be as same as the current version
         val minVersionShowPolicy = 74
+        val minVersionHeraldPolicy = 94
         val currentVersion = BuildConfig.VERSION_CODE
         if (latestVersion == 0) {
             collectionMessageVisible.value = true
+            heraldUpgradeMessage.value = true
         } else {
+            heraldUpgradeMessage.value = currentVersion <= minVersionHeraldPolicy && currentVersion > latestVersion
             collectionMessageVisible.value = currentVersion <= minVersionShowPolicy && currentVersion > latestVersion
         }
         Preference.putBuildNumber(context, currentVersion)

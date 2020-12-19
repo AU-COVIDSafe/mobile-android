@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">Registrazione e privacy</string>
   <string name="data_privacy_headline_content_description">Titolo, Registrazione e privacy</string>
   <string name="deaths">Decessi</string>
-  <string name="dialog_error_uploading_message">Si è verificato un errore durante il caricamento delle informazioni. Riprova.</string>
   <string name="dialog_error_uploading_negative">Annulla</string>
   <string name="dialog_error_uploading_positive">Riprova</string>
   <string name="dialog_uploading_message">I dati di COVIDSafe sono attualmente in fase di caricamento. \n\nNon chiudere l\'app.</string>

@@ -149,20 +149,26 @@ object StreetPassPairingFix {
             // Instance - this is what is called to initiate a read/write to a preipheral
             val mService: Object = mServiceField!!.get(gatt) as Object
 
-            // Wrap the IBLuetoothGatt instance in a Proxy object in order to intercept calls to
-            // readCharacteristic and writeCharacteristic. IBluetoothGattInvocationHandler will catch
-            // calls to these functions and rewrite their authReq field to ensure no pairing attempts
-            // occur
-            val mServiceProxy = Proxy.newProxyInstance(gatt.javaClass.classLoader,
-                    Array(1) { iBluetoothGattClass!! },
-                    IBluetoothGattInvocationHandler(mService))
+            // Ensure that mService isn't already a proxy, for instance if this method was called
+            // twice on the same BluetoothGatt instance.
+            if (Proxy.isProxyClass(mService.javaClass)) {
+                CentralLog.i(TAG,
+                        "Not proxying this mService as it is already proxied!")
+            } else {
+                // Wrap the IBluetoothGatt instance in a Proxy object in order to intercept calls to
+                // readCharacteristic and writeCharacteristic. IBluetoothGattInvocationHandler will catch
+                // calls to these functions and rewrite their authReq field to ensure no pairing attempts
+                // occur
+                val mServiceProxy = Proxy.newProxyInstance(gatt.javaClass.classLoader,
+                        Array(1) { iBluetoothGattClass!! },
+                        IBluetoothGattInvocationHandler(mService))
 
-            // Write the proxy back to BluetoothGatt.mService
-            mServiceField!!.set(gatt, mServiceProxy)
-
+                // Write the proxy back to BluetoothGatt.mService
+                mServiceField!!.set(gatt, mServiceProxy)
+            }
             // Reset accessibility
             mServiceField!!.isAccessible = mServiceAccessible
-            }
+        }
         catch (e: IllegalAccessException) {
             // Field was inaccessible when written
             CentralLog.i(TAG,

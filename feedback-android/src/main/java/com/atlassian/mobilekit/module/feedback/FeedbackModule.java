@@ -69,6 +69,7 @@ public final class FeedbackModule {
         feedbackClient.showFeedback();
     }
 
+    
     static void notificationStarted() {
         feedbackClient.notificationStarted();
     }

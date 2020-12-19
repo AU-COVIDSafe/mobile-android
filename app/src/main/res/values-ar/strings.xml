@@ -242,7 +242,6 @@
   <string name="data_privacy_headline">التسجيل والخصوصية</string>
   <string name="data_privacy_headline_content_description">العنوان والتسجيل والخصوصية</string>
   <string name="deaths">الوفيات</string>
-  <string name="dialog_error_uploading_message">حدث خطأ أثناء تحميل معلوماتك، يرجى المحاولة مرة أخرى.</string>
   <string name="dialog_error_uploading_negative">إلغاء</string>
   <string name="dialog_error_uploading_positive">حاول مرة أخرى</string>
   <string name="dialog_uploading_message">يتم الآن تحميل معلومات COVIDSafe الخاصة بك. \n\n الرجاء عدم إغلاق التطبيق.</string>

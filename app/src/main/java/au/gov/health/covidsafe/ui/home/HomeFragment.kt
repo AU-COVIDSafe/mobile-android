@@ -16,7 +16,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
-import androidx.constraintlayout.solver.GoalRow
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -100,8 +99,13 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         initializeRefreshButton()
         initializePullToRefresh()
         initialiseReRegistration()
+        setupHyperlink()
 
         NetworkConnectionCheck.addNetworkChangedListener(requireContext(), this)
+    }
+
+    private fun setupHyperlink() {
+        txt_update_description.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun initializeNoNetworkError() {
@@ -234,6 +238,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         txt_proceed.setOnClickListener {
             homeFragmentViewModel.collectionMessageVisible.value = false
             askForLocationPermission()
+        }
+        btn_proceed.setOnClickListener {
+            layout_herald_upgrade.slideAnimation(SlideDirection.UP, SlideType.HIDE, 200)
+            homeFragmentViewModel.heraldUpgradeMessage.value = false
         }
     }
 

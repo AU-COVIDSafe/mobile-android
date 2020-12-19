@@ -12,27 +12,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import au.gov.health.covidsafe.HomeActivity
-import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.extensions.*
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.base.PagerChildFragment
 import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import kotlinx.android.synthetic.main.fragment_permission.*
 import pub.devrel.easypermissions.EasyPermissions
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallbacks {
 
     companion object {
-
-        val requiredPermissions = arrayOf(
-                Manifest.permission.BLUETOOTH,
-                Manifest.permission.BLUETOOTH_ADMIN,
-                Manifest.permission.ACCESS_FINE_LOCATION
-        )
+        val requiredPermissions = PermissionFragment().requestPermissions()
     }
 
     override var step: Int? = 4
@@ -70,6 +68,20 @@ class PermissionFragment : PagerChildFragment(), EasyPermissions.PermissionCallb
                 navigateToNextPage()
             }, 1000)
         } else super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun requestPermissions():  MutableList<String> {
+        // Check and request permissions
+        val requiredPermissions: MutableList<String> = ArrayList()
+        requiredPermissions.add(Manifest.permission.BLUETOOTH)
+        requiredPermissions.add(Manifest.permission.BLUETOOTH_ADMIN)
+        requiredPermissions.add(Manifest.permission.ACCESS_FINE_LOCATION)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            requiredPermissions.add(Manifest.permission.FOREGROUND_SERVICE)
+        }
+        requiredPermissions.add(Manifest.permission.WAKE_LOCK)
+
+        return requiredPermissions
     }
 
     private fun navigateToNextPage() {

@@ -78,7 +78,7 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
                         val readRequest = ReadRequestEncryptedPayload(
                                 System.currentTimeMillis() / 1000L,
                                 peripheral.modelP,
-                                TracerApp.thisDeviceMsg()
+                                TracerApp.thisDeviceMsg().toString()
                         )
                         val plainRecord = gson.toJson(readRequest)
 

@@ -310,7 +310,7 @@ class StreetPassWorker(val context: Context) {
                             it.checklist.started.status = true
                             it.checklist.started.timePerformed = System.currentTimeMillis()
 
-                            it.startWork(context, gattCallback)
+                             it.startWork(context, gattCallback)
 
                             var connecting = it.gatt?.connect() ?: false
 
@@ -646,7 +646,7 @@ class StreetPassWorker(val context: Context) {
             }
         }
 
-        inner class EncryptedWriteRequestPayload(val timestamp: Long, val modelC: String, val rssi: Int, val txPower: Int?, val msg: String)
+        inner class EncryptedWriteRequestPayload(val timestamp: Long, val modelC: String, val rssi: Int, val txPower: Int?, val msg: String?)
 
         override fun onCharacteristicWrite(
                 gatt: BluetoothGatt,

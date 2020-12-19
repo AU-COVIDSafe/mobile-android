@@ -11,17 +11,18 @@ import au.gov.health.covidsafe.networking.response.MessagesResponse
 import au.gov.health.covidsafe.notifications.NotificationBuilder
 import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.scheduler.GetMessagesScheduler
+import au.gov.health.covidsafe.sensor.SensorDelegate
+import au.gov.health.covidsafe.sensor.ble.BLEDevice
+import au.gov.health.covidsafe.sensor.datatype.*
 import au.gov.health.covidsafe.ui.devicename.DeviceNameChangePromptActivity
 import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
-import kotlinx.android.synthetic.main.view_home_setup_incomplete.*
-
 private const val TAG = "HomeActivity"
 private const val UNAUTHORIZED = "Unauthorized"
 
-class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectionListener {
+class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectionListener, SensorDelegate {
 
     var isAppUpdateAvailableLiveData = MutableLiveData<Boolean>()
     var appUpdateAvailableMessageResponseLiveData = MutableLiveData<MessagesResponse>()
@@ -134,6 +135,32 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
             checkAndUpdateHealthStatus()
         }
         previousInternetConnection = isAvailable
+    }
+
+    override fun sensor(sensor: SensorType?, didDetect: TargetIdentifier?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didRead: PayloadData?, fromTarget: TargetIdentifier?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didShare: MutableList<PayloadData>?, fromTarget: TargetIdentifier?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didMeasure: Proximity?, fromTarget: TargetIdentifier?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didVisit: Location?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didMeasure: Proximity?, fromTarget: TargetIdentifier?, withPayload: PayloadData?, device: BLEDevice) {
+    }
+    override fun sensor(sensor: SensorType?, didMeasure: Proximity?, fromTarget: TargetIdentifier?, withPayload: PayloadData?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didUpdateState: SensorState?) {
+    }
+
+    override fun sensor(sensor: SensorType?, didRead: PayloadData?, fromTarget: TargetIdentifier?, atProximity: Proximity?, withTxPower: Int, device: BLEDevice) {
     }
 
 }

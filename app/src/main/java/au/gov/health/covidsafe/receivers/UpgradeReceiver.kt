@@ -14,7 +14,7 @@ class UpgradeReceiver : BroadcastReceiver() {
             if (Intent.ACTION_MY_PACKAGE_REPLACED != intent!!.action) return
             context?.let {
                 CentralLog.i("UpgradeReceiver", "Starting service from upgrade receiver")
-                Utils.startBluetoothMonitoringService(context)
+//                Utils.startBluetoothMonitoringService(context)
             }
         } catch (e: Exception) {
             CentralLog.e("UpgradeReceiver", "Unable to handle upgrade: ${e.localizedMessage}")

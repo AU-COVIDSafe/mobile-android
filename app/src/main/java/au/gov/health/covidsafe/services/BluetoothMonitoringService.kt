@@ -98,7 +98,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
         Utils.cancelBMUpdateCheck(this.applicationContext)
         Utils.cancelNextScan(this.applicationContext)
         Utils.cancelNextAdvertise(this.applicationContext)
-        sensor?.stop()
+        // sensor?.stop()
     }
 
     private fun setupNotifications() {
@@ -332,6 +332,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
         job.cancel()
 
         CentralLog.i(TAG, "BluetoothMonitoringService destroyed")
+        sensor?.stop()
     }
 
     private fun showForegroundNotification() {
@@ -458,7 +459,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
                         }
                         BluetoothAdapter.STATE_ON -> {
                             CentralLog.d(TAG, "BluetoothAdapter.STATE_ON")
-                            Utils.startBluetoothMonitoringService(this@BluetoothMonitoringService.applicationContext)
+//                             Utils.startBluetoothMonitoringService(this@BluetoothMonitoringService.applicationContext)
                             showForegroundNotification()
                         }
                     }

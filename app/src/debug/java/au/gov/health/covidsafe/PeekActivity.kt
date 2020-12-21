@@ -167,9 +167,8 @@ class PeekActivity : AppCompatActivity() {
         return timePeriod
     }
 
-
     private fun startService() {
-        Utils.startBluetoothMonitoringService(this)
+        // Utils.startBluetoothMonitoringService(this)
     }
 
     private fun stopService() {

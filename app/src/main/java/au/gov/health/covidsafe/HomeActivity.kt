@@ -38,7 +38,7 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
 
         setContentView(R.layout.activity_home)
 
-        Utils.startBluetoothMonitoringService(this)
+         Utils.startBluetoothMonitoringService(this)
 
         //Get Firebase Token
         getInstanceID()

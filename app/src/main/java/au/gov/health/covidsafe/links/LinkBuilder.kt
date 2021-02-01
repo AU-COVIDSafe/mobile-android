@@ -12,9 +12,9 @@ import android.view.View
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.logging.CentralLog
+import java.lang.Exception
 import java.lang.StringBuilder
 import java.util.*
-
 
 const val TAG = "LinkBuilder"
 
@@ -23,6 +23,7 @@ private const val HOST_URL = "https://www.covidsafe.gov.au"
 
 private const val HELP_TOPICS_BASE = "/help-topics"
 private const val PRIVACY_TOPICS_BASE = "/privacy-policy"
+private const val COLLECTION_NOTICE_BASE = "/collection-notice"
 
 private const val TOPICS_EXT_SUFFIX = ".html"
 private const val HELP_TOPICS_ENGLISH_PAGE = ""
@@ -39,6 +40,8 @@ private const val HELP_TOPICS_TURKISH_PAGE = "/tr"
 private const val HELP_TOPICS_ANCHOR_VERIFY_MOBILE_NUMBER_PIN = "#verify-mobile-number-pin"
 private const val HELP_TOPICS_ANCHOR_BLUETOOTH_PAIRING_REQUEST = "#bluetooth-pairing-request"
 private const val HELP_TOPICS_ANCHOR_LOCATION_PERMISSION_ANDROID = "#location-permission-android"
+private const val HELP_TOPICS_ANCHOR_READ_MORE = "#covidsafe-working-correctly"
+private const val HELP_TOPICS_DELETE_INFORMATION = "#delete-information"
 
 object LinkBuilder {
 
@@ -58,6 +61,12 @@ object LinkBuilder {
     private fun getPrivacyTopicsUrl(): String {
         val url = buildLocalisedURL(PRIVACY_TOPICS_BASE)
         CentralLog.d(TAG, "getPrivacyTopicsUrl() $url")
+        return url
+    }
+
+    private fun getCollectionNoticeUrl(): String {
+        val url = buildLocalisedURL(COLLECTION_NOTICE_BASE)
+        CentralLog.d(TAG, "getCollectionNoticeUrl() $url")
         return url
     }
 
@@ -109,6 +118,12 @@ object LinkBuilder {
     private fun getVerifyMobileNumberPinLink(linkText: String) = buildHtmlText(
             "<a href=\"${getHelpTopicsUrl() + HELP_TOPICS_ANCHOR_VERIFY_MOBILE_NUMBER_PIN}\">$linkText</a>")
 
+    private fun getReadMoreLink(linkText: String) = buildHtmlText(
+            "<a href=\"${getHelpTopicsUrl() + HELP_TOPICS_ANCHOR_READ_MORE}\">$linkText</a>")
+
+    private fun getHotspotLink(linkText: String?, link: String) = buildHtmlText(
+            "<a href=\"$link\">$linkText</a>")
+
     class LinkSpan(private val context: Context, private val linkURL: String) : ClickableSpan() {
         override fun onClick(widget: View) {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(linkURL))
@@ -141,9 +156,12 @@ object LinkBuilder {
         val retVal = SpannableString(stringBuilder.toString().trim())
 
         spanStartEndIndex.forEachIndexed { index, pair ->
-            retVal.setSpan(LinkSpan(context, links[index]), pair.first, pair.second, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            try {
+                retVal.setSpan(LinkSpan(context, links[index]), pair.first, pair.second, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            } catch (e: Exception) {
+                return retVal
+            }
         }
-
         return retVal
     }
 
@@ -163,9 +181,33 @@ object LinkBuilder {
                 listOf(
                         privacyUrl,
                         privacyUrl,
-                        getHelpTopicsUrl(),
+                        getHelpTopicsUrl() + HELP_TOPICS_DELETE_INFORMATION,
                         HOST_URL,
                         privacyUrl
+                )
+        )
+    }
+
+    fun getPostcodeContent(context: Context): SpannableString {
+        val privacyUrl = getPrivacyTopicsUrl()
+        return buildSpannableStringContent(
+                context,
+                TracerApp.AppContext.getString(R.string.change_postcode_intro),
+                listOf(
+                        privacyUrl,
+                        getCollectionNoticeUrl()
+                )
+        )
+    }
+
+    fun getPostcodeUpdatedSuccessfullyContent(context: Context): SpannableString {
+        val privacyUrl = getPrivacyTopicsUrl()
+        return buildSpannableStringContent(
+                context,
+                TracerApp.AppContext.getString(R.string.permission_success_content),
+                listOf(
+                        privacyUrl,
+                        getLocationPairingRequestUrl()
                 )
         )
     }
@@ -182,6 +224,19 @@ object LinkBuilder {
         val linkText = TracerApp.AppContext.getString(R.string.ReceivePinIssue)
         return getVerifyMobileNumberPinLink(linkText).also {
             CentralLog.d(TAG, "getIssuesReceivingPINContent() returns $it")
+        }
+    }
+
+    fun getReadMore(): Spanned {
+        val linkText = TracerApp.AppContext.getString(R.string.low_handshakes_link)
+        return getReadMoreLink(linkText).also {
+            CentralLog.d(TAG, "getReadMore returns $it")
+        }
+    }
+
+    fun getHotSpot(title: String?, link: String): Spanned {
+        return getHotspotLink(title,link).also {
+            CentralLog.d(TAG, "getReadMore returns $it")
         }
     }
 

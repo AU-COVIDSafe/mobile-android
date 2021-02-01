@@ -100,6 +100,7 @@ public class ConcreteBLESensor implements BLESensor, BLEDatabaseDelegate, Blueto
                 if (rssi == null) {
                     return;
                 }
+
                 final Proximity proximity = new Proximity(ProximityMeasurementUnit.RSSI, (double) rssi.value);
                 Log.d(LOG_TAG, "device.payloadData():" + device.payloadData());
                 Log.d(LOG_TAG, "device:" + device);
@@ -150,17 +151,11 @@ public class ConcreteBLESensor implements BLESensor, BLEDatabaseDelegate, Blueto
                 }
                 // Notify delegates
                 logger.debug("didRead (device={},payloadData={},payloadData={})", device, device.payloadData(), payloadData.shortName());
-                final RSSI rssi = device.rssi();
-                final Proximity proximity = new Proximity(ProximityMeasurementUnit.RSSI, (double) rssi.value);
                 operationQueue.execute(new Runnable() {
                     @Override
                     public void run() {
                         for (SensorDelegate delegate : delegates) {
-                            if (device.txPower() != null) {
-                                delegate.sensor(SensorType.BLE, payloadData, device.identifier, proximity, device.txPower().value, device);
-                            } else {
-                                delegate.sensor(SensorType.BLE, payloadData, device.identifier, proximity, 999, device);
-                            }
+                            delegate.sensor(SensorType.BLE, payloadData, device.identifier);
                         }
                     }
                 });

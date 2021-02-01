@@ -5,9 +5,19 @@
   <string name="action_upload_done">Done</string>
   <string name="action_verify_invalid_pin">Invalid PIN, please ask the health official to send you another PIN.</string>
   <string name="action_verify_upload_pin">Upload my information</string>
+  <string name="active_cases">Active cases (estimated)</string>
+  <string name="activity_button">Check app activity</string>
+  <string name="activity_button_description">View your app\'s Bluetooth interactions with other COVIDSafe users.</string>
+  <string name="activity_heading">App activity</string>
+  <string name="activity_intro">Every time your device is in range of other COVIDSafe app users, it takes note of Bluetooth interactions called \'Bluetooth handshakes\'.\n\nThese handshakes give an indication of how well your app is working.</string>
   <string name="activity_self_isolation_button">Continue</string>
   <string name="australian_capital_territory">Australian Capital Territory</string>
   <string name="battery_optimisation_prompt">You must disable battery optimisation.</string>
+  <string name="ble_handshakes_yesterday_android">Bluetooth handshakes yesterday</string>
+  <string name="bluetooth_handshakes_android">Bluetooth handshakes</string>
+  <string name="cancel_snooze">Cancel snooze</string>
+  <string name="cases_28_days">New cases in the last 28 days</string>
+  <string name="cases_7_days">New cases in the last 7 days</string>
   <string name="change_device_name_content_line_1">The current name of your device is %s.</string>
   <string name="change_device_name_content_line_2">Other Bluetooth® devices around you will be able to see the name of your device. We recommend to use a device name that does not contain your personal details and is commonly used, such as your device model.</string>
   <string name="change_device_name_default_device_name">%s</string>
@@ -19,6 +29,9 @@
   <string name="change_device_name_secondary_action">Skip and keep as it is</string>
   <string name="change_language">Change language</string>
   <string name="change_language_content">Read the guide on using COVIDSafe in a different language.</string>
+  <string name="change_postcode_description">Update if your postcode has changed since downloading COVIDSafe.</string>
+  <string name="change_postcode_heading">Change your postcode</string>
+  <string name="change_postcode_intro">Have you moved to a different postcode area since you registered to use COVIDSafe? \n\nKeeping your postcode up to date can assist health officials to undertake contact tracing.  \n\nRead the *COVIDSafe privacy policy* and *collection notice* for further details about how your information is stored and shared.</string>
   <string name="CodeHasExpired">Your PIN has expired.</string>
   <string name="collection_message">COVIDSafe now collects diagnostic information to help you troubleshoot issues with your App. *Learn more*</string>
   <string name="consent_button">I agree</string>
@@ -236,19 +249,21 @@
   <string name="country_region_name_za">South Africa</string>
   <string name="country_region_name_zm">Zambia</string>
   <string name="country_region_name_zw">Zimbabwe</string>
+  <string name="customise_days">Customise days</string>
   <string name="data_privacy_button">Next</string>
-  <string name="data_privacy_content_android">It is important that you read the COVIDSafe *privacy policy* before you register for COVIDSafe.\n\nIf you are under 16 years of age, your parent/guardian must also read the *privacy policy*.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, *you may also ask for your information* to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name (or pseudonym), mobile number, age range and postcode.\n\nInformation you submit when you register and information about your use of COVIDSafe is stored on a highly secure server.\n\nInformation is also collected to make sure that COVIDSafe is working properly on your device. This includes your operating system, the version of the App you have installed, the language your device is set to, whether Bluetooth® is working and if your App has recorded any encounters in the previous seven days.\n\nOn Android devices, it also includes information about whether battery optimisation is disabled and location services is enabled.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the date and time of contact, anonymous ID code of other COVIDSafe users you come into contact with, Bluetooth signal strength and the phone model of other users, on your device.\n\nOther COVIDSafe users you come into contact with will note your anonymous ID code, the date and time of contact with you, Bluetooth signal strength and your phone model, on their device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for contact tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the *covidsafe.gov.au* website.\n\nSee the COVIDSafe *privacy policy* for further details about your rights about your information and how it will be handled and shared. </string>
+  <string name="data_privacy_content_android">It is important that you read the COVIDSafe *privacy policy* before you register for COVIDSafe.\n\nCOVIDSafe will collect, use or disclose your personal information only in accordance with this policy and the Privacy Act 1988.\n\nIf you are under 16 years of age, your parent/guardian must also read the *privacy policy*.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, *you may also ask for your information* to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name (or pseudonym), mobile number, age range and postcode.\n\nInformation you submit when you register and information about your use of COVIDSafe is stored on a highly secure server.\n\nInformation is also collected to make sure that COVIDSafe is working properly on your device. This includes your operating system, the version of the App you have installed, the language your device is set to, whether Bluetooth® is working and if your App has recorded any encounters in the previous seven days.\n\nOn Android devices, it also includes information about whether battery optimisation is disabled and location services is enabled.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the date and time of contact, anonymous ID code of other COVIDSafe users you come into contact with, Bluetooth signal strength and the phone model of other users, on your device.\n\nOther COVIDSafe users you come into contact with will note your anonymous ID code, the date and time of contact with you, Bluetooth signal strength and your phone model, on their device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for contact tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the *covidsafe.gov.au* website.\n\nSee the COVIDSafe *privacy policy* for further details about your rights about your information and how it will be handled and shared. </string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Registration and privacy</string>
   <string name="data_privacy_headline_content_description">Heading, Registration and privacy</string>
   <string name="deaths">Deaths</string>
-  <string name="dialog_error_uploading_message">Try uploading your data again.\n\nRefer to this error code if a state or territory health official asks for it: %@</string>
+  <string name="dialog_error_uploading_message">Try uploading your data again.\n\nRefer to this error code if a state or territory health official asks for it: \n%@</string>
   <string name="dialog_error_uploading_negative">Cancel</string>
   <string name="dialog_error_uploading_positive">Try again</string>
   <string name="dialog_uploading_message">Your COVIDSafe information is currently being uploaded.\n\nPlease do not close the app.</string>
   <string name="disabled">Disabled</string>
   <string name="dismiss">Dismiss</string>
   <string name="done_success">Done</string>
+  <string name="edit_snooze_calendar">Edit snooze calendar</string>
   <string name="enabled">Enabled</string>
   <string name="enter_number_button">Get PIN</string>
   <string name="enter_number_content">We’ll send you a 6-digit PIN to verify your mobile number.</string>
@@ -264,9 +279,19 @@
   <string name="enter_pin_wrong_number">Is this mobile number wrong?</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Enter_your_mobile_number_label">Enter your mobile number</string>
+  <string name="every_day">Every day</string>
+  <string name="factors_dotpoint1">number of COVIDSafe users in range</string>
+  <string name="factors_dotpoint2">device model and age</string>
+  <string name="factors_dotpoint3">if you’re in a moving vehicle</string>
+  <string name="factors_enviro_item_1">physical barriers like walls</string>
+  <string name="factors_enviro_item_2">material and fixtures that interfere with Bluetooth signals</string>
+  <string name="factors_handshakes_heading">Factors that impact app activity</string>
+  <string name="factors_intro">Factors that can affect the number of handshakes include:</string>
+  <string name="factors_intro_2">Handshakes can also be affected by environmental factors, including:</string>
   <!-- for production -->
   <string name="generic_error">Please try again later</string>
   <string name="generic_internet_error">Please check your internet connection</string>
+  <string name="global_OK">OK</string>
   <string name="heading">Heading</string>
   <string name="hide">Hide</string>
   <string name="home_app_permission_push_notification_prompt">Allow COVIDSafe to push notifications.</string>
@@ -318,6 +343,16 @@
   <string name="home_setup_incomplete_subtitle">COVIDSafe needs permission to access these features.</string>
   <string name="home_setup_incomplete_title">Check\npermissions</string>
   <string name="home_version_number">Version number:%s</string>
+  <string name="hotspot_link_ACT">https://www.covid19.act.gov.au/community/travel</string>
+  <string name="hotspot_link_NSW">https://www.nsw.gov.au/covid-19/latest-news-and-updates</string>
+  <string name="hotspot_link_NT">https://coronavirus.nt.gov.au/travel/quarantine/hotspots-covid-19</string>
+  <string name="hotspot_link_QLD">https://www.qld.gov.au/health/conditions/health-alerts/coronavirus-covid-19/current-status/hotspots-covid-19</string>
+  <string name="hotspot_link_SA">https://sahealth.sa.gov.au/covidcontacttracing</string>
+  <string name="hotspot_link_TAS">https://coronavirus.tas.gov.au/</string>
+  <string name="hotspot_link_VIC">https://www.dhhs.vic.gov.au/case-locations-and-outbreaks</string>
+  <string name="hotspot_link_WA">https://www.wa.gov.au/government/covid-19-coronavirus</string>
+  <string name="hotspots_state_territory">Hotspots in %@</string>
+  <string name="hour">Hour</string>
   <string name="how_it_works_button">Next</string>
   <string name="how_it_works_consent">Your consent will always be requested if health tracing is required.</string>
   <string name="how_it_works_content">Bluetooth® signals are used to determine when you\'re near another COVIDSafe user.\n\nEvery instance of close contact between you and other COVIDSafe users is noted to create contact data. This information is encrypted and only stored in your phone.\n\nIf you test positive to COVID-19 as a COVIDSafe user, a state or territory health official will contact you. They will assist with voluntary upload of your contact data to a highly secure information storage system.\n\nState or territory health officials can also contact you if you came in close contact with another COVIDSafe user who tested positive.\n\nFor more information please refer to the *Help Topics* page.</string>
@@ -344,17 +379,32 @@
   <string name="invalid_phone_number">Invalid phone number.</string>
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">Mobile numbers in %1s contain %2s digits.</string>
   <string name="invalid_post_code">Invalid postcode</string>
+  <string name="is_snoozed_android">COVIDSafe is snoozed</string>
+  <string name="is_snoozed_description_android">COVIDSafe is not using Bluetooth and is not recording contacts.</string>
   <string name="IssueFooter">We may contact you for further details about your feedback. Your email address won’t be used for any other purpose.</string>
   <string name="jwt_description">There is an issue with your registration details.</string>
+  <string name="jwt_expired">Your registration has expired.</string>
+  <string name="jwt_expired_description">You must confirm your mobile number every 12 months  to ensure your registration details are correct.</string>
   <string name="jwt_heading">Please register again</string>
   <string name="jwt_success">Registration successfully renewed</string>
+  <string name="last_7_days">Last 7 days</string>
+  <string name="learn_more">Learn more</string>
   <string name="loading_numbers">Loading latest numbers</string>
+  <string name="locally_acquired">%@ locally acquired</string>
+  <string name="low_handshakes_description">Try these tips to improve the performance of COVIDSafe on your phone:</string>
+  <string name="low_handshakes_heading">What to do if your handshake numbers are lower than you expect</string>
+  <string name="low_handshakes_item1">Check if COVIDSafe is active by opening the app.</string>
+  <string name="low_handshakes_item2">Update your app to the latest version through the Google Play Store or Apple Store.</string>
+  <string name="low_handshakes_item3">Restart your phone and open the app again.</string>
+  <string name="low_handshakes_link">Read more on how to check if COVIDSafe is working correctly</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe update in progress. \n\n Please make sure you phone is not switched off until the update is complete.</string>
+  <string name="minute">Minute</string>
   <string name="national_numbers">National numbers</string>
   <string name="navigation_back_button_content_description">Previous page</string>
   <string name="need_location_service">For COVIDSafe to work you need to turn on Location in Settings.</string>
   <string name="new_cases">New cases in the last 24 hours</string>
+  <string name="new_cases_total">New cases since 1 Feb 2020</string>
   <string name="new_south_wales">New South Wales</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">For example: 51234</string>
@@ -382,6 +432,7 @@
   <string name="numbers_no_internet">Connect to the internet to ensure you get updated numbers.</string>
   <string name="numbers_refresh">Refresh now</string>
   <string name="options_for_australia">Options for Australia</string>
+  <string name="overseas_acquired">%@ acquired overseas</string>
   <string name="permission_button">Proceed</string>
   <string name="permission_content">COVIDSafe needs Bluetooth® and notifications enabled to work.\n\nSelect ‘Proceed’ to:\n\n1. Enable Bluetooth\n\n2. Allow Location permission\n\n3. Disable Battery optimisation\n\nGoogle requires Location permission for Android apps to access Bluetooth. COVIDSafe does NOT track or store your location data.\n\nCOVIDSafe does not send pairing requests.</string>
   <!-- OnBoarding Permission -->
@@ -413,6 +464,9 @@
   <string name="pin_number">pin number</string>
   <string name="PINNumber_VO_Label">PIN number</string>
   <string name="PN_MobileNumber_VOLabel">Mobile number</string>
+  <string name="postcode_api_error">There was an error. Check your internet connection and try again.</string>
+  <string name="postcode_change_label">Current postcode in Australia </string>
+  <string name="postcode_success">Your postcode has been updated</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">Issues receiving your PIN?</string>
   <string name="recovered">Total cases recovered</string>
@@ -422,27 +476,52 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Registration consent</string>
   <string name="registration_consent_second_paragraph">information about my contact with other COVIDSafe users, if another user I have come into contact with tests positive for COVID-19 and uploads their contact data</string>
+  <string name="save">Save</string>
+  <string name="scheduled" formatted="false">You scheduled COVIDSafe to snooze from %@ to %@.</string>
   <string name="search">Search</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Select country or region</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Select_country_or_region_headline">Select country or region</string>
+  <string name="select_state_territory_button">Select state or territory</string>
+  <string name="select_state_territory_heading">Select state or territory</string>
   <string name="service_not_ok_action">Check app now</string>
   <string name="service_not_ok_body">Make sure COVIDSafe is active before you leave home or when in public places.</string>
   <string name="service_not_ok_title">COVIDSafe is not active</string>
   <string name="service_ok_body">Keep COVIDSafe active when you leave home or are in public places.</string>
   <string name="service_ok_title">COVIDSafe is active</string>
+  <string name="set_snooze_time">Set snooze time</string>
   <string name="settings">Settings</string>
+  <string name="seven_days">7 days</string>
   <string name="share_this_app_content">Join me in stopping the spread of COVID-19! Download COVIDSafe, an app from the Australian Government. #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
   <string name="show">Show</string>
+  <string name="snooze_button">Snooze</string>
+  <string name="snooze_calendar_button">Snooze calendar</string>
+  <string name="snooze_calendar_description">Set days and times you want to snooze COVIDSafe.</string>
+  <string name="snooze_calendar_toggle">Snooze calendar</string>
+  <string name="snooze_covidsafe_button">Snooze COVIDSafe</string>
+  <string name="snooze_covidsafe_button_description">Snooze COVIDSafe for a specific length of time.</string>
+  <string name="snooze_ended">Snooze has ended.</string>
+  <string name="snooze_ends">Snooze ends in</string>
+  <string name="snooze_from">Snooze from</string>
+  <string name="snooze_heading">Snooze COVIDSafe</string>
+  <string name="snooze_on">Snooze on %@</string>
+  <string name="snooze_timer_description">Set a timer to snooze COVIDSafe.</string>
+  <string name="snooze_to">Snooze to</string>
+  <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe is not using Bluetooth and is not recording contacts.\n\nYou scheduled COVIDSafe to snooze from %@ to %@.</string>
   <string name="south_australia">South Australia</string>
+  <string name="state_number_heading">%@ numbers</string>
   <string name="stepCounter" formatted="false">Step %d of %d</string>
   <string name="support">Support</string>
   <string name="support_content">For assistance on issues not covered by Help topics</string>
   <string name="tasmania">Tasmania</string>
   <string name="title_help">Help</string>
+  <string name="total">Total</string>
   <string name="total_confirmed_cases">Total confirmed cases</string>
+  <string name="total_deaths">%@ total deaths</string>
   <string name="total_per_state">Total confirmed cases by state and territory</string>
+  <string name="twenty_eight_days">28 days</string>
+  <string name="type_in_time">Type in time</string>
   <string name="under_sixteen_content">I confirm my parent or guardian consents to the Digital Transformation Agency as data store administrator, under legal determination made by the Secretary of the Australian Government Department of Health collecting:</string>
   <string name="under_sixteen_first_paragraph">my registration information</string>
   <!-- OnBoarding Under Sixteen -->
@@ -483,4 +562,5 @@
   <string name="victoria">Victoria</string>
   <string name="western_australia">Western Australia</string>
   <string name="wrong_ping_number"> Wrong PIN entered</string>
+  <string name="yesterday_activity">Yesterday</string>
 </resources>

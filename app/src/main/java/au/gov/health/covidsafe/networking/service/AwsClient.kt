@@ -3,6 +3,7 @@ package au.gov.health.covidsafe.networking.service
 import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.networking.response.CaseStatisticResponse
 import au.gov.health.covidsafe.networking.request.AuthChallengeRequest
+import au.gov.health.covidsafe.networking.request.ChangePostcodeRequest
 import au.gov.health.covidsafe.networking.request.OTPChallengeRequest
 import au.gov.health.covidsafe.networking.response.*
 import retrofit2.Call
@@ -48,4 +49,10 @@ interface AwsClient {
     @GET(BuildConfig.END_POINT_PREFIX + "/statistics")
     fun getCaseStatistics(@Header("Authorization") jwtToken: String?): Call<CaseStatisticResponse>
 
+    @GET(BuildConfig.END_POINT_PREFIX + "/v2/statistics")
+    fun getCaseStatisticsVersion2(@Header("Authorization") jwtToken: String?): Call<CaseStatisticResponse>
+
+    @POST(BuildConfig.END_POINT_PREFIX + "/device")
+    fun changePostcode(@Header("Authorization") jwtToken: String?,
+                       @Body body: ChangePostcodeRequest): Call<UploadPostcodeResponse>
 }

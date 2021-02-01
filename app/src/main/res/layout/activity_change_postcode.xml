@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="au.gov.health.covidsafe.ui.settings.SettingsViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/lighter_green"
+            app:title="Change Postcode"
+            app:popupTheme="@style/MobileKit.FeedbackTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="100dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_layout"
+        app:layout_constraintBottom_toTopOf="@+id/btn_continue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_32"
+            android:layout_marginEnd="@dimen/space_32"
+            android:layout_margin="@dimen/space_16"
+            android:orientation="vertical"
+            visibility="@{!viewModel.postcodeUpdated}">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            style="?textAppearanceBody1"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="@string/change_postcode_heading" />
+
+        <TextView
+            android:id="@+id/postcode_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            style="?textAppearanceBody1"
+            android:textSize="16sp"
+            android:lineHeight="@dimen/space_24"
+            android:text="@string/change_postcode_intro"
+            android:layout_alignBottom="@+id/title" />
+
+            <TextView
+                android:id="@+id/txt_postcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_40"
+                style="?textAppearanceBody1"
+                android:textSize="18sp"
+                android:lineHeight="@dimen/space_24"
+                android:text="@string/postcode_change_label" />
+
+            <EditText
+                android:id="@+id/post_code"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/space_8"
+                style="@style/otpStyle"
+                android:layout_height="50dp"
+                android:contentDescription="@string/personal_details_post_code_content_description"
+                android:textCursorDrawable="@null"
+                android:maxLength="4"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:imeOptions="actionDone" />
+
+            <TextView
+                android:id="@+id/post_code_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_1"
+                android:text="@string/personal_details_post_code_error_prompt"
+                android:textColor="@color/error_red"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_32"
+                android:layout_marginEnd="@dimen/space_32"
+                android:layout_margin="@dimen/space_16"
+                android:orientation="vertical"
+                visibility="@{viewModel.postcodeUpdated}">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_illustration"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    style="?textAppearanceBody1"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:text="@string/postcode_success" />
+
+                <TextView
+                    android:id="@+id/postcode_updated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    style="?textAppearanceBody1"
+                    android:textSize="14sp"
+                    android:lineHeight="@dimen/space_24"
+                    android:text="@string/permission_success_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_24"
+        android:layout_marginBottom="@dimen/space_24"
+        android:text="@string/action_continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        visibility = "@{!viewModel.postcodeUpdated}" />
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_24"
+        android:layout_marginBottom="@dimen/space_24"
+        android:text ="@string/action_upload_done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        visibility ="@{viewModel.postcodeUpdated}"/>
+
+
+    <FrameLayout
+        android:id="@+id/case_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        visibility = "@{viewModel.showSpinner}">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+           android:alpha="0.6"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_animation_view"
+            android:layout_width="@dimen/covidsafe_loading_animation_size"
+            android:layout_height="@dimen/covidsafe_loading_animation_size"
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading_upload.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

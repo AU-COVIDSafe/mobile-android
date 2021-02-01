@@ -98,7 +98,6 @@
                 app:external_linkCard_start_icon_background="@drawable/background_circular_grey"
                 app:external_linkCard_start_icon_padding="@dimen/space_8"
                 app:layout_constraintTop_toBottomOf="@+id/national_total_case_recovered_card" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </merge>

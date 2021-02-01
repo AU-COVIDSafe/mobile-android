@@ -11,6 +11,7 @@
     <color name="dark_green">#00661B</color>
     <color name="light_green">#F6FCF4</color>
     <color name="grey">#E2E2E2</color>
+    <color name="grey4">#E1E5E5</color>
     <color name="lighter_green">#C8FFB9</color>
 
     <!-- Splash Screen -->

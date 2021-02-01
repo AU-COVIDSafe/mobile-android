@@ -88,10 +88,10 @@ class VerifyUploadPinFragment : PagerChildFragment() {
         enter_pin_error_label.visibility = View.GONE
     }
 
-    fun showGenericError() {
+    fun showGenericError(errorCode: String?) {
         dialog?.dismiss()
         activity?.let {
-            dialog = UploadingErrorDialog(it, object : OnUploadErrorInterface {
+            dialog = UploadingErrorDialog(it, errorCode, object : OnUploadErrorInterface {
                 override fun onPositiveClicked() {
                     presenter.uploadData(requireView().pin.text.toString())
                 }

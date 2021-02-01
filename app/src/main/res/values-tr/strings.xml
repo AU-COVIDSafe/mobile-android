@@ -5,9 +5,19 @@
   <string name="action_upload_done">Bitti</string>
   <string name="action_verify_invalid_pin">Geçersiz PIN, lütfen sağlık yetkilisinden size başka bir PIN göndermesini isteyiniz.</string>
   <string name="action_verify_upload_pin">Bilgilerimi sisteme yükle</string>
+  <string name="active_cases">Aktif vakalar (tahmini)</string>
+  <string name="activity_button">Uygulama etkinliğini kontrol edin</string>
+  <string name="activity_button_description">Uygulamanızın diğer COVIDSafe kullanıcılarıyla Bluetooth etkileşimlerini görüntüleyin.</string>
+  <string name="activity_heading">Uygulama etkinliği</string>
+  <string name="activity_intro">Cihazınızın diğer COVIDSafe uygulama kullanıcılarının alanına her girişinde \'Bluetooth el sıkışma\' adı verilen Bluetooth etkileşimlerini dikkate alır.\n\nBu el sıkışmalar, uygulamanızın ne kadar iyi çalıştığını gösterir.</string>
   <string name="activity_self_isolation_button">Devam</string>
   <string name="australian_capital_territory">Avustralya Başkent Bölgesi</string>
   <string name="battery_optimisation_prompt">Pil optimizasyonunu devre dışı bırakmalısınız.</string>
+  <string name="ble_handshakes_yesterday_android">Dünkü Bluetooth el sıkışmaları</string>
+  <string name="bluetooth_handshakes_android">Bluetooth el sıkışmaları</string>
+  <string name="cancel_snooze">Ertelemeyi iptal et</string>
+  <string name="cases_28_days">Son 28 gündeki yeni vakalar</string>
+  <string name="cases_7_days">Son 7 gündeki yeni vakalar</string>
   <string name="change_device_name_content_line_1">Cihazınızın geçerli adı %s.</string>
   <string name="change_device_name_content_line_2">Etrafınızdaki diğer Bluetooth® cihazları cihazınızın adını görebilecektir. Kişisel bilgilerinizi içermeyen ve cihaz modeliniz gibi yaygın olarak kullanılan bir cihaz adı kullanmanızı öneririz.</string>
   <string name="change_device_name_default_device_name">%s</string>
@@ -19,6 +29,8 @@
   <string name="change_device_name_secondary_action">Atla ve mevcut adı koru</string>
   <string name="change_language">Dili değiştir</string>
   <string name="change_language_content">COVIDSafe\'i farklı bir dilde kullanmak için ilgili kılavuzu okuyunuz.</string>
+  <string name="change_postcode_description">COVIDSafe\'i indirdikten sonra posta kodunuz değişti ise güncelleme yapın.</string>
+  <string name="change_postcode_heading">Posta kodunuzu değiştirin</string>
   <string name="CodeHasExpired">PIN kodunuzun süresi doldu.</string>
   <string name="collection_message">COVIDSafe artık uygulamanızla ilgili sorunları gidermenize yardımcı olmak için tanılama bilgileri toplamaktadır. *Daha fazla bilgi edin*</string>
   <string name="consent_button">Kabul ediyorum</string>
@@ -236,18 +248,21 @@
   <string name="country_region_name_za">Güney Afrika</string>
   <string name="country_region_name_zm">Zambiya</string>
   <string name="country_region_name_zw">Zimbabve</string>
+  <string name="customise_days">Günleri isteğe göre uyarlayın</string>
   <string name="data_privacy_button">Sonraki</string>
   <string name="data_privacy_content_android">COVIDSafe\'a kaydolmadan önce *COVIDSafe gizlilik ilkesini* okumanız önemlidir. \n\n16 yaşından küçükseniz, ebeveyniniz/veliniz de *gizlilik ilkesini* okumalıdır. \n\nCOVIDSafe kullanımı tamamen isteğe bağlıdır. Uygulamayı istediğiniz zaman yükleyebilir veya silebilirsiniz. COVIDSafe\'i silerseniz *bilgilerinizin güvenli sunucudan silinmesini de* isteyebilirsiniz. \n\nCOVIDSafe\'e kaydolmak için bir ad (veya takma ad), cep telefonu numarası, yaş aralığı ve posta kodu girmeniz gerekir. \n\nKayıt olurken gönderdiğiniz bilgiler ve COVIDSafe kullanımınızla ilgili bilgiler yüksek düzeyde güvenli bir sunucuda toplanacak ve saklanacaktır. \n\nCOVIDSafe konum bilgilerinizi toplamaz. \n\nCOVIDSafe temas saatini, temas ettiğiniz diğer COVIDSafe kullanıcılarının gizli kimlik kodlarını, Bluetooth® sinyal gücünü ve diğer kullanıcıların telefon modellerini cihazınıza kaydeder. \n\nTemas ettiğiniz diğer COVIDSafe kullanıcıları da gizli  kimlik kodunuzu, sizinle temas tarih ve saatini, Bluetooth® sinyal gücünü ve telefon modelinizi kendi cihazlarında kaydedecektir. \n\nBaşka bir kullanıcının COVID-19 testinin pozitif çıkması durumunda kendi iletişim bilgilerini sisteme yükleyebilir ve bir eyalet veya bölge sağlık yetkilisi temas takibi amacıyla sizinle iletişime geçebilir. \n\nKayıt bilgileriniz yalnızca temas takibi ve COVIDSafe\'in düzgün ve yasalara uygun çalışması için kullanılacak ya da açıklanacaktır. \n\nDaha fazla bilgiyi *Avustralya Hükümeti Sağlık Bakanlığı* web sitesinde bulabilirsiniz. \n\nBilgileriniz ve bu bilgilerin nasıl işleneceği ve paylaşılacağına dair haklarınızla ilgili daha fazla bilgi için COVIDSafe *gizlilik ilkesine* bakınız.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Kayıt ve gizlilik</string>
   <string name="data_privacy_headline_content_description">Başlık, Kayıt ve gizlilik</string>
   <string name="deaths">Ölümler</string>
+  <string name="dialog_error_uploading_message">Verilerinizi karşıya yüklemeyi yeniden deneyin.\n\nBir eyalet veya bölge sağlık yetkilisi isterse bu hata koduna başvurun: \n%@</string>
   <string name="dialog_error_uploading_negative">İptal</string>
   <string name="dialog_error_uploading_positive">Tekrar deneyin</string>
   <string name="dialog_uploading_message">COVIDSafe bilgileriniz şu anda sisteme yükleniyor. \n\n Lütfen uygulamayı kapatmayın.</string>
   <string name="disabled">Devre dışı</string>
   <string name="dismiss">Reddet</string>
   <string name="done_success">Bitti</string>
+  <string name="edit_snooze_calendar">Erteleme takvimini düzenleyin</string>
   <string name="enabled">Etkin</string>
   <string name="enter_number_button">PIN al</string>
   <string name="enter_number_content">Cep telefonu numaranızı doğrulamak için size 6 haneli bir PIN göndereceğiz.</string>
@@ -263,9 +278,19 @@
   <string name="enter_pin_wrong_number">Bu cep telefonu numarası yanlış mı?</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Enter_your_mobile_number_label">Cep telefonu numaranızı giriniz</string>
+  <string name="every_day">Her gün</string>
+  <string name="factors_dotpoint1">alanda COVIDSafe kullanıcıları sayısı</string>
+  <string name="factors_dotpoint2">cihazın modeli ve yaşı</string>
+  <string name="factors_dotpoint3">hareket halindeki bir araçta iseniz</string>
+  <string name="factors_enviro_item_1">duvarlar gibi fiziksel engeller</string>
+  <string name="factors_enviro_item_2">Bluetooth sinyallerini engelleyen malzeme ve armatürler</string>
+  <string name="factors_handshakes_heading">Uygulama etkinliğini etkileyen faktörler</string>
+  <string name="factors_intro">El sıkışma sayısını etkileyebilecek faktörler şunları içerir:</string>
+  <string name="factors_intro_2">El sıkışmalar çevresel faktörlerden de etkilenebilir, örneğin:</string>
   <!-- for production -->
   <string name="generic_error">Lütfen daha sonra tekrar deneyin</string>
   <string name="generic_internet_error">Lütfen internet bağlantınızı kontrol edin</string>
+  <string name="global_OK">Tamam</string>
   <string name="heading">Başlık</string>
   <string name="hide">Gizle</string>
   <string name="home_app_permission_push_notification_prompt">COVIDSafe\'in anında bildirimleri iletmesine izin verin.</string>
@@ -312,11 +337,13 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">Başkalarını yardıma davet edin. Birlikte daha da güçlüyüz.</string>
   <string name="home_set_complete_external_link_share_title">COVIDSafe\'i paylaşın</string>
-  <string name="home_set_location_why">Google\'ın Bluetooth®\'a erişmesi için Android uygulamaları için konum izni gereklidir. COVIDSafe, konum verilerini saklamaz ve kullanmaz.</string>
+  <string name="home_set_location_why">Google’ın Bluetooth®’a erişmesi için Android uygulamaları için Konum izni gereklidir. COVIDSafe konum verilerinizi İZLEMEZ veya SAKLAMAZ.</string>
   <string name="home_setup_help">Yardım</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe\'in bu özelliklere erişmek için izne ihtiyacı vardır.</string>
   <string name="home_setup_incomplete_title">İzinleri\nkontrol edin</string>
   <string name="home_version_number">Sürüm numarası: %s</string>
+  <string name="hotspots_state_territory">%@ konumundaki sıcak noktalar</string>
+  <string name="hour">Saat</string>
   <string name="how_it_works_button">Sonraki</string>
   <string name="how_it_works_consent">Sağlık takibi gerekirse her zaman onayınız istenecektir.</string>
   <string name="how_it_works_content">Bluetooth® sinyalleri başka bir COVIDSafe kullanıcısının yakınınızda olduğunuzu belirlemek için kullanılır. \n\nSizinle diğer COVIDSafe kullanıcıları arasındaki her yakın temas, yakın temas bilgileri oluşturmak için not edilir. Bu bilgiler şifrelenir ve yalnızca telefonunuzda saklanır. \n\nCOVIDSafe kullanıcısı olarak COVID-19 testinizin pozitif çıkması halinde bir eyalet veya bölge sağlık yetkilisi sizinle iletişime geçecektir. İletişim bilgilerinizin son derece güvenli bir bilgi depolama sistemine gönüllü olarak yüklemenize yardımcı olacaklardır.\n\nEyalet veya bölge sağlık yetkilileri testi pozitif çıkan başka bir COVIDSafe kullanıcısıyla yakın temas kurduğunuz hallerde sizinle iletişime geçebilir.\n\nDaha fazla bilgi için lütfen *Yardım Konuları* sayfasına bakınız.</string>
@@ -343,16 +370,31 @@
   <string name="invalid_phone_number">Geçersiz telefon numarası.</string>
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">%1s ülkesindeki cep telefonu numaraları %2s rakam içerir.</string>
   <string name="invalid_post_code">Geçersiz posta kodu</string>
+  <string name="is_snoozed_android">COVIDSafe ertelendi</string>
+  <string name="is_snoozed_description_android">COVIDSafe Bluetooth kullanmıyor ve temasları kaydetmiyor.</string>
   <string name="IssueFooter">Geri bildiriminiz hakkında daha fazla bilgi için sizinle iletişime geçebiliriz. E-posta adresiniz başka hiçbir amaçla kullanılmayacaktır.</string>
   <string name="jwt_description">Kayıt bilgilerinizle ilgili bir sorun var.</string>
+  <string name="jwt_expired">Kayıt süreniz doldu.</string>
+  <string name="jwt_expired_description">Kayıt bilgilerinizin doğru olduğundan emin olabilmek için cep telefonunuzu her 12 ayda bir teyid etmelisiniz.</string>
   <string name="jwt_heading">Lütfen tekrar kayıt olun</string>
+  <string name="jwt_success">Kayıt başarıyla yenilendi</string>
+  <string name="last_7_days">Son 7 gün</string>
   <string name="loading_numbers">En son sayılar yükleniyor</string>
+  <string name="locally_acquired">%@ yerel olarak edinilen</string>
+  <string name="low_handshakes_description">Telefonunuzda COVIDSafe\'in performansını artırmak için şu ipuçlarını deneyin:</string>
+  <string name="low_handshakes_heading">El sıkışma sayılarınız beklediğinizin altında ise ne yapmalısınız</string>
+  <string name="low_handshakes_item1">Uygulamayı açarak COVIDSafe\'in etkin olup olmadığını kontrol edin.</string>
+  <string name="low_handshakes_item2">Uygulamanızı Google Play Store veya Apple Store üzerinden en son sürüme güncelleyin.</string>
+  <string name="low_handshakes_item3">Telefonunuzu yeniden başlatın ve uygulamayı tekrar açın.</string>
+  <string name="low_handshakes_link">COVIDSafe\'in doğru çalışıp çalışmadığının nasıl kontrol edileceği hakkında daha fazlasını okuyun</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe güncellemesi devam ediyor. \n\n Lütfen güncelleme tamamlanana kadar telefonunuzu kapatmayın.</string>
+  <string name="minute">Dakika</string>
   <string name="national_numbers">Ulusal sayılar</string>
   <string name="navigation_back_button_content_description">Önceki sayfa</string>
   <string name="need_location_service">COVIDSafe\'in çalışması için Ayarlar\'da Konum\'u açmanız gerekir.</string>
   <string name="new_cases">Son 24 saatte çıkan yeni vakalar</string>
+  <string name="new_cases_total">1 Şubat 2020\'den itibaren yeni vakalar</string>
   <string name="new_south_wales">Yeni Güney Galler</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Örneğin: 51234</string>
@@ -380,13 +422,14 @@
   <string name="numbers_no_internet">Güncellenen sayıları aldığınızdan emin olmak için internete bağlanın.</string>
   <string name="numbers_refresh">Şimdi yenile</string>
   <string name="options_for_australia">Avustralya için seçenekler</string>
+  <string name="overseas_acquired">%@ yurtdışında edinilen</string>
   <string name="permission_button">İlerle</string>
-  <string name="permission_content">COVIDSafe\'in çalışması için Bluetooth® ve bildirimler etkin olmalıdır. \n\nAşağıdakileri yapmak için \'İlerle\'yi seçin: \n\n1. Bluetooth®\'u etkinleştirmek \n\n2. Konum izinlerini vermek\n\n3. Pil optimizasyonunu devre dışı bırakmak \n\nGoogle\'ın Bluetooth®\'a erişmesi için Android uygulamaları için konum izni gereklidir. COVIDSafe konum verilerini saklamaz ve kullanmaz. \n\nCOVIDSafe eşleştirme istekleri göndermez.</string>
+  <string name="permission_content">COVIDSafe‘in çalışması için Bluetooth® ve bildirimler etkin olmalıdır. \n\nAşağıdakileri yapmak için ‘İlerle‘yi seçin: \n\n1. Bluetooth‘u etkinleştirmek \n\n2. Konum izni vermek\n\n3. Pil optimizasyonunu devre dışı bırakmak \n\nGoogle‘ın Bluetooth‘a erişmesi için Android uygulamaları için Konum izni gereklidir. COVIDSafe konum verilerinizi İZLEMEZ veya SAKLAMAZ. \n\nCOVIDSafe eşleştirme istekleri göndermez.</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">Uygulama ayarları</string>
   <string name="permission_location_rationale">Android, COVIDSafe için Bluetooth® işlevlerini etkinleştirmek amacıyla konuma erişim gerektirir. COVIDSafe, Bluetooth® olmadan düzgün çalışamaz</string>
   <string name="permission_success_button">Bitti</string>
-  <string name="permission_success_content">1. Evden çıkarken telefonunuzu yanınıza alın ve COVIDSafe\'in aktif olduğundan emin olun. \n\n2. Bluetooth® AÇIK tutulmalıdır.\n\n3. Pil optimizasyonu KAPALI olmalıdır.\n\n4. COVIDSafe eşleştirme istekleri göndermez. *Daha fazla bilgi edinin*.\n\n5. Google\'ın Bluetooth®\'a erişmesi için *Android uygulamaları için konum izni* gereklidir. COVIDSafe konum verilerini saklamaz ve kullanmaz.</string>
+  <string name="permission_success_content">1. Evden çıkarken telefonunuzu yanınıza alın ve COVIDSafe‘in aktif olduğundan emin olun. \n\n2. Bluetooth® AÇIK tutulmalıdır.\n\n3. Pil optimizasyonu KAPALI olmalıdır.\n\n4. COVIDSafe eşleştirme istekleri göndermez. *Daha fazla bilgi edinin*.\n\n5. Google‘ın Bluetooth‘a erişmesi için *Android uygulamaları için konum izni* gereklidir. COVIDSafe konum verilerinizi İZLEMEZ veya SAKLAMAZ.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">Başarıyla kayıt oldunuz</string>
   <string name="permission_success_warning">COVIDSafe için anlık bildirimleri açık tutun, böylece uygulama düzgün çalışmıyorsa sizi hızlı bir şekilde bilgilendirebiliriz.</string>
@@ -411,6 +454,7 @@
   <string name="pin_number">pin numarası</string>
   <string name="PINNumber_VO_Label">PIN numarası</string>
   <string name="PN_MobileNumber_VOLabel">Cep telefonu numarası</string>
+  <string name="postcode_success">Posta kodunuz güncellendi</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">PIN alma sorunu mu yaşıyorsunuz?</string>
   <string name="recovered">Toplam iyileşen vakalar</string>
@@ -420,27 +464,52 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Kayıt onayı</string>
   <string name="registration_consent_second_paragraph">Başka bir kullanıcının COVID-19 testi pozitif çıkması ve temas verilerini sisteme yüklemesi halinde diğer COVIDSafe kullanıcıları ile paylaşılacak şahsıma ait temas bilgileri.</string>
+  <string name="save">Kaydet</string>
+  <string name="scheduled" formatted="false">COVIDSafe\'i %@ ile %@ arasında ertelemeye programladınız .</string>
   <string name="search">Ara</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Ülke veya bölge seçin</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Select_country_or_region_headline">Ülke veya bölge seçiniz</string>
+  <string name="select_state_territory_button">Eyaleti veya bölgeyi seçin</string>
+  <string name="select_state_territory_heading">Eyaleti veya bölgeyi seçin</string>
   <string name="service_not_ok_action">Uygulamayı şimdi kontrol edin</string>
   <string name="service_not_ok_body">Evden çıkarken veya halka açık yerlerde COVIDSafe\'yi aktif tuttuğunuzdan emin olunuz.</string>
   <string name="service_not_ok_title">COVIDSafe aktif değil</string>
   <string name="service_ok_body">Evden çıkarken veya halka açık yerlerde COVIDSafe\'yi aktif tutunuz.</string>
   <string name="service_ok_title">COVIDSafe aktif durumdadır</string>
+  <string name="set_snooze_time">Erteleme süresini ayarlayın</string>
   <string name="settings">Ayarlar</string>
+  <string name="seven_days">7 gün</string>
   <string name="share_this_app_content">COVID-19\'un yayılmasını durdurmada bana katılın! Avustralya Hükümeti\'nin bir uygulaması olan COVIDSafe\'i indirin. # COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
   <string name="show">Göster</string>
+  <string name="snooze_button">Ertele</string>
+  <string name="snooze_calendar_button">Erteleme takvimi</string>
+  <string name="snooze_calendar_description">COVIDSafe\'i ertelemek istediğiniz günleri ve saatleri ayarlayın.</string>
+  <string name="snooze_calendar_toggle">Erteleme takvimi</string>
+  <string name="snooze_covidsafe_button">COVIDSafe\'i erteleyin</string>
+  <string name="snooze_covidsafe_button_description">COVIDSafe\'i belirli bir süreliğine erteleyin.</string>
+  <string name="snooze_ended">Erteleme sona erdi.</string>
+  <string name="snooze_ends">Erteleme bitişi</string>
+  <string name="snooze_from">Erteleme başlangıcı</string>
+  <string name="snooze_heading">COVIDSafe\'i ertele</string>
+  <string name="snooze_on">Erteleme başlama: %@</string>
+  <string name="snooze_timer_description">COVIDSafe\'i ertelemek için zamanlayıcıyı ayarlayın.</string>
+  <string name="snooze_to">Erteleme sonu</string>
+  <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe Bluetooth kullanmıyor ve temasları kaydetmiyor.\n\nCOVIDSafe\'i %@ ile %@ arasında ertelemeye programladınız .\n</string>
   <string name="south_australia">Güney Avustralya</string>
+  <string name="state_number_heading">%@ sayılar</string>
   <string name="stepCounter" formatted="false">Adım %d / %d</string>
   <string name="support">Destek</string>
   <string name="support_content">Yardım konuları bölümünde belirtilmemiş hususlarda destek  için</string>
   <string name="tasmania">Tazmanya</string>
   <string name="title_help">Yardım</string>
+  <string name="total">Toplam</string>
   <string name="total_confirmed_cases">Toplam doğrulanmış vakalar</string>
+  <string name="total_deaths">%@ toplam ölümler</string>
   <string name="total_per_state">Eyalet ve bölgelere göre toplam doğrulanmış vakalar</string>
+  <string name="twenty_eight_days">28 gün</string>
+  <string name="type_in_time">Zamanı yazın</string>
   <string name="under_sixteen_content">Ebeveynimin ya da vasimin aşağıdaki bilgileri toplayan Dijital Dönüşüm Ajansı\'na veri deposu yöneticisi olarak Avustralya Hükümeti Sağlık Bakanının yasal olarak belirlediğine uygun olarak rızası olduğunu onaylıyorum:</string>
   <string name="under_sixteen_first_paragraph">Kayıt bilgilerim.</string>
   <!-- OnBoarding Under Sixteen -->
@@ -455,11 +524,14 @@
   <string name="update_available_message_android">COVIDSafe\'de iyileştirmeler yapmaktayız.\nGoogle Play Store üzerinden güncelleme yapın</string>
   <string name="update_available_play_store_btn">Google Play Store\'a git</string>
   <string name="update_available_title">Güncelleme mevcut!</string>
-  <string name="update_screen_location">Google\'ın Bluetooth®\'a erişmesi için *Android uygulamaları için konum izni* gereklidir. COVIDSafe, konum verilerini saklamaz veya kullanmaz.</string>
+  <string name="update_description_android">Bu güncelleme, COVIDSafe’in yakın temaslarınızı daha iyi yakalaması için COVIDSafe’in Bluetooth performansını  yeni yollarla iyileştiriyor. <a href="https://www.covidsafe.gov.au/help-topics.html#herald">COVIDSafe’i nasıl iyileştirdiğimiz hakkında daha fazla bilgi edinin</a> \n\nGoogle, Android uygulamalarının Bluetooth’a erişmesi için Konum iznine ihtiyaç duyar. <a href="https://www.covidsafe.gov.au/help-topics.html#location-permissions">COVIDSafe konum verilerinizi TOPLAMAZ, SAKLAMAZ veya KULLANMAZ </a></string>
+  <string name="update_heading_android">Geliştirilmiş performans</string>
+  <string name="update_screen_location">Google’ın Bluetooth®’a erişmesi için *Android uygulamaları için konum izni* gereklidir. COVIDSafe, konum verilerinizi İZLEMEZ veya SAKLAMAZ.</string>
   <string name="upload_answer_no">Hayır</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">Evet</string>
   <string name="upload_consent_button">Kabul ediyorum</string>
+  <string name="upload_fail_heading">Karşıya yükleme başarısız</string>
   <string name="upload_failed">Karşıya yükleme başarısız</string>
   <string name="upload_finished_header">COVID-19\'un yayılmasını durdurmaya yardım ettiğiniz için teşekkür ederiz!</string>
   <string name="upload_finished_header_content_description">Başlık, COVID-19\'un yayılmasını durdurmaya yardım ettiğiniz için teşekkür ederiz!</string>
@@ -478,4 +550,5 @@
   <string name="victoria">Viktorya</string>
   <string name="western_australia">Batı Avustralya</string>
   <string name="wrong_ping_number"> Yanlış PIN girildi</string>
+  <string name="yesterday_activity">Dün</string>
 </resources>

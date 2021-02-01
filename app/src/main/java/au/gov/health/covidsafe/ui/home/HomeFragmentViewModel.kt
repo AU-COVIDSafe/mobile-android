@@ -2,17 +2,24 @@ package au.gov.health.covidsafe.ui.home
 
 import android.app.Application
 import android.content.Context
-import androidx.lifecycle.*
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import au.gov.health.covidsafe.BuildConfig
+import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.extensions.isInternetAvailable
 import au.gov.health.covidsafe.factory.RetrofitServiceGenerator
 import au.gov.health.covidsafe.interactor.usecase.GetCaseStatisticsUseCase
 import au.gov.health.covidsafe.logging.CentralLog
+import au.gov.health.covidsafe.networking.response.CaseDetailsData
 import au.gov.health.covidsafe.networking.response.CaseStatisticResponse
-import au.gov.health.covidsafe.extensions.isInternetAvailable
 import au.gov.health.covidsafe.networking.service.AwsClient
 import au.gov.health.covidsafe.preference.Preference
 import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
 private const val TAG = "HomeFragmentViewModel"
@@ -21,6 +28,7 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
 
     val caseNumberDataState = MutableLiveData<CaseNumbersState>()
     val caseStatisticsLiveData = MutableLiveData<CaseStatisticResponse>()
+    val caseStateStatisticsLiveData = MutableLiveData<CaseStatisticResponse>()
     val isRefreshing = MutableLiveData<Boolean>()
     val collectionMessageVisible = MutableLiveData<Boolean>()
     val heraldUpgradeMessage = MutableLiveData<Boolean>()
@@ -28,13 +36,31 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     val turnCaseNumber = MutableLiveData<Boolean>()
     lateinit var context: Context
     var turnCaseAfterOpenPage = true
+    val visibleSelectStateLayout = MutableLiveData<Boolean>()
+    val newCase = MutableLiveData<Int>()
+    val localCase = MutableLiveData<String>()
+    val overseaCase = MutableLiveData<String>()
+    val activeCase = MutableLiveData<Int>()
+    val totalDeaths = MutableLiveData<String>()
+    val titleOfNumber = MutableLiveData<String>()
+    val hotSpotTitle = MutableLiveData<String>()
+    val hotSpotLink = MutableLiveData<String>()
+    val locallyAquired = MutableLiveData<String>()
+    val aquiredOversea = MutableLiveData<String>()
+    val totalyDeathe = MutableLiveData<String>()
+    val isV2Available = MutableLiveData<Boolean>()
+
+    private val viewModelJob = SupervisorJob()
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     val awsClient: AwsClient by lazy {
         RetrofitServiceGenerator.createService(AwsClient::class.java)
     }
 
     fun fetchGetCaseStatistics(lifecycle: Lifecycle) {
+        isV2Available.value = false
         context = getApplication() as Context
+        titleOfNumber.value = context.getString(R.string.national_numbers)
         turnCaseNumber.value = Preference.getTurnCaseNumber(context)
         if(caseNumberDataState.value != CaseNumbersState.LOADING) {
             caseNumberDataState.value = CaseNumbersState.LOADING
@@ -64,6 +90,12 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
             caseNumberDataState.value = CaseNumbersState.SUCCESS
             cacheCaseStatisticDataInPersistent(caseStatisticResponse)
             caseStatisticsLiveData.value = caseStatisticResponse
+
+            if ( caseStatisticResponse.version != null) {
+                isV2Available.value = true
+            }
+            caseStateStatisticsLiveData.value = caseStatisticResponse
+            selectState()
         }
     }
 
@@ -120,5 +152,84 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         turnCaseNumber.value = turnoff
     }
 
+    fun showSelectSate(visibleLayout: Boolean) {
+        visibleSelectStateLayout.value = visibleLayout
+    }
+
     fun getTurningCaseAfterOpenPage() = turnCaseAfterOpenPage
+    fun setSelectedState(state: String) {
+        Preference.putSelectedState(context, state)
+    }
+
+    fun selectState() {
+        visibleSelectStateLayout.value = false
+        val stateResponse: CaseDetailsData?
+        locallyAquired.value = context.getString(R.string.locally_acquired).replace("%@", "")
+        aquiredOversea.value = context.getString(R.string.overseas_acquired).replace("%@", "")
+        totalyDeathe.value = context.getString(R.string.total_deaths).replace("%@", "")
+
+        when (Preference.getSelectedState(context).toString()) {
+           "Australia" -> {
+               stateResponse = caseStateStatisticsLiveData.value?.national
+               recordStateData(stateResponse, "National")
+           }
+            "Australian Capital Territory" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.act
+                recordStateData(stateResponse, "ACT")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_ACT)
+            }
+            "New South Wales" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.nsw
+                recordStateData(stateResponse, "NSW")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_NSW)
+            }
+            "Northern Territory" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.nt
+                recordStateData(stateResponse, "NT")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_NT)
+            }
+            "Queensland" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.qld
+                recordStateData(stateResponse, "QLD")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_QLD)
+            }
+            "South Australia" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.sa
+                recordStateData(stateResponse, "SA")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_SA)
+            }
+            "Tasmania" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.tas
+                recordStateData(stateResponse, "TAS")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_TAS)
+            }
+            "Victoria" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.vic
+                recordStateData(stateResponse, "VIC")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_VIC)
+            }
+            "Western Australia" -> {
+                stateResponse = caseStateStatisticsLiveData.value?.wa
+                recordStateData(stateResponse, "WA")
+                hotSpotLink.value = context.getString(R.string.hotspot_link_WA)
+            }
+            else ->  {
+            stateResponse = caseStateStatisticsLiveData.value?.national
+            recordStateData(stateResponse, "National")
+            }
+        }
+    }
+
+    private fun recordStateData(stateResponse: CaseDetailsData?, stateName: String?) {
+        newCase.value = if (stateResponse?.newCases != null) { stateResponse.newCases} else { 0 }
+        localCase.value = if (stateResponse?.locallyAcquired != null) { stateResponse.newLocallyAcquired.toString()} else { "0" }
+        overseaCase.value = if (stateResponse?.overseasAcquired != null) { stateResponse.newOverseasAcquired.toString()} else { "0" }
+        activeCase.value = if (stateResponse?.activeCases != null) { stateResponse.activeCases} else { 0 }
+        totalDeaths.value = if (stateResponse?.deaths != null) { stateResponse.deaths.toString()} else { "0" }
+        titleOfNumber.value = "$stateName numbers"
+        stateName?.let {
+            val hotSpot = context.getString(R.string.hotspots_state_territory)
+            hotSpotTitle.value = hotSpot.replace("%@", it, false)
+        }
+    }
 }

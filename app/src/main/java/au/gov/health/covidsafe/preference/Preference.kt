@@ -38,6 +38,7 @@ object Preference {
     private const val BUILD_NUMBER_FOR_POP_UP_NOTIFICATION = "BUILD_NUMBER_FOR_POP_UP_NOTIFICATION"
     private const val TURN_CASE_NUMBER = "TURN_CASE_NUMBER"
     private const val IS_REREGISTER = "IS_REREGISTER"
+    private const val SELECTED_STATE = "SELECTED_STATE"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -319,5 +320,15 @@ object Preference {
     fun getTurnCaseNumber(context: Context): Boolean {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
             .getBoolean(TURN_CASE_NUMBER, true)
+    }
+
+    fun putSelectedState(context: Context, selectState: String): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putString(SELECTED_STATE, selectState).commit()
+    }
+
+    fun getSelectedState(context: Context): String? {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .getString(SELECTED_STATE, null)
     }
 }

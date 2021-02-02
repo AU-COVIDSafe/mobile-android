@@ -22,6 +22,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.HomeActivity
 import au.gov.health.covidsafe.R
@@ -47,14 +48,15 @@ import kotlinx.android.synthetic.main.view_covid_share_tile.*
 import kotlinx.android.synthetic.main.view_help_topics_tile.*
 import kotlinx.android.synthetic.main.view_home_setup_complete.*
 import kotlinx.android.synthetic.main.view_home_setup_incomplete.*
-import kotlinx.android.synthetic.main.view_national_case_statistics.*
+import kotlinx.android.synthetic.main.view_national_case_statistics.national_case_layout
+import kotlinx.android.synthetic.main.view_state_case_statistics.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import java.text.SimpleDateFormat
 import java.util.*
-
+import kotlin.collections.ArrayList
 
 private const val TAG = "HomeFragment"
 
@@ -73,6 +75,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     private var checkIsInternetConnected = false
     private var isAppWithLatestVersion = false
     lateinit var staticsLayout: ConstraintLayout
+    private lateinit var stateListAdapter: StateAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,8 +103,15 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         initializePullToRefresh()
         initialiseReRegistration()
         setupHyperlink()
+        removeRegistrationData()
 
         NetworkConnectionCheck.addNetworkChangedListener(requireContext(), this)
+    }
+
+    private fun removeRegistrationData() {
+        Preference.putName(requireContext(), "")
+        Preference.putAge(requireContext(), "")
+        Preference.putPostCode(requireContext(), "")
     }
 
     private fun setupHyperlink() {
@@ -166,6 +176,20 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                 }
             }
         })
+
+        homeFragmentViewModel.visibleSelectStateLayout.observe(this, Observer { visible ->
+            visible?.let {
+                select_state_layout.visibility = if (visible) VISIBLE else GONE
+            }
+        })
+
+        homeFragmentViewModel.hotSpotLink.observe(this, Observer { link ->
+            link?.let {
+                val title = homeFragmentViewModel.hotSpotTitle.value
+                txt_hotspot.text = LinkBuilder.getHotSpot(title, link)
+                txt_hotspot.movementMethod = LinkMovementMethod.getInstance()
+            }
+        })
     }
 
     private val latestAppAvailable = Observer<Boolean> {
@@ -206,6 +230,22 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
         updateHealthOfficialTile()
         initializeBluetoothPairingInfo()
+        loadStateAndListener()
+    }
+
+    private fun loadStateAndListener() {
+        stateListAdapter = StateAdapter(this.requireContext())
+        select_state.adapter = stateListAdapter
+        val layoutManager = LinearLayoutManager(this.requireContext())
+        select_state.layoutManager = layoutManager
+
+        stateListAdapter.setRecords(createStateList(), 0)
+
+        stateListAdapter.setOnStateListClickListener(object : StateAdapter.OnStateListClickListener{
+            override fun onStateClick(state: String) {
+                homeFragmentViewModel.setSelectedState(state)
+            }
+        })
     }
 
     private fun initialisePrivacyPolicyMessageAfterUpdate() {
@@ -274,6 +314,14 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         change_language_link.setOnClickListener {
             HelpFragment.anchor = "#other-languages"
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
+        }
+
+        home_header_picture_setup_complete.setOnClickListener {
+            counter++
+            if (counter >= 2) {
+                counter = 0
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPeekActivity())
+            }
         }
     }
 
@@ -413,6 +461,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     private fun showLastDataUploadedInfo(context: Context, isDataUploadedInPast14Days: Boolean) {
         if (isDataUploadedInPast14Days) {
             data_last_uploaded_layout.visibility = VISIBLE
@@ -564,17 +613,35 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     }
 
     private fun showAndHideCaseNumber(turnOn: Boolean) {
+        val isV2Available = homeFragmentViewModel.isV2Available.value
         //When we open the app, should show the previous setting (hide/show) and doesn't need animation
         if (homeFragmentViewModel.getTurningCaseAfterOpenPage()) {
             if (turnOn) {
-                national_case_layout.visibility = VISIBLE
+                if (isV2Available != null && isV2Available) {
+                    state_layout.visibility = VISIBLE
+                } else {
+                    national_case_layout.visibility = VISIBLE
+                }
             } else {
-                national_case_layout.visibility = GONE
+                if (isV2Available != null && isV2Available) {
+                    state_layout.visibility = GONE
+                } else {
+                    national_case_layout.visibility = GONE
+                }
             }
         } else {
             if (turnOn) {
-                national_case_layout.slideAnimation(SlideDirection.DOWN, SlideType.SHOW)
+                if (isV2Available != null && isV2Available) {
+                    state_layout.slideAnimation(SlideDirection.DOWN, SlideType.SHOW)
+                } else {
+                    national_case_layout.slideAnimation(SlideDirection.DOWN, SlideType.SHOW)
+                }
             } else {
+                if (isV2Available != null && isV2Available) {
+                    state_layout.slideAnimation(SlideDirection.UP, SlideType.HIDE)
+                } else {
+                    national_case_layout.slideAnimation(SlideDirection.UP, SlideType.HIDE)
+                }
                 national_case_layout.slideAnimation(SlideDirection.UP, SlideType.HIDE)
             }
         }
@@ -615,5 +682,19 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         bluetooth_card_view.isEnabled = enableParent
         location_card_view.isEnabled = enableParent
         battery_card_view.isEnabled = enableParent
+    }
+
+    private fun createStateList(): ArrayList<String>{
+        val list = ArrayList<String>()
+        list.add("Australia")
+        list.add("Australian Capital Territory")
+        list.add("New South Wales")
+        list.add("Northern Territory")
+        list.add("Queensland")
+        list.add("South Australia")
+        list.add("Tasmania")
+        list.add("Victoria")
+        list.add("Western Australia")
+        return list
     }
 }

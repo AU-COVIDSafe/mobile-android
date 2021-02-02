@@ -28,4 +28,9 @@ interface StreetPassRecordDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(record: StreetPassRecord)
 
+    @Query("SELECT * from record_table WHERE timestamp >= :timeInMs")
+    fun getCurrentRecordsFilterTime(timeInMs: Long): List<StreetPassRecord>
+
+    @Query("SELECT * from record_table WHERE timestamp <= :endTime and timestamp >= :startTime")
+    fun getCurrentRecordsBetweenTime(startTime: Long, endTime: Long): List<StreetPassRecord>
 }

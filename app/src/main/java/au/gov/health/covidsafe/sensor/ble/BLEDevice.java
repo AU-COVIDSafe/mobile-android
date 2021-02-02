@@ -38,7 +38,8 @@ public class BLEDevice {
     /// Payload data acquired from the device via payloadCharacteristic read, e.g. C19X beacon code or Sonar encrypted identifier
     private PayloadData payloadData;
     /// Most recent RSSI measurement taken by readRSSI or didDiscover.
-    private RSSI rssi;
+    int DUMMY_RSSI = 999;
+    private RSSI rssi = new RSSI(DUMMY_RSSI);
     /// Transmit power data where available (only provided by Android devices)
     private BLE_TxPower txPower;
     /// Is device receive only?

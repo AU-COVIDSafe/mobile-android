@@ -5,9 +5,19 @@
   <string name="action_upload_done">完成</string>
   <string name="action_verify_invalid_pin">PIN 碼無效，請要求衛生部官員再傳送另一條 PIN 給你。</string>
   <string name="action_verify_upload_pin">上傳我的資料</string>
+  <string name="active_cases">活躍病例（估計）</string>
+  <string name="activity_button">檢查應用程式活動。</string>
+  <string name="activity_button_description">查看你應用程式與其他COVIDSafe用戶的藍牙互動。</string>
+  <string name="activity_heading">應用程式活動。</string>
+  <string name="activity_intro">每次你的裝置在其他COVIDSafe應用程式用戶的範圍內時，它都會記下藍牙互動，這叫作”藍牙握手”。\n\n這些握手可以顯示你的應用程式運作狀況。</string>
   <string name="activity_self_isolation_button">繼續</string>
   <string name="australian_capital_territory">澳大利亞首都領地</string>
   <string name="battery_optimisation_prompt">你必須關閉電池優化功能。</string>
+  <string name="ble_handshakes_yesterday_android">昨天發生的藍牙握手。</string>
+  <string name="bluetooth_handshakes_android">藍牙握手</string>
+  <string name="cancel_snooze">取消休眠。</string>
+  <string name="cases_28_days">過去28天的新增病例</string>
+  <string name="cases_7_days">過去7天的新增病例</string>
   <string name="change_device_name_content_line_1">你現在的設備名稱是%s 。</string>
   <string name="change_device_name_content_line_2">你周圍的其他藍牙®設備將能看到此設備名稱。我們建議使用一個不含你的個人資料並且常用的名字，例如你的設備型號。</string>
   <string name="change_device_name_default_device_name">%s</string>
@@ -19,6 +29,8 @@
   <string name="change_device_name_secondary_action">跳過並保留原設備名稱</string>
   <string name="change_language">更換語言</string>
   <string name="change_language_content">用其他語言閱讀COVIDSafe使用指南。</string>
+  <string name="change_postcode_description">如果下載COVIDSafe後你的郵編發生變更，請你進行更新。</string>
+  <string name="change_postcode_heading">更改你的郵編</string>
   <string name="CodeHasExpired">你的 PIN 碼已無效。</string>
   <string name="collection_message">COVIDSafe現在會收集診斷資訊，以幫助你解決應用程式中的問題。 *了解更多*</string>
   <string name="consent_button">我同意</string>
@@ -236,18 +248,21 @@
   <string name="country_region_name_za">南非</string>
   <string name="country_region_name_zm">贊比亞</string>
   <string name="country_region_name_zw">津巴布韋</string>
+  <string name="customise_days">自定義日子</string>
   <string name="data_privacy_button">下一步</string>
   <string name="data_privacy_content_android">在註册 COVIDSafe 之前，請務必閱讀 COVIDSafe *私隱政策*。 \n\n如果你未滿 16 歲，你的父母/監護人亦必須閱讀*私隱政策*。 \n\n使用 COVIDSafe 純屬自願性質。你可以隨時安裝或刪除本應用程式。如果刪除 COVIDSafe，*你亦可以要求刪除在保密伺服器内的個人資料*。\n\n要註册使用 COVIDSafe，你需要輸入一个名字（或假名）、手機號碼、年齡組别及郵遞區號。 \n\n我們會收集你註冊時提供的資料和關於你使用COVIDSafe的資料並且儲存在一個高度保密的伺服器內。 \n\nCOVIDSafe 不會收集你的位置資訊。 \n\nCOVIDSafe 將會在你的設備上記錄與你接觸過的其他 COVIDSafe 用戶的接觸時間，其匿名 ID，藍牙®信號強度和其手機型號。\n\n其他與你接觸過的 COVIDSafe 用戶的設備上亦會記錄你的匿名 ID 及與你接觸的日期時間，藍牙®信號強度和你的手機型號。 \n\n如果其他用戶被驗出 COVID-19 陽性，他們可以上傳其接觸者資料。為了追蹤接觸者，各州或領地的衛生部官員可能會聯絡你。 \n\n我們在追蹤接觸者和確保COVIDSafe 正常且合法運作時才會使用並且透露你的詳細註冊資料。 \n\n欲了解更多資訊，請瀏覧*澳洲政府衛生部*的網站。 \n\n如需進一步了解你對個人資料的權利，及個人資料的處理和共享方式，請參閱 COVIDSafe *私隱政策*。</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">註册及私隱權</string>
   <string name="data_privacy_headline_content_description">標題，註册及私隱權</string>
   <string name="deaths">死亡人數</string>
+  <string name="dialog_error_uploading_message">再次上傳你的數據。\n\n如果州或領地衛生官員有要求，請出示此錯誤代碼。\n%@</string>
   <string name="dialog_error_uploading_negative">取消</string>
   <string name="dialog_error_uploading_positive">重試</string>
   <string name="dialog_uploading_message">正在上傳你的 COVIDSafe 資料。 \n\n請勿關閉應用程式。</string>
   <string name="disabled">已停用</string>
   <string name="dismiss">取消</string>
   <string name="done_success">完成</string>
+  <string name="edit_snooze_calendar">編輯休眠日曆</string>
   <string name="enabled">已啟用</string>
   <string name="enter_number_button">收取 PIN 碼</string>
   <string name="enter_number_content">我們將向你傳送一條 6 數位的 PIN 碼來驗證你的手機號碼。</string>
@@ -263,9 +278,19 @@
   <string name="enter_pin_wrong_number">請確認手機號碼是否正確</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Enter_your_mobile_number_label">請輸入你的手機號碼</string>
+  <string name="every_day">每日</string>
+  <string name="factors_dotpoint1">在範圍內的COVIDSafe用戶數量</string>
+  <string name="factors_dotpoint2">裝置型號和機齡</string>
+  <string name="factors_dotpoint3">如果你在移動的車裡</string>
+  <string name="factors_enviro_item_1">實物屏障，如牆壁</string>
+  <string name="factors_enviro_item_2">會干擾藍牙信號的材料和固定裝置。</string>
+  <string name="factors_handshakes_heading">影響應用程式活動的因素</string>
+  <string name="factors_intro">可能影響握手次數的因素包括:</string>
+  <string name="factors_intro_2">藍牙握手也可以受到環境因素影響，包括:</string>
   <!-- for production -->
   <string name="generic_error">請稍後再試</string>
   <string name="generic_internet_error">請檢查你的互聯網連接</string>
+  <string name="global_OK">確定</string>
   <string name="heading">標題</string>
   <string name="hide">隱藏</string>
   <string name="home_app_permission_push_notification_prompt">允許 COVIDSafe 傳送通知。</string>
@@ -312,11 +337,13 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">邀請他人參與防疫。團結便是力量！</string>
   <string name="home_set_complete_external_link_share_title">齊齊使用 COVIDSafe</string>
-  <string name="home_set_location_why">Google需要獲得Android應用程式的位置許可權才能訪問藍牙®。 COVIDSafe不會存儲或使用位置資料。</string>
+  <string name="home_set_location_why">Google需要Android應用程式獲得位置許可權才能訪問藍牙®。 COVIDSafe不會跟蹤或存儲位置資料。</string>
   <string name="home_setup_help">求助</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe 需要接入這些功能的權限。</string>
   <string name="home_setup_incomplete_title">檢查\n權限</string>
   <string name="home_version_number">版本號： %s</string>
+  <string name="hotspots_state_territory">在%@的熱點地區</string>
+  <string name="hour">小時</string>
   <string name="how_it_works_button">下一步</string>
   <string name="how_it_works_consent">如需追蹤健康狀況，必會事先徵求你的同意。</string>
   <string name="how_it_works_content">COVIDSafe 需要使用藍牙®訊號以確定你在何時接近另一名用戶。 \n\n你與其他COVIDSafe用戶之間的每一次密切接觸都會被記錄下來，以建立密切接觸者資料。該資料會被加密，並僅儲存在你的手機内。\n\n如果你是COVIDSafe用户並被驗出 COVID-19 陽性，州或領地衛生部官員將會與你聯絡。他們會協助你自願地將密切接觸者資料上傳到高度保密的資料儲存系統。\n\n如果你曾密切接觸過另一名被驗出 COVID-19 陽性的 COVIDSafe 用戶，則州或領地的衛生部官員亦會聯絡你。 \n\n欲知詳情，請參閱*求助主題*頁</string>
@@ -343,16 +370,31 @@
   <string name="invalid_phone_number">無效電話號碼。</string>
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">%1s的手機號碼有 %2s 數位。</string>
   <string name="invalid_post_code">郵遞區號無效</string>
+  <string name="is_snoozed_android">COVIDSafe已休眠</string>
+  <string name="is_snoozed_description_android">COVIDSafe沒有在使用藍牙，也沒有在記錄接觸者。</string>
   <string name="IssueFooter">我們可能會聯絡你以進一步了解反饋的詳情。你的電郵地址不會被用於其他目的。</string>
   <string name="jwt_description">你的註冊詳情存在問題。</string>
+  <string name="jwt_expired">你的註冊已經過期。</string>
+  <string name="jwt_expired_description">你必須每隔12個月確認你的手機號碼，確保你的登記資料是正確的。</string>
   <string name="jwt_heading">請重新註冊。</string>
+  <string name="jwt_success">成功更新註冊。</string>
+  <string name="last_7_days">過去7天</string>
   <string name="loading_numbers">正在載入最新統計數字</string>
+  <string name="locally_acquired">%@本地感染</string>
+  <string name="low_handshakes_description">嘗試以下小貼士改善你手機上COVIDSafe的性能：</string>
+  <string name="low_handshakes_heading">如果你的藍牙握手次數比預期低，該怎麼辦</string>
+  <string name="low_handshakes_item1">打開應用程式檢查COVIDSafe是否處於啟用狀態。</string>
+  <string name="low_handshakes_item2">通過 Google Play Store 或者 Apple Store將你的應用程式更新到最新版本。</string>
+  <string name="low_handshakes_item3">重啟你的手機然後打開應用程式。</string>
+  <string name="low_handshakes_link">閱讀更多關於如何檢查COVIDSafe是否正常運作的資訊</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">正在更新 COVIDSafe。\n\n請保持開機狀態直至更新完成為止。</string>
+  <string name="minute">分鐘 </string>
   <string name="national_numbers">全國統計數字</string>
   <string name="navigation_back_button_content_description">上一頁</string>
   <string name="need_location_service">若要執行 COVIDSafe ，你需要開啓在 「設定」項下的 「定位」功能。 </string>
   <string name="new_cases">過去24小時內新增病例</string>
+  <string name="new_cases_total">自從2020年2月1日以來的新增病例</string>
   <string name="new_south_wales">新南威爾士州</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">例如：51234</string>
@@ -380,13 +422,14 @@
   <string name="numbers_no_internet">請連接到互聯網，以獲取最新統計數字。</string>
   <string name="numbers_refresh">現在刷新</string>
   <string name="options_for_australia">澳洲適用選項</string>
+  <string name="overseas_acquired">%@海外感染</string>
   <string name="permission_button">繼續</string>
-  <string name="permission_content">COVIDSafe 需要開啓藍牙®及通知功能才能運作。 \n\n選擇 「繼續」以： \n\n 1. 開啓藍牙® \n\n 2. 允許取得定位權限\n\n 3. 關閉電池優化功能\n\n\nGoogle需要獲得Android應用程式的位置許可權才能訪問藍牙®。COVIDSafe 不會存儲或使用位置資料。\n\n COVIDSafe 不會傳送配對請求。</string>
+  <string name="permission_content">COVIDSafe 需要開啓藍牙®及通知功能才能運作。 \n\n選擇 「繼續」以： \n\n 1. 開啓藍牙® \n\n 2. 允許取得位置許可權\n\n 3. 關閉電池優化功能\n\n\nGoogle需要Android應用程式獲得位置許可權才能訪問藍牙®。COVIDSafe 不會跟蹤或存儲位置資料。\n\n COVIDSafe 不會傳送配對請求。</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">應用程式設定</string>
   <string name="permission_location_rationale">為執行 COVIDSafe，Android 需要取得你的定位權限才能啟用藍牙功能，否則無法正常執行 COVIDSafe </string>
   <string name="permission_success_button">完成</string>
-  <string name="permission_success_content">1. 請在離家時隨身攜帶手機，並確保 COVIDSafe 處於啟用狀態。 \n\n2. 藍牙®應保持在開啓狀態。 \n\n3. 應關閉電池優化功能。 \n\n4. COVIDSafe 不會傳送配對請求。 *了解更多* 。\n\n5. Google需要獲得 *Android應用程式的位置許可權* 才能訪問藍牙®。COVIDSafe 不會存儲或使用位置資料。</string>
+  <string name="permission_success_content">1. 請在離家時隨身攜帶手機，並確保 COVIDSafe 處於啟用狀態。 \n\n2. 藍牙®應保持在開啓狀態。 \n\n3. 應關閉電池優化功能。 \n\n4. COVIDSafe 不會傳送配對請求。 *了解更多* 。\n\n5. Google需要獲得 *Android應用程式的位置許可權* 才能訪問藍牙®。COVIDSafe 不會跟蹤或存儲位置資料。</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">你已成功註册</string>
   <string name="permission_success_warning">開啓 COVIDSafe 的傳送通知功能，以便在無法正常執行應用程式時及時通知你。</string>
@@ -411,6 +454,7 @@
   <string name="pin_number">PIN 碼</string>
   <string name="PINNumber_VO_Label">PIN 碼</string>
   <string name="PN_MobileNumber_VOLabel">手機號碼</string>
+  <string name="postcode_success">你的郵編已經更新</string>
   <string name="queensland">昆士蘭州</string>
   <string name="ReceivePinIssue">接收 PIN 碼時遇到問題？</string>
   <string name="recovered">康復者總數</string>
@@ -420,27 +464,52 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">註册同意書</string>
   <string name="registration_consent_second_paragraph">我與其他COVIDSafe用戶的接觸資料，如果我接觸過的另一用戶COVID-19測試呈陽性並且上傳了其接觸者數據。</string>
+  <string name="save">保存</string>
+  <string name="scheduled" formatted="false">你已將COVIDSafe設置為從%@休眠到%@。</string>
   <string name="search">搜尋</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">選擇國家或地區</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Select_country_or_region_headline">選擇國家或地區</string>
+  <string name="select_state_territory_button">選擇州或者領地</string>
+  <string name="select_state_territory_heading">選擇州或者領地</string>
   <string name="service_not_ok_action">請立即檢查應用程式</string>
   <string name="service_not_ok_body">請確保 COVIDSafe 在你離家前及在公共場所時處於啟用狀態。</string>
   <string name="service_not_ok_title">COVIDSafe 未在啓用狀態</string>
   <string name="service_ok_body">在你離家及在公共場所時，請保持 COVIDSafe 在啟用狀態。</string>
   <string name="service_ok_title">COVIDSafe 已在啓用狀態</string>
+  <string name="set_snooze_time">設置休眠時間</string>
   <string name="settings">設置</string>
+  <string name="seven_days">7天</string>
   <string name="share_this_app_content">同我一齊遏止 COVID-19 的擴散！下載澳洲政府提供的 COVIDSafe 應用程式。 ＃COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
   <string name="show">顯示</string>
+  <string name="snooze_button">休眠</string>
+  <string name="snooze_calendar_button">休眠日曆</string>
+  <string name="snooze_calendar_description">設置你想讓COVIDSafe休眠的日子和時間。</string>
+  <string name="snooze_calendar_toggle">休眠日曆</string>
+  <string name="snooze_covidsafe_button">讓COVIDSafe休眠</string>
+  <string name="snooze_covidsafe_button_description">讓COVIDSafe在特定時間段內休眠。</string>
+  <string name="snooze_ended">休眠結束。</string>
+  <string name="snooze_ends">休眠會在 %@ 後結束</string>
+  <string name="snooze_from">休眠開始時間</string>
+  <string name="snooze_heading">讓COVIDSafe休眠</string>
+  <string name="snooze_on">在%@调至休眠状态</string>
+  <string name="snooze_timer_description">為COVIDSafe設置一個計時器以開始休眠。</string>
+  <string name="snooze_to">休眠至</string>
+  <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe沒有在使用藍牙，也沒有在記錄接觸者。\n\n你已將COVIDSafe設置為從%@休眠到%@。</string>
   <string name="south_australia">南澳</string>
+  <string name="state_number_heading">%@數</string>
   <string name="stepCounter" formatted="false">第%d步，共%d步</string>
   <string name="support">支持</string>
   <string name="support_content">獲取幫助，解決求助主題未涵蓋的問題。</string>
   <string name="tasmania">塔斯曼尼亞州</string>
   <string name="title_help">求助</string>
+  <string name="total">總數</string>
   <string name="total_confirmed_cases">確診病例總數</string>
+  <string name="total_deaths">%@總死亡人數</string>
   <string name="total_per_state">各州和領地確診病例總數</string>
+  <string name="twenty_eight_days">28天</string>
+  <string name="type_in_time">輸入時間</string>
   <string name="under_sixteen_content">我確認我的父母或監護人同意數字化轉型局作為數據儲存管理者，根據澳大利亞政府衛生部常務副部長的合法決定，收集以下資訊：</string>
   <string name="under_sixteen_first_paragraph">我的註册資料。</string>
   <!-- OnBoarding Under Sixteen -->
@@ -455,11 +524,14 @@
   <string name="update_available_message_android">我們一直都在改良COVIDSafe。通過Google Play商店更新。</string>
   <string name="update_available_play_store_btn">轉往 Google Play 商店</string>
   <string name="update_available_title">更新可用！</string>
-  <string name="update_screen_location">Google需要獲得*Android應用程式的位置許可權*才能訪問藍牙®。 COVIDSafe不會存儲或使用位置資料。</string>
+  <string name="update_description_android">這次更新改良了COVIDSafe的藍牙性能，用新方法讓COVIDSafe更好地識別你的緊密接觸者資訊。<a href="https://www.covidsafe.gov.au/help-topics.html#herald">了解更多關於我们如何改良了COVIDSafe。</a>\n\nGoogle要求android應用程式獲取位置許可權才能訪問藍牙。<a href="https://www.covidsafe.gov.au/help-topics.html#location-permissions">COVIDSafe不會收集、存儲或使用您的位置資料</a></string>
+  <string name="update_heading_android">已改良的性能</string>
+  <string name="update_screen_location">Google需要獲得*Android應用程式的位置許可權*才能訪問藍牙®。 COVIDSafe不會跟蹤或存儲位置資料。</string>
   <string name="upload_answer_no">否</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">是</string>
   <string name="upload_consent_button">我同意</string>
+  <string name="upload_fail_heading">你的上傳失敗</string>
   <string name="upload_failed">上傳失敗</string>
   <string name="upload_finished_header">感謝你協助遏止 COVID-19 的擴散！</string>
   <string name="upload_finished_header_content_description">標題，感謝你協助遏止 COVID-19 的擴散！</string>
@@ -478,4 +550,5 @@
   <string name="victoria">維多利亞州</string>
   <string name="western_australia">西澳</string>
   <string name="wrong_ping_number">輸入了錯誤的 PIN 碼</string>
+  <string name="yesterday_activity">昨天</string>
 </resources>

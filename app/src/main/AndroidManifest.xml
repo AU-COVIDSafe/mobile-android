@@ -55,6 +55,8 @@
         <activity android:name="au.gov.health.covidsafe.ui.webview.WebViewActivity" />
         <activity android:name="au.gov.health.covidsafe.ui.devicename.DeviceNameChangePromptActivity" />
         <activity android:name="au.gov.health.covidsafe.ui.connection.InternetConnectionIssuesActivity" />
+        <activity android:name="au.gov.health.covidsafe.ui.settings.ChanePostCodeActivity" />
+        <activity android:name="au.gov.health.covidsafe.ui.settings.CheckBleActivity" />
 
         <activity
             android:name="au.gov.health.covidsafe.HomeActivity"

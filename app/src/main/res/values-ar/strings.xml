@@ -5,9 +5,19 @@
   <string name="action_upload_done">تمّ</string>
   <string name="action_verify_invalid_pin">رقم التعريف الشخصي غير صالح، يرجى الطلب من موظف دائرة الصحة أن يرسل لك رقم تعريف شخصي آخر.</string>
   <string name="action_verify_upload_pin">تحميل معلوماتي</string>
+  <string name="active_cases">الحالات النشطة (على وجه التقريب)</string>
+  <string name="activity_button">تحقق من نشاط التطبيق</string>
+  <string name="activity_button_description">اعرض تفاعلات Bluetooth لتطبيقك مع مستخدمي COVIDSafe الآخرين.</string>
+  <string name="activity_heading">نشاط التطبيق</string>
+  <string name="activity_intro">في كل مرة يتواجد جهازك في نطاق مستخدمي تطبيق COVIDSafe الآخرين ، فإنه يسجل تفاعلات Bluetooth التي تسمى \"مصافحات Bluetooth\". \n\n تدل هذه المصافحات على ما إذا كان تطبيقك يعمل بشكل صحيح.</string>
   <string name="activity_self_isolation_button">تابع</string>
   <string name="australian_capital_territory">إقليم العاصمة الأسترالية</string>
   <string name="battery_optimisation_prompt">يجب عليك تعطيل وضع توفير الطاقة.</string>
+  <string name="ble_handshakes_yesterday_android">مصافحات \u200F Bluetooth ليوم أمس</string>
+  <string name="bluetooth_handshakes_android">مصافحات \u200F Bluetooth</string>
+  <string name="cancel_snooze">إلغاء الغفوة</string>
+  <string name="cases_28_days">الحالات الجديدة في ال 28 يومًا الماضية</string>
+  <string name="cases_7_days">الحالات الجديدة في آخر 7 أيام</string>
   <string name="change_device_name_content_line_1">الاسم الحالي لجهازك هو %s .</string>
   <string name="change_device_name_content_line_2">ستتمكن أجهزة Bluetooth® الأخرى من حولك من رؤية اسم جهازك. نوصي باستخدام اسم جهاز لا يتضمن تفاصيلك الشخصية ويكون شائع الاستخدام، كموديل جهازك.</string>
   <string name="change_device_name_default_device_name">%s</string>
@@ -19,6 +29,8 @@
   <string name="change_device_name_secondary_action">تخطى واتركها كما هي</string>
   <string name="change_language">تغيير اللغة</string>
   <string name="change_language_content">اقرأ الدليل حول استخدام تطبيق COVIDSafe بلغة مختلفة.</string>
+  <string name="change_postcode_description">قم بالتحديث إذا تغير الرمز البريدي الخاص بك منذ قيامك بتنزيل تطبيق COVIDSafe.</string>
+  <string name="change_postcode_heading">غيِّر الرمز البريدي الخاص بك</string>
   <string name="CodeHasExpired">انتهت صلاحية رقم التعريف الشخصي الخاص بك.</string>
   <string name="collection_message">يقوم تطبيق COVIDSafe الآن بجمع معلومات تشخيصية لمساعدتك على استكشاف المشكلات في تطبيقك وإصلاحها. *أعرف المزيد*</string>
   <string name="consent_button">أوافق</string>
@@ -236,18 +248,21 @@
   <string name="country_region_name_za">جنوب أفريقيا</string>
   <string name="country_region_name_zm">زامبيا</string>
   <string name="country_region_name_zw">زيمبابوي</string>
+  <string name="customise_days">تخصيص الأيام</string>
   <string name="data_privacy_button">التالي</string>
   <string name="data_privacy_content_android">من المهم أن تقرأ *سياسة الخصوصية* تطبيق COVIDSafe قبل التسجيل. \n\n إذا كان عمرك أقل من 16 عاماً، يجب على أحد والديك/ الوصي أيضاً قراءة *سياسة الخصوصية*. \n\n استخدام تطبيق COVIDSafe هو أمر إختياري تماماً. يمكنك تثبيت التطبيق أو حذفه في أي وقت. إذا قمت بحذف تطبيق COVIDSafe، *يمكنك أيضاً طلب حذف معلوماتك* من الخادم الآمن. \n\n للتسجيل في تطبيق COVIDSafe، ستحتاج إلى إدخال اسم (أو اسم مستعار) ورقم هاتف محمول وفئة عمرية ورمز بريدي. \n\n سيتم جمع المعلومات التي ترسلها عند التسجيل، ومعلومات استخدامك لتطبيق COVIDSafe  وتخزينها في خادم آمن للغاية. \n\n لن يقوم تطبيق COVIDSafe بجمع معلومات عن موقعك الجغرافي. \n\n سيدوّن تطبيق COVIDSafe وقت الاتصال ورمز مجهول الهوية لمستخدمي COVIDSafe الآخرين الذين تتواصل معهم وقوة إشارة الـ Bluetooth، وموديل الهاتف المحمول للمستخدمين الآخرين على جهازك. \n\nكما سيدون تطبيق COVIDSafe لدى المستخدمين الآخرين الذين تتواصل معهم أيضاً الرمز مجهول الهوية الخاص بك وتاريخ ووقت الاتصال بك وقوة إشارة الـ Bluetooth وموديل هاتفك المحمول على أجهزتهم.  \n\n إذا أظهرت نتائج فحص COVID-19 إصابة مستخدم آخر، فقد يقوم هذا المستخدم بتحميل تفاصيل الاتصال به وقد يتصل بك موظف دائرة الصحة في الولاية أو الإقليم لأغراض تقفّي المخالطة. \n\n سيتم استخدام تفاصيل التسجيل الخاصة بك أو الكشف عنها فقط لتقفّي المخالطة وللأغراض المناسبة والقانونية لـ COVIDSafe. \n\n يتوفر المزيد من المعلومات على الموقع الإلكتروني لـ*وزارة الصحة في الحكومة الأسترالية*. \n\n راجع *سياسة الخصوصية* لتطبيق COVIDSafe للاطلاع على مزيد من التفاصيل حول حقوقك المتعلقة بمعلوماتك وكيف سيتم التعامل معها ومشاركتها.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">التسجيل والخصوصية</string>
   <string name="data_privacy_headline_content_description">العنوان والتسجيل والخصوصية</string>
   <string name="deaths">الوفيات</string>
+  <string name="dialog_error_uploading_message">حاول تحميل بياناتك مرة أخرى. \n\n ارجع إلى رمز الخطأ هذا إذا طلب موظف دائرة الصحة في الولاية أو الإقليم ذلك: %@\n</string>
   <string name="dialog_error_uploading_negative">إلغاء</string>
   <string name="dialog_error_uploading_positive">حاول مرة أخرى</string>
   <string name="dialog_uploading_message">يتم الآن تحميل معلومات COVIDSafe الخاصة بك. \n\n الرجاء عدم إغلاق التطبيق.</string>
   <string name="disabled">معطل</string>
   <string name="dismiss">تجاهل</string>
   <string name="done_success">تـمّ</string>
+  <string name="edit_snooze_calendar">تعديل روزنامة الغفوة</string>
   <string name="enabled">ممكّنة</string>
   <string name="enter_number_button">احصل على رقم تعريف شخصي</string>
   <string name="enter_number_content">سنرسل لك رقم تعريف شخصي مكوناً من 6 أرقام للتحقق من رقم هاتفك المحمول.</string>
@@ -263,9 +278,19 @@
   <string name="enter_pin_wrong_number">هل رقم الهاتف المحمول هذا خاطئ؟</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Enter_your_mobile_number_label">أدخل رقم هاتفك المحمول</string>
+  <string name="every_day">كل يوم</string>
+  <string name="factors_dotpoint1">عدد مستخدمي تطبيق COVIDSafe الموجودين من حولك</string>
+  <string name="factors_dotpoint2">طراز الجهاز وعمره</string>
+  <string name="factors_dotpoint3">إذا كنت في مركبة متحركة</string>
+  <string name="factors_enviro_item_1">الحواجز الحسًية مثل الجدران</string>
+  <string name="factors_enviro_item_2">المواد والتجهيزات التي تتداخل مع إشارات Bluetooth</string>
+  <string name="factors_handshakes_heading">العوامل التي تؤثر على نشاط التطبيق</string>
+  <string name="factors_intro">تشمل العوامل التي يمكن أن تؤثر على عدد المصافحات ما يلي:</string>
+  <string name="factors_intro_2">كما يمكن أن تتأثر المصافحات بالعوامل البيئية، بما في ذلك:</string>
   <!-- for production -->
   <string name="generic_error">الرجاء إعادة المحاولة لاحقًا </string>
   <string name="generic_internet_error">يرجى التحقق من اتصال جهازك بشبكة الانترنت</string>
+  <string name="global_OK">حسناً</string>
   <string name="heading">العنوان</string>
   <string name="hide">إخفاء</string>
   <string name="home_app_permission_push_notification_prompt">السماح لتطبيق COVIDSafe بدفع الإشعارات اللحظية.</string>
@@ -312,11 +337,13 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">قم بدعوة الآخرين للمساعدة. معاً، نحن أقوى.</string>
   <string name="home_set_complete_external_link_share_title">شارك تطبيق COVIDSafe</string>
-  <string name="home_set_location_why">تحتاج تطبيقات Android لأن يكون الموقع الجغرافي مشغلًا لتتمكن من استخدام Bluetooth®. لا يقوم تطبيق COVIDSafe بتخزين بيانات الموقع الجغرافي أو استخدامها.</string>
+  <string name="home_set_location_why">يتطلب Google تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android من استخدام Bluetooth®. لا يقوم تطبيق COVIDSafe بتتبّع بيانات الموقع الجغرافي أو تخزينها.</string>
   <string name="home_setup_help">مساعدة</string>
   <string name="home_setup_incomplete_subtitle">يحتاج تطبيق COVIDSafe إلى إذن للوصول إلى هذه الخصائص.</string>
   <string name="home_setup_incomplete_title">تحقق من \n الأذونات</string>
   <string name="home_version_number">رقم الإصدار: %s</string>
+  <string name="hotspots_state_territory">المناطق التي تكثر فيها الحالات في %@</string>
+  <string name="hour">ساعة</string>
   <string name="how_it_works_button">التالي</string>
   <string name="how_it_works_consent">سيتم طلب موافقتك دائماً إذا كان التتبُّع الصحي مطلوباً.</string>
   <string name="how_it_works_content">تُستخدم إشارات Bluetooth® لتحديد متى تكون بالقرب من مستخدم آخر لتطبيق COVIDSafe . \n\n سيتم تدوين ملاحظة في كل مرة يحصل فيها اختلاط عن قرب بينك وبين مستخدمي تطبيق COVIDSafe الآخرين لجمع معلومات عن اختلاط الأشخاص. يتم تشفير المعلومات وتخزينها فقط في هاتفك. \n\n إذا جاءت نتيجة فحصك ﻟ COVID-19 إيجابية كمستخدم لتطبيق COVIDSafe، سوف يتصل بك أحد موظفي دائرة الصحة في الولاية أو الإقليم ويساعدك في القيام بتحميل اختياري لمعلومات الاتصال  بك إلى نظام تخزين معلومات آمن للغاية \nيمكن أيضًا لموظفي دائرة الصحة في الولاية أو الإقليم الاتصال بك إذا حصل اتصال وثيق بينك وبين مستخدم آخر لتطبيق COVIDSafe أظهرت نتائج الفحص أنه مصاب بالفيروس.\n\n لمزيد من المعلومات، يرجى الرجوع إلى صفحة *مواضيع المساعدة*.</string>
@@ -343,16 +370,31 @@
   <string name="invalid_phone_number">رقم الهاتف غير صحيح.</string>
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">تتألف أرقام الهواتف المحمولة في %1s من %2s أرقام.</string>
   <string name="invalid_post_code">رمز بريدي غير صحيح</string>
+  <string name="is_snoozed_android">تطبيق \u200F COVIDSafe\n هو في غفوة حاليًا</string>
+  <string name="is_snoozed_description_android">تطبيق \u200F COVIDSafe لا يستخدم  Bluetooth ولا يقوم بتسجيل الأشخاص الذين يتم الاختلاط بهم.</string>
   <string name="IssueFooter">قد نتصل بك للحصول على مزيد من التفاصيل حول ملاحظاتك. لن يتم استخدام عنوان بريدك الإلكتروني لأي غرض آخر.</string>
   <string name="jwt_description">هناك مشكلة في تفاصيل التسجيل الخاصة بك.</string>
+  <string name="jwt_expired">انتهت صلاحية تسجيلك.</string>
+  <string name="jwt_expired_description">يجب عليك تأكيد رقم هاتفك المحمول كل 12 شهرًا للتأكد من صحة تفاصيل التسجيل الخاصة بك.</string>
   <string name="jwt_heading">يرجى التسجيل مرة أخرى</string>
+  <string name="jwt_success">تم تجديد التسجيل بنجاح</string>
+  <string name="last_7_days">آخر 7 أيام</string>
   <string name="loading_numbers">تحميل أحدث الأرقام</string>
+  <string name="locally_acquired">%@ تم التقاطه محلياً</string>
+  <string name="low_handshakes_description">جرّب هذه النصائح لتحسين أداء تطبيق COVIDSafe على هاتفك:</string>
+  <string name="low_handshakes_heading">ماذا تفعل إذا كان عدد المصافحات أقل مما تتوقع؟</string>
+  <string name="low_handshakes_item1">تحقق مما إذا كان تطبيق COVIDSafe يعمل عن طريق فتح التطبيق.</string>
+  <string name="low_handshakes_item2">قم بتحديث تطبيقك إلى أحدث إصدار من خلال متجر Google Play أو متجر Apple.</string>
+  <string name="low_handshakes_item3">أغلق هاتفك وقم بإعادة تشغيله وافتح التطبيق مجددًا.</string>
+  <string name="low_handshakes_link">اقرأ المزيد حول كيفية التحقق مما إذا كان تطبييق COVIDSafe يعمل بشكل صحيح</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">تحديث تطبيق COVIDSafe قيد الإنجاز. \n\nيُرجى التأكد من عدم إغلاق هاتفك إلى أن يتم اكتمال التحديث.</string>
+  <string name="minute">دقيقة</string>
   <string name="national_numbers">الأرقام على الصعيد الوطني</string>
   <string name="navigation_back_button_content_description">الصفحة السابقة</string>
   <string name="need_location_service">عليك تشغيل الموقع الجغرافي في الإعدادات لكي يتمكن تطبيق COVIDSafe من العمل.</string>
   <string name="new_cases">الحالات الجديدة في ال 24 ساعة الماضية</string>
+  <string name="new_cases_total">الحالات الجديدة منذ 1 شباط/فبراير 2020</string>
   <string name="new_south_wales">نيو ساوث ويلز</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">على سبيل المثال: 51234</string>
@@ -380,13 +422,14 @@
   <string name="numbers_no_internet">اتصل بالإنترنت لكي تحصل على آخر الأرقام.</string>
   <string name="numbers_refresh">قم بالتحديث الآن</string>
   <string name="options_for_australia">خيارات لأستراليا</string>
+  <string name="overseas_acquired">%@ تم التقاطه في الخارج</string>
   <string name="permission_button">تابع</string>
-  <string name="permission_content">يحتاج تطبيق COVIDSafe إلى تمكين Bluetooth® والإشعارات لكي يعمل. \n\n اختر \"تابع\" من أجل: \n\n 1. تمكين Bluetooth \n\n 2. السماح بتشغيل الموقع الجغرافي \n\n 3. تعطيل وضع توفير الطاقة \n\n يحتاج Google إلى تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة أندرويد من استخدام Bluetooth. لا يقوم تطبيق COVIDSafe بتخزين بيانات الموقع الجغرافي أو استخدامها. \n\n لا يرسل تطبيق COVIDSafe طلبات الاقتران.</string>
+  <string name="permission_content">يحتاج تطبيق COVIDSafe إلى تمكين Bluetooth® والإشعارات لكي يعمل. \n\n اختر \"تابع\" من أجل: \n\n 1. تمكين Bluetooth \n\n 2. السماح بتشغيل الموقع الجغرافي \n\n 3. تعطيل وضع توفير الطاقة \n\nيتطلب Google تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android من استخدام Bluetooth. \nلا يقوم تطبيق COVIDSafe بتتبّع بيانات الموقع الجغرافي أو تخزينها.\n\n لا يرسل تطبيق COVIDSafe طلبات الاقتران.</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">إعدادات التطبيق</string>
   <string name="permission_location_rationale">يطلب نظام اندرويد الحصول على الموقع الجغرافي لتفعيل وظائف Bluetooth® المطلوبة لتطبيق COVIDSafe. لا يمكن لتطبيق COVIDSafe العمل بشكل صحيح بدونه</string>
   <string name="permission_success_button">تمّ</string>
-  <string name="permission_success_content">1. عندما تغادر المنزل، ابق هاتفك بحوزتك وتأكد من أن تطبيق COVIDSafe يعمل. \n\n2. يجب إبقاء Bluetooth® مشغلًا. \n\n3. يجب تعطيل وضع توفير الطاقة.\n\n 4. لا يرسل تطبيق COVIDSafe طلبات الاقتران. *اعرف المزيد*.\n \n 5. يتطلب Google *تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android* من استخدام Bluetooth. لا يقوم تطبيق COVIDSafe بتخزين بيانات الموقع الجغرافي أو استخدامها.</string>
+  <string name="permission_success_content">1. عندما تغادر المنزل، ابق هاتفك بحوزتك وتأكد من أن تطبيق COVIDSafe يعمل. \n\n2. يجب إبقاء Bluetooth® مشغلًا. \n\n3. يجب تعطيل وضع توفير الطاقة.\n\n 4. لا يرسل تطبيق COVIDSafe طلبات الاقتران. *اعرف المزيد*.\n \n 5. يتطلب Google *تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android* من استخدام Bluetooth. لا يقوم تطبيق COVIDSafe بتتبّع بيانات الموقع الجغرافي أو تخزينها.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">لقد قمت بالتسجيل بنجاح</string>
   <string name="permission_success_warning">استمر في تشغيل دفع الإشعارات اللحظية لتطبيق COVIDSafe حتى نتمكن من إخطارك بسرعة إذا كان التطبيق لا يعمل بشكل صحيح.</string>
@@ -411,6 +454,7 @@
   <string name="pin_number">رقم التعريف الشخصي pin</string>
   <string name="PINNumber_VO_Label">رقم التعريف الشخصي PIN</string>
   <string name="PN_MobileNumber_VOLabel">رقم الهاتف المحمول</string>
+  <string name="postcode_success">تم تحديث الرمز البريدي الخاص بك</string>
   <string name="queensland">ولاية كوينزلاند</string>
   <string name="ReceivePinIssue">مشكلات في تلقي رقم التعريف الشخصي الخاص بك؟</string>
   <string name="recovered">مجموع الحالات التي تعافت</string>
@@ -420,27 +464,52 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">الموافقة على التسجيل</string>
   <string name="registration_consent_second_paragraph">معلومات حول اختلاطي بمستخدمين آخرين لتطبيق COVIDSafe في حال أظهرت نتائج الفحص أن مستخدمًا آخر كنت على تواصل معه مصاب بفيروس COVID-19، وقام هذا المستخدم بتحميل بيانات الاتصال به.</string>
+  <string name="save">حفظ</string>
+  <string name="scheduled" formatted="false">قمت بتحديد مدة غفوة تطبيق COVIDSafe من %@ إلى %@.</string>
   <string name="search">ابحث</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">اختر البلد أو المنطقة</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Select_country_or_region_headline">اختر البلد أو المنطقة</string>
+  <string name="select_state_territory_button">اختر الولاية أو الإقليم</string>
+  <string name="select_state_territory_heading">اختر الولاية أو الإقليم</string>
   <string name="service_not_ok_action">تحقق من التطبيق الآن</string>
   <string name="service_not_ok_body">تأكد من أن تطبيق COVIDSafe يعمل قبل مغادرتك المنزل أو عند وجودك في الأماكن العامة.</string>
   <string name="service_not_ok_title">\u200F COVIDSafe لا يعمل</string>
   <string name="service_ok_body">تأكد من أن تطبيق COVIDSafe يعمل عند مغادرتك المنزل أو عند وجودك في الأماكن العامة.</string>
   <string name="service_ok_title">\u200F COVIDSafe يعمل</string>
+  <string name="set_snooze_time">حدّد وقت الغفوة</string>
   <string name="settings">الإعدادات</string>
+  <string name="seven_days">7 أيام</string>
   <string name="share_this_app_content">إنضم لي لنعمل على وقف انتشار COVID-19! قم بتنزيل COVIDSafe، وهو تطبيق من الحكومة الأسترالية. # COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
   <string name="show">اظهار</string>
+  <string name="snooze_button">غفوة</string>
+  <string name="snooze_calendar_button">روزنامة الغفوة</string>
+  <string name="snooze_calendar_description">حدد الأيام والأوقات التي تريد فيها وضع تطبيق COVIDSafe في غفوة.</string>
+  <string name="snooze_calendar_toggle">روزنامة الغفوة</string>
+  <string name="snooze_covidsafe_button">وضع تطبيق COVIDSafe في غفوة</string>
+  <string name="snooze_covidsafe_button_description">وضع تطبيق COVIDSafe في غفوة لفترة زمنية محددة.</string>
+  <string name="snooze_ended">انتهت مدة الغفوة.</string>
+  <string name="snooze_ends">تنتهي مدة الغفوة في</string>
+  <string name="snooze_from">في غفوة من</string>
+  <string name="snooze_heading">وضع تطبيق COVIDSafe في غفوة</string>
+  <string name="snooze_on">في وضع الغفوة %@</string>
+  <string name="snooze_timer_description">اضبط المؤقت لوضع تطبيق COVIDSafe في غفوة</string>
+  <string name="snooze_to">في غفوة حتى</string>
+  <string name="snoozed_calendar_description_android" formatted="false">تطبيق \u200F COVIDSafe لا يستخدم  Bluetooth ولا يقوم بتسجيل الأشخاص الذين يتم الاختلاط بهم.\nقمت بتحديد مدة غفوة تطبيق COVIDSafe من %@ إلى %@.</string>
   <string name="south_australia">ولاية جنوب أستراليا</string>
+  <string name="state_number_heading">%@ الأعداد</string>
   <string name="stepCounter" formatted="false">الخطوة %d من %d</string>
   <string name="support">الدعم</string>
   <string name="support_content">للحصول على مساعدة بشأن المشكلات التي لا تغطيها مواضيع المساعدة</string>
   <string name="tasmania">ولاية تسمانيا</string>
   <string name="title_help">مساعدة</string>
+  <string name="total">المجموع</string>
   <string name="total_confirmed_cases">مجموع الحالات المؤكدة</string>
+  <string name="total_deaths">%@ إجمالي الوفيات</string>
   <string name="total_per_state">مجموع الحالات المؤكدة في كل ولاية وإقليم</string>
+  <string name="twenty_eight_days">28 يومًا</string>
+  <string name="type_in_time">أدخل الوقت</string>
   <string name="under_sixteen_content">أؤكد موافقة أحد والدي أو الوصي علي على أن تعمل وكالة التحول الرقمي كمدير لتخزين البيانات، بموجب قرار قانوني من قبل أمين وزارة الصحة في الحكومة الأسترالية لجمع:</string>
   <string name="under_sixteen_first_paragraph">معلومات التسجيل الخاصة بي.</string>
   <!-- OnBoarding Under Sixteen -->
@@ -455,11 +524,14 @@
   <string name="update_available_message_android">لقد أجرينا تحسينات على تطبيق COVIDSafe. \nقم بتحديث التطبيق عبر متجر التطبيقات Google Play Store .</string>
   <string name="update_available_play_store_btn">انتقل إلى متجر Google Play</string>
   <string name="update_available_title">التحديث متوفر!</string>
-  <string name="update_screen_location">يتطلب Google *تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android* من استخدام Bluetooth®. لا يقوم تطبيق COVIDSafe بتخزين بيانات الموقع الجغرافي أو استخدامها.</string>
+  <string name="update_description_android">هذا التحديث يحسّن أداء Bluetooth المتعلق بـ COVIDSafe بطرق جديدة يمكن لتطبيق COVIDSafe من خلالها التقاط الأشخاص الذين اختلطت بهم عن قرب بشكل أفضل. <a href="https://www.covidsafe.gov.au/help-topics.html#herald"> اطلع على المزيد من المعلومات حول كيفية تحسين تطبيق COVIDSafe </a>\n\nيتطلب Google تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android من استخدام Bluetooth.\n<a href="https://www.covidsafe.gov.au/help-topics.html#location-permissions">لا يقوم تطبيق COVIDSafe بجمع بيانات الموقع الجغرافي أو تخزينها أو استخدامها</a></string>
+  <string name="update_heading_android">أداء محسّن</string>
+  <string name="update_screen_location">يتطلب Google *تشغيل الموقع الجغرافي لتتمكن تطبيقات أجهزة Android* من استخدام Bluetooth®. لا يقوم تطبيق COVIDSafe بتتيّع بيانات الموقع الجغرافي أو تخزينها.</string>
   <string name="upload_answer_no">لا</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">نعم</string>
   <string name="upload_consent_button">أوافق</string>
+  <string name="upload_fail_heading">لم ينجح التحميل</string>
   <string name="upload_failed">فشل التحميل</string>
   <string name="upload_finished_header">شكراً لك على المساعدة في وقف انتشار COVID-19!</string>
   <string name="upload_finished_header_content_description">العنوان، شكراً لك على المساعدة في وقف انتشار COVID-19!</string>
@@ -478,4 +550,5 @@
   <string name="victoria">ولاية فيكتوريا</string>
   <string name="western_australia">ولاية أستراليا الغربية</string>
   <string name="wrong_ping_number">تم إدخال رقم تعريف شخصي خاطئ</string>
+  <string name="yesterday_activity">أمس</string>
 </resources>

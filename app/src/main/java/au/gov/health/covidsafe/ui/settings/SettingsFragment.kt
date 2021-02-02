@@ -71,6 +71,7 @@ class SettingsFragment : BaseFragment(), NetworkConnectionCheck.NetworkConnectio
         initializeSupportNavigation()
         initializeAppShareNavigation()
         setAppVersionNumber()
+        initializeChangePostCodeNavigation()
     }
 
     private fun initializeHelpTopicsNavigation() {
@@ -89,6 +90,12 @@ class SettingsFragment : BaseFragment(), NetworkConnectionCheck.NetworkConnectio
     private fun initializeAppShareNavigation() {
         app_share.setOnClickListener {
             context?.shareThisApp()
+        }
+    }
+
+    private fun initializeChangePostCodeNavigation() {
+        postcode_card_view.setOnClickListener {
+            startActivity(Intent(requireContext(), ChanePostCodeActivity::class.java))
         }
     }
 

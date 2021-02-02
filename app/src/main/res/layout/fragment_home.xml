@@ -114,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black"
-            android:alpha="@{viewModel.collectionMessageVisible ? 0.7f : 0.0f}" />
+            android:alpha="@{(viewModel.collectionMessageVisible || viewModel.visibleSelectStateLayout) ? 0.7f : 0.0f}" />
 
         <FrameLayout
             android:id="@+id/layout_collection_message"
@@ -179,7 +179,7 @@
                 </FrameLayout>
             </LinearLayout>
         </FrameLayout>
-            <FrameLayout
+        <FrameLayout
                 android:id="@+id/layout_herald_upgrade"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -257,7 +257,76 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </ScrollView>
-            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/select_state_layout"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@+id/swipeRefreshLayout"
+            android:paddingTop="@dimen/space_16"
+            app:layout_anchorGravity="center"
+            android:background="@color/white"
+            android:elevation="12dp"
+            android:visibility="gone">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:id="@+id/title_select_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/select_state_territory_heading" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/select_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_24" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey4"
+                    android:layout_marginTop="@dimen/space_12"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:textSize="16sp"
+                        android:paddingEnd="50dp"
+                        android:text="Cancel"
+                        android:textStyle="bold"
+                        android:onClick="@{() -> viewModel.showSelectSate(false)}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingStart="50dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Select"
+                        android:onClick="@{() -> viewModel.selectState()}"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

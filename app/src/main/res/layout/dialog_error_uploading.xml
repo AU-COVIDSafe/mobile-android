@@ -17,6 +17,22 @@
         app:layout_constraintVertical_chainStyle="spread" />
 
     <TextView
+        android:id="@+id/home_data_uploaded_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/keyline_7"
+        android:layout_marginEnd="@dimen/keyline_7"
+        android:text="@string/upload_fail_heading"
+        android:gravity="center_horizontal"
+        android:textAppearance="?textAppearanceHeadline1"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_data_uploaded_error_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_uploaded_error_progress_bar"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
         android:id="@+id/home_data_uploaded_error_message"
         style="?textAppearanceBody1"
         android:layout_width="0dp"
@@ -28,7 +44,7 @@
         app:layout_constraintBottom_toTopOf="@+id/dialog_error_positive"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/data_uploaded_error_progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/home_data_uploaded_title"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <Button

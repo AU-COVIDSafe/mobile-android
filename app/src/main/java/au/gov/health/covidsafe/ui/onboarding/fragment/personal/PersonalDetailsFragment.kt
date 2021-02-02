@@ -27,7 +27,7 @@ import java.util.regex.Pattern
 
 private const val TAG = "PersonalDetailsFragment"
 
-private val POST_CODE_REGEX = Pattern.compile("^(?:(?:[2-8]\\d|9[0-7]|0?[28]|0?9(?=09))(?:\\d{2}))$")
+val POST_CODE_REGEX = Pattern.compile("^(?:(?:[2-8]\\d|9[0-7]|0?[28]|0?9(?=09))(?:\\d{2}))$")
 private val NAME_REGEX = Pattern.compile("^[.A-Za-z0-9\\u00C0-\\u017F][.A-Za-z'0-9\\-\\u00C0-\\u017F ]{0,80}\$")
 
 class PersonalDetailsFragment : PagerChildFragment() {
@@ -75,7 +75,7 @@ class PersonalDetailsFragment : PagerChildFragment() {
                 R.array.age_range_array,
                 android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
+            // Specify the activity_change_postcode to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
             // Apply the adapter to the spinner

@@ -19,6 +19,7 @@ import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
+
 private const val TAG = "HomeActivity"
 private const val UNAUTHORIZED = "Unauthorized"
 

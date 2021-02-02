@@ -20,7 +20,9 @@ class GetCaseStatisticsUseCase(private val awsClient: AwsClient, lifecycle: Life
         return token?.let { jwtToken ->
              try {
                 CentralLog.d(TAG, "GetCaseStatisticsUseCase run request")
-                val response = retryRetrofitCall { awsClient.getCaseStatistics("Bearer $jwtToken").execute() }
+                val response = retryRetrofitCall {
+                    awsClient.getCaseStatisticsVersion2("Bearer $jwtToken").execute()
+                }
 
                 when {
                     response?.code() == 200 -> {

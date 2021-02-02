@@ -25,4 +25,12 @@ class StreetPassRecordStorage(val context: Context) {
     fun getAllRecords(): List<StreetPassRecord> {
         return recordDao.getCurrentRecords()
     }
+
+    fun getAllRecodsFilterTime(timeInMs: Long): List<StreetPassRecord> {
+        return recordDao.getCurrentRecordsFilterTime(timeInMs)
+    }
+
+    fun getAllRecodsBetweenTime(startTime: Long, endTime: Long): List<StreetPassRecord> {
+        return recordDao.getCurrentRecordsBetweenTime(startTime, endTime)
+    }
 }

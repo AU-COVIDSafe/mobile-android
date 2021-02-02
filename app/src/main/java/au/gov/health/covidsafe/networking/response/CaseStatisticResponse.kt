@@ -14,7 +14,8 @@ data class CaseStatisticResponse(@SerializedName("updated_date") val updatedDate
                                  val sa: CaseDetailsData?,
                                  val tas: CaseDetailsData?,
                                  val vic: CaseDetailsData?,
-                                 val wa: CaseDetailsData?)
+                                 val wa: CaseDetailsData?,
+                                 val version: Int? )
 
 @Keep
 data class CaseDetailsData(
@@ -22,4 +23,9 @@ data class CaseDetailsData(
         @SerializedName("active_cases") var activeCases: Int?,
         @SerializedName("new_cases") var newCases: Int?,
         @SerializedName("recovered_cases") var recoveredCases: Int?,
+        @SerializedName("overseas_acquired") var overseasAcquired: Int?,
+        @SerializedName("recent_tests") var recentTests: Int?,
+        @SerializedName("locally_acquired") var locallyAcquired: Int?,
+        @SerializedName("new_locally_acquired") var newLocallyAcquired: Int?,
+        @SerializedName("new_overseas_acquired") var newOverseasAcquired: Int?,
         var deaths: Int?)

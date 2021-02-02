@@ -33,11 +33,13 @@ class UploadData(private val awsClient: AwsClient,
                     awsClient.initiateUpload("Bearer $jwtToken", params).execute()
                 }
                 if (initialUploadResponse == null) {
-                    Failure(UploadDataException.UploadDataIncorrectPinException)
+                    // No data in response
+                    Failure(Exception("100"))
                 } else if (initialUploadResponse.isSuccessful) {
                     val uploadLink = initialUploadResponse.body()?.uploadLink
                     if (uploadLink.isNullOrEmpty()) {
-                        Failure(Exception())
+                        // Upload link is null or empty
+                        Failure(Exception("104"))
                     } else {
                         zipAndUploadData(uploadLink)
                     }
@@ -46,13 +48,16 @@ class UploadData(private val awsClient: AwsClient,
                 } else if (initialUploadResponse.code() == 403) {
                     Failure(UploadDataException.UploadDataJwtExpiredException)
                 } else {
-                    Failure(Exception())
+                    // any other status code
+                    Failure(Exception(initialUploadResponse.code().toString()))
                 }
             } catch (e: Exception) {
-                Failure(e)
+                // unable to parse success response
+                Failure(Exception("101"))
             }
         } ?: run {
-            return Failure(Exception())
+            // Error getting db context
+            return Failure(Exception("001"))
         }
     }
 
@@ -69,15 +74,16 @@ class UploadData(private val awsClient: AwsClient,
         return try {
             val response = retryOkhttpCall { okHttpClient.newCall(request).execute() }
             return if (response == null) {
-                Failure(Exception())
+                // Error creating url obj
+                Failure(Exception("102"))
             } else {
                 Success(None)
             }
         } catch (e: Exception) {
-            Failure(Exception())
+            // Error encoding data to json
+            Failure(Exception("003"))
         }
     }
-
 }
 
 sealed class UploadDataException : Exception() {

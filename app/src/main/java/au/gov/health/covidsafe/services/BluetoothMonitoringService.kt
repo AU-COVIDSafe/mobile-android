@@ -193,7 +193,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
     fun runService(cmd: Command?) {
 
         CentralLog.i(TAG, "Command is:${cmd?.string}")
-        
+
         when (cmd) {
             Command.ACTION_START -> {
                 actionStart()

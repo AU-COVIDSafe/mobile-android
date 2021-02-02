@@ -49,15 +49,17 @@ class VerifyUploadPinPresenter(private val fragment: VerifyUploadPinFragment) : 
                     fragment.navigateToNextPage()
                 },
                 onFailure = {
+
+                    val errorCode = it.message.toString()
                     when {
                         it is UploadDataException.UploadDataIncorrectPinException -> {
                             fragment.showInvalidOtp()
                         }
                         it is UploadDataException.UploadDataJwtExpiredException -> {
-                            fragment.navigateToRegister()
+                             fragment.navigateToRegister()
                         }
                         fragment.activity?.isInternetAvailable() == true -> {
-                            fragment.showGenericError()
+                            fragment.showGenericError(errorCode)
                         }
                         else -> {
                             fragment.showCheckInternetError()

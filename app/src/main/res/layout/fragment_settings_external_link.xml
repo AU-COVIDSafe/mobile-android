@@ -32,11 +32,41 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/activity_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/notification_status_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="@dimen/card_elevation_10dp"
+        card_view:cardUseCompatPadding="false"
+        card_view:contentPadding="0dp"
+        android:visibility="gone">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/app_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4"
+            app:external_linkCard_content="@string/activity_button_description"
+            app:external_linkCard_start_icon="@drawable/ic_activity"
+            app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+            app:external_linkCard_start_icon_padding="@dimen/space_8"
+            app:external_linkCard_title="@string/activity_button" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/help_topics_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_24"
-        app:layout_constraintTop_toBottomOf="@+id/notification_status_card"
+        app:layout_constraintTop_toBottomOf="@+id/activity_card_view"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="0dp"
         card_view:cardMaxElevation="@dimen/card_elevation_10dp"
@@ -48,12 +78,41 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/support_card_view"
+        android:id="@+id/postcode_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_24"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/help_topics_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="@dimen/card_elevation_10dp"
+        card_view:cardUseCompatPadding="false"
+        card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/settings_postcode_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4"
+            app:external_linkCard_content="@string/change_postcode_description"
+            app:external_linkCard_start_icon="@drawable/ic_postcode"
+            app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+            app:external_linkCard_start_icon_padding="@dimen/space_8"
+            app:external_linkCard_title="@string/change_postcode_heading" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/support_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/postcode_card_view"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="0dp"
         card_view:cardMaxElevation="@dimen/card_elevation_10dp"

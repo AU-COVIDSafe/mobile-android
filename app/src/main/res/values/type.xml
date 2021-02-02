@@ -125,8 +125,16 @@
         <item name="android:fontFamily">@font/font_roboto_regular</item>
     </style>
 
+    <style name="fontRobotoRegular14" parent="fontRobotoRegular">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
     <style name="fontRobotoRegular16" parent="fontRobotoRegular">
         <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+
+    <style name="fontRobotoRegular18" parent="fontRobotoRegular">
+        <item name="android:textSize">@dimen/text_size_18</item>
     </style>
 
     <style name="fontRobotoRegular20" parent="fontRobotoRegular">

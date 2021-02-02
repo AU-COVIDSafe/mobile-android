@@ -3,13 +3,23 @@
   <string name="action_continue">Continua</string>
   <string name="action_report_an_issue">Segnala un problema</string>
   <string name="action_upload_done">Eseguito</string>
-  <string name="action_verify_invalid_pin">PIN non valido, chiedi al funzionario sanitario d\'inviarti un altro PIN.</string>
+  <string name="action_verify_invalid_pin">PIN non valido, chiedi al funzionario sanitario d\'inviare un altro PIN.</string>
   <string name="action_verify_upload_pin">Carica i miei dati</string>
+  <string name="active_cases">Casi attivi (stimati)</string>
+  <string name="activity_button">Controlla l\'attività dell\'app</string>
+  <string name="activity_button_description">Visualizza le interazioni Bluetooth della tua app con altri utenti COVIDSafe.</string>
+  <string name="activity_heading">Attività dell\'app</string>
+  <string name="activity_intro">Ogni volta che il tuo dispositivo si trova nel raggio di altri utenti dell\'app COVIDSafe, prende nota delle interazioni Bluetooth chiamate \"strette di mano Bluetooth\". \n\n Queste strette di mano danno un\'indicazione del funzionamento della tua app.</string>
   <string name="activity_self_isolation_button">Continua</string>
   <string name="australian_capital_territory">Australian Capital Territory</string>
   <string name="battery_optimisation_prompt">Disabilita l\'ottimizzazione della batteria.</string>
+  <string name="ble_handshakes_yesterday_android">Strette di mano Bluetooth ieri</string>
+  <string name="bluetooth_handshakes_android">Strette di mano Bluetooth</string>
+  <string name="cancel_snooze">Annulla lo snooze</string>
+  <string name="cases_28_days">Nuovi casi negli ultimi 28 giorni</string>
+  <string name="cases_7_days">Nuovi casi negli ultimi 7 giorni</string>
   <string name="change_device_name_content_line_1">Il nome attuale del tuo dispositivo è %s.</string>
-  <string name="change_device_name_content_line_2">Gli altri dispositivi Bluetooth® intorno a voi sono in grado di vedere il nome del vostro dispositivo. Vi consigliamo di utilizzare un nome di dispositivo che non includa i vostri dati personali e che sia di uso comune, come ad esempio il nome del modello del vostro cellulare.</string>
+  <string name="change_device_name_content_line_2">Gli altri dispositivi Bluetooth® intorno a tre sono in grado di vedere il nome del tuo dispositivo. Ti consigliamo di utilizzare un nome del tuo dispositivo che non includa i tuoi dati personali e che sia di uso comune, come ad esempio il modello del cellulare</string>
   <string name="change_device_name_default_device_name">%s</string>
   <!-- Onboarding Change Device Name -->
   <string name="change_device_name_headline">Il nome del tuo dispositivo</string>
@@ -19,6 +29,8 @@
   <string name="change_device_name_secondary_action">Salta e continua così </string>
   <string name="change_language">Cambia lingua</string>
   <string name="change_language_content">Leggi la guida sull\'uso di COVIDSafe in un\'altra lingua.</string>
+  <string name="change_postcode_description">Aggiorna il codice postale, se è cambiato da quando hai scaricato COVIDSafe.</string>
+  <string name="change_postcode_heading">Cambia il codice postale</string>
   <string name="CodeHasExpired">Il codice PIN è scaduto</string>
   <string name="collection_message">COVIDSafe raccoglie ora informazioni diagnostiche per aiutarti a risolvere i problemi con l\'App. *Per saperne di più*</string>
   <string name="consent_button">Sono d\'accordo</string>
@@ -100,7 +112,7 @@
   <string name="country_region_name_gl">Groenlandia</string>
   <string name="country_region_name_gm">Gambia</string>
   <string name="country_region_name_gn">Guinea</string>
-  <string name="country_region_name_gp">Guadalupa</string>
+  <string name="country_region_name_gp">Guadalupe</string>
   <string name="country_region_name_gq">Guinea Equatoriale</string>
   <string name="country_region_name_gr">Grecia</string>
   <string name="country_region_name_gt">Guatemala</string>
@@ -180,7 +192,7 @@
   <string name="country_region_name_ph">Filippine</string>
   <string name="country_region_name_pk">Pakistan</string>
   <string name="country_region_name_pl">Polonia</string>
-  <string name="country_region_name_pr">Puerto Rico</string>
+  <string name="country_region_name_pr">Portorico </string>
   <string name="country_region_name_ps">Territori palestinesi</string>
   <string name="country_region_name_pt">Portogallo</string>
   <string name="country_region_name_pw">Palau</string>
@@ -236,18 +248,21 @@
   <string name="country_region_name_za">Sudafrica</string>
   <string name="country_region_name_zm">Zambia</string>
   <string name="country_region_name_zw">Zimbabwe</string>
+  <string name="customise_days">Personalizza i giorni</string>
   <string name="data_privacy_button">Avanti</string>
   <string name="data_privacy_content_android">È importante leggere *l\'informativa sulla privacy* del COVIDSafe prima di eseguire la registrazione per il COVIDSafe. \n\nSe hai meno di 16 anni, anche il tuo genitore / tutore dovrà leggere *l\'informativa sulla privacy*. \n\nL\'uso del COVIDSafe è completamente volontario. È possibile installare o eliminare l\'applicazione in qualsiasi momento. Se elimini il COVIDSafe, *puoi anche chiedere che i tuoi dati vengano eliminati* dal server sicuro. \n\nPer registrarti al COVIDSafe, dovrai inserire un nome (o pseudonimo), un numero di cellulare, una fascia di età e un codice postale. \n\nI dati trasmessi al momento della registrazione e i dati sul tuo utilizzo del COVIDSafe verranno raccolti e archiviati su un server altamente sicuro. \n\nIl COVIDSafe non raccoglierà dati sulla tua posizione. \n\nIl COVIDSafe annoterà l\'ora del contatto e un codice ID anonimo degli altri utenti COVIDSafe con cui tu entri in contatto, l\'intensità del segnale Bluetooth® e il modello di cellulare degli altri utenti, sul tuo dispositivo. \n\nAnche gli altri utenti COVIDSafe con cui entri in contatto noteranno il tuo codice ID anonimo, la data e l\'ora del contatto con te, l\'intensità del segnale Bluetooth® e il modello del tuo cellulare, sul loro dispositivo. \n\nSe un altro utente risulta positivo al COVID-19, può caricare i propri dati di contatto e un funzionario sanitario statale o del territorio può contattarti a scopi di ricerca dei contatti. \n\nI tuoi dettagli di registrazione verranno utilizzati o divulgati esclusivamente per l\'esecuzione di traccia dei contatti e per il corretto e legittimo funzionamento del COVIDSafe. \n\nMaggiori informazioni sono disponibili sul sito web del *Dipartimento della sanità del governo australiano*. \n\nVedi *l\'informativa sulla privacy* del COVIDSafe per ulteriori dettagli sui tuoi diritti ai tuoi dati e su come verranno gestiti e condivisi.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Registrazione e privacy</string>
   <string name="data_privacy_headline_content_description">Titolo, Registrazione e privacy</string>
   <string name="deaths">Decessi</string>
+  <string name="dialog_error_uploading_message">Prova a caricare di nuovo i tuoi dati. \n\nFai riferimento a questo codice di errore se un funzionario sanitario statale o territoriale lo richiede: \n%@</string>
   <string name="dialog_error_uploading_negative">Annulla</string>
   <string name="dialog_error_uploading_positive">Riprova</string>
   <string name="dialog_uploading_message">I dati di COVIDSafe sono attualmente in fase di caricamento. \n\nNon chiudere l\'app.</string>
   <string name="disabled">Disabilitato</string>
   <string name="dismiss">Ignora</string>
   <string name="done_success">Fatto</string>
+  <string name="edit_snooze_calendar">Modifica il calendario di snooze</string>
   <string name="enabled">Abilitato</string>
   <string name="enter_number_button">Ottieni il PIN</string>
   <string name="enter_number_content">Invieremo un PIN di 6 cifre per verificare il numero di cellulare.</string>
@@ -263,9 +278,19 @@
   <string name="enter_pin_wrong_number">Questo numero di cellulare è sbagliato?</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Enter_your_mobile_number_label">Inserisci il numero di cellulare</string>
+  <string name="every_day">Ogni giorno</string>
+  <string name="factors_dotpoint1">numero di utenti COVIDSafe nel raggio d\'azione</string>
+  <string name="factors_dotpoint2">modello ed età del dispositivo</string>
+  <string name="factors_dotpoint3">se sei in un veicolo in movimento</string>
+  <string name="factors_enviro_item_1">barriere fisiche come muri</string>
+  <string name="factors_enviro_item_2">materiale e dispositivi che interferiscono con i segnali Bluetooth</string>
+  <string name="factors_handshakes_heading">Fattori che influiscono sull\'attività dell\'app</string>
+  <string name="factors_intro">I fattori che possono influenzare il numero di strette di mano comprendono:</string>
+  <string name="factors_intro_2">Anche le strette di mano possono essere influenzate da fattori ambientali:</string>
   <!-- for production -->
   <string name="generic_error">Riprova più tardi</string>
   <string name="generic_internet_error">Controlla la connessione internet</string>
+  <string name="global_OK">OK</string>
   <string name="heading">Titolo</string>
   <string name="hide">Nascondi</string>
   <string name="home_app_permission_push_notification_prompt">Autorizza COVIDSafe ad inviare notifiche.</string>
@@ -274,8 +299,8 @@
   <string name="home_been_tested_title">Un funzionario sanitario ti ha chiesto di caricare i tuoi dati?</string>
   <string name="home_bluetooth_permission">Bluetooth®: %s</string>
   <string name="home_data_has_been_uploaded">I tuoi dati sono stati caricati</string>
-  <string name="home_data_has_been_uploaded_message">Stai aiutando a fermare la diffusione del COVID-19 caricando i tuoi dati ogni giorno mentre sei in autoisolamento.</string>
-  <string name="home_data_uploaded">Registrati per l\'autoisolamento</string>
+  <string name="home_data_has_been_uploaded_message">Stai aiutando a fermare la diffusione del COVID-19 caricando i tuoi dati ogni giorno mentre sei in isolamento.</string>
+  <string name="home_data_uploaded">Registrati per autoisolamento</string>
   <string name="home_data_uploaded_button">Registrati</string>
   <string name="home_data_uploaded_message">Aiuta a fermare la diffusione di COVID-19 e a monitorare i sintomi.</string>
   <string name="home_header_active_no_action_required">Non sono necessarie ulteriori azioni.</string>
@@ -312,47 +337,64 @@
   <string name="home_set_complete_external_link_self_isolation_register_url">https://covid-form.service.gov.au</string>
   <string name="home_set_complete_external_link_share_content">Invita altri ad collaborare. Insieme, siamo più forti.</string>
   <string name="home_set_complete_external_link_share_title">Condividi COVIDSafe</string>
-  <string name="home_set_location_why">Google richiede *l\'Autorizzazione alla posizione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati sulla posizione.</string>
+  <string name="home_set_location_why">Google richiede *l\'Autorizzazione di localizzazione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati sulla tua posizione.</string>
   <string name="home_setup_help">Guida</string>
   <string name="home_setup_incomplete_subtitle">COVIDSafe ha bisogno di un permesso per accedere a queste funzioni.</string>
   <string name="home_setup_incomplete_title">Verifica le autorizzazioni</string>
   <string name="home_version_number">Numero di versione: %s</string>
+  <string name="hotspots_state_territory">Hotspot in %@</string>
+  <string name="hour">Ora</string>
   <string name="how_it_works_button">Avanti</string>
-  <string name="how_it_works_consent">Il vostro consenso sarà sempre richiesto se è richiesta la tracciabilità sanitaria.</string>
-  <string name="how_it_works_content">I segnali Bluetooth vengono utilizzati per determinare la vicinanza ad altri utenti di COVIDSafe. \nOgni istanza di stretto contatto tra voi e gli altri utenti di COVIDSafe viene annotata per creare informazioni sui contatti. Queste informazioni sono crittografate e memorizzate solo sul vostro cellulare. \nSe risultate positivi al COVID-19, come utenti di COVIDSafe sarete contattati da un funzionario sanitario statale o del territorio per assistervi con il caricamento volontario delle vostre informazioni di stretto contatto in un sistema di archiviazione delle informazioni altamente sicuro. \nI funzionari sanitari statali o territoriali possono anche contattarvi se siete entrati in stretto contatto con un altro utente di COVIDSafe risultato positivo. \nPer ulteriori informazioni, consultare la pagina Argomenti della Guida.</string>
+  <string name="how_it_works_consent">Il tuo consenso sarà sempre richiesto se è richiesta la tracciabilità sanitaria.</string>
+  <string name="how_it_works_content">I segnali Bluetooth vengono utilizzati per determinare la vicinanza ad altri utenti di COVIDSafe. \nOgni istanza di stretto contatto tra te e gli altri utenti di COVIDSafe viene annotata per creare informazioni sui contatti. Queste informazioni sono crittografate e memorizzate solo sul tuo cellulare. \nSe risulti positivo al COVID-19, come utente di COVIDSafe sarai contattato da un funzionario sanitario statale o del territorio per assisterti con il caricamento volontario delle vostre informazioni di stretto contatto in un sistema di archiviazione delle informazioni altamente sicuro. \nI funzionari sanitari statali o territoriali possono anche contattarti se sei entrato in stretto contatto con un altro utente di COVIDSafe risultato positivo. \nPer ulteriori informazioni, consulta la pagina Argomenti della Guida.</string>
   <!-- OnBoarding How it works -->
-  <string name="how_it_works_headline">Come funziona il COVIDSafe</string>
+  <string name="how_it_works_headline">Come funziona COVIDSafe</string>
   <string name="how_it_works_headline_content_description">Titolo, Come funziona il COVIDSafe</string>
   <string name="improve">Migliora le prestazioni dell\'app</string>
   <string name="improve_heading">Migliora le prestazioni di COVIDSafe</string>
-  <string name="internet_connection_content">Connettersi a Internet per ricevere notifiche su problemi e aggiornamenti.</string>
+  <string name="internet_connection_content">Connettiti a Internet per ricevere notifiche su problemi e aggiornamenti.</string>
   <string name="internet_connection_heading">Nessuna connessione internet</string>
-  <string name="internet_screen_content">COVIDSafe deve connettersi al server periodicamente per identificare eventuali problemi dell\'app. \n\n La connessione Internet permette di ricevere notifiche su:</string>
-  <string name="internet_screen_content_1">come risolvere problemi e riattivare nuovamente COVIDSafe </string>
+  <string name="internet_screen_content">COVIDSafe deve connettersi al server di tanto in tanto per poter identificare i problemi con l\'applicazione.\n\nLa connessione a internet garantisce la ricezione delle notifiche:deve</string>
+  <string name="internet_screen_content_1">come risolvere problemi e riattivare COVIDSafe </string>
   <string name="internet_screen_content_2">quando sarà disponibile un nuovo aggiornamento della versione</string>
-  <string name="internet_screen_heading">Connettersi a Internet per migliorare le prestazioni di COVIDSafe</string>
+  <string name="internet_screen_heading">Connettiti a Internet per migliorare le prestazioni di COVIDSafe</string>
   <string name="intro_button">Voglio aiutare</string>
   <string name="intro_content">COVIDSafe è stata sviluppata dal Governo australiano per aiutare a proteggere la comunità dalla diffusione del coronavirus. \n\nCOVIDSafe rileva in modo sicuro i contatti che avete con altri utenti dell\'app e consente ai funzionari sanitari statali e del territorio di contattarvi, se siete stati in stretto contatto con qualcuno risultato positivo al virus. \n\nInsieme possiamo aiutare a fermare la diffusione e rimanere sani.</string>
   <!-- OnBoarding Intro -->
   <string name="intro_headline">Insieme possiamo fermare la diffusione del COVID-19</string>
   <string name="intro_headline_content_description">Titolo, Insieme possiamo fermare la diffusione del COVID-19</string>
   <string name="invalid_age">L\'età deve essere inserita</string>
-  <string name="invalid_australian_phone_number_error_prompt">I numeri di cellulare australiani contengono un massimo di 10 cifre.</string>
+  <string name="invalid_australian_phone_number_error_prompt">I numeri di cellulare australiani hanno un massimo di 10 cifre.</string>
   <string name="invalid_name">Nome non valido</string>
   <string name="invalid_norfolk_island_phone_number_error_prompt">I numeri di cellulare nell\'Isola di Norfolk contengono da 5 a 6 cifre.</string>
   <string name="invalid_phone_number">Numero di cellulare non valido.</string>
   <string name="invalid_phone_number_digits_error_prompt" formatted="false">I numeri di cellulare in %1s contengono %2s cifre.</string>
   <string name="invalid_post_code">Codice postale non valido</string>
+  <string name="is_snoozed_android">COVIDSafe non è attiva</string>
+  <string name="is_snoozed_description_android">COVIDSafe non utilizza il Bluetooth e non registra i contatti.</string>
   <string name="IssueFooter">Potremmo contattarvi per ulteriori dettagli sul vostro feedback. Il vostro indirizzo email non verrà utilizzato per nessun altro scopo.</string>
   <string name="jwt_description">C\'è un problema con i dati di registrazione.</string>
-  <string name="jwt_heading">Si prega di registrarsi di nuovo</string>
+  <string name="jwt_expired">La tua registrazione è scaduta.</string>
+  <string name="jwt_expired_description">Conferma il numero di cellulare ogni 12 mesi per assicurarti che i dati di registrazione siano corretti.</string>
+  <string name="jwt_heading">Registrati di nuovo</string>
+  <string name="jwt_success">Registrazione rinnovata con successo</string>
+  <string name="last_7_days">Ultimi 7 giorni</string>
   <string name="loading_numbers">Caricamento degli ultimi numeri</string>
+  <string name="locally_acquired">%@ contratto localmente</string>
+  <string name="low_handshakes_description">Prova questi suggerimenti per migliorare le prestazioni di COVIDSafe sul tuo telefono:</string>
+  <string name="low_handshakes_heading">Cosa fare se i numeri delle strette di mano sono inferiori alle tue aspettative</string>
+  <string name="low_handshakes_item1">Verifica se COVIDSafe è attivo aprendo l\'app.</string>
+  <string name="low_handshakes_item2">Aggiorna la tua app all\'ultima versione tramite Google Play Store o Apple Store.</string>
+  <string name="low_handshakes_item3">Riavvia il telefono e apri di nuovo l\'app.</string>
+  <string name="low_handshakes_link">Per saperne di più su come controllare se COVIDSafe funziona correttamente</string>
   <!-- Splash Screen -->
-  <string name="migration_in_progress">Aggiornamento COVIDSafe in corso. \n\nAssicurarsi che il cellulare non sia spento fino al completamento dell\'aggiornamento.</string>
+  <string name="migration_in_progress">Aggiornamento COVIDSafe in corso. \n\nAssicurati che il cellulare non sia spento fino al completamento dell\'aggiornamento.</string>
+  <string name="minute">Minuto</string>
   <string name="national_numbers">Numeri nazionali</string>
   <string name="navigation_back_button_content_description">Pagina precedente</string>
   <string name="need_location_service">Per il funzionamento di COVIDSafe, attivare la Posizione nelle Impostazioni.</string>
   <string name="new_cases">Nuovi casi nelle ultime 24 ore</string>
+  <string name="new_cases_total">Nuovi casi dal 1° febbraio 2020</string>
   <string name="new_south_wales">New South Wales</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Per esempio: 51234</string>
@@ -380,16 +422,17 @@
   <string name="numbers_no_internet">Connettiti a Internet per ricevere notifiche sui numeri aggiornati.</string>
   <string name="numbers_refresh">Aggiorna ora</string>
   <string name="options_for_australia">Opzioni per l\'Australia</string>
+  <string name="overseas_acquired">%@ contratto all\'estero</string>
   <string name="permission_button">Procedi</string>
-  <string name="permission_content">Il funzionamento di COVIDSafe richiede l\'abilitazione di Bluetooth® e delle notifiche. \n\n Seleziona \'Procedi\': \n\n 1. Abilita il Bluetooth® \n\n 2. Consenti le autorizzazioni di posizione \n\n 3. Disabilita l\'ottimizzazione della batteria \n\n\nGoogle richiede *Autorizzazione alla posizione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati sulla posizione. \n\nCOVIDSafe non invia richieste di accoppiamento.</string>
+  <string name="permission_content">Il funzionamento di COVIDSafe richiede l\'abilitazione di Bluetooth® e delle notifiche. \n\n Seleziona \'Procedi\': \n\n 1. Abilita il Bluetooth® \n\n 2. Consenti le autorizzazioni di localizzazione\n\n 3. Disabilita l\'ottimizzazione della batteria \n\n\nGoogle richiede *l\'Autorizzazione di localizzazione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati relativi alla tua posizione. \n\nCOVIDSafe non invia richieste di accoppiamento.</string>
   <!-- OnBoarding Permission -->
   <string name="permission_headline">Impostazioni dell\'app</string>
   <string name="permission_location_rationale">Il sistema Android richiede l\'accesso alla posizione per abilitare le funzioni Bluetooth® per COVIDSafe. COVIDSafe non può funzionare correttamente senza.</string>
   <string name="permission_success_button">Eseguito</string>
-  <string name="permission_success_content">1. Quando esci di casa, porta il cellulare con te e assicurati che COVIDSafe sia attiva. \n\n2. Bluetooth® deve rimanere ON. \n\n3. L\'ottimizzazione della batteria deve essere OFF. \n\n4. COVIDSafe non invia richieste di accoppiamento. *Per saperne di più*.\n\n5. Google richiede *l\'Autorizzazione alla posizione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati sulla posizione.</string>
+  <string name="permission_success_content">1. Quando esci di casa, porta il cellulare con te e assicurati che COVIDSafe sia attiva. \n\n2. Bluetooth® deve rimanere ON. \n\n3. L\'ottimizzazione della batteria deve essere OFF. \n\n4. COVIDSafe non invia richieste di accoppiamento. *Per saperne di più*.\n\n5. Google richiede *l\'Autorizzazione di localizzazione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati relativi alla tua posizione.</string>
   <!-- OnBoarding Permission Success -->
   <string name="permission_success_headline">Ti sei registrato con successo</string>
-  <string name="permission_success_warning">Mantieni attive le notifiche push di COVIDSafe in modo da essere tempestivamente avvisato se l\'app non funziona correttamente.</string>
+  <string name="permission_success_warning">Mantieni attive le notifiche push per COVIDSafe in modo da essere tempestivamente avvisato se l\'app non funziona correttamente.</string>
   <string name="personal_details_age_content_description">Seleziona la fascia d\'età</string>
   <string name="personal_details_age_dialog_title">Seleziona la tua età</string>
   <string name="personal_details_age_error_prompt">Seleziona la fascia d\'età.</string>
@@ -411,36 +454,62 @@
   <string name="pin_number">codice PIN</string>
   <string name="PINNumber_VO_Label">Codice PIN</string>
   <string name="PN_MobileNumber_VOLabel">Numero di cellulare</string>
+  <string name="postcode_success">Il tuo codice postale è stato aggiornato</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">Problemi nel ricevere il PIN?</string>
   <string name="recovered">Totale guarigioni</string>
-  <string name="registration_consent_content">Acconsento alla raccolta di dati da parte della Digital Transformation Agency nel ruolo di amministratrice dell\'archivio dati, in base alle disposizioni legali stabilite dal segretario del Dipartimento della sanità del governo australiano per:</string>
+  <string name="registration_consent_content">Acconsento alla raccolta di dati da parte della Digital Transformation Agency nel ruolo di amministratore dell\'archivio dati, in base alle disposizioni legali stabilite dal segretario del Dipartimento della sanità del governo australiano per:</string>
   <string name="registration_consent_diagnostic">Informazioni per garantire il corretto funzionamento di COVIDSafe sul mio dispositivo.</string>
   <string name="registration_consent_first_paragraph">I miei dati di registrazione.</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Consenso alla registrazione</string>
   <string name="registration_consent_second_paragraph">Informazioni sul contatto con altri utenti di COVIDSafe, se un utente con cui sono entrato in contatto risulta positivo al COVID-19 e carica i suoi dati.</string>
+  <string name="save">Salva</string>
+  <string name="scheduled" formatted="false">Hai programmato COVIDSafe su snooze da %@ a %@ </string>
   <string name="search">Cerca</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Seleziona il paese o la regione</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="Select_country_or_region_headline">Seleziona il paese o la regione</string>
+  <string name="select_state_territory_button">Seleziona lo stato o il territorio</string>
+  <string name="select_state_territory_heading">Seleziona lo stato o il territorio</string>
   <string name="service_not_ok_action">Controlla l\'app ora</string>
   <string name="service_not_ok_body">Assicurati che il COVIDSafe sia attivo prima di uscire di casa o quando sei in luoghi pubblici.</string>
   <string name="service_not_ok_title">COVIDSafe non è attiva</string>
   <string name="service_ok_body">Mantieni attivo COVIDSafe quando esci di casa o sei in luoghi pubblici.</string>
   <string name="service_ok_title">COVIDSafe è attivo</string>
+  <string name="set_snooze_time">Imposta il tempo di snooze</string>
   <string name="settings">Impostazioni</string>
-  <string name="share_this_app_content">Unisciti a noi per fermare la diffusione del COVID-19! Scarica il COVIDSafe, un\'app del Governo australiano. #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
+  <string name="seven_days">7 giorni</string>
+  <string name="share_this_app_content">Unisciti a me per fermare la diffusione del COVID-19! Scarica il COVIDSafe, un\'app del Governo australiano. #COVID19 #coronavirusaustralia #stayhomesavelives https://covidsafe.gov.au</string>
   <string name="show">Visualizza</string>
+  <string name="snooze_button">Snooze</string>
+  <string name="snooze_calendar_button">Calendario snooze</string>
+  <string name="snooze_calendar_description">Imposta giorni e orari in cui vuoi attivare snooze COVIDSafe.</string>
+  <string name="snooze_calendar_toggle">Calendario snooze</string>
+  <string name="snooze_covidsafe_button">Snooze COVIDSafe.</string>
+  <string name="snooze_covidsafe_button_description">Snooze COVIDSafe per un determinato periodo di tempo.</string>
+  <string name="snooze_ended">Snooze è terminato.</string>
+  <string name="snooze_ends">Snooze termina tra</string>
+  <string name="snooze_from">Snooze da</string>
+  <string name="snooze_heading">Snooze COVIDSafe</string>
+  <string name="snooze_on">Snooze attivo</string>
+  <string name="snooze_timer_description">Imposta il timer di snooze COVIDSafe.</string>
+  <string name="snooze_to">Snooze fino a</string>
+  <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe non utilizza il Bluetooth e non sta registrando i contatti. \n\n Hai programmato COVIDSafe su snooze da %@ a %@ .</string>
   <string name="south_australia">South Australia</string>
+  <string name="state_number_heading">numeri</string>
   <string name="stepCounter" formatted="false">Passo %d di %d</string>
   <string name="support">Supporto</string>
   <string name="support_content">Per assistenza su questioni non trattate dagli argomenti della Guida</string>
   <string name="tasmania">Tasmania</string>
   <string name="title_help">Guida</string>
+  <string name="total">Totale</string>
   <string name="total_confirmed_cases">Totale casi confermati</string>
+  <string name="total_deaths">%@ totale decessi</string>
   <string name="total_per_state">Totale casi confermati per stato e territorio</string>
+  <string name="twenty_eight_days">28 giorni</string>
+  <string name="type_in_time">Digita l\'ora</string>
   <string name="under_sixteen_content">Confermo il consenso dei miei genitori o del mio tutore a Digital Transformation Agency nel suo ruolo di amministratore della banca dati, in base alle disposizioni legali stabilite dal segretario del Dipartimento della sanità del governo australiano:</string>
   <string name="under_sixteen_first_paragraph">I miei dati di registrazione.</string>
   <!-- OnBoarding Under Sixteen -->
@@ -455,21 +524,24 @@
   <string name="update_available_message_android">Abbiamo apportato miglioramenti a COVIDSafe. \nAggiorna tramite Google Play Store.</string>
   <string name="update_available_play_store_btn">Vai al Google Play Store</string>
   <string name="update_available_title">Aggiornamento disponibile!</string>
-  <string name="update_screen_location">Google richiede *l\'Autorizzazione alla posizione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati sulla posizione.</string>
+  <string name="update_description_android">Questo aggiornamento migliora le prestazioni Bluetooth di COVIDSafe con nuovi modi per catturare meglio i tuoi contatti più stretti. <a href="https://www.covidsafe.gov.au/help-topics.html#herald"> Ulteriori informazioni sui miglioramenti apportati a COVIDSafe </a> \n\nGoogle richiede l\'autorizzazione di localizzazione per consentire alle app Android di accedere al Bluetooth. <a href="https://www.covidsafe.gov.au/help-topics.html#location-permissions"> COVIDSafe NON raccoglie, archivia o utilizza i dati relativi alla tua posizione </a></string>
+  <string name="update_heading_android">Miglioramento delle prestazioni</string>
+  <string name="update_screen_location">Google richiede *l\'Autorizzazione di localizzazione per le app Android * per accedere al Bluetooth®. COVIDSafe non memorizza né utilizza i dati sulla tua posizione.</string>
   <string name="upload_answer_no">No</string>
   <!-- Upload flow -->
   <string name="upload_answer_yes">Sì</string>
   <string name="upload_consent_button">Sono d\'accordo</string>
+  <string name="upload_fail_heading">Caricamento non riuscito</string>
   <string name="upload_failed">Caricamento non riuscito</string>
   <string name="upload_finished_header">Grazie per aver aiutato a fermare la diffusione del COVID-19!</string>
   <string name="upload_finished_header_content_description">Titolo, Grazie per aver aiutato a fermare la diffusione del COVID-19!</string>
-  <string name="upload_finished_sub_header">I  vostri dati sono stati caricati sul sistema altamente sicuro di archiviazione di COVIDSafe. \n\nI funzionari sanitari statali o del territorio informeranno gli altri utenti COVIDSafe che hanno registrato casi di stretto contatto con voi. La vostra identità rimarrà anonima per gli altri utenti.</string>
-  <string name="upload_step_1_body">Un funzionario sanitario statale o del territorio vi contatterà per aiutarvi con il caricamento volontario dei vostri dati solo se siete risultati positivi al COVID-19.\n\nDopo aver premuto \'Sì\', bisogna fornire il proprio consenso per caricare i  dati.</string>
+  <string name="upload_finished_sub_header">I tuoi dati sono stati caricati sul sistema altamente sicuro di archiviazione di COVIDSafe. \n\nI funzionari sanitari statali o del territorio informeranno gli altri utenti COVIDSafe che hanno registrato casi di stretto contatto con te. La tua identità rimarrà anonima per gli altri utenti.</string>
+  <string name="upload_step_1_body">Un funzionario sanitario statale o del territorio ti contatterà per aiutarvi con il caricamento volontario dei tuoi dati solo se sei risultato positivo al COVID-19.\n\nDopo aver premuto \'Sì\', bisogna fornire il proprio consenso per caricare i dati.</string>
   <string name="upload_step_1_header">Hai ricevuto richiesta di caricamento dati da un ufficiale sanitario?</string>
   <string name="upload_step_1_header_content_description">Titolo, Hai ricevuto richiesta di caricamento dati da un ufficiale sanitario?</string>
   <string name="upload_step_4_header">Consenso al caricamento</string>
   <string name="upload_step_4_header_content_description">Titolo, Consenso al caricamento</string>
-  <string name="upload_step_4_sub_header">I dati di stretto contatto non vengono caricati senza il vostro consenso.\n\nUna volta dato il consenso, i vostri dati di stretto contatto vengono caricati e condivisi con funzionari sanitari statali o del territorio a scopo di tracciamento di contatti.\n\nI funzionari sanitari statali e del territorio potranno accedere solo alle informazioni sui contatti stretti.\n\nLeggere *l\'informativa sulla privacy* del COVIDSafe per ulteriori informazioni.</string>
+  <string name="upload_step_4_sub_header">I dati di stretto contatto non vengono caricati senza il tuo consenso.\n\nUna volta fornito il consenso, i tuoi dati di stretto contatto vengono caricati e condivisi con funzionari sanitari statali o del territorio a scopo di tracciamento di contatti.\n\nI funzionari sanitari statali e del territorio potranno accedere solo alle informazioni sui contatti stretti.\n\nLeggi *l\'informativa sulla privacy* del COVIDSafe per ulteriori informazioni.</string>
   <string name="upload_step_verify_pin_header">Carica i tuoi dati</string>
   <string name="upload_step_verify_pin_header_content_description">Titolo, Carica i tuoi dati</string>
   <string name="upload_step_verify_pin_sub_header">Un funzionario sanitario statale o del territorio invierà un PIN al tuo dispositivo tramite messaggio di testo. Inseriscilo qui sotto per caricare i tuoi dati.</string>
@@ -478,4 +550,5 @@
   <string name="victoria">Victoria</string>
   <string name="western_australia">Western Australia</string>
   <string name="wrong_ping_number">PIN errato </string>
+  <string name="yesterday_activity">Ieri</string>
 </resources>

@@ -7,6 +7,7 @@ package au.gov.health.covidsafe.sensor;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 
 import au.gov.health.covidsafe.BuildConfig;
 import au.gov.health.covidsafe.sensor.ble.ConcreteBLESensor;

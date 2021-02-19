@@ -29,8 +29,8 @@ android {
         applicationId "au.gov.health.covidsafe"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 106
-        versionName "2.1"
+        versionCode 109
+        versionName "2.2"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -225,6 +225,9 @@ dependencies {
     implementation "com.google.crypto.tink:tink-android:1.4.0"
     implementation "androidx.lifecycle:lifecycle-service:2.2.0"
     implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
+
+    // MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
     // flags
     implementation 'com.michaelfotiadis:android-country-flags:1.0.3'

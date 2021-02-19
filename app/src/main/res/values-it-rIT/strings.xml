@@ -9,11 +9,9 @@
   <string name="activity_button">Controlla l\'attività dell\'app</string>
   <string name="activity_button_description">Visualizza le interazioni Bluetooth della tua app con altri utenti COVIDSafe.</string>
   <string name="activity_heading">Attività dell\'app</string>
-  <string name="activity_intro">Ogni volta che il tuo dispositivo si trova nel raggio di altri utenti dell\'app COVIDSafe, prende nota delle interazioni Bluetooth chiamate \"strette di mano Bluetooth\". \n\n Queste strette di mano danno un\'indicazione del funzionamento della tua app.</string>
   <string name="activity_self_isolation_button">Continua</string>
   <string name="australian_capital_territory">Australian Capital Territory</string>
   <string name="battery_optimisation_prompt">Disabilita l\'ottimizzazione della batteria.</string>
-  <string name="ble_handshakes_yesterday_android">Strette di mano Bluetooth ieri</string>
   <string name="bluetooth_handshakes_android">Strette di mano Bluetooth</string>
   <string name="cancel_snooze">Annulla lo snooze</string>
   <string name="cases_28_days">Nuovi casi negli ultimi 28 giorni</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">barriere fisiche come muri</string>
   <string name="factors_enviro_item_2">materiale e dispositivi che interferiscono con i segnali Bluetooth</string>
   <string name="factors_handshakes_heading">Fattori che influiscono sull\'attività dell\'app</string>
-  <string name="factors_intro">I fattori che possono influenzare il numero di strette di mano comprendono:</string>
   <string name="factors_intro_2">Anche le strette di mano possono essere influenzate da fattori ambientali:</string>
   <!-- for production -->
   <string name="generic_error">Riprova più tardi</string>
@@ -396,6 +393,10 @@
   <string name="new_cases">Nuovi casi nelle ultime 24 ore</string>
   <string name="new_cases_total">Nuovi casi dal 1° febbraio 2020</string>
   <string name="new_south_wales">New South Wales</string>
+  <string name="no_handshakes_item1">Verifica se COVIDSafe è attivo aprendo l\'app.</string>
+  <string name="no_handshakes_item2">Aggiorna la tua app all\'ultima versione tramite Google Play Store o Apple Store.</string>
+  <string name="no_handshakes_item3">Riavvia il telefono e apri di nuovo l\'app.</string>
+  <string name="no_handshakes_link">Per saperne di più su come controllare se COVIDSafe funziona correttamente</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Per esempio: 51234</string>
   <string name="northern_territory">Northern Territory</string>

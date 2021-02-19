@@ -9,11 +9,13 @@
   <string name="activity_button">Check app activity</string>
   <string name="activity_button_description">View your app\'s Bluetooth interactions with other COVIDSafe users.</string>
   <string name="activity_heading">App activity</string>
-  <string name="activity_intro">Every time your device is in range of other COVIDSafe app users, it takes note of Bluetooth interactions called \'Bluetooth handshakes\'.\n\nThese handshakes give an indication of how well your app is working.</string>
+  <string name="activity_intro">When your device is in Bluetooth range of other COVIDSafe app users, it takes note of Bluetooth interactions called <a href="https://www.covidsafe.gov.au/technology.html#handshakes">digital \'handshakes\'</a>.\n\nThese handshakes give an indication of how well your app is working.</string>
+  <string name="activity_intro_2">The number of handshakes shows you were in close range with another COVIDSafe user. It does NOT mean that you have been in contact with a user who has tested positive for COVID-19.</string>
   <string name="activity_self_isolation_button">Continue</string>
+  <string name="app_activity_bluetooth_handshakes_heading">Bluetooth handshakes recorded by your device:</string>
   <string name="australian_capital_territory">Australian Capital Territory</string>
   <string name="battery_optimisation_prompt">You must disable battery optimisation.</string>
-  <string name="ble_handshakes_yesterday_android">Bluetooth handshakes yesterday</string>
+  <string name="ble_handshakes_yesterday">Bluetooth handshakes recorded by your device yesterday</string>
   <string name="bluetooth_handshakes_android">Bluetooth handshakes</string>
   <string name="cancel_snooze">Cancel snooze</string>
   <string name="cases_28_days">New cases in the last 28 days</string>
@@ -283,11 +285,14 @@
   <string name="factors_dotpoint1">number of COVIDSafe users in range</string>
   <string name="factors_dotpoint2">device model and age</string>
   <string name="factors_dotpoint3">if you’re in a moving vehicle</string>
+  <string name="factors_dotpoint4">anything that interferes with Bluetooth signals such as walls and equipment</string>
   <string name="factors_enviro_item_1">physical barriers like walls</string>
   <string name="factors_enviro_item_2">material and fixtures that interfere with Bluetooth signals</string>
   <string name="factors_handshakes_heading">Factors that impact app activity</string>
-  <string name="factors_intro">Factors that can affect the number of handshakes include:</string>
+  <string name="factors_intro">If you see handshakes being recorded, it means the app is working. Factors that can affect the number of handshakes include:</string>
   <string name="factors_intro_2">Handshakes can also be affected by environmental factors, including:</string>
+  <!-- Example: "From 22 to 28 January 2021" -->
+  <string name="from">From</string>
   <!-- for production -->
   <string name="generic_error">Please try again later</string>
   <string name="generic_internet_error">Please check your internet connection</string>
@@ -391,12 +396,6 @@
   <string name="learn_more">Learn more</string>
   <string name="loading_numbers">Loading latest numbers</string>
   <string name="locally_acquired">%@ locally acquired</string>
-  <string name="low_handshakes_description">Try these tips to improve the performance of COVIDSafe on your phone:</string>
-  <string name="low_handshakes_heading">What to do if your handshake numbers are lower than you expect</string>
-  <string name="low_handshakes_item1">Check if COVIDSafe is active by opening the app.</string>
-  <string name="low_handshakes_item2">Update your app to the latest version through the Google Play Store or Apple Store.</string>
-  <string name="low_handshakes_item3">Restart your phone and open the app again.</string>
-  <string name="low_handshakes_link">Read more on how to check if COVIDSafe is working correctly</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe update in progress. \n\n Please make sure you phone is not switched off until the update is complete.</string>
   <string name="minute">Minute</string>
@@ -406,6 +405,13 @@
   <string name="new_cases">New cases in the last 24 hours</string>
   <string name="new_cases_total">New cases since 1 Feb 2020</string>
   <string name="new_south_wales">New South Wales</string>
+  <string name="no_handshakes_description">If you think you’ve been in contact with other COVIDSafe users, try these tips to improve the performance of COVIDSafe on your phone:</string>
+  <string name="no_handshakes_heading">What to do if you are not seeing handshakes</string>
+  <string name="no_handshakes_item1">Check if COVIDSafe is active by opening the app.</string>
+  <string name="no_handshakes_item2">Update your app to the latest version through the Google Play Store or Apple Store.</string>
+  <string name="no_handshakes_item3">Restart your phone and open the app again.</string>
+  <string name="no_handshakes_item4">Check if you have the right settings for <a href="https://www.covidsafe.gov.au/help-topics.html#location-services">Location Services</a>.</string>
+  <string name="no_handshakes_link">Read more on how to check if COVIDSafe is working correctly</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">For example: 51234</string>
   <string name="northern_territory">Northern Territory</string>
@@ -516,6 +522,8 @@
   <string name="support_content">For assistance on issues not covered by Help topics</string>
   <string name="tasmania">Tasmania</string>
   <string name="title_help">Help</string>
+  <!-- Example: "From 22 to 28 January 2021" -->
+  <string name="to">to</string>
   <string name="total">Total</string>
   <string name="total_confirmed_cases">Total confirmed cases</string>
   <string name="total_deaths">%@ total deaths</string>

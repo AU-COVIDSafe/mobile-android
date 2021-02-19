@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/lighter_green"
-            app:title="Change Postcode"
+            app:title="@string/change_postcode_heading"
             app:popupTheme="@style/MobileKit.FeedbackTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -55,17 +55,6 @@
             visibility="@{!viewModel.postcodeUpdated}">
 
         <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_16"
-            style="?textAppearanceBody1"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:text="@string/change_postcode_heading" />
-
-        <TextView
             android:id="@+id/postcode_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,15 +78,23 @@
             <EditText
                 android:id="@+id/post_code"
                 android:layout_width="match_parent"
+                android:layout_height="@dimen/text_field_height"
                 android:layout_marginTop="@dimen/space_8"
-                style="@style/otpStyle"
-                android:layout_height="50dp"
+                android:background="@drawable/edittext_modified_states"
                 android:contentDescription="@string/personal_details_post_code_content_description"
-                android:textCursorDrawable="@null"
-                android:maxLength="4"
-                android:inputType="number"
                 android:digits="0123456789"
-                android:imeOptions="actionDone" />
+                android:gravity="center_vertical|start"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingStart="@dimen/keyline_1"
+                android:paddingEnd="@dimen/keyline_1"
+                android:textDirection="locale"
+                android:textAlignment="viewStart"
+                android:textColor="@color/slack_black"
+                android:textColorHighlight="@color/dark_cerulean_3"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_body_small" />
 
             <TextView
                 android:id="@+id/post_code_error"

@@ -9,11 +9,9 @@
   <string name="activity_button">تحقق من نشاط التطبيق</string>
   <string name="activity_button_description">اعرض تفاعلات Bluetooth لتطبيقك مع مستخدمي COVIDSafe الآخرين.</string>
   <string name="activity_heading">نشاط التطبيق</string>
-  <string name="activity_intro">في كل مرة يتواجد جهازك في نطاق مستخدمي تطبيق COVIDSafe الآخرين ، فإنه يسجل تفاعلات Bluetooth التي تسمى \"مصافحات Bluetooth\". \n\n تدل هذه المصافحات على ما إذا كان تطبيقك يعمل بشكل صحيح.</string>
   <string name="activity_self_isolation_button">تابع</string>
   <string name="australian_capital_territory">إقليم العاصمة الأسترالية</string>
   <string name="battery_optimisation_prompt">يجب عليك تعطيل وضع توفير الطاقة.</string>
-  <string name="ble_handshakes_yesterday_android">مصافحات \u200F Bluetooth ليوم أمس</string>
   <string name="bluetooth_handshakes_android">مصافحات \u200F Bluetooth</string>
   <string name="cancel_snooze">إلغاء الغفوة</string>
   <string name="cases_28_days">الحالات الجديدة في ال 28 يومًا الماضية</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">الحواجز الحسًية مثل الجدران</string>
   <string name="factors_enviro_item_2">المواد والتجهيزات التي تتداخل مع إشارات Bluetooth</string>
   <string name="factors_handshakes_heading">العوامل التي تؤثر على نشاط التطبيق</string>
-  <string name="factors_intro">تشمل العوامل التي يمكن أن تؤثر على عدد المصافحات ما يلي:</string>
   <string name="factors_intro_2">كما يمكن أن تتأثر المصافحات بالعوامل البيئية، بما في ذلك:</string>
   <!-- for production -->
   <string name="generic_error">الرجاء إعادة المحاولة لاحقًا </string>
@@ -381,12 +378,6 @@
   <string name="last_7_days">آخر 7 أيام</string>
   <string name="loading_numbers">تحميل أحدث الأرقام</string>
   <string name="locally_acquired">%@ تم التقاطه محلياً</string>
-  <string name="low_handshakes_description">جرّب هذه النصائح لتحسين أداء تطبيق COVIDSafe على هاتفك:</string>
-  <string name="low_handshakes_heading">ماذا تفعل إذا كان عدد المصافحات أقل مما تتوقع؟</string>
-  <string name="low_handshakes_item1">تحقق مما إذا كان تطبيق COVIDSafe يعمل عن طريق فتح التطبيق.</string>
-  <string name="low_handshakes_item2">قم بتحديث تطبيقك إلى أحدث إصدار من خلال متجر Google Play أو متجر Apple.</string>
-  <string name="low_handshakes_item3">أغلق هاتفك وقم بإعادة تشغيله وافتح التطبيق مجددًا.</string>
-  <string name="low_handshakes_link">اقرأ المزيد حول كيفية التحقق مما إذا كان تطبييق COVIDSafe يعمل بشكل صحيح</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">تحديث تطبيق COVIDSafe قيد الإنجاز. \n\nيُرجى التأكد من عدم إغلاق هاتفك إلى أن يتم اكتمال التحديث.</string>
   <string name="minute">دقيقة</string>
@@ -396,6 +387,10 @@
   <string name="new_cases">الحالات الجديدة في ال 24 ساعة الماضية</string>
   <string name="new_cases_total">الحالات الجديدة منذ 1 شباط/فبراير 2020</string>
   <string name="new_south_wales">نيو ساوث ويلز</string>
+  <string name="no_handshakes_item1">تحقق مما إذا كان تطبيق COVIDSafe يعمل عن طريق فتح التطبيق.</string>
+  <string name="no_handshakes_item2">قم بتحديث تطبيقك إلى أحدث إصدار من خلال متجر Google Play أو متجر Apple.</string>
+  <string name="no_handshakes_item3">أغلق هاتفك وقم بإعادة تشغيله وافتح التطبيق مجددًا.</string>
+  <string name="no_handshakes_link">اقرأ المزيد حول كيفية التحقق مما إذا كان تطبييق COVIDSafe يعمل بشكل صحيح</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">على سبيل المثال: 51234</string>
   <string name="northern_territory">الإقليم الشمالي</string>

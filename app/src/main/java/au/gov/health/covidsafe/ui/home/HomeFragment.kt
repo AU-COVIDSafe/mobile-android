@@ -339,6 +339,13 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                     findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPeekActivity())
                 }
             }
+            home_header_picture_setup_complete.setOnClickListener {
+                counter++
+                if (counter >= 2) {
+                    counter = 0
+                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPeekActivity())
+                }
+            }
         }
     }
 

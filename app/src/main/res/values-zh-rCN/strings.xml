@@ -9,11 +9,9 @@
   <string name="activity_button">检查应用程序的活动</string>
   <string name="activity_button_description">查看您的应用程序与其他COVIDSafe用户的蓝牙交互。</string>
   <string name="activity_heading">应用活动</string>
-  <string name="activity_intro">每当您的设备在其他COVIDSafe应用程序用户的范围内时，它都会记录蓝牙交互，这称为“蓝牙握手”。 \n\n这些握手显示了您的应用程序的运行状况。</string>
   <string name="activity_self_isolation_button">继续</string>
   <string name="australian_capital_territory">澳大利亚首都领地</string>
   <string name="battery_optimisation_prompt">您不能使用电池优化功能。</string>
-  <string name="ble_handshakes_yesterday_android">昨日发生的蓝牙握手</string>
   <string name="bluetooth_handshakes_android">蓝牙握手</string>
   <string name="cancel_snooze">取消休眠</string>
   <string name="cases_28_days">过去28天的新增病例</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">物理屏障，如墙壁</string>
   <string name="factors_enviro_item_2">会干扰蓝牙信号的材料和固定装置</string>
   <string name="factors_handshakes_heading">影响应用程序活动的因素</string>
-  <string name="factors_intro">可能影响握手次数的因素包括：</string>
   <string name="factors_intro_2">蓝牙握手也会受到环境因素的影响，这些因素包括：</string>
   <!-- for production -->
   <string name="generic_error">请稍后再试</string>
@@ -381,12 +378,6 @@
   <string name="last_7_days">最近7天</string>
   <string name="loading_numbers">正在加载最新统计数字</string>
   <string name="locally_acquired">%@本地感染</string>
-  <string name="low_handshakes_description">请尝试用以下方法提高您手机上 COVIDSafe的性能：</string>
-  <string name="low_handshakes_heading">如果您的蓝牙握手次数少于预期，该怎么办</string>
-  <string name="low_handshakes_item1">打开应用程序检查COVIDSafe是否处于激活状态。</string>
-  <string name="low_handshakes_item2">通过Google Play Store或Apple Store将您的应用更新到最新版本。</string>
-  <string name="low_handshakes_item3">重新启动手机并再次打开应用。</string>
-  <string name="low_handshakes_link">阅读更多有关如何检查COVIDSafe是否正常运行的信息</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe正在更新。 \n\n请保持开机状态直至更新完成。</string>
   <string name="minute">分钟</string>
@@ -396,6 +387,10 @@
   <string name="new_cases">过去24小时内新增病例</string>
   <string name="new_cases_total">自2020年2月1日以来的新增病例</string>
   <string name="new_south_wales">新南威尔士州</string>
+  <string name="no_handshakes_item1">打开应用程序检查COVIDSafe是否处于激活状态。</string>
+  <string name="no_handshakes_item2">通过Google Play Store或Apple Store将您的应用更新到最新版本。</string>
+  <string name="no_handshakes_item3">重新启动手机并再次打开应用。</string>
+  <string name="no_handshakes_link">阅读更多有关如何检查COVIDSafe是否正常运行的信息</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">例如：51234</string>
   <string name="northern_territory">北领地</string>

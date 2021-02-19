@@ -84,6 +84,27 @@ object Utils {
         context.startService(intent)
     }
 
+    fun startSensor(context: Context) {
+        val intent = Intent(context, BluetoothMonitoringService::class.java)
+        intent.putExtra(
+                BluetoothMonitoringService.COMMAND_KEY,
+                BluetoothMonitoringService.Command.ACTION_START.index
+        )
+
+        context.startService(intent)
+    }
+
+    fun stopSensor(context: Context) {
+        val intent = Intent(context, BluetoothMonitoringService::class.java)
+        intent.putExtra(
+                BluetoothMonitoringService.COMMAND_KEY,
+                BluetoothMonitoringService.Command.ACTION_STOP_SENSOR.index
+        )
+        cancelNextScan(context)
+        cancelNextHealthCheck(context)
+        context.startService(intent)
+    }
+
     fun scheduleStartMonitoringService(context: Context, timeInMillis: Long) {
         val intent = Intent(context, BluetoothMonitoringService::class.java)
         intent.putExtra(

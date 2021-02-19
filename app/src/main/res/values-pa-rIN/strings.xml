@@ -9,11 +9,9 @@
   <string name="activity_button">ਐਪ ਗਤੀਵਿਧੀ ਦੀ ਜਾਂਚ ਕਰੋ</string>
   <string name="activity_button_description">ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਆਪਣੀ ਐਪ ਦੀਆਂ ਬਲੂਟੁੱਥ ਅੰਤਰਕਿਰਿਆਵਾਂ ਨੂੰ ਦੇਖੋ।</string>
   <string name="activity_heading">ਐਪ ਦੀ ਗਤੀਵਿਧੀ</string>
-  <string name="activity_intro">ਹਰ ਵਾਰ ਜਦ ਵੀ ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਹੋਰ COVIDSafe ਐਪ ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਰੇਂਜ ਵਿੱਚ ਹੁੰਦੀ ਹੈ, ਤਾਂ ਇਹ ਬਲੂਟੁੱਥ ਅੰਤਰਕਿਰਿਆਵਾਂ ਨੂੰ ਨੋਟ ਕਰ ਲੈਂਦੀ ਹੈ ਜਿਨ੍ਹਾਂ ਨੂੰ \'ਬਲੂਟੁੱਥ ਹੈਂਡਸ਼ੇਕਸ\' ਕਿਹਾ ਜਾਂਦਾ ਹੈ।\n\nਇਹ ਹੈਂਡਸ਼ੇਕ ਇਸ ਗੱਲ ਦਾ ਸੰਕੇਤ ਦਿੰਦੇ ਹਨ ਕਿ ਤੁਹਾਡੀ ਐਪ ਕਿੰਨੀ ਚੰਗੀ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰ ਰਹੀ ਹੈ।</string>
   <string name="activity_self_isolation_button">ਜਾਰੀ ਰੱਖੋ</string>
   <string name="australian_capital_territory">ਆਸਟ੍ਰੇਲੀਅਨ ਕੈਪੀਟਲ ਟੈਰੀਟਰੀ</string>
   <string name="battery_optimisation_prompt">ਤੁਸੀਂ ਬੈਟਰੀ ਅਨੁਕੂਲਤਾ (ਆਪਟੀਮਾਈਜੇਸ਼ਨ) ਲਾਜ਼ਮੀ ਤੌਰ ਤੇ ਬੰਦ ਕਰੋ|</string>
-  <string name="ble_handshakes_yesterday_android">ਬੀਤੇ ਕੱਲ੍ਹ ਕੀਤੇ ਗਏ ਬਲੂਟੁੱਥ ਹੈਂਡਸ਼ੇਕ</string>
   <string name="bluetooth_handshakes_android">ਬਲੂਟੁੱਥ ਦੇ ਹੈਂਡਸ਼ੇਕ</string>
   <string name="cancel_snooze">ਸਨੂਜ਼ ਰੱਦ ਕਰੋ</string>
   <string name="cases_28_days">ਪਿਛਲੇ 28 ਦਿਨਾਂ ਵਿੱਚ ਨਵੇਂ ਮਾਮਲੇ</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">ਭੌਤਿਕ ਰੁਕਾਵਟਾਂ ਜਿਵੇਂ ਕਿ ਕੰਧਾਂ</string>
   <string name="factors_enviro_item_2">ਸਮੱਗਰੀਆਂ ਅਤੇ ਫਿਕਸਚਰ ਜੋ ਬਲੂਟੁੱਥ ਸਿਗਨਲਾਂ ਵਿੱਚ ਦਖਲ ਅੰਦਾਜ਼ੀ ਕਰਦੇ ਹਨ</string>
   <string name="factors_handshakes_heading">ਉਹ ਕਾਰਕ ਜੋ ਐਪ ਦੀ ਗਤੀਵਿਧੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦੇ ਹਨ</string>
-  <string name="factors_intro">ਉਹ ਕਾਰਕ ਜੋ ਕਿ \'ਹੈਂਡਸ਼ੇਕਾਂ\' ਦੀ ਸੰਖਿਆ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰ ਸਕਦੇ ਹਨ, ਉਹਨਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹਨ:</string>
   <string name="factors_intro_2">ਹੈਂਡਸ਼ੇਕ ਵਾਤਾਵਰਣਕ ਕਾਰਕਾਂ ਦੁਆਰਾ ਵੀ ਪ੍ਰਭਾਵਿਤ ਹੋ ਸਕਦੇ ਹਨ, ਜਿੰਨ੍ਹਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹਨ:</string>
   <!-- for production -->
   <string name="generic_error">ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
@@ -381,12 +378,6 @@
   <string name="last_7_days">ਪਿਛਲੇ 7 ਦਿਨ</string>
   <string name="loading_numbers">ਤਾਜ਼ਾ ਅੰਕੜੇ ਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ</string>
   <string name="locally_acquired">%@ ਸਥਾਨਕ ਲੱਗੀ ਲਾਗ</string>
-  <string name="low_handshakes_description">ਤੁਹਾਡੇ ਫੋਨ ਉੱਤੇ COVIDSafe  ਦੇ ਪ੍ਰਦਰਸ਼ਨ (ਪਰਫਾਰਮੈਂਸ) ਵਿੱਚ ਸੁਧਾਰ ਕਰਨ ਦੇ ਲਈ ਇਨ੍ਹਾਂ ਨੁਕਤਿਆਂ ਨੂੰ ਅਜ਼ਮਾਉ:</string>
-  <string name="low_handshakes_heading">ਜੇ ਤੁਹਾਡੇ \'ਹੈਂਡਸ਼ੇਕ\' ਦੇ ਨੰਬਰ ਤੁਹਾਡੀ ਉਮੀਦ ਨਾਲੋਂ ਘੱਟ ਹਨ ਤਾਂ ਕੀ ਕਰਨਾ ਹੈ</string>
-  <string name="low_handshakes_item1">COVIDSafe ਐਕਟਿਵ ਹੈ ਜਾਂ ਨਹੀਂ, ਇਸ ਦੀ ਜਾਂਚ ਐਪ ਨੂੰ ਖੋਲ ਕੇ ਕਰੋ।</string>
-  <string name="low_handshakes_item2">Google Play Store ਜਾਂ Apple Store ਰਾਹੀਂ ਆਪਣੀ ਐਪ ਨੂੰ ਨਵੀਨਤਮ ਸੰਸਕਰਣ ਵਿੱਚ ਅੱਪਡੇਟ ਕਰੋ।</string>
-  <string name="low_handshakes_item3">ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ ਅਤੇ ਐਪ ਨੂੰ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ।</string>
-  <string name="low_handshakes_link">ਇਸ ਬਾਰੇ ਹੋਰ ਪੜ੍ਹੋ ਕਿ ਜਾਂਚ ਕਿਵੇਂ ਕਰਨੀ ਹੈ ਕਿ ਕੀ COVIDSafe ਸਹੀ ਤਰੀਕੇ ਨਾਲ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe ਅੱਪਡੇਟ ਚੱਲ ਰਿਹਾ ਹੈ। \n\nਕਿਰਪਾ ਕਰਕੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਹਾਡਾ ਫ਼ੋਨ ਤਦ ਤੱਕ ਬੰਦ ਨਹੀਂ ਹੋਣਾ ਚਾਹੀਦਾ ਜਦ ਤੱਕ ਅੱਪਡੇਟ ਪੂਰਾ ਨਹੀਂ ਹੋ ਜਾਂਦਾ।</string>
   <string name="minute">ਮਿੰਟ</string>
@@ -396,6 +387,10 @@
   <string name="new_cases">ਪਿਛਲੇ 24 ਘੰਟਿਆਂ ਦੌਰਾਨ ਨਵੇਂ ਕੇਸ</string>
   <string name="new_cases_total">1 ਫਰਵਰੀ 2020 ਤੋਂ ਲੈਕੇ ਹੁਣ ਤੱਕ ਦੇ ਨਵੇਂ ਮਾਮਲੇ</string>
   <string name="new_south_wales">ਨਿਊ ਸਾਊਥ ਵੇਲਜ਼</string>
+  <string name="no_handshakes_item1">COVIDSafe ਐਕਟਿਵ ਹੈ ਜਾਂ ਨਹੀਂ, ਇਸ ਦੀ ਜਾਂਚ ਐਪ ਨੂੰ ਖੋਲ ਕੇ ਕਰੋ।</string>
+  <string name="no_handshakes_item2">Google Play Store ਜਾਂ Apple Store ਰਾਹੀਂ ਆਪਣੀ ਐਪ ਨੂੰ ਨਵੀਨਤਮ ਸੰਸਕਰਣ ਵਿੱਚ ਅੱਪਡੇਟ ਕਰੋ।</string>
+  <string name="no_handshakes_item3">ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ ਅਤੇ ਐਪ ਨੂੰ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ।</string>
+  <string name="no_handshakes_link">ਇਸ ਬਾਰੇ ਹੋਰ ਪੜ੍ਹੋ ਕਿ ਜਾਂਚ ਕਿਵੇਂ ਕਰਨੀ ਹੈ ਕਿ ਕੀ COVIDSafe ਸਹੀ ਤਰੀਕੇ ਨਾਲ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">ਉਦਾਹਰਣ ਵਜੋਂ: 51234</string>
   <string name="northern_territory">ਨੌਰਦਰਨ ਟੈਰੀਟਰੀ</string>

@@ -39,6 +39,7 @@ object Preference {
     private const val TURN_CASE_NUMBER = "TURN_CASE_NUMBER"
     private const val IS_REREGISTER = "IS_REREGISTER"
     private const val SELECTED_STATE = "SELECTED_STATE"
+    private const val ADVERTISE_STOP = "ADVERTISE_STOP"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -330,5 +331,15 @@ object Preference {
     fun getSelectedState(context: Context): String? {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .getString(SELECTED_STATE, null)
+    }
+
+    fun setAdvertiseStop(context: Context, stopAdvertise: Boolean): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putBoolean(ADVERTISE_STOP, stopAdvertise).commit()
+    }
+
+    fun getAdvertiseStop(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .getBoolean(ADVERTISE_STOP, false)
     }
 }

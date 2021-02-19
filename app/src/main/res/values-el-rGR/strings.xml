@@ -9,11 +9,9 @@
   <string name="activity_button">Ελέγξτε τη δραστηριότητα της εφαρμογής</string>
   <string name="activity_button_description">Δείτε τις αλληλεπιδράσεις Bluetooth της εφαρμογής σας με άλλους χρήστες της COVIDSafe.</string>
   <string name="activity_heading">Δραστηριότητα εφαρμογής</string>
-  <string name="activity_intro">Κάθε φορά που η συσκευή σας βρίσκεται εντός εμβέλειας άλλων χρηστών της εφαρμογής COVIDSafe, λαμβάνει υπόψη τις αλληλεπιδράσεις Bluetooth που ονομάζονται «χειραψίες Bluetooth».\n\nΑυτές οι χειραψίες δίνουν μια ένδειξη για το πόσο καλά λειτουργεί η εφαρμογή σας.</string>
   <string name="activity_self_isolation_button">Συνεχίστε</string>
   <string name="australian_capital_territory">Επικράτεια Αυστραλιανής Πρωτεύουσας</string>
   <string name="battery_optimisation_prompt">Πρέπει να απενεργοποιήσετε τη βελτιστοποίηση της μπαταρίας.</string>
-  <string name="ble_handshakes_yesterday_android">Χειραψίες Bluetooth χθες</string>
   <string name="bluetooth_handshakes_android">Χειραψίες Bluetooth</string>
   <string name="cancel_snooze">Ακύρωση αναβολής</string>
   <string name="cases_28_days">Νέα κρούσματα τις τελευταίες 28 ημέρες</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">φυσικά εμπόδια όπως οι τοίχοι</string>
   <string name="factors_enviro_item_2">υλικό και εξαρτήματα που παρεμβαίνουν στα σήματα Bluetooth</string>
   <string name="factors_handshakes_heading">Παράγοντες που επηρεάζουν τη δραστηριότητα της εφαρμογής</string>
-  <string name="factors_intro">Οι παράγοντες που μπορούν να επηρεάσουν τον αριθμό των χειραψιών περιλαμβάνουν:</string>
   <string name="factors_intro_2">Οι χειραψίες μπορούν επίσης να επηρεαστούν από περιβαλλοντικούς παράγοντες, όπως:</string>
   <!-- for production -->
   <string name="generic_error">Προσπαθήστε ξανά αργότερα.</string>
@@ -387,6 +384,7 @@
   <string name="low_handshakes_item2">Ενημερώστε την εφαρμογή σας στην πιο πρόσφατη έκδοση μέσω του Google Play Store ή του Apple Store.</string>
   <string name="low_handshakes_item3">Επανεκκινήστε το τηλέφωνό σας και ανοίξτε ξανά την εφαρμογή.</string>
   <string name="low_handshakes_link">Διαβάστε περισσότερα για το πώς να ελέγξετε εάν η COVIDSafe λειτουργεί σωστά</string>
+
   <!-- Splash Screen -->
   <string name="migration_in_progress">Η ενημέρωση της COVIDSafe συνεχίζεται. \n\nΒεβαιωθείτε ότι το τηλέφωνό σας δεν είναι απενεργοποιημένο έως ότου ολοκληρωθεί η ενημέρωση.</string>
   <string name="minute">Λεπτό</string>
@@ -396,6 +394,10 @@
   <string name="new_cases">Νέα κρούσματα κατά τις τελευταίες 24 ώρες</string>
   <string name="new_cases_total">Νέα κρούσματα από την 1η Φεβρουαρίου 2020</string>
   <string name="new_south_wales">Νέα Νότια Ουαλία</string>
+  <string name="no_handshakes_item1">Ελέγξτε εάν η COVIDSafe είναι ενεργή ανοίγοντας την εφαρμογή.</string>
+  <string name="no_handshakes_item2">Ενημερώστε την εφαρμογή σας στην πιο πρόσφατη έκδοση μέσω του Google Play Store ή του Apple Store.</string>
+  <string name="no_handshakes_item3">Επανεκκινήστε το τηλέφωνό σας και ανοίξτε ξανά την εφαρμογή.</string>
+  <string name="no_handshakes_link">Διαβάστε περισσότερα για το πώς να ελέγξετε εάν η COVIDSafe λειτουργεί σωστά</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Για παράδειγμα: 51234</string>
   <string name="northern_territory">Βόρεια Επικράτεια</string>

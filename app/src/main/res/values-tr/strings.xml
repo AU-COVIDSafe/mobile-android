@@ -9,11 +9,9 @@
   <string name="activity_button">Uygulama etkinliğini kontrol edin</string>
   <string name="activity_button_description">Uygulamanızın diğer COVIDSafe kullanıcılarıyla Bluetooth etkileşimlerini görüntüleyin.</string>
   <string name="activity_heading">Uygulama etkinliği</string>
-  <string name="activity_intro">Cihazınızın diğer COVIDSafe uygulama kullanıcılarının alanına her girişinde \'Bluetooth el sıkışma\' adı verilen Bluetooth etkileşimlerini dikkate alır.\n\nBu el sıkışmalar, uygulamanızın ne kadar iyi çalıştığını gösterir.</string>
   <string name="activity_self_isolation_button">Devam</string>
   <string name="australian_capital_territory">Avustralya Başkent Bölgesi</string>
   <string name="battery_optimisation_prompt">Pil optimizasyonunu devre dışı bırakmalısınız.</string>
-  <string name="ble_handshakes_yesterday_android">Dünkü Bluetooth el sıkışmaları</string>
   <string name="bluetooth_handshakes_android">Bluetooth el sıkışmaları</string>
   <string name="cancel_snooze">Ertelemeyi iptal et</string>
   <string name="cases_28_days">Son 28 gündeki yeni vakalar</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">duvarlar gibi fiziksel engeller</string>
   <string name="factors_enviro_item_2">Bluetooth sinyallerini engelleyen malzeme ve armatürler</string>
   <string name="factors_handshakes_heading">Uygulama etkinliğini etkileyen faktörler</string>
-  <string name="factors_intro">El sıkışma sayısını etkileyebilecek faktörler şunları içerir:</string>
   <string name="factors_intro_2">El sıkışmalar çevresel faktörlerden de etkilenebilir, örneğin:</string>
   <!-- for production -->
   <string name="generic_error">Lütfen daha sonra tekrar deneyin</string>
@@ -381,12 +378,6 @@
   <string name="last_7_days">Son 7 gün</string>
   <string name="loading_numbers">En son sayılar yükleniyor</string>
   <string name="locally_acquired">%@ yerel olarak edinilen</string>
-  <string name="low_handshakes_description">Telefonunuzda COVIDSafe\'in performansını artırmak için şu ipuçlarını deneyin:</string>
-  <string name="low_handshakes_heading">El sıkışma sayılarınız beklediğinizin altında ise ne yapmalısınız</string>
-  <string name="low_handshakes_item1">Uygulamayı açarak COVIDSafe\'in etkin olup olmadığını kontrol edin.</string>
-  <string name="low_handshakes_item2">Uygulamanızı Google Play Store veya Apple Store üzerinden en son sürüme güncelleyin.</string>
-  <string name="low_handshakes_item3">Telefonunuzu yeniden başlatın ve uygulamayı tekrar açın.</string>
-  <string name="low_handshakes_link">COVIDSafe\'in doğru çalışıp çalışmadığının nasıl kontrol edileceği hakkında daha fazlasını okuyun</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe güncellemesi devam ediyor. \n\n Lütfen güncelleme tamamlanana kadar telefonunuzu kapatmayın.</string>
   <string name="minute">Dakika</string>
@@ -396,6 +387,10 @@
   <string name="new_cases">Son 24 saatte çıkan yeni vakalar</string>
   <string name="new_cases_total">1 Şubat 2020\'den itibaren yeni vakalar</string>
   <string name="new_south_wales">Yeni Güney Galler</string>
+  <string name="no_handshakes_item1">Uygulamayı açarak COVIDSafe\'in etkin olup olmadığını kontrol edin.</string>
+  <string name="no_handshakes_item2">Uygulamanızı Google Play Store veya Apple Store üzerinden en son sürüme güncelleyin.</string>
+  <string name="no_handshakes_item3">Telefonunuzu yeniden başlatın ve uygulamayı tekrar açın.</string>
+  <string name="no_handshakes_link">COVIDSafe\'in doğru çalışıp çalışmadığının nasıl kontrol edileceği hakkında daha fazlasını okuyun</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Örneğin: 51234</string>
   <string name="northern_territory">Kuzey Bölgesi</string>

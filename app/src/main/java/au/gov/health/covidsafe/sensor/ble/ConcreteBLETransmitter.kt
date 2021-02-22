@@ -10,6 +10,8 @@ import android.bluetooth.le.AdvertiseSettings
 import android.bluetooth.le.BluetoothLeAdvertiser
 import android.content.Context
 import android.os.ParcelUuid
+import au.gov.health.covidsafe.BuildConfig
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.sensor.SensorDelegate
 import au.gov.health.covidsafe.sensor.data.ConcreteSensorLogger
 import au.gov.health.covidsafe.sensor.data.SensorLogger
@@ -82,6 +84,7 @@ class ConcreteBLETransmitter(
         private var advertLoopState = AdvertLoopState.stopped
         private var lastStateChangeAt = System.currentTimeMillis()
         private var advertiseCallback: AdvertiseCallback? = null
+
         private fun state(now: Long, state: AdvertLoopState) {
             val elapsed = now - lastStateChangeAt
             logger.debug("advertLoopTask, state change (from={},to={},elapsed={}ms)", advertLoopState, state, elapsed)

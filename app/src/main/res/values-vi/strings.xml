@@ -9,11 +9,9 @@
   <string name="activity_button">Kiểm tra hoạt động của ứng dụng</string>
   <string name="activity_button_description">Xem các tương tác Bluetooth của ứng dụng của bạn với những người dùng COVIDSafe khác.</string>
   <string name="activity_heading">Hoạt động ứng dụng</string>
-  <string name="activity_intro">Mỗi khi thiết bị của bạn nằm trong phạm vi của những người dùng ứng dụng COVIDSafe khác, nó sẽ ghi nhận các tương tác Bluetooth được gọi là \'bắt tay Bluetooth\'. \n\n Những lần bắt tay này cho biết ứng dụng của bạn đang hoạt động tốt như thế nào.</string>
   <string name="activity_self_isolation_button">Tiếp tục</string>
   <string name="australian_capital_territory">Lãnh thổ Thủ đô Úc</string>
   <string name="battery_optimisation_prompt">Bạn phải tắt tính năng tối ưu hóa pin.</string>
-  <string name="ble_handshakes_yesterday_android">Bluetooth bắt tay ngày hôm qua</string>
   <string name="bluetooth_handshakes_android">Bắt tay Bluetooth</string>
   <string name="cancel_snooze">Hủy tạm ngưng hoạt động</string>
   <string name="cases_28_days">Các ca nhiễm mới trong 28 ngày qua</string>
@@ -285,7 +283,6 @@
   <string name="factors_enviro_item_1">rào cản vật lý như vách tường</string>
   <string name="factors_enviro_item_2">vật liệu và đồ đạc gây nhiễu tín hiệu Bluetooth</string>
   <string name="factors_handshakes_heading">Các yếu tố ảnh hưởng đến hoạt động của ứng dụng</string>
-  <string name="factors_intro">Các yếu tố có thể ảnh hưởng đến số lần bắt tay bao gồm:</string>
   <string name="factors_intro_2">Chức năng bắt tay cũng có thể bị ảnh hưởng bởi các yếu tố môi trường, bao gồm:</string>
   <!-- for production -->
   <string name="generic_error">Vui lòng thử lại sau</string>
@@ -381,12 +378,6 @@
   <string name="last_7_days">7 ngày vừa qua</string>
   <string name="loading_numbers">Đang tải các số mới nhất</string>
   <string name="locally_acquired">%@ ca nhiễm bệnh ở địa phương</string>
-  <string name="low_handshakes_description">Hãy thử các mẹo sau để cải thiện hiệu suất của COVIDSafe trên điện thoại của bạn:</string>
-  <string name="low_handshakes_heading">Phải làm gì nếu số lần bắt tay của bạn thấp hơn bạn mong đợi</string>
-  <string name="low_handshakes_item1">Kiểm tra xem COVIDSafe có đang hoạt động hay không bằng cách mở ứng dụng.</string>
-  <string name="low_handshakes_item2">Cập nhật ứng dụng của bạn lên phiên bản mới nhất thông qua Kho Google Play hoặc kho Apple Store.</string>
-  <string name="low_handshakes_item3">Khởi động lại điện thoại của bạn và mở lại ứng dụng.</string>
-  <string name="low_handshakes_link">Đọc thêm về cách kiểm tra xem COVIDSafe có hoạt động đúng cách không</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe trong tiến trình cập nhật. \n\nVui lòng đảm bảo điện thoại của bạn không bị tắt cho đến khi cập nhật hoàn tất.</string>
   <string name="minute">Phút</string>
@@ -396,6 +387,10 @@
   <string name="new_cases">Các ca mới trong vòng 24 giờ qua</string>
   <string name="new_cases_total">Các ca nhiễm mới kể từ ngày 1/2/2020</string>
   <string name="new_south_wales">New South Wales</string>
+  <string name="no_handshakes_item1">Kiểm tra xem COVIDSafe có đang hoạt động hay không bằng cách mở ứng dụng.</string>
+  <string name="no_handshakes_item2">Cập nhật ứng dụng của bạn lên phiên bản mới nhất thông qua Kho Google Play hoặc kho Apple Store.</string>
+  <string name="no_handshakes_item3">Khởi động lại điện thoại của bạn và mở lại ứng dụng.</string>
+  <string name="no_handshakes_link">Đọc thêm về cách kiểm tra xem COVIDSafe có hoạt động đúng cách không</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Ví dụ: 51234</string>
   <string name="northern_territory">Lãnh thổ Phía bắc</string>

@@ -28,8 +28,7 @@ import au.gov.health.covidsafe.sensor.Sensor
 import au.gov.health.covidsafe.sensor.SensorArray
 import au.gov.health.covidsafe.sensor.SensorDelegate
 import au.gov.health.covidsafe.sensor.ble.BLEDevice
-import au.gov.health.covidsafe.sensor.ble.BLESensorConfiguration
-import au.gov.health.covidsafe.sensor.ble.BLE_TxPower
+import au.gov.health.covidsafe.sensor.ble.BluetoothStateManager
 import au.gov.health.covidsafe.sensor.datatype.*
 import au.gov.health.covidsafe.sensor.payload.PayloadDataSupplier
 import au.gov.health.covidsafe.streetpass.persistence.Encryption
@@ -219,6 +218,15 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
                 actionHealthCheck()
             }
 
+            Command.ACTION_START_SENSOR -> {
+                sensorStartByToggle()
+            }
+
+            Command.ACTION_STOP_SENSOR -> {
+                sensor?.stop()
+                actionStop()
+            }
+
             else -> CentralLog.i(TAG, "Invalid command: $cmd. Nothing to do")
         }
     }
@@ -252,7 +260,7 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
         }
     }
 
-    fun sensorStart() {
+    private fun sensorStart() {
         if (broadcastMessage != null) {
             streetPassRecordStorage = StreetPassRecordStorage(applicationContext)
             sensor = SensorArray(applicationContext, this)
@@ -260,6 +268,27 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
             // Sensor will start and stop with Bluetooth power on / off events
             sensor?.start()
         }
+    }
+
+    private fun sensorStartByToggle() {
+        if (broadcastMessage != null) {
+            sensor = SensorArray(applicationContext, this)
+            getAppDelegate().sensor()?.add(this)
+//             Sensor will start and stop with Bluetooth power on / off events
+            for (delegate in BluetoothStateManager.delegates) {
+                delegate.bluetoothStateManager(BluetoothState.poweredOn)
+            }
+            sensor?.start()
+        }
+    }
+
+    private fun sensorStop() {
+        sensor = SensorArray(applicationContext, this)
+        getAppDelegate().sensor()?.add(this)
+        for (delegate in BluetoothStateManager.delegates) {
+            delegate.bluetoothStateManager(BluetoothState.poweredOff)
+        }
+        sensor?.stop()
     }
 
     /// Get app delegate
@@ -475,7 +504,9 @@ class BluetoothMonitoringService : LifecycleService(), CoroutineScope, SensorDel
         ACTION_STOP(2, "STOP"),
         ACTION_ADVERTISE(3, "ADVERTISE"),
         ACTION_SELF_CHECK(4, "SELF_CHECK"),
-        ACTION_UPDATE_BM(5, "UPDATE_BM");
+        ACTION_UPDATE_BM(5, "UPDATE_BM"),
+        ACTION_START_SENSOR(6, "START_SENSOR"),
+        ACTION_STOP_SENSOR(7, "STOP_SENSOR");
 
         companion object {
             private val types = values().associate { it.index to it }

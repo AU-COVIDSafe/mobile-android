@@ -34,6 +34,19 @@
         android:layout_margin="16dp"
         app:layout_constraintTop_toBottomOf="@+id/push_token_space"/>
 
+    <Switch
+        android:id="@+id/switch_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:text="BLE Sensor State"
+        android:textSize="@dimen/space_16"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/btn_de_active_token"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="0dp"
@@ -43,7 +56,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_de_active_token"
+        app:layout_constraintTop_toBottomOf="@+id/switch_sensor"
         tools:listitem="@layout/recycler_view_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

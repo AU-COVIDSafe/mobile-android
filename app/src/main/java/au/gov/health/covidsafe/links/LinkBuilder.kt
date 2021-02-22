@@ -228,7 +228,7 @@ object LinkBuilder {
     }
 
     fun getReadMore(): Spanned {
-        val linkText = TracerApp.AppContext.getString(R.string.low_handshakes_link)
+        val linkText = TracerApp.AppContext.getString(R.string.no_handshakes_link)
         return getReadMoreLink(linkText).also {
             CentralLog.d(TAG, "getReadMore returns $it")
         }

@@ -27,12 +27,13 @@
             android:layout_alignParentEnd="true"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:id="@+id/settings_image_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_settings_outline_black"/>
+
+        <ImageView
+            android:id="@+id/settings_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_settings_outline_black"/>
 
             <TextView
                 android:layout_width="wrap_content"

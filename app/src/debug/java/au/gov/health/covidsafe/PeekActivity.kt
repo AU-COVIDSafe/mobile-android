@@ -137,6 +137,20 @@ class PeekActivity : AppCompatActivity() {
         btn_de_active_token.setOnClickListener {
             Preference.putEncrypterJWTToken(this, "123456789" )
         }
+        turnSensor()
+    }
+
+    private fun turnSensor() {
+        switch_sensor.isChecked =  !Preference.getAdvertiseStop(this)
+        switch_sensor.setOnCheckedChangeListener { _, isChecked ->
+           if (isChecked) {
+               Preference.setAdvertiseStop(applicationContext, false)
+               Utils.startSensor(this)
+           } else {
+               Preference.setAdvertiseStop(applicationContext, true)
+               Utils.stopSensor(this)
+           }
+        }
     }
 
     private fun showPushTokenOnDebugBuild() {
@@ -168,11 +182,10 @@ class PeekActivity : AppCompatActivity() {
     }
 
     private fun startService() {
-        // Utils.startBluetoothMonitoringService(this)
+//         Utils.startBluetoothMonitoringService(this)
     }
 
     private fun stopService() {
         Utils.stopBluetoothMonitoringService(this)
     }
-
 }

@@ -7,7 +7,6 @@ package au.gov.health.covidsafe.sensor.ble;
 import au.gov.health.covidsafe.BuildConfig;
 import au.gov.health.covidsafe.sensor.data.SensorLoggerLevel;
 import au.gov.health.covidsafe.sensor.datatype.TimeInterval;
-
 import java.util.UUID;
 
 /// Defines BLE sensor configuration data, e.g. service and characteristic UUIDs

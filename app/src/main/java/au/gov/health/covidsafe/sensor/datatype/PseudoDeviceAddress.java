@@ -9,6 +9,7 @@ import au.gov.health.covidsafe.sensor.data.ConcreteSensorLogger;
 import au.gov.health.covidsafe.sensor.data.SensorLogger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.security.SecureRandom;
 import java.util.Objects;
 import java.security.SecureRandom;
 import java.util.Random;

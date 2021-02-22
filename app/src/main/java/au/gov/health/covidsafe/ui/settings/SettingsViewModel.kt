@@ -47,7 +47,8 @@ class SettingsViewModel(application: Application): AndroidViewModel(application)
                 if (response.code() == 200) {
                     postcodeUpdated.value = true
                     showSpinner.value = false
-                    Preference.putPostCode(context, postcode)
+                } else {
+                    showSpinner.value = false
                 }
             }
         })

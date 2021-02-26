@@ -12,13 +12,15 @@
     <TextView
         android:id="@+id/state_name"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/keyline_5"
+        android:layout_height="wrap_content"
         android:paddingStart="@dimen/keyline_4"
         android:layout_marginEnd="@dimen/space_24"
-        android:lines="1"
+        android:paddingEnd="@dimen/space_24"
+        android:singleLine="false"
         android:gravity="start"
         android:text="@string/country_region_name_au"
         android:textSize="16sp"
+        android:maxLines="2"
         android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

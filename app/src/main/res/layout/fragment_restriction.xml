@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="au.gov.health.covidsafe.ui.restriction.RestrictionViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/home_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_background">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/restriction_toolbar"
+            app:titleTextAppearance="@style/ToolbarStyle.TitleTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/settings_toolbar_height"
+            android:background="@color/lighter_green"
+            android:gravity="center_vertical"
+            android:minHeight="?attr/actionBarSize"
+            app:buttonGravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationContentDescription="@string/navigation_back_button_content_description"
+            app:title="@string/restrictions_heading"
+            app:titleTextColor="@color/slate_black_1"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="50dp"
+            android:layout_marginTop="@dimen/settings_toolbar_height">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout_select_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_16"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/txt_select_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:lineSpacingExtra="5dp"
+                        style="?textAppearanceBody1"
+                        android:text="@string/restrictions_select_state" />
+
+                    <TextView
+                        android:id="@+id/txt_selected_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        style="?textAppearanceBody1"
+                        android:textColor="@color/dark_green"
+                        android:text="@{viewModel.selectedState}"
+                        tools:ignore="MissingConstraints"
+                        visibility="@{viewModel.selectedState != null}"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_select_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_16"
+                    android:layout_marginTop="1dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_select_state"
+                    android:background="@color/white"
+                    visibility="@{viewModel.selectedState != null}">
+
+                    <TextView
+                        android:id="@+id/txt_select_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:lineSpacingExtra="5dp"
+                        style="?textAppearanceBody1"
+                        android:text="@string/restrictions_select_activity" />
+
+                    <TextView
+                        android:id="@+id/txt_selected_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        style="?textAppearanceBody1"
+                        android:textColor="@color/dark_green"
+                        android:text="@{viewModel.selectedStateActivity}"
+                        visibility="@{viewModel.selectedStateActivity != null}"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/space_32"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16"
+                    android:paddingBottom="@dimen/space_16"
+                    style="?textAppearanceBody1"
+                    android:textColor="@color/error_red"
+                    android:text="@{viewModel.currentTime}"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_select_activity"
+                    visibility="@{viewModel.linkVisible}"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/restriction_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_time"
+                    visibility="@{viewModel.linkVisible}"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginBottom="@dimen/settings_toolbar_height"
+                android:lineSpacingExtra="5dp"
+                style="?textAppearanceBody1"
+                android:layout_gravity="bottom"
+                android:textSize="14sp"
+                android:textColor="@color/grey5"
+                android:text="@string/restrictions_disclaimer"
+                visibility="@{!viewModel.linkVisible}"
+                />
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/select_state_layout"
+            android:layout_marginRight="@dimen/space_24"
+            android:layout_marginLeft="@dimen/space_24"
+            android:layout_marginTop="@dimen/space_24"
+            android:layout_marginBottom="@dimen/settings_toolbar_height"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/space_16"
+            app:layout_anchorGravity="center"
+            android:background="@color/white"
+            android:elevation="12dp"
+            visibility="@{viewModel.stateListVisible}"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:id="@+id/title_select_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/restrictions_select_state" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey4"
+                    android:layout_marginTop="@dimen/space_12"
+                    android:layout_marginBottom="@dimen/space_12"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_select_activity"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/select_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16" />
+
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/select_state_activity_layout"
+            android:layout_marginRight="@dimen/space_24"
+            android:layout_marginLeft="@dimen/space_24"
+            android:layout_marginTop="@dimen/space_24"
+            android:layout_marginBottom="@dimen/settings_toolbar_height"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/space_16"
+            app:layout_anchorGravity="center"
+            android:background="@color/white"
+            android:elevation="12dp"
+            visibility="@{viewModel.stateActivityListVisible}"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/slate_black_2"
+                    android:gravity="center"
+                    android:text="@string/restrictions_select_activity" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey4"
+                    android:layout_marginTop="@dimen/space_12"
+                    android:layout_marginBottom="@dimen/space_12"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_select_activity"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/select_state_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            visibility="@{viewModel.errorLayout}"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="top">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/case_loading_animation_view"
+                    android:layout_width="@dimen/covidsafe_loading_animation_size"
+                    android:layout_height="@dimen/covidsafe_loading_animation_size"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:layout_marginBottom="@dimen/space_24"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="loading_upload.json"
+                    app:lottie_loop="true"
+                    app:lottie_speed="1"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:text="@string/restrictions_error_heading" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    style="?textAppearanceBody2"
+                    android:gravity="center"
+                    android:text="@string/restrictions_error_message" />
+
+                <Button
+                    android:id="@+id/try_again"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="?attr/textAppearanceButton"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:layout_marginStart="@dimen/space_32"
+                    android:layout_marginEnd="@dimen/space_32"
+                    android:text="@string/restrictions_error_try"
+                    android:onClick="@{() -> viewModel.tryAgain()}"/>
+
+                <TextView
+                    android:id="@+id/btn_dissmiss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    style="?textAppearanceBody2"
+                    android:gravity="center"
+                    android:textColor="@color/dark_green"
+                    android:text="@string/restrictions_error_dismiss" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

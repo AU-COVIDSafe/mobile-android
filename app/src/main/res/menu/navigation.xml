@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home_bottom_nav" />
+
+    <item
+        android:id="@+id/navigation_restriction"
+        android:icon="@drawable/ic_restriction"
+        android:title="@string/restrictions_heading"/>
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/settings"/>
+</menu>

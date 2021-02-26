@@ -2,6 +2,7 @@ package au.gov.health.covidsafe.ui.home
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
@@ -11,6 +12,8 @@ import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.extensions.isInternetAvailable
 import au.gov.health.covidsafe.factory.RetrofitServiceGenerator
 import au.gov.health.covidsafe.interactor.usecase.GetCaseStatisticsUseCase
+import au.gov.health.covidsafe.interactor.usecase.IssueInitialRefreshTokenUseCase
+import au.gov.health.covidsafe.interactor.usecase.ReIssueAuth
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.response.CaseDetailsData
 import au.gov.health.covidsafe.networking.response.CaseStatisticResponse
@@ -21,6 +24,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import org.json.JSONObject
+import java.util.*
 
 private const val TAG = "HomeFragmentViewModel"
 
@@ -49,6 +54,8 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     val aquiredOversea = MutableLiveData<String>()
     val totalyDeathe = MutableLiveData<String>()
     val isV2Available = MutableLiveData<Boolean>()
+    val reIssueFail = MutableLiveData<Boolean>(false)
+    val reIssueSuccess = MutableLiveData<Boolean>(false)
 
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -79,6 +86,73 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
             }
         } else {
             isRefreshing.value = false
+        }
+    }
+
+    fun getRefreshToken(lifecycle: Lifecycle) {
+        context = getApplication() as Context
+        viewModelScope.launch(Dispatchers.IO) {
+
+            IssueInitialRefreshTokenUseCase(awsClient, lifecycle, getApplication()).invoke("",
+                    onSuccess = {
+                        it.refreshToken.let {
+                            Preference.putEncryptRefreshToken(context, it)
+                        }
+                        it.token.let {
+                            Preference.putEncrypterJWTToken(context, it)
+                        }
+                    },
+                    onFailure = {
+                        CentralLog.e(TAG, "On Failure: ${it.message}")
+                    }
+            )
+        }
+    }
+
+    fun getReissueAuth(lifecycle: Lifecycle) {
+        var subject: String? = null
+        context = getApplication() as Context
+
+        val token = Preference.getEncrypterJWTToken(context)
+        val refreshToken = Preference.getEncryptRefreshToken(context)
+
+        val tokenSeparate = token?.split(".")
+        var subjectItem: String? = null
+        if (tokenSeparate?.size !=null && tokenSeparate.size >= 3) {
+            subjectItem = tokenSeparate.let {
+                it[1]
+            }
+        }
+
+        var subjectByte: ByteArray? = null
+        subjectItem?.let { subjectByte =  android.util.Base64.decode(subjectItem, android.util.Base64.DEFAULT)}
+        val charset = Charsets.UTF_8
+
+        subjectByte?.let {
+            val jsonModel = String(it, charset)
+            val jsonObj = JSONObject(jsonModel)
+            subject = jsonObj.get("sub").toString()
+        }
+        if (subject.isNullOrEmpty()) {
+            reIssueFail.value = true
+        } else {
+            viewModelScope.launch(Dispatchers.IO) {
+
+                ReIssueAuth(awsClient, lifecycle, getApplication(), subject, refreshToken).invoke("",
+                        onSuccess = {
+                            it.refreshToken.let {
+                                Preference.putEncryptRefreshToken(context, it)
+                            }
+                            it.token.let {
+                                Preference.putEncrypterJWTToken(context, it)
+                            }
+                            reIssueSuccess.value = true
+                        },
+                        onFailure = {
+                            reIssueFail.value = true
+                        }
+                )
+            }
         }
     }
 

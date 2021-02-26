@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/restriction_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/space_16"
+    android:paddingBottom="@dimen/space_16"
+    android:paddingStart="@dimen/space_16"
+    android:paddingEnd="@dimen/space_24"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/restriction_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_24"
+        android:paddingEnd="@dimen/space_32"
+        android:gravity="start"
+        android:text="@string/country_region_name_au"
+        android:textSize="18sp"
+        android:maxLines="4"
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_state_select"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/keyline_1"
+        android:layout_marginEnd="@dimen/space_4"
+        android:layout_marginStart="@dimen/space_4"
+        android:src="@drawable/ic_chevron_right_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/restriction_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

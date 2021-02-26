@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/space_24">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_restriction_desc"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/lighter_green"
+            app:title="@string/main_restrictions"
+            app:popupTheme="@style/MobileKit.FeedbackTheme.PopupOverlay" />
+
+        <TextView
+            android:id="@+id/txt_toolbar_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_16"
+            android:paddingBottom="@dimen/space_16"
+            android:ellipsize="end"
+            style="?textAppearanceBody2"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@color/lighter_green"/>
+
+        <TextView
+            android:id="@+id/txt_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_16"
+            android:paddingBottom="@dimen/space_16"
+            style="?textAppearanceBody2"
+            android:textColor="@color/dark_green"
+            android:background="@color/lighter_green"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_marginEnd="@dimen/space_16"
+            android:orientation="vertical">
+
+            <WebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginBottom="@dimen/space_16"/>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

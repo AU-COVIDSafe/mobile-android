@@ -18,7 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationContentDescription="@string/navigation_back_button_content_description"
-        app:navigationIcon="@drawable/ic_up"
         app:title="@string/settings"
         app:titleTextColor="@color/slate_black_1"
         tools:layout_editor_absoluteX="0dp" />

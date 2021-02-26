@@ -1,10 +1,13 @@
 package au.gov.health.covidsafe.networking.service
 
+import android.service.restrictions.RestrictionsReceiver
 import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.networking.response.CaseStatisticResponse
 import au.gov.health.covidsafe.networking.request.AuthChallengeRequest
 import au.gov.health.covidsafe.networking.request.ChangePostcodeRequest
+import au.gov.health.covidsafe.networking.request.GetRestrictionRequest
 import au.gov.health.covidsafe.networking.request.OTPChallengeRequest
+import au.gov.health.covidsafe.networking.request.ReIssueAuthRequest
 import au.gov.health.covidsafe.networking.response.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -14,7 +17,7 @@ interface AwsClient {
     @POST(BuildConfig.END_POINT_PREFIX + "/initiateAuth")
     fun initiateAuth(@Body body: OTPChallengeRequest): Call<OTPChallengeResponse>
 
-    @POST(BuildConfig.END_POINT_PREFIX + "/respondToAuthChallenge")
+    @POST(BuildConfig.END_POINT_PREFIX + "/v2/respondToAuthChallenge")
     fun respondToAuthChallenge(@Body body: AuthChallengeRequest): Call<AuthChallengeResponse>
 
     @GET(BuildConfig.END_POINT_PREFIX + "/getTempId")
@@ -55,4 +58,15 @@ interface AwsClient {
     @POST(BuildConfig.END_POINT_PREFIX + "/device")
     fun changePostcode(@Header("Authorization") jwtToken: String?,
                        @Body body: ChangePostcodeRequest): Call<UploadPostcodeResponse>
+
+    @POST(BuildConfig.END_POINT_PREFIX + "/issueInitialRefreshToken")
+    fun issueInitialRefreshToken(@Header("Authorization") jwtToken: String?): Call<IssueInitialRefreshtokenResponse>
+
+    @POST(BuildConfig.END_POINT_PREFIX + "/reissueAuth")
+    fun reIssueAuth(@Body body: ReIssueAuthRequest): Call<IssueInitialRefreshtokenResponse>
+
+    @GET(BuildConfig.END_POINT_PREFIX + "/restrictions")
+    fun getRestriction(@Header("Authorization") jwtToken: String?,
+                       @Query("state") os: String): Call<RestrictionResponse>
+
 }

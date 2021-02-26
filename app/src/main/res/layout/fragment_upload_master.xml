@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/root"
     android:orientation="vertical"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,50 +18,59 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_up"
         app:navigationContentDescription="@string/navigation_back_button_content_description"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-    <fragment
-        android:id="@+id/fragment_nav_host_upload"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_upload" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/keyline_5"
-        android:layout_marginTop="@dimen/keyline_4"
-        android:layout_marginEnd="@dimen/keyline_5"
-        android:layout_marginBottom="@dimen/keyline_7"
-        android:orientation="horizontal">
+            <fragment
+                android:id="@+id/fragment_nav_host_upload"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_upload" />
 
-        <Button
-            android:id="@+id/upload_answerNo"
-            style="?attr/textAppearanceButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/keyline_0"
-            android:layout_weight="1"
-            android:text="@string/upload_answer_no" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/keyline_5"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:layout_marginEnd="@dimen/keyline_5"
+                android:layout_marginBottom="@dimen/keyline_7"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/upload_answerYes"
-            style="?attr/textAppearanceButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/keyline_0"
-            android:layout_weight="1"
-            android:text="@string/upload_answer_yes" />
+                <Button
+                    android:id="@+id/upload_answerNo"
+                    style="?attr/textAppearanceButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/keyline_0"
+                    android:layout_weight="1"
+                    android:text="@string/upload_answer_no" />
 
-        <Button
-            android:id="@+id/upload_continue"
-            style="?attr/textAppearanceButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/action_continue" />
-    </LinearLayout>
+                <Button
+                    android:id="@+id/upload_answerYes"
+                    style="?attr/textAppearanceButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_0"
+                    android:layout_weight="1"
+                    android:text="@string/upload_answer_yes" />
 
+                <Button
+                    android:id="@+id/upload_continue"
+                    style="?attr/textAppearanceButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/action_continue" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

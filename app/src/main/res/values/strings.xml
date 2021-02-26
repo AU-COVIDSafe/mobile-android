@@ -304,6 +304,7 @@
   <string name="home_app_permission_status_title">Check your settings</string>
   <string name="home_been_tested_title">Has a health official asked you to upload your data?</string>
   <string name="home_bluetooth_permission">Bluetooth®: %s</string>
+  <string name="home_bottom_nav">Home</string>
   <string name="home_data_has_been_uploaded">Your data has been uploaded</string>
   <string name="home_data_has_been_uploaded_message">You\’re helping stop the spread of COVID-19 by uploading your data daily while in self-isolation.</string>
   <string name="home_data_uploaded">Register for self isolation</string>
@@ -396,6 +397,7 @@
   <string name="learn_more">Learn more</string>
   <string name="loading_numbers">Loading latest numbers</string>
   <string name="locally_acquired">%@ locally acquired</string>
+  <string name="main_restrictions">Main restrictions</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe update in progress. \n\n Please make sure you phone is not switched off until the update is complete.</string>
   <string name="minute">Minute</string>
@@ -482,6 +484,27 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Registration consent</string>
   <string name="registration_consent_second_paragraph">information about my contact with other COVIDSafe users, if another user I have come into contact with tests positive for COVID-19 and uploads their contact data</string>
+  <string name="restrictions_accommodation">Accommodation</string>
+  <string name="restrictions_activity">Activity</string>
+  <string name="restrictions_cafes">Cafes and Restaurants</string>
+  <string name="restrictions_disclaimer">Your selection will only be used to show restrictions in your area. COVIDSafe does not store or use location data.</string>
+  <string name="restrictions_domestic_travel">Domestic Travel</string>
+  <string name="restrictions_education">Education and Childcare</string>
+  <string name="restrictions_entertainment">Entertainment Venues</string>
+  <string name="restrictions_error_dismiss">Dismiss</string>
+  <string name="restrictions_error_heading">Restrictions are not available</string>
+  <string name="restrictions_error_message">Check your internet connection or try again later.</string>
+  <string name="restrictions_error_try">Try again</string>
+  <string name="restrictions_gatherings_work">Gatherings and Work</string>
+  <string name="restrictions_hair_beauty">Hair and Beauty Services</string>
+  <string name="restrictions_heading">Restrictions</string>
+  <string name="restrictions_hotspots">Hotspots and Case Locations</string>
+  <string name="restrictions_retail">Retail and Sales</string>
+  <string name="restrictions_select_activity">Select activity</string>
+  <string name="restrictions_select_state">Select state or territory</string>
+  <string name="restrictions_sports">Sports and Recreation</string>
+  <string name="restrictions_state">State or territory</string>
+  <string name="restrictions_wedding">Wedding, Funeral and Religion</string>
   <string name="save">Save</string>
   <string name="scheduled" formatted="false">You scheduled COVIDSafe to snooze from %@ to %@.</string>
   <string name="search">Search</string>
@@ -511,6 +534,8 @@
   <string name="snooze_ends">Snooze ends in</string>
   <string name="snooze_from">Snooze from</string>
   <string name="snooze_heading">Snooze COVIDSafe</string>
+  <string name="snooze_interference_popup1">The next scheduled snooze starts at %@</string>
+  <string name="snooze_interference_popup2">Set a snooze that ends before this time.</string>
   <string name="snooze_on">Snooze on %@</string>
   <string name="snooze_timer_description">Set a timer to snooze COVIDSafe.</string>
   <string name="snooze_to">Snooze to</string>

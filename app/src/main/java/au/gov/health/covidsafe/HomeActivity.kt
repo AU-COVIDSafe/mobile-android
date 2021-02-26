@@ -2,6 +2,8 @@ package au.gov.health.covidsafe
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.MutableLiveData
 import au.gov.health.covidsafe.app.TracerApp
@@ -15,13 +17,19 @@ import au.gov.health.covidsafe.sensor.SensorDelegate
 import au.gov.health.covidsafe.sensor.ble.BLEDevice
 import au.gov.health.covidsafe.sensor.datatype.*
 import au.gov.health.covidsafe.ui.devicename.DeviceNameChangePromptActivity
+import au.gov.health.covidsafe.ui.home.HomeFragment
+import au.gov.health.covidsafe.ui.restriction.RestrictionFragment
+import au.gov.health.covidsafe.ui.settings.SettingsFragment
 import au.gov.health.covidsafe.ui.utils.Utils
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
+import kotlinx.android.synthetic.main.activity_home.*
+
 
 private const val TAG = "HomeActivity"
 private const val UNAUTHORIZED = "Unauthorized"
+private const val UNAUTHENTICATED = "unauthenticated"
 
 class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectionListener, SensorDelegate {
 
@@ -29,6 +37,7 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
     var appUpdateAvailableMessageResponseLiveData = MutableLiveData<MessagesResponse>()
     var isWindowFocusChangeLiveData = MutableLiveData<Boolean>()
     var isJWTCorrupted = MutableLiveData<Boolean>()
+    var isJWTExpired = MutableLiveData<Boolean>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +48,48 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
 
         setContentView(R.layout.activity_home)
 
-         Utils.startBluetoothMonitoringService(this)
+        Utils.startBluetoothMonitoringService(this)
 
         //Get Firebase Token
         getInstanceID()
+        onClickListener()
 
         NetworkConnectionCheck.addNetworkChangedListener(this, this)
+    }
+
+    private fun onClickListener() {
+        navigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.navigation_home -> {
+                    val homeFragment = HomeFragment()
+                    openFragment(homeFragment, "home")
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.navigation_restriction -> {
+                    val restrictionFragment = RestrictionFragment()
+                    openFragment(restrictionFragment, "restriction")
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.navigation_settings -> {
+                    val settingsFragment = SettingsFragment()
+                    openFragment(settingsFragment, "setting")
+                    return@setOnNavigationItemSelectedListener true
+                }
+            }
+            false
+            return@setOnNavigationItemSelectedListener false
+        }
+    }
+
+    private fun openFragment(fragment: Fragment, tag: String) {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.home_nav_host)?.tag
+        if (tag != currentFragment) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .addToBackStack(tag)
+                    .replace(R.id.home_nav_host, fragment, tag)
+                    .commit()
+        }
     }
 
     override fun onResume() {
@@ -65,11 +110,11 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
 
     private fun checkAndUpdateHealthStatus() {
         GetMessagesScheduler.scheduleGetMessagesJob {
-
-            if (it.errorBodyMessage.equals(UNAUTHORIZED)) {
+            if (it.errorBodyMessage.equals(UNAUTHORIZED) || it.errorBodyMessage.equals(UNAUTHENTICATED)) {
                 isJWTCorrupted.postValue(true)
-            } else{
+            } else {
                 isJWTCorrupted.postValue(false)
+                isJWTExpired.postValue(false)
             }
 
             val isAppWithLatestVersion = it.messages.isNullOrEmpty()

@@ -39,7 +39,10 @@ object Preference {
     private const val TURN_CASE_NUMBER = "TURN_CASE_NUMBER"
     private const val IS_REREGISTER = "IS_REREGISTER"
     private const val SELECTED_STATE = "SELECTED_STATE"
+    private const val SELECTED_RESTRICTION_STATE = "SELECTED_STATE"
+    private const val SENSOR_START = "SENSOR_START"
     private const val ADVERTISE_STOP = "ADVERTISE_STOP"
+    private const val REFRESH_TOKEN = "REFRESH_TOKEN"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -341,5 +344,58 @@ object Preference {
     fun getAdvertiseStop(context: Context): Boolean {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
                 .getBoolean(ADVERTISE_STOP, false)
+    }
+
+    fun putEncryptRefreshToken(context: Context?, refreshToken: String?) {
+        context?.let {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+                EncryptedSharedPreferences.create(
+                        PREF_ID,
+                        masterKeyAlias,
+                        context,
+                        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+                ).edit()?.putString(REFRESH_TOKEN, refreshToken)?.apply()
+            } else {
+                val aesEncryptedJwtToken = refreshToken?.let {
+                    AESEncryptionForPreAndroidM.encrypt(it)
+                }
+
+                context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                        .edit().putString(REFRESH_TOKEN, aesEncryptedJwtToken)?.apply()
+            }
+        }
+    }
+
+    fun getEncryptRefreshToken(context: Context?): String? {
+        return context?.let {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+                val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+                EncryptedSharedPreferences.create(
+                        PREF_ID,
+                        masterKeyAlias,
+                        context,
+                        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+                ).getString(REFRESH_TOKEN, null)
+            } else {
+                context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                        ?.getString(REFRESH_TOKEN, null)?.let {
+                            AESEncryptionForPreAndroidM.decrypt(it)
+                        }
+            }
+        }
+    }
+
+    fun putSelectedRestrictionState(context: Context, selectState: String): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                      .edit().putString(SELECTED_RESTRICTION_STATE, selectState).commit()
+    }
+
+    fun getSelectedRestrictionState(context: Context): String? {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+        .getString(SELECTED_RESTRICTION_STATE, null)
     }
 }

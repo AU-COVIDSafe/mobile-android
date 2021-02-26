@@ -20,7 +20,6 @@
             android:layout_alignParentTop="true"
             android:layout_marginEnd="@dimen/space_16"
             android:layout_toStartOf="@+id/active_tick_image_view"
-            android:accessibilityTraversalBefore="@id/home_header_settings"
             android:text="@string/home_header_active_title"
             android:textColor="@color/dark_green"
             android:textSize="@dimen/text_size_20" />

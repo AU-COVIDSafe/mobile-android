@@ -52,6 +52,7 @@ import kotlinx.android.synthetic.main.view_national_case_statistics.national_cas
 import kotlinx.android.synthetic.main.view_state_case_statistics.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import java.text.SimpleDateFormat
@@ -153,6 +154,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     private fun initializeObservers() {
         (activity as HomeActivity?)?.run {
             isJWTCorrupted.observe(this@HomeFragment, isJwtExpired)
+            isJWTExpired.observe(this@HomeFragment, isJwtExpired)
             isAppUpdateAvailableLiveData.observe(this@HomeFragment, latestAppAvailable)
             isWindowFocusChangeLiveData.observe(this@HomeFragment, refreshUiObserver)
         }
@@ -190,6 +192,25 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                 txt_hotspot.movementMethod = LinkMovementMethod.getInstance()
             }
         })
+
+        homeFragmentViewModel.reIssueFail.observe(this, Observer {
+            it?.let {
+                if (it) {
+                    permissions_card_subtitle.visibility = GONE
+                    registration_layout.visibility = VISIBLE
+                }
+            }
+        })
+
+        homeFragmentViewModel.reIssueSuccess.observe(this, Observer {
+            it?.let {
+                if (it) {
+                    jwtExpired = false
+                    refreshSetupCompleteOrIncompleteUi()
+
+                }
+            }
+        })
     }
 
     private val latestAppAvailable = Observer<Boolean> {
@@ -215,7 +236,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
         // disable the app update reminder for now
         app_update_reminder.visibility = GONE
-
+        getRefreshToken()
         initializePermissionViewButtonClickListeners()
 
         initializeUploadTestDataNavigation()
@@ -231,6 +252,12 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         updateHealthOfficialTile()
         initializeBluetoothPairingInfo()
         loadStateAndListener()
+    }
+
+    private fun getRefreshToken() {
+        if (Preference.getEncryptRefreshToken(this.requireContext()).isNullOrEmpty()) {
+             homeFragmentViewModel.getRefreshToken(lifecycle)
+        }
     }
 
     private fun loadStateAndListener() {
@@ -460,8 +487,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private fun updateJwtExpiredHeader() {
         if (jwtExpired) {
-            permissions_card_subtitle.visibility = GONE
-            registration_layout.visibility = VISIBLE
+            homeFragmentViewModel.getReissueAuth(lifecycle)
         } else {
             permissions_card_subtitle.visibility = VISIBLE
             registration_layout.visibility = GONE
@@ -691,7 +717,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         battery_card_view.isEnabled = enableParent
     }
 
-    private fun createStateList(): ArrayList<String>{
+    fun createStateList(): ArrayList<String>{
         val list = ArrayList<String>()
         list.add("Australia")
         list.add("Australian Capital Territory")

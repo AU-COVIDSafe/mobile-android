@@ -86,8 +86,12 @@ class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
                         Preference.putHandShakePin(enterPinFragment.context, handShakePin)
                     }
                     val jwtToken = authChallengeResponse?.token
+                    val refreshToken = authChallengeResponse?.refreshToken
                     jwtToken.let {
                         Preference.putEncrypterJWTToken(enterPinFragment.requireContext(), jwtToken)
+                    }
+                    refreshToken?.let {
+                        Preference.putEncryptRefreshToken(enterPinFragment.requireContext(), refreshToken)
                     }
                     enterPinFragment.hideKeyboard()
                     enterPinFragment.navigateToNextPage()

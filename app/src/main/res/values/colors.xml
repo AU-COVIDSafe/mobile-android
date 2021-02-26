@@ -13,6 +13,7 @@
     <color name="grey">#E2E2E2</color>
     <color name="grey4">#E1E5E5</color>
     <color name="lighter_green">#C8FFB9</color>
+    <color name="grey5">#959595</color>
 
     <!-- Splash Screen -->
     <color name="splash_background">#E5E5E5</color>

@@ -530,6 +530,7 @@
   <string name="snooze_calendar_toggle">Snooze calendar</string>
   <string name="snooze_covidsafe_button">Snooze COVIDSafe</string>
   <string name="snooze_covidsafe_button_description">Snooze COVIDSafe for a specific length of time.</string>
+  <string name="snooze_end_now">End snooze now</string>
   <string name="snooze_ended">Snooze has ended.</string>
   <string name="snooze_ends">Snooze ends in</string>
   <string name="snooze_from">Snooze from</string>
@@ -537,6 +538,7 @@
   <string name="snooze_interference_popup1">The next scheduled snooze starts at %@</string>
   <string name="snooze_interference_popup2">Set a snooze that ends before this time.</string>
   <string name="snooze_on">Snooze on %@</string>
+  <string name="snooze_running">End snooze now to set a new timer.</string>
   <string name="snooze_timer_description">Set a timer to snooze COVIDSafe.</string>
   <string name="snooze_to">Snooze to</string>
   <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe is not using Bluetooth and is not recording contacts.\n\nYou scheduled COVIDSafe to snooze from %@ to %@.</string>

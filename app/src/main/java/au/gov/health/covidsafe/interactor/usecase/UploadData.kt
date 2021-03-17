@@ -27,6 +27,11 @@ class UploadData(private val awsClient: AwsClient,
 
     override suspend fun run(params: String): Either<Exception, None> {
         val token = Preference.getEncrypterJWTToken(context)
+        context?.let {
+            val authenticate = Preference.getAuthenticate(context)
+            // Token is not authenticated
+            if (!authenticate) {  return Failure(Exception("005")) }
+        }
         return token?.let { jwtToken ->
             try {
                 val initialUploadResponse = retryRetrofitCall {

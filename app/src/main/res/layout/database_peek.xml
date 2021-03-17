@@ -47,6 +47,35 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/btn_de_active_token"/>
 
+    <TextView
+        android:id="@+id/token_exp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:paddingStart="@dimen/space_16"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/switch_sensor" />
+
+    <TextView
+        android:id="@+id/device_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:paddingStart="@dimen/space_16"
+        android:singleLine="false"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/token_exp" />
+
+    <TextView
+        android:id="@+id/refresh_token_exp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:paddingBottom="@dimen/space_8"
+        android:paddingStart="@dimen/space_16"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/device_id" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="0dp"
@@ -56,7 +85,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch_sensor"
+        app:layout_constraintTop_toBottomOf="@+id/refresh_token_exp"
         tools:listitem="@layout/recycler_view_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

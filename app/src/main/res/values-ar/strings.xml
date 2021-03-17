@@ -29,6 +29,7 @@
   <string name="change_language_content">اقرأ الدليل حول استخدام تطبيق COVIDSafe بلغة مختلفة.</string>
   <string name="change_postcode_description">قم بالتحديث إذا تغير الرمز البريدي الخاص بك منذ قيامك بتنزيل تطبيق COVIDSafe.</string>
   <string name="change_postcode_heading">غيِّر الرمز البريدي الخاص بك</string>
+  <string name="change_postcode_intro">هل انتقلت إلى منطقة ذات رمز بريدي مختلف منذ أن قمت بالتسجيل لاستخدام تطبيق COVIDSafe؟ \n\n يمكن أن يساعد تحديث الرمز البريدي موظفي دائرة الصحة على تتبع الأشخاص الذين خالطتهم. \n\n اقرأ * سياسة الخصوصية لتطبيق * COVIDSafe * و * إشعار جمع المعلومات * لمزيد من التفاصيل حول كيفية تخزين معلوماتك ومشاركتها.</string>
   <string name="CodeHasExpired">انتهت صلاحية رقم التعريف الشخصي الخاص بك.</string>
   <string name="collection_message">يقوم تطبيق COVIDSafe الآن بجمع معلومات تشخيصية لمساعدتك على استكشاف المشكلات في تطبيقك وإصلاحها. *أعرف المزيد*</string>
   <string name="consent_button">أوافق</string>
@@ -248,7 +249,7 @@
   <string name="country_region_name_zw">زيمبابوي</string>
   <string name="customise_days">تخصيص الأيام</string>
   <string name="data_privacy_button">التالي</string>
-  <string name="data_privacy_content_android">من المهم أن تقرأ *سياسة الخصوصية* تطبيق COVIDSafe قبل التسجيل. \n\n إذا كان عمرك أقل من 16 عاماً، يجب على أحد والديك/ الوصي أيضاً قراءة *سياسة الخصوصية*. \n\n استخدام تطبيق COVIDSafe هو أمر إختياري تماماً. يمكنك تثبيت التطبيق أو حذفه في أي وقت. إذا قمت بحذف تطبيق COVIDSafe، *يمكنك أيضاً طلب حذف معلوماتك* من الخادم الآمن. \n\n للتسجيل في تطبيق COVIDSafe، ستحتاج إلى إدخال اسم (أو اسم مستعار) ورقم هاتف محمول وفئة عمرية ورمز بريدي. \n\n سيتم جمع المعلومات التي ترسلها عند التسجيل، ومعلومات استخدامك لتطبيق COVIDSafe  وتخزينها في خادم آمن للغاية. \n\n لن يقوم تطبيق COVIDSafe بجمع معلومات عن موقعك الجغرافي. \n\n سيدوّن تطبيق COVIDSafe وقت الاتصال ورمز مجهول الهوية لمستخدمي COVIDSafe الآخرين الذين تتواصل معهم وقوة إشارة الـ Bluetooth، وموديل الهاتف المحمول للمستخدمين الآخرين على جهازك. \n\nكما سيدون تطبيق COVIDSafe لدى المستخدمين الآخرين الذين تتواصل معهم أيضاً الرمز مجهول الهوية الخاص بك وتاريخ ووقت الاتصال بك وقوة إشارة الـ Bluetooth وموديل هاتفك المحمول على أجهزتهم.  \n\n إذا أظهرت نتائج فحص COVID-19 إصابة مستخدم آخر، فقد يقوم هذا المستخدم بتحميل تفاصيل الاتصال به وقد يتصل بك موظف دائرة الصحة في الولاية أو الإقليم لأغراض تقفّي المخالطة. \n\n سيتم استخدام تفاصيل التسجيل الخاصة بك أو الكشف عنها فقط لتقفّي المخالطة وللأغراض المناسبة والقانونية لـ COVIDSafe. \n\n يتوفر المزيد من المعلومات على الموقع الإلكتروني لـ*وزارة الصحة في الحكومة الأسترالية*. \n\n راجع *سياسة الخصوصية* لتطبيق COVIDSafe للاطلاع على مزيد من التفاصيل حول حقوقك المتعلقة بمعلوماتك وكيف سيتم التعامل معها ومشاركتها.</string>
+  <string name="data_privacy_content_android">من المهم أن تقرأ *سياسة الخصوصية* لتطبيق COVIDSafe قبل التسجيل.\n\nسيقوم COVIDSafe بجمع معلوماتك الشخصية أو استخدامها أو الكشف عنها فقط بما يتماشى مع هذه السياسة وقانون الخصوصية لعام 1988.\n\n إذا كان عمرك أقل من 16 عاماً، يجب على أحد والديك/ الوصي عليك أيضاً قراءة *سياسة الخصوصية*. \n\n استخدام تطبيق COVIDSafe هو أمر إختياري تماماً. يمكنك تثبيت التطبيق أو حذفه في أي وقت. إذا قمت بحذف تطبيق COVIDSafe، *يمكنك أيضاً طلب حذف معلوماتك* من الخادم الآمن. \n\n للتسجيل في تطبيق COVIDSafe، ستحتاج إلى إدخال اسم (أو اسم مستعار) ورقم هاتف محمول وفئة عمرية ورمز بريدي. \n\n سيتم جمع المعلومات التي ترسلها عند التسجيل، ومعلومات استخدامك لتطبيق COVIDSafe  وتخزينها في خادم آمن للغاية.\n \n كما يتم جمع المعلومات أيضاً للتأكد من أن COVIDSafe يعمل بشكل صحيح على جهازك، ويتضمن ذلك نظام تشغيل جهازك وإصدار التطبيق الذي قمت بتثبيته واللغة التي تستخدمها في جهازك وما إذا كانت تقنية Bluetooth® تعمل وما إذا كان التطبيق الخاص بك قد سجل أي لقاءات في الأيام السبعة السابقة.\n \n على أجهزة أندرويد، ستشمل أيضاً معلومات حول ما إذا كان قد تم إيقاف تحسين البطارية وتشغيل خدمات الموقع الجغرافي. \n\n لن يقوم تطبيق COVIDSafe بجمع معلومات عن موقعك الجغرافي. \n\n سيدوّن تطبيق COVIDSafe وقت الاتصال ورمز مجهول الهوية لمستخدمي COVIDSafe الآخرين الذين تتواصل معهم وقوة إشارة الـ Bluetooth، وموديل الهاتف المحمول للمستخدمين الآخرين على جهازك. \n\nكما سيدون تطبيق COVIDSafe لدى المستخدمين الآخرين الذين تتواصل معهم أيضاً الرمز مجهول الهوية الخاص بك وتاريخ ووقت الاتصال بك وقوة إشارة الـ Bluetooth وموديل هاتفك المحمول على أجهزتهم.  \n\n إذا أظهرت نتائج فحص COVID-19 إصابة مستخدم آخر، فقد يقوم هذا المستخدم بتحميل تفاصيل الاتصال به وقد يتصل بك موظف دائرة الصحة في الولاية أو الإقليم لأغراض تقفّي المخالطة. \n\n سيتم استخدام تفاصيل التسجيل الخاصة بك أو الكشف عنها فقط لتقفّي المخالطة وللأغراض المناسبة والقانونية لـ COVIDSafe. \n\n يتوفر المزيد من المعلومات على الموقع الإلكتروني *covidsafe.gov.au*. \n\n راجع *سياسة الخصوصية* لتطبيق COVIDSafe للاطلاع على مزيد من التفاصيل حول حقوقك المتعلقة بمعلوماتك وكيف سيتم التعامل معها ومشاركتها.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">التسجيل والخصوصية</string>
   <string name="data_privacy_headline_content_description">العنوان والتسجيل والخصوصية</string>
@@ -295,6 +296,7 @@
   <string name="home_app_permission_status_title">تحقق من إعدادات هاتفك</string>
   <string name="home_been_tested_title">هل طلب منك موظف دائرة الصحة تحميل بياناتك؟</string>
   <string name="home_bluetooth_permission">Bluetooth®: %s</string>
+  <string name="home_bottom_nav">الصفحة الرئيسية</string>
   <string name="home_data_has_been_uploaded">تم تحميل بياناتك</string>
   <string name="home_data_has_been_uploaded_message">أنت تساعد على وقف انتشار COVID-19 عن طريق تحميل بياناتك يومياً أثناء العزل الذاتي.</string>
   <string name="home_data_uploaded">قم بالتسجيل من أجل العزل الذاتي</string>
@@ -378,6 +380,7 @@
   <string name="last_7_days">آخر 7 أيام</string>
   <string name="loading_numbers">تحميل أحدث الأرقام</string>
   <string name="locally_acquired">%@ تم التقاطه محلياً</string>
+  <string name="main_restrictions">القيود الرئيسية</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">تحديث تطبيق COVIDSafe قيد الإنجاز. \n\nيُرجى التأكد من عدم إغلاق هاتفك إلى أن يتم اكتمال التحديث.</string>
   <string name="minute">دقيقة</string>
@@ -449,6 +452,8 @@
   <string name="pin_number">رقم التعريف الشخصي pin</string>
   <string name="PINNumber_VO_Label">رقم التعريف الشخصي PIN</string>
   <string name="PN_MobileNumber_VOLabel">رقم الهاتف المحمول</string>
+  <string name="postcode_api_error">لقد حصل خطأ. تحقق من الاتصال بالإنترنت وحاول مرة أخرى.</string>
+  <string name="postcode_change_label">الرمز البريدي الحالي في أستراليا</string>
   <string name="postcode_success">تم تحديث الرمز البريدي الخاص بك</string>
   <string name="queensland">ولاية كوينزلاند</string>
   <string name="ReceivePinIssue">مشكلات في تلقي رقم التعريف الشخصي الخاص بك؟</string>
@@ -459,6 +464,27 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">الموافقة على التسجيل</string>
   <string name="registration_consent_second_paragraph">معلومات حول اختلاطي بمستخدمين آخرين لتطبيق COVIDSafe في حال أظهرت نتائج الفحص أن مستخدمًا آخر كنت على تواصل معه مصاب بفيروس COVID-19، وقام هذا المستخدم بتحميل بيانات الاتصال به.</string>
+  <string name="restrictions_accommodation">أماكن الإقامة</string>
+  <string name="restrictions_activity">النشاط</string>
+  <string name="restrictions_cafes">المقاهي والمطاعم</string>
+  <string name="restrictions_disclaimer">سيتم استخدام اختيارك فقط لإظهار القيود في منطقتك. لا يقوم تطبيق COVIDSafe بتخزين بيانات الموقع الجغرافي أو استخدامها.</string>
+  <string name="restrictions_domestic_travel">السفر داخل أستراليا</string>
+  <string name="restrictions_education">التعليم ورعاية الأطفال</string>
+  <string name="restrictions_entertainment">أماكن الترفيه</string>
+  <string name="restrictions_error_dismiss">تجاهل</string>
+  <string name="restrictions_error_heading">القيود غير متوفرة</string>
+  <string name="restrictions_error_message">تحقق من الاتصال بالإنترنت أو حاول مرة أخرى في وقت لاحق.</string>
+  <string name="restrictions_error_try">حاول مجددا</string>
+  <string name="restrictions_gatherings_work">التجمعات والعمل</string>
+  <string name="restrictions_hair_beauty">خدمات الشعر والتجميل</string>
+  <string name="restrictions_heading">القيود </string>
+  <string name="restrictions_hotspots">النقاط الساخنة والمواقع التي يوجد فيها حالات</string>
+  <string name="restrictions_retail">البيع بالتجزئة والمبيعات</string>
+  <string name="restrictions_select_activity">اختر النشاط</string>
+  <string name="restrictions_select_state">اختر الولاية أو الإقليم</string>
+  <string name="restrictions_sports">الرياضة والنشاطات الترفيهية</string>
+  <string name="restrictions_state">الولاية أو الإقليم</string>
+  <string name="restrictions_wedding">حفلات الزفاف، الجنائز والدين</string>
   <string name="save">حفظ</string>
   <string name="scheduled" formatted="false">قمت بتحديد مدة غفوة تطبيق COVIDSafe من %@ إلى %@.</string>
   <string name="search">ابحث</string>
@@ -484,11 +510,15 @@
   <string name="snooze_calendar_toggle">روزنامة الغفوة</string>
   <string name="snooze_covidsafe_button">وضع تطبيق COVIDSafe في غفوة</string>
   <string name="snooze_covidsafe_button_description">وضع تطبيق COVIDSafe في غفوة لفترة زمنية محددة.</string>
+  <string name="snooze_end_now">قم بإنهاء الغفوة الآن</string>
   <string name="snooze_ended">انتهت مدة الغفوة.</string>
   <string name="snooze_ends">تنتهي مدة الغفوة في</string>
   <string name="snooze_from">في غفوة من</string>
   <string name="snooze_heading">وضع تطبيق COVIDSafe في غفوة</string>
+  <string name="snooze_interference_popup1">تبدأ الغفوة المقررة التالية في %@</string>
+  <string name="snooze_interference_popup2">اضبط وقت غفوة  تنتهي قبل هذا الوقت.</string>
   <string name="snooze_on">في وضع الغفوة %@</string>
+  <string name="snooze_running">قم بإنهاء الغفوة الآن لتعيين مؤقت جديد.</string>
   <string name="snooze_timer_description">اضبط المؤقت لوضع تطبيق COVIDSafe في غفوة</string>
   <string name="snooze_to">في غفوة حتى</string>
   <string name="snoozed_calendar_description_android" formatted="false">تطبيق \u200F COVIDSafe لا يستخدم  Bluetooth ولا يقوم بتسجيل الأشخاص الذين يتم الاختلاط بهم.\nقمت بتحديد مدة غفوة تطبيق COVIDSafe من %@ إلى %@.</string>

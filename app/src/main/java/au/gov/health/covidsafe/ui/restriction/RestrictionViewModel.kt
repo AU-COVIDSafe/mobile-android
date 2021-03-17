@@ -58,20 +58,24 @@ class RestrictionViewModel(application: Application): AndroidViewModel(applicati
     fun loadActivity(state: String, lifecycle: Lifecycle) {
         errorLayout.value = false
         val stateAbrv = getState(state)
-        viewModelScope.launch(Dispatchers.IO) {
+        if (stateAbrv.isEmpty()) {
+            errorLayout.value = true
+        } else {
+            viewModelScope.launch(Dispatchers.IO) {
 
-            GetRestrictionUseCase(awsClient, lifecycle, getApplication(), stateAbrv).invoke("",
-                    onSuccess = {
-                        val list = ArrayList<Activities>()
-                        it.activities?.forEach { activity ->
-                            list.add(activity)
+                GetRestrictionUseCase(awsClient, lifecycle, getApplication(), stateAbrv).invoke("",
+                        onSuccess = {
+                            val list = ArrayList<Activities>()
+                            it.activities?.forEach { activity ->
+                                list.add(activity)
+                            }
+                            activityList.value = list
+                        },
+                        onFailure = {
+                            errorLayout.value = true
                         }
-                        activityList.value = list
-                    },
-                    onFailure = {
-                        errorLayout.value = true
-                    }
-            )
+                )
+            }
         }
     }
 

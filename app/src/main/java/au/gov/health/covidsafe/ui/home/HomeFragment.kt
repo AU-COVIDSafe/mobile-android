@@ -51,6 +51,7 @@ import kotlinx.android.synthetic.main.view_home_setup_incomplete.*
 import kotlinx.android.synthetic.main.view_national_case_statistics.national_case_layout
 import kotlinx.android.synthetic.main.view_state_case_statistics.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import pub.devrel.easypermissions.AppSettingsDialog
@@ -77,6 +78,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     private var isAppWithLatestVersion = false
     lateinit var staticsLayout: ConstraintLayout
     private lateinit var stateListAdapter: StateAdapter
+    private var reIssueFailCounter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -196,6 +198,11 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         homeFragmentViewModel.reIssueFail.observe(this, Observer {
             it?.let {
                 if (it) {
+                    jwtExpired = true
+                    if (homeFragmentViewModel.getReissueOnRefreshToken() && reIssueFailCounter <= 1) {
+                        reIssueFailCounter++
+                        refreshSetupCompleteOrIncompleteUi()
+                    }
                     permissions_card_subtitle.visibility = GONE
                     registration_layout.visibility = VISIBLE
                 }
@@ -207,7 +214,6 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                 if (it) {
                     jwtExpired = false
                     refreshSetupCompleteOrIncompleteUi()
-
                 }
             }
         })
@@ -333,14 +339,14 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
     private fun initializeHelpTopicsNavigation() {
         help_topics_link.setOnClickListener {
             HelpFragment.anchor = null
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
+            startActivity(Intent(requireContext(), HelpActivity::class.java))
         }
     }
 
     private fun initializeChangeLanguageNavigation() {
         change_language_link.setOnClickListener {
             HelpFragment.anchor = "#other-languages"
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHelpFragment())
+            startActivity(Intent(requireContext(), HelpActivity::class.java))
         }
 
         home_header_picture_setup_complete.setOnClickListener {

@@ -57,6 +57,7 @@
         <activity android:name="au.gov.health.covidsafe.ui.connection.InternetConnectionIssuesActivity" />
         <activity android:name="au.gov.health.covidsafe.ui.settings.ChanePostCodeActivity" />
         <activity android:name="au.gov.health.covidsafe.ui.restriction.RestrictionDescActivity" />
+        <activity android:name="au.gov.health.covidsafe.ui.home.HelpActivity" />
 
         <activity
             android:name="au.gov.health.covidsafe.HomeActivity"

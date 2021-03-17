@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:background="@color/splash_background"
+    android:backgroundTint="@color/splash_frame_background"
+    tools:context=".HomeActivity"
+    >
+    <fragment
+        android:id="@+id/home_nav_host"
+        android:name="au.gov.health.covidsafe.ui.home.HelpFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,6 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.core.view.isVisible
-import androidx.navigation.fragment.findNavController
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.links.LinkBuilder
 import au.gov.health.covidsafe.ui.base.BaseFragment
@@ -48,7 +47,9 @@ class HelpFragment : BaseFragment() {
         reportAnIssue.setOnClickListener {
             FeedbackModule.showFeedbackScreen()
         }
-        toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+       toolbar.setNavigationOnClickListener {
+           activity?.onBackPressed()
+       }
 
         if (resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL) {
             toolbar.navigationIcon =

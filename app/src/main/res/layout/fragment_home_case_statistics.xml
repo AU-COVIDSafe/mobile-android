@@ -159,7 +159,7 @@
 
                         <TextView
                             android:id="@+id/unknown_error_text_view"
-                            visibility="@{viewModel.caseNumberDataState == CaseNumbersState.ERROR_UNKNOWN}"
+                            visibility="@{viewModel.caseNumberDataState == CaseNumbersState.ERROR_UNKNOWN &amp; !viewModel.getStatisticSuccessfull}"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/space_16"
@@ -176,7 +176,7 @@
                     <TextView
                         android:id="@+id/refresh_button"
                         addUnderline="@{@string/numbers_refresh}"
-                        visibility="@{viewModel.caseNumberDataState == CaseNumbersState.ERROR_UNKNOWN}"
+                        visibility="@{viewModel.caseNumberDataState == CaseNumbersState.ERROR_UNKNOWN &amp; !viewModel.getStatisticSuccessfull}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/transparent"

@@ -13,16 +13,14 @@ import au.gov.health.covidsafe.preference.Preference
 
 private const val TAG = "GetCaseStatisticsUseCase"
 
-class IssueInitialRefreshTokenUseCase(private val awsClient: AwsClient, lifecycle: Lifecycle, private val context: Context?) : UseCase<IssueInitialRefreshtokenResponse, String>(lifecycle) {
+class IssueInitialRefreshTokenUseCase(private val awsClient: AwsClient, lifecycle: Lifecycle, private val context: Context) : UseCase<IssueInitialRefreshtokenResponse, String>(lifecycle) {
 
     override suspend fun run(params: String): Either<Exception, IssueInitialRefreshtokenResponse> {
         val token = Preference.getEncrypterJWTToken(context)
         return token?.let { jwtToken ->
              try {
                 CentralLog.d(TAG, "GetCaseStatisticsUseCase run request")
-                val response = retryRetrofitCall {
-                    awsClient.issueInitialRefreshToken("Bearer $jwtToken").execute()
-                }
+                val response = awsClient.issueInitialRefreshToken("Bearer $jwtToken").execute()
 
                 when {
                     response?.code() == 200 -> {

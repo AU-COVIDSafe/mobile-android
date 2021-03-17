@@ -18,7 +18,7 @@ class StateActivityAdapter internal constructor(context: Context) :
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var stateList = emptyList<Activities>()
-    private var selectedState: Int = 0
+    private var selectedState: Int? = null
     private var mListener: OnStateListClickListener? = null
 
     interface OnStateListClickListener {
@@ -46,7 +46,7 @@ class StateActivityAdapter internal constructor(context: Context) :
         holder.imageStateSelect.visibility = View.GONE
         holder.endLine.visibility = View.VISIBLE
 
-        if (position == selectedState) {
+        if (selectedState != null && position == selectedState) {
             holder.imageStateSelect.visibility = View.VISIBLE
         }
         if (position == (this.stateList.size - 1)) {
@@ -58,9 +58,9 @@ class StateActivityAdapter internal constructor(context: Context) :
         }
     }
 
-    fun setRecords(stateList: List<Activities>, selectedState: Int) {
+    fun setRecords(stateList: List<Activities>, selectedState: Int?) {
         this.stateList = stateList
-        this.selectedState = selectedState
+        selectedState?.let { this.selectedState = it }
         notifyDataSetChanged()
     }
 

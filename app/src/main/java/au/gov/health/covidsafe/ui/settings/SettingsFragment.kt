@@ -23,6 +23,7 @@ import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.response.MessagesResponse
 import au.gov.health.covidsafe.ui.base.BaseFragment
 import au.gov.health.covidsafe.ui.connection.InternetConnectionIssuesActivity
+import au.gov.health.covidsafe.ui.home.HelpActivity
 import au.gov.health.covidsafe.ui.home.HelpFragment
 import au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
@@ -77,7 +78,7 @@ class SettingsFragment : BaseFragment(), NetworkConnectionCheck.NetworkConnectio
     private fun initializeHelpTopicsNavigation() {
         help_topics_link.setOnClickListener {
             HelpFragment.anchor = null
-            findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToHelpFragment())
+            startActivity(Intent(requireContext(), HelpActivity::class.java))
         }
     }
 

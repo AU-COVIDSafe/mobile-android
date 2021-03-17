@@ -13,6 +13,7 @@ import au.gov.health.covidsafe.extensions.isBlueToothEnabled
 import au.gov.health.covidsafe.extensions.isLocationEnabledOnDevice
 import au.gov.health.covidsafe.extensions.isLocationPermissionAllowed
 import au.gov.health.covidsafe.factory.NetworkFactory.Companion.awsClient
+import au.gov.health.covidsafe.interactor.Failure
 import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.response.ErrorMessage
 import au.gov.health.covidsafe.networking.response.MessagesResponse
@@ -155,48 +156,55 @@ object GetMessagesScheduler {
         CentralLog.d(TAG, "healthCheck = $healthCheck")
 
         val preferredLanguages = Locale.getDefault().language
+        val authenticate = Preference.getAuthenticate(context)
+        if (authenticate)
+        {
+            val messagesCall: Call<MessagesResponse> = awsClient.getMessages(
+                    "Bearer $jwtToken",
+                    os,
+                    appVersion,
+                    token,
+                    healthCheck,
+                    encountersHealth,
+                    preferredLanguages
+            )
 
-        val messagesCall: Call<MessagesResponse> = awsClient.getMessages(
-                "Bearer $jwtToken",
-                os,
-                appVersion,
-                token,
-                healthCheck,
-                encountersHealth,
-                preferredLanguages
-        )
+            CentralLog.d(TAG, "getMessages() to be called with InstanceID = $token")
 
-        CentralLog.d(TAG, "getMessages() to be called with InstanceID = $token")
+            messagesCall.enqueue(object : Callback<MessagesResponse> {
+                override fun onResponse(call: Call<MessagesResponse>, response: Response<MessagesResponse>) {
+                    val responseCode = response.code()
 
-        messagesCall.enqueue(object : Callback<MessagesResponse> {
-            override fun onResponse(call: Call<MessagesResponse>, response: Response<MessagesResponse>) {
-                val responseCode = response.code()
+                    if (responseCode == 200) {
+                        CentralLog.d(TAG, "onResponse() got 200 response.")
 
-                if (responseCode == 200) {
-                    CentralLog.d(TAG, "onResponse() got 200 response.")
-
-                    response.body()?.let {
-                        CentralLog.d(TAG, "onResponse() MessagesResponse = $it")
-                        messagesResponseCallback?.invoke(it)
+                        response.body()?.let {
+                            CentralLog.d(TAG, "onResponse() MessagesResponse = $it")
+                            messagesResponseCallback?.invoke(it)
+                        }
+                    } else if (responseCode == 401) {
+                        response.errorBody()?.let {
+                            val errorMessage: ErrorMessage = Gson().fromJson(it.string(), ErrorMessage::class.java)
+                            val messageResponse = MessagesResponse(emptyList(), null, false, errorMessage.message)
+                            messagesResponseCallback?.invoke(messageResponse)
+                        }
+                    } else {
+                        CentralLog.w(TAG, "onResponse() got error response code = $responseCode.")
                     }
-                } else if (responseCode == 401) {
-                    response.errorBody()?.let {
-                        val errorMessage: ErrorMessage = Gson().fromJson(it.string(), ErrorMessage::class.java)
-                        val messageResponse = MessagesResponse(emptyList(), null, false, errorMessage.message)
-                        messagesResponseCallback?.invoke(messageResponse)
-                    }
-                } else {
-                    CentralLog.w(TAG, "onResponse() got error response code = $responseCode.")
+
+                    jobService?.jobFinished(params, false)
                 }
 
-                jobService?.jobFinished(params, false)
-            }
+                override fun onFailure(call: Call<MessagesResponse>, t: Throwable) {
+                    CentralLog.e(TAG, "onResponse() failed $t")
 
-            override fun onFailure(call: Call<MessagesResponse>, t: Throwable) {
-                CentralLog.e(TAG, "onResponse() failed $t")
+                    jobService?.jobFinished(params, false)
+                }
+            })
+        } else {
+            CentralLog.e(TAG, "onResponse() failed")
 
-                jobService?.jobFinished(params, false)
-            }
-        })
+            jobService?.jobFinished(params, false)
+        }
     }
 }

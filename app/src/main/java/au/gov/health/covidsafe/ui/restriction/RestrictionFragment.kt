@@ -62,7 +62,7 @@ class RestrictionFragment: BaseFragment() {
                     val layoutManager = LinearLayoutManager(this.requireContext())
                     select_state_activity.layoutManager = layoutManager
 
-                    stateActivityListAdapter.setRecords(it, 0)
+                    stateActivityListAdapter.setRecords(it, null)
 
                     stateActivityListAdapter.setOnStateListClickListener(object : StateActivityAdapter.OnStateListClickListener {
                         override fun onStateClick(subheading: List<Subheadings>, activity: String?, activityTitle: String?, time: String?, content: String?) {
@@ -108,8 +108,15 @@ class RestrictionFragment: BaseFragment() {
         val layoutManager = LinearLayoutManager(this.requireContext())
         select_state.layoutManager = layoutManager
 
-        stateListAdapter.setRecords(createStateList(), 0)
-
+        val state = Preference.getSelectedRestrictionState(requireContext())
+        var selectedState: Int? = null
+        val list = createStateList()
+        list.forEachIndexed { index, s ->
+            if (s == state) {
+                selectedState = index
+            }
+        }
+        stateListAdapter.setRecords(list, selectedState)
         stateListAdapter.setOnStateListClickListener(object : StateAdapter.OnStateListClickListener{
             override fun onStateClick(state: String) {
                 select_state_layout.slideAnimation(SlideDirection.DOWN, SlideType.HIDE, 300)

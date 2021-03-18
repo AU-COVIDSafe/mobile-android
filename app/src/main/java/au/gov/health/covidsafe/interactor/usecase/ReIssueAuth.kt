@@ -10,19 +10,15 @@ import au.gov.health.covidsafe.logging.CentralLog
 import au.gov.health.covidsafe.networking.request.ReIssueAuthRequest
 import au.gov.health.covidsafe.networking.response.IssueInitialRefreshtokenResponse
 import au.gov.health.covidsafe.networking.service.AwsClient
-import au.gov.health.covidsafe.preference.Preference
 
-private const val TAG = "GetCaseStatisticsUseCase"
+private const val TAG = "ReIssueAuth"
 
-class ReIssueAuth(private val awsClient: AwsClient, lifecycle: Lifecycle, private val context: Context?,
+class ReIssueAuth(private val awsClient: AwsClient, lifecycle: Lifecycle, private val context: Context,
                     private val subject: String?, private val refreshToken: String?) : UseCase<IssueInitialRefreshtokenResponse, String>(lifecycle) {
 
     override suspend fun run(params: String): Either<Exception, IssueInitialRefreshtokenResponse> {
-        val token = Preference.getEncrypterJWTToken(context)
         return try {
-                val response = retryRetrofitCall {
-                    awsClient.reIssueAuth(ReIssueAuthRequest(subject, refreshToken)).execute()
-                }
+                val response = awsClient.reIssueAuth(ReIssueAuthRequest(subject, refreshToken)).execute()
 
                 when {
                     response?.code() == 200 -> {

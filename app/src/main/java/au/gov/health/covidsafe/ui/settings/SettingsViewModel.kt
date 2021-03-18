@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import au.gov.health.covidsafe.factory.RetrofitServiceGenerator
+import au.gov.health.covidsafe.interactor.Failure
 import au.gov.health.covidsafe.networking.request.ChangePostcodeRequest
 import au.gov.health.covidsafe.networking.response.UploadPostcodeResponse
 import au.gov.health.covidsafe.networking.service.AwsClient
@@ -36,22 +37,28 @@ class SettingsViewModel(application: Application): AndroidViewModel(application)
         showSpinner.value = true
 
         val token = Preference.getEncrypterJWTToken(getApplication() as Context)
-        val changePstcode: Call<UploadPostcodeResponse> = awsClient.changePostcode("Bearer $token", ChangePostcodeRequest(postcode))
-        changePstcode.enqueue(object : Callback<UploadPostcodeResponse> {
-            override fun onFailure(call: Call<UploadPostcodeResponse>, t: Throwable) {
-                onError()
-                showSpinner.value = false
-            }
-
-            override fun onResponse(call: Call<UploadPostcodeResponse>, response: Response<UploadPostcodeResponse>) {
-                if (response.code() == 200) {
-                    postcodeUpdated.value = true
-                    showSpinner.value = false
-                } else {
+        val authenticate = Preference.getAuthenticate(context)
+        if (authenticate) {
+            val changePstcode: Call<UploadPostcodeResponse> = awsClient.changePostcode("Bearer $token", ChangePostcodeRequest(postcode))
+            changePstcode.enqueue(object : Callback<UploadPostcodeResponse> {
+                override fun onFailure(call: Call<UploadPostcodeResponse>, t: Throwable) {
+                    onError()
                     showSpinner.value = false
                 }
-            }
-        })
+
+                override fun onResponse(call: Call<UploadPostcodeResponse>, response: Response<UploadPostcodeResponse>) {
+                    if (response.code() == 200) {
+                        postcodeUpdated.value = true
+                        showSpinner.value = false
+                    } else {
+                        showSpinner.value = false
+                    }
+                }
+            })
+        } else {
+            showSpinner.value = false
+            onError()
+        }
     }
 
     private fun onError() {

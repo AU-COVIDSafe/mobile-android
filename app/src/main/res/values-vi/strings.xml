@@ -29,6 +29,7 @@
   <string name="change_language_content">Đọc hướng dẫn về cách sử dụng COVIDSafe bằng ngôn ngữ khác.</string>
   <string name="change_postcode_description">Cập nhật nếu mã bưu điện của bạn đã thay đổi sau khi tải xuống COVIDSafe.</string>
   <string name="change_postcode_heading">Thay đổi mã bưu điện của bạn</string>
+  <string name="change_postcode_intro">Bạn đã chuyển sang khu vực có mã bưu điện khác kể từ khi đăng ký sử dụng COVIDSafe chưa? \n\nLuôn cập nhật mã bưu điện của bạn có thể hỗ trợ các nhân viên y tế tiến hành truy vết. \n\nĐọc *chính sách bảo mật của COVIDSafe* và *thông báo thu thập* để biết thêm chi tiết về việc thông tin của bạn được lưu trữ và chia sẻ như thế nào.</string>
   <string name="CodeHasExpired">Mã PIN của bạn đã hết hạn.</string>
   <string name="collection_message">COVIDSafe hiện đang thu thập thông tin chẩn đoán để giúp bạn khắc phục sự cố với Ứng dụng của mình. *Tìm hiểu thêm *</string>
   <string name="consent_button">Tôi đồng ý</string>
@@ -295,6 +296,7 @@
   <string name="home_app_permission_status_title">Kiểm tra cài đặt của bạn</string>
   <string name="home_been_tested_title">Nhân viên y tế có yêu cầu bạn đăng tải dữ liệu của bạn chưa?</string>
   <string name="home_bluetooth_permission">Bluetooth®: %s</string>
+  <string name="home_bottom_nav">Trang Chủ</string>
   <string name="home_data_has_been_uploaded">Dữ liệu của bạn đã được đăng tải</string>
   <string name="home_data_has_been_uploaded_message">Bạn đang giúp ngăn chặn sự lây lan của COVID-19 bằng cách đăng tải dữ liệu của bạn hàng ngày trong khi tự cách ly.</string>
   <string name="home_data_uploaded">Đăng ký tự cách ly</string>
@@ -378,6 +380,7 @@
   <string name="last_7_days">7 ngày vừa qua</string>
   <string name="loading_numbers">Đang tải các số mới nhất</string>
   <string name="locally_acquired">%@ ca nhiễm bệnh ở địa phương</string>
+  <string name="main_restrictions">Những hạn chế chính</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe trong tiến trình cập nhật. \n\nVui lòng đảm bảo điện thoại của bạn không bị tắt cho đến khi cập nhật hoàn tất.</string>
   <string name="minute">Phút</string>
@@ -449,6 +452,8 @@
   <string name="pin_number">mã số pin</string>
   <string name="PINNumber_VO_Label">Mã số PIN</string>
   <string name="PN_MobileNumber_VOLabel">Số điện thoại di động</string>
+  <string name="postcode_api_error">Có lỗi. Kiểm tra kết nối internet của bạn và thử lại.</string>
+  <string name="postcode_change_label">Mã bưu điện hiện tại ở Úc</string>
   <string name="postcode_success">Mã bưu điện của bạn đã được cập nhật</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">Có vấn đề với việc nhận mã PIN?</string>
@@ -459,6 +464,27 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Đồng ý đăng ký</string>
   <string name="registration_consent_second_paragraph">Thông tin về việc tiếp xúc của tôi với những người dùng COVIDSafe khác, nếu một người dùng COVIDSafe khác mà tôi đã tiếp xúc xét nghiệm dương tính với COVID-19 và đăng tải dữ liệu tiếp xúc của họ.</string>
+  <string name="restrictions_accommodation">Chỗ lưu trú</string>
+  <string name="restrictions_activity">Hoạt động</string>
+  <string name="restrictions_cafes">Quán cà phê và Nhà hàng</string>
+  <string name="restrictions_disclaimer">Lựa chọn của bạn sẽ chỉ được sử dụng để hiển thị các hạn chế trong khu vực của bạn. COVIDSafe không lưu trữ hoặc sử dụng dữ liệu vị trí.</string>
+  <string name="restrictions_domestic_travel">Du lịch Nội địa</string>
+  <string name="restrictions_education">Giáo dục và Chăm sóc trẻ em</string>
+  <string name="restrictions_entertainment">Địa điểm Giải trí</string>
+  <string name="restrictions_error_dismiss">Bỏ qua</string>
+  <string name="restrictions_error_heading">Chưa có thông tin về các hạn chế</string>
+  <string name="restrictions_error_message">Kiểm tra kết nối internet của bạn hoặc thử lại sau.</string>
+  <string name="restrictions_error_try">Thử lại</string>
+  <string name="restrictions_gatherings_work">Tụ tập và Công việc</string>
+  <string name="restrictions_hair_beauty">Dịch vụ Làm tóc và Làm đẹp</string>
+  <string name="restrictions_heading">Hạn chế</string>
+  <string name="restrictions_hotspots">Điểm nóng và Các Vị trí Ca nhiễm</string>
+  <string name="restrictions_retail">Bán lẻ và Bán hàng</string>
+  <string name="restrictions_select_activity">Chọn hoạt động</string>
+  <string name="restrictions_select_state">Chọn tiểu bang hoặc lãnh thổ</string>
+  <string name="restrictions_sports">Thể thao và Giải trí</string>
+  <string name="restrictions_state">Tiểu bang hoặc lãnh thổ</string>
+  <string name="restrictions_wedding">Đám cưới, Tang lễ và Tôn giáo</string>
   <string name="save">Lưu</string>
   <string name="scheduled" formatted="false">Bạn đã lên lịch trình cho COVIDSafe tạm ngưng hoạt động từ %@ đến %@ .</string>
   <string name="search">Tìm kiếm</string>
@@ -484,11 +510,15 @@
   <string name="snooze_calendar_toggle">Lịch trình tạm ngưng hoạt động</string>
   <string name="snooze_covidsafe_button">Tạm ngưng hoạt động COVIDSafe</string>
   <string name="snooze_covidsafe_button_description">Tạm ngưng hoạt động của COVIDSafe trong một khoảng thời gian nhất định.</string>
+  <string name="snooze_end_now">Kết thúc tạm ngưng hoạt động ngay bây giờ</string>
   <string name="snooze_ended">Kết thúc tạm ngưng hoạt động.</string>
   <string name="snooze_ends">Tạm ngưng hoạt động kết thúc trong</string>
   <string name="snooze_from">Tạm ngưng hoạt động từ</string>
   <string name="snooze_heading">Tạm ngưng hoạt động COVIDSafe</string>
+  <string name="snooze_interference_popup1">Tạm ngưng hoạt động được lên lịch tiếp theo bắt đầu từ %@</string>
+  <string name="snooze_interference_popup2">Đặt tạm ngưng hoạt động kết thúc trước thời gian này.</string>
   <string name="snooze_on">Tạm ngưng hoạt động vào %@</string>
+  <string name="snooze_running">Kết thúc tạm ngưng hoạt động ngay bây giờ để đặt hẹn giờ mới.</string>
   <string name="snooze_timer_description">Đặt hẹn giờ để tạm ngưng hoạt động COVIDSafe.</string>
   <string name="snooze_to">Tạm ngưng hoạt động đến</string>
   <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe không sử dụng Bluetooth và không ghi lại các tiếp xúc. \n\n Bạn đã lên lịch trình cho COVIDSafe tạm ngưng hoạt động từ %@ đến %@ .</string>

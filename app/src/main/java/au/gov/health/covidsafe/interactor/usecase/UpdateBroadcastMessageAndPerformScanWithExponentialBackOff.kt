@@ -25,6 +25,8 @@ class UpdateBroadcastMessageAndPerformScanWithExponentialBackOff(private val aws
 
     override suspend fun run(params: Void?): Either<Exception, BroadcastMessageResponse> {
         val token = Preference.getEncrypterJWTToken(context)
+        val authenticate = Preference.getAuthenticate(context)
+        if (!authenticate) {  return Failure(Exception()) }
         return token?.let { jwtToken ->
             var response = call(jwtToken)
             var retryCount = 0

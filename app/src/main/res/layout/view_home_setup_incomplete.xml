@@ -132,8 +132,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/permission_icon"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/jwt_expired"
-                tools:text="Please register again" />
+                android:text="@string/jwt_expired" />
 
             <TextView
                 android:id="@+id/register_body"
@@ -147,8 +146,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ic_register_again"
                 tools:visibility="visible"
-                android:text="@string/jwt_expired_description"
-                tools:text="There is an issue with your registration details." />
+                android:text="@string/jwt_expired_description" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

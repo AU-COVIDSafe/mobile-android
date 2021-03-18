@@ -29,6 +29,7 @@
   <string name="change_language_content">阅读其他语言版本的COVIDSafe使用指南。</string>
   <string name="change_postcode_description">如果下载 COVIDSafe 后您的邮政编码发生更改，请及时更新。</string>
   <string name="change_postcode_heading">更改邮政编码</string>
+  <string name="change_postcode_intro">注册使用COVIDSafe后，您是否搬到了不同邮政编码的区域？ \n\n及时更新您的邮政编码可以帮助卫生官员追踪接触者。  \n\n请阅读*COVIDSafe隐私政策*和*信息收集通知*，以进一步了解您的信息是如何存储和共享的。</string>
   <string name="CodeHasExpired">您的PIN码已失效。</string>
   <string name="collection_message">COVIDSafe现在会收集诊断信息，以帮助您解决应用程序中的问题。*了解更多信息*</string>
   <string name="consent_button">我同意</string>
@@ -295,6 +296,7 @@
   <string name="home_app_permission_status_title">检查您的设置</string>
   <string name="home_been_tested_title">是否有卫生官员要求您上传数据？</string>
   <string name="home_bluetooth_permission">蓝牙®： %s</string>
+  <string name="home_bottom_nav">首页</string>
   <string name="home_data_has_been_uploaded">您的数据已上传</string>
   <string name="home_data_has_been_uploaded_message">自我隔离期间，请您每天上传数据，以协助阻止COVID-19的传播。</string>
   <string name="home_data_uploaded">自我隔离注册</string>
@@ -378,6 +380,7 @@
   <string name="last_7_days">最近7天</string>
   <string name="loading_numbers">正在加载最新统计数字</string>
   <string name="locally_acquired">%@本地感染</string>
+  <string name="main_restrictions">主要限制措施</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">COVIDSafe正在更新。 \n\n请保持开机状态直至更新完成。</string>
   <string name="minute">分钟</string>
@@ -449,6 +452,8 @@
   <string name="pin_number">pin码</string>
   <string name="PINNumber_VO_Label">PIN码</string>
   <string name="PN_MobileNumber_VOLabel">手机号码</string>
+  <string name="postcode_api_error">出现错误。请检查您的互联网连接，然后重试。</string>
+  <string name="postcode_change_label">当前的澳大利亚邮政编码</string>
   <string name="postcode_success">您的邮政编码已更新</string>
   <string name="queensland">昆士兰州</string>
   <string name="ReceivePinIssue">接收PIN码时遇到问题？</string>
@@ -459,6 +464,27 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">注册同意书</string>
   <string name="registration_consent_second_paragraph">我与其他COVIDSafe用户的接触信息（如果与我发生过接触的其他用户COVID-19检测呈阳性并上传其接触者数据）。</string>
+  <string name="restrictions_accommodation">住宿</string>
+  <string name="restrictions_activity">活动</string>
+  <string name="restrictions_cafes">咖啡厅和餐厅</string>
+  <string name="restrictions_disclaimer">您的选择仅用于显示您所在地区的限制措施。COVIDSafe不会存储或使用位置数据。</string>
+  <string name="restrictions_domestic_travel">国内旅行</string>
+  <string name="restrictions_education">教育和儿童保育</string>
+  <string name="restrictions_entertainment">娱乐场所</string>
+  <string name="restrictions_error_dismiss">忽略</string>
+  <string name="restrictions_error_heading">无限制措施</string>
+  <string name="restrictions_error_message">请检查您的互联网连接，或稍后再试。</string>
+  <string name="restrictions_error_try">请重试</string>
+  <string name="restrictions_gatherings_work">聚会和工作</string>
+  <string name="restrictions_hair_beauty">美发及美容服务</string>
+  <string name="restrictions_heading">限制措施</string>
+  <string name="restrictions_hotspots">热点地区和出现病例的地点</string>
+  <string name="restrictions_retail">零售和销售</string>
+  <string name="restrictions_select_activity">选择活动</string>
+  <string name="restrictions_select_state">选择州或领地</string>
+  <string name="restrictions_sports">运动休闲</string>
+  <string name="restrictions_state">州或领地</string>
+  <string name="restrictions_wedding">婚礼、葬礼和宗教活动</string>
   <string name="save">保存</string>
   <string name="scheduled" formatted="false">您已将COVIDSafe设置为从%@休眠至%@ 。</string>
   <string name="search">搜索</string>
@@ -484,11 +510,15 @@
   <string name="snooze_calendar_toggle">休眠日历</string>
   <string name="snooze_covidsafe_button">让COVIDSafe休眠</string>
   <string name="snooze_covidsafe_button_description">让COVIDSafe在特定时间段内休眠。</string>
+  <string name="snooze_end_now">立即结束休眠</string>
   <string name="snooze_ended">休眠已结束</string>
   <string name="snooze_ends">离休眠结束还有</string>
   <string name="snooze_from">休眠始于</string>
   <string name="snooze_heading">将COVIDSafe休眠</string>
+  <string name="snooze_interference_popup1">下一次休眠已设置为从%@开始。</string>
+  <string name="snooze_interference_popup2">将休眠设置为在此时间之前结束。</string>
   <string name="snooze_on">在%@调至休眠状态</string>
+  <string name="snooze_running">立即结束休眠以便设定新的计时器。</string>
   <string name="snooze_timer_description">为COVIDSafe设置定时休眠。</string>
   <string name="snooze_to">休眠至</string>
   <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe未在使用蓝牙，也未在记录接触者。 \n\n您已将COVIDSafe设置为从%@休眠至%@ 。</string>

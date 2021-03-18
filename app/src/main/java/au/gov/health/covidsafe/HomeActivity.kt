@@ -2,6 +2,7 @@ package au.gov.health.covidsafe
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -109,10 +110,15 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
     }
 
     private fun checkAndUpdateHealthStatus() {
+        if (!Preference.getAuthenticate(this)) {
+            isJWTExpired.postValue(true)
+        }
         GetMessagesScheduler.scheduleGetMessagesJob {
             if (it.errorBodyMessage.equals(UNAUTHORIZED) || it.errorBodyMessage.equals(UNAUTHENTICATED)) {
                 isJWTCorrupted.postValue(true)
+                isJWTExpired.postValue(true)
             } else {
+                Log.d("LEE", "Authenticate")
                 isJWTCorrupted.postValue(false)
                 isJWTExpired.postValue(false)
             }

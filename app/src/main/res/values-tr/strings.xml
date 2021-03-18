@@ -29,6 +29,7 @@
   <string name="change_language_content">COVIDSafe\'i farklı bir dilde kullanmak için ilgili kılavuzu okuyunuz.</string>
   <string name="change_postcode_description">COVIDSafe\'i indirdikten sonra posta kodunuz değişti ise güncelleme yapın.</string>
   <string name="change_postcode_heading">Posta kodunuzu değiştirin</string>
+  <string name="change_postcode_intro">COVIDSafe kullanmak için kaydolduktan sonra farklı bir posta kodu alanına mı taşındınız? \n\nPosta kodunuzu güncel tutmanız, sağlık görevlilerinin temas  takibi yapmalarına yardımcı olacaktır.  \n\nBilgilerinizin nasıl saklandığı  ve paylaşıldığı hakkında daha fazla bilgi için *COVIDSafe gizlilik ilkesi* ve *toplama bildirimini* okuyun.</string>
   <string name="CodeHasExpired">PIN kodunuzun süresi doldu.</string>
   <string name="collection_message">COVIDSafe artık uygulamanızla ilgili sorunları gidermenize yardımcı olmak için tanılama bilgileri toplamaktadır. *Daha fazla bilgi edin*</string>
   <string name="consent_button">Kabul ediyorum</string>
@@ -295,6 +296,7 @@
   <string name="home_app_permission_status_title">Ayarlarınızı kontrol edin</string>
   <string name="home_been_tested_title">Bir sağlık yetkilisi verilerinizi sisteme yüklemenizi istedi mi?</string>
   <string name="home_bluetooth_permission">Bluetooth®: %s</string>
+  <string name="home_bottom_nav">Ana sayfa</string>
   <string name="home_data_has_been_uploaded">Verileriniz sisteme yüklenmiştir</string>
   <string name="home_data_has_been_uploaded_message">Kendinizi izole ederken verilerinizi günlük olarak sisteme yükleyerek COVID-19\'un yayılmasını durdurmaya yardımcı olursunuz.</string>
   <string name="home_data_uploaded">Kendinizi izole için kaydolun</string>
@@ -378,6 +380,7 @@
   <string name="last_7_days">Son 7 gün</string>
   <string name="loading_numbers">En son sayılar yükleniyor</string>
   <string name="locally_acquired">%@ yerel olarak edinilen</string>
+  <string name="main_restrictions">Ana kısıtlamalar</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe güncellemesi devam ediyor. \n\n Lütfen güncelleme tamamlanana kadar telefonunuzu kapatmayın.</string>
   <string name="minute">Dakika</string>
@@ -449,6 +452,8 @@
   <string name="pin_number">pin numarası</string>
   <string name="PINNumber_VO_Label">PIN numarası</string>
   <string name="PN_MobileNumber_VOLabel">Cep telefonu numarası</string>
+  <string name="postcode_api_error">Bir hata oluştu. İnternet bağlantınızı kontrol edin ve tekrar deneyin.</string>
+  <string name="postcode_change_label">Avustralya\'daki mevcut posta kodu </string>
   <string name="postcode_success">Posta kodunuz güncellendi</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">PIN alma sorunu mu yaşıyorsunuz?</string>
@@ -459,6 +464,27 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Kayıt onayı</string>
   <string name="registration_consent_second_paragraph">Başka bir kullanıcının COVID-19 testi pozitif çıkması ve temas verilerini sisteme yüklemesi halinde diğer COVIDSafe kullanıcıları ile paylaşılacak şahsıma ait temas bilgileri.</string>
+  <string name="restrictions_accommodation">Konaklama</string>
+  <string name="restrictions_activity">Etkinlik</string>
+  <string name="restrictions_cafes">Kafe ve Restoranlar</string>
+  <string name="restrictions_disclaimer">Seçiminiz yalnızca bölgenizdeki kısıtlamaları göstermek için kullanılacaktır. COVIDSafe, konum verilerini saklamaz veya kullanmaz.</string>
+  <string name="restrictions_domestic_travel">Yurtiçi Seyahat</string>
+  <string name="restrictions_education">Eğitim ve Çocuk Bakımı</string>
+  <string name="restrictions_entertainment">Eğlence Mekanları</string>
+  <string name="restrictions_error_dismiss">Reddet</string>
+  <string name="restrictions_error_heading">Kısıtlamalar mevcut değil</string>
+  <string name="restrictions_error_message">İnternet bağlantınızı kontrol edin veya daha sonra yeniden deneyin.</string>
+  <string name="restrictions_error_try">Yeniden dene</string>
+  <string name="restrictions_gatherings_work">Toplantılar ve İş</string>
+  <string name="restrictions_hair_beauty">Saç ve Güzellik Hizmetleri</string>
+  <string name="restrictions_heading">Kısıtlamalar</string>
+  <string name="restrictions_hotspots">Yoğun Noktalar ve Vaka Konumları</string>
+  <string name="restrictions_retail">Perakende ve Satış</string>
+  <string name="restrictions_select_activity">Etkinlik seçin</string>
+  <string name="restrictions_select_state">Eyalet veya bölge seçin</string>
+  <string name="restrictions_sports">Spor ve Rekreasyon</string>
+  <string name="restrictions_state">Eyalet veya bölge</string>
+  <string name="restrictions_wedding">Düğün, Cenaze ve Dini</string>
   <string name="save">Kaydet</string>
   <string name="scheduled" formatted="false">COVIDSafe\'i %@ ile %@ arasında ertelemeye programladınız .</string>
   <string name="search">Ara</string>
@@ -484,11 +510,15 @@
   <string name="snooze_calendar_toggle">Erteleme takvimi</string>
   <string name="snooze_covidsafe_button">COVIDSafe\'i erteleyin</string>
   <string name="snooze_covidsafe_button_description">COVIDSafe\'i belirli bir süreliğine erteleyin.</string>
+  <string name="snooze_end_now">Ertelemeyi şimdi sonlandır</string>
   <string name="snooze_ended">Erteleme sona erdi.</string>
   <string name="snooze_ends">Erteleme bitişi</string>
   <string name="snooze_from">Erteleme başlangıcı</string>
   <string name="snooze_heading">COVIDSafe\'i ertele</string>
+  <string name="snooze_interference_popup1">Sonraki planlanan erteleme %@ saatinde başlıyor</string>
+  <string name="snooze_interference_popup2">Bu saatten önce sona erecek bir erteleme ayarlayın.</string>
   <string name="snooze_on">Erteleme başlama: %@</string>
+  <string name="snooze_running">Yeni bir zamanlayıcı ayarlamak için ertelemeyi şimdi sonlandırın.</string>
   <string name="snooze_timer_description">COVIDSafe\'i ertelemek için zamanlayıcıyı ayarlayın.</string>
   <string name="snooze_to">Erteleme sonu</string>
   <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe Bluetooth kullanmıyor ve temasları kaydetmiyor.\n\nCOVIDSafe\'i %@ ile %@ arasında ertelemeye programladınız .\n</string>

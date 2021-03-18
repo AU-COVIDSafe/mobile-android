@@ -10,13 +10,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import au.gov.health.covidsafe.R
 
-
 class StateAdapter internal constructor(context: Context) :
         RecyclerView.Adapter<StateAdapter.StateViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var stateList = emptyList<String>()
-    private var selectedState: Int = 0
+    private var selectedState: Int? = null
     private var mListener: OnStateListClickListener? = null
 
     interface OnStateListClickListener {
@@ -44,7 +43,7 @@ class StateAdapter internal constructor(context: Context) :
         holder.imageStateSelect.visibility = View.GONE
         holder.endLine.visibility = View.VISIBLE
 
-        if (position == selectedState) {
+        if (selectedState != null && position == selectedState) {
             holder.imageStateSelect.visibility = View.VISIBLE
         }
         if (position == (this.stateList.size - 1)) {
@@ -56,12 +55,11 @@ class StateAdapter internal constructor(context: Context) :
         }
     }
 
-    fun setRecords(stateList: List<String>, selectedState: Int) {
+    fun setRecords(stateList: List<String>, selectedState: Int?) {
         this.stateList = stateList
-        this.selectedState = selectedState
+        selectedState?.let { this.selectedState = it }
         notifyDataSetChanged()
     }
 
     override fun getItemCount() = stateList.size
-
 }

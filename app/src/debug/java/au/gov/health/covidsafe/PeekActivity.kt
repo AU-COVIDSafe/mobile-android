@@ -2,6 +2,7 @@ package au.gov.health.covidsafe
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -23,8 +24,10 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.database_peek.*
-import kotlinx.android.synthetic.main.database_peek.home_push_notification_token
+import org.json.JSONObject
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 
 private const val TAG = "PeekActivity"
 
@@ -35,6 +38,7 @@ class PeekActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         newPeek()
+        expToken()
     }
 
     private fun newPeek() {
@@ -140,6 +144,56 @@ class PeekActivity : AppCompatActivity() {
         turnSensor()
     }
 
+    private fun expToken() {
+        val token = Preference.getEncrypterJWTToken(applicationContext)
+        val refreshToken = Preference.getEncryptRefreshToken(applicationContext)
+
+        val tokenSeparate = token?.split(".")
+        var subjectItem: String? = null
+        if (tokenSeparate?.size !=null && tokenSeparate.size >= 3) {
+            subjectItem = tokenSeparate.let {
+                it[1]
+            }
+        }
+
+        var subjectByte: ByteArray? = null
+        subjectItem?.let { subjectByte =  android.util.Base64.decode(subjectItem, android.util.Base64.DEFAULT)}
+        val charset = Charsets.UTF_8
+
+        subjectByte?.let {
+            val jsonModel = String(it, charset)
+            val jsonObj = JSONObject(jsonModel)
+
+            val dateObj = Date(jsonObj.get("exp").toString().toLong() * 1000)
+            val subjectId = jsonObj.get("sub").toString()
+
+            val dateString = SimpleDateFormat("dd-MM-yyyy hh:mm:ss a").format(dateObj)
+            token_exp.text = "Token Expire in: $dateString"
+            device_id.text = "Device ID: $subjectId"
+        }
+
+        // Refresh Token
+        val refreshTokenSeparate = refreshToken?.split(".")
+        var item: String? = null
+        if (refreshTokenSeparate?.size !=null && refreshTokenSeparate.size >= 3) {
+            item = refreshTokenSeparate.let {
+                it[1]
+            }
+        }
+
+        refresh_token_exp.text = "Refresh Token Expire in: N/A"
+        var itemByte: ByteArray? = null
+        item?.let { itemByte =  android.util.Base64.decode(item, android.util.Base64.DEFAULT)}
+        itemByte?.let {
+            val jsonModel = String(it, charset)
+            val jsonObj = JSONObject(jsonModel)
+
+            val dateObj = Date(jsonObj.get("exp").toString().toLong() * 1000)
+
+            val dateString = SimpleDateFormat("yyyy-MM-dd").format(dateObj)
+            token_exp.text = "Refresh Token Expire in: " +  dateString
+        }
+    }
     private fun turnSensor() {
         switch_sensor.isChecked =  !Preference.getAdvertiseStop(this)
         switch_sensor.setOnCheckedChangeListener { _, isChecked ->

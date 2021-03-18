@@ -29,6 +29,7 @@
   <string name="change_language_content">Leggi la guida sull\'uso di COVIDSafe in un\'altra lingua.</string>
   <string name="change_postcode_description">Aggiorna il codice postale, se è cambiato da quando hai scaricato COVIDSafe.</string>
   <string name="change_postcode_heading">Cambia il codice postale</string>
+  <string name="change_postcode_intro">Ti sei trasferito/a in un\'area con un diverso codice postale da quando ti sei registrato/a per utilizzare COVIDSafe? \n\nMantenere aggiornato il codice postale può aiutare i funzionari sanitari a intraprendere la ricerca e gestione dei contatti. \n\nLeggi * l\'Informativa sulla privacy di COVIDSafe * e * l\'avviso di raccolta * per ulteriori dettagli sull\'archiviazione e condivisione delle tue informazioni.</string>
   <string name="CodeHasExpired">Il codice PIN è scaduto</string>
   <string name="collection_message">COVIDSafe raccoglie ora informazioni diagnostiche per aiutarti a risolvere i problemi con l\'App. *Per saperne di più*</string>
   <string name="consent_button">Sono d\'accordo</string>
@@ -295,6 +296,7 @@
   <string name="home_app_permission_status_title">Controlla le impostazioni</string>
   <string name="home_been_tested_title">Un funzionario sanitario ti ha chiesto di caricare i tuoi dati?</string>
   <string name="home_bluetooth_permission">Bluetooth®: %s</string>
+  <string name="home_bottom_nav">Home</string>
   <string name="home_data_has_been_uploaded">I tuoi dati sono stati caricati</string>
   <string name="home_data_has_been_uploaded_message">Stai aiutando a fermare la diffusione del COVID-19 caricando i tuoi dati ogni giorno mentre sei in isolamento.</string>
   <string name="home_data_uploaded">Registrati per autoisolamento</string>
@@ -384,6 +386,7 @@
   <string name="low_handshakes_item2">Aggiorna la tua app all\'ultima versione tramite Google Play Store o Apple Store.</string>
   <string name="low_handshakes_item3">Riavvia il telefono e apri di nuovo l\'app.</string>
   <string name="low_handshakes_link">Per saperne di più su come controllare se COVIDSafe funziona correttamente</string>
+  <string name="main_restrictions">Restrizioni principali</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress">Aggiornamento COVIDSafe in corso. \n\nAssicurati che il cellulare non sia spento fino al completamento dell\'aggiornamento.</string>
   <string name="minute">Minuto</string>
@@ -455,6 +458,8 @@
   <string name="pin_number">codice PIN</string>
   <string name="PINNumber_VO_Label">Codice PIN</string>
   <string name="PN_MobileNumber_VOLabel">Numero di cellulare</string>
+  <string name="postcode_api_error">Si è verificato un errore. Controlla la tua connessione internet e riprova.</string>
+  <string name="postcode_change_label">Codice postale attuale in Australia</string>
   <string name="postcode_success">Il tuo codice postale è stato aggiornato</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">Problemi nel ricevere il PIN?</string>
@@ -465,6 +470,27 @@
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Consenso alla registrazione</string>
   <string name="registration_consent_second_paragraph">Informazioni sul contatto con altri utenti di COVIDSafe, se un utente con cui sono entrato in contatto risulta positivo al COVID-19 e carica i suoi dati.</string>
+  <string name="restrictions_accommodation">Alloggio</string>
+  <string name="restrictions_activity">Attività</string>
+  <string name="restrictions_cafes">Caffè e ristoranti</string>
+  <string name="restrictions_disclaimer">La selezione verrà utilizzata solo per mostrare le restrizioni nella tua zona. COVIDSafe non memorizza né utilizza i dati sulla posizione.</string>
+  <string name="restrictions_domestic_travel">Viaggi nazionali</string>
+  <string name="restrictions_education">Istruzione e assistenza all\'infanzia</string>
+  <string name="restrictions_entertainment">Luoghi di divertimento</string>
+  <string name="restrictions_error_dismiss">Ignora</string>
+  <string name="restrictions_error_heading">Restrizioni non disponibili</string>
+  <string name="restrictions_error_message">Controlla la tua connessione Internet o riprova più tardi.</string>
+  <string name="restrictions_error_try">Riprova</string>
+  <string name="restrictions_gatherings_work">Riunioni e lavoro</string>
+  <string name="restrictions_hair_beauty">Saloni di bellezza e parrucchieri</string>
+  <string name="restrictions_heading">Restrizioni</string>
+  <string name="restrictions_hotspots">Hotspot e posizione dei casi</string>
+  <string name="restrictions_retail">Negozi e vendite</string>
+  <string name="restrictions_select_activity">Seleziona attività</string>
+  <string name="restrictions_select_state">Seleziona lo Stato o il territorio</string>
+  <string name="restrictions_sports">Sport e ricreazione</string>
+  <string name="restrictions_state">Stato o territorio</string>
+  <string name="restrictions_wedding">Matrimoni, funerali, eventi religiosi</string>
   <string name="save">Salva</string>
   <string name="scheduled" formatted="false">Hai programmato COVIDSafe su snooze da %@ a %@ </string>
   <string name="search">Cerca</string>
@@ -490,11 +516,15 @@
   <string name="snooze_calendar_toggle">Calendario snooze</string>
   <string name="snooze_covidsafe_button">Snooze COVIDSafe.</string>
   <string name="snooze_covidsafe_button_description">Snooze COVIDSafe per un determinato periodo di tempo.</string>
+  <string name="snooze_end_now">Disattiva la funzione di inattività ora.</string>
   <string name="snooze_ended">Snooze è terminato.</string>
   <string name="snooze_ends">Snooze termina tra</string>
   <string name="snooze_from">Snooze da</string>
   <string name="snooze_heading">Snooze COVIDSafe</string>
+  <string name="snooze_interference_popup1">Il prossimo periodo inattivo programmato inizia alle %@</string>
+  <string name="snooze_interference_popup2">Imposta la funzione di inattività fino a quest\'ora.</string>
   <string name="snooze_on">Snooze attivo</string>
+  <string name="snooze_running">Rendi l\'app inattiva ora per impostare un nuovo timer.</string>
   <string name="snooze_timer_description">Imposta il timer di snooze COVIDSafe.</string>
   <string name="snooze_to">Snooze fino a</string>
   <string name="snoozed_calendar_description_android" formatted="false">COVIDSafe non utilizza il Bluetooth e non sta registrando i contatti. \n\n Hai programmato COVIDSafe su snooze da %@ a %@ .</string>

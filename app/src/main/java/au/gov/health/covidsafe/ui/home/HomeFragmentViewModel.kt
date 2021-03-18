@@ -2,7 +2,6 @@ package au.gov.health.covidsafe.ui.home
 
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
@@ -25,7 +24,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import org.json.JSONObject
-import java.util.*
 
 private const val TAG = "HomeFragmentViewModel"
 
@@ -56,6 +54,8 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     val isV2Available = MutableLiveData<Boolean>()
     val reIssueFail = MutableLiveData<Boolean>(false)
     val reIssueSuccess = MutableLiveData<Boolean>(false)
+    val getStatisticSuccessfull = MutableLiveData<Boolean>(false)
+    var reIssueFailOnRefreshToken = false
 
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -64,18 +64,19 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         RetrofitServiceGenerator.createService(AwsClient::class.java)
     }
 
-    fun fetchGetCaseStatistics(lifecycle: Lifecycle) {
+    fun fetchGetCaseStatistics(lifecycle: Lifecycle, afterReIssue: Boolean = false) {
         isV2Available.value = false
         context = getApplication() as Context
         titleOfNumber.value = context.getString(R.string.national_numbers)
         turnCaseNumber.value = Preference.getTurnCaseNumber(context)
-        if(caseNumberDataState.value != CaseNumbersState.LOADING) {
+        if((caseNumberDataState.value != CaseNumbersState.LOADING) || afterReIssue) {
             caseNumberDataState.value = CaseNumbersState.LOADING
 
             viewModelScope.launch(Dispatchers.IO) {
 
                 GetCaseStatisticsUseCase(awsClient, lifecycle, getApplication()).invoke("",
                         onSuccess = {
+                            getStatisticSuccessfull.value = true
                             updateOnSuccess(it)
                         },
                         onFailure = {
@@ -101,8 +102,14 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
                         it.token.let {
                             Preference.putEncrypterJWTToken(context, it)
                         }
+                        fetchGetCaseStatistics(lifecycle, true)
+                        Preference.setAuthenticate(context, true)
+                        reIssueSuccess.value = true
                     },
                     onFailure = {
+                        reIssueFailOnRefreshToken = true
+                        reIssueFail.value = true
+                        Preference.setAuthenticate(context, false)
                         CentralLog.e(TAG, "On Failure: ${it.message}")
                     }
             )
@@ -110,6 +117,11 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     }
 
     fun getReissueAuth(lifecycle: Lifecycle) {
+        if (!Preference.getAuthenticate(context)) {
+            reIssueFail.value = true
+            return
+        }
+        Preference.setAuthenticate(context, false)
         var subject: String? = null
         context = getApplication() as Context
 
@@ -146,9 +158,12 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
                             it.token.let {
                                 Preference.putEncrypterJWTToken(context, it)
                             }
+                            Preference.setAuthenticate(context, true)
                             reIssueSuccess.value = true
+                            fetchGetCaseStatistics(lifecycle, true)
                         },
                         onFailure = {
+                            Preference.setAuthenticate(context, false)
                             reIssueFail.value = true
                         }
                 )
@@ -156,6 +171,9 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         }
     }
 
+    fun getReissueOnRefreshToken(): Boolean{
+        return reIssueFailOnRefreshToken
+    }
     private fun updateOnSuccess(caseStatisticResponse: CaseStatisticResponse) {
         viewModelScope.launch {
             isRefreshing.value = false

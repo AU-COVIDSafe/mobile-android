@@ -40,7 +40,7 @@ class RestrictionDescActivity : AppCompatActivity() {
         }
 
         val summary = "<html><head><style>a{color:#00661B}</style></head>" +
-                "<body >$htmlText.</body></html>"
+                "<body >$htmlText</body></html>"
 
         web_view.loadDataWithBaseURL(null, summary, "text/html", "utf-8", null)
     }

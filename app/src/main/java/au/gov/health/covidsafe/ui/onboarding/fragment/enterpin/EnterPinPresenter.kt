@@ -97,6 +97,7 @@ class EnterPinPresenter(private val enterPinFragment: EnterPinFragment,
                     enterPinFragment.navigateToNextPage()
 
                     val context = enterPinFragment.requireContext()
+                    Preference.setAuthenticate(context, true)
                     Preference.putBuildNumber(context, BuildConfig.VERSION_CODE)
                 } else {
                     onError()

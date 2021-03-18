@@ -39,10 +39,11 @@ object Preference {
     private const val TURN_CASE_NUMBER = "TURN_CASE_NUMBER"
     private const val IS_REREGISTER = "IS_REREGISTER"
     private const val SELECTED_STATE = "SELECTED_STATE"
-    private const val SELECTED_RESTRICTION_STATE = "SELECTED_STATE"
+    private const val SELECTED_RESTRICTION_STATE = "SELECTED_RESTRICTION_STATE"
     private const val SENSOR_START = "SENSOR_START"
     private const val ADVERTISE_STOP = "ADVERTISE_STOP"
     private const val REFRESH_TOKEN = "REFRESH_TOKEN"
+    private const val AUTHENTICATE = "AUTHENTICATE"
 
     fun putDeviceID(context: Context, value: String) {
         context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
@@ -397,5 +398,15 @@ object Preference {
     fun getSelectedRestrictionState(context: Context): String? {
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
         .getString(SELECTED_RESTRICTION_STATE, null)
+    }
+
+    fun setAuthenticate(context: Context, authenticate: Boolean): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .edit().putBoolean(AUTHENTICATE, authenticate).commit()
+    }
+
+    fun getAuthenticate(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
+                .getBoolean(AUTHENTICATE, true)
     }
 }

@@ -14,10 +14,12 @@ import au.gov.health.covidsafe.preference.Preference
 
 private const val TAG = "GetCaseStatisticsUseCase"
 
-class GetRestrictionUseCase(private val awsClient: AwsClient, lifecycle: Lifecycle, private val context: Context?, val state: String) : UseCase<RestrictionResponse, String>(lifecycle) {
+class GetRestrictionUseCase(private val awsClient: AwsClient, lifecycle: Lifecycle, private val context: Context, val state: String) : UseCase<RestrictionResponse, String>(lifecycle) {
 
     override suspend fun run(params: String): Either<Exception, RestrictionResponse> {
         val token = Preference.getEncrypterJWTToken(context)
+        val authenticate = Preference.getAuthenticate(context)
+        if (!authenticate) {  return Failure(Exception()) }
         return token?.let { jwtToken ->
             try {
                 CentralLog.d(TAG, "GetCaseStatisticsUseCase run request")

@@ -475,6 +475,8 @@
   <string name="postcode_api_error">There was an error. Check your internet connection and try again.</string>
   <string name="postcode_change_label">Current postcode in Australia </string>
   <string name="postcode_success">Your postcode has been updated</string>
+  <string name="privacy_policy">Privacy policy</string>
+  <string name="privacy_policy_description">Read the privacy policy for COVIDSafe app</string>
   <string name="queensland">Queensland</string>
   <string name="ReceivePinIssue">Issues receiving your PIN?</string>
   <string name="recovered">Total cases recovered</string>

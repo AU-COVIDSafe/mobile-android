@@ -48,17 +48,46 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/share_card_view"
+        android:id="@+id/privacy_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_24"
-        app:cardBackgroundColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/change_language_card"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="0dp"
         card_view:cardMaxElevation="@dimen/card_elevation_10dp"
         card_view:cardUseCompatPadding="true"
         card_view:contentPadding="0dp">
+
+        <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+            android:id="@+id/privacy_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="@dimen/external_link_height"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4"
+            app:external_linkCard_content="@string/privacy_policy_description"
+            app:external_linkCard_start_icon="@drawable/ic_privace"
+            app:external_linkCard_start_icon_background="@drawable/background_circular_green"
+            app:external_linkCard_start_icon_padding="@dimen/space_8"
+            app:external_linkCard_title="@string/privacy_policy" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/share_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/privacy_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardMaxElevation="@dimen/card_elevation_10dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp"
+        android:visibility="gone">
 
         <include layout="@layout/view_covid_share_tile" />
 

@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
@@ -40,6 +41,7 @@ import au.gov.health.covidsafe.utils.AnimationUtils.slideAnimation
 import au.gov.health.covidsafe.utils.NetworkConnectionCheck
 import au.gov.health.covidsafe.utils.SlideDirection
 import au.gov.health.covidsafe.utils.SlideType
+import kotlinx.android.synthetic.main.fragment_data_privacy.view.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home_case_statistics.*
 import kotlinx.android.synthetic.main.fragment_home_external_links.*
@@ -51,9 +53,7 @@ import kotlinx.android.synthetic.main.view_home_setup_incomplete.*
 import kotlinx.android.synthetic.main.view_national_case_statistics.national_case_layout
 import kotlinx.android.synthetic.main.view_state_case_statistics.*
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import java.text.SimpleDateFormat
@@ -250,6 +250,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         initializeAppShareNavigation()
         initializeHelpTopicsNavigation()
         initializeChangeLanguageNavigation()
+        initializePrivacyNavigation()
 
         registerBroadcastListener()
 
@@ -340,6 +341,15 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         help_topics_link.setOnClickListener {
             HelpFragment.anchor = null
             startActivity(Intent(requireContext(), HelpActivity::class.java))
+        }
+    }
+
+    private fun initializePrivacyNavigation() {
+        privacy_link.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW)
+            val url = LinkBuilder.getPrivacyTopicsUrl()
+            browserIntent.data = Uri.parse(url)
+            startActivity(browserIntent)
         }
     }
 

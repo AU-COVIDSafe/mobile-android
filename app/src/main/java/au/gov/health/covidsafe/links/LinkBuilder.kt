@@ -58,7 +58,7 @@ object LinkBuilder {
         return url
     }
 
-    private fun getPrivacyTopicsUrl(): String {
+    fun getPrivacyTopicsUrl(): String {
         val url = buildLocalisedURL(PRIVACY_TOPICS_BASE)
         CentralLog.d(TAG, "getPrivacyTopicsUrl() $url")
         return url

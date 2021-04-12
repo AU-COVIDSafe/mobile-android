@@ -1,0 +1,60 @@
+# Circle CI Build config for COVIDSafe
+version: 2.1
+
+orbs:
+ android: circleci/android@0.2.0
+
+executors:
+  android-executor: android/android
+
+jobs:
+
+  # test the build
+  test-build:
+    executor: android-executor
+    steps:
+      - checkout
+      - run: touch local.properties
+
+  # do a UAT apk build
+  uat-build:
+    executor: android-executor
+    steps:
+      - checkout
+      - run:
+          command: ./gradlew assembleDebug
+      - store_artifacts:
+          path: ./app/build/outputs
+
+  # do a release build
+  release-build:
+    executor: android-executor    
+    steps:
+      - checkout
+      - run:
+          command: ./gradlew assembleRelease
+      - store_artifacts:
+          path: ./app/build/outputs
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      # test the build on every commit on every branch
+      - test-build
+
+      # build a UAT apk on commit to master
+      - uat-build:
+          requires:
+            - test-build
+          filters:
+            branches:
+              only: master
+
+      # release a build on commit to any release branch
+      - release-build:
+          requires:
+            - test-build
+          filters:
+            branches:
+              only: /release_*/

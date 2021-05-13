@@ -71,9 +71,11 @@ class EnterNumberPresenter(private val enterNumberFragment: EnterNumberFragment)
                         when {
                             it is GetOnboardingOtpException.GetOtpInvalidNumberException -> {
                                 enterNumberFragment.showInvalidPhoneNumberPrompt(R.string.invalid_phone_number)
+                                enterNumberFragment.showPhoneNumberWrong()
                             }
                             context.isInternetAvailable() -> {
-                                enterNumberFragment.showGenericError()
+                                enterNumberFragment.showPhoneNumberWrong()
+//                                enterNumberFragment.showGenericError()
                             }
                             else -> {
                                 enterNumberFragment.showCheckInternetError()

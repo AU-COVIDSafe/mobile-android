@@ -296,6 +296,8 @@
   <!-- for production -->
   <string name="generic_error">Please try again later</string>
   <string name="generic_internet_error">Please check your internet connection</string>
+  <!-- Error message for when a user tries to signup outside of Australia. -->
+  <string name="geoblock_error_message">You may be connected using an internet provider from outside Australia. This could happen when using international data roaming on a non-Australian SIM card.\n\nPlease connect to an Australian network or use a local Wi-Fi internet connection to continue.</string>
   <string name="global_OK">OK</string>
   <string name="heading">Heading</string>
   <string name="hide">Hide</string>
@@ -398,6 +400,9 @@
   <string name="loading_numbers">Loading latest numbers</string>
   <string name="locally_acquired">%@ locally acquired</string>
   <string name="main_restrictions">Main restrictions</string>
+  <string name="max_registration_button2">Cancel</string>
+  <string name="max_registrations">You\'ve reached the limit to register using the same mobile number.\n\nTo use the same mobile number to register again, you must request to delete your current registration information.</string>
+  <string name="max_registrations_button1">Request deletion</string>
   <!-- Splash Screen -->
   <string name="migration_in_progress"> COVIDSafe update in progress. \n\n Please make sure you phone is not switched off until the update is complete.</string>
   <string name="minute">Minute</string>

@@ -3,6 +3,7 @@ package au.gov.health.covidsafe.ui.onboarding.fragment.enternumber
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -16,9 +17,9 @@ import androidx.annotation.NavigationRes
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
-import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.app.TracerApp
+import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.base.PagerChildFragment
 import au.gov.health.covidsafe.ui.base.UploadButtonLayout
@@ -155,6 +156,18 @@ class EnterNumberFragment : PagerChildFragment() {
                 .setMessage(R.string.generic_error)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, null).show()
+    }
+
+    fun showPhoneNumberWrong() {
+        alertDialog?.dismiss()
+        alertDialog = AlertDialog.Builder(activity)
+                .setMessage(R.string.max_registrations)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setNegativeButton(R.string.max_registration_button2, null)
+                .setPositiveButton(R.string.max_registrations_button1) { _,_ ->
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://covidsafe-form.service.gov.au/")))
+                }
+                .show()
     }
 
     fun navigateToOTPPage(

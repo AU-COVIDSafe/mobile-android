@@ -73,6 +73,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private var counter: Int = 0
     private var jwtExpired: Boolean = false
+    private var cloudFront: Boolean = false
 
     private var checkIsInternetConnected = false
     private var isAppWithLatestVersion = false
@@ -159,6 +160,7 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
             isJWTExpired.observe(this@HomeFragment, isJwtExpired)
             isAppUpdateAvailableLiveData.observe(this@HomeFragment, latestAppAvailable)
             isWindowFocusChangeLiveData.observe(this@HomeFragment, refreshUiObserver)
+            cloudFrontIssue.observe(this@HomeFragment, isCloudFrontIssue)
         }
 
         homeFragmentViewModel.turnCaseNumber.observe(this, Observer { turnOn ->
@@ -205,6 +207,15 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
                     }
                     permissions_card_subtitle.visibility = GONE
                     registration_layout.visibility = VISIBLE
+                    if (cloudFront) {
+                        re_register.visibility = GONE
+                        register_body.visibility = GONE
+                        geoblock_error_message.visibility = VISIBLE
+                    } else {
+                        re_register.visibility = VISIBLE
+                        register_body.visibility = VISIBLE
+                        geoblock_error_message.visibility = GONE
+                    }
                 }
             }
         })
@@ -235,6 +246,10 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private val isJwtExpired = Observer<Boolean> { expired ->
         jwtExpired = expired
+    }
+
+    private val isCloudFrontIssue = Observer<Boolean> {
+        cloudFront = it
     }
 
     override fun onResume() {

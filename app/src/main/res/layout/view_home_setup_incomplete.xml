@@ -148,6 +148,19 @@
                 tools:visibility="visible"
                 android:text="@string/jwt_expired_description" />
 
+            <TextView
+                android:id="@+id/geoblock_error_message"
+                style="@style/fontRobotoRegular16"
+                android:layout_width="0dp"
+                android:paddingEnd="12dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="@color/error_red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/permission_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/geoblock_error_message" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>

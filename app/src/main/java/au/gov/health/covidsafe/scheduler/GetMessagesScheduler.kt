@@ -6,6 +6,7 @@ import android.app.job.JobScheduler
 import android.app.job.JobService
 import android.content.ComponentName
 import android.content.Context
+import android.util.Log
 import au.gov.health.covidsafe.BuildConfig
 import au.gov.health.covidsafe.app.TracerApp
 import au.gov.health.covidsafe.extensions.isBatteryOptimizationDisabled
@@ -26,6 +27,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import okhttp3.internal.toHeaderList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -174,7 +176,6 @@ object GetMessagesScheduler {
             messagesCall.enqueue(object : Callback<MessagesResponse> {
                 override fun onResponse(call: Call<MessagesResponse>, response: Response<MessagesResponse>) {
                     val responseCode = response.code()
-
                     if (responseCode == 200) {
                         CentralLog.d(TAG, "onResponse() got 200 response.")
 
@@ -186,6 +187,12 @@ object GetMessagesScheduler {
                         response.errorBody()?.let {
                             val errorMessage: ErrorMessage = Gson().fromJson(it.string(), ErrorMessage::class.java)
                             val messageResponse = MessagesResponse(emptyList(), null, false, errorMessage.message)
+                            messagesResponseCallback?.invoke(messageResponse)
+                        }
+                    } else if (responseCode == 403) {
+                        val server = response.headers()["server"]
+                        if (!server.isNullOrEmpty() && server == "CloudFront") {
+                            val messageResponse = MessagesResponse(emptyList(), null, false, "CloudFront")
                             messagesResponseCallback?.invoke(messageResponse)
                         }
                     } else {

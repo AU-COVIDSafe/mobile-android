@@ -31,6 +31,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 private const val TAG = "HomeActivity"
 private const val UNAUTHORIZED = "Unauthorized"
 private const val UNAUTHENTICATED = "unauthenticated"
+private const val CLOUDFRONT = "CloudFront"
 
 class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectionListener, SensorDelegate {
 
@@ -39,6 +40,7 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
     var isWindowFocusChangeLiveData = MutableLiveData<Boolean>()
     var isJWTCorrupted = MutableLiveData<Boolean>()
     var isJWTExpired = MutableLiveData<Boolean>()
+    var cloudFrontIssue = MutableLiveData<Boolean>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,6 +119,9 @@ class HomeActivity : FragmentActivity(), NetworkConnectionCheck.NetworkConnectio
             if (it.errorBodyMessage.equals(UNAUTHORIZED) || it.errorBodyMessage.equals(UNAUTHENTICATED)) {
                 isJWTCorrupted.postValue(true)
                 isJWTExpired.postValue(true)
+            } else if (it.errorBodyMessage.equals(CLOUDFRONT)) {
+                isJWTExpired.postValue(true)
+                cloudFrontIssue.postValue(true)
             } else {
                 Log.d("LEE", "Authenticate")
                 isJWTCorrupted.postValue(false)

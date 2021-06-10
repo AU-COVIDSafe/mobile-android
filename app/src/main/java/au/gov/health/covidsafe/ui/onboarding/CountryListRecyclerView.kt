@@ -13,6 +13,8 @@ import au.gov.health.covidsafe.app.TracerApp
 
 const val VIEW_TYPE_GROUP_TITLE = 1
 const val VIEW_TYPE_COUNTRY = 2
+const val NOLFOLK_ISLAND = 672
+const val AUS = 61
 
 interface CountryListItemInterface
 
@@ -69,7 +71,6 @@ class CountryListItemHolder(
             Preference.putCountryNameResID(TracerApp.AppContext, countryNameResId)
             Preference.putCallingCode(TracerApp.AppContext, callingCode)
             Preference.putNationalFlagResID(TracerApp.AppContext, flagResID)
-
             onCountryClicked()
         }
     }

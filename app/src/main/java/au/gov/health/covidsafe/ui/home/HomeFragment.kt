@@ -110,6 +110,9 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
         removeRegistrationData()
 
         NetworkConnectionCheck.addNetworkChangedListener(requireContext(), this)
+
+        val case_numbers_desc = this.getString(R.string.latest_case_numbers)
+        date_desc_v2.text = case_numbers_desc.replace("%@"," ")
     }
 
     private fun removeRegistrationData() {
@@ -361,6 +364,20 @@ class HomeFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, Networ
 
     private fun initializePrivacyNavigation() {
         privacy_link.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW)
+            val url = LinkBuilder.getPrivacyTopicsUrl()
+            browserIntent.data = Uri.parse(url)
+            startActivity(browserIntent)
+        }
+
+        privacy_card_layout.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW)
+            val url = LinkBuilder.getPrivacyTopicsUrl()
+            browserIntent.data = Uri.parse(url)
+            startActivity(browserIntent)
+        }
+
+        privacy_card_inactive_layout.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW)
             val url = LinkBuilder.getPrivacyTopicsUrl()
             browserIntent.data = Uri.parse(url)

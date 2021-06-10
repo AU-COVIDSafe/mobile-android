@@ -84,6 +84,25 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/registration_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:gravity="center_vertical|start"
+            android:importantForAccessibility="no"
+            android:text="@string/geoblock_rego_error"
+            android:textAlignment="viewStart"
+            android:singleLine="false"
+            android:textColor="@color/error_red"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/country_selection_box"
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/enter_number_headline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,7 +116,7 @@
             android:textAppearance="?textAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/country_selection_box" />
+            app:layout_constraintTop_toBottomOf="@+id/registration_error" />
 
         <EditText
             android:id="@+id/enter_number_phone_number"

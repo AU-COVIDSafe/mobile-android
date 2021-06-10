@@ -71,7 +71,8 @@
             app:external_linkCard_start_icon="@drawable/ic_privace"
             app:external_linkCard_start_icon_background="@drawable/background_circular_green"
             app:external_linkCard_start_icon_padding="@dimen/space_8"
-            app:external_linkCard_title="@string/privacy_policy" />
+            app:external_linkCard_title="@string/privacy_policy"
+            android:visibility="gone"/>
 
     </androidx.cardview.widget.CardView>
 

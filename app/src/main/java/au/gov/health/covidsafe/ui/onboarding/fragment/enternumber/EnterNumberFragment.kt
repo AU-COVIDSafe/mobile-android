@@ -23,7 +23,9 @@ import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.talkback.setHeading
 import au.gov.health.covidsafe.ui.base.PagerChildFragment
 import au.gov.health.covidsafe.ui.base.UploadButtonLayout
+import au.gov.health.covidsafe.ui.onboarding.AUS
 import au.gov.health.covidsafe.ui.onboarding.CountryCodeSelectionActivity
+import au.gov.health.covidsafe.ui.onboarding.NOLFOLK_ISLAND
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_CALLING_CODE
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_CHALLENGE_NAME
 import au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment.Companion.ENTER_PIN_DESTINATION_ID
@@ -113,6 +115,12 @@ class EnterNumberFragment : PagerChildFragment() {
 
         country_selection_box.setOnClickListener {
             startActivity(Intent(this.requireContext(), CountryCodeSelectionActivity::class.java))
+        }
+
+        if (callingCode == AUS || callingCode == NOLFOLK_ISLAND) {
+            registration_error.visibility = GONE
+        } else {
+            registration_error.visibility = VISIBLE
         }
     }
 

@@ -298,6 +298,7 @@
   <string name="generic_internet_error">Please check your internet connection</string>
   <!-- Error message for when a user tries to signup outside of Australia. -->
   <string name="geoblock_error_message">You may be connected using an internet provider from outside Australia. This could happen when using international data roaming on a non-Australian SIM card.\n\nPlease connect to an Australian network or use a local Wi-Fi internet connection to continue.</string>
+  <string name="geoblock_rego_error">Note: You can only complete registration once you’ve arrived in Australia.</string>
   <string name="global_OK">OK</string>
   <string name="heading">Heading</string>
   <string name="hide">Hide</string>
@@ -396,6 +397,7 @@
   <string name="jwt_heading">Please register again</string>
   <string name="jwt_success">Registration successfully renewed</string>
   <string name="last_7_days">Last 7 days</string>
+  <string name="latest_case_numbers">Latest available case numbers since %@</string>
   <string name="learn_more">Learn more</string>
   <string name="loading_numbers">Loading latest numbers</string>
   <string name="locally_acquired">%@ locally acquired</string>

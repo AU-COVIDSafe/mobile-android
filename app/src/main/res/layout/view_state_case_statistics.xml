@@ -30,6 +30,21 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/date_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_marginBottom="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:text="Latest available case number since "
+                android:textAppearance="@style/fontRobotoRegular16"
+                android:textColor="@color/slate_black_2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider"
+                visibility="@{viewModel.caseStatisticsLiveData != null}"/>
+
+            <TextView
                 android:id="@+id/date_text_view"
                 dateFormat="@{viewModel.caseStatisticsLiveData.updatedDate}"
                 visibility="@{viewModel.caseStatisticsLiveData != null}"
@@ -38,14 +53,14 @@
                 android:layout_marginStart="@dimen/space_16"
                 android:layout_marginEnd="@dimen/space_16"
                 android:layout_marginBottom="@dimen/space_16"
-                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_4"
                 android:text="27 August 2020 at 3pm AEST"
                 android:textAppearance="@style/fontRobotoRegular16"
                 android:textColor="@color/slate_black_2"
                 android:visibility="visible"
                 tools:text="27 August 2020 at 3pm AEST"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider" />
+                app:layout_constraintTop_toBottomOf="@+id/date_desc" />
 
             <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
                 android:id="@+id/national_new_case_card"
@@ -455,6 +470,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/date_desc_v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_marginBottom="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:textAppearance="@style/fontRobotoRegular16"
+                android:textColor="@color/slate_black_2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider_v2"
+                visibility="@{viewModel.caseStatisticsLiveData != null}"/>
+
+            <TextView
                 android:id="@+id/date_text_view_v2"
                 dateFormat="@{viewModel.caseStatisticsLiveData.updatedDate}"
                 visibility="@{viewModel.caseStatisticsLiveData != null}"
@@ -463,14 +492,14 @@
                 android:layout_marginStart="@dimen/space_16"
                 android:layout_marginEnd="@dimen/space_16"
                 android:layout_marginBottom="@dimen/space_16"
-                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_4"
                 android:text="27 August 2020 at 3pm AEST"
                 android:textAppearance="@style/fontRobotoRegular16"
                 android:textColor="@color/slate_black_2"
                 android:visibility="visible"
                 tools:text="27 August 2020 at 3pm AEST"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/top_case_line_divider_v2" />
+                app:layout_constraintTop_toBottomOf="@+id/date_desc_v2" />
 
             <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
                 android:id="@+id/state_new_case_card"

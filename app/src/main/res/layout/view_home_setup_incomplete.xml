@@ -164,4 +164,36 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_line_grey" />
+
+            <RelativeLayout
+                android:id="@+id/privacy_card_inactive_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16">
+
+                <TextView
+                    style="@style/fontRobotoRegular16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/slate_black_2"
+                    android:textColorLink="@color/slack_black_2" />
+
+                <ImageView
+                    android:layout_width="@dimen/active_status_tick_image_size"
+                    android:layout_height="@dimen/active_status_tick_image_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_chevron_right_black"/>
+
+            </RelativeLayout>
+    </FrameLayout>
 </LinearLayout>

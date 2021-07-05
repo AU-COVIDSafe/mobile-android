@@ -28,4 +28,5 @@ data class CaseDetailsData(
         @SerializedName("locally_acquired") var locallyAcquired: Int?,
         @SerializedName("new_locally_acquired") var newLocallyAcquired: Int?,
         @SerializedName("new_overseas_acquired") var newOverseasAcquired: Int?,
+        @SerializedName("new_under_investigation") var underInvestigate: Int?,
         var deaths: Int?)

@@ -6,6 +6,7 @@ import au.gov.health.covidsafe.R
 import au.gov.health.covidsafe.security.crypto.EncryptedSharedPreferences
 import au.gov.health.covidsafe.security.crypto.MasterKeys
 import au.gov.health.covidsafe.security.crypto.AESEncryptionForPreAndroidM
+import com.blongho.country_data.World
 
 object Preference {
     private const val PREF_ID = "Tracer_pref"
@@ -16,7 +17,7 @@ object Preference {
     private const val COUNTRY_NAME_RES_ID = "COUNTRY_NAME"
     private const val AUSTRALIA_COUNTRY_NAME_RES_ID = R.string.country_region_name_au
     private const val NATIONAL_FLAG_RES_ID = "NATIONAL_FLAG_RES_ID"
-    private const val AUSTRALIA_NATIONAL_FLAG_RES_ID = R.drawable.ic_list_country_au
+    // private const val AUSTRALIA_NATIONAL_FLAG_RES_ID = R.drawable.ic_list_country_au
     private const val PHONE_NUMBER = "PHONE_NUMBER"
     private const val HANDSHAKE_PIN = "HANDSHAKE_PIN"
     private const val DEVICE_ID = "DEVICE_ID"
@@ -200,9 +201,10 @@ object Preference {
     }
 
     fun getNationalFlagResID(context: Context): Int {
+        World.init(context)
         return context.getSharedPreferences(PREF_ID, Context.MODE_PRIVATE)
-                ?.getInt(NATIONAL_FLAG_RES_ID, AUSTRALIA_NATIONAL_FLAG_RES_ID)
-                ?: AUSTRALIA_NATIONAL_FLAG_RES_ID
+                ?.getInt(NATIONAL_FLAG_RES_ID, World.getFlagOf("au"))
+                ?: World.getFlagOf("au")
     }
 
     fun putNextFetchTimeInMillis(context: Context, time: Long) {

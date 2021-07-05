@@ -561,6 +561,27 @@
                         android:text="@{viewModel.aquiredOversea}"/>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/space_4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?textAppearanceBody2"
+                        android:textStyle="bold"
+                        android:text="@{viewModel.investigate}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_4"
+                        android:textAppearance="?textAppearanceBody2"
+                        android:text="@{viewModel.underInvestigation}"/>
+
+                </LinearLayout>
             </LinearLayout>
             <View
                 android:id="@+id/devider_new_case"

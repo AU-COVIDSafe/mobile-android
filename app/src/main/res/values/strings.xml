@@ -566,6 +566,7 @@
   <string name="total_per_state">Total confirmed cases by state and territory</string>
   <string name="twenty_eight_days">28 days</string>
   <string name="type_in_time">Type in time</string>
+  <string name="under_investigation">%@ under investigation</string>
   <string name="under_sixteen_content">I confirm my parent or guardian consents to the Digital Transformation Agency as data store administrator, under legal determination made by the Secretary of the Australian Government Department of Health collecting:</string>
   <string name="under_sixteen_first_paragraph">my registration information</string>
   <!-- OnBoarding Under Sixteen -->

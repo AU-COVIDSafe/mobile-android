@@ -29,8 +29,8 @@ android {
         applicationId "au.gov.health.covidsafe"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 132
-        versionName "2.7"
+        versionCode 134
+        versionName "2.8"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -230,7 +230,7 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
     // flags
-    implementation 'com.michaelfotiadis:android-country-flags:1.0.3'
+    implementation 'com.github.blongho:worldCountryData:1.4'
 
     // Firebase Cloud Messaging
     implementation 'com.google.firebase:firebase-messaging:20.2.4'

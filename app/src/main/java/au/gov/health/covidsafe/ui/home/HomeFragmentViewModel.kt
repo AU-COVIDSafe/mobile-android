@@ -56,6 +56,8 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
     val reIssueSuccess = MutableLiveData<Boolean>(false)
     val getStatisticSuccessfull = MutableLiveData<Boolean>(false)
     var reIssueFailOnRefreshToken = false
+    val underInvestigation = MutableLiveData<String>()
+    val investigate = MutableLiveData<String>()
 
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -259,6 +261,7 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         locallyAquired.value = context.getString(R.string.locally_acquired).replace("%@", "")
         aquiredOversea.value = context.getString(R.string.overseas_acquired).replace("%@", "")
         totalyDeathe.value = context.getString(R.string.total_deaths).replace("%@", "")
+        underInvestigation.value = context.getString(R.string.under_investigation).replace("%@", "")
 
         when (Preference.getSelectedState(context).toString()) {
            "Australia" -> {
@@ -316,6 +319,7 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         newCase.value = if (stateResponse?.newCases != null) { stateResponse.newCases} else { 0 }
         localCase.value = if (stateResponse?.locallyAcquired != null) { stateResponse.newLocallyAcquired.toString()} else { "0" }
         overseaCase.value = if (stateResponse?.overseasAcquired != null) { stateResponse.newOverseasAcquired.toString()} else { "0" }
+        investigate.value = if (stateResponse?.underInvestigate != null) { stateResponse.underInvestigate.toString()} else { "0" }
         activeCase.value = if (stateResponse?.activeCases != null) { stateResponse.activeCases} else { 0 }
         totalDeaths.value = if (stateResponse?.deaths != null) { stateResponse.deaths.toString()} else { "0" }
         titleOfNumber.value = "$stateName numbers"

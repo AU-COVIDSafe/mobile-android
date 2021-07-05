@@ -40,7 +40,6 @@
         android:layout_height="19dp"
         android:layout_marginTop="@dimen/keyline_1"
         android:layout_marginEnd="@dimen/keyline_8"
-        android:src="@drawable/ic_list_country_au"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/country_list_name" />
 

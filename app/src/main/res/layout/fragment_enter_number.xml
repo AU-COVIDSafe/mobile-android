@@ -67,11 +67,10 @@
 
             <ImageView
                 android:id="@+id/national_flag"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_width="30dp"
+                android:layout_height="22dp"
                 android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="@dimen/keyline_6"
-                android:src="@drawable/ic_list_country_au" />
+                android:layout_marginEnd="@dimen/keyline_6" />
 
             <ImageView
                 android:layout_width="6dp"

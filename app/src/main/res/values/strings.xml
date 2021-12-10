@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">Your PIN has expired.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">Enter your mobile number</string>
+  <string name="IssueFooter">We may contact you for further details about your feedback. Your email address won’t be used for any other purpose.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">Change notifications settings</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">You will not receive a notification if COVIDSafe is not active.\nChange notifications settings</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">You will receive a notification if COVIDSafe is not active.\nChange notifications settings</string>
+  <string name="PINNumber_VO_Label">PIN number</string>
+  <string name="PN_MobileNumber_VOLabel">Mobile number</string>
+  <string name="ReceivePinIssue">Issues receiving your PIN?</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">Select country or region</string>
   <string name="action_continue">Continue</string>
   <string name="action_report_an_issue">Report an issue</string>
   <string name="action_upload_done">Done</string>
@@ -34,7 +49,6 @@
   <string name="change_postcode_description">Update if your postcode has changed since downloading COVIDSafe.</string>
   <string name="change_postcode_heading">Change your postcode</string>
   <string name="change_postcode_intro">Have you moved to a different postcode area since you registered to use COVIDSafe? \n\nKeeping your postcode up to date can assist health officials to undertake contact tracing.  \n\nRead the *COVIDSafe privacy policy* and *collection notice* for further details about how your information is stored and shared.</string>
-  <string name="CodeHasExpired">Your PIN has expired.</string>
   <string name="collection_message">COVIDSafe now collects diagnostic information to help you troubleshoot issues with your App. *Learn more*</string>
   <string name="consent_button">I agree</string>
   <!-- Shared Consent Actions -->
@@ -253,7 +267,7 @@
   <string name="country_region_name_zw">Zimbabwe</string>
   <string name="customise_days">Customise days</string>
   <string name="data_privacy_button">Next</string>
-  <string name="data_privacy_content_android">It is important that you read the COVIDSafe *privacy policy* before you register for COVIDSafe.\n\nCOVIDSafe will collect, use or disclose your personal information only in accordance with this policy and the Privacy Act 1988.\n\nIf you are under 16 years of age, your parent/guardian must also read the *privacy policy*.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, *you may also ask for your information* to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name (or pseudonym), mobile number, age range and postcode.\n\nInformation you submit when you register and information about your use of COVIDSafe is stored on a highly secure server.\n\nInformation is also collected to make sure that COVIDSafe is working properly on your device. This includes your operating system, the version of the App you have installed, the language your device is set to, whether Bluetooth® is working and if your App has recorded any encounters in the previous seven days.\n\nOn Android devices, it also includes information about whether battery optimisation is disabled and location services is enabled.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the date and time of contact, anonymous ID code of other COVIDSafe users you come into contact with, Bluetooth signal strength and the phone model of other users, on your device.\n\nOther COVIDSafe users you come into contact with will note your anonymous ID code, the date and time of contact with you, Bluetooth signal strength and your phone model, on their device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for contact tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the *covidsafe.gov.au* website.\n\nSee the COVIDSafe *privacy policy* for further details about your rights about your information and how it will be handled and shared. </string>
+  <string name="data_privacy_content_android">It is important that you read the COVIDSafe *privacy policy* before you register for COVIDSafe. COVIDSafe will collect, use or disclose your personal information only in accordance with this policy and the <i>Privacy Act 1988</i>.\n\nIf you are under 16 years of age, your parent/guardian must also read the *privacy policy*.\n\nUse of COVIDSafe is completely voluntary. You can install or delete the application at any time. If you delete COVIDSafe, *you may also ask for your information* to be deleted from the secure server.\n\nTo register for COVIDSafe, you will need to enter a name (or pseudonym), mobile number, age range and postcode. If you do not provide your personal information, the COVIDSafe app is unable to function as intended.\n\nInformation you submit when you register and information about your use of COVIDSafe is stored on a highly secure server.\n\nInformation is also collected to make sure that COVIDSafe is working properly on your device. This includes your operating system, the version of the App you have installed, the language your device is set to, whether Bluetooth® is working and if your App has recorded any encounters in the previous seven days.\n\nOn Android devices, it also includes information about whether battery optimisation is disabled and location services is enabled.\n\nCOVIDSafe will not collect your location information.\n\nCOVIDSafe will note the date and time of contact, encrypted ID code of other COVIDSafe users you come into contact with, Bluetooth signal strength and the phone model of other users, on your device.\n\nOther COVIDSafe users you come into contact with will note your encrypted  ID code, the date and time of contact with you, Bluetooth signal strength and your phone model, on their device.\n\nIf another user tests positive to COVID-19, they may upload their contact information and a state or territory health official may contact you for contact tracing purposes.\n\nYour registration details will only be used or disclosed for contact tracing and for the proper and lawful functioning of COVIDSafe.\n\nMore information is available at the *covidsafe.gov.au* website.\n\nThe COVIDSafe *privacy policy* provides further details about your rights about your information and how it will be handled and shared. \n\nContact details relating to COVIDSafe privacy enquiries and complaints are provided in the privacy policy under *Contact Us*.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Registration and privacy</string>
   <string name="data_privacy_headline_content_description">Heading, Registration and privacy</string>
@@ -279,8 +293,6 @@
   <string name="enter_pin_resend_pin">Resend PIN</string>
   <string name="enter_pin_timer_expire">Your PIN will expire in</string>
   <string name="enter_pin_wrong_number">Is this mobile number wrong?</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">Enter your mobile number</string>
   <string name="every_day">Every day</string>
   <string name="factors_dotpoint1">number of COVIDSafe users in range</string>
   <string name="factors_dotpoint2">device model and age</string>
@@ -390,7 +402,6 @@
   <string name="invalid_post_code">Invalid postcode</string>
   <string name="is_snoozed_android">COVIDSafe is snoozed</string>
   <string name="is_snoozed_description_android">COVIDSafe is not using Bluetooth and is not recording contacts.</string>
-  <string name="IssueFooter">We may contact you for further details about your feedback. Your email address won’t be used for any other purpose.</string>
   <string name="jwt_description">There is an issue with your registration details.</string>
   <string name="jwt_expired">Your registration has expired.</string>
   <string name="jwt_expired_description">You must confirm your mobile number every 12 months  to ensure your registration details are correct.</string>
@@ -421,6 +432,8 @@
   <string name="no_handshakes_item3">Restart your phone and open the app again.</string>
   <string name="no_handshakes_item4">Check if you have the right settings for <a href="https://www.covidsafe.gov.au/help-topics.html#location-services">Location Services</a>.</string>
   <string name="no_handshakes_link">Read more on how to check if COVIDSafe is working correctly</string>
+  <string name="non_consent_button">I do not agree</string>
+  <string name="non_consent_popup">You cannot continue with the registration process without parent or guardian consent.\n\nPlease exit and delete the app.</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">For example: 51234</string>
   <string name="northern_territory">Northern Territory</string>
@@ -437,12 +450,6 @@
   <string name="notification_settings">Open the app to check your settings.</string>
   <string name="notification_update_content">Update your app to access the latest improvements.</string>
   <string name="notification_update_heading">COVIDSafe update available </string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">Change notifications settings</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">You will not receive a notification if COVIDSafe is not active.\nChange notifications settings</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">You will receive a notification if COVIDSafe is not active.\nChange notifications settings</string>
   <string name="numbers_error">Unable to check for updated numbers.</string>
   <string name="numbers_no_internet">Connect to the internet to ensure you get updated numbers.</string>
   <string name="numbers_refresh">Refresh now</string>
@@ -477,22 +484,19 @@
   <string name="personal_details_post_code_error_prompt">Your Australian postcode number must contain 4 digits. </string>
   <string name="personal_details_post_code_hint">e.g. 2000</string>
   <string name="pin_number">pin number</string>
-  <string name="PINNumber_VO_Label">PIN number</string>
-  <string name="PN_MobileNumber_VOLabel">Mobile number</string>
   <string name="postcode_api_error">There was an error. Check your internet connection and try again.</string>
   <string name="postcode_change_label">Current postcode in Australia </string>
   <string name="postcode_success">Your postcode has been updated</string>
   <string name="privacy_policy">Privacy policy</string>
   <string name="privacy_policy_description">Read the privacy policy for COVIDSafe app</string>
   <string name="queensland">Queensland</string>
-  <string name="ReceivePinIssue">Issues receiving your PIN?</string>
   <string name="recovered">Total cases recovered</string>
-  <string name="registration_consent_content">I consent to the Digital Transformation Agency, as data store administrator, under legal determination made by the Secretary of the Australian Government Department of Health collecting:</string>
-  <string name="registration_consent_diagnostic">information to ensure that COVIDSafe is working properly on my device</string>
-  <string name="registration_consent_first_paragraph">my registration information</string>
+  <string name="registration_consent_content">I consent to the Department of Health as data store administrator, under the <i>Privacy Act 1988</i>, collecting:</string>
+  <string name="registration_consent_diagnostic">information to ensure that COVIDSafe is working properly on my device.</string>
+  <string name="registration_consent_first_paragraph">registration information,</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Registration consent</string>
-  <string name="registration_consent_second_paragraph">information about my contact with other COVIDSafe users, if another user I have come into contact with tests positive for COVID-19 and uploads their contact data</string>
+  <string name="registration_consent_second_paragraph">information about my contact with other COVIDSafe users, if another user I have come into contact with tests positive for COVID-19 and uploads their contact data, and</string>
   <string name="restrictions_accommodation">Accommodation</string>
   <string name="restrictions_activity">Activity</string>
   <string name="restrictions_cafes">Cafes and Restaurants</string>
@@ -519,8 +523,6 @@
   <string name="search">Search</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Select country or region</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">Select country or region</string>
   <string name="select_state_territory_button">Select state or territory</string>
   <string name="select_state_territory_heading">Select state or territory</string>
   <string name="service_not_ok_action">Check app now</string>
@@ -566,17 +568,17 @@
   <string name="total_per_state">Total confirmed cases by state and territory</string>
   <string name="twenty_eight_days">28 days</string>
   <string name="type_in_time">Type in time</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">Select \'I agree\' to confirm consent, or ‘I do not agree’ if you cannot confirm parent or guardian consent. </string>
   <string name="under_investigation">%@ under investigation</string>
-  <string name="under_sixteen_content">I confirm my parent or guardian consents to the Digital Transformation Agency as data store administrator, under legal determination made by the Secretary of the Australian Government Department of Health collecting:</string>
-  <string name="under_sixteen_first_paragraph">my registration information</string>
+  <string name="under_sixteen_content">I confirm my parent or guardian consents to the Department of Health, as data store administrator under the <i>Privacy Act 1988</i>, collecting:</string>
+  <string name="under_sixteen_first_paragraph">registration information,</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">You need the consent of your parent/guardian to proceed</string>
   <string name="under_sixteen_headline_content_description">Heading, You need the consent of your parent/guardian to proceed</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">my registration information</string>
-  <string name="under_sixteen_second_paragraph">information about my contact with other COVIDSafe users, if another user I have come into contact with tests positive for COVID-19 and uploads their contact data</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">Select \'I agree\' to confirm consent. </string>
+  <string name="under_sixteen_registration_consent_first_paragraph">registration information,</string>
+  <string name="under_sixteen_second_paragraph">information about my contact with other COVIDSafe users, if another user I have come into contact with tests positive for COVID-19 and uploads their contact data, and</string>
   <string name="update_available_dismiss_btn">Remind me later</string>
   <string name="update_available_message_android">We’ve been making improvements to COVIDSafe.\nUpdate through the Google Play Store</string>
   <string name="update_available_play_store_btn">Go to Google Play Store</string>
@@ -603,7 +605,7 @@
   <string name="upload_step_verify_pin_header_content_description">Heading, Upload your information</string>
   <string name="upload_step_verify_pin_sub_header">A state or territory health official will send a PIN to your device via text message. Enter it below to upload your information.</string>
   <string name="us_consent_button">I agree</string>
-  <string name="us_registration_consent_diagnostic">information to ensure that COVIDSafe is working properly on my device</string>
+  <string name="us_registration_consent_diagnostic">information to ensure that COVIDSafe is working properly on my device.</string>
   <string name="victoria">Victoria</string>
   <string name="western_australia">Western Australia</string>
   <string name="wrong_ping_number"> Wrong PIN entered</string>

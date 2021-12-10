@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">PIN kodunuzun süresi doldu.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">Cep telefonu numaranızı giriniz</string>
+  <string name="IssueFooter">Geri bildiriminiz hakkında daha fazla bilgi için sizinle iletişime geçebiliriz. E-posta adresiniz başka hiçbir amaçla kullanılmayacaktır.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">Bildirim ayarlarını değiştir</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">COVIDSafe aktif olmadığında bildirim almayacaksınız.\nBildirim ayarlarını değiştir</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">COVIDSafe aktif olmadığında bildirim alacaksınız.\nBildirim ayarlarını değiştir</string>
+  <string name="PINNumber_VO_Label">PIN numarası</string>
+  <string name="PN_MobileNumber_VOLabel">Cep telefonu numarası</string>
+  <string name="ReceivePinIssue">PIN alma sorunu mu yaşıyorsunuz?</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">Ülke veya bölge seçiniz</string>
   <string name="action_continue">Devam</string>
   <string name="action_report_an_issue">Sorun bildir</string>
   <string name="action_upload_done">Bitti</string>
@@ -30,7 +45,6 @@
   <string name="change_postcode_description">COVIDSafe\'i indirdikten sonra posta kodunuz değişti ise güncelleme yapın.</string>
   <string name="change_postcode_heading">Posta kodunuzu değiştirin</string>
   <string name="change_postcode_intro">COVIDSafe kullanmak için kaydolduktan sonra farklı bir posta kodu alanına mı taşındınız? \n\nPosta kodunuzu güncel tutmanız, sağlık görevlilerinin temas  takibi yapmalarına yardımcı olacaktır.  \n\nBilgilerinizin nasıl saklandığı  ve paylaşıldığı hakkında daha fazla bilgi için *COVIDSafe gizlilik ilkesi* ve *toplama bildirimini* okuyun.</string>
-  <string name="CodeHasExpired">PIN kodunuzun süresi doldu.</string>
   <string name="collection_message">COVIDSafe artık uygulamanızla ilgili sorunları gidermenize yardımcı olmak için tanılama bilgileri toplamaktadır. *Daha fazla bilgi edin*</string>
   <string name="consent_button">Kabul ediyorum</string>
   <!-- Shared Consent Actions -->
@@ -249,7 +263,7 @@
   <string name="country_region_name_zw">Zimbabve</string>
   <string name="customise_days">Günleri isteğe göre uyarlayın</string>
   <string name="data_privacy_button">Sonraki</string>
-  <string name="data_privacy_content_android">COVIDSafe\'a kaydolmadan önce *COVIDSafe gizlilik ilkesini* okumanız önemlidir. \n\n16 yaşından küçükseniz, ebeveyniniz/veliniz de *gizlilik ilkesini* okumalıdır. \n\nCOVIDSafe kullanımı tamamen isteğe bağlıdır. Uygulamayı istediğiniz zaman yükleyebilir veya silebilirsiniz. COVIDSafe\'i silerseniz *bilgilerinizin güvenli sunucudan silinmesini de* isteyebilirsiniz. \n\nCOVIDSafe\'e kaydolmak için bir ad (veya takma ad), cep telefonu numarası, yaş aralığı ve posta kodu girmeniz gerekir. \n\nKayıt olurken gönderdiğiniz bilgiler ve COVIDSafe kullanımınızla ilgili bilgiler yüksek düzeyde güvenli bir sunucuda toplanacak ve saklanacaktır. \n\nCOVIDSafe konum bilgilerinizi toplamaz. \n\nCOVIDSafe temas saatini, temas ettiğiniz diğer COVIDSafe kullanıcılarının gizli kimlik kodlarını, Bluetooth® sinyal gücünü ve diğer kullanıcıların telefon modellerini cihazınıza kaydeder. \n\nTemas ettiğiniz diğer COVIDSafe kullanıcıları da gizli  kimlik kodunuzu, sizinle temas tarih ve saatini, Bluetooth® sinyal gücünü ve telefon modelinizi kendi cihazlarında kaydedecektir. \n\nBaşka bir kullanıcının COVID-19 testinin pozitif çıkması durumunda kendi iletişim bilgilerini sisteme yükleyebilir ve bir eyalet veya bölge sağlık yetkilisi temas takibi amacıyla sizinle iletişime geçebilir. \n\nKayıt bilgileriniz yalnızca temas takibi ve COVIDSafe\'in düzgün ve yasalara uygun çalışması için kullanılacak ya da açıklanacaktır. \n\nDaha fazla bilgiyi *Avustralya Hükümeti Sağlık Bakanlığı* web sitesinde bulabilirsiniz. \n\nBilgileriniz ve bu bilgilerin nasıl işleneceği ve paylaşılacağına dair haklarınızla ilgili daha fazla bilgi için COVIDSafe *gizlilik ilkesine* bakınız.</string>
+  <string name="data_privacy_content_android">COVIDSafe\'e kaydolmadan önce COVIDSafe *gizlilik politikasını* okumanız önemlidir. COVIDSafe, kişisel bilgilerinizi yalnızca bu politika ve <i>1988 tarihli Gizlilik Yasası</i> uyarınca toplar, kullanır veya açıklar. \n\n16 yaşından küçükseniz, ebeveyniniz/veliniz de *gizlilik politikasını* okumalıdır. \n\nCOVIDSafe kullanımı tamamen isteğe bağlıdır. Uygulamayı istediğiniz zaman yükleyebilir veya silebilirsiniz. COVIDSafe\'i silerseniz *bilgilerinizin güvenli sunucudan silinmesini de talep edebilirsiniz*. \n\nCOVIDSafe\'e kaydolmak için bir ad (veya takma ad), cep telefonu numarası, yaş aralığı ve posta kodu girmeniz gerekir. Kişisel bilgilerinizi girmezseniz, COVIDSafe uygulaması istenilen şekilde çalışamaz. \n\nKayıt olurken gönderdiğiniz bilgiler ve COVIDSafe kullanımınızla ilgili bilgiler yüksek güvenlikli bir sunucuda depolanır. \n\nCOVIDSafe\'in cihazınızda düzgün çalıştığından emin olmak için de bilgiler toplanır. Bu bilgiler, işletim sisteminizi, yüklediğiniz uygulama sürümünü, cihazınızın ayarlı dilini, Bluetooth®\'un çalışıp çalışmadığını ve uygulamanızın önceki yedi gün içinde herhangi bir sorunla karşılaşıp karşılaşmadığının kaydını içerir.\n\nAndroid cihazlarda ayrıca pil optimizasyonunun devre dışı bırakılıp bırakılmadığı ve konum servislerinin etkinleştirilip etkinleştirilmediği bilgisi de toplanır.\n\nCOVIDSafe konum bilgilerinizi almaz.\n\nCOVIDSafe, temas tarih ve saatini, temas kurduğunuz diğer COVIDSafe kullanıcılarının şifreli kimlik kodunu, Bluetooth sinyal gücünü ve telefon modelini cihazınıza kaydeder.\n\nTemasa geçtiğiniz diğer COVIDSafe kullanıcılarının cihazlarına da, sizin şifrelenmiş kimlik kodunuz, sizinle temas ettikleri tarih ve saat, Bluetooth sinyal gücünüz ve telefon modeliniz kaydedilir.\n\nDiğer kullanıcılardan birinin COVID-19 testi pozitif çıkarsa, bu kişi temas bilgilerini yükleyebilir ve bunun üzerine bir eyalet veya bölge sağlık görevlisi, temas takibi için sizinle iletişime geçebilir.\n\nKayıt bilgileriniz yalnızca temas takibi ve COVIDSafe\'in düzgün ve yasal işleyişi için kullanılacak veya açıklanacaktır.\n\nDaha fazla bilgi için *covidsafe.gov.au* web sitesini ziyaret edebilirsiniz.\n\nCOVIDSafe *gizlilik politikası* metninde bilgileriniz ve bunların nasıl ele alınıp paylaşılacağı ile ilgili haklarınıza dair daha ayrıntılı bilgi bulabilirsiniz.\n\nCOVIDSafe gizlilik uygulamasına ilişkin soru ve şikayetlerinizi iletebileceğiniz iletişim bilgileri, gizlilik politikasının *Bize Ulaşın* başlıklı bölümünde mevcuttur.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Kayıt ve gizlilik</string>
   <string name="data_privacy_headline_content_description">Başlık, Kayıt ve gizlilik</string>
@@ -275,8 +289,6 @@
   <string name="enter_pin_resend_pin">PIN\'i yeniden gönder</string>
   <string name="enter_pin_timer_expire">PIN sürenizin bitişi:</string>
   <string name="enter_pin_wrong_number">Bu cep telefonu numarası yanlış mı?</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">Cep telefonu numaranızı giriniz</string>
   <string name="every_day">Her gün</string>
   <string name="factors_dotpoint1">alanda COVIDSafe kullanıcıları sayısı</string>
   <string name="factors_dotpoint2">cihazın modeli ve yaşı</string>
@@ -371,7 +383,6 @@
   <string name="invalid_post_code">Geçersiz posta kodu</string>
   <string name="is_snoozed_android">COVIDSafe ertelendi</string>
   <string name="is_snoozed_description_android">COVIDSafe Bluetooth kullanmıyor ve temasları kaydetmiyor.</string>
-  <string name="IssueFooter">Geri bildiriminiz hakkında daha fazla bilgi için sizinle iletişime geçebiliriz. E-posta adresiniz başka hiçbir amaçla kullanılmayacaktır.</string>
   <string name="jwt_description">Kayıt bilgilerinizle ilgili bir sorun var.</string>
   <string name="jwt_expired">Kayıt süreniz doldu.</string>
   <string name="jwt_expired_description">Kayıt bilgilerinizin doğru olduğundan emin olabilmek için cep telefonunuzu her 12 ayda bir teyid etmelisiniz.</string>
@@ -394,6 +405,8 @@
   <string name="no_handshakes_item2">Uygulamanızı Google Play Store veya Apple Store üzerinden en son sürüme güncelleyin.</string>
   <string name="no_handshakes_item3">Telefonunuzu yeniden başlatın ve uygulamayı tekrar açın.</string>
   <string name="no_handshakes_link">COVIDSafe\'in doğru çalışıp çalışmadığının nasıl kontrol edileceği hakkında daha fazlasını okuyun</string>
+  <string name="non_consent_button">Kabul etmiyorum</string>
+  <string name="non_consent_popup">Ebeveyn ya da veli izni olmadan kayıt sürecine devam edemezsiniz. \n\nLütfen çıkış yapın ve uygulamayı silin.</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Örneğin: 51234</string>
   <string name="northern_territory">Kuzey Bölgesi</string>
@@ -410,12 +423,6 @@
   <string name="notification_settings">Ayarlarınızı kontrol etmek için uygulamayı açın.</string>
   <string name="notification_update_content">En son gelişmelere erişmek için uygulamanızı güncelleyinız.</string>
   <string name="notification_update_heading">COVIDSafe güncellemesi mevcut </string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">Bildirim ayarlarını değiştir</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">COVIDSafe aktif olmadığında bildirim almayacaksınız.\nBildirim ayarlarını değiştir</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">COVIDSafe aktif olmadığında bildirim alacaksınız.\nBildirim ayarlarını değiştir</string>
   <string name="numbers_error">Güncellenen sayılar kontrol edilemiyor.</string>
   <string name="numbers_no_internet">Güncellenen sayıları aldığınızdan emin olmak için internete bağlanın.</string>
   <string name="numbers_refresh">Şimdi yenile</string>
@@ -450,20 +457,17 @@
   <string name="personal_details_post_code_error_prompt">Avustralya posta kodu numaranız 4 rakam içermelidir. </string>
   <string name="personal_details_post_code_hint">örneğin 2000</string>
   <string name="pin_number">pin numarası</string>
-  <string name="PINNumber_VO_Label">PIN numarası</string>
-  <string name="PN_MobileNumber_VOLabel">Cep telefonu numarası</string>
   <string name="postcode_api_error">Bir hata oluştu. İnternet bağlantınızı kontrol edin ve tekrar deneyin.</string>
   <string name="postcode_change_label">Avustralya\'daki mevcut posta kodu </string>
   <string name="postcode_success">Posta kodunuz güncellendi</string>
   <string name="queensland">Queensland</string>
-  <string name="ReceivePinIssue">PIN alma sorunu mu yaşıyorsunuz?</string>
   <string name="recovered">Toplam iyileşen vakalar</string>
-  <string name="registration_consent_content">Avustralya Hükümeti Sağlık Bakanının yasal olarak belirlediğine uygun olarak aşağıdaki bilgileri toplayan Dijital Dönüşüm Ajansı\'nı veri deposu yöneticisi olarak onaylıyorum:</string>
+  <string name="registration_consent_content">Sağlık Bakanlığı\'nın 1988 tarihli Gizlilik Yasası uyarınca veri deposu yöneticisi olarak aşağıdaki bilgileri toplamasına rıza gösteriyorum:</string>
   <string name="registration_consent_diagnostic">COVIDSafe\'in cihazımda düzgün çalıştığından emin olmak için gereken bilgiler.</string>
-  <string name="registration_consent_first_paragraph">Kayıt bilgilerim.</string>
+  <string name="registration_consent_first_paragraph">kayıt bilgileri,</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Kayıt onayı</string>
-  <string name="registration_consent_second_paragraph">Başka bir kullanıcının COVID-19 testi pozitif çıkması ve temas verilerini sisteme yüklemesi halinde diğer COVIDSafe kullanıcıları ile paylaşılacak şahsıma ait temas bilgileri.</string>
+  <string name="registration_consent_second_paragraph">temaslı olduğum başka bir kullanıcının COVID-19 testinin pozitif çıkması ve temas verilerini sisteme yüklemesi halinde diğer COVIDSafe kullanıcıları ile paylaşılacak şahsıma ait temas bilgileri, ve</string>
   <string name="restrictions_accommodation">Konaklama</string>
   <string name="restrictions_activity">Etkinlik</string>
   <string name="restrictions_cafes">Kafe ve Restoranlar</string>
@@ -490,8 +494,6 @@
   <string name="search">Ara</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Ülke veya bölge seçin</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">Ülke veya bölge seçiniz</string>
   <string name="select_state_territory_button">Eyaleti veya bölgeyi seçin</string>
   <string name="select_state_territory_heading">Eyaleti veya bölgeyi seçin</string>
   <string name="service_not_ok_action">Uygulamayı şimdi kontrol edin</string>
@@ -535,16 +537,16 @@
   <string name="total_per_state">Eyalet ve bölgelere göre toplam doğrulanmış vakalar</string>
   <string name="twenty_eight_days">28 gün</string>
   <string name="type_in_time">Zamanı yazın</string>
-  <string name="under_sixteen_content">Ebeveynimin ya da vasimin aşağıdaki bilgileri toplayan Dijital Dönüşüm Ajansı\'na veri deposu yöneticisi olarak Avustralya Hükümeti Sağlık Bakanının yasal olarak belirlediğine uygun olarak rızası olduğunu onaylıyorum:</string>
-  <string name="under_sixteen_first_paragraph">Kayıt bilgilerim.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">Onay vermek için \'Kabul ediyorum\'u, ebeveyn ya da veli onayını teyit edemiyorsanız \'Kabul etmiyorum\'u seçiniz.</string>
+  <string name="under_sixteen_content">Ebeveynimin ya da velimin, Sağlık Bakanlığı\'nın 1988 tarihli Gizlilik Yasası uyarınca veri deposu yöneticisi olarak aşağıdaki bilgileri toplamasına rızası olduğunu onaylıyorum:</string>
+  <string name="under_sixteen_first_paragraph">kayıt bilgileri,</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">Devam etmek için ebeveyninizin/vasinizin rızası gereklidir</string>
   <string name="under_sixteen_headline_content_description">Başlık, Devam etmek için ebeveyninizin/vasinizin rızası gereklidir</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">Kayıt bilgilerim.</string>
-  <string name="under_sixteen_second_paragraph">Başka bir kullanıcının COVID-19 testi pozitif çıkması ve temas verilerini sisteme yüklemesi halinde diğer COVIDSafe kullanıcıları ile paylaşılacak şahsıma ait temas bilgileri.</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">Rızanızı onaylamak için \'Kabul ediyorum\'u seçiniz. </string>
+  <string name="under_sixteen_registration_consent_first_paragraph">kayıt bilgileri,</string>
+  <string name="under_sixteen_second_paragraph">temaslı olduğum başka bir kullanıcının COVID-19 testinin pozitif çıkması ve temas verilerini sisteme yüklemesi halinde diğer COVIDSafe kullanıcıları ile paylaşılacak şahsıma ait temas bilgileri, ve</string>
   <string name="update_available_dismiss_btn">Daha sonra hatırlat</string>
   <string name="update_available_message_android">COVIDSafe\'de iyileştirmeler yapmaktayız.\nGoogle Play Store üzerinden güncelleme yapın</string>
   <string name="update_available_play_store_btn">Google Play Store\'a git</string>

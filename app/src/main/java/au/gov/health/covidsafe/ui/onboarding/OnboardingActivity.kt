@@ -1,23 +1,29 @@
 package au.gov.health.covidsafe.ui.onboarding
 
 import android.os.Bundle
+import android.view.Gravity
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.NavHostFragment
-import au.gov.health.covidsafe.ui.base.HasBlockingState
-import au.gov.health.covidsafe.preference.Preference
 import au.gov.health.covidsafe.R
+import au.gov.health.covidsafe.preference.Preference
+import au.gov.health.covidsafe.ui.base.HasBlockingState
 import au.gov.health.covidsafe.ui.base.PagerContainer
 import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import com.github.razir.progressbutton.bindProgressButton
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
 import kotlinx.android.synthetic.main.activity_onboarding.*
+
 
 class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer {
 
@@ -43,6 +49,22 @@ class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer 
         } else {
             val graph = inflater.inflate(R.navigation.nav_onboarding)
             myNavHostFragment.navController.graph = graph
+        }
+
+        non_consent.setOnClickListener {
+
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage(R.string.non_consent_popup)
+            builder.setNegativeButton(R.string.global_OK, null)
+
+            val dialog = builder.create()
+            dialog.show()
+
+            val negativeButton: Button = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+            val parent = negativeButton.parent as LinearLayout
+            parent.gravity = Gravity.CENTER_HORIZONTAL
+            val leftSpacer: View = parent.getChildAt(1)
+            leftSpacer.visibility = GONE
         }
     }
 
@@ -126,6 +148,14 @@ class OnboardingActivity : FragmentActivity(), HasBlockingState, PagerContainer 
 
     override fun enableNextButton() {
         onboarding_next.isEnabled = true
+    }
+
+    override fun visibleConsentButton() {
+        non_consent.visibility = VISIBLE
+    }
+
+    override fun invisibleConsentButton() {
+        non_consent.visibility = GONE
     }
 
     override fun disableNextButton() {

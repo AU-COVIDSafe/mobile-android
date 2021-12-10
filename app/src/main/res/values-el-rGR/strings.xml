@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">Ο κωδικός σας έχει λήξει.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">Εισάγετε τον αριθμό του κινητού σας</string>
+  <string name="IssueFooter">Μπορεί να επικοινωνήσουμε μαζί σας για περισσότερες λεπτομέρειες σχετικά με τα σχόλια σας. Η διεύθυνση email σας δε θα χρησιμοποιηθεί για κανέναν άλλο σκοπό.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">Αλλαγή στις ρυθμίσεις ειδοποιήσεων</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">Δε θα λάβετε ειδοποίηση εάν η COVIDSafe δεν είναι ενεργή. \n Αλλαγή στις ρυθμίσεις ειδοποιήσεων</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">Θα λάβετε ειδοποίηση εάν η COVIDSafe δεν είναι ενεργή. \n Αλλάξετε τις ρυθμίσεις ειδοποιήσεων</string>
+  <string name="PINNumber_VO_Label">Κωδικός PΙΝ</string>
+  <string name="PN_MobileNumber_VOLabel">Αριθμός κινητού</string>
+  <string name="ReceivePinIssue">Προβλήματα με τη λήψη του κωδικού σας;</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">Επιλέξτε χώρα ή περιοχή</string>
   <string name="action_continue">Συνεχίστε</string>
   <string name="action_report_an_issue">Αναφέρετε το πρόβλημα</string>
   <string name="action_upload_done">Συνεχίστε</string>
@@ -30,7 +45,6 @@
   <string name="change_postcode_description">Ενημερώστε εάν ο ταχυδρομικός σας κώδικας έχει αλλάξει από τότε που κατεβάσατε την COVIDSafe.</string>
   <string name="change_postcode_heading">Αλλαγή του ταχυδρομικού κώδικα</string>
   <string name="change_postcode_intro">Έχετε μετακομίσει σε διαφορετική περιοχή ταχυδρομικού κώδικα από την εγγραφή σας για να χρησιμοποιήσετε το COVIDSafe; \n\n Η ενημέρωση του ταχυδρομικού σας κώδικα μπορεί να βοηθήσει τους υπαλλήλους υγείας να πραγματοποιήσουν εντοπισμό επαφών. \n\n Για περισσότερες λεπτομέρειες σχετικά με τον τρόπο αποθήκευσης και κοινοποίησης των πληροφοριών σας, διαβάστε την * Πολιτική απορρήτου COVIDSafe * και *.</string>
-  <string name="CodeHasExpired">Ο κωδικός σας έχει λήξει.</string>
   <string name="collection_message">Η COVIDSafe συλλέγει τώρα διαγνωστικές πληροφορίες για να σας βοηθήσει να αντιμετωπίσετε προβλήματα με την εφαρμογή σας. *Μάθετε περισσότερα*</string>
   <string name="consent_button">Συμφωνώ</string>
   <!-- Shared Consent Actions -->
@@ -249,7 +263,7 @@
   <string name="country_region_name_zw">Ζιμπάμπουε</string>
   <string name="customise_days">Προσαρμογή ημερών</string>
   <string name="data_privacy_button">Επόμενο</string>
-  <string name="data_privacy_content_android">Συνίσταται να διαβάσετε την *πολιτική απορρήτου* της COVIDSafe πριν εγγραφείτε στην COVIDSafe. \n\nΕάν είστε κάτω των 16 ετών, ο γονέας/κηδεμόνας σας πρέπει επίσης να διαβάσει την *πολιτική απορρήτου*. \n\nΗ χρήση της COVIDSafe είναι εντελώς εθελοντική. Μπορείτε να εγκαταστήσετε ή να διαγράψετε την εφαρμογή ανά πάσα στιγμή. Εάν διαγράψετε την COVIDSafe, *μπορείτε επίσης να ζητήσετε τη διαγραφή των στοιχείων σας* από τον ασφαλή διακομιστή. \n\nΓια να εγγραφείτε στην COVIDSafe, θα πρέπει να εισάγετε όνομα (ή ψευδώνυμο), αριθμό κινητού τηλεφώνου, ηλικιακή ομάδα και ταχυδρομικό κώδικα. \n\nΟι πληροφορίες που εισάγετε κατά την εγγραφή σας και οι πληροφορίες από τη χρήση σας της COVIDSafe θα συλλέγονται και θα αποθηκεύονται σε έναν εξαιρετικά ασφαλή διακομιστή. \n\nΗ COVIDSafe δε θα συλλέξει τις πληροφορίες τοποθεσίας σας. \n\nΗ COVIDSafe θα καταγράφει την ώρα της επικοινωνίας και έναν ανώνυμο κωδικό ταυτότητας άλλων χρηστών COVIDSafe με τους οποίους έρχεστε σε επαφή. \n\nΆλλοι χρήστες της COVIDSafe με τους οποίους έρχεστε σε επαφή θα σημειώσουν έναν ανώνυμο κωδικό ταυτότητας και την ώρα επαφής μαζί σας στη συσκευή τους. \n\nΕάν ένας άλλος χρήστης διαγνωστεί θετικά με COVID-19, μπορεί να αναρτήσει τα στοιχεία επικοινωνίας του και ο υπάλληλος υγείας της Πολιτείας ή της Επικράτειάς σας μπορεί να επικοινωνήσει μαζί σας για λόγους ανίχνευσης επαφών. \n\nΤα στοιχεία εγγραφής σας θα χρησιμοποιηθούν ή θα αποκαλυφθούν μόνο για τον εντοπισμό επαφών και για την ορθή και νόμιμη λειτουργία της COVIDSafe. \n\nΠερισσότερες πληροφορίες διατίθενται στον ιστότοπο *Υπουργείο Υγείας της Αυστραλιανής Κυβέρνησης*. \n\nΔιαβάστε την *πολιτική απορρήτου* της COVIDSafe για περισσότερες λεπτομέρειες για τα δικαιώματά σας σχετικά με τις πληροφορίες σας και τον τρόπο χειρισμού και κοινοποίησής τους.</string>
+  <string name="data_privacy_content_android">Συνιστάται να διαβάσετε την *πολιτική απορρήτου* της COVIDSafe πριν εγγραφείτε στην COVIDSafe. Η COVIDSafe θα συλλέγει, θα χρησιμοποιεί ή θα εμφανίζει τις προσωπικές σας πληροφορίες μόνο σε συμφωνία με αυτήν την πολιτική και τον <i>Νόμο περί Απορρήτου του 1988</i>.\n\nΕάν είστε κάτω των 16 ετών, ο γονέας/κηδεμόνας σας πρέπει επίσης να διαβάσει την *πολιτική απορρήτου*. \n\nΗ χρήση της COVIDSafe είναι εντελώς εθελοντική. Μπορείτε να εγκαταστήσετε ή να διαγράψετε την εφαρμογή ανά πάσα στιγμή. Εάν διαγράψετε την COVIDSafe, *μπορείτε επίσης να ζητήσετε τη διαγραφή των στοιχείων σας* από τον ασφαλή διακομιστή. \n\nΓια να εγγραφείτε στην COVIDSafe, θα πρέπει να εισαγάγετε όνομα (ή ψευδώνυμο), αριθμό κινητού τηλεφώνου, ηλικιακή ομάδα και ταχυδρομικό κώδικα. Αν δεν δώσετε τα προσωπικά σας στοιχεία, η εφαρμογή COVIDSafe δεν μπορεί να εκτελέσει τις λειτουργίες για τις οποίες προορίζεται. \n\nΟι πληροφορίες που εισάγετε κατά την εγγραφή σας και οι πληροφορίες από την από μέρους σας χρήση της COVIDSafe αποθηκεύονται σε έναν διακομιστή υψηλής ασφάλειας.\n\nΠληροφορίες συλλέγονται επίσης ώστε να διασφαλιστεί ότι η COVIDSafe λειτουργεί σωστά στη συσκευή σας. Αυτό αφορά το λειτουργικό σας σύστημα, την έκδοση της εφαρμογής που έχετε εγκαταστήσει, τη γλώσσα στην οποία είναι ρυθμισμένη η συσκευή σας, το αν λειτουργεί το Bluetooth® σας και το αν η εφαρμογή σας έχει καταγράψει τυχόν συναντήσεις τις προηγούμενες επτά ημέρες.\n\nΣτις συσκευές Android, αφορά επίσης πληροφορίες σχετικά με το αν η βελτιστοποίηση λειτουργίας της μπαταρίας είναι απενεργοποιημένη και οι υπηρεσίες τοποθεσίας είναι ενεργοποιημένες.\n\nΗ COVIDSafe δεν συλλέγει τις πληροφορίες τοποθεσίας σας.\n\nΗ COVIDSafe καταγράφει, στη συσκευή σας, την ημερομηνία και ώρα της επαφής, τον κρυπτογραφημένο κωδικό ID άλλων χρηστών COVIDSafe με τους οποίους έρχεστε σε επαφή, την ισχύ του σήματος Bluetooth και το μοντέλο του τηλεφώνου των άλλων χρηστών.\n\nΟι άλλοι χρήστες COVIDSafe με τους οποίους έρχεστε σε επαφή θα καταγράφουν, στη συσκευή τους, τον κρυπτογραφημένο κωδικό ID σας, την ημερομηνία και ώρα επαφής μαζί σας, την ισχύ του σήματος Bluetooth και το μοντέλο του τηλεφώνου σας.\n\nΑν κάποιος άλλος χρήστης εξεταστεί και βρεθεί θετικός στην COVID-19, ενδέχεται να αναρτήσει τα στοιχεία επικοινωνίας του και ένας υπάλληλος του εθνικού ή τοπικού συστήματος υγείας ενδέχεται να επικοινωνήσει μαζί σας για σκοπούς ιχνηλάτησης επαφών.\n\nΟι πληροφορίες εγγραφής σας θα χρησιμοποιηθούν ή θα κοινοποιηθούν μόνο με σκοπό την ιχνηλάτηση επαφών, καθώς και τη σωστή και νόμιμη λειτουργία της COVIDSafe.\n\nΠερισσότερες πληροφορίες διατίθενται στον ιστότοπο *covidsafe.gov.au*.\n\nΣτην *πολιτική απορρήτου* της COVIDSafe παρέχονται περαιτέρω λεπτομέρειες σχετικά με τα δικαιώματά σας όσον αφορά τις πληροφορίες σας και τον τρόπο με τον οποίο θα υποβάλλονται σε διαχείριση και κοινοποίηση. \n\nΤα στοιχεία επικοινωνίας που αφορούν ερωτήματα και παράπονα σχετικά με το απόρρητο στην COVIDSafe παρέχονται στην πολιτική απορρήτου, στην ενότητα *Επικοινωνία*.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Εγγραφή και προστασία του απορρήτου</string>
   <string name="data_privacy_headline_content_description">Επικεφαλίδα, Εγγραφή και προστασία του απορρήτου</string>
@@ -275,8 +289,6 @@
   <string name="enter_pin_resend_pin">Στείλτε ξανά τον κωδικό σας</string>
   <string name="enter_pin_timer_expire">Ο κωδικός σας θα λήξει σε</string>
   <string name="enter_pin_wrong_number">Είναι ο αριθμός κινητού λάθος;</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">Εισάγετε τον αριθμό του κινητού σας</string>
   <string name="every_day">Κάθε μέρα</string>
   <string name="factors_dotpoint1">αριθμός χρηστών της COVIDSafe στην περιοχή σας</string>
   <string name="factors_dotpoint2">μοντέλο συσκευής και ηλικία</string>
@@ -288,6 +300,9 @@
   <!-- for production -->
   <string name="generic_error">Προσπαθήστε ξανά αργότερα.</string>
   <string name="generic_internet_error">Ελέγξτε τη σύνδεσή σας στο διαδίκτυο</string>
+  <!-- Error message for when a user tries to signup outside of Australia. -->
+  <string name="geoblock_error_message">Μπορείτε να συνδεθείτε χρησιμοποιώντας πάροχο Ίντερνετ εκτός Αυστραλίας. Αυτό μπορεί να συμβεί με τη χρήση περιαγωγής διεθνών δεδομένων σε μια κάρτα SIM που δεν προέρχεται από την Αυστραλία.</string>
+  <string name="geoblock_rego_error">Σημείωση: Μπορείτε να συμπληρώσετε την εγγραφή μόνο εφόσον εισέλθετε στην Αυστραλία.</string>
   <string name="global_OK">OK</string>
   <string name="heading">Επικεφαλίδα</string>
   <string name="hide">Απόκρυψη</string>
@@ -371,13 +386,13 @@
   <string name="invalid_post_code">Μη έγκυρος ταχυδρομικός κώδικας</string>
   <string name="is_snoozed_android">Η COVIDSafe βρίσκεται σε αναβολή</string>
   <string name="is_snoozed_description_android">Η COVIDSafe δεν χρησιμοποιεί Bluetooth και δεν καταγράφει επαφές.</string>
-  <string name="IssueFooter">Μπορεί να επικοινωνήσουμε μαζί σας για περισσότερες λεπτομέρειες σχετικά με τα σχόλια σας. Η διεύθυνση email σας δε θα χρησιμοποιηθεί για κανέναν άλλο σκοπό.</string>
   <string name="jwt_description">Υπάρχει ένα πρόβλημα με τα στοιχεία εγγραφής σας.</string>
   <string name="jwt_expired">Η εγγραφή σας έχει λήξει.</string>
   <string name="jwt_expired_description">Πρέπει να επιβεβαιώνετε τον αριθμό του κινητού σας κάθε 12 μήνες για να βεβαιωθείτε ότι τα στοιχεία εγγραφής σας είναι σωστά.</string>
   <string name="jwt_heading">Παρακαλούμε εγγραφείτε ξανά</string>
   <string name="jwt_success">Η εγγραφή ανανεώθηκε με επιτυχία</string>
   <string name="last_7_days">Τις τελευταίες 7 ημέρες</string>
+  <string name="latest_case_numbers">Οι τελευταίοι διαθέσιμοι αριθμοί περιστατικών από %@</string>
   <string name="loading_numbers">Φόρτωση τελευταίων αριθμών</string>
   <string name="locally_acquired">%@ αποκτηθέν τοπικά</string>
   <string name="low_handshakes_description">Δοκιμάστε αυτές τις συμβουλές για να βελτιώσετε την απόδοση της COVIDSafe στο τηλέφωνό σας:</string>
@@ -400,6 +415,8 @@
   <string name="no_handshakes_item2">Ενημερώστε την εφαρμογή σας στην πιο πρόσφατη έκδοση μέσω του Google Play Store ή του Apple Store.</string>
   <string name="no_handshakes_item3">Επανεκκινήστε το τηλέφωνό σας και ανοίξτε ξανά την εφαρμογή.</string>
   <string name="no_handshakes_link">Διαβάστε περισσότερα για το πώς να ελέγξετε εάν η COVIDSafe λειτουργεί σωστά</string>
+  <string name="non_consent_button">Δεν συμφωνώ</string>
+  <string name="non_consent_popup">Δεν μπορείτε να συνεχίσετε τη διαδικασία εγγραφής χωρίς συναίνεση γονέα ή κηδεμόνα. \n\nΠαρακαλούμε βγείτε και σβήστε την εφαρμογή.</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Για παράδειγμα: 51234</string>
   <string name="northern_territory">Βόρεια Επικράτεια</string>
@@ -416,12 +433,6 @@
   <string name="notification_settings">Ανοίξτε την εφαρμογή για να ελέγξετε τις ρυθμίσεις σας.</string>
   <string name="notification_update_content">Ανανεώστε την εφαρμογή σας για πρόσβαση στις πιο πρόσφατες βελτιώσεις.</string>
   <string name="notification_update_heading">Η ενημερωμένη έκδοση είναι διαθέσιμη!</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">Αλλαγή στις ρυθμίσεις ειδοποιήσεων</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">Δε θα λάβετε ειδοποίηση εάν η COVIDSafe δεν είναι ενεργή. \n Αλλαγή στις ρυθμίσεις ειδοποιήσεων</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">Θα λάβετε ειδοποίηση εάν η COVIDSafe δεν είναι ενεργή. \n Αλλάξετε τις ρυθμίσεις ειδοποιήσεων</string>
   <string name="numbers_error">Δεν είναι δυνατός ο έλεγχος για ενημερωμένους αριθμούς.</string>
   <string name="numbers_no_internet">Συνδεθείτε στο Διαδίκτυο για να βεβαιωθείτε ότι λαμβάνετε ενημερωμένους αριθμούς.</string>
   <string name="numbers_refresh">Ανανεώστε τώρα</string>
@@ -456,20 +467,17 @@
   <string name="personal_details_post_code_error_prompt">Ο Αυστραλιανός ταχυδρομικός σας κώδικας πρέπει να περιέχει 4 ψηφία.</string>
   <string name="personal_details_post_code_hint">π.χ. 2000</string>
   <string name="pin_number">κωδικός PIN</string>
-  <string name="PINNumber_VO_Label">Κωδικός PΙΝ</string>
-  <string name="PN_MobileNumber_VOLabel">Αριθμός κινητού</string>
   <string name="postcode_api_error">Παρουσιάστηκε σφάλμα. Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά.</string>
   <string name="postcode_change_label">Ο ταχυδρομικός σας κώδικας στην Αυστραλία</string>
   <string name="postcode_success">Ο ταχυδρομικός σας κώδικας έχει ενημερωθεί</string>
   <string name="queensland">Κουίνσλαντ</string>
-  <string name="ReceivePinIssue">Προβλήματα με τη λήψη του κωδικού σας;</string>
   <string name="recovered">Σύνολο ασθενών που ανάρρωσαν</string>
-  <string name="registration_consent_content">Συναινώ να είναι ο Οργανισμός Ψηφιακού Μετασχηματισμού διαχειριστής της αποθήκευσης δεδομένων, σύμφωνα με τη νομική απόφαση του Γενικού Γραμματέα Υγείας της Αυστραλίας που συλλέγει:</string>
+  <string name="registration_consent_content">Συναινώ ώστε το Υπουργείο Υγείας, ως διαχειριστής του χώρου αποθήκευσης δεδομένων σύμφωνα με τον Νόμο περί Απορρήτου του 1988, να συλλέγει τα εξής:</string>
   <string name="registration_consent_diagnostic">Πληροφορίες για να διασφαλιστεί ότι η COVIDSafe λειτουργεί σωστά στη συσκευή μου.</string>
-  <string name="registration_consent_first_paragraph">Τα στοιχεία εγγραφής μου.</string>
+  <string name="registration_consent_first_paragraph">στοιχεία εγγραφής,</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Συναίνεση εγγραφής</string>
-  <string name="registration_consent_second_paragraph">Πληροφορίες σχετικά με την επαφή μου με άλλους χρήστες της COVIDSafe, εάν άλλος χρήστης με τον οποίο έχω έρθει σε επαφή διαγνωστεί θετικά για το COVID-19 και ανεβάζει τα δικά του στοιχεία επικοινωνίας.</string>
+  <string name="registration_consent_second_paragraph">πληροφορίες για την επαφή μου με άλλους χρήστες της COVIDSafe, αν κάποιος άλλος χρήστης με τον οποίο έχω έρθει σε επαφή εξεταστεί και βρεθεί θετικός στην COVID-19 και αναρτήσει τα δικά του στοιχεία επικοινωνίας και</string>
   <string name="restrictions_accommodation">Καταλύματα</string>
   <string name="restrictions_activity">Δραστηριότητα</string>
   <string name="restrictions_cafes">Καφετέριες και Εστιατόρια</string>
@@ -496,8 +504,6 @@
   <string name="search">Αναζήτηση</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Επιλέξτε χώρα ή περιοχή</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">Επιλέξτε χώρα ή περιοχή</string>
   <string name="select_state_territory_button">Επιλογή πολιτείας ή επικράτειας</string>
   <string name="select_state_territory_heading">Επιλογή πολιτείας ή επικράτειας</string>
   <string name="service_not_ok_action">Ελέγξτε την εφαρμογή τώρα</string>
@@ -540,16 +546,17 @@
   <string name="total_per_state">Σύνολο επιβεβαιωμένων κρουσμάτων ανά πολιτεία και επικράτεια</string>
   <string name="twenty_eight_days">28 ημέρες</string>
   <string name="type_in_time">Πληκτρολογήστε την ώρα</string>
-  <string name="under_sixteen_content">Επιβεβαιώνω ότι ο γονέας ή ο κηδεμόνας μου συναινεί να είναι ο Οργανισμός Ψηφιακού Μετασχηματισμού  διαχειριστής του χώρου αποθήκευσης δεδομένων, σύμφωνα με νόμιμο καθορισμό του Γενικού Γραμματέα του Υπουργείου Υγείας της Αυστραλιανής Κυβέρνησης που συλλέγει:</string>
-  <string name="under_sixteen_first_paragraph">Τα στοιχεία εγγραφής μου.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">Επιλέξτε «Συμφωνώ» για επιβεβαίωση της συναίνεσής σας ή «Δεν συμφωνώ» αν δεν μπορείτε να επιβεβαιώσετε τη συναίνεση γονέα ή κηδεμόνα. </string>
+  <string name="under_investigation">%@ υπό διερεύνηση</string>
+  <string name="under_sixteen_content">Επιβεβαιώνω ότι ο γονέας ή ο κηδεμόνας μου συναινεί ώστε το Υπουργείο Υγείας, ως διαχειριστής του χώρου αποθήκευσης δεδομένων σύμφωνα με τον Νόμο περί Απορρήτου του 1988, να συλλέγει τα εξής:</string>
+  <string name="under_sixteen_first_paragraph">στοιχεία εγγραφής,</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">Χρειάζεστε τη συναίνεση του γονέα/κηδεμόνα σας για να συνεχίσετε</string>
   <string name="under_sixteen_headline_content_description">Επικεφαλίδα, Χρειάζεστε τη συγκατάθεση του γονέα/κηδεμόνα σας για να προχωρήσετε</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">Τα στοιχεία εγγραφής μου.</string>
-  <string name="under_sixteen_second_paragraph">Πληροφορίες για την επαφή μου με άλλους χρήστες της COVIDSafe, εάν ένας άλλος χρήστης με τον οποίο έχω έρθει σε επαφή έχει διαγνωστεί θετικά με COVID-19 και αναρτήσει τα στοιχεία επικοινωνίας του.</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">Επιλέξτε «Συμφωνώ» για επιβεβαίωση της συναίνεσής σας.</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">στοιχεία εγγραφής,</string>
+  <string name="under_sixteen_second_paragraph">πληροφορίες για την επαφή μου με άλλους χρήστες της COVIDSafe, αν κάποιος άλλος χρήστης με τον οποίο έχω έρθει σε επαφή εξεταστεί και βρεθεί θετικός στην COVID-19 και αναρτήσει τα δικά του στοιχεία επικοινωνίας και</string>
   <string name="update_available_dismiss_btn">Θύμισέ μου αργότερα</string>
   <string name="update_available_message_android">Έχουμε κάνει βελτιώσεις στην COVIDSafe. Ανανεώστε την έκδοσή σας μέσῳ του Google Play Store.</string>
   <string name="update_available_play_store_btn">Μεταβείτε στο Google Play Store</string>

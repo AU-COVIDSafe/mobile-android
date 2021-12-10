@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">您的PIN码已失效。</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">请输入您的手机号码</string>
+  <string name="IssueFooter">我们可能会与您联系以进一步了解反馈意见。您的电子邮件地址不会被用于其他目的。</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">更改通知设置</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">如果COVIDSafe未激活，您不会收到任何通知。 \n更改通知设置</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">如果COVIDSafe未激活，您将收到通知。 \n更改通知设置</string>
+  <string name="PINNumber_VO_Label">PIN码</string>
+  <string name="PN_MobileNumber_VOLabel">手机号码</string>
+  <string name="ReceivePinIssue">接收PIN码时遇到问题？</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">选择国家或地区</string>
   <string name="action_continue">继续</string>
   <string name="action_report_an_issue">报告问题</string>
   <string name="action_upload_done">完成</string>
@@ -30,7 +45,6 @@
   <string name="change_postcode_description">如果下载 COVIDSafe 后您的邮政编码发生更改，请及时更新。</string>
   <string name="change_postcode_heading">更改邮政编码</string>
   <string name="change_postcode_intro">注册使用COVIDSafe后，您是否搬到了不同邮政编码的区域？ \n\n及时更新您的邮政编码可以帮助卫生官员追踪接触者。  \n\n请阅读*COVIDSafe隐私政策*和*信息收集通知*，以进一步了解您的信息是如何存储和共享的。</string>
-  <string name="CodeHasExpired">您的PIN码已失效。</string>
   <string name="collection_message">COVIDSafe现在会收集诊断信息，以帮助您解决应用程序中的问题。*了解更多信息*</string>
   <string name="consent_button">我同意</string>
   <!-- Shared Consent Actions -->
@@ -249,7 +263,7 @@
   <string name="country_region_name_zw">津巴布韦</string>
   <string name="customise_days">自定义日子</string>
   <string name="data_privacy_button">下一步</string>
-  <string name="data_privacy_content_android">注册COVIDSafe之前，请务必阅读COVIDSafe的*隐私政策*。 \n\n如果您未满16岁，您的父母/监护人也必须阅读*隐私政策*。 \n\n使用COVIDSafe属自愿行为。您可以随时安装或删除该应用程序。如果删除COVIDSafe，*您也可以要求从安全服务器上删除您的信息*。 \n\n您需要输入姓名（或化名），手机号码，年龄段和邮政编码来注册使用COVIDSafe。 \n\n注册时提交的信息以及有关COVIDSafe使用的信息将被收集并存储在高度安全的服务器上。 \n\nCOVIDSafe不会收集您的位置信息。 \n\nCOVIDSafe将在您的设备上记录发生接触的时间、与您发生过接触的其他用户的匿名ID码、蓝牙®信号强度以及其他用户的手机型号。 \n\n与您发生接触的其他COVIDSafe用户的设备上也会记录您的匿名ID代码、与您发生接触的日期和时间、蓝牙®信号强度以及您的手机型号。 \n\n如果其他用户的COVID-19检测结果为阳性，他们可以上传自己的接触者信息，而州或领地的卫生官员可能会出于追踪接触者的目的与您联系。 \n\n您的详细注册信息仅在追踪接触者以及维持COVIDSafe的合法正常运行时使用或披露。  \n\n如需了解更多信息，请访问*澳大利亚政府卫生部*网站。 \n\n如需进一步了解您对个人信息的权利，以及个人信息的处理和共享方式，请参阅COVIDSafe *隐私政策*。</string>
+  <string name="data_privacy_content_android">注册COVIDSafe之前，请务必阅读COVIDSafe的*隐私政策*。 COVIDSafe只会在遵守本政策和<i>1988年隐私法</i>的情况下收集、使用或披露您的个人信息。\n\n如果您未满16岁，您的父母/监护人也必须阅读*隐私政策*。 \n\n使用COVIDSafe属完全自愿行为。您可以随时安装或删除该应用程序。如果删除COVIDSafe，*您也可以要求从安全服务器上删除您的信息*。 \n\n您需要输入姓名（或化名）、手机号码、年龄段和邮政编码来注册使用COVIDSafe。如果您不提供自己的个人信息， COVIDSafe应用程序可能无法正常工作。\n\n您在注册时提交的信息以及有关您使用COVIDSafe的信息存储在高度安全的服务器上。 \n\n为了确保COVIDSafe可以正常运行，还需要收集与您的设备相关的以下信息：操作系统、应用程序版本、语言设置、蓝牙®是否正在运行以及过去7天应用程序上的接触记录。\n\n在安卓设备上，这还包括电池优化是否禁用和定位服务是否启用的信息。\n\nCOVIDSafe不会收集您的位置信息。\n\nCOVIDSafe将在您的设备上记录发生接触的日期和时间、与您发生过接触的其他COVIDSafe用户的匿名ID码、蓝牙信号强度以及其他用户的手机型号。 \n\n与您发生接触的其他COVIDSafe用户的设备上也会记录您的匿名ID代码、与您发生接触的日期和时间、蓝牙信号强度以及您的手机型号。 \n\n如果其他用户的COVID-19检测结果为阳性，他们可以上传自己的接触者信息，而州或领地的卫生官员可能会出于追踪接触者的目的与您联系。 \n\n您的详细注册信息仅在追踪接触者以及维持COVIDSafe的合法正常运行时使用或披露。  \n\n更多信息可在*covidsafe.gov.au*网站上查阅。 \n\n如需进一步了解您对个人信息的权利，以及个人信息的处理和共享方式，请参阅COVIDSafe*隐私政策*。\n\n有关COVIDSafe隐私查询和投诉的详细联系方式，请参阅隐私政策的*联系我们*。</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">注册及隐私</string>
   <string name="data_privacy_headline_content_description">Heading，注册及隐私</string>
@@ -275,8 +289,6 @@
   <string name="enter_pin_resend_pin">重新发送PIN码</string>
   <string name="enter_pin_timer_expire">您的PIN码将在此时间后失效</string>
   <string name="enter_pin_wrong_number">请确认手机号码是否正确</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">请输入您的手机号码</string>
   <string name="every_day">每天</string>
   <string name="factors_dotpoint1">范围内的COVIDSafe用户数量</string>
   <string name="factors_dotpoint2">设备型号和机龄</string>
@@ -371,7 +383,6 @@
   <string name="invalid_post_code">邮政编码无效</string>
   <string name="is_snoozed_android">COVIDSafe已休眠</string>
   <string name="is_snoozed_description_android">COVIDSafe未在使用蓝牙，也未在记录接触者。</string>
-  <string name="IssueFooter">我们可能会与您联系以进一步了解反馈意见。您的电子邮件地址不会被用于其他目的。</string>
   <string name="jwt_description">您的注册信息存在问题。</string>
   <string name="jwt_expired">您的注册已过期。</string>
   <string name="jwt_expired_description">您必须每12个月确认一次您的手机号码，以确保您的注册信息正确无误。</string>
@@ -394,6 +405,8 @@
   <string name="no_handshakes_item2">通过Google Play Store或Apple Store将您的应用更新到最新版本。</string>
   <string name="no_handshakes_item3">重新启动手机并再次打开应用。</string>
   <string name="no_handshakes_link">阅读更多有关如何检查COVIDSafe是否正常运行的信息</string>
+  <string name="non_consent_button">我不同意</string>
+  <string name="non_consent_popup">没有父母或监护人的同意，你不能继续注册。\n\n请退出并删除本应用程序。</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">例如：51234</string>
   <string name="northern_territory">北领地</string>
@@ -410,12 +423,6 @@
   <string name="notification_settings">请打开应用程序以检查您的设置。</string>
   <string name="notification_update_content">请更新您的应用程序以获得改进后的版本。</string>
   <string name="notification_update_heading">COVIDSafe 更新可用</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">更改通知设置</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">如果COVIDSafe未激活，您不会收到任何通知。 \n更改通知设置</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">如果COVIDSafe未激活，您将收到通知。 \n更改通知设置</string>
   <string name="numbers_error">无法查询最新统计数字。</string>
   <string name="numbers_no_internet">请连接到互联网，以获取最新统计数字。</string>
   <string name="numbers_refresh">请刷新</string>
@@ -450,20 +457,17 @@
   <string name="personal_details_post_code_error_prompt">您的澳大利亚邮政编码必须包含4位数。</string>
   <string name="personal_details_post_code_hint">例如：2000</string>
   <string name="pin_number">pin码</string>
-  <string name="PINNumber_VO_Label">PIN码</string>
-  <string name="PN_MobileNumber_VOLabel">手机号码</string>
   <string name="postcode_api_error">出现错误。请检查您的互联网连接，然后重试。</string>
   <string name="postcode_change_label">当前的澳大利亚邮政编码</string>
   <string name="postcode_success">您的邮政编码已更新</string>
   <string name="queensland">昆士兰州</string>
-  <string name="ReceivePinIssue">接收PIN码时遇到问题？</string>
   <string name="recovered">康复患者总数</string>
-  <string name="registration_consent_content">我同意数字转换局作为数据存储管理方可以根据澳大利亚政府卫生部常务副部长依法作出的决议，收集以下信息：</string>
-  <string name="registration_consent_diagnostic">确保 COVIDSafe 在我的设备上正常运行的信息。</string>
-  <string name="registration_consent_first_paragraph">我的注册信息。</string>
+  <string name="registration_consent_content">我同意卫生部作为数据存储管理方可以根据《1988年隐私法》收集以下信息：</string>
+  <string name="registration_consent_diagnostic">确保COVIDSafe在我的设备上正常运行的信息。</string>
+  <string name="registration_consent_first_paragraph">注册信息，</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">注册同意书</string>
-  <string name="registration_consent_second_paragraph">我与其他COVIDSafe用户的接触信息（如果与我发生过接触的其他用户COVID-19检测呈阳性并上传其接触者数据）。</string>
+  <string name="registration_consent_second_paragraph">我与其他COVIDSafe用户的接触信息（如果与我发生过接触的其他用户COVID-19检测呈阳性并上传其接触者数据），及</string>
   <string name="restrictions_accommodation">住宿</string>
   <string name="restrictions_activity">活动</string>
   <string name="restrictions_cafes">咖啡厅和餐厅</string>
@@ -490,8 +494,6 @@
   <string name="search">搜索</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">选择国家或地区</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">选择国家或地区</string>
   <string name="select_state_territory_button">选择州或领地</string>
   <string name="select_state_territory_heading">选择州或领地</string>
   <string name="service_not_ok_action">立即查看应用程序</string>
@@ -535,16 +537,16 @@
   <string name="total_per_state">各州和领地确诊病例总数</string>
   <string name="twenty_eight_days">28天</string>
   <string name="type_in_time">输入时间</string>
-  <string name="under_sixteen_content">我确认我的父母或监护人同意数字转换局作为数据存储管理方可以根据澳大利亚政府卫生部常务副部长依法作出的决议，收集以下信息：</string>
-  <string name="under_sixteen_first_paragraph">我的注册信息。</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">选择“我同意”确认同意，如果不能确认父母或监护人同意，选择“我不同意”。</string>
+  <string name="under_sixteen_content">我确认我的父母或监护人同意卫生部作为数据存储管理方可以根据《1988年隐私法》收集以下信息：</string>
+  <string name="under_sixteen_first_paragraph">注册信息，</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">您需要得到父母/监护人的同意才能继续</string>
   <string name="under_sixteen_headline_content_description">Heading，您需要得到父母/监护人的同意才能继续</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">我的注册信息。</string>
-  <string name="under_sixteen_second_paragraph">我与其他COVIDSafe用户的接触信息（如果与我发生过接触的其他用户COVID-19检测呈阳性并上传其接触者数据）。</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">选择“我同意”以确认同意。</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">注册信息，</string>
+  <string name="under_sixteen_second_paragraph">我与其他COVIDSafe用户的接触信息（如果与我发生过接触的其他用户COVID-19检测呈阳性并上传其接触者数据），及</string>
   <string name="update_available_dismiss_btn">稍后提醒我</string>
   <string name="update_available_message_android">我们一直在改进COVIDSafe。请通过Google Play商店更新。</string>
   <string name="update_available_play_store_btn">前往Google Play Store</string>
@@ -571,7 +573,7 @@
   <string name="upload_step_verify_pin_header_content_description">Heading，上传个人信息</string>
   <string name="upload_step_verify_pin_sub_header">州或领地卫生官员将通过短信向您的手机发送 PIN码。请在下面输入PIN码以上传个人信息。</string>
   <string name="us_consent_button">我同意</string>
-  <string name="us_registration_consent_diagnostic">确保 COVIDSafe 在我的设备上正常运行的信息。</string>
+  <string name="us_registration_consent_diagnostic">确保COVIDSafe在我的设备上正常运行的信息。</string>
   <string name="victoria">维多利亚州</string>
   <string name="western_australia">西澳大利亚州</string>
   <string name="wrong_ping_number">错误的PIN码</string>

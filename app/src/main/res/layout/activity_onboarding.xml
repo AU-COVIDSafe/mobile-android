@@ -74,6 +74,21 @@
         android:text="@string/intro_button" />
 
     <TextView
+        android:id="@+id/non_consent"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/keyline_5"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="@dimen/keyline_5"
+        android:background="@drawable/background_red"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:text="@string/non_consent_button" />
+
+    <TextView
         android:id="@+id/onboarding_next_secondary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

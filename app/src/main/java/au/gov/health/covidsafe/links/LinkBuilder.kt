@@ -20,7 +20,7 @@ const val TAG = "LinkBuilder"
 
 private const val DEPARTMENT_OF_HEALTH_URL = "https://www.health.gov.au/"
 private const val HOST_URL = "https://www.covidsafe.gov.au"
-
+private const val CONTACT_US = "https://covidsafe.gov.au/privacy-policy.html#contact-us"
 private const val HELP_TOPICS_BASE = "/help-topics"
 private const val PRIVACY_TOPICS_BASE = "/privacy-policy"
 private const val COLLECTION_NOTICE_BASE = "/collection-notice"
@@ -183,7 +183,8 @@ object LinkBuilder {
                         privacyUrl,
                         getHelpTopicsUrl() + HELP_TOPICS_DELETE_INFORMATION,
                         HOST_URL,
-                        privacyUrl
+                        privacyUrl,
+                        CONTACT_US
                 )
         )
     }

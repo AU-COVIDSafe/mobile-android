@@ -1,5 +1,4 @@
 # COVIDSafe app
-
 Thank you for viewing the GitHub repository for the COVIDSafe app by the Australian Government.  
 If you need help with troubleshooting issues with the app, please use our support channels:  
 Email: support@covidsafe.gov.au  

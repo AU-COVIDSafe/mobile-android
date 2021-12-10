@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">你的 PIN 碼已無效。</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">請輸入你的手機號碼</string>
+  <string name="IssueFooter">我們可能會聯絡你以進一步了解反饋的詳情。你的電郵地址不會被用於其他目的。</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">更改通知設定</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">如果 COVIDSafe 尚未處於啟用狀態，你將不會收到通知。 \n更改通知設定</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">如果 COVIDSafe 尚未處於啟用狀態，你將會收到通知。 \n更改通知設定</string>
+  <string name="PINNumber_VO_Label">PIN 碼</string>
+  <string name="PN_MobileNumber_VOLabel">手機號碼</string>
+  <string name="ReceivePinIssue">接收 PIN 碼時遇到問題？</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">選擇國家或地區</string>
   <string name="action_continue">繼續</string>
   <string name="action_report_an_issue">報告問題</string>
   <string name="action_upload_done">完成</string>
@@ -30,7 +45,6 @@
   <string name="change_postcode_description">如果下載COVIDSafe後你的郵編發生變更，請你進行更新。</string>
   <string name="change_postcode_heading">更改你的郵編</string>
   <string name="change_postcode_intro">你在註冊使用COVIDSafe之後是否搬迁至了不同郵編的地區？\n\n及時更新你的郵編能夠幫助衛生官員更好地追蹤接觸者。\n\n閱讀*COVIDSafe 隱私政策*和 *信息收集通知*，以詳細了解你的資料是如何儲存和共享的。</string>
-  <string name="CodeHasExpired">你的 PIN 碼已無效。</string>
   <string name="collection_message">COVIDSafe現在會收集診斷資訊，以幫助你解決應用程式中的問題。 *了解更多*</string>
   <string name="consent_button">我同意</string>
   <!-- Shared Consent Actions -->
@@ -249,7 +263,7 @@
   <string name="country_region_name_zw">津巴布韋</string>
   <string name="customise_days">自定義日子</string>
   <string name="data_privacy_button">下一步</string>
-  <string name="data_privacy_content_android">在註册 COVIDSafe 之前，請務必閱讀 COVIDSafe *私隱政策*。 \n\n如果你未滿 16 歲，你的父母/監護人亦必須閱讀*私隱政策*。 \n\n使用 COVIDSafe 純屬自願性質。你可以隨時安裝或刪除本應用程式。如果刪除 COVIDSafe，*你亦可以要求刪除在保密伺服器内的個人資料*。\n\n要註册使用 COVIDSafe，你需要輸入一个名字（或假名）、手機號碼、年齡組别及郵遞區號。 \n\n我們會收集你註冊時提供的資料和關於你使用COVIDSafe的資料並且儲存在一個高度保密的伺服器內。 \n\nCOVIDSafe 不會收集你的位置資訊。 \n\nCOVIDSafe 將會在你的設備上記錄與你接觸過的其他 COVIDSafe 用戶的接觸時間，其匿名 ID，藍牙®信號強度和其手機型號。\n\n其他與你接觸過的 COVIDSafe 用戶的設備上亦會記錄你的匿名 ID 及與你接觸的日期時間，藍牙®信號強度和你的手機型號。 \n\n如果其他用戶被驗出 COVID-19 陽性，他們可以上傳其接觸者資料。為了追蹤接觸者，各州或領地的衛生部官員可能會聯絡你。 \n\n我們在追蹤接觸者和確保COVIDSafe 正常且合法運作時才會使用並且透露你的詳細註冊資料。 \n\n欲了解更多資訊，請瀏覧*澳洲政府衛生部*的網站。 \n\n如需進一步了解你對個人資料的權利，及個人資料的處理和共享方式，請參閱 COVIDSafe *私隱政策*。</string>
+  <string name="data_privacy_content_android">註冊 COVIDSafe 之前，請務必閱讀 COVIDSafe *隱私權政策*。COVIDSafe 僅根據本政策及<i>《1988 年隱私法》</i>收集、使用或披露您的個人資訊。\n\n如果您未滿 16 歲，您的家長／監護人也必須閱讀 *隱私權政策*。\n\n使用 COVIDSafe 屬自願性質。您可以隨時安裝或刪除該應用程式。如果您刪除 COVIDSafe，*您也可以要求從安全伺服器刪除您的資訊*。\n\n要註冊 COVIDSafe，您需要輸入姓名（或化名）、手機號碼、年齡範圍及郵遞區號。如果您不提供個人資訊，COVIDSafe 應用程式將無法如預期運行。\n\n您在註冊時提交的資訊以及有關使用 COVIDSafe 的資訊儲存在高度安全的伺服器。\n\nCOVIDSafe 還會收集資訊以確保在您的裝置正常運行。這包括您的作業系統、安裝的應用程式版本、裝置設定的語言、Bluetooth® 是否正常運作以及您的應用程式是否記錄過去 7 天內的任何狀況。\n\nAndroid 裝置還包括是否停用電池優化及啟用位置服務的資訊。\n\nCOVIDSafe 不會收集您的位置資訊。\n\nCOVIDSafe 會在您的裝置上記錄聯絡日期及時間、您接觸的其他 COVIDSafe 使用者的加密 ID 代碼、藍牙信號強度及其他使用者的手機型號。\n\n您接觸的其他 COVIDSafe 使用者會在他們的裝置上記錄您的加密 ID 代碼、與您聯絡的日期及時間、藍牙信號強度及您的手機型號。\n\n如果其他使用者的 COVID-19 檢測呈陽性，他們可能上傳他們的聯絡資訊，並且州或當地衛生官員可能與您聯絡以進行密切追蹤。\n\n您的註冊詳細資料僅用於或披露追蹤接觸者以及 COVIDSafe 的正常及合法運作。\n\n如需更多資訊，請瀏覽 *covidsafe.gov.au* 網站。\n\nCOVIDSafe *隱私權政策* 提供有關您的資訊權利以及如何處理及共享資訊的更多詳細資訊。\n\nCOVIDSafe 隱私查詢及投訴相關的聯絡方式請查找 *聯絡我們* 下的隱私權政策。</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">註册及私隱權</string>
   <string name="data_privacy_headline_content_description">標題，註册及私隱權</string>
@@ -275,8 +289,6 @@
   <string name="enter_pin_resend_pin">重新寄出 PIN 碼</string>
   <string name="enter_pin_timer_expire">你的 PIN 碼將在此時間後無效</string>
   <string name="enter_pin_wrong_number">請確認手機號碼是否正確</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">請輸入你的手機號碼</string>
   <string name="every_day">每日</string>
   <string name="factors_dotpoint1">在範圍內的COVIDSafe用戶數量</string>
   <string name="factors_dotpoint2">裝置型號和機齡</string>
@@ -371,7 +383,6 @@
   <string name="invalid_post_code">郵遞區號無效</string>
   <string name="is_snoozed_android">COVIDSafe已休眠</string>
   <string name="is_snoozed_description_android">COVIDSafe沒有在使用藍牙，也沒有在記錄接觸者。</string>
-  <string name="IssueFooter">我們可能會聯絡你以進一步了解反饋的詳情。你的電郵地址不會被用於其他目的。</string>
   <string name="jwt_description">你的註冊詳情存在問題。</string>
   <string name="jwt_expired">你的註冊已經過期。</string>
   <string name="jwt_expired_description">你必須每隔12個月確認你的手機號碼，確保你的登記資料是正確的。</string>
@@ -394,6 +405,8 @@
   <string name="no_handshakes_item2">通過 Google Play Store 或者 Apple Store將你的應用程式更新到最新版本。</string>
   <string name="no_handshakes_item3">重啟你的手機然後打開應用程式。</string>
   <string name="no_handshakes_link">閱讀更多關於如何檢查COVIDSafe是否正常運作的資訊</string>
+  <string name="non_consent_button">我不同意</string>
+  <string name="non_consent_popup">未獲得家長或監護人同意，您不能繼續註冊程序。\n\n請退出並刪除應用程式。</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">例如：51234</string>
   <string name="northern_territory">北領地</string>
@@ -410,12 +423,6 @@
   <string name="notification_settings">打開應用程式以檢查你的設置。</string>
   <string name="notification_update_content">更新你的應用程式來獲取最新的改良。</string>
   <string name="notification_update_heading">COVIDSafe更新可用</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">更改通知設定</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">如果 COVIDSafe 尚未處於啟用狀態，你將不會收到通知。 \n更改通知設定</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">如果 COVIDSafe 尚未處於啟用狀態，你將會收到通知。 \n更改通知設定</string>
   <string name="numbers_error">無法查詢最新統計數字。</string>
   <string name="numbers_no_internet">請連接到互聯網，以獲取最新統計數字。</string>
   <string name="numbers_refresh">現在刷新</string>
@@ -450,20 +457,17 @@
   <string name="personal_details_post_code_error_prompt">你的澳洲郵遞區號必須是個 4 位數字。</string>
   <string name="personal_details_post_code_hint">例如：2000</string>
   <string name="pin_number">PIN 碼</string>
-  <string name="PINNumber_VO_Label">PIN 碼</string>
-  <string name="PN_MobileNumber_VOLabel">手機號碼</string>
   <string name="postcode_api_error">出現錯誤。請檢查你的網絡連接，然後重試。</string>
   <string name="postcode_change_label">當前在澳大利亞的郵編</string>
   <string name="postcode_success">你的郵編已經更新</string>
   <string name="queensland">昆士蘭州</string>
-  <string name="ReceivePinIssue">接收 PIN 碼時遇到問題？</string>
   <string name="recovered">康復者總數</string>
-  <string name="registration_consent_content">我同意數字化轉型局作為數據儲存管理者，根據澳大利亞政府衛生部常務副部長的合法決定，收集以下信息：</string>
-  <string name="registration_consent_diagnostic">確保 COVIDSafe 在我的設備上正常運行的資訊。</string>
-  <string name="registration_consent_first_paragraph">我的註册資料。</string>
+  <string name="registration_consent_content">我同意衛生局根據《1988 年隱私法》之規定作為資料儲存管理員，收集以下資訊：</string>
+  <string name="registration_consent_diagnostic">確保 COVIDSafe 在我的裝置上正常運行的資訊。</string>
+  <string name="registration_consent_first_paragraph">註册資訊，</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">註册同意書</string>
-  <string name="registration_consent_second_paragraph">我與其他COVIDSafe用戶的接觸資料，如果我接觸過的另一用戶COVID-19測試呈陽性並且上傳了其接觸者數據。</string>
+  <string name="registration_consent_second_paragraph">關於我與其他 COVIDSafe 使用者的接觸資訊，如果我曾接觸 COVID-19 檢測呈陽性的其他使用者並上傳他們的聯絡資料，及</string>
   <string name="restrictions_accommodation">住宿</string>
   <string name="restrictions_activity">活動</string>
   <string name="restrictions_cafes">咖啡館和餐館</string>
@@ -490,8 +494,6 @@
   <string name="search">搜尋</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">選擇國家或地區</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">選擇國家或地區</string>
   <string name="select_state_territory_button">選擇州或者領地</string>
   <string name="select_state_territory_heading">選擇州或者領地</string>
   <string name="service_not_ok_action">請立即檢查應用程式</string>
@@ -535,16 +537,16 @@
   <string name="total_per_state">各州和領地確診病例總數</string>
   <string name="twenty_eight_days">28天</string>
   <string name="type_in_time">輸入時間</string>
-  <string name="under_sixteen_content">我確認我的父母或監護人同意數字化轉型局作為數據儲存管理者，根據澳大利亞政府衛生部常務副部長的合法決定，收集以下資訊：</string>
-  <string name="under_sixteen_first_paragraph">我的註册資料。</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">選擇「我同意」以確認同意，如果您無法確認家長或監護人的同意，請選擇「我不同意」。</string>
+  <string name="under_sixteen_content">我確認我的家長或監護人同意衛生局根據《1988 年隱私法》之規定作為資料儲存管理員，收集以下資訊：</string>
+  <string name="under_sixteen_first_paragraph">註册資訊，</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">你需要經父母/監護人同意才能繼續</string>
   <string name="under_sixteen_headline_content_description">標題，你需要經父母/監護人同意才能繼續</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">我的註册資料</string>
-  <string name="under_sixteen_second_paragraph">我與其他COVIDSafe用戶的接觸資料，如果我接觸過的另一用戶COVID-19測試呈陽性並且上傳了其接觸者數據。</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">選擇 「我同意」以確認同意聲明。</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">註册資訊，</string>
+  <string name="under_sixteen_second_paragraph">關於我與其他 COVIDSafe 使用者的接觸資訊，如果我曾接觸 COVID-19 檢測呈陽性的其他使用者並上傳他們的聯絡資料，及</string>
   <string name="update_available_dismiss_btn">請稍後提醒</string>
   <string name="update_available_message_android">我們一直都在改良COVIDSafe。通過Google Play商店更新。</string>
   <string name="update_available_play_store_btn">轉往 Google Play 商店</string>
@@ -571,7 +573,7 @@
   <string name="upload_step_verify_pin_header_content_description">標題，上傳你的資料</string>
   <string name="upload_step_verify_pin_sub_header">各州或領地的衛生部官員將會透過簡訊傳送一條 PIN 碼到你的設備。請在下面輸入 PIN 碼來上傳個人資料。</string>
   <string name="us_consent_button">我同意</string>
-  <string name="us_registration_consent_diagnostic">確保 COVIDSafe 在我的設備上正常運行的資訊。</string>
+  <string name="us_registration_consent_diagnostic">確保 COVIDSafe 在我的裝置上正常運行的資訊。</string>
   <string name="victoria">維多利亞州</string>
   <string name="western_australia">西澳</string>
   <string name="wrong_ping_number">輸入了錯誤的 PIN 碼</string>

@@ -11,7 +11,7 @@ mkdir -p "../temp"
 #--filter-data translated : Get only translated strings, if it is not transalted then it will refer to the default English
 #--dest ../temp : Destination folder
 #--unzip-to ../temp/locales : Unzip to this folder
-lokalise2 --token "$LOKALISE_TOKEN" --project-id 961497065ee6ad1e440843.11368444 file download --format xml --bundle-structure "values-%LANG_ISO%/strings.xml" --original-filenames=false --filter-data translated --dest ../temp --unzip-to ../temp/locales
+lokalise2 --token "$LOKALISE_TOKEN" --project-id  99670955616fccfa149649.92277036 file download --format xml --bundle-structure "values-%LANG_ISO%/strings.xml" --original-filenames=false --filter-data translated --dest ../temp --unzip-to ../temp/locales
 
 #It will replace only the strings.xml in each directory
 cp -Rv "../temp/locales/" "../app/src/main/res/"

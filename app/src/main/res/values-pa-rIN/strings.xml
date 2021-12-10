@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">ਤੁਹਾਡਾ ਪਿੰਨ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">ਆਪਣਾ ਮੋਬਾਈਲ ਨੰਬਰ ਭਰੋ</string>
+  <string name="IssueFooter">ਤੁਹਾਡੇ ਫੀਡ-ਬੈਕ ਬਾਰੇ ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ ਅਸੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹਾਂ। ਤੁਹਾਡੇ ਈਮੇਲ ਪਤੇ ਦੀ ਵਰਤੋਂ ਕਿਸੇ ਹੋਰ ਉਦੇਸ਼ ਲਈ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ।</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">ਨੋਟੀਫਿਕੇਸ਼ਨਜ਼ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">ਜੇ COVIDSafe ਸਰਗਰਮ ਨਹੀਂ  ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਨਹੀਂ ਮਿਲੇਗੀ| \nਨੋਟੀਫਿਕੇਸ਼ਨਜ਼ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">ਜੇ COVIDSafe ਸਰਗਰਮ ਨਹੀਂ  ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਮਿਲੇਗੀ| \nਨੋਟੀਫਿਕੇਸ਼ਨਜ਼ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ</string>
+  <string name="PINNumber_VO_Label">ਪਿੰਨ ਨੰਬਰ</string>
+  <string name="PN_MobileNumber_VOLabel">ਮੋਬਾਈਲ ਨੰਬਰ</string>
+  <string name="ReceivePinIssue">ਤੁਹਾਡੇ ਪਿੰਨ ਪ੍ਰਾਪਤ ਕਰਨ ਸਬੰਧੀ ਮੁੱਦੇ ?</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">ਦੇਸ਼ ਜਾਂ ਇਲਾਕਾ ਚੁਣੋ</string>
   <string name="action_continue">ਜਾਰੀ ਰੱਖੋ</string>
   <string name="action_report_an_issue">ਮੁੱਦੇ/ਮਸਲੇ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰੋ|</string>
   <string name="action_upload_done">ਕਰ ਦਿੱਤਾ</string>
@@ -34,7 +49,6 @@
   <string name="change_postcode_description">ਜੇ COVIDSafe ਡਾਊਨਲੋਡ ਕਰਨ ਤੋਂ ਬਾਅਦ ਤੁਹਾਡਾ ਪੋਸਟਕੋਡ ਬਦਲ ਗਿਆ ਹੈ ਤਾਂ ਇਸ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ।</string>
   <string name="change_postcode_heading">ਆਪਣਾ ਪੋਸਟਕੋਡ ਬਦਲੋ</string>
   <string name="change_postcode_intro">ਕੀ ਤੁਸੀਂ COVIDSafe ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਰਜਿਸਟਰ ਹੋਣ ਤੋਂ ਬਾਅਦ ਕਿਸੇ ਵੱਖਰੇ ਪੋਸਟਕੋਡ ਵਾਲੇ ਖੇਤਰ ਵਿੱਚ ਚਲੇ ਗਏ ਹੋ ?\n\nਤੁਹਾਡੇ ਪੋਸਟਕੋਡ ਨੂੰ ਨਵੀਨਤਮ ਰੱਖਣਾ ਸਿਹਤ ਅਧਿਕਾਰੀਆਂ ਨੂੰ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।  \n\nਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਿਆ ਅਤੇ ਸਾਂਝਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਇਸ ਬਾਰੇ ਵਧੇਰੇ ਵੇਰਵਿਆਂ ਲਈ *COVIDSafe ਗੁਪਤਤਾ ਨੀਤੀ* ਅਤੇ *ਇਕੱਤਰ ਕਰਨ ਸਬੰਧੀ  ਨੋਟਿਸ* ਪੜ੍ਹੋ।</string>
-  <string name="CodeHasExpired">ਤੁਹਾਡਾ ਪਿੰਨ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।</string>
   <string name="collection_message">ਹੁਣ COVIDSafe ਡਾਇਗਨੌਸਟਿਕ ਜਾਣਕਾਰੀ ਇਕੱਤਰ ਕਰਦਾ ਹੈ ਤਾਂ ਜੋ ਤੁਹਾਡੀ ਐਪ ਨਾਲ ਸਬੰਧਤ ਟ੍ਰਬਲਸ਼ੂਟ ਵਰਗੇ ਮਸਲੇ ਸੁਲਝਾਉਣ ਵਿੱਚ ਤੁਹਾਡੀ ਮਦਦ ਹੋ ਸਕੇ। *ਵਧੇਰੇ ਜਾਣੋ*</string>
   <string name="consent_button">ਮੈਂ ਸਹਿਮਤ ਹਾਂ</string>
   <!-- Shared Consent Actions -->
@@ -253,7 +267,7 @@
   <string name="country_region_name_zw">ਜ਼ਿੰਮਬਾਬਵੇ</string>
   <string name="customise_days">ਆਪਣੀ ਮਰਜ਼ੀ ਮੁਤਾਬਕ ਦਿਨ ਚੁਣੋ</string>
   <string name="data_privacy_button">ਅੱਗੇ</string>
-  <string name="data_privacy_content_android">ਇਹ ਮਹੱਤਵਪੂਰਨ ਹੈ ਕਿ ਤੁਸੀਂ COVIDSafe ਪੰਜੀਕਰਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ  COVIDSafe *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਪੜ੍ਹੋ।\n\nਜੇ ਤੁਹਾਡੀ ਉਮਰ 16 ਸਾਲ ਤੋਂ ਘੱਟ ਹੈ, ਤਾਂ ਤੁਹਾਡੇ ਮਾਪੇ/ਸਰਪ੍ਰਸਤ ਨੂੰ ਵੀ *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਪੜ੍ਹਨੀ ਚਾਹੀਦੀ ਹੈ।\n\nCOVIDSafe ਦੀ ਵਰਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਵੈ-ਇੱਛਤ ਹੈ। ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਇੰਸਟਾਲ ਜਾਂ ਡਿਲੀਟ ਕਰ ਸਕਦੇ ਹੋ। ਜੇ ਤੁਸੀਂ COVIDSafe ਨੂੰ ਡਿਲੀਟ ਕਰ ਦਿੰਦੇ ਹੋ,  ਤਾਂ ਸੁਰੱਖਿਅਤ ਸਰਵਰ ਤੋਂ *ਤੁਸੀਂ ਆਪਣੀ ਜਾਣਕਾਰੀ ਨੂੰ ਮਿਟਾਉਣ ਲਈ ਵੀ ਕਹਿ ਸਕਦੇ ਹੋ*।\n\nCOVIDSafe ਪੰਜੀਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਅਪਣਾ ਨਾਮ (ਜਾਂ ਨਕਲੀ ਨਾਮ), ਮੋਬਾਈਲ ਨੰਬਰ, ਉਮਰ ਸੀਮਾ ਅਤੇ ਪੋਸਟਕੋਡ ਭਰਨਾ ਪਵੇਗਾ।\n\nਜਦ ਤੁਸੀਂ ਰਜਿਸਟਰ ਕਰਦੇ ਹੋ ਤਾਂ COVIDSafe ਦੀ ਤੁਹਾਡੀ ਵਰਤੋਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਨੂੰ ਇਕੱਤਰ ਕੀਤਾ ਜਾਵੇਗਾ ਅਤੇ ਇਸ ਜਾਣਕਾਰੀ  ਨੂੰ ਇੱਕ ਬੇਹੱਦ ਸੁਰੱਖਿਅਤ ਸਰਵਰ \'ਤੇ ਸਟੋਰ ਕੀਤਾ ਜਾਵੇਗਾ।\n\nCOVIDSafe ਤੁਹਾਡੀ ਲੋਕੇਸ਼ਨ ਜਾਣਕਾਰੀ ਨੂੰ ਇਕੱਤਰ ਨਹੀਂ ਕਰੇਗਾ।\n\n COVIDSafe ਤੁਹਾਡੀ  ਡਿਵਾਈਸ \'ਤੇ, ਤੁਹਾਡੇ ਸੰਪਰਕ ਦੇ ਸਮੇਂ, ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਗੁੰਮਨਾਮ ਆਈਡੀ ਕੋਡ, ਬਲੂਟੁੱਥ® ਸਿਗਨਲ ਸ਼ਕਤੀ ਅਤੇ ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਫ਼ੋਨ ਮਾਡਲ ਨੋਟ ਕਰੇਗਾ।\n\nਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰ ਜਿੰਨ੍ਹਾਂ ਨਾਲ ਤੁਸੀਂ ਸੰਪਰਕ ਵਿੱਚ ਆਉਂਦੇ ਹੋ, ਤੁਹਾਡੇ ਗੁੰਮਨਾਮ ਆਈਡੀ ਕੋਡ, ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਦੀ ਤਾਰੀਖ਼ ਅਤੇ ਸਮਾਂ, ਬਲੂਟੁੱਥ® ਸਿਗਨਲ ਸ਼ਕਤੀ ਅਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਮਾਡਲ ਨੂੰ ਉਹਨਾਂ ਦੀ ਡੀਵਾਈਸ \'ਤੇ ਨੋਟ ਕਰਨਗੇ।\n\nਜੇ ਕੋਈ ਹੋਰ ਵਰਤੋਂਕਾਰ ਕੋਵਿਡ-19   ਪਾਜ਼ੇਟਿਵ ਟੈਸਟ ਕਰਦਾ ਹੈ, ਤਾਂ ਉਹ ਆਪਣੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਨੂੰ ਅੱਪਲੋਡ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਕੋਈ  ਪ੍ਰਾਂਤਿਕ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਲਈ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦਾ ਹੈ। \n\nਤੁਹਾਡੇ ਪੰਜੀਕਰਨ ਦੇ ਵਿਸਥਾਰਾਂ ਨੂੰ ਕੇਵਲ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਲਈ ਅਤੇ COVIDSafe ਦੇ ਉਚਿਤ ਅਤੇ ਕਨੂੰਨੀ ਕਾਰਜ-ਖੇਤਰ ਲਈ ਹੀ ਵਰਤਿਆ ਜਾਂ ਖੁਲਾਸਾ ਕੀਤਾ ਜਾਵੇਗਾ। \n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ *ਆਸਟਰੇਲੀਆਈ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ* ਦੀ ਵੈੱਬਸਾਈਟ \'ਤੇ ਉਪਲਬਧ ਹੈ।\n\nਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਅਤੇ ਅਧਿਕਾਰਾਂ ਬਾਰੇ ਅਤੇ ਇਸ ਨਾਲ ਕਿਵੇਂ ਨਿਪਟਿਆ ਜਾਵੇਗਾ ਅਤੇ ਇਸਨੂੰ ਸਾਂਝਾ ਕਿਵੇਂ ਕੀਤਾ ਜਾਵੇਗਾ, ਇਸ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਾਂ ਲਈ COVIDSafe *ਪ੍ਰਾਈਵੇਸੀ ਨੀਤੀ* ਦੇਖੋ।</string>
+  <string name="data_privacy_content_android">ਇਹ ਮਹੱਤਵਪੂਰਨ ਹੈ ਕਿ ਤੁਸੀਂ COVIDSafe ਲਈ ਪੰਜੀਕਰਨ ਤੋਂ ਪਹਿਲਾਂ COVIDSafe *ਗੋਪਨੀਯਤਾ ਨੀਤੀ* ਨੂੰ ਪੜ੍ਹੋ। COVIDSafe ਤੁਹਾਡੀ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਨੂੰ ਸਿਰਫ਼ ਇਸ ਨੀਤੀ ਅਤੇ ਨਿੱਜਤਾ <i>ਅਧਿਨਿਯਮ 1988</i> ਦੇ ਅਨੁਸਾਰ ਇਕੱਤਰ ਕਰੇਗੀ, ਵਰਤੇਗੀ ਜਾਂ ਪ੍ਰਗਟ ਕਰੇਗੀ। \n\nਜੇਕਰ ਤੁਹਾਡੀ ਉਮਰ 16 ਸਾਲ ਤੋਂ ਘੱਟ ਹੈ, ਤਾਂ ਤੁਹਾਡੇ ਮਾਤਾ-ਪਿਤਾ/ਸਰਪ੍ਰਸਤ ਨੂੰ ਵੀ *ਗੋਪਨੀਯਤਾ ਨੀਤੀ* ਨੂੰ ਪੜ੍ਹਨਾ ਚਾਹੀਦਾ ਹੈ। \n\nCOVIDSafe ਦੀ ਵਰਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਵੈਇੱਛਤ ਹੈ। ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਇੰਸਟਾਲ ਜਾਂ ਮਿਟਾ ਸਕਦੇ ਹੋ। ਜੇਕਰ ਤੁਸੀਂ COVIDSafe ਨੂੰ ਮਿਟਾ ਦਿੰਦੇ ਹੋ, ਤਾਂ *ਤੁਸੀਂ ਆਪਣੀ ਜਾਣਕਾਰੀ* ਨੂੰ ਸੁਰੱਖਿਅਤ ਸਰਵਰ ਤੋਂ ਮਿਟਾਉਣ ਲਈ ਵੀ ਕਹਿ ਸਕਦੇ ਹੋ। \n\nCOVIDSafe ਲਈ ਪੰਜੀਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਇੱਕ ਨਾਮ (ਜਾਂ ਉਪਨਾਮ), ਮੋਬਾਈਲ ਨੰਬਰ, ਉਮਰ ਸੀਮਾ ਅਤੇ ਪੋਸਟਕੋਡ ਦਰਜ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ। ਜੇਕਰ ਤੁਸੀਂ ਆਪਣੀ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਪ੍ਰਦਾਨ ਨਹੀਂ ਕਰਦੇ, ਤਾਂ COVIDSafe ਐਪ ਉਦੇਸ਼ ਅਨੁਸਾਰ ਕੰਮ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ ਹੈ। \n\nਤੁਹਾਡੇ ਦੁਆਰਾ ਪੰਜੀਕਰਨ ਵੇਲੇ ਤੁਹਾਡੇ ਦੁਆਰਾ ਜਮ੍ਹਾਂ ਕੀਤੀ ਗਈ ਜਾਣਕਾਰੀ ਅਤੇ ਤੁਹਾਡੀ COVIDSafe ਦੀ ਵਰਤੋਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਇੱਕ ਬਹੁਤ ਹੀ ਸੁਰੱਖਿਅਤ ਸਰਵਰ \'ਤੇ ਸਟੋਰ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਵੀ ਜਾਣਕਾਰੀ ਇਕੱਤਰ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ COVIDSafe ਤੁਹਾਡੇ ਉਪਕਰਣ \'ਤੇ ਸਹੀ ਢੰਗ ਨਾਲ ਕੰਮ ਕਰ ਰਹੀ ਹੈ। ਇਸ ਵਿੱਚ ਤੁਹਾਡਾ ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ, ਤੁਹਾਡੇ ਦੁਆਰਾ ਸਥਾਪਿਤ ਕੀਤੀ ਐਪ ਦਾ ਸੰਸਕਰਣ, ਤੁਹਾਡਾ ਉਪਕਰਣ ਜਿਸ ਭਾਸ਼ਾ ਲਈ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਹੈ, ਕੀ ਬਲੂਟੁੱਥ® ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ ਜਾਂ ਨਹੀਂ ਅਤੇ ਕੀ ਤੁਹਾਡੀ ਐਪ ਨੇ ਪਿਛਲੇ ਸੱਤ ਦਿਨਾਂ ਵਿੱਚ ਕਿਸੇ ਭਿਡੰਤਾਂ ਨੂੰ ਰਿਕਾਰਡ ਕੀਤਾ ਹੈ, ਸ਼ਾਮਲ ਹਨ।\n  \nਐਂਡਰੌਇਡ ਉਪਕਰਣਾਂ \'ਤੇ, ਇਸ ਵਿੱਚ ਇਹ ਵੀ ਜਾਣਕਾਰੀ ਸ਼ਾਮਲ ਹੁੰਦੀ ਹੈ ਕਿ ਕੀ ਬੈਟਰੀ ਓਪਟੀਮਾਈਜੇਸ਼ਨ ਅਸਮਰੱਥ ਹੈ ਅਤੇ ਲੋਕੇਸ਼ਨ ਸੇਵਾਵਾਂ ਨੂੰ ਸਮਰੱਥ ਬਣਾਇਆ ਗਿਆ ਹੈ। \n\nCOVIDSafe ਤੁਹਾਡੀ ਲੋਕੇਸ਼ਨ ਜਾਣਕਾਰੀ ਇਕੱਤਰ ਨਹੀਂ ਕਰੇਗੀ।\n\nCOVIDSafe ਤੁਹਾਡੇ ਉਪਕਰਣ \'ਤੇ ਸੰਪਰਕ ਦੀ ਤਾਰੀਖ ਅਤੇ ਸਮਾਂ, ਤੁਹਾਡੇ ਸੰਪਰਕ ਵਿੱਚ ਆਏ ਹੋਰ COVIDSafe ਉਪਯੋਗਕਰਤਾਵਾਂ ਦਾ ਐਨਕ੍ਰਿਪਟਡ ਆਈਡੀ ਕੋਡ, ਬਲੂਟੁੱਥ ਸਿਗਨਲ ਤਾਕਤ ਅਤੇ ਹੋਰ ਉਪਯੋਗਕਰਤਾਵਾਂ ਦੇ ਫ਼ੋਨ ਮਾਡਲ ਨੂੰ ਨੋਟ ਕਰੇਗੀ। \n\nਹੋਰ COVIDSafe ਉਪਯੋਗਕਰਤਾ ਜਿਨ੍ਹਾਂ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਤੁਸੀਂ ਆਉਂਦੇ ਹੋ, ਆਪਣੇ ਉਪਕਰਣ \'ਤੇ ਤੁਹਾਡੇ ਐਨਕ੍ਰਿਪਟਡ ਆਈਡੀ ਕੋਡ, ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਦੀ ਤਾਰੀਖ ਅਤੇ ਸਮਾਂ, ਬਲੂਟੁੱਥ ਸਿਗਨਲ ਤਾਕਤ ਅਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਮਾਡਲ ਨੂੰ ਨੋਟ ਕਰਨਗੇ। \n\nਜੇਕਰ ਕੋਈ ਹੋਰ ਉਪਯੋਗਕਰਤਾ ਕੋਵਿਡ-19 ਲਈ ਟੈਸਟ ਵਿੱਚ ਸਕਾਰਾਤਮਕ ਆਉਂਦੇ  ਹਨ, ਤਾਂ ਉਹ ਆਪਣੀ ਸੰਪਰਕ ਜਾਣਕਾਰੀ ਅੱਪਲੋਡ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਇੱਕ ਰਾਜ ਜਾਂ ਖੇਤਰੀ ਸਿਹਤ ਅਧਿਕਾਰੀ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਦੇ ਉਦੇਸ਼ਾਂ ਲਈ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦਾ ਹੈ। \n\nਤੁਹਾਡੇ ਪੰਜੀਕਰਨ ਵੇਰਵਿਆਂ ਦੀ ਵਰਤੋਂ ਅਤੇ ਖੁਲਾਸਾ ਸਿਰਫ ਸੰਪਰਕ ਟਰੇਸਿੰਗ ਅਤੇ COVIDSafe ਦੇ ਸਹੀ ਅਤੇ ਕਾਨੂੰਨੀ ਕੰਮਕਾਜ ਲਈ ਕੀਤੀ ਜਾਵੇਗੀ। \n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ *covidsafe.gov.au* ਵੈੱਬਸਾਈਟ \'ਤੇ ਉਪਲਬਧ ਹੈ। \n\nCOVIDSafe *ਗੋਪਨੀਯਤਾ ਨੀਤੀ* ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਬਾਰੇ ਤੁਹਾਡੇ ਅਧਿਕਾਰਾਂ ਅਤੇ ਇਸ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਿਆ ਅਤੇ ਸਾਂਝਾ ਕੀਤਾ ਜਾਵੇਗਾ, ਬਾਰੇ ਅੱਗੇ ਹੋਰ ਵੇਰਵੇ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ। \n\nCOVIDSafe ਗੋਪਨੀਯਤਾ ਪੁੱਛਗਿੱਛਾਂ ਅਤੇ ਸ਼ਿਕਾਇਤਾਂ ਨਾਲ ਸਬੰਧਤ ਸੰਪਰਕ ਵੇਰਵੇ *ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ* ਦੇ ਅਧੀਨ ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਵਿੱਚ ਪ੍ਰਦਾਨ ਕੀਤੇ ਗਏ ਹਨ।</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਅਤੇ ਪ੍ਰਾਈਵੇਸੀ</string>
   <string name="data_privacy_headline_content_description">ਸਿਰਲੇਖ, ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਅਤੇ ਪ੍ਰਾਈਵੇਸੀ</string>
@@ -279,8 +293,6 @@
   <string name="enter_pin_resend_pin">ਪਿੰਨ ਦੁਬਾਰਾ ਭੇਜੋ</string>
   <string name="enter_pin_timer_expire">ਤੁਹਾਡਾ ਪਿੰਨ ਦੀ ਮਿਆਦ .... ਵਿੱਚ ਪੁੱਗ ਜਾਵੇਗੀ</string>
   <string name="enter_pin_wrong_number">ਕੀ ਇਹ ਮੋਬਾਈਲ ਨੰਬਰ ਗਲਤ ਹੈ ?</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">ਆਪਣਾ ਮੋਬਾਈਲ ਨੰਬਰ ਭਰੋ</string>
   <string name="every_day">ਹਰ ਰੋਜ਼</string>
   <string name="factors_dotpoint1">COVIDSafe ਦੇ ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਸੰਖਿਆ, ਜੋ ਕਿ ਦਾਇਰੇ ਵਿੱਚ ਹਨ</string>
   <string name="factors_dotpoint2">ਉਪਕਰਨ ਦਾ ਮਾੱਡਲ ਅਤੇ ਇਹ ਕਿੰਨਾ ਪੁਰਾਣਾ ਹੈ</string>
@@ -379,7 +391,6 @@
   <string name="invalid_post_code">ਅਣਉਚਿੱਤ/ਅਵੈਧ ਪੋਸਟਕੋਡ</string>
   <string name="is_snoozed_android">COVIDSafe ਇਸ ਵਕਤ ਅਸਥਾਈ ਤੌਰ ਤੇ ਬੰਦ ਹੈ (snoozed)</string>
   <string name="is_snoozed_description_android">COVIDSafe ਬਲੂਟੁੱਥ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਰਿਹਾ ਹੈ ਅਤੇ ਸੰਪਰਕਾਂ ਨੂੰ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਿਹਾ ਹੈ।</string>
-  <string name="IssueFooter">ਤੁਹਾਡੇ ਫੀਡ-ਬੈਕ ਬਾਰੇ ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ ਅਸੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹਾਂ। ਤੁਹਾਡੇ ਈਮੇਲ ਪਤੇ ਦੀ ਵਰਤੋਂ ਕਿਸੇ ਹੋਰ ਉਦੇਸ਼ ਲਈ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ।</string>
   <string name="jwt_description">ਤੁਹਾਡੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਦੇ ਵੇਰਵਿਆਂ ਵਿੱਚ ਕੋਈ ਸਮੱਸਿਆ ਹੈ।</string>
   <string name="jwt_expired">ਤੁਹਾਡੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਖਤਮ ਹੋ ਗਈ ਹੈ।</string>
   <string name="jwt_expired_description">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਕਿ ਤੁਹਾਡੇ ਦਰਜ ਕੀਤੇ ਵੇਰਵੇ ਸਹੀ ਹਨ, ਤੁਹਾਨੂੰ ਲਾਜ਼ਮੀ ਤੌਰ \'ਤੇ ਹਰ 12 ਮਹੀਨਿਆਂ ਬਾਅਦ ਆਪਣੇ ਮੋਬਾਈਲ ਨੰਬਰ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।</string>
@@ -406,6 +417,8 @@
   <string name="no_handshakes_item3">ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ ਅਤੇ ਐਪ ਨੂੰ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ।</string>
   <string name="no_handshakes_item4">ਜਾਂਚ ਕਰੋ ਕਿ <a href="https://www.covidsafe.gov.au/help-topics.html#location-services">ਸਥਾਨਕ ਸੇਵਾਵਾਂ </a>ਲਈ, ਕੀ ਤੁਹਾਡੇ ਕੋਲ ਸਹੀ ਸੈਟਿੰਗਜ਼ ਹਨ</string>
   <string name="no_handshakes_link">ਜਾਂਚ ਕਿਵੇਂ ਕਰਨੀ ਹੈ, ਦੇ ਬਾਰੇ ਹੋਰ ਪੜ੍ਹੋ ਕਿ ਕੀ COVIDSafe ਸਹੀ ਤਰੀਕੇ ਨਾਲ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ</string>
+  <string name="non_consent_button">ਮੈਂ ਸਹਿਮਤ ਨਹੀਂ ਹਾਂ</string>
+  <string name="non_consent_popup">ਤੁਸੀਂ ਮਾਤਾ-ਪਿਤਾ ਜਾਂ ਸਰਪ੍ਰਸਤ ਦੀ ਸਹਿਮਤੀ ਤੋਂ ਬਿਨਾਂ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਪ੍ਰਕਿਰਿਆ ਨਾਲ ਜਾਰੀ ਨਹੀਂ ਰਹਿ ਸਕਦੇ।\n\nਕਿਰਪਾ ਕਰਕੇ ਐਪ ਤੋਂ ਬਾਹਰ ਜਾਓ ਅਤੇ ਇਸਨੂੰ ਮਿਟਾਓ।</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">ਉਦਾਹਰਣ ਵਜੋਂ: 51234</string>
   <string name="northern_territory">ਨੌਰਦ੍ਰਨ ਟੈਰੀਟਰੀ</string>
@@ -422,12 +435,6 @@
   <string name="notification_settings">ਆਪਣੀਆਂ ਸੈਟਿੰਗਜ਼ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਐਪ ਖੋਲ੍ਹੋ।</string>
   <string name="notification_update_content">ਤਾਜ਼ਾ ਸੋਧਾਂ ਤੱਕ ਪਹੁੰਚ ਲਈ, ਆਪਣੀ ਐਪ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ।</string>
   <string name="notification_update_heading">COVIDSafe ਅੱਪਡੇਟ ਉਪਲਬਧ ਹੈ|</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">ਨੋਟੀਫਿਕੇਸ਼ਨਜ਼ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">ਜੇ COVIDSafe ਸਰਗਰਮ ਨਹੀਂ  ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਨਹੀਂ ਮਿਲੇਗੀ| \nਨੋਟੀਫਿਕੇਸ਼ਨਜ਼ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">ਜੇ COVIDSafe ਸਰਗਰਮ ਨਹੀਂ  ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਨਾ ਮਿਲੇਗੀ| \nਨੋਟੀਫਿਕੇਸ਼ਨਜ਼ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ</string>
   <string name="numbers_error">ਅੱਪਡੇਟ ਕੀਤੇ ਨੰਬਰਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ।</string>
   <string name="numbers_no_internet">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ  ਕਿ ਤੁਹਾਨੂੰ ਅੱਪਡੇਟਿਡ ਨੰਬਰ ਪ੍ਰਾਪਤ ਹੋਣ, ਇੰਟਰਨੈੱਟ ਨਾਲ ਜੁੜੋ |</string>
   <string name="numbers_refresh">ਹੁਣ ਰਿਫਰੈਸ਼ ਕਰੋ</string>
@@ -462,20 +469,17 @@
   <string name="personal_details_post_code_error_prompt">ਤੁਹਾਡੇ ਆੱਸਟ੍ਰੇਲੀਅਨ ਪੋਸਟਕੋਡ ਨੰਬਰ ਵਿੱਚ ਲਾਜ਼ਮੀ ਤੌਰ \'ਤੇ 4 ਅੰਕ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।</string>
   <string name="personal_details_post_code_hint">ਜਿਵੇਂ ਕਿ 2000</string>
   <string name="pin_number">ਪਿੰਨ ਨੰਬਰ</string>
-  <string name="PINNumber_VO_Label">ਪਿੰਨ ਨੰਬਰ</string>
-  <string name="PN_MobileNumber_VOLabel">ਮੋਬਾਈਲ ਨੰਬਰ</string>
   <string name="postcode_api_error">ਇੱਕ ਗਲਤੀ ਦੇਖਣ ਵਿੱਚ ਆਈ ਸੀ। ਆਪਣੇ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
   <string name="postcode_change_label">ਆੱਸਟ੍ਰੇਲੀਆ ਵਿੱਚ ਮੌਜੂਦਾ ਪੋਸਟਕੋਡ</string>
   <string name="postcode_success">ਤੁਹਾਡੇ ਪੋਸਟਕੋਡ ਨੂੰ ਅੱਪਡੇਟ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ</string>
   <string name="queensland">ਕੁਈਨਜ਼ਲੈਂਡ</string>
-  <string name="ReceivePinIssue">ਤੁਹਾਡੇ ਪਿੰਨ ਪ੍ਰਾਪਤ ਕਰਨ ਸਬੰਧੀ ਮੁੱਦੇ ?</string>
   <string name="recovered">ਠੀਕ ਹੋਏ ਕੁੱਲ ਮਾਮਲੇ</string>
-  <string name="registration_consent_content">ਮੈਂ ਆੱਸਟ੍ਰੇਲੀਅਨ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ ਦੇ ਸਕੱਤਰ ਦੁਆਰਾ ਕੀਤੇ ਕਨੂੰਨੀ ਨਿਰਣੇ ਦੇ ਤਹਿਤ, ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸਕ ਵਜੋਂ, ਡਿਜੀਟਲ ਟ੍ਰਾਂਸਫੋਰਮੇਸ਼ਨ ਏਜੰਸੀ ਨੂੰ ਸਹਿਮਤੀ ਦਿੰਦਾ/ਦਿੰਦੀ ਹਾਂ, ਜੋ ਇਕੱਤਰ ਕਰ ਰਹੇ ਹਨ :</string>
-  <string name="registration_consent_diagnostic">ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਇਹ ਜਾਣਕਾਰੀ ਕਿ COVIDSafe, ਮੇਰੇ ਡਿਵਾਈਸ \'ਤੇ  ਠੀਕ ਕੰਮ ਕਰ ਰਹੀ ਹੈ</string>
+  <string name="registration_consent_content">ਗੋਪਨਿਯਤਾ ਐਕਟ 1988 ਹੇਠ ਮੈਂ ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸ਼ਕ ਵਜੋਂ ਸਿਹਤ ਵਿਭਾਗ ਨੂੰ ਆਪਣੇ ਮਾਪਿਆਂ ਜਾਂ ਸਰਪ੍ਰਸਤ ਦੀਆਂ ਸਹਿਮਤੀਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦਾ(ਦੀ) ਹਾਂ, ਜੋ:</string>
+  <string name="registration_consent_diagnostic">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਜਾਣਕਾਰੀ ਕਿ COVIDSafe, ਮੇਰੇ ਉਪਕਰਣ \'ਤੇ  ਠੀਕ ਕੰਮ ਕਰ ਰਹੀ ਹੈ।</string>
   <string name="registration_consent_first_paragraph">ਮੇਰੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਬਾਰੇ ਜਾਣਕਾਰੀ।</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਲਈ ਸਹਿਮਤੀ</string>
-  <string name="registration_consent_second_paragraph">ਕਿਸੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਮੇਰੇ ਸੰਪਰਕ ਬਾਰੇ ਜਾਣਕਾਰੀ : ਜੇ ਕੋਈ ਹੋਰ ਵਰਤੋਂਕਾਰ ਮੇਰੇ ਸੰਪਰਕ ਵਿੱਚ ਆਇਆ ਹੈ ਅਤੇ ਕੋਵਿਡ-19 ਪਾੱਜ਼ੇਟਿਵ ਟੈਸਟ ਹੁੰਦਾ ਹੈ ਅਤੇ ਅਪਣਾ ਸੰਪਰਕ ਡੇਟਾ ਅੱਪਲੋਡ ਕਰਦਾ ਹੈ</string>
+  <string name="registration_consent_second_paragraph">ਕਿਸੇ ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਮੇਰੇ ਸੰਪਰਕ ਬਾਰੇ ਜਾਣਕਾਰੀ ਇਕਤਰ ਕਰਦਾ ਹੈ : ਜੇ ਕੋਈ ਹੋਰ ਵਰਤੋਂਕਾਰ ਮੇਰੇ ਸੰਪਰਕ ਵਿੱਚ ਆਇਆ ਹੈ ਅਤੇ ਕੋਵਿਡ-19 ਪਾਜੀਟਿਵ ਟੈਸਟ ਹੁੰਦਾ ਹੈ ਅਤੇ ਅਪਣਾ ਸੰਪਰਕ ਡੇਟਾ ਅੱਪਲੋਡ ਕਰਦਾ ਹੈ,</string>
   <string name="restrictions_accommodation">ਰਿਹਾਇਸ਼</string>
   <string name="restrictions_activity">ਸਰਗਰਮੀ</string>
   <string name="restrictions_cafes">ਕੈਫੇ ਅਤੇ ਰੈਸਟੋਰੈਂਟ</string>
@@ -502,8 +506,6 @@
   <string name="search">ਖੋਜੋ</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">ਦੇਸ਼ ਜਾਂ ਇਲਾਕਾ ਚੁਣੋ</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">ਦੇਸ਼ ਜਾਂ ਇਲਾਕਾ ਚੁਣੋ</string>
   <string name="select_state_territory_button">ਪ੍ਰਾਂਤ ਜਾਂ ਖੇਤਰ ਚੁਣੋ</string>
   <string name="select_state_territory_heading">ਪ੍ਰਾਂਤ ਜਾਂ ਖੇਤਰ ਚੁਣੋ</string>
   <string name="service_not_ok_action">ਹੁਣ ਐਪ ਚੈੱਕ ਕਰੋ</string>
@@ -549,16 +551,16 @@
   <string name="total_per_state">ਪ੍ਰਾਂਤ ਅਤੇ ਖਿੱਤੇ ਅਨੁਸਾਰ ਪੁਸ਼ਟੀ ਕੀਤੇ ਕੁਲ ਮਾਮਲੇ</string>
   <string name="twenty_eight_days">28 ਦਿਨ</string>
   <string name="type_in_time">ਸਮਾਂ ਭਰੋ</string>
-  <string name="under_sixteen_content">ਮੈਂ ਆੱਸਟ੍ਰੇਲੀਅਨ ਸਰਕਾਰ ਦੇ ਸਿਹਤ ਵਿਭਾਗ ਦੇ ਸਕੱਤਰ ਦੁਆਰਾ ਕੀਤੇ ਕਨੂੰਨੀ ਨਿਰਣੇ ਦੇ ਤਹਿਤ, ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸ਼ਕ ਵਜੋਂ ਡਿਜੀਟਲ ਟ੍ਰਾਂਸਫੋਰਮੇਸ਼ਨ ਏਜੰਸੀ ਨੂੰ ਆਪਣੇ ਮਾਪੇ ਜਾਂ ਸਰਪ੍ਰਸਤ ਦੀਆਂ ਸਹਿਮਤੀਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦਾ/ਦੀ ਹਾਂ, ਜੋ ਇਕੱਤਰ ਕਰ ਰਹੇ ਹਨ :</string>
-  <string name="under_sixteen_first_paragraph">ਮੇਰੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਬੰਧੀ ਜਾਣਕਾਰੀ।</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">ਸਹਿਮਤੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ \'ਮੈਂ ਸਹਿਮਤ ਹਾਂ\' ਜਾਂ ਜੇਕਰ ਤੁਸੀਂ ਮਾਤਾ-ਪਿਤਾ ਜਾਂ ਸਰਪ੍ਰਸਤ ਦੀ ਸਹਿਮਤੀ ਦੀ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕਰ ਸਕਦੇ ਤਾਂ \'ਮੈਂ ਸਹਿਮਤ ਨਹੀਂ ਹਾਂ\' ਨੂੰ ਚੁਣੋ।</string>
+  <string name="under_sixteen_content">ਗੋਪਨਿਯਤਾ ਐਕਟ 1988 ਹੇਠ ਮੈਂ ਡੇਟਾ ਸਟੋਰ ਪ੍ਰਸ਼ਾਸ਼ਕ ਵਜੋਂ ਸਿਹਤ ਵਿਭਾਗ ਨੂੰ ਆਪਣੇ ਮਾਪਿਆਂ ਜਾਂ ਸਰਪ੍ਰਸਤ ਦੀਆਂ ਸਹਿਮਤੀਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦਾ(ਦੀ) ਹਾਂ, ਜੋ:</string>
+  <string name="under_sixteen_first_paragraph">ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਜਾਣਕਾਰੀ ਅਪਲੋਡ ਕਰਦਾ(ਦੀ) ਹੈ।</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">ਅੱਗੇ ਵਧਣ ਲਈ ਤੁਹਾਨੂੰ ਆਪਣੇ ਮਾਪੇ/ਸਰਪ੍ਰਸਤ ਦੀ ਸਹਿਮਤੀ ਦੀ ਲੋੜ ਹੈ</string>
   <string name="under_sixteen_headline_content_description">ਸਿਰਲੇਖ, ਅੱਗੇ ਵਧਣ ਲਈ ਤੁਹਾਨੂੰ ਆਪਣੇ ਮਾਪੇ/ਸਰਪ੍ਰਸਤ ਦੀ ਸਹਿਮਤੀ ਦੀ ਲੋੜ ਹੈ</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">ਮੇਰੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਬਾਰੇ ਜਾਣਕਾਰੀ।</string>
-  <string name="under_sixteen_second_paragraph">ਹੋਰ COVIDSafe ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਮੇਰੇ ਸੰਪਰਕ ਬਾਰੇ ਜਾਣਕਾਰੀ: ਜੇ ਕੋਈ ਹੋਰ ਵਰਤੋਂਕਾਰ ਮੇਰੇ ਸੰਪਰਕ ਵਿੱਚ ਆਇਆ ਹੈ ਜਿਸਦਾ ਕੋਵਿਡ-19 ਟੈਸਟ ਪਾੱਜ਼ੇਟਿਵ  ਆਇਆ ਹੈ ਅਤੇ ਉਹ ਆਪਣਾ ਸੰਪਰਕ ਡੇਟਾ ਅੱਪਲੋਡ ਕਰਦਾ ਹੈ|</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">ਸਹਿਮਤੀ ਲਈ \'ਮੈਂ ਸਹਿਮਤ ਹਾਂ\' ਚੁਣੋ|</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਜਾਣਕਾਰੀ,</string>
+  <string name="under_sixteen_second_paragraph">ਹੋਰ COVIDSafe ਉਪਯੋਗਕਰਤਾਵਾਂ ਨਾਲ ਮੇਰੇ ਸੰਪਰਕ ਬਾਰੇ ਜਾਣਕਾਰੀ, ਜੇਕਰ ਕੋਈ ਹੋਰ ਉਪਯੋਗਕਰਤਾ ਜਿਸ ਨਾਲ ਮੈਂ ਸੰਪਰਕ ਵਿੱਚ ਆਇਆ(ਆਈ) ਹਾਂ ਕੋਵਿਡ-19 ਲਈ ਸਕਾਰਾਤਮਕ ਟੈਸਟ ਹੁੰਦਾ ਹੈ ਅਤੇ ਆਪਣਾ ਸੰਪਰਕ ਡੇਟਾ ਅਤੇ</string>
   <string name="update_available_dismiss_btn">ਮੈਨੂੰ ਬਾਅਦ ਵਿੱਚ ਯਾਦ ਕਰਵਾਓ</string>
   <string name="update_available_message_android">ਅਸੀਂ COVIDSafe ਵਿੱਚ ਸੁਧਾਰ ਕਰਦੇ ਆ ਰਹੇ ਹਾਂ। ਗੂਗਲ ਪਲੇਅ ਸਟੋਰ ਰਾਹੀਂ ਅੱਪਡੇਟ ਕਰੋ।</string>
   <string name="update_available_play_store_btn">ਗੂਗਲ ਪਲੇਅ ਸਟੋਰ \'ਤੇ ਜਾਓ</string>
@@ -585,7 +587,7 @@
   <string name="upload_step_verify_pin_header_content_description">ਸਿਰਲੇਖ, ਆਪਣੀ ਜਾਣਕਾਰੀ ਅੱਪਲੋਡ ਕਰੋ</string>
   <string name="upload_step_verify_pin_sub_header">ਕੋਈ ਰਾਜ ਜਾਂ ਹਲਕਾ ਸਿਹਤ ਅਧਿਕਾਰੀ ਲਿਖਤੀ ਸੰਦੇਸ਼ ਰਾਹੀਂ ਤੁਹਾਡੀ ਡਿਵਾਈਸ \'ਤੇ ਪਿੰਨ ਭੇਜੇਗਾ। ਆਪਣੀ ਜਾਣਕਾਰੀ ਨੂੰ ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਰਜ ਕਰੋ।</string>
   <string name="us_consent_button">ਮੈਂ ਸਹਿਮਤ ਹਾਂ</string>
-  <string name="us_registration_consent_diagnostic">ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਇਹ ਜਾਣਕਾਰੀ ਕਿ COVIDSafe, ਮੇਰੇ ਡਿਵਾਈਸ \'ਤੇ  ਠੀਕ ਕੰਮ ਕਰ ਰਹੀ ਹੈ</string>
+  <string name="us_registration_consent_diagnostic">ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਜਾਣਕਾਰੀ ਕਿ COVIDSafe, ਮੇਰੇ ਉਪਕਰਣ \'ਤੇ  ਠੀਕ ਕੰਮ ਕਰ ਰਹੀ ਹੈ।</string>
   <string name="victoria">ਵਿਕਟੋਰੀਆ</string>
   <string name="western_australia">ਪੱਛਮੀ ਆੱਸਟ੍ਰੇਲੀਆ</string>
   <string name="wrong_ping_number">ਗਲਤ ਪਿੰਨ ਦਰਜ ਕੀਤਾ</string>

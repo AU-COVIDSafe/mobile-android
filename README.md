@@ -1,13 +1,12 @@
 # COVIDSafe app
-
-Thank you for viewing the GitHub repository for the COVIDSafe app by the Australian Government.
-If you need help with troubleshooting issues with the app, please use our support channels:
-Email: support@covidsafe.gov.au
-COVIDSafe online help: https://covidsafe.gov.au/help-topics.html
+Thank you for viewing the GitHub repository for the COVIDSafe app by the Australian Government.  
+If you need help with troubleshooting issues with the app, please use our support channels:  
+Email: support@covidsafe.gov.au  
+COVIDSafe online help: [https://covidsafe.gov.au/help-topics.html](https://covidsafe.gov.au/help-topics.html)  
 
 # Please report any security vulnerabilities using the details from [https://covidsafe.gov.au/.well-known/security.txt](https://covidsafe.gov.au/.well-known/security.txt)  
 
-# [Terms and Conditions for access to COVIDSafe App code](https://github.com/AU-COVIDSafe/mobile-android/blob/master/LICENSE.md)
+# [Terms and Conditions for access to COVIDSafe App code](https://github.com/AU-COVIDSafe/mobile-ios/blob/master/LICENSE.md)
 By accessing the App Code I accept and agree to the following terms:
 
 1. If I distribute the App Code to anyone else, I will ensure these terms are provided to them and are not deleted.

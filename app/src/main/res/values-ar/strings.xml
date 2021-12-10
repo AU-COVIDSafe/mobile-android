@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">انتهت صلاحية رقم التعريف الشخصي الخاص بك.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">أدخل رقم هاتفك المحمول</string>
+  <string name="IssueFooter">قد نتصل بك للحصول على مزيد من التفاصيل حول ملاحظاتك. لن يتم استخدام عنوان بريدك الإلكتروني لأي غرض آخر.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">تغيير إعدادات الإشعارات</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">لن تتلقى إشعارًا إذا كان تطبيق COVIDSafe لا يعمل. \nغيّر إعدادات الإشعارات</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">سوف تتلقى إشعارًا إذا كان تطبيق COVIDSafe لا يعمل. غيّر إعدادات الإشعارات</string>
+  <string name="PINNumber_VO_Label">رقم التعريف الشخصي PIN</string>
+  <string name="PN_MobileNumber_VOLabel">رقم الهاتف المحمول</string>
+  <string name="ReceivePinIssue">مشكلات في تلقي رقم التعريف الشخصي الخاص بك؟</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">اختر البلد أو المنطقة</string>
   <string name="action_continue">تابع</string>
   <string name="action_report_an_issue">بلِّغ عن مشكلة</string>
   <string name="action_upload_done">تمّ</string>
@@ -30,7 +45,6 @@
   <string name="change_postcode_description">قم بالتحديث إذا تغير الرمز البريدي الخاص بك منذ قيامك بتنزيل تطبيق COVIDSafe.</string>
   <string name="change_postcode_heading">غيِّر الرمز البريدي الخاص بك</string>
   <string name="change_postcode_intro">هل انتقلت إلى منطقة ذات رمز بريدي مختلف منذ أن قمت بالتسجيل لاستخدام تطبيق COVIDSafe؟ \n\n يمكن أن يساعد تحديث الرمز البريدي موظفي دائرة الصحة على تتبع الأشخاص الذين خالطتهم. \n\n اقرأ * سياسة الخصوصية لتطبيق * COVIDSafe * و * إشعار جمع المعلومات * لمزيد من التفاصيل حول كيفية تخزين معلوماتك ومشاركتها.</string>
-  <string name="CodeHasExpired">انتهت صلاحية رقم التعريف الشخصي الخاص بك.</string>
   <string name="collection_message">يقوم تطبيق COVIDSafe الآن بجمع معلومات تشخيصية لمساعدتك على استكشاف المشكلات في تطبيقك وإصلاحها. *أعرف المزيد*</string>
   <string name="consent_button">أوافق</string>
   <!-- Shared Consent Actions -->
@@ -249,7 +263,7 @@
   <string name="country_region_name_zw">زيمبابوي</string>
   <string name="customise_days">تخصيص الأيام</string>
   <string name="data_privacy_button">التالي</string>
-  <string name="data_privacy_content_android">من المهم أن تقرأ *سياسة الخصوصية* لتطبيق COVIDSafe قبل التسجيل.\n\nسيقوم COVIDSafe بجمع معلوماتك الشخصية أو استخدامها أو الكشف عنها فقط بما يتماشى مع هذه السياسة وقانون الخصوصية لعام 1988.\n\n إذا كان عمرك أقل من 16 عاماً، يجب على أحد والديك/ الوصي عليك أيضاً قراءة *سياسة الخصوصية*. \n\n استخدام تطبيق COVIDSafe هو أمر إختياري تماماً. يمكنك تثبيت التطبيق أو حذفه في أي وقت. إذا قمت بحذف تطبيق COVIDSafe، *يمكنك أيضاً طلب حذف معلوماتك* من الخادم الآمن. \n\n للتسجيل في تطبيق COVIDSafe، ستحتاج إلى إدخال اسم (أو اسم مستعار) ورقم هاتف محمول وفئة عمرية ورمز بريدي. \n\n سيتم جمع المعلومات التي ترسلها عند التسجيل، ومعلومات استخدامك لتطبيق COVIDSafe  وتخزينها في خادم آمن للغاية.\n \n كما يتم جمع المعلومات أيضاً للتأكد من أن COVIDSafe يعمل بشكل صحيح على جهازك، ويتضمن ذلك نظام تشغيل جهازك وإصدار التطبيق الذي قمت بتثبيته واللغة التي تستخدمها في جهازك وما إذا كانت تقنية Bluetooth® تعمل وما إذا كان التطبيق الخاص بك قد سجل أي لقاءات في الأيام السبعة السابقة.\n \n على أجهزة أندرويد، ستشمل أيضاً معلومات حول ما إذا كان قد تم إيقاف تحسين البطارية وتشغيل خدمات الموقع الجغرافي. \n\n لن يقوم تطبيق COVIDSafe بجمع معلومات عن موقعك الجغرافي. \n\n سيدوّن تطبيق COVIDSafe وقت الاتصال ورمز مجهول الهوية لمستخدمي COVIDSafe الآخرين الذين تتواصل معهم وقوة إشارة الـ Bluetooth، وموديل الهاتف المحمول للمستخدمين الآخرين على جهازك. \n\nكما سيدون تطبيق COVIDSafe لدى المستخدمين الآخرين الذين تتواصل معهم أيضاً الرمز مجهول الهوية الخاص بك وتاريخ ووقت الاتصال بك وقوة إشارة الـ Bluetooth وموديل هاتفك المحمول على أجهزتهم.  \n\n إذا أظهرت نتائج فحص COVID-19 إصابة مستخدم آخر، فقد يقوم هذا المستخدم بتحميل تفاصيل الاتصال به وقد يتصل بك موظف دائرة الصحة في الولاية أو الإقليم لأغراض تقفّي المخالطة. \n\n سيتم استخدام تفاصيل التسجيل الخاصة بك أو الكشف عنها فقط لتقفّي المخالطة وللأغراض المناسبة والقانونية لـ COVIDSafe. \n\n يتوفر المزيد من المعلومات على الموقع الإلكتروني *covidsafe.gov.au*. \n\n راجع *سياسة الخصوصية* لتطبيق COVIDSafe للاطلاع على مزيد من التفاصيل حول حقوقك المتعلقة بمعلوماتك وكيف سيتم التعامل معها ومشاركتها.</string>
+  <string name="data_privacy_content_android">من المهم أن تقرأ *سياسة الخصوصية* لتطبيق COVIDSafe قبل التسجيل لتطبيق COVIDSafe. سيقوم COVIDSafe بجمع معلوماتك الشخصية أو استخدامها أو الكشف عنها فقط بما يتماشى مع هذه السياسة <i>وقانون الخصوصية لعام 1988</i>.\n\nإذا كان عمرك أقل من 16 عامًا، فيجب على أحد والديك/الوصي عليك أيضًا قراءة *سياسة الخصوصية*. \n\nاستخدام تطبيق COVIDSafe هو أمر طوعي بالكامل. يمكنك تثبيت التطبيق أو حذفه في أي وقت. إذا قمت بحذف تطبيق COVIDSafe، *فيمكنك أيضًا طلب حذف معلوماتك* من الخادم الآمن. \n\nللتسجيل في تطبيق COVIDSafe، ستحتاج إلى إدخال اسم (أو اسم مستعار) ورقم هاتف محمول وفئة عمرية ورمز بريدي. إذا لم تقدم معلوماتك الشخصية، فلن يعمل تطبيق COVIDSafe على النحو المنشود. \n\n يتم تخزين المعلومات التي تقدمها عند التسجيل، والمعلومات المتعلقة باستخدامك لتطبيق COVIDSafe في خادم آمن للغاية. \n \nيتم جمع المعلومات أيضًا للتأكد من أن COVIDSafe يعمل بشكل صحيح على جهازك، ويتضمن ذلك نظام تشغيل جهازك وإصدار التطبيق الذي قمت بتثبيته واللغة التي تستخدمها في جهازك وما إذا كانت تقنية Bluetooth® تعمل وما إذا كان التطبيق الخاص بك قد سجل أي لقاءات في الأيام السبعة السابقة.\n \nعلى أجهزة Android، ستشمل أيضًا معلومات حول ما إذا كان قد تم تعطيل تحسين البطارية وتمكين خدمات الموقع الجغرافي. \n\nلن يقوم تطبيق COVIDSafe بجمع معلومات عن موقعك الجغرافي. \n\nسيسجل تطبيق COVIDSafe تاريخ ووقت الاتصال ورمز المعرف المشفر لمستخدمي COVIDSafe الآخرين الذين تتواصل معهم وقوة إشارة البلوتوث وطراز الهاتف المحمول للمستخدمين الآخرين على جهازك.\n\nسيسجل تطبيق COVIDSafe على أجهزة المستخدمين الآخرين الذين تتواصل معهم أيضًا رمز المعرف المشفر وتاريخ ووقت الاتصال بك وقوة إشارة البلوتوث وطراز هاتفك على أجهزتهم.\n\nإذا جاءت نتيجة فحص كوفيد-19 لمستخدم آخر إيجابية، فقد يقوم هذا المستخدم بتحميل تفاصيل الاتصال به وقد يتصل بك موظف من دائرة الصحة في الولاية أو الإقليم لأغراض تعقب المخالطة.\n\nسيتم استخدام تفاصيل التسجيل الخاصة بك أو الكشف عنها فقط لتقفّي المخالطة وللأغراض المناسبة والقانونية لتطبيق COVIDSafe. \n\nيتوفر المزيد من المعلومات على موقع الويب *covidsafe.gov.au*.\n \nتوفر سياسة خصوصية *COVIDSafe* مزيدًا من التفاصيل حول حقوقك فيما يتعلق بمعلوماتك وكيف سيتم التعامل معها ومشاركتها.\n\nيتم توفير تفاصيل الاتصال المتعلقة باستفسارات وشكاوى الخصوصية الخاصة بتطبيق COVIDSafe في سياسة الخصوصية ضمن اتصل بنا.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">التسجيل والخصوصية</string>
   <string name="data_privacy_headline_content_description">العنوان والتسجيل والخصوصية</string>
@@ -275,8 +289,6 @@
   <string name="enter_pin_resend_pin">إعادة إرسال رقم التعريف الشخصي</string>
   <string name="enter_pin_timer_expire">ستنتهي صلاحية رقم التعريف الشخصي الخاص بك في غضون</string>
   <string name="enter_pin_wrong_number">هل رقم الهاتف المحمول هذا خاطئ؟</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">أدخل رقم هاتفك المحمول</string>
   <string name="every_day">كل يوم</string>
   <string name="factors_dotpoint1">عدد مستخدمي تطبيق COVIDSafe الموجودين من حولك</string>
   <string name="factors_dotpoint2">طراز الجهاز وعمره</string>
@@ -371,7 +383,6 @@
   <string name="invalid_post_code">رمز بريدي غير صحيح</string>
   <string name="is_snoozed_android">تطبيق \u200F COVIDSafe\n هو في غفوة حاليًا</string>
   <string name="is_snoozed_description_android">تطبيق \u200F COVIDSafe لا يستخدم  Bluetooth ولا يقوم بتسجيل الأشخاص الذين يتم الاختلاط بهم.</string>
-  <string name="IssueFooter">قد نتصل بك للحصول على مزيد من التفاصيل حول ملاحظاتك. لن يتم استخدام عنوان بريدك الإلكتروني لأي غرض آخر.</string>
   <string name="jwt_description">هناك مشكلة في تفاصيل التسجيل الخاصة بك.</string>
   <string name="jwt_expired">انتهت صلاحية تسجيلك.</string>
   <string name="jwt_expired_description">يجب عليك تأكيد رقم هاتفك المحمول كل 12 شهرًا للتأكد من صحة تفاصيل التسجيل الخاصة بك.</string>
@@ -394,6 +405,8 @@
   <string name="no_handshakes_item2">قم بتحديث تطبيقك إلى أحدث إصدار من خلال متجر Google Play أو متجر Apple.</string>
   <string name="no_handshakes_item3">أغلق هاتفك وقم بإعادة تشغيله وافتح التطبيق مجددًا.</string>
   <string name="no_handshakes_link">اقرأ المزيد حول كيفية التحقق مما إذا كان تطبييق COVIDSafe يعمل بشكل صحيح</string>
+  <string name="non_consent_button">لا أوافق</string>
+  <string name="non_consent_popup">لا يمكنك متابعة عملية التسجيل بدون موافقة ولي الأمر أو الوصي.\n\nيُرجى الخروج وحذف التطبيق.</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">على سبيل المثال: 51234</string>
   <string name="northern_territory">الإقليم الشمالي</string>
@@ -410,12 +423,6 @@
   <string name="notification_settings">افتح التطبيق للتحقق من الإعدادات.</string>
   <string name="notification_update_content">قم بتحديث تطبيقك للحصول على أحدث التحسينات.</string>
   <string name="notification_update_heading">يتوفر تحديث لتطبيق COVIDSafe </string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">تغيير إعدادات الإشعارات</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">لن تتلقى إشعارًا إذا كان تطبيق COVIDSafe لا يعمل. \nغيّر إعدادات الإشعارات</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">سوف تتلقى إشعارًا إذا كان تطبيق COVIDSafe لا يعمل. غيّر إعدادات الإشعارات</string>
   <string name="numbers_error">تعذر التحقق من أحدث الأرقام.</string>
   <string name="numbers_no_internet">اتصل بالإنترنت لكي تحصل على آخر الأرقام.</string>
   <string name="numbers_refresh">قم بالتحديث الآن</string>
@@ -450,20 +457,17 @@
   <string name="personal_details_post_code_error_prompt">يجب أن يحتوي رقم رمزك البريدي الأسترالي على 4 أرقام.</string>
   <string name="personal_details_post_code_hint">على سبيل المثال 2000</string>
   <string name="pin_number">رقم التعريف الشخصي pin</string>
-  <string name="PINNumber_VO_Label">رقم التعريف الشخصي PIN</string>
-  <string name="PN_MobileNumber_VOLabel">رقم الهاتف المحمول</string>
   <string name="postcode_api_error">لقد حصل خطأ. تحقق من الاتصال بالإنترنت وحاول مرة أخرى.</string>
   <string name="postcode_change_label">الرمز البريدي الحالي في أستراليا</string>
   <string name="postcode_success">تم تحديث الرمز البريدي الخاص بك</string>
   <string name="queensland">ولاية كوينزلاند</string>
-  <string name="ReceivePinIssue">مشكلات في تلقي رقم التعريف الشخصي الخاص بك؟</string>
   <string name="recovered">مجموع الحالات التي تعافت</string>
-  <string name="registration_consent_content">أوافق على أن تقوم وكالة التحول الرقمي، كونها مسؤولة عن تخزين البيانات، بموجب قرار قانوني صادر عن أمين عام وزارة الصحة في الحكومة الأسترالية بجمع:</string>
+  <string name="registration_consent_content">أوافق على أن تقوم وزارة الصحة، كونها مسؤولة عن تخزين البيانات، بموجب قانون الخصوصية لعام 1988 بجمع:</string>
   <string name="registration_consent_diagnostic">معلومات للتأكد من أن تطبيق COVIDSafe يعمل بشكل صحيح على جهازي.</string>
-  <string name="registration_consent_first_paragraph">معلومات التسجيل الخاصة بي.</string>
+  <string name="registration_consent_first_paragraph">معلومات التسجيل،</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">الموافقة على التسجيل</string>
-  <string name="registration_consent_second_paragraph">معلومات حول اختلاطي بمستخدمين آخرين لتطبيق COVIDSafe في حال أظهرت نتائج الفحص أن مستخدمًا آخر كنت على تواصل معه مصاب بفيروس COVID-19، وقام هذا المستخدم بتحميل بيانات الاتصال به.</string>
+  <string name="registration_consent_second_paragraph">معلومات حول اختلاطي بمستخدمين آخرين لتطبيق COVIDSafe في حال أظهرت نتائج الفحص أن مستخدمًا آخر كنت على تواصل معه مصاب بفيروس كوفيد-19، وقام هذا المستخدم بتحميل بيانات الاتصال به،</string>
   <string name="restrictions_accommodation">أماكن الإقامة</string>
   <string name="restrictions_activity">النشاط</string>
   <string name="restrictions_cafes">المقاهي والمطاعم</string>
@@ -490,8 +494,6 @@
   <string name="search">ابحث</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">اختر البلد أو المنطقة</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">اختر البلد أو المنطقة</string>
   <string name="select_state_territory_button">اختر الولاية أو الإقليم</string>
   <string name="select_state_territory_heading">اختر الولاية أو الإقليم</string>
   <string name="service_not_ok_action">تحقق من التطبيق الآن</string>
@@ -535,16 +537,16 @@
   <string name="total_per_state">مجموع الحالات المؤكدة في كل ولاية وإقليم</string>
   <string name="twenty_eight_days">28 يومًا</string>
   <string name="type_in_time">أدخل الوقت</string>
-  <string name="under_sixteen_content">أؤكد موافقة أحد والدي أو الوصي علي على أن تعمل وكالة التحول الرقمي كمدير لتخزين البيانات، بموجب قرار قانوني من قبل أمين وزارة الصحة في الحكومة الأسترالية لجمع:</string>
-  <string name="under_sixteen_first_paragraph">معلومات التسجيل الخاصة بي.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">حدد \"أوافق\" لتأكيد الموافقة أو \"لا أوافق\" إذا لم تتمكن من تأكيد موافقة ولي الأمر أو الوصي.</string>
+  <string name="under_sixteen_content">أؤكد موافقة أحد والدي أو الوصي علي على أن تعمل وزارة الصحة، كونها مسؤولة عن تخزين البيانات، بموجب قانون الخصوصية لعام 1988 على جمع:</string>
+  <string name="under_sixteen_first_paragraph">معلومات التسجيل،</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">تحتاج إلى موافقة أحد والديك/ الوصي للمضي قدماً</string>
   <string name="under_sixteen_headline_content_description">العنوان، تحتاج إلى موافقة أحد والديك/ الوصي للمضي قدماً</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">معلومات التسجيل الخاصة بي.</string>
-  <string name="under_sixteen_second_paragraph">معلومات حول اختلاطي بمستخدمين آخرين لتطبيق COVIDSafe في حال أظهرت نتائج الفحص أن مستخدمًا آخر كنت على تواصل معه مصاب بفيروس COVID-19، وقام هذا المستخدم بتحميل بيانات الاتصال به.</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">اختر \"أوافق\" لتأكيد الموافقة.</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">معلومات التسجيل،</string>
+  <string name="under_sixteen_second_paragraph">معلومات حول اختلاطي بمستخدمين آخرين لتطبيق COVIDSafe في حال أظهرت نتائج الفحص أن مستخدمًا آخر كنت على تواصل معه مصاب بفيروس كوفيد-19، وقام هذا المستخدم بتحميل بيانات الاتصال به،</string>
   <string name="update_available_dismiss_btn">ذكّرني لاحقًا</string>
   <string name="update_available_message_android">لقد أجرينا تحسينات على تطبيق COVIDSafe. \nقم بتحديث التطبيق عبر متجر التطبيقات Google Play Store .</string>
   <string name="update_available_play_store_btn">انتقل إلى متجر Google Play</string>

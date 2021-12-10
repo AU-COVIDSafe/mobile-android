@@ -13,7 +13,10 @@ import au.gov.health.covidsafe.ui.base.PagerContainer
 import au.gov.health.covidsafe.ui.base.UploadButtonLayout
 import com.github.razir.progressbutton.hideProgress
 import com.github.razir.progressbutton.showProgress
+import kotlinx.android.synthetic.main.activity_onboarding.*
+import kotlinx.android.synthetic.main.fragment_under_sixteen.*
 import kotlinx.android.synthetic.main.fragment_upload_master.*
+import kotlinx.android.synthetic.main.fragment_upload_master.root
 import kotlinx.android.synthetic.main.fragment_upload_master.toolbar
 
 class UploadContainerFragment : Fragment(), PagerContainer {
@@ -76,6 +79,13 @@ class UploadContainerFragment : Fragment(), PagerContainer {
                 upload_answerYes.visibility = VISIBLE
             }
         }
+    }
+
+    override fun visibleConsentButton() {
+        under_sixteen_text.visibility = View.GONE
+    }
+
+    override fun invisibleConsentButton() {
     }
 
     override fun enableNextButton() {

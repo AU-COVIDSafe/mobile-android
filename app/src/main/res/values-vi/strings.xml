@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">Mã PIN của bạn đã hết hạn.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">Nhập số điện thoại di động của bạn</string>
+  <string name="IssueFooter">Chúng tôi có thể liên lạc với bạn để biết thêm chi tiết về phản hồi của bạn. Địa chỉ email của bạn sẽ không được sử dụng cho bất kỳ mục đích nào khác.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">Thay đổi cài đặt thông báo</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">Bạn sẽ không nhận được thông báo nếu COVIDSafe không hoạt động. \nThay đổi cài đặt thông báo</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">Bạn sẽ nhận được thông báo nếu COVIDSafe không hoạt động. \nThay đổi cài đặt thông báo</string>
+  <string name="PINNumber_VO_Label">Mã số PIN</string>
+  <string name="PN_MobileNumber_VOLabel">Số điện thoại di động</string>
+  <string name="ReceivePinIssue">Có vấn đề với việc nhận mã PIN?</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">Chọn quốc gia hoặc khu vực</string>
   <string name="action_continue">Tiếp tục</string>
   <string name="action_report_an_issue">Báo cáo sự cố</string>
   <string name="action_upload_done">Hoàn tất</string>
@@ -30,7 +45,6 @@
   <string name="change_postcode_description">Cập nhật nếu mã bưu điện của bạn đã thay đổi sau khi tải xuống COVIDSafe.</string>
   <string name="change_postcode_heading">Thay đổi mã bưu điện của bạn</string>
   <string name="change_postcode_intro">Bạn đã chuyển sang khu vực có mã bưu điện khác kể từ khi đăng ký sử dụng COVIDSafe chưa? \n\nLuôn cập nhật mã bưu điện của bạn có thể hỗ trợ các nhân viên y tế tiến hành truy vết. \n\nĐọc *chính sách bảo mật của COVIDSafe* và *thông báo thu thập* để biết thêm chi tiết về việc thông tin của bạn được lưu trữ và chia sẻ như thế nào.</string>
-  <string name="CodeHasExpired">Mã PIN của bạn đã hết hạn.</string>
   <string name="collection_message">COVIDSafe hiện đang thu thập thông tin chẩn đoán để giúp bạn khắc phục sự cố với Ứng dụng của mình. *Tìm hiểu thêm *</string>
   <string name="consent_button">Tôi đồng ý</string>
   <!-- Shared Consent Actions -->
@@ -249,7 +263,7 @@
   <string name="country_region_name_zw">Zimbabwe</string>
   <string name="customise_days">Tùy chỉnh ngày</string>
   <string name="data_privacy_button">Tiếp theo</string>
-  <string name="data_privacy_content_android">Điều quan trọng là bạn phải đọc *chính sách bảo mật* COVIDSafe trước khi đăng ký COVIDSafe. \n\nNếu bạn dưới 16 tuổi, cha mẹ/người giám hộ của bạn cũng phải đọc *chính sách bảo mật *. \n\nSử dụng COVIDSafe là hoàn toàn tự nguyện. Bạn có thể cài đặt hoặc xóa ứng dụng bất cứ lúc nào. Nếu bạn xóa COVIDSafe, *bạn cũng có thể yêu cầu xóa thông tin của mình* khỏi máy chủ bảo mật. \n\nĐể đăng ký COVIDSafe, bạn sẽ cần nhập tên (hoặc biệt danh), số điện thoại di động, độ tuổi và mã bưu điện. \n\nThông tin bạn gửi khi đăng ký và thông tin về việc sử dụng COVIDSafe của bạn sẽ được thu thập và lưu trữ trên một máy chủ có độ an toàn cao. \n\nCOVIDSafe sẽ không thu thập thông tin vị trí của bạn. \n\nCOVIDSafe sẽ ghi nhớ thời gian tiếp xúc, mã ID ẩn danh của những người dùng COVIDSafe khác mà bạn tiếp xúc, cường độ tín hiệu Bluetooth® và kiểu điện thoại của người dùng khác trên thiết bị của bạn. \n\nNhững người dùng COVIDSafe khác mà bạn tiếp xúc cũng sẽ ghi nhớ mã ID ẩn danh của bạn, thời gian tiếp xúc, cường độ tín hiệu Bluetooth® và kiểu điện thoại của bạn, trên thiết bị của họ.\n\nNếu người dùng khác xét nghiệm dương tính với COVID-19, họ có thể đăng tải thông tin tiếp xúc của họ và nhân viên y tế của tiểu bang hoặc lãnh thổ có thể liên hệ với bạn nhằm mục đích truy tìm tiếp xúc. \n\nChi tiết đăng ký của bạn sẽ chỉ được sử dụng hoặc tiết lộ để theo dõi việc tiếp xúc và hoạt động đúng đắn và hợp pháp của COVIDSafe. \n\nThông tin để tìm hiểu thêm có tại trang mạng của *Bộ Y tế Chính phủ Úc*. \n\n Xem *chính sách bảo mật* của COVIDSafe để biết thêm chi tiết các quyền về thông tin của bạn và cách xử lý và chia sẻ thông tin đó.\n </string>
+  <string name="data_privacy_content_android">Điều quan trọng là bạn phải đọc *chính sách về quyền riêng tư* của COVIDSafe trước khi đăng ký COVIDSafe. COVIDSafe sẽ chỉ thu thập, sử dụng hoặc tiết lộ thông tin cá nhân của bạn theo chính sách này và <i>Đạo luật về Quyền riêng tư năm 1988</i>.\n\nNếu bạn dưới 16 tuổi, cha mẹ/người giám hộ của bạn cũng phải đọc *chính sách về quyền riêng tư*.\n\nViệc sử dụng COVIDSafe là hoàn toàn tự nguyện. Bạn có thể cài đặt hoặc xóa ứng dụng bất kỳ lúc nào. Nếu bạn xóa COVIDSafe, *bạn cũng có thể yêu cầu xóa thông tin của mình* khỏi máy chủ bảo mật.\n\nĐể đăng ký COVIDSafe, bạn sẽ cần nhập tên (hoặc biệt hiệu), số điện thoại di động, độ tuổi và mã bưu chính. Nếu bạn không cung cấp thông tin cá nhân của mình, ứng dụng COVIDSafe không thể hoạt động như dự kiến.\n\nThông tin bạn gửi khi đăng ký và thông tin về việc bạn sử dụng COVIDSafe được lưu trữ trên một máy chủ có độ bảo mật cao.\n\nThông tin cũng được thu thập để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của bạn. Điều này bao gồm hệ điều hành của bạn, phiên bản ứng dụng bạn đã cài đặt, ngôn ngữ mà thiết bị của bạn được đặt, Bluetooth® có hoạt động hay không và liệu ứng dụng có ghi lại bất kỳ cuộc gặp gỡ nào trong bảy ngày trước đó hay không.\n\nTrên các thiết bị Android, điều đó cũng bao gồm thông tin về việc liệu tính năng tối ưu hóa pin có bị tắt và dịch vụ dựa trên vị trí có được bật hay không.\n\nCOVIDSafe sẽ không thu thập thông tin vị trí của bạn.\n\nCOVIDSafe sẽ ghi chú ngày và giờ tiếp xúc, mã ID được mã hóa của những người dùng COVIDSafe khác mà bạn tiếp xúc, cường độ tín hiệu Bluetooth và model điện thoại của những người dùng khác trên thiết bị của bạn.\n\nNhững người dùng COVIDSafe khác mà bạn tiếp xúc sẽ ghi chú mã ID được mã hóa của bạn, ngày và giờ tiếp xúc với bạn, cường độ tín hiệu Bluetooth và model điện thoại của bạn trên thiết bị của họ.\n\nNếu một người dùng khác có kết quả xét nghiệm dương tính với COVID-19, họ có thể tải lên thông tin tiếp xúc của mình và quan chức y tế của tiểu bang hoặc vùng lãnh thổ có thể liên hệ với bạn cho mục đích truy vết tiếp xúc.\n\nChi tiết đăng ký của bạn sẽ chỉ được sử dụng hoặc tiết lộ để truy vết tiếp xúc và cho hoạt động thích hợp và hợp pháp của COVIDSafe.\n\nBạn có thể tìm hiểu thêm thông tin tại trang web *covidsafe.gov.au*.\n\n*Chính sách về quyền riêng tư* của COVIDSafe cung cấp thêm chi tiết về quyền của bạn đối với thông tin của bạn và cách thông tin sẽ được xử lý và chia sẻ.\n\nBạn có thể tìm hiểu chi tiết liên hệ liên quan đến các thắc mắc và khiếu nại về quyền riêng tư của COVIDSafe trong chính sách về quyền riêng tư dưới phần *Liên hệ với chúng tôi*.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">Đăng ký và bảo mật</string>
   <string name="data_privacy_headline_content_description">Tiêu đề, Đăng ký và bảo mật</string>
@@ -275,8 +289,6 @@
   <string name="enter_pin_resend_pin">Gửi lại mã PIN</string>
   <string name="enter_pin_timer_expire">Mã PIN của bạn sẽ hết hạn trong</string>
   <string name="enter_pin_wrong_number">Số điện thoại này có sai không?</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">Nhập số điện thoại di động của bạn</string>
   <string name="every_day">Hằng ngày</string>
   <string name="factors_dotpoint1">số lượng người dùng COVIDSafe trong phạm vi</string>
   <string name="factors_dotpoint2">kiểu thiết bị và độ tuổi</string>
@@ -371,7 +383,6 @@
   <string name="invalid_post_code">Mã bưu điện không hợp lệ</string>
   <string name="is_snoozed_android">COVIDSafe đang tạm ngưng hoạt động</string>
   <string name="is_snoozed_description_android">COVIDSafe không sử dụng Bluetooth và không ghi lại các tiếp xúc.</string>
-  <string name="IssueFooter">Chúng tôi có thể liên lạc với bạn để biết thêm chi tiết về phản hồi của bạn. Địa chỉ email của bạn sẽ không được sử dụng cho bất kỳ mục đích nào khác.</string>
   <string name="jwt_description">Có vấn đề với thông tin đăng ký của bạn.</string>
   <string name="jwt_expired">Đăng ký của bạn đã hết hạn.</string>
   <string name="jwt_expired_description">Bạn phải xác nhận số điện thoại di động của mình mỗi năm một lần để đảm bảo thông tin đăng ký của bạn chính xác.</string>
@@ -394,6 +405,8 @@
   <string name="no_handshakes_item2">Cập nhật ứng dụng của bạn lên phiên bản mới nhất thông qua Kho Google Play hoặc kho Apple Store.</string>
   <string name="no_handshakes_item3">Khởi động lại điện thoại của bạn và mở lại ứng dụng.</string>
   <string name="no_handshakes_link">Đọc thêm về cách kiểm tra xem COVIDSafe có hoạt động đúng cách không</string>
+  <string name="non_consent_button">Tôi không đồng ý</string>
+  <string name="non_consent_popup">Bạn không thể tiếp tục quy trình đăng ký mà không có sự chấp thuận của cha mẹ hoặc người giám hộ.\n\nVui lòng thoát và xóa ứng dụng.</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">Ví dụ: 51234</string>
   <string name="northern_territory">Lãnh thổ Phía bắc</string>
@@ -410,12 +423,6 @@
   <string name="notification_settings">Mở ứng dụng để kiểm tra cài đặt của bạn.</string>
   <string name="notification_update_content">Cập nhật ứng dụng của bạn để truy cập những cải thiện mới nhất.</string>
   <string name="notification_update_heading">Cập nhật COVIDSafe có sẵn</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">Thay đổi cài đặt thông báo</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">Bạn sẽ không nhận được thông báo nếu COVIDSafe không hoạt động. \nThay đổi cài đặt thông báo</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">Bạn sẽ nhận được thông báo nếu COVIDSafe không hoạt động. \nThay đổi cài đặt thông báo</string>
   <string name="numbers_error">Không thể kiểm tra các số đã cập nhật.</string>
   <string name="numbers_no_internet">Kết nối với internet để đảm bảo bạn nhận được các số cập nhật.</string>
   <string name="numbers_refresh">Làm mới ngay</string>
@@ -450,20 +457,17 @@
   <string name="personal_details_post_code_error_prompt">Số mã bưu điện Úc phải gồm 4 chữ số.</string>
   <string name="personal_details_post_code_hint">Ví dụ: 2000</string>
   <string name="pin_number">mã số pin</string>
-  <string name="PINNumber_VO_Label">Mã số PIN</string>
-  <string name="PN_MobileNumber_VOLabel">Số điện thoại di động</string>
   <string name="postcode_api_error">Có lỗi. Kiểm tra kết nối internet của bạn và thử lại.</string>
   <string name="postcode_change_label">Mã bưu điện hiện tại ở Úc</string>
   <string name="postcode_success">Mã bưu điện của bạn đã được cập nhật</string>
   <string name="queensland">Queensland</string>
-  <string name="ReceivePinIssue">Có vấn đề với việc nhận mã PIN?</string>
   <string name="recovered">Tổng số ca phục hồi</string>
-  <string name="registration_consent_content">Tôi đồng ý cho Cơ quan Chuyển đổi Kỹ thuật số với tư cách là nhà quản trị kho dữ liệu, theo quyết định pháp lý của Bộ trưởng Bộ Y tế Chính phủ Úc thu thập:</string>
-  <string name="registration_consent_diagnostic">Thông tin để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của tôi.</string>
-  <string name="registration_consent_first_paragraph">Thông tin đăng ký của tôi.</string>
+  <string name="registration_consent_content">Tôi đồng ý cho Bộ Y Tế với tư cách là nhà quản trị lưu trữ dữ liệu, theo Đạo luật về Quyền riêng tư năm 1988, được thu thập:</string>
+  <string name="registration_consent_diagnostic">thông tin của tôi để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của tôi.</string>
+  <string name="registration_consent_first_paragraph">thông tin đăng ký của tôi,</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">Đồng ý đăng ký</string>
-  <string name="registration_consent_second_paragraph">Thông tin về việc tiếp xúc của tôi với những người dùng COVIDSafe khác, nếu một người dùng COVIDSafe khác mà tôi đã tiếp xúc xét nghiệm dương tính với COVID-19 và đăng tải dữ liệu tiếp xúc của họ.</string>
+  <string name="registration_consent_second_paragraph">thông tin về việc tiếp xúc của tôi với những người dùng COVIDSafe khác, nếu một người dùng COVIDSafe khác mà tôi đã tiếp xúc xét nghiệm dương tính với COVID-19 và tải lên dữ liệu tiếp xúc của họ và</string>
   <string name="restrictions_accommodation">Chỗ lưu trú</string>
   <string name="restrictions_activity">Hoạt động</string>
   <string name="restrictions_cafes">Quán cà phê và Nhà hàng</string>
@@ -490,8 +494,6 @@
   <string name="search">Tìm kiếm</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">Chọn quốc gia hoặc khu vực</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">Chọn quốc gia hoặc khu vực</string>
   <string name="select_state_territory_button">Chọn tiểu bang hoặc lãnh thổ</string>
   <string name="select_state_territory_heading">Chọn tiểu bang hoặc lãnh thổ</string>
   <string name="service_not_ok_action">Kiểm tra ứng dụng ngay</string>
@@ -535,16 +537,16 @@
   <string name="total_per_state">Tổng số ca nhiễm theo tiểu bang và lãnh thổ</string>
   <string name="twenty_eight_days">28 ngày</string>
   <string name="type_in_time">Nhập thời gian</string>
-  <string name="under_sixteen_content">Tôi xác nhận cha mẹ hoặc người giám hộ của tôi đồng ý cho Cơ quan Chuyển đổi Kỹ thuật số với tư cách là nhà quản trị cửa hàng dữ liệu, theo quyết định pháp lý của Bộ trưởng Bộ Y tế Chính phủ Úc thu thập:</string>
-  <string name="under_sixteen_first_paragraph">Thông tin đăng ký của tôi.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">Chọn \"Tôi đồng ý\" để xác nhận sự chấp thuận hoặc \"Tôi không đồng ý\" nếu bạn không thể xác nhận sự chấp thuận của cha mẹ hoặc người giám hộ. </string>
+  <string name="under_sixteen_content">Tôi xác nhận rằng cha mẹ hoặc người giám hộ của tôi đồng ý cho Bộ Y Tế với tư cách là nhà quản trị lưu trữ dữ liệu theo Đạo luật về Quyền riêng tư năm 1988 được thu thập:</string>
+  <string name="under_sixteen_first_paragraph">thông tin đăng ký của tôi,</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">Bạn cần có sự đồng ý của cha mẹ/người giám hộ của bạn để tiến hành</string>
   <string name="under_sixteen_headline_content_description">Tiêu đề, Bạn cần có sự đồng ý của cha mẹ/người giám hộ để kích hoạt</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">Thông tin đăng ký của tôi.</string>
-  <string name="under_sixteen_second_paragraph">Thông tin về việc tiếp xúc của tôi với những người dùng COVIDSafe khác, nếu một người dùng COVIDSafe khác mà tôi đã tiếp xúc xét nghiệm dương tính với COVID-19 và đăng tải dữ liệu tiếp xúc của họ.</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">Chọn \'Tôi đồng ý\' để xác nhận sự đồng ý.</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">thông tin đăng ký của tôi,</string>
+  <string name="under_sixteen_second_paragraph">thông tin về việc tiếp xúc của tôi với những người dùng COVIDSafe khác, nếu một người dùng COVIDSafe khác mà tôi đã tiếp xúc xét nghiệm dương tính với COVID-19 và tải lên dữ liệu tiếp xúc của họ và</string>
   <string name="update_available_dismiss_btn">Nhắc tôi sau</string>
   <string name="update_available_message_android">Chúng tôi đã và đang cải thiện COVIDSafe. Cập nhật qua Kho Google Play (Google Play Store).</string>
   <string name="update_available_play_store_btn">Vào Google Play Store</string>
@@ -571,7 +573,7 @@
   <string name="upload_step_verify_pin_header_content_description">Tiêu đề, Đăng tải thông tin của bạn</string>
   <string name="upload_step_verify_pin_sub_header">Nhân viên y tế của tiểu bang hoặc lãnh thổ sẽ gửi mã PIN qua tin nhắn đến thiết bị của bạn. Nhập mã PIN vào đây để đăng tải thông tin của bạn.</string>
   <string name="us_consent_button">Tôi đồng ý</string>
-  <string name="us_registration_consent_diagnostic">Thông tin để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của tôi.</string>
+  <string name="us_registration_consent_diagnostic">thông tin của tôi để đảm bảo rằng COVIDSafe đang hoạt động bình thường trên thiết bị của tôi.</string>
   <string name="victoria">Victoria</string>
   <string name="western_australia">Tây Úc</string>
   <string name="wrong_ping_number">Nhập sai mã PIN</string>

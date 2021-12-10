@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <string name="CodeHasExpired">코드가 만료되었습니다.</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Enter_your_mobile_number_label">본인의 휴대폰 번호를 입력하세요</string>
+  <string name="IssueFooter">여러분의 피드백에 대한 자세한 내용에 대해 연락을 드릴 수도 있습니다. 여러분의 이메일 주소는 다른 목적으로 사용되지 않습니다.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsBlurbLink">알림 설정 변경</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsDisabledBlurb">COVIDSafe가 비활성화되어 있으면 알림을 받을 것입니다.</string>
+  <!-- Figma page iOS Screens (05/06) -->
+  <string name="NotificationsEnabledBlurb">COVIDSafe가 비활성화되어 있으면 알림을 받을 것입니다.\n알림 설정 변경하기</string>
+  <string name="PINNumber_VO_Label">핀 번호</string>
+  <string name="PN_MobileNumber_VOLabel">휴대폰 번호</string>
+  <string name="ReceivePinIssue">PIN을 받는 데 문제가 있습니까?</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="Select_country_or_region_headline">국가 또는 지역을 선택하세요</string>
   <string name="action_continue">계속</string>
   <string name="action_report_an_issue">문제 신고하기</string>
   <string name="action_upload_done">완료</string>
@@ -34,7 +49,6 @@
   <string name="change_postcode_description">COVIDSafe를 다운로드한 이후에 우편번호가 변경되었다면 업데이트하십시오.</string>
   <string name="change_postcode_heading">우편번호 변경</string>
   <string name="change_postcode_intro">COVIDSafe 사용 등록 후 다른 우편번호 지역으로 이사를 하셨나요?\n\n우편번호를 최신 상태로 유지하면 보건 담당자가 접촉자를 추적하는데 도움이 됩니다.\n\n여러분의 정보가 어떻게 저장되고 공유되는 지에 대한 자세한 정보는 *CovidSafe 개인 정보 보호 정책* 및 *수집 통보*를 참고하십시오.</string>
-  <string name="CodeHasExpired">코드가 만료되었습니다.</string>
   <string name="collection_message">이제 COVIDSafe는 앱 문제를 해결하는 데 도움이 되는 진단 정보를 수집합니다. *더 알아보기*</string>
   <string name="consent_button">동의</string>
   <!-- Shared Consent Actions -->
@@ -253,7 +267,7 @@
   <string name="country_region_name_zw">짐바브웨</string>
   <string name="customise_days">요일 맞춤 설정</string>
   <string name="data_privacy_button">다음</string>
-  <string name="data_privacy_content_android">COVIDSafe에 등록하기 전에 COVIDSafe *개인 정보 보호 정책*을 읽는 것이 중요합니다. \n\n16세 미만이라면, 그 부모 또는 보호자도 반드시 *개인 정보 보호 정책*을 읽어야 합니다. \n\nCOVIDSafe의 사용은 전적으로 자발적입니다. 언제든지 앱을 설치 또는 삭제할 수 있습니다. COVIDSafe를 삭제하면, *여러분은 보안 서버에 있는 자신의 정보 삭제*도 요청할 수 있습니다. \n\nCOVIDSafe에 등록하려면, 성명 (또는 가명), 휴대폰 번호, 연령대 및 우편 번호를 입력해야 합니다. \n\n등록 시 제출한 정보 및 여러분의 COVIDSafe 사용 정보는 보안성 높은 서버에 수집 및 저장됩니다. \n\nCOVIDSafe는 여러분의 위치 정보를 수집하지 않습니다. \n\nCOVIDSafe는 접촉 시각 및 여러분과 접촉한 다른 COVIDSafe 사용자의 익명 ID 코드, 블루투스® 신호 강도 및 다른 사용자의 전화기 모델 등을 여러분 장치에 기록합니다. \n\n여러분과 접촉한 다른 COVIDSafe 사용자의 장치에도 여러분의 익명 ID 코드 및 접촉일과 시각, 블루투스® 신호 강도 및 다른 사용자의 전화기 모델 등이 여러분 장치에 기록됩니다.  \n\n다른 사용자가 COVID-19 양성 결과를 받으면, 그들은 자신의 접촉 정보를 업로드할 수 있으며, 주 또는 테리토리 보건 담당자가 접촉 추적 목적으로 여러분에게 연락을 취할 수 있습니다. \n\n여러분의 등록 정보는 접촉 추적 및 COVIDSafe의 적절하고 합법적인 기능을 위해서만 사용 또는 공개됩니다. \n\n자세한 정보는 *호주 정부 보건부* 웹사이트에서 확인할 수 있습니다. \n\n자신의 정보에 대한 권리와 개인 정보의 취급 및 공유 방법에 대한 자세한 내용은 COVIDSafe *개인 정보 보호 정책*을 참조하십시오.</string>
+  <string name="data_privacy_content_android">COVIDSafe에 등록하기 전에 COVIDSafe *개인정보 보호정책*을 읽는 것이 중요합니다. COVIDSafe는 본 정책 및 <i>1988년 개인정보보호법</i>에 따라서만 귀하의 개인정보를 수집, 사용 또는 공개합니다.\n\n16세 미만인 경우, 부모나 보호자도 반드시 *개인정보 보호정책*을 읽어야 합니다. \n\nCOVIDSafe의 사용은 전적으로 자발적입니다. 귀하는 언제든지 앱을 설치 또는 삭제할 수 있습니다. COVIDSafe를 삭제할 경우 *보안 서버에 있는 자신의 정보 삭제*도 요청할 수 있습니다. \n\nCOVIDSafe에 등록하려면, 성명(또는 가명), 휴대폰 번호, 연령대 및 우편번호를 입력해야 합니다. 개인 정보를 제공하지 않으면 COVIDSafe 앱이 올바르게 작동하지 않습니다.\n\n등록 시 제출한 정보 및 사용자의 COVIDSafe 사용 정보는 보안 수준이 높은 서버에 저장됩니다. \n\n또한 COVIDSafe가 장치에서 제대로 작동하는지 확인하기 위한 정보도 수집됩니다. 여기에는 운영 체제, 설치한 앱 버전, 장치 설정 언어, Bluetooth® 작동 여부, 앱이 지난 7일 동안 발견한 것이 기록된 경우 등이 포함됩니다. \n\nAndroid 장치에서는 배터리 최적화 비활성화 및 위치 서비스 활성화 여부에 대한 정보도 포함되어 있습니다.\n\nCOVIDSafe는 사용자의 위치 정보를 수집하지 않습니다.\n\nCOVIDSafe는 사용자의 장치에 접촉일 및 시각, 접촉하는 다른 COVIDSafe 사용자의 암호화된 ID 코드, Bluetooth 신호 강도 및 다른 사용자의 휴대전화 모델을 기록합니다.\n\n귀하와 접촉한 다른 COVIDSafe 사용자의 장치에도 귀하의 암호화된 ID 코드 및 접촉일과 시각, Bluetooth 신호 강도 및 다른 휴대전화 모델 등이 기록됩니다.  \n\n다른 사용자의 코로나19 검사 결과가 양성일 경우, 자신의 접촉 정보를 업로드할 수 있으며 주 또는 구역 보건 담당자가 접촉 추적 목적으로 귀하에게 연락을 취할 수 있습니다. \n\n귀하의 등록 정보는 접촉 추적 및 COVIDSafe의 적절하고 합법적인 기능을 위해서만 사용 또는 공개됩니다. \n\n자세한 정보는 *covidsafe.gov.au* 웹사이트에서 확인할 수 있습니다. \n\nCOVIDSafe *개인정보 보호정책*은 사용자의 정보에 대한 권한과 해당 정보의 처리 및 공유 방법에 대한 자세한 정보를 제공합니다.\n\nCOVIDSafe 개인정보 보호 관련 문의 및 불만 사항은 *문의하기*의 개인정보 보호정책에 나와 있습니다.</string>
   <!-- OnBoarding Data Privacy -->
   <string name="data_privacy_headline">등록 및 개인정보 보호</string>
   <string name="data_privacy_headline_content_description">제목, 등록 및 개인정보 보호</string>
@@ -279,8 +293,6 @@
   <string name="enter_pin_resend_pin">PIN 다시 보내기</string>
   <string name="enter_pin_timer_expire">비밀 번호가 ~ 후에 만료됩니다</string>
   <string name="enter_pin_wrong_number">잘못된 휴대폰 번호입니까?</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Enter_your_mobile_number_label">본인의 휴대폰 번호를 입력하세요</string>
   <string name="every_day">매일</string>
   <string name="factors_dotpoint1">근접 범위 내 COVIDSafe 사용자 수</string>
   <string name="factors_dotpoint2">기기 모델 및 연식</string>
@@ -379,7 +391,6 @@
   <string name="invalid_post_code">잘못된 우편번호</string>
   <string name="is_snoozed_android">COVIDSafe가 일시중지되었습니다.</string>
   <string name="is_snoozed_description_android">COVIDSafe가 블루투스를 사용하고 있지 않으며 접촉자를 기록하고 있지 않습니다.</string>
-  <string name="IssueFooter">여러분의 피드백에 대한 자세한 내용에 대해 연락을 드릴 수도 있습니다. 여러분의 이메일 주소는 다른 목적으로 사용되지 않습니다.</string>
   <string name="jwt_description">등록 세부 정보에 문제가 있습니다.</string>
   <string name="jwt_expired">등록이 만료되었습니다.</string>
   <string name="jwt_expired_description">등록 정보를 정확히하려면 12개월마다 휴대폰 번호를 확인해야 합니다.</string>
@@ -406,6 +417,8 @@
   <string name="no_handshakes_item3">휴대폰을 재시작하고 앱을 다시 실행하세요.</string>
   <string name="no_handshakes_item4"><a href="https://www.covidsafe.gov.au/help-topics.html#location-services">위치 서비스</a> 설정이 맞게 되어있는지 확인하세요.</string>
   <string name="no_handshakes_link">COVIDSafe가 올바르게 작동하는지 확인하는 방법에 대한 자세한 정보 보기</string>
+  <string name="non_consent_button">동의 안 함</string>
+  <string name="non_consent_popup">부모 또는 보호자의 동의 없이 등록 절차를 계속할 수 없습니다.\n\n종료 후 앱을 삭제해 주십시오.</string>
   <!-- Figma page Android Screens (05/06) -->
   <string name="norfolk_hint">예: 51234</string>
   <string name="northern_territory">노던 테리토리</string>
@@ -422,12 +435,6 @@
   <string name="notification_settings">앱을 열어 여러분의 설정을 확인하십시오.</string>
   <string name="notification_update_content">최신 개선 사항에 접근하려면 앱을 업데이트 하십시오.</string>
   <string name="notification_update_heading">COVIDSafe 업데이트 가능</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsBlurbLink">알림 설정 변경</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsDisabledBlurb">COVIDSafe가 비활성화되어 있으면 알림을 받을 것입니다.</string>
-  <!-- Figma page iOS Screens (05/06) -->
-  <string name="NotificationsEnabledBlurb">COVIDSafe가 비활성화되어 있으면 알림을 받을 것입니다.\n알림 설정 변경하기</string>
   <string name="numbers_error">업데이트된 번호를 확인할 수 없습니다.</string>
   <string name="numbers_no_internet">업데이트된 번호를 얻으려면 인터넷에 연결하십시오.</string>
   <string name="numbers_refresh">지금 새로 고침</string>
@@ -462,20 +469,17 @@
   <string name="personal_details_post_code_error_prompt">호주 우편번호는 반드시 4자리 숫자여야 합니다.</string>
   <string name="personal_details_post_code_hint">예: 2000</string>
   <string name="pin_number">핀 번호</string>
-  <string name="PINNumber_VO_Label">핀 번호</string>
-  <string name="PN_MobileNumber_VOLabel">휴대폰 번호</string>
   <string name="postcode_api_error">오류가 발생하였습니다. 인터넷 연결상태를 확인한 후 다시 시도하세요.</string>
   <string name="postcode_change_label">호주 내 현재 거주 지역 우편번호</string>
   <string name="postcode_success">우편번호가 업데이트 되었습니다.</string>
   <string name="queensland">퀸즐랜드</string>
-  <string name="ReceivePinIssue">PIN을 받는 데 문제가 있습니까?</string>
   <string name="recovered">회복된 총 확진자 수</string>
-  <string name="registration_consent_content">본인은 호주 정부 보건부 장관의 법적 결정에 따라, 데이터 저장소 관리자로서 Digital Transformation Agency가 다음 정보를 수집하는 것에 동의합니다.</string>
-  <string name="registration_consent_diagnostic">COVIDSafe가 내 장치에서 제대로 작동하도록 하기 위한 정보.</string>
-  <string name="registration_consent_first_paragraph">나의 등록 정보</string>
+  <string name="registration_consent_content">본인은 1988년 개인정보보호법에 따라 데이터 저장소 관리자로서 다음과 같은 정보를 수집하는 데 동의함을 확인합니다.</string>
+  <string name="registration_consent_diagnostic">COVIDSafe가 장치에서 제대로 작동하는지 확인하는 정보입니다.</string>
+  <string name="registration_consent_first_paragraph">등록 정보,</string>
   <!-- Onboarding Registration Consent -->
   <string name="registration_consent_headline">등록 동의</string>
-  <string name="registration_consent_second_paragraph">다른 COVIDSafe 사용자가 COVID-19 양성 결과를 받고 자신의 접촉 데이터를 업로드한 경우, 다른 COVIDSafe 사용자들과의 본인의 접촉 정보.</string>
+  <string name="registration_consent_second_paragraph">다른 COVIDSafe 사용자가 코로나19 양성 결과를 받고 자신의 접촉 데이터를 업로드한 경우, 다른 COVIDSafe 사용자들과 나와의 접촉에 대한 정보 및</string>
   <string name="restrictions_accommodation">숙박 시설</string>
   <string name="restrictions_activity">활동</string>
   <string name="restrictions_cafes">카페 및 음식점</string>
@@ -502,8 +506,6 @@
   <string name="search">검색</string>
   <!-- OnBoarding Enter Number -->
   <string name="select_country_or_region">국가 또는 지역을 선택하세요</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="Select_country_or_region_headline">국가 또는 지역을 선택하세요</string>
   <string name="select_state_territory_button">주 또는 테리토리 선택</string>
   <string name="select_state_territory_heading">주 또는 테리토리 선택</string>
   <string name="service_not_ok_action">지금 앱을 확인하세요</string>
@@ -549,16 +551,16 @@
   <string name="total_per_state">주 및 테리토리 별 총 확진자</string>
   <string name="twenty_eight_days">28일</string>
   <string name="type_in_time">시간 입력</string>
-  <string name="under_sixteen_content">본인은 호주 정부 보건부 장관의 법적 결정에 따라, 데이터 저장소 관리자로서 다음 정보를 수집하는 것에 대해 본인 부모 또는 보호자가 Digital Transformation Agency에 동의한다는 것을 확인합니다:</string>
-  <string name="under_sixteen_first_paragraph">나의 등록 정보</string>
+  <!-- Figma page Android Screens (05/06) -->
+  <string name="under_sixteen_consent_call_for_action">동의를 확인하려면 \'동의\'를 선택하고, 부모 또는 보호자 동의를 확인할 수 없는 경우 \'동의 안 함\'을 선택하십시오.</string>
+  <string name="under_sixteen_content">본인은 부모님 또는 보호자가 1988년 개인정보보호법에 따라 데이터 저장소 관리자로서 다음과 같은 정보를 수집하는 데 동의함을 확인합니다.</string>
+  <string name="under_sixteen_first_paragraph">등록 정보,</string>
   <!-- OnBoarding Under Sixteen -->
   <string name="under_sixteen_headline">계속 진행하려면 부모 혹은 보호자의 동의가 필요합니다</string>
   <string name="under_sixteen_headline_content_description">제목, 계속 진행하려면 부모 혹은 보호자의 동의가 필요합니다</string>
   <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_registration_consent_first_paragraph">나의 등록 정보.</string>
-  <string name="under_sixteen_second_paragraph">다른 COVIDSafe 사용자가 COVID-19 양성 결과를 받고 자신의 접촉 데이타를 업로드한 경우, 다른 COVIDSafe 사용자들과 나와의 접촉에 대한 정보.</string>
-  <!-- Figma page Android Screens (05/06) -->
-  <string name="under_sixteen_consent_call_for_action">동의 확인을 위해 \'동의\'를 선택하세요.</string>
+  <string name="under_sixteen_registration_consent_first_paragraph">등록 정보,</string>
+  <string name="under_sixteen_second_paragraph">다른 COVIDSafe 사용자가 코로나19 양성 결과를 받고 자신의 접촉 데이터를 업로드한 경우, 다른 COVIDSafe 사용자들과 나와의 접촉에 대한 정보 및</string>
   <string name="update_available_dismiss_btn">나중에 다시 알려 주세요</string>
   <string name="update_available_message_android">저희는 COVIDSafe의 기능을 향상시키고 있습니다. \n구글 플레이 스토어를 통해 업데이트하십시오.</string>
   <string name="update_available_play_store_btn">구글 플레이 스토어 가기</string>
@@ -585,7 +587,7 @@
   <string name="upload_step_verify_pin_header_content_description">제목, 본인의 정보를 업로드하세요</string>
   <string name="upload_step_verify_pin_sub_header">주 또는 테리토리 보건 담당자가 당신의 장치에 문자 메시지로 PIN을 보낼 것입니다. 본인의 정보를 업로드하려면 아래에 그 번호를 입력하십시오.</string>
   <string name="us_consent_button">동의</string>
-  <string name="us_registration_consent_diagnostic">COVIDSafe가 내 장치에서 제대로 작동하도록 하기 위한 정보.</string>
+  <string name="us_registration_consent_diagnostic">COVIDSafe가 장치에서 제대로 작동하는지 확인하는 정보입니다.</string>
   <string name="victoria">빅토리아</string>
   <string name="western_australia">서호주</string>
   <string name="wrong_ping_number">잘못된 PIN 입력</string>

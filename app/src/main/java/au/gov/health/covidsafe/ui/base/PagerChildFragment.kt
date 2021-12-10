@@ -47,6 +47,16 @@ abstract class PagerChildFragment : BaseFragment() {
         (activity as? PagerContainer)?.enableNextButton()
     }
 
+    fun enableConsentButton() {
+        (parentFragment?.parentFragment as? PagerContainer)?.visibleConsentButton()
+        (activity as? PagerContainer)?.visibleConsentButton()
+    }
+
+    fun invisibleConsentButton() {
+        (parentFragment?.parentFragment as? PagerContainer)?.invisibleConsentButton()
+        (activity as? PagerContainer)?.invisibleConsentButton()
+    }
+
     fun disableContinueButton() {
         (parentFragment?.parentFragment as? PagerContainer)?.disableNextButton()
         (activity as? PagerContainer)?.disableNextButton()

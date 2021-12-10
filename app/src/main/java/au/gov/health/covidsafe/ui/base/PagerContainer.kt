@@ -10,4 +10,6 @@ interface PagerContainer {
     fun updateSteps(step: Int?, totalSteps: Int)
     fun setNavigationIcon(navigationIcon: Int?)
     fun refreshButton(updateButtonLayout: UploadButtonLayout)
+    fun visibleConsentButton()
+    fun invisibleConsentButton()
 }
